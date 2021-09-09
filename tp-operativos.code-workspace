@@ -1,0 +1,24 @@
+{
+  "folders": [
+    // REFERENCE FOR SED - workspace_folders:
+		{"path": "swamp"},
+		{"path": "memoria"},
+		{"path": "kernel"},
+    {"path": "utils"},
+  ],
+
+  /* aca irian las tasks globales del workspace pero no nos da la version para eso :( */
+  
+   "settings": {
+    "C_Cpp.errorSquiggles": "EnabledIfIncludesResolve",
+    "C_Cpp.loggingLevel": "Warning",
+    "C_Cpp.intelliSenseEngine": "Default",
+    "C_Cpp.default.enableConfigurationSquiggles": true,
+    "C_Cpp.default.intelliSenseMode": "gcc-x86",
+    "C_Cpp.intelliSenseEngineFallback": "Enabled",
+    "files.associations": {
+      "conexiones.h": "c",
+      "utils.h": "c"
+    }
+  }
+}

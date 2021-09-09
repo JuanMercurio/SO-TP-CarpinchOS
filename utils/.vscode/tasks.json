@@ -1,0 +1,162 @@
+ /*
+    This file is optimized to run in VSCode v1.35 for 32-bit. In shareder versions of VSCode
+    there are better ways to achive what this file does. Like workspace tasks.
+
+    Using VSCode version 1.35 (latest for 32-bit systems):
+        - "workspace tasks" are not available so we are using "Build All" in this directory
+        - "dependsOrder" is not available, so we have to only use "dependsOn".  
+        
+    The highlights of the problemMatcher linger because of isBackground = true
+    That is the reason we clean before we build. A good solution is yet to be implemented
+*/
+
+{
+    "version": "2.0.0",
+    "tasks": [        
+        {
+            "label": "Build All",
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            },
+            "dependsOn" :[  
+                //REFERENCE FOR SED: dependencies:
+				"Build swamp for build all",
+				"Build memoria for build all",
+				"Build kernel for build all",
+				
+            ]
+        },
+        {
+            "label": "Clean All",
+            "type": "shell",
+            "command": "cd .. && make clean",
+			"presentation": {
+				"echo": true,
+				"reveal": "never", //poner en always para ver el output para arreglar return exit 2
+				"focus": false,
+				"panel": "shared",
+				"showReuseMessage": true,
+				"clear": false
+			},
+            "problemMatcher": [
+                "$gcc"
+            ],
+            "group": "build",
+        },
+        {   
+            "label": "Build Utils for build all",
+            "type": "shell",
+            "command": "make all",
+            "options": {
+                "cwd": "${workspaceFolder:utils}"
+			},
+			"isBackground": true,
+            "group": "build",
+            "problemMatcher": {
+                "base": "$gcc",
+                "fileLocation" : [ "relative", "${workspaceFolder:utils}"]
+            },
+            "presentation": {
+                "echo": true,
+                "reveal": "never",
+                "focus": false,
+                "panel": "shared",
+                "showReuseMessage": true,
+                "clear": false
+            },
+            "dependsOn": ["Clean All"],
+        },
+            // REFERENCE FOR SED - build_tasks:
+			//swampBuildTaskStart											
+		{ 																	
+			"label": "Build swamp for build all", 						
+			"type": "shell", 												
+			"command": "make all", 											
+			"options": { 													
+				"cwd": "${workspaceFolder:swamp}" 	 					
+			}, 																
+			"isBackground" : true,											
+			"group": "build", 												
+			"problemMatcher": { 											
+				"base": "$gcc", 											
+				"fileLocation": ["relative", "${workspaceFolder:swamp}"] 
+			}, 																
+			"presentation": { 												
+				"echo": true, 												
+				"reveal": "never", 											
+				"focus": false, 											
+				"panel": "shared",											
+				"showReuseMessage": true,									
+				"clear": false 												
+			},																
+			"dependsOn": ["Build Utils for build all"],						
+		},																	
+			//swampBuildTaskEnd
+			//memoriaBuildTaskStart											
+		{ 																	
+			"label": "Build memoria for build all", 						
+			"type": "shell", 												
+			"command": "make all", 											
+			"options": { 													
+				"cwd": "${workspaceFolder:memoria}" 	 					
+			}, 																
+			"isBackground" : true,											
+			"group": "build", 												
+			"problemMatcher": { 											
+				"base": "$gcc", 											
+				"fileLocation": ["relative", "${workspaceFolder:memoria}"] 
+			}, 																
+			"presentation": { 												
+				"echo": true, 												
+				"reveal": "never", 											
+				"focus": false, 											
+				"panel": "shared",											
+				"showReuseMessage": true,									
+				"clear": false 												
+			},																
+			"dependsOn": ["Build Utils for build all"],						
+		},																	
+			//memoriaBuildTaskEnd
+			//kernelBuildTaskStart											
+		{ 																	
+			"label": "Build kernel for build all", 						
+			"type": "shell", 												
+			"command": "make all", 											
+			"options": { 													
+				"cwd": "${workspaceFolder:kernel}" 	 					
+			}, 																
+			"isBackground" : true,											
+			"group": "build", 												
+			"problemMatcher": { 											
+				"base": "$gcc", 											
+				"fileLocation": ["relative", "${workspaceFolder:kernel}"] 
+			}, 																
+			"presentation": { 												
+				"echo": true, 												
+				"reveal": "never", 											
+				"focus": false, 											
+				"panel": "shared",											
+				"showReuseMessage": true,									
+				"clear": false 												
+			},																
+			"dependsOn": ["Build Utils for build all"],						
+		},																	
+			//kernelBuildTaskEnd
+
+        {
+            "label": "Build Utils",
+            "type": "shell",
+            "command" : "make all",
+            "problemMatcher": {
+                "base": "$gcc",
+                "fileLocation" : [ "relative", "${workspaceFolder}"]
+            },
+            "options": {
+                "cwd": "${workspaceFolder}"
+            }
+
+        }
+        
+    ]
+}

@@ -1,0 +1,90 @@
+{
+    // See https://go.microsoft.com/fwlink/?LinkId=733558
+    // for the documentation about the tasks.json format
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "Valgrind swamp",
+            "type": "shell",
+            "presentation": {
+                "echo": true,
+                "reveal": "always",
+                "focus": false,
+                "panel": "shared",
+                "showReuseMessage": true,
+                "clear": true,
+                "group": "tp"
+            },
+            "command": "make memcheck",
+            "problemMatcher": [
+                "$gcc"
+            ]
+        },
+        {
+            "label": "Helgrind swamp",
+            "type": "shell",
+            "presentation": {
+                "echo": true,
+                "reveal": "always",
+                "focus": false,
+                "panel": "shared",
+                "showReuseMessage": true,
+                "clear": false,
+                "group": "tp"
+            },
+            "command": "make helgrind",
+            "problemMatcher": [
+                "$gcc"
+            ]
+        },
+        {
+            "label": "Run swamp",
+            "type": "shell",
+            "command": "make all && make run",
+            "presentation": {
+                "echo": true,
+                "reveal": "always",
+                "focus": true,
+                "panel": "shared",
+                "showReuseMessage": true,
+                "clear": true,
+                "group": "tp"
+            },
+            "problemMatcher": {
+                "base": "$gcc",
+                "fileLocation": ["relative", "${workspaceFolder}"]
+            },
+        },
+        {
+            "label": "Test swamp",
+            "type": "shell",
+            "command": "make all && make test",
+            "presentation": {
+                "echo": true,
+                "reveal": "always",
+                "focus": false,
+                "panel": "shared",
+                "showReuseMessage": true,
+                "clear": true,
+                "group": "test"
+            },
+            "problemMatcher": {
+                "base": "$gcc",
+                "fileLocation": ["relative"]
+            },
+        },
+        {
+            "label": "Build swamp",
+            "type":"shell",
+            "command" : "make all",
+            "problemMatcher": {
+                "base" : "$gcc",
+                "fileLocation" : [ "relative", "${workspaceFolder}"]
+            },
+            "options": {
+                "cwd": "${worksapceFolder}"
+            }
+
+        }
+    ]
+}
