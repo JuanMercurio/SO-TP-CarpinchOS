@@ -4,6 +4,9 @@ La config tiene archivos necesarios para VSCode. Aunque se puede importar cada m
 
 # VSCode
 
+- Installar la extension [C/C++ Intellisense](https://marketplace.visualstudio.com/items?itemName=ms-vscode.cpptools "C/C++ Intellisense") en **VSCode**
+- Instalar ultima version de [VSCode de 32bit](https://code.visualstudio.com/updates/v1_35) 
+
 Existen estas tareas para cada modulo: 
 
  - Run modulo
