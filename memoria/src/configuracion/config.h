@@ -2,7 +2,6 @@
 #define _MEMORIA_CONFIG_
 
 #include <commons/config.h>
-#include <string.h>
 
 typedef struct {
    char* IP;
@@ -17,8 +16,15 @@ typedef struct {
 }t_cfg;
 
 t_cfg configuracion;
+
 t_config* config;
 
+/*
+   @NAME: obtener_config
+   @DESC: obtiene toda la configuracion del archivo 
+          .config en /cfg y lo pone en la variable 
+          global configuracion
+ */
 void obtener_config();
 
 #endif
