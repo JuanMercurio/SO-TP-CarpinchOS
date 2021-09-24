@@ -6,11 +6,9 @@ int main(int argc, char* argv[]) {
    tests(argc, argv[1]);    
 
    obtener_config();
-   printf("ip es: %s\n", configuracion.IP);
-   printf("tamanio es: %d\n", configuracion.TAMANIO_PAGINA);
-   
 
    terminar_programa();
+
    return 0;
 }
 
