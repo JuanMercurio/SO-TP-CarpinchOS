@@ -18,7 +18,8 @@
     "C_Cpp.intelliSenseEngineFallback": "Enabled",
     "files.associations": {
       "conexiones.h": "c",
-      "utils.h": "c"
+      "utils.h": "c",
+      "main.h": "c"
     }
   }
 }
