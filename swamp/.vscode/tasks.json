@@ -75,16 +75,20 @@
         },
         {
             "label": "Build swamp",
-            "type":"shell",
-            "command" : "make all",
+            "type": "shell",
+            "command": "make all",
             "problemMatcher": {
-                "base" : "$gcc",
-                "fileLocation" : [ "relative", "${workspaceFolder}"]
+                "base": "$gcc",
+                "fileLocation": ["relative", "${workspaceFolder}"]
             },
-            "options": {
-                "cwd": "${worksapceFolder}"
+            "presentation": {
+                "echo": true,
+                "reveal": "silent",
+                "focus": false,
+                "panel": "shared",
+                "showReuseMessage": true,
+                "clear": false
             }
-
         }
     ]
 }
