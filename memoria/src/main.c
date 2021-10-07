@@ -21,7 +21,7 @@ void terminar_programa(){
 
 void atender_cliente(void* arg){
    int cliente = *(int*)arg;
-   printf("this works %d\n", cliente);
+   free(arg);
 }
 
 void administrar_clientes(){
