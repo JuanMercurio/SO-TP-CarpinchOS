@@ -1,20 +1,27 @@
 #ifndef _MATELIB_H_
 #define _MATELIB_H_
 
-
 #include <stdint.h>
+#include <stdlib.h>
+#include <stdio.h>
+#include <unistd.h>
+#include <string.h>
+#include <semaphore.h>
 
 //-------------------Type Definitions----------------------/
-typedef struct mate_instance
-{
-     mate_inner_structure group_info; // deberia quedar el void*?
-} mate_instance;
 
-typedef struct{
-    uint_32 pid;
+typedef struct mate_inner_structure{
+    uint32_t pid;
     char* ip;
     char* puerto;
-}mate_inner_structure;
+    sem_t* sem_instance;
+    void* memory;
+} mate_inner_structure;
+
+typedef struct mate_instance {
+     mate_inner_structure *group_info; // deberia quedar el void*?
+} mate_instance;
+
 
 typedef char *mate_io_resource;
 

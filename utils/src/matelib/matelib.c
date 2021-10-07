@@ -1,17 +1,7 @@
 
-#include <matelib.h>
-#include <stdlib.h>
-#include <stdio.h>
-#include <unistd.h>
-#include <string.h>
-#include <semaphore.h>
+#include "matelib.h"
 
 //------------------General Functions---------------------/
-typedef struct mate_inner_structure
-{
-  void *memory;
-  sem_t*sem_instance;
-} mate_inner_structure;
 
 int mate_init(mate_instance *lib_ref, char *config)
 {

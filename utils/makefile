@@ -1,5 +1,5 @@
 # Include custom library paths here
-LIBRARY_PATHS=/home/utnso/so-commons-library
+LIBRARY_PATHS=
 
 # ==============================================================================================================
 
