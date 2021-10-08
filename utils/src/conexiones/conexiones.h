@@ -26,6 +26,6 @@ int aceptar_cliente(int socket_servidor);
     @NAME: administrar_clientes
     @DESC: Funciones que administran los hilos que se conectan a un modulo servidor
  */
-void administrar_clientes2(char* IP, char* PUERTO, void* funcion);
+void administrar_clientes(char* IP, char* PUERTO, void (*funcion)(void*));
 
 #endif

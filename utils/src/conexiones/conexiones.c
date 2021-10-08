@@ -95,9 +95,9 @@ int aceptar_cliente(int socket_servidor)
 }
 
 
-void administrar_clientes2(char* IP, char* PUERTO, void* funcion){
+void administrar_clientes(char* IP, char* PUERTO, void (*funcion)(void*)){
 
-   int servidor = iniciar_servidor(IP, PUERTO);
+  int servidor = iniciar_servidor(IP, PUERTO);
 
    pthread_attr_t detached;
    pthread_attr_init(&detached);
@@ -105,11 +105,11 @@ void administrar_clientes2(char* IP, char* PUERTO, void* funcion){
 
    /* Revisar Condicion para terminar este while */
    while(1){
-      pthread_t* hilo = malloc(sizeof(pthread_t));
-      int cliente = aceptar_cliente(servidor);
-      pthread_create(hilo, &detached, (void*)funcion, &cliente);
-      pthread_detach(*hilo);
+      pthread_t hilo;
+      int *cliente = malloc(sizeof(int));
+      *cliente= aceptar_cliente(servidor);
+      pthread_create(&hilo, &detached, (void*)funcion,(void*) cliente);
    }
 
-   pthread_attr_destroy(&detached);
+   pthread_attr_destroy(&detached); 
 }

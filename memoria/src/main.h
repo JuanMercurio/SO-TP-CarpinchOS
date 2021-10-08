@@ -1,13 +1,7 @@
 #ifndef _MAIN_MEMORIA_
 #define _MAIN_MEMORIA_
 
-#include <pthread.h>
-
 #include "tests/tests.h"
-#include "configuracion/config.h"
-
-#include <utils/utils.h> 
-#include <conexiones/conexiones.h>
 
 /*
     @NAME: terminar_programa

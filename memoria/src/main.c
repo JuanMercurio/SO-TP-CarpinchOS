@@ -1,5 +1,12 @@
 #include "main.h"
 
+#include "configuracion/config.h"
+
+#include <pthread.h>
+#include <utils/utils.h> 
+#include <conexiones/conexiones.h>
+
+
 int main(int argc, char* argv[]) {
    
    //solo corre si corremos el binario asi: binario test
@@ -7,7 +14,7 @@ int main(int argc, char* argv[]) {
    
    obtener_config();
 
-   administrar_clientes2(configuracion.IP, configuracion.PUERTO, (void*)atender_cliente);
+   administrar_clientes(configuracion.IP, configuracion.PUERTO, &atender_cliente);
 
    terminar_programa();
 
@@ -20,27 +27,10 @@ void terminar_programa(){
 }
 
 void atender_cliente(void* arg){
-   //int cliente = *(int*)arg;
-   printf("se conecto algo\n");
-   //free(arg);
+   int cliente = *(int*)arg;
+   free(arg);
+
+   printf("Se conecto usando el socket %d\n", cliente);
 }
 
-void administrar_clientes(){
-
-   int servidor = iniciar_servidor(configuracion.IP, configuracion.PUERTO);
-
-   pthread_attr_t detached;
-   pthread_attr_init(&detached);
-   pthread_attr_setdetachstate(&detached, PTHREAD_CREATE_DETACHED);
-
-   /* Revisar Condicion para terminar este while */
-   while(1){
-      pthread_t* hilo = malloc(sizeof(pthread_t));
-      int cliente = aceptar_cliente(servidor);
-      pthread_create(hilo, &detached, (void*)atender_cliente,(void*) &cliente);
-      pthread_detach(*hilo);
-   }
-
-   pthread_attr_destroy(&detached);
-}
 
