@@ -2,6 +2,7 @@
 #define _KERNEL_CONFIG_
 
 #include <commons/config.h>
+#include <commons/collections/list.h>
 
 typedef struct {
    char* IP;
@@ -10,6 +11,7 @@ typedef struct {
    char* PUERTO_MEMORIA;
    char* ALGORITMO_PLANIFICACION; 
    char* DISPOSITIVOS_IO;
+   char* DURACIONES_IO;
    int RETARDO_CPU;
    int GRADO_MULTIPROGRAMACION;
    int GRADO_MULTIPROCESAMIENTO;

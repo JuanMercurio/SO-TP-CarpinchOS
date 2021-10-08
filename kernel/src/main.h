@@ -19,6 +19,13 @@ typedef enum{
     IO
 }cod_op;
 
+typedef struct{
+    char* id;
+    int val;
+    int max_val;
+    t_queue bloqueados
+}sem_kernel;
+
 //   colas
 t_queue *cola_new;
 t_queue *cola_ready;
@@ -26,6 +33,7 @@ t_queue *suspendido_bloqueado;
 t_queue *suspendido_listo;
 // listas
 t_list lista_ejecutando;
+t_list *lista_sem_kernel;
 
 // semaforos
 sem_t *cola_new_con_elementos;
@@ -58,5 +66,13 @@ void  iniciar_planificador_mediano_plazo();
 void iniciar_planificador_largo_plazo();
    
 void crear_estructuras(t_pcb *carpincho);
+
+sem_kernel* buscar_semaforo(char *nombre, t_list *sems);
+void sem_wait(char *nombre);
+void sem_post(char *nombre);
+void sem_init(char* nombre, int value);
+void sem_destroy(char* nombre);
+
+void init_dispositivos_io();
 
 #endif
