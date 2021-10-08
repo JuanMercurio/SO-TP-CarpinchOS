@@ -2,6 +2,8 @@
 
 void obtener_config(){
     config = config_create("cfg/kernel.config");
+    configuracion.IP = config_get_string_value(config, "IP");
+    configuracion.PUERTO= config_get_string_value(config, "PUERTO");
     configuracion.IP_MEMORIA = config_get_string_value(config, "IP_MEMORIA");
     configuracion.ALGORITMO_PLANIFICACION = config_get_string_value(config, "ALGORITMO_PLANIFICACION");
     configuracion.DISPOSITIVOS_IO = config_get_string_value(config, "DISPOSITIVOS_IO");

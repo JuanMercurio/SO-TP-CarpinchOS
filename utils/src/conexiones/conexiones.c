@@ -6,6 +6,7 @@
 #include <unistd.h>
 #include <netdb.h>
 #include <sys/socket.h>
+#include <pthread.h>
 
 int crear_conexion(char *ip, char* puerto){		
 
@@ -91,4 +92,24 @@ int aceptar_cliente(int socket_servidor)
 	int socket_cliente = accept(socket_servidor, (void*) &dir_cliente, (void*)&tam_direccion);
 
 	return socket_cliente;
+}
+
+
+void administrar_clientes2(char* IP, char* PUERTO, void* funcion){
+
+   int servidor = iniciar_servidor(IP, PUERTO);
+
+   pthread_attr_t detached;
+   pthread_attr_init(&detached);
+   pthread_attr_setdetachstate(&detached, PTHREAD_CREATE_DETACHED);
+
+   /* Revisar Condicion para terminar este while */
+   while(1){
+      pthread_t* hilo = malloc(sizeof(pthread_t));
+      int cliente = aceptar_cliente(servidor);
+      pthread_create(hilo, &detached, (void*)funcion, &cliente);
+      pthread_detach(*hilo);
+   }
+
+   pthread_attr_destroy(&detached);
 }

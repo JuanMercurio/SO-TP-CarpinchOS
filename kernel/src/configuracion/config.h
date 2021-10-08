@@ -4,6 +4,8 @@
 #include <commons/config.h>
 
 typedef struct {
+   char* IP;
+   char* PUERTO;
    char* IP_MEMORIA;
    char* PUERTO_MEMORIA;
    char* ALGORITMO_PLANIFICACION; 

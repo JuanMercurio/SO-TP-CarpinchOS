@@ -6,7 +6,7 @@ int main(int argc, char* argv[]) {
    tests(argc, argv[1]);    
    
    obtener_config();
-   iniciar_gestor_conexiones();
+   administrar_clientes2(configuracion.IP, configuracion.PUERTO, (void*)receptor);
    inicializar_planificacion();
 
    terminar_programa();
@@ -18,34 +18,7 @@ void terminar_programa(){
    config_destroy(config);
 }
 
-void iniciar_gestor_conexiones(char* puerto, char* IP, t_log * logger, void (*receptor)(void*)) {
-	printf("ENTRO A INCIALIZAR, GESTOR DE CONEXIONES\n");
 
-	int servidor;
-	pthread_t conexiones[40]; /// buscar como hacer dinamico
-	int contador_hilos_de_conexiones = 0;
-	printf("creo vector hilos y contador\n");
-
-	servidor = iniciar_servidor(IP, puerto);
-	log_info(logger, "INICIO GESTOR, listo para aceptar conexiones\n");
-
-	while (1) {
-		printf("ENTRO A ESPERAR CLIENTE\n");
-		int *cliente = malloc(sizeof(int));
-		*cliente = aceptar_cliente(servidor);
-
-		printf("acepto, cliente \n");
-		if (pthread_create(&conexiones[contador_hilos_de_conexiones], NULL,
-				(void*) receptor, cliente) != 0) {
-			log_info(logger, "NO  SE PUDO CREAR HILO PARA CONEXION %d\n",
-					contador_hilos_de_conexiones);
-		} else {
-			printf("Se conecto un cliente!!!\n");
-			contador_hilos_de_conexiones++;
-// ver como cerrar los hilos de este modulo
-		}
-	}
-}
 void receptor(void* arg){
 int cliente = *(int*)arg;
 		free(arg);
@@ -69,6 +42,7 @@ int cliente = *(int*)arg;
 
          case IO:
          break;
+}
 }
 }
 

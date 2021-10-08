@@ -7,7 +7,7 @@ int main(int argc, char* argv[]) {
    
    obtener_config();
 
-   administrar_clientes();
+   administrar_clientes2(configuracion.IP, configuracion.PUERTO, (void*)atender_cliente);
 
    terminar_programa();
 
@@ -20,8 +20,9 @@ void terminar_programa(){
 }
 
 void atender_cliente(void* arg){
-   int cliente = *(int*)arg;
-   free(arg);
+   //int cliente = *(int*)arg;
+   printf("se conecto algo\n");
+   //free(arg);
 }
 
 void administrar_clientes(){
@@ -36,7 +37,7 @@ void administrar_clientes(){
    while(1){
       pthread_t* hilo = malloc(sizeof(pthread_t));
       int cliente = aceptar_cliente(servidor);
-      pthread_create(hilo, &detached, (void*)atender_cliente, &cliente);
+      pthread_create(hilo, &detached, (void*)atender_cliente,(void*) &cliente);
       pthread_detach(*hilo);
    }
 
