@@ -6,7 +6,7 @@ int main(int argc, char* argv[]) {
    tests(argc, argv[1]);    
    
    obtener_config();
-   administrar_clientes2(configuracion.IP, configuracion.PUERTO, (void*)receptor);
+   administrar_clientes(configuracion.IP, configuracion.PUERTO, &receptor);
    inicializar_planificacion();
 
    terminar_programa();
