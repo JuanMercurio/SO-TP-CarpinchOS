@@ -1,4 +1,8 @@
 #include "tests.h"
+#include "../main.h"
+
+#include <CUnit/Basic.h>
+#include <stdlib.h>
 
 int run_tests(){
 

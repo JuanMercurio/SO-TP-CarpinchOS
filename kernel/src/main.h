@@ -23,8 +23,13 @@ typedef struct{
     char* id;
     int val;
     int max_val;
-    t_queue bloqueados
+    t_queue* bloqueados;
 }sem_kernel;
+
+typedef struct{
+    char* id;
+    int retardo;
+}io_kernel;
 
 //   colas
 t_queue *cola_new;
@@ -34,6 +39,7 @@ t_queue *suspendido_listo;
 // listas
 t_list lista_ejecutando;
 t_list *lista_sem_kernel;
+t_list *lista_io_kernel;
 
 // semaforos
 sem_t *cola_new_con_elementos;
@@ -67,12 +73,18 @@ void iniciar_planificador_largo_plazo();
    
 void crear_estructuras(t_pcb *carpincho);
 
+void inicializar_listas_sem_io();
+
 sem_kernel* buscar_semaforo(char *nombre, t_list *sems);
-void sem_wait(char *nombre);
-void sem_post(char *nombre);
-void sem_init(char* nombre, int value);
-void sem_destroy(char* nombre);
+void sem_kernel_wait(char *nombre);
+void sem_kernel_post(char *nombre);
+void sem_kernel_init(char* nombre, int value);
+void sem_kernel_destroy(char* nombre);
 
 void init_dispositivos_io();
+void call_io(char *nombre);
+
+
+void receptor(void*);
 
 #endif

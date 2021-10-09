@@ -1,9 +1,6 @@
 #ifndef _TESTS_MEMORIA_
 #define _TESTS_MEMORIA_
 
-#include "../main.h"
-#include <CUnit/Basic.h>
-
 /*
     @NAME: run_tests
     @DESC: Funcion principal que corre los tests
