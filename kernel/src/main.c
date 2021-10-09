@@ -116,7 +116,7 @@ sem_kernel *buscar_semaforo(char *nombre, t_list *sems)
    sem_kernel *sem_buscado = malloc(sizeof(sem_kernel));
 
    bool nombre_semaforo(void* elemento){
-      return true;//((sem_kernel*)elemento)->id == nombre;
+      return ((sem_kernel*)elemento)->id == nombre;
    }
    //uso la inner function porque list_find requiere un void* como condicion
    sem_buscado = list_find(sems, nombre_semaforo);
