@@ -9,19 +9,30 @@
 #include <semaphore.h>
 #include <commons/config.h>
 #include <commons/collections/list.h>
+//-------------------Operations Codes For Messages---------/
+typedef enum{
+    NEW_INSTANCE,
+    IO,
+    INIT_SEMAFORO,
+    SEM_WAIT,
+    SEM_POST,
+}cod_op;
 
 //-------------------Type Definitions----------------------/
 
 typedef struct mate_inner_structure{
     uint32_t pid;
+    
   //  char* ip;
   //  char* puerto;
+
     sem_t* sem_instance;
     void* memory;
 } mate_inner_structure;
 
 typedef struct mate_instance {
-    void *group_info; // deberia quedar el void*?
+    void *group_info;// deberia quedar el void*?
+    uint32_t conexion; 
 } mate_instance;
 
 

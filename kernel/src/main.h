@@ -15,8 +15,11 @@ typedef struct{
 }t_pcb;
 
 typedef enum{
-    NUEVO_CARPINCHO,
-    IO
+    NEW_INSTANCE,
+    IO,
+    INIT_SEMAFORO,
+    SEM_WAIT,
+    SEM_POST,
 }cod_op;
 
 typedef struct{
