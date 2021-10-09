@@ -5,7 +5,12 @@
 
 int mate_init(mate_instance *lib_ref, char *config)
 {
+  t_config *config = config_create("matelib/matelib.config");
+  char* IP = config_get_string_value(config, "IP");
+  char* PUERTO = config_get_string_value(config, "PUERTO");
+
   lib_ref->group_info = malloc(sizeof(mate_inner_structure));
+  lib_ref->group_info + sizeof(int) = generar_pid();
   return 0;
 }
 

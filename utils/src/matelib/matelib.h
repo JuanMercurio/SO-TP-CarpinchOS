@@ -7,19 +7,21 @@
 #include <unistd.h>
 #include <string.h>
 #include <semaphore.h>
+#include <commons/config.h>
+#include <commons/collections/list.h>
 
 //-------------------Type Definitions----------------------/
 
 typedef struct mate_inner_structure{
     uint32_t pid;
-    char* ip;
-    char* puerto;
+  //  char* ip;
+  //  char* puerto;
     sem_t* sem_instance;
     void* memory;
 } mate_inner_structure;
 
 typedef struct mate_instance {
-     mate_inner_structure *group_info; // deberia quedar el void*?
+    void *group_info; // deberia quedar el void*?
 } mate_instance;
 
 
