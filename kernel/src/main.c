@@ -7,7 +7,7 @@ int main(int argc, char *argv[])
    tests(argc, argv[1]);
 
    obtener_config();
-   administrar_clientes2(configuracion.IP, configuracion.PUERTO, (void *)receptor);
+   administrar_clientes(configuracion.IP, configuracion.PUERTO, (void *)receptor);
    inicializar_planificacion();
    inicializar_listas_sem_io();
 
@@ -37,7 +37,7 @@ void receptor(void *arg)
       switch (cod_op)
       {
 
-      case NUEVO_CARPINCHO:
+      case NUEVO_CARPINCHO: ;
          t_pcb *carpincho = recibir_pcb(cliente);
          if (registrar_carpincho(carpincho) != -1)
          {
@@ -53,7 +53,10 @@ void receptor(void *arg)
    }
 }
 
-void incializar_planificacion()
+int recibir_operacion(int cliente){}
+int recibir_pcb(int cliente){}
+
+void inicializar_planificacion()
 {
    iniciar_colas();
    iniciar_planificador_corto_plazo();
@@ -113,7 +116,7 @@ sem_kernel *buscar_semaforo(char *nombre, t_list *sems)
    sem_kernel *sem_buscado = malloc(sizeof(sem_kernel));
 
    bool nombre_semaforo(void* elemento){
-      return (((sem_kernel*)elemento)->id == nombre);
+      return true;//((sem_kernel*)elemento)->id == nombre;
    }
    //uso la inner function porque list_find requiere un void* como condicion
    sem_buscado = list_find(sems, nombre_semaforo);

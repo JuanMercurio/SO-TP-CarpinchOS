@@ -23,12 +23,12 @@ typedef struct{
     char* id;
     int val;
     int max_val;
-    t_queue bloqueados
+    t_queue* bloqueados;
 }sem_kernel;
 
 typedef struct{
     char* id;
-    int retardo
+    int retardo;
 }io_kernel;
 
 //   colas
@@ -83,5 +83,8 @@ void sem_kernel_destroy(char* nombre);
 
 void init_dispositivos_io();
 void call_io(char *nombre);
+
+
+void receptor(void*);
 
 #endif
