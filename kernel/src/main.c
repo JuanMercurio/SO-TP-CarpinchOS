@@ -9,6 +9,7 @@ int main(int argc, char *argv[])
    obtener_config();
    administrar_clientes2(configuracion.IP, configuracion.PUERTO, (void *)receptor);
    inicializar_planificacion();
+   inicializar_listas_sem_io();
 
    terminar_programa();
 
@@ -102,41 +103,71 @@ void enviar_ok()
 {
 }
 
+void inicializar_listas_sem_io(){
+   lista_io_kernel = list_create();
+   lista_sem_kernel = list_create();
+}
+
 sem_kernel *buscar_semaforo(char *nombre, t_list *sems)
 {
    sem_kernel *sem_buscado = malloc(sizeof(sem_kernel));
 
-   //inner function para buscar el semaforo con el nombre recibido
    bool nombre_semaforo(void* elemento){
       return (((sem_kernel*)elemento)->id == nombre);
    }
    //uso la inner function porque list_find requiere un void* como condicion
-   sem_buscado = list_find(sems, nombre);
+   sem_buscado = list_find(sems, nombre_semaforo);
    return sem_buscado;
 }
 
-void sem_wait(char *nombre)
+void sem_kernel_wait(char *nombre)
 {
    sem_kernel *sem = buscar_semaforo(nombre, lista_sem_kernel);
+   //agregar mutex{
    sem->val =-1;
+  
    //loguear
    if (sem->val < 1)
    {
       //bloquear proceso
    }
+   free(sem);
 }
 
-void sem_post(char *nombre)
+void sem_kernel_post(char *nombre) 
 {
    sem_kernel *sem = buscar_semaforo(nombre, lista_sem_kernel);
+   //agregar mutex
    sem->val = +1;
+
    //loguear
    if (sem->val == 0) //¿tiene que ser 0 o 1?
    { 
       //desloquear proceso
    }
+   free(sem);
 }
 
-void sem_init(char* nombre, int value){}
-void sem_destroy(char* nombre){}
+void sem_kernel_init(char* nombre, int value){
+   sem_kernel *nuevo_sem = malloc(sizeof(sem_kernel));
+   nuevo_sem->id=nombre;
+   nuevo_sem->max_val=value;
+   nuevo_sem->val=value;
+   nuevo_sem->bloqueados=queue_create();
+   list_add(lista_sem_kernel, nuevo_sem);
+   free(nuevo_sem);
+}
+
+void sem_kernel_destroy(char* nombre){
+   sem_kernel *sem = buscar_semaforo(nombre, lista_sem_kernel);
+   
+   bool nombre_semaforo(void* elemento){
+      return (((sem_kernel*)elemento)->id == nombre);
+   }
+
+   //revisar si está bien planteado
+   list_remove_by_condition(lista_sem_kernel, nombre_semaforo);
+}
+
 void init_dispositivos_io(){};
+void call_io(char *nombre){};
