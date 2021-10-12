@@ -9,6 +9,8 @@
 #include <semaphore.h>
 #include <commons/config.h>
 #include <commons/collections/list.h>
+#include <sys/socket.h>
+
 //-------------------Operations Codes For Messages---------/
 typedef enum{
     NEW_INSTANCE,

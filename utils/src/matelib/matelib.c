@@ -126,7 +126,7 @@ int mate_memwrite(mate_instance *lib_ref, void *origin, mate_pointer dest, int s
 uint32_t generar_pid(){ // bucar manera de generar pids sin que se repitan y sin hacer uso de variable globales
   return 1;
 }
-
+/* 
 //-------------------Messages Functions------------------//
 int crear_conexion(char *ip, char* puerto)		//puede ser optimizada?
 {
@@ -179,3 +179,4 @@ char* recibir_mensaje(int socket_cliente)
 	//log_info(logger, "Me llego el mensaje %s", buffer);
 	return buffer;
 }
+*/
