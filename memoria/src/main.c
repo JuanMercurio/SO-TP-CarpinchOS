@@ -6,36 +6,38 @@
 #include <utils/utils.h> 
 #include <conexiones/conexiones.h>
 #include <signal.h>
+#include <unistd.h>
 
 
 void handle_sigint(int sig){
-   printf("HAY QUE CODEAR ESTE COMPORTAMIENTO, IMPRIMIR METRICAS Y TERMINAR\n");
+   printf("HAY QUE CODEAR ESTE COMPORTAMIENTO, IMPRIMIR METRICAS Y TERMINAR signal: %d\n", sig);
    //terminar_programa();
+}
+void handle_sigusr2(int sig){
+   printf("LIMPIAR TLB signal: %d\n", sig);
 }
 
 void  handle_sigusr1(int sig){
-   printf("HACER DUMP DE TLB\n");
+   printf("HACER DUMP DE TLB signal: %d\n", sig);
 }
 
-void handle_sigusr2(int sig){
-   printf("LIMPIAR TLB\n");
-}
+
 
 int main(int argc, char* argv[]) {
 
-   struct sigaction sa2;
-   struct sigaction sa1;
+   struct sigaction sa2 = {0};
+   struct sigaction sa1 = {0};
 
    struct sigaction sa;
    sa.sa_handler = &handle_sigint;
    sa.sa_flags = SA_RESTART;
    sigaction(SIGINT, &sa, NULL);
 
-  // sa1.sa_flags = SA_RESTART;
+   sa1.sa_flags = SA_RESTART;
    sa1.sa_handler = &handle_sigusr1;
    sigaction(SIGUSR1, &sa1, NULL);
 
-   //sa2.sa_flags = SA_RESTART;
+   sa2.sa_flags = SA_RESTART;
    sa2.sa_handler = &handle_sigusr2;
    sigaction(SIGUSR2, &sa2, NULL);
    
