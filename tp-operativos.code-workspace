@@ -21,7 +21,8 @@
       "utils.h": "c",
       "main.h": "c",
       "matelib.h": "c",
-      "unistd.h": "c"
+      "unistd.h": "c",
+      "config.h": "c"
     }
   }
 }

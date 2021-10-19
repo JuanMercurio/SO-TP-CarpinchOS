@@ -132,7 +132,7 @@ void sem_kernel_wait(char *nombre)
    sem->val =-1;
   
    //loguear
-   if (sem->val < 1)
+   if (sem->val < 0)
    {
       //bloquear proceso
    }
@@ -146,9 +146,12 @@ void sem_kernel_post(char *nombre)
    sem->val = +1;
 
    //loguear
-   if (sem->val == 0) //¿tiene que ser 0 o 1?
+   if (sem->val >= 0)
    { 
-      //desloquear proceso
+      if(queue_size(sem->bloqueados)>0)
+      {
+      //desbloquear proceso
+      }
    }
    free(sem);
 }
@@ -166,13 +169,60 @@ void sem_kernel_init(char* nombre, int value){
 void sem_kernel_destroy(char* nombre){
    sem_kernel *sem = buscar_semaforo(nombre, lista_sem_kernel);
    
+   int bloqueados = queue_size(sem->bloqueados);
+   if(bloqueados>0){
+      for(int i=0;bloqueados; i++){
+         //desbloquear proceso
+      }
+   }
+
    bool nombre_semaforo(void* elemento){
-      return (((sem_kernel*)elemento)->id == nombre);
+      return ((sem_kernel*)elemento)->id == nombre;
    }
 
    //revisar si está bien planteado
    list_remove_by_condition(lista_sem_kernel, nombre_semaforo);
 }
 
-void init_dispositivos_io(){};
-void call_io(char *nombre){};
+io_kernel *buscar_io(char *nombre, t_list *ios)
+{
+   io_kernel *io_buscada = malloc(sizeof(io_kernel));
+
+   bool nombre_io(void* elemento){
+      return ((io_kernel*)elemento)->id == nombre;
+   }
+   //uso la inner function porque list_find requiere un void* como condicion
+   io_buscada = list_find(ios, nombre_io);
+   return io_buscada;
+}
+
+void init_dispositivos_io(){
+   int i=0;
+   while (configuracion.DISPOSITIVOS_IO[i]!=NULL)
+   {
+      io_kernel* nueva_io = malloc(sizeof(io_kernel));
+
+      nueva_io->id = (char*)configuracion.DISPOSITIVOS_IO[i];
+      nueva_io->retardo = atoi((char*)configuracion.DURACIONES_IO[i]);
+      nueva_io->bloqueados=queue_create();
+      list_add(lista_io_kernel, nueva_io);
+      i++;
+   }
+};
+
+void call_io(char *nombre){
+   io_kernel *io = buscar_io(nombre, lista_io_kernel);
+
+   if(queue_size(io->bloqueados)==0){
+      //bloquear proceso por tiempo retardo
+   }
+   else
+   {
+      //agrego el carpincho a la lista de bloqueados
+      //queue_push(io->bloqueados, CARPINCHO);
+   }
+};
+
+void bloquear_proceso_io(){
+   //bloquea el proceso por el tiempo de io
+}

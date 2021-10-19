@@ -20,6 +20,11 @@ typedef enum{
     INIT_SEMAFORO,
     SEM_WAIT,
     SEM_POST,
+    SEM_DESTROY,
+    MEMALLOC,
+    MEMFREE,
+    MEMREAD,
+    MEMWRITE
 }cod_op;
 
 typedef struct{
@@ -32,6 +37,7 @@ typedef struct{
 typedef struct{
     char* id;
     int retardo;
+    t_queue* bloqueados;
 }io_kernel;
 
 //   colas
@@ -84,8 +90,10 @@ void sem_kernel_post(char *nombre);
 void sem_kernel_init(char* nombre, int value);
 void sem_kernel_destroy(char* nombre);
 
+io_kernel* buscar_io(char *nombre, t_list *ios);
 void init_dispositivos_io();
 void call_io(char *nombre);
+void bloquear_proceso_io();
 
 
 void receptor(void*);
