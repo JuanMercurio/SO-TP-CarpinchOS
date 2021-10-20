@@ -6,13 +6,16 @@
 typedef struct {
    char* IP;
    char* PUERTO;
-   char* TIPO_ASIGNACION;
-   char* ALGORITMO_REEMPLAZO_MMU;
-   char* ALGORITMO_REEMPLAZO_TLB;
    int TAMANIO; 
+   int TAMANIO_PAGINAS;
+   char* ALGORITMO_REEMPLAZO_MMU;
+   char* TIPO_ASIGNACION;
+   int MARCOS_POR_CARPINCHO;
    int CANTIDAD_ENTRADAS_TLB;
+   char* ALGORITMO_REEMPLAZO_TLB;
    int RETARDO_ACIERTO_TLB;
    int RETARDO_FALLO_TLB;
+   char* PATH_DUMP_TLB;
 }t_cfg;
 
 t_cfg configuracion;
