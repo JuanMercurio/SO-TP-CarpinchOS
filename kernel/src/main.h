@@ -61,6 +61,8 @@ sem_t *mutex_cola_ready;
 sem_t *mutex_cola_suspendido;
 sem_t *mutex_cola_suspendido;
 sem_t *mutex_lista_ejecutando;
+sem_t *mutex_lista_sem_kernel;
+sem_t *mutex_lista_io_kernel;
 
 
 /*
@@ -85,15 +87,15 @@ void crear_estructuras(t_pcb *carpincho);
 void inicializar_listas_sem_io();
 
 sem_kernel* buscar_semaforo(char *nombre, t_list *sems);
-void sem_kernel_wait(char *nombre);
+void sem_kernel_wait(char *nombre, t_pcb *carpincho);
 void sem_kernel_post(char *nombre);
 void sem_kernel_init(char* nombre, int value);
 void sem_kernel_destroy(char* nombre);
 
 io_kernel* buscar_io(char *nombre, t_list *ios);
 void init_dispositivos_io();
-void call_io(char *nombre);
-void bloquear_proceso_io();
+void call_io(char *nombre, t_pcb *carpincho);
+void bloquear_proceso_io(t_pcb *carpincho, io_kernel *io);
 
 
 void receptor(void*);
