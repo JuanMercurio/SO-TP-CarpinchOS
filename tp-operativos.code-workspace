@@ -22,11 +22,15 @@
       "main.h": "c",
       "matelib.h": "c",
       "unistd.h": "c",
+<<<<<<< HEAD
       "signal.h": "c",
       "time.h": "c",
       "types.h": "c",
       "queue.h": "c",
       "semaphore.h": "c"
+=======
+      "config.h": "c"
+>>>>>>> 92200a3603b872119765763b0857a560eff42bad
     }
   }
 }

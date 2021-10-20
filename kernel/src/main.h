@@ -36,6 +36,11 @@ typedef enum{
     INIT_SEMAFORO,
     SEM_WAIT,
     SEM_POST,
+    SEM_DESTROY,
+    MEMALLOC,
+    MEMFREE,
+    MEMREAD,
+    MEMWRITE
 }cod_op;
 
 typedef struct{
@@ -48,6 +53,7 @@ typedef struct{
 typedef struct{
     char* id;
     int retardo;
+    t_queue* bloqueados;
 }io_kernel;
 
 //   colas
@@ -74,9 +80,14 @@ sem_t *mutex_cola_ready;
 sem_t *mutex_cola_bloqueado_suspendido;
 sem_t *mutex_cola_listo_suspendido;
 sem_t *mutex_lista_ejecutando;
+
 sem_t *mutex_cola_finalizados;
 sem_t *mutex_lista_oredenada_por_algoritmo;
 sem_t *controlador_multiprogramacion;
+
+sem_t *mutex_lista_sem_kernel;
+sem_t *mutex_lista_io_kernel;
+
 
 
 /*
@@ -101,13 +112,15 @@ void crear_estructuras(t_pcb *carpincho);
 void inicializar_listas_sem_io();
 
 sem_kernel* buscar_semaforo(char *nombre, t_list *sems);
-void sem_kernel_wait(char *nombre);
+void sem_kernel_wait(char *nombre, t_pcb *carpincho);
 void sem_kernel_post(char *nombre);
 void sem_kernel_init(char* nombre, int value);
 void sem_kernel_destroy(char* nombre);
 
+io_kernel* buscar_io(char *nombre, t_list *ios);
 void init_dispositivos_io();
-void call_io(char *nombre);
+void call_io(char *nombre, t_pcb *carpincho);
+void bloquear_proceso_io(t_pcb *carpincho, io_kernel *io);
 
 
 void receptor(void*);

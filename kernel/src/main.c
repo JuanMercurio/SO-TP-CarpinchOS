@@ -257,14 +257,14 @@ sem_kernel *buscar_semaforo(char *nombre, t_list *sems)
    return sem_buscado;
 }
 
-void sem_kernel_wait(char *nombre)
+void sem_kernel_wait(char *nombre, t_pcb *carpincho)
 {
    sem_kernel *sem = buscar_semaforo(nombre, lista_sem_kernel);
    //agregar mutex{
    sem->val =-1;
   
-   //loguear
-   if (sem->val < 1)
+   //loguear-mutex_semaforos
+   if (sem->val < 0)
    {
       //bloquear proceso
    }
@@ -274,14 +274,18 @@ void sem_kernel_wait(char *nombre)
 void sem_kernel_post(char *nombre) 
 {
    sem_kernel *sem = buscar_semaforo(nombre, lista_sem_kernel);
-   //agregar mutex
+   sem_wait(&mutex_lista_sem_kernel);
    sem->val = +1;
 
    //loguear
-   if (sem->val == 0) //¿tiene que ser 0 o 1?
+   if (sem->val >= 0)
    { 
-      //desloquear proceso
+      if(queue_size(sem->bloqueados)>0)
+      {
+      //desbloquear proceso
+      }
    }
+   sem_post(&mutex_lista_sem_kernel);
    free(sem);
 }
 
@@ -291,20 +295,80 @@ void sem_kernel_init(char* nombre, int value){
    nuevo_sem->max_val=value;
    nuevo_sem->val=value;
    nuevo_sem->bloqueados=queue_create();
-   list_add(lista_sem_kernel, nuevo_sem);
+   list_add(lista_sem_kernel, nuevo_sem); //hace falta mutex acá?
    free(nuevo_sem);
 }
 
 void sem_kernel_destroy(char* nombre){
    sem_kernel *sem = buscar_semaforo(nombre, lista_sem_kernel);
    
+   sem_wait(&mutex_lista_sem_kernel);
+   int bloqueados = queue_size(sem->bloqueados);
+   if(bloqueados>0){
+      for(int i=0;bloqueados; i++){
+         //desbloquear proceso
+      }
+   }
+   sem_post(&mutex_lista_sem_kernel);
+
    bool nombre_semaforo(void* elemento){
-      return (((sem_kernel*)elemento)->id == nombre);
+      return ((sem_kernel*)elemento)->id == nombre;
    }
 
    //revisar si está bien planteado
    list_remove_by_condition(lista_sem_kernel, nombre_semaforo);
 }
 
-void init_dispositivos_io(){};
-void call_io(char *nombre){};
+io_kernel *buscar_io(char *nombre, t_list *ios)
+{
+   io_kernel *io_buscada = malloc(sizeof(io_kernel));
+
+   bool nombre_io(void* elemento){
+      return ((io_kernel*)elemento)->id == nombre;
+   }
+   //uso la inner function porque list_find requiere un void* como condicion
+   io_buscada = list_find(ios, nombre_io);
+   return io_buscada;
+}
+
+void init_dispositivos_io(){
+   int i=0;
+   while (configuracion.DISPOSITIVOS_IO[i]!=NULL)
+   {
+      io_kernel *nueva_io = malloc(sizeof(io_kernel));
+
+      nueva_io->id = (char*)configuracion.DISPOSITIVOS_IO[i];
+      nueva_io->retardo = atoi((char*)configuracion.DURACIONES_IO[i]);
+      nueva_io->bloqueados=queue_create();
+      list_add(lista_io_kernel, nueva_io);
+      i++;
+      free(nueva_io); //va acá o afuera del while?
+   }
+}
+
+void call_io(char *nombre, t_pcb *carpincho){
+   io_kernel *io = buscar_io(nombre, lista_io_kernel);
+
+   sem_wait(&mutex_lista_io_kernel);
+   if(queue_size(io->bloqueados)==0){
+      queue_push(io->bloqueados, carpincho);
+      bloquear_proceso_io(carpincho, io->retardo);
+   }
+   else {
+      queue_push(io->bloqueados, carpincho);
+   }
+   sem_post(&mutex_lista_io_kernel);
+   free(io);
+}
+
+void bloquear_proceso_io(t_pcb *carpincho, io_kernel *io){
+   //pasar el carpincho a la lista de bloqueados del planificador
+   
+   usleep(io->retardo);
+
+   //desbloquear proceso en el planificador y de la lista de io
+   
+   if(queue_size(io->bloqueados)>0){
+      //bloquear_proceso_io() para el siguiente en la lista de bloqueados
+   }
+}

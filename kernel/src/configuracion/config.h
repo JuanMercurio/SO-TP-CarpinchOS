@@ -10,13 +10,17 @@ typedef struct {
    char* IP_MEMORIA;
    char* PUERTO_MEMORIA;
    char* ALGORITMO_PLANIFICACION; 
-   char* DISPOSITIVOS_IO;
-   char* DURACIONES_IO;
+   char** DISPOSITIVOS_IO;
+   char** DURACIONES_IO;
    int RETARDO_CPU;
    int GRADO_MULTIPROGRAMACION;
    int GRADO_MULTIPROCESAMIENTO;
+<<<<<<< HEAD
    int ALPHA;
    int ESTIMACION_INICIAL;
+=======
+   int TIEMPO_DEADLOCK;
+>>>>>>> 92200a3603b872119765763b0857a560eff42bad
 }t_cfg;
 
 t_cfg configuracion;
