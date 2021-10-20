@@ -3,15 +3,31 @@
 
 #include "tests/tests.h"
 #include "configuracion/config.h"
-
+#include <pthread.h>
 #include <utils/utils.h> 
 #include <conexiones/conexiones.h>
 #include <semaphore.h>
 #include <commons/collections/queue.h>
 #include <commons/collections/list.h>
+#include <commons/temporal.h>
+#include <time.h>
 // type struct
+struct timeval *tiempito;
+struct tm *aux;
 typedef struct{
-    u_int32_t pid;
+  //  double estimacion_anterior;
+    double tiempo_ejecutado;
+    double estimacion; // en  hrrn el tiepo de servicio es la estimacion para la proximaejecucion
+    double tiempo_de_espera;
+    char* time_stamp_inicio;
+    char* time_stamp_fin;
+}tiempo_t;
+
+typedef struct{
+    int pid;
+    int fd_cliente;
+    tiempo_t tiempo;
+    char estado;
 }t_pcb;
 
 typedef enum{
@@ -39,10 +55,12 @@ t_queue *cola_new;
 t_queue *cola_ready;
 t_queue *suspendido_bloqueado;
 t_queue *suspendido_listo;
+t_queue *cola_finalizados;
 // listas
 t_list lista_ejecutando;
 t_list *lista_sem_kernel;
 t_list *lista_io_kernel;
+t_list *lista_ordenada_por_algoritmo;
 
 // semaforos
 sem_t *cola_new_con_elementos;
@@ -50,11 +68,15 @@ sem_t *cola_ready_con_elementos;
 sem_t *cola_suspendido_bloquedo_con_elementos;
 sem_t *cola_suspendido_listo_con_elementos;
 sem_t *lista_ejecutando_con_elementos;
+sem_t *cola_finalizados_con elementos;
 sem_t *mutex_cola_new;
 sem_t *mutex_cola_ready;
-sem_t *mutex_cola_suspendido;
-sem_t *mutex_cola_suspendido;
+sem_t *mutex_cola_bloqueado_suspendido;
+sem_t *mutex_cola_listo_suspendido;
 sem_t *mutex_lista_ejecutando;
+sem_t *mutex_cola_finalizados;
+sem_t *mutex_lista_oredenada_por_algoritmo;
+sem_t *controlador_multiprogramacion;
 
 
 /*

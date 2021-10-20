@@ -9,7 +9,10 @@ void obtener_config(){
     configuracion.DISPOSITIVOS_IO = config_get_string_value(config, "DISPOSITIVOS_IO");
     configuracion.DURACIONES_IO = config_get_string_value(config, "DURACIONES_IO");
     configuracion.PUERTO_MEMORIA = config_get_string_value(config, "PUERTO_MEMORIA");
-    configuracion.RETARDO_CPU = config_get_int_value(config, "RETARDO_CPU");
+
+    configuracion.RETARDO_CPU =  config_get_int_value(config, "RETARDO_CPU");
     configuracion.GRADO_MULTIPROGRAMACION = config_get_int_value(config, "GRADO_MULTIPROGRAMACION");
     configuracion.GRADO_MULTIPROCESAMIENTO = config_get_int_value(config, "GRADO_MULTIPROCESAMIENTO");
+    configuracion.ALPHA = config_get_double_value(config, "ALPHA");
+    configuracion.ESTIMACION_INICIAL = config_get_int_double(config, "ESTIMACION_INICIAL");
 }

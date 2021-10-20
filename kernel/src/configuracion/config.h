@@ -15,6 +15,8 @@ typedef struct {
    int RETARDO_CPU;
    int GRADO_MULTIPROGRAMACION;
    int GRADO_MULTIPROCESAMIENTO;
+   int ALPHA;
+   int ESTIMACION_INICIAL;
 }t_cfg;
 
 t_cfg configuracion;

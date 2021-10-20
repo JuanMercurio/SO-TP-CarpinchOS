@@ -44,8 +44,6 @@ typedef char *mate_sem_name;
 
 typedef int32_t mate_pointer;
 
-// TODO: Docstrings
-
 //------------------General Functions---------------------/
 int mate_init(mate_instance *lib_ref, char *config);
 
