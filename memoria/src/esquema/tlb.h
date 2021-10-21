@@ -9,11 +9,11 @@
 t_list * tlb;
 
 /* Registros de la tlb */
-typedef struct t_tlb{
+typedef struct tlb_t{
     int pid;
     int pagina;
     int marco;
-}t_tlb;
+}tlb_t;
 
 /*
     @NAME:  buscar_en_tlb

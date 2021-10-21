@@ -13,6 +13,14 @@
 #include <commons/collections/list.h>
 
 /* Funciones */
-void helloWorld();
+
+/*
+    @NAME:  crearID
+    @DESC:  Retorna un id unico segun n
+    @ARGS:  n - Es el puntero a una variable globlal
+                usada para id de algo, esta variable
+                debe estar inicializada en 0
+ */
+int crearID(int *n);
 
 #endif
