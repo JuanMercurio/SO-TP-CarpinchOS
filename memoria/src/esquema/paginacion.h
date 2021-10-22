@@ -15,6 +15,7 @@ int* marcos;
 typedef struct tabla_paginas{
     int pid;
     t_list* tabla_pag;
+    t_list* allocs;
 }tabla_paginas;
 
 /* Registros de las tablas de paginas */

@@ -4,6 +4,7 @@
 #include <commons/collections/list.h>
 
 #define TLB_MISS -1
+#define EMPTY 0 
 
 /* TLB */
 t_list * tlb;
