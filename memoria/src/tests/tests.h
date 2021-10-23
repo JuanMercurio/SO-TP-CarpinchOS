@@ -16,6 +16,13 @@ int run_tests();
  */
 void tests(int arg, char* argv);
 
+/*
+    @NAME: test_inicio_tlb
+    @DESC: Test para ver si la tlb al iniciarse lo hace correctamente
+ */
+void test_inicio_tlb();
+
 void suma();
 
+void test_tlb_miss();
 #endif

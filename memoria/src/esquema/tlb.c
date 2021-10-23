@@ -1,4 +1,21 @@
 #include "tlb.h"
+#include "../configuracion/config.h"
+
+#include <stdlib.h>
+#include <stdio.h>
+
+void iniciar_tlb(){
+
+    tlb = list_create();
+
+    for(int i=0; i<configuracion.CANTIDAD_ENTRADAS_TLB; i++){ 
+        tlb_t* registro = malloc(sizeof(tlb_t));
+        registro->marco = EMPTY;
+        registro->pid = EMPTY;
+        registro->pagina = EMPTY;
+        list_add(tlb, (void*)registro);
+    }
+}
 
 int buscar_en_tlb(int pid, int pagina){
 

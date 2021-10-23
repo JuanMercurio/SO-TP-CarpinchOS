@@ -13,11 +13,12 @@ int main(int argc, char* argv[]) {
    tests(argc, argv[1]);    
    
    obtener_config();
+
    iniciar_signals();
    iniciar_paginacion();
+   iniciar_tlb();
 
    administrar_clientes(configuracion.IP, configuracion.PUERTO, &atender_cliente);
-
 
    terminar_programa();
 
