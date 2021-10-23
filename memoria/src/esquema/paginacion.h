@@ -15,13 +15,14 @@ int* marcos;
 typedef struct tabla_paginas{
     int pid;
     t_list* tabla_pag;
-    t_list* allocs;
 }tabla_paginas;
 
 /* Registros de las tablas de paginas */
 typedef struct t_pag{
     int marco;
-    int en_memoria;
+    int presente;
+    int modificado;
+    int algoritmo;
 }t_pag;
 
 /*

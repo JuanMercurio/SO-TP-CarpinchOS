@@ -1,5 +1,5 @@
-#ifndef _FUNCIONES_ASIGINACION_
-#define _FUNCIONES_ASIGNACION_
+#ifndef _OPERACIONES_MEMORIA_
+#define _OPERACIONES_MEMORIA_
 
 #include <stdint.h>
 #include <commons/collections/list.h>

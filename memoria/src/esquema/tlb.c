@@ -28,7 +28,7 @@ int buscar_en_tlb(int pid, int pagina){
     for(int i=0; i<list_size(tlb); i++){
 
         tlb_t *reg = list_get(tlb, i);
-        if(reg->pid== EMPTY || reg->pid!=pid) continue;
+        if(reg->pid!=pid) continue;
         if(reg->pagina==pagina) return reg->marco;
     }
 

@@ -1,4 +1,4 @@
-#include "asignacion.h"
+#include "operaciones.h"
 
 int  memalloc(int tamanio){
 
