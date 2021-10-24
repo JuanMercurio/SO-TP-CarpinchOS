@@ -18,9 +18,15 @@
     @NAME:  crearID
     @DESC:  Retorna un id unico segun n
     @ARGS:  n - Es el puntero a una variable globlal
-                usada para id de algo, esta variable
-                debe estar inicializada en 0
+                usada para id de algo
  */
 int crearID(int *n);
+
+/*
+    @NAME:  suma_atomica
+    @DESC:  Retorna el valor previa de n 
+    @ARGS:  n - Es el puntero a una variable globlal
+ */
+int suma_atomica(int *n);
 
 #endif

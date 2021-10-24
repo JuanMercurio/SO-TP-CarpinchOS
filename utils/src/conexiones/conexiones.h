@@ -1,20 +1,6 @@
 #ifndef _CONEXIONES_
 #define _CONEXIONES_
 
-typedef enum{
-    MATE_INIT,
-    MATE_CLOSE,
-    MATE_SEM_INIT,
-    MATE_SEM_POST,
-    MATE_SEM_WAIT,
-    MATE_SEM_DESTROY,
-    MATE_CALL_IO,
-    MATE_MEMALLOC,
-    MATE_MEMFREE,
-    MATE_MEMREAD,
-    MATE_MEMWRITE,
-}cod_op;
-
 /* 
     @NAME: crear_conexion
     @DESC: Se conecta a un server con IP y PUERTO

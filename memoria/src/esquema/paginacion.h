@@ -2,8 +2,15 @@
 #define _ESQUEMA_PAGINACION_
 
 #include <commons/collections/list.h>
+#include <pthread.h>
 
-void* ram;
+typedef struct memoria_t {
+    void* memoria;
+    pthread_mutex_t* mutex_mem;
+}memoria_t;
+
+/* MEMORIA PRINCIPAL */
+memoria_t ram;
 
 /* Lista con todas las tablas de paginas de los procesos */
 t_list* tablas;
@@ -34,7 +41,7 @@ void iniciar_paginacion();
 
 /*
     @NAME:  init_ram
-    @DESC:  aloca la memoria principal
+    @DESC:  aloca la memoria principal y inicia el mutex
  */
 void init_ram();
 

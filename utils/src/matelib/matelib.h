@@ -12,12 +12,18 @@
 #include <sys/socket.h>
 
 //-------------------Operations Codes For Messages---------/
+
 typedef enum{
     NEW_INSTANCE,
     IO,
     INIT_SEMAFORO,
     SEM_WAIT,
     SEM_POST,
+    SEM_DESTROY,
+    MEMALLOC,
+    MEMFREE,
+    MEMREAD,
+    MEMWRITE
 }cod_op;
 
 //-------------------Type Definitions----------------------/

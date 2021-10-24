@@ -1,6 +1,5 @@
 #include "paginacion.h"
 #include "../configuracion/config.h"
-
 #include <stdlib.h>
 #include <stdio.h>
 
@@ -11,7 +10,8 @@ void iniciar_paginacion(){
 }
 
 void init_ram(){
-    ram = malloc(configuracion.TAMANIO);
+    ram.memoria = malloc(configuracion.TAMANIO);
+    pthread_mutex_init(ram.mutex_mem, NULL);
 }
 
 void init_bitmap_frames(){

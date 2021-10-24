@@ -1,6 +1,6 @@
 #include "operaciones.h"
 
-int  memalloc(int tamanio){
+int  memalloc(int tamanio, int pid){
 
     /* Asegurarnos que entra en memoria:
             1) Buscamos si hay un alloc free en 
