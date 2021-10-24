@@ -8,6 +8,25 @@
 #include <sys/socket.h>
 #include <pthread.h>
 
+void administrar_clientes(char* IP, char* PUERTO, void (*funcion)(void*)){
+
+  int servidor = iniciar_servidor(IP, PUERTO);
+
+   pthread_attr_t detached;
+   pthread_attr_init(&detached);
+   pthread_attr_setdetachstate(&detached, PTHREAD_CREATE_DETACHED);
+
+   /* Revisar Condicion para terminar este while */
+   while(1){
+      pthread_t hilo;
+      int *cliente = malloc(sizeof(int));
+      *cliente= aceptar_cliente(servidor);
+      pthread_create(&hilo, &detached, (void*)funcion,(void*) cliente);
+   }
+
+   pthread_attr_destroy(&detached); 
+}
+
 int crear_conexion(char *ip, char* puerto){		
 
 	struct addrinfo hints, *server_info, *p;
@@ -94,22 +113,25 @@ int aceptar_cliente(int socket_servidor)
 	return socket_cliente;
 }
 
+int recibir_operacion(int socket_cliente) {
+	int cod_op;
+	if(recv(socket_cliente, &cod_op, sizeof(int), MSG_WAITALL) != 0)
+		return cod_op;
+	else
+	{
+		close(socket_cliente);
+		return -1;
+	}
+}
 
-void administrar_clientes(char* IP, char* PUERTO, void (*funcion)(void*)){
+int recibir_tamanio(int socket_cliente) {
+    int size;
+	recv(socket_cliente, &size, sizeof(int), MSG_WAITALL);
+    return size;
+}
 
-  int servidor = iniciar_servidor(IP, PUERTO);
-
-   pthread_attr_t detached;
-   pthread_attr_init(&detached);
-   pthread_attr_setdetachstate(&detached, PTHREAD_CREATE_DETACHED);
-
-   /* Revisar Condicion para terminar este while */
-   while(1){
-      pthread_t hilo;
-      int *cliente = malloc(sizeof(int));
-      *cliente= aceptar_cliente(servidor);
-      pthread_create(&hilo, &detached, (void*)funcion,(void*) cliente);
-   }
-
-   pthread_attr_destroy(&detached); 
+void* recibir_buffer(int size, int socket_cliente) {
+	void * buffer = malloc(size);
+	recv(socket_cliente, buffer, size, MSG_WAITALL);
+	return buffer;
 }

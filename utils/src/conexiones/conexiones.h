@@ -1,6 +1,20 @@
 #ifndef _CONEXIONES_
 #define _CONEXIONES_
 
+typedef enum{
+    MATE_INIT,
+    MATE_CLOSE,
+    MATE_SEM_INIT,
+    MATE_SEM_POST,
+    MATE_SEM_WAIT,
+    MATE_SEM_DESTROY,
+    MATE_CALL_IO,
+    MATE_MEMALLOC,
+    MATE_MEMFREE,
+    MATE_MEMREAD,
+    MATE_MEMWRITE,
+}cod_op;
+
 /* 
     @NAME: crear_conexion
     @DESC: Se conecta a un server con IP y PUERTO
@@ -30,5 +44,24 @@ int aceptar_cliente(int socket_servidor);
            funcion - puntero a la funcion a ejecutar en un hilo cuando se conecta un cliente | El hilo recibe el socket del cliente
  */
 void administrar_clientes(char* IP, char* PUERTO, void (*funcion)(void*));
+
+
+/* 
+    @NAME:  recibir_operacion
+    @DESC:  recibe la operacion que quiere ejecutar el cliente
+ */
+int recibir_operacion(int socket_cliente);
+
+/* 
+    @NAME:  recibir_tamanio
+    @DESC:  recibe el tamanio del siguiente buffer
+ */
+int recibir_tamanio(int socket_cliente);
+
+/* 
+    @NAME: recibir_buffer
+    @DESC: recibe un buffer dado un tamanio y el socket 
+ */
+void* recibir_buffer(int size, int socket_cliente);
 
 #endif

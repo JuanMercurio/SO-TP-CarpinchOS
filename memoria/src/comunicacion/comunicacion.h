@@ -1,0 +1,5 @@
+#ifndef COMUNIACION_MEMORIA
+#define COMUNIACION_MEMORIA
+
+
+#endif

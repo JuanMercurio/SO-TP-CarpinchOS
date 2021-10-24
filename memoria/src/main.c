@@ -3,6 +3,7 @@
 #include "configuracion/config.h"
 #include "esquema/tlb.h"
 #include "esquema/paginacion.h"
+#include "procesos/clientes.h"
 
 #include <utils/utils.h> 
 #include <conexiones/conexiones.h>
@@ -18,7 +19,7 @@ int main(int argc, char* argv[]) {
    iniciar_paginacion();
    iniciar_tlb();
 
-   administrar_clientes(configuracion.IP, configuracion.PUERTO, &atender_cliente);
+   administrar_clientes(configuracion.IP, configuracion.PUERTO, (void*)&atender_proceso);
 
    terminar_programa();
 
