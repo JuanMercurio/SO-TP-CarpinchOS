@@ -7,31 +7,39 @@
 /* Estructura Memoria */
 typedef struct memoria_t {
     void* memoria;
-    pthread_mutex_t mutex_mem;
+    pthread_mutex_t mutex;
 }memoria_t;
 
 /* MEMORIA PRINCIPAL */
 memoria_t ram;
 
-/* Lista con todas las tablas de paginas de los procesos */
-t_list* tablas;
+typedef struct tablas_t{
+    t_list* lista;
+    pthread_mutex_t mutex;
+}tablas_t;
+
+/* Lista de tablas de paginas y su mutex */
+tablas_t tablas;
 
 /* Bitmap de marcos */
 int* marcos; 
 
 /* Esructura para tablas */
-typedef struct tabla_paginas{
+typedef struct tab_pags{
     int pid;
     t_list* tabla_pag;
-}tabla_paginas;
+}tab_pags;
 
 /* Registros de las tablas de paginas */
-typedef struct t_pag{
+typedef struct pag_t{
     int marco;
     int presente;
     int modificado;
     int algoritmo;
-}t_pag;
+}pag_t;
+
+/* Varibale para generar los id en memoria */
+int ids_memoria;
 
 /*
     @NAME:  iniciar_paginacion
@@ -51,5 +59,14 @@ void init_ram();
     @DESC:  iniciar el bitmap de frames de la memoria fisica
  */
 void init_bitmap_frames();
+
+/*
+    @NAME:  add_new_page_table
+    @DESC:  agrega un tab_pag* a la lista de todos ellos 
+            Es thread safe
+ */
+void add_new_page_table(tab_pags*);
+
+tab_pags* buscar_page_table(int pid);
 
 #endif

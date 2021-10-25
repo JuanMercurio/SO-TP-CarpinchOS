@@ -1,4 +1,5 @@
 #include "clientes.h"
+#include "../esquema/paginacion.h"
 
 #include <matelib/matelib.h>
 #include <conexiones/conexiones.h>
@@ -14,8 +15,6 @@ void atender_proceso(void* arg){
     ejecutar_proceso(cliente);
 }
 
-
-
 void ejecutar_proceso(int cliente) {
 
     while(1) //TODO: feo while
@@ -24,7 +23,7 @@ void ejecutar_proceso(int cliente) {
         switch (operacion)
         {
         case NEW_INSTANCE:
-            // iniciar_proceso(cliente);
+            iniciar_proceso(cliente);
             break;
         
         case MEMALLOC:
@@ -45,11 +44,15 @@ void ejecutar_proceso(int cliente) {
     }
 }
 
-// void iniciar_proceso(int cliente){
-//     // checkear si puede iniciar
-//     // si no puede ser iniciado: pthread_exit(0)
-//     int pid = suma_atomica(&id_memoria);
-//     mate_instance* meta_proceso =  recibir_instancia(cliente);
-//     // mate_instance.pid = pid;
+void iniciar_proceso(int cliente){
+    // checkear si puede iniciar
+    // si no puede ser iniciado: pthread_exit(0)
+    int pid = crearID(&ids_memoria);
+    //recibir_instancia();
+    tab_pags* tabla = malloc(sizeof(tab_pags));
+    tabla->pid = pid;
+    tabla->tabla_pag = list_create();
 
-// }
+    add_new_page_table(tabla);
+    // enviar_instancia();
+ }

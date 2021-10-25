@@ -28,7 +28,8 @@ int aceptar_cliente(int socket_servidor);
     @DESC: Funciones que administran los hilos que se conectan a un modulo servidor
     @ARGS: IP      - ip del seridor a crear
            PUERTO  - puerto del servidor a crear
-           funcion - puntero a la funcion a ejecutar en un hilo cuando se conecta un cliente | El hilo recibe el socket del cliente
+           funcion - puntero a la funcion a ejecutar en un hilo cuando se conecta un cliente
+                     El hilo recibe el socket del cliente
  */
 void administrar_clientes(char* IP, char* PUERTO, void (*funcion)(void*));
 

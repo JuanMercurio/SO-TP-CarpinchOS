@@ -1,9 +1,6 @@
 #ifndef _COMPORTAMIENTO_CLIENTES_
 #define _COMPORTAMIENTO_CLIENTES_
 
-// int id_memoria = 1;
-
-
 /*
     @NAME:  atender_proceso
     @DESC:  hilo que atiene a los procesos que se conectan
