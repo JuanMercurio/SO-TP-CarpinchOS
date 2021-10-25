@@ -24,5 +24,6 @@ void test_inicio_tlb();
 
 void suma();
 
+void test_mensaje_serializado();
 void test_tlb_miss();
 #endif

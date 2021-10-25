@@ -4,9 +4,10 @@
 #include <commons/collections/list.h>
 #include <pthread.h>
 
+/* Estructura Memoria */
 typedef struct memoria_t {
     void* memoria;
-    pthread_mutex_t* mutex_mem;
+    pthread_mutex_t mutex_mem;
 }memoria_t;
 
 /* MEMORIA PRINCIPAL */

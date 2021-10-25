@@ -1,6 +1,7 @@
 #ifndef _CONEXIONES_
 #define _CONEXIONES_
 
+
 /* 
     @NAME: crear_conexion
     @DESC: Se conecta a un server con IP y PUERTO
@@ -31,6 +32,17 @@ int aceptar_cliente(int socket_servidor);
  */
 void administrar_clientes(char* IP, char* PUERTO, void (*funcion)(void*));
 
+/* 
+    @NAME:  handshake
+    @DESC:  dado un cliente el server le manda el modulo que es 
+ */
+void handshake(int cliente, char* modulo);
+
+/* 
+    @NAME:  enviar_mensaje
+    @DESC:  enviar a un cliente un mensaje
+ */
+void enviar_mensaje(int cliente, char* mensaje);
 
 /* 
     @NAME:  recibir_operacion
@@ -49,5 +61,17 @@ int recibir_tamanio(int socket_cliente);
     @DESC: recibe un buffer dado un tamanio y el socket 
  */
 void* recibir_buffer(int size, int socket_cliente);
+
+/* 
+    @NAME: recibir_mensaje
+    @DESC: recibe un mensaje del socket/server
+ */
+char* recibir_mensaje(int socket);
+
+/* 
+    @NAME: serializar_mensaje
+    @DESC: serializa un mensaje listo para enviar
+ */
+void* serializar_mensaje(char* mensaje);
 
 #endif

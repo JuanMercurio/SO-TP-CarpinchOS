@@ -10,8 +10,11 @@ void atender_proceso(void* arg){
     int cliente = *(int*)arg;
     free(arg);
 
+    handshake(cliente, "memoria");
     ejecutar_proceso(cliente);
 }
+
+
 
 void ejecutar_proceso(int cliente) {
 
@@ -21,7 +24,7 @@ void ejecutar_proceso(int cliente) {
         switch (operacion)
         {
         case NEW_INSTANCE:
-            iniciar_proceso(cliente);
+            // iniciar_proceso(cliente);
             break;
         
         case MEMALLOC:
@@ -42,6 +45,11 @@ void ejecutar_proceso(int cliente) {
     }
 }
 
-void iniciar_proceso(int cliente){
-    // si no puede ser iniciado: pthread_exit(0)
-}
+// void iniciar_proceso(int cliente){
+//     // checkear si puede iniciar
+//     // si no puede ser iniciado: pthread_exit(0)
+//     int pid = suma_atomica(&id_memoria);
+//     mate_instance* meta_proceso =  recibir_instancia(cliente);
+//     // mate_instance.pid = pid;
+
+// }

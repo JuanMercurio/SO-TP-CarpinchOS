@@ -1,7 +1,7 @@
 #ifndef _COMPORTAMIENTO_CLIENTES_
 #define _COMPORTAMIENTO_CLIENTES_
 
-int id_memoria = 1;
+// int id_memoria = 1;
 
 
 /*

@@ -5,6 +5,7 @@
 #include "esquema/paginacion.h"
 #include "procesos/clientes.h"
 
+#include <stdint.h>
 #include <utils/utils.h> 
 #include <conexiones/conexiones.h>
 
@@ -14,7 +15,6 @@ int main(int argc, char* argv[]) {
    tests(argc, argv[1]);    
    
    obtener_config();
-
    iniciar_signals();
    iniciar_paginacion();
    iniciar_tlb();

@@ -11,7 +11,7 @@ void iniciar_paginacion(){
 
 void init_ram(){
     ram.memoria = malloc(configuracion.TAMANIO);
-    pthread_mutex_init(ram.mutex_mem, NULL);
+    pthread_mutex_init(&ram.mutex_mem, NULL);
 }
 
 void init_bitmap_frames(){

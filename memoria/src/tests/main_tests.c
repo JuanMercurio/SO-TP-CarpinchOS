@@ -1,11 +1,12 @@
 #include "tests.h"
 #include "../main.h"
-
+#include "../esquema/tlb.h"
 #include "../configuracion/config.h"
+
 #include <CUnit/Basic.h>
 #include <stdlib.h>
+#include <conexiones/conexiones.h>
 
-#include "../esquema/tlb.h"
 
 void tests(int arg, char* argv){
     if(arg > 1 && strcmp(argv, "test")==0){
@@ -22,6 +23,7 @@ int run_tests(){
     CU_add_test(tests,"Probar Suma", suma);
     CU_add_test(tests, "Probar Inicio TLB", test_inicio_tlb);
     CU_add_test(tests, "Probar TLB MISS", test_tlb_miss);
+    CU_add_test(tests, "Probar Serializacion de Mensajes", test_mensaje_serializado);
 
     CU_basic_set_mode(CU_BRM_VERBOSE);
     CU_basic_run_tests();
@@ -48,5 +50,15 @@ void test_inicio_tlb(){
 void test_tlb_miss(){
    iniciar_tlb(); 
    CU_ASSERT_EQUAL(buscar_en_tlb(MISSING_PID, MISSING_PAGE), TLB_MISS);   
+}
+ 
+void test_mensaje_serializado(){
+    void* buffer = serializar_mensaje("PRUEBA");
+    int size;
+    memcpy(&size, buffer, sizeof(int));
+    int offset = sizeof(int);
 
+    char* final = malloc(size);
+    memcpy(final, buffer + offset, size);
+    CU_ASSERT_STRING_EQUAL(final, "PRUEBA");
 }
