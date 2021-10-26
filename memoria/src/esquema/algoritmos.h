@@ -4,16 +4,13 @@
 #define BIT_USO algoritmo
 #define LRU algoritmo
 
-int LRU_C = 0;
+#include "paginacion.h"
 
-typedef struct alg_t{
-    int pid;    
-    pag_t* pag;
-}alg_t;
+int LRU_C;
 
-alg_t (*lru)(int pid);
+pag_t* (*lru)(int pid);
 
-alg_t lru_dinamico(int pid);
-alg_t lru_fijo(int pid);
-alg_t lru_en_pag_table(tab_pags* tabla);
+pag_t* lru_dinamico(int pid);
+pag_t* lru_fijo(int pid);
+pag_t* lru_en_pag_table(tab_pags* tabla);
 #endif
