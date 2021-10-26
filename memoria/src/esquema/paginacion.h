@@ -3,6 +3,8 @@
 
 #include <commons/collections/list.h>
 #include <pthread.h>
+#include <stdint.h>
+#include <math.h>
 
 #define PAGINA segmento
 #define MARCO segmento
@@ -80,19 +82,30 @@ void add_new_page_table(tab_pags*);
     @DESC:  segun el config les da valoes a las funciones puntero
  */
 void set_asignacion();
+/*
+    @name:  obinario_a_decimal
+    @desc:  dado un binario retorna su decimal
+ */
+int binario_a_decimal(uint32_t binario);
 
 /*
     @NAME:  buscar_page_table
     @DESC:  segun un pid busca su tabla de paginas
             no es thread safe
  */
+
 tab_pags* buscar_page_table(int pid);
+/*
+    @NAME:  offset_memoria
+    @DESC:  dada una dir_t fisica retorna el byte en memoria
+ */
+uint32_t crear_dl(dir_t dl);
 
 /*
     @NAME:  traducir_dir_log
-    @DESC:  reduce una direccion logica en un dir_t
+    @DESC:  reduce una direccion logica en un dir_t logico
  */
-dir_t traducir_dir_log(int dir_log);
+dir_t traducir_dir_log(uint32_t dir_log);
 
 /*
     @NAME:  convertir_a_df
@@ -105,5 +118,17 @@ dir_t convertir_a_df(t_list* tabla, dir_t dl);
     @DESC:  dada una dir_t fisica retorna el byte en memoria
  */
 int offset_memoria(dir_t df);
+
+/*
+    @name:  decimal_a_binario
+    @desc:  dado un decimal retorna su binario
+ */
+uint32_t decimal_a_binario(int decimal);
+
+/*
+    @NAME:  oget_offset
+    @DESC:  retorna el desplazamiento de un dl binario
+ */
+int get_offset(uint32_t dl, int multiplier);
 
 #endif

@@ -23,7 +23,13 @@ void tests(int arg, char* argv);
 void test_inicio_tlb();
 
 void suma();
-
 void test_mensaje_serializado();
 void test_tlb_miss();
+void test_decimal_a_binario();
+void test_converir_a_df();
+void test_crear_dl();
+void test_traducir_dir_log();
+void test_get_offset();
+void test_traducciones();
+
 #endif

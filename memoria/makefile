@@ -1,5 +1,5 @@
 # Include libraries here
-LIBRARIES=utils pthread cunit commons
+LIBRARIES=utils pthread cunit commons m
 # Include custom library paths here
 LIBRARY_PATHS=../utils
 
