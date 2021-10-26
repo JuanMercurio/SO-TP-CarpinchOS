@@ -5,6 +5,8 @@
 #include <string.h>
 #include <stdlib.h>
 
+#define SIZE_METADATA sizeof(HeapMetadata)
+
 int  memalloc(int tamanio, int pid){ //quizas al igual que antes, el carpincho se guarda local en el hilo? entonces no habría que pasarlo como parametro
 
 	tabla_paginas = obtener_tabla_paginas(pid);

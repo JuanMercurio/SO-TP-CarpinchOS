@@ -5,10 +5,10 @@
 #include <commons/collections/list.h>
 
 /* Estrucutra de los alloc */
-typedef struct HeadMetaData{ 
+typedef struct HeapMetadata{
     uint32_t prevAlloc;
     uint32_t nextAlloc;
     uint8_t isFree;
-}HeadpMetaData;
+}HeapMetadata;
 
 #endif
