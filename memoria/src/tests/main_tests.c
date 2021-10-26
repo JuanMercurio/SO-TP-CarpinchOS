@@ -31,6 +31,7 @@ int run_tests(){
     CU_add_test(tests, "Probar get offset de una dl", test_get_offset);
     CU_add_test(tests, "Probar traduccion dl", test_traducir_dir_log);
     CU_add_test(tests, "Probar trauccion ida y vuelta", test_traducciones);
+    CU_add_test(tests, "Probar marco_libre", test_no_frames_disponibles);
 
     CU_basic_set_mode(CU_BRM_VERBOSE);
     CU_basic_run_tests();
@@ -43,13 +44,14 @@ void suma(){
     CU_ASSERT_EQUAL(2+2, 4);
 }
 
+
 void test_inicio_tlb(){
     obtener_config();
     iniciar_tlb();
     tlb_t* registro = list_get(tlb, configuracion.CANTIDAD_ENTRADAS_TLB -1);
-    CU_ASSERT_EQUAL(registro->pid, EMPTY);
-    CU_ASSERT_EQUAL(registro->pagina, EMPTY);
-    CU_ASSERT_EQUAL(registro->marco, EMPTY);
+    CU_ASSERT_EQUAL(registro->pid, TLB_EMPTY);
+    CU_ASSERT_EQUAL(registro->pagina, TLB_EMPTY);
+    CU_ASSERT_EQUAL(registro->marco, TLB_EMPTY);
 }
 
 #define MISSING_PID -100
@@ -119,4 +121,18 @@ void test_traducciones(){
     dir_t dir_l = traducir_dir_log(10001);
     int dl = crear_dl(dir_l);
     CU_ASSERT_EQUAL(dl, 10001)
+}
+
+void test_no_frames_disponibles(){
+    obtener_config();
+    int n_frames = configuracion.TAMANIO / configuracion.TAMANIO_PAGINAS;
+    marcos = list_create();
+    // lleno los marcos 
+    for(int i=0; i<n_frames; i++){
+        int* marco = malloc(sizeof(int));
+        *marco = 1;
+        list_add(marcos, marco);
+    }
+    int marco_final = marco_libre();
+    CU_ASSERT_EQUAL(marco_final, NOT_ASIGNED);
 }

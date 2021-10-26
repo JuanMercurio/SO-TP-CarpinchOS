@@ -21,9 +21,17 @@ void init_ram(){
 }
 
 void init_bitmap_frames(){
+    marcos = list_create();
+
     int n_frames = configuracion.TAMANIO / configuracion.TAMANIO_PAGINAS;
-    marcos = calloc(n_frames, sizeof(int));
+
+    for(int i=0; i<n_frames; i++){
+        int* marco = malloc(sizeof(int));
+        *marco = VACIO;
+        list_add(marcos, marco);
+    }
 }
+
 
 void set_asignacion(){
     if(strcmp(configuracion.TIPO_ASIGNACION, "FIJA") == 0)
@@ -34,6 +42,15 @@ void set_asignacion(){
     {
         lru = &lru_dinamico;
     }
+}
+
+int marco_libre(){
+    int n_frames = configuracion.TAMANIO / configuracion.TAMANIO_PAGINAS;
+    for(int i=0; i<n_frames; i++) {
+        int* marco = list_get(marcos, i);
+        if(*marco==VACIO) return i;
+    }
+    return NOT_ASIGNED;
 }
 
 void add_new_page_table(tab_pags* tabla){

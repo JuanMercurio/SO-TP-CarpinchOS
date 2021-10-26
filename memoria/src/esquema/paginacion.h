@@ -8,6 +8,8 @@
 
 #define PAGINA segmento
 #define MARCO segmento
+#define VACIO 0
+#define NOT_ASIGNED -1
 
 /* Estructura Memoria */
 typedef struct memoria_t {
@@ -18,6 +20,7 @@ typedef struct memoria_t {
 /* MEMORIA PRINCIPAL */
 memoria_t ram;
 
+/* Estructura para la supertabla de tablas  */
 typedef struct tablas_t{
     t_list* lista;
     pthread_mutex_t mutex;
@@ -26,8 +29,8 @@ typedef struct tablas_t{
 /* Lista de tablas de paginas y su mutex */
 tablas_t tablas;
 
-/* Bitmap de marcos */
-int* marcos; 
+/* "Bitmap" de marcos */
+t_list* marcos; 
 
 /* Esructura para tablas */
 typedef struct tab_pags{
@@ -46,6 +49,7 @@ typedef struct pag_t{
 /* Varibale para generar los id en memoria */
 int ids_memoria;
 
+/* Estructura para direccionamiento */
 typedef struct dir_t{
    int segmento;
    int offset;
@@ -69,6 +73,13 @@ void init_ram();
     @DESC:  iniciar el bitmap de frames de la memoria fisica
  */
 void init_bitmap_frames();
+
+/*
+    @NAME:  marco_libre
+    @DESC:  retorna el numero de marco libre
+            si no hay libre recorda NOT_ASIGNED
+ */
+int marco_libre();
 
 /*
     @NAME:  add_new_page_table

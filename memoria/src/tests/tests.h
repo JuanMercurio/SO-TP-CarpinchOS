@@ -31,5 +31,6 @@ void test_crear_dl();
 void test_traducir_dir_log();
 void test_get_offset();
 void test_traducciones();
+void test_no_frames_disponibles();
 
 #endif

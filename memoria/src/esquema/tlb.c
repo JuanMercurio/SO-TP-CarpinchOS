@@ -10,9 +10,9 @@ void iniciar_tlb(){
 
     for(int i=0; i<configuracion.CANTIDAD_ENTRADAS_TLB; i++){ 
         tlb_t* registro = malloc(sizeof(tlb_t));
-        registro->marco = EMPTY;
-        registro->pid = EMPTY;
-        registro->pagina = EMPTY;
+        registro->marco = TLB_EMPTY;
+        registro->pid = TLB_EMPTY;
+        registro->pagina = TLB_EMPTY;
         list_add(tlb, (void*)registro);
     }
 }
