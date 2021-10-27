@@ -7,6 +7,7 @@
 #include <CUnit/Basic.h>
 #include <stdlib.h>
 #include <conexiones/conexiones.h>
+#include <mensajes/mensajes.h>
 
 
 void tests(int arg, char* argv){

@@ -1,6 +1,8 @@
 #ifndef _MATELIB_H_
 #define _MATELIB_H_
 
+#include "../conexiones/conexiones.h"
+
 #include <stdint.h>
 #include <stdlib.h>
 #include <stdio.h>
@@ -10,7 +12,6 @@
 #include <commons/config.h>
 #include <commons/collections/list.h>
 #include <sys/socket.h>
-#include "conexiones.h"
 
 //-------------------Operations Codes For Messages---------/
 

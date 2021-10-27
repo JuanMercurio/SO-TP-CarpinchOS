@@ -14,7 +14,7 @@
 
 /* Variables Globales */
 
-int id_procesos = 0;
+int id_procesos;
 
 /* Funciones */
 

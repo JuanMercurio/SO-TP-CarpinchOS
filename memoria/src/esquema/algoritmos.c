@@ -22,9 +22,8 @@ pag_t* lru_dinamico(int pid)
     return pagina;
 }
 
-pag_t* lru_fijo(int pid){
+pag_t* lru_fijo(int pid, tab_pags* tabla){
     
-    tab_pags* tabla = buscar_page_table(pid);
     return lru_en_pag_table(tabla);
 }
 

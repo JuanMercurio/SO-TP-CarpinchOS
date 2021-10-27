@@ -3,9 +3,7 @@
 #include <stdlib.h>
 #include <stdio.h>
 #include <string.h>
-#include <unistd.h>
 #include <netdb.h>
-#include <sys/socket.h>
 #include <pthread.h>
 
 void administrar_clientes(char* IP, char* PUERTO, void (*funcion)(void*)){
@@ -111,55 +109,4 @@ int aceptar_cliente(int socket_servidor)
 	int socket_cliente = accept(socket_servidor, (void*) &dir_cliente, (void*)&tam_direccion);
 
 	return socket_cliente;
-}
-
-
-void handshake(int cliente, char* modulo){
-    enviar_mensaje(cliente, modulo);
-}
-
-void enviar_mensaje(int cliente, char* mensaje){
-    int size = strlen(mensaje) + 1;
-    void* paquete = serializar_mensaje(mensaje);
-    send(cliente, paquete, size, 0);
-}
-
-int recibir_operacion(int socket_cliente) {
-	int cod_op;
-	if(recv(socket_cliente, &cod_op, sizeof(int), MSG_WAITALL) != 0)
-		return cod_op;
-	else
-	{
-		close(socket_cliente);
-		return -1;
-	}
-}
-
-int recibir_tamanio(int socket_cliente) {
-    int size;
-	recv(socket_cliente, &size, sizeof(int), MSG_WAITALL);
-    return size;
-}
-
-void* recibir_buffer(int size, int socket_cliente) {
-	void * buffer = malloc(size);
-	recv(socket_cliente, buffer, size, MSG_WAITALL);
-	return buffer;
-}
-
-char* recibir_mensaje(int socket){
-    int size = recibir_tamanio(socket);
-    void* buffer = malloc(size);
-    recibir_buffer(size, socket);
-    return (char*)buffer;
-}
-
-void* serializar_mensaje(char* mensaje){
-    int size = strlen(mensaje) + 1;
-    void* buffer = malloc(sizeof(int) + size);
-    int offset = 0;
-    memcpy(buffer + offset, &size, sizeof(int));
-    offset += sizeof(int);
-    memcpy(buffer + offset, (void*)mensaje, size);
-    return buffer;
 }
