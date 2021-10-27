@@ -3,7 +3,6 @@
 
 #include "../esquema/paginacion.h"
 
-#define PID_EMPTY 0 
 
 /*
     @NAME:  atender_proceso
@@ -25,16 +24,5 @@ void ejecutar_proceso(int cliente);
  */
 t_list* iniciar_paginas(int cliente, int pid);
 
-/*
-    @NAME:  idesginar_PID
-    @DESC:  Designa el pid del proceso
- */
-int desginar_PID(int cliente);
-
-/*
-    @NAME:  recibir_PID
-    @DESC:  Recibe el pid que le manda un carpincho o el kernel
- */
-int recibir_PID(int cliente);
 
 #endif

@@ -1,4 +1,5 @@
 #include "clientes.h"
+#include "operaciones.h"
 #include "../esquema/paginacion.h"
 
 #include <matelib/matelib.h>
@@ -32,7 +33,7 @@ void ejecutar_proceso(int cliente) {
             break;
         
         case MEMALLOC:
-
+            ejecutar_malloc(tabla, cliente);
             break;
 
         case MEMFREE:
@@ -61,14 +62,4 @@ t_list* iniciar_paginas(int cliente, int pid){
     // enviar_instancia();  ?
 
     return tabla->tabla_pag;
- }
-
-int desginar_PID(int cliente){
-    int pid = recibir_PID(cliente);
-    if(pid == PID_EMPTY) return crearID(&ids_memoria);
-    return pid;
-}
-
-int recibir_PID(int cliente){
-    return recibir_tamanio(cliente);
 }

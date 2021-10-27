@@ -2,23 +2,52 @@
 #include "../esquema/paginacion.h"
 #include "../configuracion/config.h"
 
+#include <mensajes/mensajes.h>
+#include <utils/utils.h>
 #include <string.h>
 #include <stdlib.h>
 
-int  memalloc(int tamanio, int pid){
+uint32_t memalloc(t_list* tabla, int cliente){
 
-    /* Asegurarnos que entra en memoria:
-            1) Buscamos si hay un alloc free en 
-               el cual entre (usando First Fit) --> Dividimos el alloc en 2 --> el ocupado y el free 
-            2) Si no encuentra entonces creamos un alloc al final, si no hay espacio pido una pagina nueva. || Este renglon ni idea 
-            3) Tambien hay que ir a buscar a swamp
-    */
-   return 1;    //retorna la direccion logica a el inicio del bloque (no del alloc) -- Si no encontro retorna un puntero null
-    }
+   int size = recibir_tamanio_malloc(cliente);
+   if(list_size(tabla) == 0) crear_pagina(tabla); 
+   uint32_t dl = alloc_memory(tabla, size);
+
+   return dl;
+}
+
+uint32_t alloc_memory(t_list* tabla, int size){
+   return 0;   
+}
+
+
+void crear_pagina(t_list* tabla){
+
+}
+
+int recibir_tamanio_malloc(int cliente){
+    return recibir_tamanio(cliente);
+}
+
+int desginar_PID(int cliente){
+    int pid = recibir_PID(cliente);
+    if(pid == PID_EMPTY) return crearID(&ids_memoria);
+    return pid;
+}
+
+int recibir_PID(int cliente){
+    return recibir_tamanio(cliente);
+}
+
+void ejecutar_malloc(t_list* tabla, int cliente){
+
+    int size = recibir_tamanio_malloc(cliente);
+
+    if(list_size(tabla) == 0) crear_pagina(tabla); 
+    alloc_memory(tabla, size);
+}
 
 void memfree();
-
-
 
 void* memread(tab_pags* tabla, int dir_log, int tamanio){
 
@@ -43,3 +72,4 @@ void* memread(tab_pags* tabla, int dir_log, int tamanio){
 
 
 void memwrite();
+
