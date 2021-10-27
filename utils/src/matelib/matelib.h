@@ -10,6 +10,7 @@
 #include <commons/config.h>
 #include <commons/collections/list.h>
 #include <sys/socket.h>
+#include "conexiones.h"
 
 //-------------------Operations Codes For Messages---------/
 
@@ -33,13 +34,13 @@ typedef struct mate_inner_structure{
     
   //  char* ip;
   //  char* puerto;
-
+    bool con_kernel;
     sem_t* sem_instance;
     void* memory;
 } mate_inner_structure;
 
 typedef struct mate_instance {
-    void *group_info;// deberia quedar el void*?
+   mate_inner_structure info;
     uint32_t conexion; 
 } mate_instance;
 

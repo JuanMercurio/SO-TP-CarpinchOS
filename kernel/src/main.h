@@ -28,6 +28,9 @@ typedef struct{
     int fd_cliente;
     tiempo_t tiempo;
     char estado;
+    int proxima_instruccion;
+    sem_t *semaforo_evento;
+
 }t_pcb;
 
 typedef enum{

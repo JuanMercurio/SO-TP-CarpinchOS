@@ -12,6 +12,10 @@
 #include <commons/config.h>
 #include <commons/collections/list.h>
 
+/* Variables Globales */
+
+int id_procesos = 0;
+
 /* Funciones */
 
 /*

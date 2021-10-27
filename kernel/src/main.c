@@ -39,25 +39,46 @@ void receptor(void *arg)
       switch (cod_op)
       {
 
-      case NEW_INSTANCE: ;
-         t_pcb *carpincho = recibir_pcb(cliente); // aca no recibe la pcb en si , recibe un paquete con datos que habra que guardar en un t_pcb luego de desserializar lo que viene
+      case NEW_INSTANCE: 
+         t_pcb *carpincho = malloc(sizeof(t_pcb)); // aca no recibe la pcb en si , recibe un paquete con datos que habra que guardar en un t_pcb luego de desserializar lo que viene
          carpincho->fd_cliente = cliente;
          if (registrar_carpincho(carpincho) != -1)// comprobaciion por la memoria????
          {
             printf("NO SE PUEDE ALOJAR CARPINCHO\n");
          }else{
+            carpincho->pid = crearID(&id_procesos);
+            char *pid = itoa(carpincho->pid);
+            enviar_mensaje(cliente, pid);
             sem_wait(&mutex_cola_new);
             queue_push(cola_new, (void*) carpincho); // pensando que el proceso queda trabado en mate init hasta que sea planificado
             sem_post(&mutex_cola_new);
            }// enviar_mensaje("OK", cliente);
-         }// aca debe enviar el ok o debe planificarlo y al llegar a exec recien destrabar el carpincho
-
-
-         else
-            printf("no es posible crear estructuras para el carpincho\n");
+         // aca debe enviar el ok o debe planificarlo y al llegar a exec recien destrabar el carpincho
          break;
 
-      case IO:
+      case IO: carpincho->proxima_instruccion = IO;
+               sem_post(&carpincho->semaforo_evento);
+               break;
+      case SEM_WAIT: carpincho->proxima_instruccion = SEM_WAIT;
+               sem_post(&carpincho->semaforo_evento);
+         break;
+      case SEM_POST: carpincho->proxima_instruccion = SEM_POST;
+               sem_post(&carpincho->semaforo_evento);
+         break;
+      case SEM_DESTROY: carpincho->proxima_instruccion = SEM_DESTROY;
+               sem_post(&carpincho->semaforo_evento);
+         break;
+      case MEMALLOC: carpincho->proxima_instruccion = MEMALLOC;
+               sem_post(&carpincho->semaforo_evento);
+         break;
+      case MEMFREE: carpincho->proxima_instruccion = MEMFREE;
+               sem_post(&carpincho->semaforo_evento);
+         break;
+      case MEMREAD: carpincho->proxima_instruccion = MEMREAD;
+               sem_post(&carpincho->semaforo_evento);
+         break;
+      case MEMWRITE:carpincho->proxima_instruccion = MEMWRITE;
+               sem_post(&carpincho->semaforo_evento);
          break;
       }
    }
@@ -69,6 +90,7 @@ void inicializar_proceso_carpincho(t_pcb *carpincho)
    carpincho->tiempo.time_stamp_inicio = NULL;
    carpincho->tiempo.time_stamp_fin = NULL;
    carpincho->estado = 'N';
+   sem_init(&carpincho->semaforo_evento, NULL, 0);
 }
 int recibir_operacion(int cliente){}
 
@@ -229,7 +251,7 @@ void init_dispositivos_io(){
       nueva_io->bloqueados=queue_create();
       list_add(lista_io_kernel, nueva_io);
       i++;
-      free(nueva_io); //va acá o afuera del while?
+     // free(nueva_io); //va acá o afuera del while?
    }
 }
 

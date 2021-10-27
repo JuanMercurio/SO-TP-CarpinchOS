@@ -21,7 +21,30 @@ void procesador(){// resolver la cuestion de administacion de los semaforos de l
       /*
       aca activaria al proeso peor no see si con semforo o mensaje
       */
-      operacion = recivir_operacion(carpincho->fd_cliente); // con esto espera el mensaje que le llega del carpincho para ver como bloquaarlo;
+      
+      enviar_mensaje("OK", carpincho->fd_cliente);
+      sem_wait(&evento_carpincho);
+       char* nombre_semaforo;
+      switch(carpincho->proxima_instruccion){
+         case IO:
+         break;
+         case SEM_WAIT: nombre_semaforo = recibir_semaforo(fd_cliente);
+                        sem_kernel_wait(nombre_semaforo, carpincho);
+         break;
+         case SEM_POST:
+         break;
+         case SEM_DESTROY:
+         break;
+         case MEMALLOC:
+         break;
+         case MEMFREE:
+         break;
+         case MEMREAD:
+         break;
+         case MEMWRITE:
+         break;
+
+      }
       carpincho->tiempo.time_stamp_fin = temporal_get_string_time("%H:%M:%S:%MS");
    }   
 }
@@ -112,7 +135,7 @@ void iniciar_planificador_largo_plazo()
       sem_wait(&mutex_cola_new);
       t_pcb *carpincho = queue_pop(cola_new);
       sem_post(&mutex_cola_new);
-      incializar_proceso_carpincho(carpincho); // que estructura hay que crear?? si en la pcb se guardan las estimaciones semaforos??
+      inicializar_proceso_carpincho(carpincho); // que estructura hay que crear?? si en la pcb se guardan las estimaciones semaforos??
       sem_wait(&mutex_cola_ready);
       queue_push(cola_ready, carpincho);
       carpincho->tiempo.time_stamp_inicio = temporal_get_string_time("%H:%M:%S:%MS");
@@ -120,7 +143,7 @@ void iniciar_planificador_largo_plazo()
    }
 }
 void iniciar_gestor_finalizados(){// falta
-    sem_wait(&cola_finalizados_con_elementos);
+      sem_wait(&cola_finalizados_con_elementos);
       sem_wait(&mutex_cola_new);
       t_pcb *carpincho = queue_pop(cola_new);
       sem_post(&cola_finalizados_con_elementos);
