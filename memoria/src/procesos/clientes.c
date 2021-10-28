@@ -26,10 +26,10 @@ void ejecutar_proceso(int cliente) {
         switch (operacion)
         {
         case NEW_INSTANCE:
-            pid = desginar_PID(cliente);
+            // comprobar si puede iniciar
+            // si no puede envia pid como NOT_ASIGNED
+            enviar_PID(pid, cliente);
             tabla = iniciar_paginas(cliente, pid);
-            // enviar_PID(cliente);
-            //enviar info a carpincho
             break;
         
         case MEMALLOC:

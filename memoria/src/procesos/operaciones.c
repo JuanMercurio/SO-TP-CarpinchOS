@@ -29,11 +29,11 @@ int recibir_tamanio_malloc(int cliente){
     return recibir_tamanio(cliente);
 }
 
-int desginar_PID(int cliente){
-    int pid = recibir_PID(cliente);
-    if(pid == PID_EMPTY) return crearID(&ids_memoria);
-    return pid;
-}
+// int desginar_PID(int cliente){
+//     int pid = recibir_PID(cliente);
+//     if(pid == PID_EMPTY) return crearID(&ids_memoria);
+//     return pid;
+// }
 
 int recibir_PID(int cliente){
     return recibir_tamanio(cliente);

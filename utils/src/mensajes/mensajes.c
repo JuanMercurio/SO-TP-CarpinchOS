@@ -59,10 +59,14 @@ int recibir_operacion(int socket_cliente) {
 	}
 }
 
-int recibir_tamanio(int socket_cliente) {
+int recibir_int(int socket_cliente) {
     int size;
 	recv(socket_cliente, &size, sizeof(int), MSG_WAITALL);
     return size;
+}
+
+int recibir_tamanio(int socket_cliente) {
+	return recibir_int(socket_cliente);
 }
 
 void* recibir_buffer(int size, int socket_cliente) {

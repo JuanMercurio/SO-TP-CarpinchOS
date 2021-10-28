@@ -3,25 +3,27 @@
 
 //------------------General Functions---------------------/
 
-int mate_init(mate_instance *lib_ref, char *config)
+void mate_init(mate_instance *lib_ref, char *config)
 {
-    t_config *configuracion = config_create(config);
-    char *IP = config_get_string_value(configuracion, "IP");
-    char *PUERTO = config_get_string_value(configuracion, "PUERTO");
+  t_config *configuracion = config_create(config);
+  char *IP = config_get_string_value(configuracion, "IP");
+  char *PUERTO = config_get_string_value(configuracion, "PUERTO");
 
-    lib_ref->pid = INIT;
-    lib_ref->conexion = crear_conexion(IP, PUERTO);
-    lib_ref->conectado_a = recibir_conectado_a(lib_ref->conexion);
+  lib_ref->pid = INIT;
+  lib_ref->conexion = crear_conexion(IP, PUERTO);
+  lib_ref->conectado_a = recibir_conectado_a(lib_ref->conexion);
 
-    // iniciar el resto de la instancia
+  // iniciar el resto de la instancia
 
-    pedido_de_inicio(lib_ref->conexion);
+  pedido_de_inicio(lib_ref->conexion);
 
-    lib_ref->pid = recibir_pid(lib_ref->conexion);
+  lib_ref->pid = recibir_pid(lib_ref->conexion);
 
-    if(lib_ref->pid == NOT_ASIGNED) abort();    //definir comportamiento.. si no es aceptado en el sistema vuelve a intentar?
+  conexion_success(lib_ref->pid);
+}
 
-  return 0;
+void conexion_success(int pid){
+  if(pid == NOT_ASIGNED) abort();    //definir comportamiento.. si no es aceptado en el sistema vuelve a intentar?
 }
 
 int mate_close(mate_instance *lib_ref)

@@ -34,6 +34,12 @@ void enviar_mensaje(int cliente, char* mensaje);
 int recibir_operacion(int socket_cliente);
 
 /* 
+    @NAME:  recibir_int
+    @DESC:  recibe un int
+ */
+int recibir_int(int socket_cliente);
+
+/* 
     @NAME:  recibir_tamanio
     @DESC:  recibe el tamanio del siguiente buffer
  */

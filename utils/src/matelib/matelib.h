@@ -60,7 +60,7 @@ typedef char *mate_sem_name;
 typedef int32_t mate_pointer;
 
 //------------------General Functions---------------------/
-int mate_init(mate_instance *lib_ref, char *config);
+void mate_init(mate_instance *lib_ref, char *config);
 
 int mate_close(mate_instance *lib_ref);
 
