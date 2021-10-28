@@ -32,15 +32,23 @@ void init_bitmap_frames(){
     }
 }
 
+int crear_pagina(t_list *paginas){
+    pag_t *pagina = malloc(sizeof(pag_t));
+    pagina->presente = 0;
+    pagina->marco = 0;
+    pagina->modificado = 0;
+    pagina->algoritmo = 0;
+    return list_add(paginas, pagina);
+}
 
 void set_asignacion(){
     if(strcmp(configuracion.TIPO_ASIGNACION, "FIJA") == 0)
     {
-        lru = &lru_fijo;
+        lru = lru_fijo; 
     }
     else
     {
-        lru = &lru_dinamico;
+        lru = lru_dinamico;
     }
 }
 
@@ -67,11 +75,20 @@ tab_pags* buscar_page_table(int pid){
     return NULL;
 }
 
-int get_offset(uint32_t dl, int multiplier){
-    double temp = dl / (float)multiplier;
-    int paginas = temp;
-    float offset = (temp - paginas)* multiplier;
-    return (int)offset;
+uint32_t crear_dl(dir_t dl){
+
+    // Estas variables podrian ser globales y calcularlas con la config
+    int max_offset = configuracion.TAMANIO_PAGINAS;
+    // Cantidad de bytes que necesita para representar el offset
+    int bytes_offset = log(max_offset) / log(2);
+
+    int multiplier = pow(10, bytes_offset);
+
+    int pagina_b = decimal_a_binario(dl.PAGINA);
+    int offset_b = decimal_a_binario(dl.offset);
+    
+    uint32_t dir = (pagina_b * multiplier) + offset_b;
+    return dir;
 }
 
 dir_t traducir_dir_log(uint32_t dir_log){
@@ -89,20 +106,11 @@ dir_t traducir_dir_log(uint32_t dir_log){
     return dir;
 }
 
-uint32_t crear_dl(dir_t dl){
-
-    // Estas variables podrian ser globales y calcularlas con la config
-    int max_offset = configuracion.TAMANIO_PAGINAS;
-    // Cantidad de bytes que necesita para representar el offset
-    int bytes_offset = log(max_offset) / log(2);
-
-    int multiplier = pow(10, bytes_offset);
-
-    int pagina_b = decimal_a_binario(dl.PAGINA);
-    int offset_b = decimal_a_binario(dl.offset);
-    
-    uint32_t dir = (pagina_b * multiplier) + offset_b;
-    return dir;
+int get_offset(uint32_t dl, int multiplier){
+    double temp = dl / (float)multiplier;
+    int paginas = temp;
+    float offset = (temp - paginas)* multiplier;
+    return (int)offset;
 }
 
 dir_t convertir_a_df(t_list* tabla, dir_t dl){

@@ -2,7 +2,7 @@
 
 int clock_mejorado();
 
-pag_t* lru_dinamico(int pid)
+pag_t* lru_dinamico(int pid, tab_pags* tabla)
 {
     pag_t* pagina;
     int LRU_min = LRU_C;

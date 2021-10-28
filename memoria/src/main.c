@@ -5,8 +5,6 @@
 #include "esquema/paginacion.h"
 #include "procesos/clientes.h"
 
-#include <stdint.h>
-#include <utils/utils.h> 
 #include <conexiones/conexiones.h>
 
 int main(int argc, char* argv[]) {
@@ -31,11 +29,6 @@ void terminar_programa(){
    config_destroy(config);
 }
 
-void atender_cliente(void* arg){
-   int cliente = *(int*)arg;
-   free(arg);
 
-   printf("Se conecto usando el socket %d\n", cliente);
-}
 
 

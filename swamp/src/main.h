@@ -3,6 +3,8 @@
 
 #include "tests/tests.h"
 
+int server;
+
 /*
     @NAME: terminar_programa
     @DESC: Se encarga de liberar todas las estructuras y de hacer lo necesario para

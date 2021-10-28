@@ -42,9 +42,10 @@ void handshake(int cliente, char* modulo){
 }
 
 void enviar_mensaje(int cliente, char* mensaje){
-    int size = strlen(mensaje) + 1;
+    int size = strlen(mensaje) + 1 + sizeof(int);
     void* paquete = serializar_mensaje(mensaje);
     send(cliente, paquete, size, 0);
+	free(paquete);
 }
 
 int recibir_operacion(int socket_cliente) {
@@ -73,7 +74,7 @@ void* recibir_buffer(int size, int socket_cliente) {
 char* recibir_mensaje(int socket){
     int size = recibir_tamanio(socket);
     void* buffer = malloc(size);
-    recibir_buffer(size, socket);
+    buffer = recibir_buffer(size, socket);
     return (char*)buffer;
 }
 

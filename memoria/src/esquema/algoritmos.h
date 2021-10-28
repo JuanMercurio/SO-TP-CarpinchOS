@@ -8,9 +8,9 @@
 
 int LRU_C;
 
-pag_t* (*lru)(int pid);
+pag_t* (*lru)(int, tab_pags*);
 
-pag_t* lru_dinamico(int pid);
+pag_t* lru_dinamico(int pid, tab_pags* tabla);
 pag_t* lru_fijo(int pid, tab_pags* tabla);
 pag_t* lru_en_pag_table(tab_pags* tabla);
 #endif
