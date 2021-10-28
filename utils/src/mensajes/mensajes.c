@@ -45,6 +45,7 @@ void enviar_mensaje(int cliente, char* mensaje){
     int size = strlen(mensaje) + 1 + sizeof(int);
     void* paquete = serializar_mensaje(mensaje);
     send(cliente, paquete, size, 0);
+	free(paquete);
 }
 
 int recibir_operacion(int socket_cliente) {

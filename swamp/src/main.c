@@ -4,7 +4,6 @@
 
 #include <utils/utils.h> 
 #include <conexiones/conexiones.h>
-#include <mensajes/mensajes.h>
 
 int main(int argc, char* argv[]) {
    
@@ -14,12 +13,8 @@ int main(int argc, char* argv[]) {
    /* Este modulo funciona sin hilos. Los clientes esperan a ser atendidos en cola  */
    obtener_config();
 
-   int server = iniciar_servidor(configuracion.IP, configuracion.PUERTO);
-   while(1){
-      int cliente = aceptar_cliente(server);
-      // sleep();
-      printf("Se conecto alguien en el socket: %d\n", cliente);
-   }
+   iniciar_swamp();
+   atender_clientes();
    terminar_programa();
 
    return 0;
@@ -28,4 +23,17 @@ int main(int argc, char* argv[]) {
 
 void terminar_programa(){
    config_destroy(config);
+}
+
+void iniciar_swamp(){
+   server = iniciar_servidor(configuracion.IP, configuracion.PUERTO);
+}
+
+void atender_clientes(){ 
+
+   // while feo
+   while(1){ 
+      int cliente = aceptar_cliente(server);
+      printf("Se conecto alguien en el socket: %d\n", cliente);
+   }
 }

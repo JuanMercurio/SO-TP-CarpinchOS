@@ -29,11 +29,6 @@ void terminar_programa(){
    config_destroy(config);
 }
 
-void atender_cliente(void* arg){
-   int cliente = *(int*)arg;
-   free(arg);
 
-   printf("Se conecto usando el socket %d\n", cliente);
-}
 
 
