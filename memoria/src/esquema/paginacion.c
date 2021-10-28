@@ -36,11 +36,11 @@ void init_bitmap_frames(){
 void set_asignacion(){
     if(strcmp(configuracion.TIPO_ASIGNACION, "FIJA") == 0)
     {
-        lru = &lru_fijo;
+        lru = lru_fijo; 
     }
     else
     {
-        lru = &lru_dinamico;
+        lru = lru_dinamico;
     }
 }
 

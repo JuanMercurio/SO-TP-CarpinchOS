@@ -5,8 +5,6 @@
 #include "esquema/paginacion.h"
 #include "procesos/clientes.h"
 
-#include <stdint.h>
-#include <utils/utils.h> 
 #include <conexiones/conexiones.h>
 
 int main(int argc, char* argv[]) {
