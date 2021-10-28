@@ -62,6 +62,7 @@ typedef struct{
 //   colas
 t_queue *cola_new;
 t_queue *cola_ready;
+t_queue *cola_bloqueado;
 t_queue *suspendido_bloqueado;
 t_queue *suspendido_listo;
 t_queue *cola_finalizados;
@@ -80,6 +81,7 @@ sem_t *lista_ejecutando_con_elementos;
 sem_t *cola_finalizados_con elementos;
 sem_t *mutex_cola_new;
 sem_t *mutex_cola_ready;
+sem_t *mutex_cola_bloqueado;
 sem_t *mutex_cola_bloqueado_suspendido;
 sem_t *mutex_cola_listo_suspendido;
 sem_t *mutex_lista_ejecutando;
@@ -123,7 +125,7 @@ void sem_kernel_destroy(char* nombre);
 io_kernel* buscar_io(char *nombre, t_list *ios);
 void init_dispositivos_io();
 void call_io(char *nombre, t_pcb *carpincho);
-void bloquear_proceso_io(t_pcb *carpincho, io_kernel *io);
+void realizar_io(t_pcb *carpincho, io_kernel *io);
 
 
 void receptor(void*);

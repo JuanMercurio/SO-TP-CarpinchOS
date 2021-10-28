@@ -13,7 +13,7 @@ void procesador(){// resolver la cuestion de administacion de los semaforos de l
    while(1){
       sem__wait(&lista_ordenada_por_algoritmo);
       t_pcb *carpincho = (t_pcb*) list_take(lista_ordenada_por_algoritmo, 0);
-      sem_pot(&lista_ordenada_por_algoritmo);
+      sem_post(&lista_ordenada_por_algoritmo);
       carpincho->tiempo.time_stamp_fin = temporal_get_string_time("%H:%M:%S:%MS");// al comenzar a ejecutar corta el eltiempo de espera
       carpincho->tiempo.tiempo_de_espera = obtener_tiempo(carpincho->tiempo.time_stamp_inicio, carpincho->tiempo.time_stamp_fin);
       //aca el procesador lo ejecuta por lo tanto hay qu etomar el tiempo d einicio para depues tener lamdiferencia conel timep de salida
@@ -154,4 +154,20 @@ void eliminar_carpincho(t_pcb *carpincho){// revisar que este este borrando lo n
     free(carpincho->timepo.time_stamp_fin);
     free(carpincho->tiempo.time_stamp_inicio);
     free(carpincho);
+}
+
+void ejecutando_a_bloqueado(t_pcb *carpincho){
+   //hay que guardar los tiempos?
+   
+   sem_wait(&mutex_lista_ejecutando);
+   //sacar carpincho de la lista
+   sem_post(&mutex_lista_ejecutando);
+   
+   sem_wait(&mutex_cola_bloqueado);
+   queue_push(cola_bloqueado,carpincho); 
+   sem_post(&mutex_cola_bloqueado);
+}
+
+void bloqueado_a_listo(t_pcb *carpincho){
+   
 }

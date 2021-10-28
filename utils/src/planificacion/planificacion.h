@@ -51,4 +51,8 @@ double obtener_tiempo(char* inicio, char* fin);
 void estimador_HRRN(t_pcb* carpincho);
 
 void estimador(t_pcb *carpincho);
+
+void ejecutando_a_bloqueado(t_pcb *carpincho);
+void bloqueado_a_listo(t_pcb *carpincho);
+ 
 #endif

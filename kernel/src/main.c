@@ -258,10 +258,12 @@ void init_dispositivos_io(){
 void call_io(char *nombre, t_pcb *carpincho){
    io_kernel *io = buscar_io(nombre, lista_io_kernel);
 
+   ejecutando_a_bloqueado(carpincho); //bloqueo el carpincho ya sea que pueda ejecutar io o que tenga que esperar a que otro termine
+
    sem_wait(&mutex_lista_io_kernel);
-   if(queue_size(io->bloqueados)==0){
+   if(queue_size(io->bloqueados)==0){ //Si está vacía la lista, puede utilizar io
       queue_push(io->bloqueados, carpincho);
-      bloquear_proceso_io(carpincho, io->retardo);
+      realizar_io(carpincho, io->retardo);
    }
    else {
       queue_push(io->bloqueados, carpincho);
@@ -270,14 +272,17 @@ void call_io(char *nombre, t_pcb *carpincho){
    free(io);
 }
 
-void bloquear_proceso_io(t_pcb *carpincho, io_kernel *io){
-   //pasar el carpincho a la lista de bloqueados del planificador
-   
+void realizar_io(t_pcb *carpincho, io_kernel *io){
+
+   //Lo hago esperar el tiempo que tiene la IO de retardo
    usleep(io->retardo);
 
-   //desbloquear proceso en el planificador y de la lista de io
+   bloqueado_a_listo(carpincho);
+   queue_pop(io->bloqueados);
    
+   //Si existe algún otro carpincho en esta io lo mando a realizar_io()
    if(queue_size(io->bloqueados)>0){
-      //bloquear_proceso_io() para el siguiente en la lista de bloqueados
+      t_pcb *proximo_carpincho_bloqueado = queue_peek(io->bloqueados);
+      realizar_io(proximo_carpincho_bloqueado, io); 
    }
 }
