@@ -5,34 +5,27 @@
 
 int mate_init(mate_instance *lib_ref, char *config)
 {
-  t_config *configuracion = config_create(config);
-  char *IP = config_get_string_value(configuracion, "IP");
-  char *PUERTO = config_get_string_value(configuracion, "PUERTO");
+    t_config *configuracion = config_create(config);
+    char *IP = config_get_string_value(configuracion, "IP");
+    char *PUERTO = config_get_string_value(configuracion, "PUERTO");
 
-  lib_ref->group_info = malloc(sizeof(mate_inner_structure));
-  mate_inner_structure mate_ref;
-  lib_ref->group_info = &mate_ref;
+    lib_ref->pid = INIT;
+    lib_ref->conexion = crear_conexion(IP, PUERTO);
+    lib_ref->conectado_a = recibir_conectado_a(lib_ref->conexion);
 
-  lib_ref->conexion = crear_conexion(IP, PUERTO);
-  enviar_mensaje_y_cod_op("NUEVO CARPINCHO", lib_ref->conexion, NEW_INSTANCE); // serializar structura
-  char *respuesta = recibir_mensaje(lib_ref->conexion); 
-                    // esta respuesta la debe esperar por si no hay memoria y nivel de multi programacion????
-                                                                               // una vez registrada en kernel creando sus estructuras, se le da permiso de ejecutar
-                                                                               // despues de ser planificada, por ende queda bloqueado aca hasta que el kernel la pase a listo?
-/*  if(strcmp(respuesta, "KERNEL") == 0){
-    lib_ref->info->con_kernel = true;
-  } 
-  else{
-    lib_ref->info->con_kernel = false;
-  }  */ //hay que agregar esto, puede ser que el modulo envia el pid y su identifiacador de kernel o memoria junto, en ese caso hayq eu serializar otro mensaje
-  mate_ref.pid = atoi(respuesta);
-  recibir_mensaje(lib_ref->conexion); // el procesos queda bloqueado aca hasta recibir un OK del procesador
+    // iniciar el resto de la instancia
+
+    pedido_de_inicio(lib_ref->conexion);
+
+    lib_ref->pid = recibir_pid(lib_ref->conexion);
+
+    if(lib_ref->pid == NOT_ASIGNED) abort();    //definir comportamiento.. si no es aceptado en el sistema vuelve a intentar?
+
   return 0;
 }
 
 int mate_close(mate_instance *lib_ref)
 {
-  free(lib_ref->group_info);
   return 0;
 }
 
@@ -40,10 +33,10 @@ int mate_close(mate_instance *lib_ref)
 
 int mate_sem_init(mate_instance *lib_ref, mate_sem_name sem, unsigned int value) {
   
-  if(con_kernel){
+  if(lib_ref->conectado_a == KERNEL){
 
-  //((mate_inner_structure *)lib_ref->group_info)->sem_instance = malloc(sizeof(sem_t));
- // sem_init(((mate_inner_structure *)lib_ref->group_info)->sem_instance, 0, value);
+  //((mate_inner_structure *)lib_ref->info)->sem_instance = malloc(sizeof(sem_t));
+ // sem_init(((mate_inner_structure *)lib_ref->info)->sem_instance, 0, value);
   enviar_sem_init(sem, (int)value, lib_ref->conexion, INIT_SEMAFORO); // codear fiuncion; pasar valor
   char* respuesta = recibir_mensaje(lib_ref->conexion); // espera respuesta para continuar ejecutando condigo???
 
@@ -53,20 +46,20 @@ int mate_sem_init(mate_instance *lib_ref, mate_sem_name sem, unsigned int value)
 }
 
 int mate_sem_wait(mate_instance *lib_ref, mate_sem_name sem) {
-  if(con_kernel){
+  if(lib_ref->conectado_a == KERNEL){
     enviar_mensaje_y_cod_op(sem, lib_ref->conexion, SEM_WAIT);
   }
-   // return sem_wait(((mate_inner_structure *)lib_ref->group_info)->sem_instance);
+   // return sem_wait(((mate_inner_structure *)lib_ref->info)->sem_instance);
  }
 
 int mate_sem_post(mate_instance *lib_ref, mate_sem_name sem) {
-  if(con_kernel){
-  enviar_mensaje_y_cod_op(sem, lib_ref->conxion, SEM_POST);
+  if(lib_ref->conectado_a == KERNEL){
+  enviar_mensaje_y_cod_op(sem, lib_ref->conexion, SEM_POST);
 }
 }
 int mate_sem_destroy(mate_instance *lib_ref, mate_sem_name sem) {
-  if(con_kernel){
-  enviar_mensaje_y_cod_op(sem, lib_ref->conxion, SEM_DESTROY);
+  if(lib_ref->conectado_a == KERNEL){
+  enviar_mensaje_y_cod_op(sem, lib_ref->conexion, SEM_DESTROY);
 }
 }
 //--------------------IO Functions------------------------/
@@ -87,37 +80,21 @@ int mate_call_io(mate_instance *lib_ref, mate_io_resource io, void *msg)
 
 mate_pointer mate_memalloc(mate_instance *lib_ref, int size)
 {
-  ((mate_inner_structure *)lib_ref->group_info)->memory = malloc(size);
   return 0;
 }
 
 int mate_memfree(mate_instance *lib_ref, mate_pointer addr)
 {
-  if (addr != 0)
-  {
-    return -1;
-  }
-  free(((mate_inner_structure *)lib_ref->group_info)->memory);
   return 0;
 }
 
 int mate_memread(mate_instance *lib_ref, mate_pointer origin, void *dest, int size)
 {
-  if (origin != 0)
-  {
-    return -1;
-  }
-  memcpy(dest, ((mate_inner_structure *)lib_ref->group_info)->memory, size);
   return 0;
 }
 
 int mate_memwrite(mate_instance *lib_ref, void *origin, mate_pointer dest, int size)
 {
-  if (dest != 0)
-  {
-    return -1;
-  }
-  memcpy(((mate_inner_structure *)lib_ref->group_info)->memory, origin, size);
   return 0;
 }
 

@@ -13,6 +13,9 @@
 #include <commons/collections/list.h>
 #include <sys/socket.h>
 
+#define INIT 0
+#define NOT_ASIGNED -1
+
 //-------------------Operations Codes For Messages---------/
 
 typedef enum{
@@ -28,21 +31,25 @@ typedef enum{
     MEMWRITE
 }cod_op;
 
+//-------------------tipo de conexion----------------------/
+
+typedef enum{
+    KERNEL,
+    MEMORIA
+}type_conetion;
+
 //-------------------Type Definitions----------------------/
 
 typedef struct mate_inner_structure{
-    uint32_t pid;
-    
-  //  char* ip;
-  //  char* puerto;
-    bool con_kernel;
     sem_t* sem_instance;
     void* memory;
 } mate_inner_structure;
 
 typedef struct mate_instance {
-   mate_inner_structure info;
+    mate_inner_structure info;
     uint32_t conexion; 
+    uint32_t conectado_a;
+    uint32_t pid;
 } mate_instance;
 
 
