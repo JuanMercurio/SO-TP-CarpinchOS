@@ -19,7 +19,7 @@ typedef struct memoria_t {
 memoria_t ram;
 
 typedef struct tablas_t{
-    t_list* lista;
+    t_list* lista;          //lista de tablas de cada proceso 'tab_pags'
     pthread_mutex_t mutex;
 }tablas_t;
 
@@ -32,7 +32,7 @@ int* marcos;
 /* Esructura para tablas */
 typedef struct tab_pags{
     int pid;
-    t_list* tabla_pag;
+    t_list* tabla_pag;     //lista de tablas de 1 carpincho 'pag_t'
 }tab_pags;
 
 /* Registros de las tablas de paginas */
