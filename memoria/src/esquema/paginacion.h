@@ -75,6 +75,12 @@ void init_ram();
 void init_bitmap_frames();
 
 /*
+    @NAME:  crear_pagina
+    @DESC:  crea una pagina vacia y retorna el numero de pagina
+ */
+int crear_pagina(t_list *paginas){
+
+/*
     @NAME:  marco_libre
     @DESC:  retorna el numero de marco libre
             si no hay libre recorda NOT_ASIGNED
