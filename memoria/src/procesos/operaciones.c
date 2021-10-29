@@ -20,11 +20,6 @@ uint32_t alloc_memory(t_list* tabla, int size){
    return 0;   
 }
 
-
-void crear_pagina(t_list* tabla){
-
-}
-
 int recibir_tamanio_malloc(int cliente){
     return recibir_tamanio(cliente);
 }

@@ -50,12 +50,6 @@ int recibir_PID(int cliente);
 int recibir_tamanio_malloc(int cliente);
 
 /*
-    @NAME:  crear_pagina
-    @DESC:  crea una pagina en la ultima posicion de la tabla
- */
-void crear_pagina(t_list* tabla);
-
-/*
     @NAME:  alloc_memory
     @DESC:  aloca la memoria y retorna la direccion logica
  */
