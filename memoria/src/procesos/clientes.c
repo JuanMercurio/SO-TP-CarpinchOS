@@ -12,7 +12,7 @@ void atender_proceso(void* arg){
     int cliente = *(int*)arg;
     free(arg);
 
-    handshake(cliente, "memoria");
+    handshake(cliente, MEMORIA);
     ejecutar_proceso(cliente);
 }
 
@@ -28,12 +28,12 @@ void ejecutar_proceso(int cliente) {
         case NEW_INSTANCE:
             // comprobar si puede iniciar
             // si no puede envia pid como NOT_ASIGNED
-            enviar_PID(pid, cliente);
+            enviar_PID(&pid, cliente);
             tabla = iniciar_paginas(cliente, pid);
             break;
         
         case MEMALLOC:
-            ejecutar_malloc(tabla, cliente);
+            //ejecutar_malloc(tabla, cliente);
             break;
 
         case MEMFREE:
@@ -62,4 +62,9 @@ t_list* iniciar_paginas(int cliente, int pid){
     // enviar_instancia();  ?
 
     return tabla->tabla_pag;
+}
+
+void enviar_PID(int *pid, int cliente){
+    *pid = crearID(&ids_memoria);
+    enviar_int(cliente, *pid);
 }

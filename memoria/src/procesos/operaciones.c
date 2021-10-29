@@ -30,10 +30,6 @@ int recibir_tamanio_malloc(int cliente){
 //     return pid;
 // }
 
-int recibir_PID(int cliente){
-    return recibir_tamanio(cliente);
-}
-
 void ejecutar_malloc(t_list* tabla, int cliente){
 
     int size = recibir_tamanio_malloc(cliente);

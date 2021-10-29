@@ -37,17 +37,6 @@ int recibir_tamanio_malloc(int cliente);
  */
 int desginar_PID(int cliente);
 
-/*
-    @NAME:  recibir_PID
-    @DESC:  Recibe el pid que le manda un carpincho o el kernel
- */
-int recibir_PID(int cliente);
-
-/*
-    @NAME:  recibir_tamanio_malloc
-    @DESC:  recibe el tamanio a alocar
- */
-int recibir_tamanio_malloc(int cliente);
 
 /*
     @NAME:  alloc_memory

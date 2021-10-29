@@ -1,25 +1,24 @@
-
 #include "matelib.h"
 
 //------------------General Functions---------------------/
 
 void mate_init(mate_instance *lib_ref, char *config)
 {
-  t_config *configuracion = config_create(config);
-  char *IP = config_get_string_value(configuracion, "IP");
-  char *PUERTO = config_get_string_value(configuracion, "PUERTO");
+  // t_config *configuracion = config_create(config);
+  // char *IP = config_get_string_value(configuracion, "IP");
+  // char *PUERTO = config_get_string_value(configuracion, "PUERTO");
 
   lib_ref->pid = INIT;
-  lib_ref->conexion = crear_conexion(IP, PUERTO);
-  lib_ref->conectado_a = recibir_conectado_a(lib_ref->conexion);
+  lib_ref->conexion = crear_conexion("127.0.0.1", "5001");
+  lib_ref->conectado_a = recibir_operacion(lib_ref->conexion);
+
+
+  enviar_int(lib_ref->conexion, NEW_INSTANCE);
 
   // iniciar el resto de la instancia
 
-  pedido_de_inicio(lib_ref->conexion);
-
-  lib_ref->pid = recibir_pid(lib_ref->conexion);
-
-  conexion_success(lib_ref->pid);
+  lib_ref->pid = recibir_PID(lib_ref->conexion);
+  //conexion_success(lib_ref->pid);
 }
 
 void conexion_success(int pid){
@@ -39,7 +38,7 @@ int mate_sem_init(mate_instance *lib_ref, mate_sem_name sem, unsigned int value)
 
   //((mate_inner_structure *)lib_ref->info)->sem_instance = malloc(sizeof(sem_t));
  // sem_init(((mate_inner_structure *)lib_ref->info)->sem_instance, 0, value);
-  enviar_sem_init(sem, (int)value, lib_ref->conexion, INIT_SEMAFORO); // codear fiuncion; pasar valor
+  // enviar_sem_init(sem, (int)value, lib_ref->conexion, INIT_SEMAFORO); // codear fiuncion; pasar valor
   char* respuesta = recibir_mensaje(lib_ref->conexion); // espera respuesta para continuar ejecutando condigo???
 
   return 0;
@@ -49,19 +48,19 @@ int mate_sem_init(mate_instance *lib_ref, mate_sem_name sem, unsigned int value)
 
 int mate_sem_wait(mate_instance *lib_ref, mate_sem_name sem) {
   if(lib_ref->conectado_a == KERNEL){
-    enviar_mensaje_y_cod_op(sem, lib_ref->conexion, SEM_WAIT);
+    // enviar_mensaje_y_cod_op(sem, lib_ref->conexion, SEM_WAIT);
   }
    // return sem_wait(((mate_inner_structure *)lib_ref->info)->sem_instance);
  }
 
 int mate_sem_post(mate_instance *lib_ref, mate_sem_name sem) {
   if(lib_ref->conectado_a == KERNEL){
-  enviar_mensaje_y_cod_op(sem, lib_ref->conexion, SEM_POST);
+  // enviar_mensaje_y_cod_op(sem, lib_ref->conexion, SEM_POST);
 }
 }
 int mate_sem_destroy(mate_instance *lib_ref, mate_sem_name sem) {
   if(lib_ref->conectado_a == KERNEL){
-  enviar_mensaje_y_cod_op(sem, lib_ref->conexion, SEM_DESTROY);
+  // enviar_mensaje_y_cod_op(sem, lib_ref->conexion, SEM_DESTROY);
 }
 }
 //--------------------IO Functions------------------------/

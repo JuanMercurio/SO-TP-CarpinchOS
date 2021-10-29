@@ -9,7 +9,7 @@
 
 void iniciar_paginacion(){
 
-    ids_memoria = 0;
+    ids_memoria = 1;
     init_ram();
     init_bitmap_frames();
     set_asignacion();

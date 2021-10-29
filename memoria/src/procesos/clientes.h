@@ -24,5 +24,6 @@ void ejecutar_proceso(int cliente);
  */
 t_list* iniciar_paginas(int cliente, int pid);
 
+void enviar_PID(int *pid, int cliente);
 
 #endif

@@ -3,6 +3,12 @@
 
 #include "../conexiones/conexiones.h"
 
+
+typedef enum{
+    KERNEL,
+    MEMORIA,
+} cod_server;
+
 typedef struct
 {
 	int size;
@@ -19,13 +25,19 @@ typedef struct
     @NAME:  handshake
     @DESC:  dado un cliente el server le manda el modulo que es 
  */
-void handshake(int cliente, char* modulo);
+void handshake(int cliente, cod_server modulo);
 
 /* 
     @NAME:  enviar_mensaje
     @DESC:  enviar a un cliente un mensaje
  */
 void enviar_mensaje(int cliente, char* mensaje);
+
+/* 
+    @NAME:  enviar_int
+    @DESC:  envia un int al socket
+ */
+void enviar_int(int socket, int codigo);
 
 /* 
     @NAME:  recibir_operacion
@@ -38,6 +50,12 @@ int recibir_operacion(int socket_cliente);
     @DESC:  recibe un int
  */
 int recibir_int(int socket_cliente);
+
+/* 
+    @NAME:  recibir_PID
+    @DESC:  recibe un PID
+ */
+int recibir_PID(int socket_cliente);
 
 /* 
     @NAME:  recibir_tamanio

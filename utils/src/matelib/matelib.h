@@ -1,7 +1,7 @@
 #ifndef _MATELIB_H_
 #define _MATELIB_H_
 
-#include "../conexiones/conexiones.h"
+#include "../mensajes/mensajes.h"
 
 #include <stdint.h>
 #include <stdlib.h>
@@ -30,13 +30,6 @@ typedef enum{
     MEMREAD,
     MEMWRITE
 }cod_op;
-
-//-------------------tipo de conexion----------------------/
-
-typedef enum{
-    KERNEL,
-    MEMORIA
-}type_conetion;
 
 //-------------------Type Definitions----------------------/
 

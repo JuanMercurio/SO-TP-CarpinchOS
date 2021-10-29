@@ -37,8 +37,16 @@ void* serializar_paquete(t_paquete* paquete, int bytes)
 	return magic;
 }
 
-void handshake(int cliente, char* modulo){
-    enviar_mensaje(cliente, modulo);
+void handshake(int cliente, cod_server modulo){
+    enviar_int(cliente, modulo);
+}
+
+void enviar_int(int socket, int codigo){
+
+	void* buffer = malloc(sizeof(int));
+	memcpy(buffer, &codigo, sizeof(int));
+	send(socket, buffer, sizeof(int), 0);
+	free(buffer);
 }
 
 void enviar_mensaje(int cliente, char* mensaje){
@@ -63,6 +71,10 @@ int recibir_int(int socket_cliente) {
     int size;
 	recv(socket_cliente, &size, sizeof(int), MSG_WAITALL);
     return size;
+}
+
+int recibir_PID(int socket_cliente){
+	return recibir_operacion(socket_cliente);
 }
 
 int recibir_tamanio(int socket_cliente) {
