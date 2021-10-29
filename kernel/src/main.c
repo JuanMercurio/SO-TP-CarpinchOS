@@ -175,12 +175,13 @@ void sem_kernel_wait(char *nombre, t_pcb *carpincho)
    //loguear-mutex_semaforos
    if (sem->val < 0)
    {
-      //bloquear proceso
+      ejecutando_a_bloqueado(carpincho);
+      queue_push(sem->bloqueados, carpincho);
    }
    free(sem);
 }
 
-void sem_kernel_post(char *nombre) 
+void sem_kernel_post(char *nombre, t_pcb *carpincho) 
 {
    sem_kernel *sem = buscar_semaforo(nombre, lista_sem_kernel);
    sem_wait(&mutex_lista_sem_kernel);
@@ -191,7 +192,9 @@ void sem_kernel_post(char *nombre)
    { 
       if(queue_size(sem->bloqueados)>0)
       {
-      //desbloquear proceso
+      //Desbloqueo el proceso del sistema y lo paso a listo
+      bloqueado_a_listo(carpincho);
+      queue_pop(sem->bloqueados);
       }
    }
    sem_post(&mutex_lista_sem_kernel);
@@ -212,10 +215,12 @@ void sem_kernel_destroy(char* nombre){
    sem_kernel *sem = buscar_semaforo(nombre, lista_sem_kernel);
    
    sem_wait(&mutex_lista_sem_kernel);
-   int bloqueados = queue_size(sem->bloqueados);
-   if(bloqueados>0){
-      for(int i=0;bloqueados; i++){
-         //desbloquear proceso
+   int cant_bloqueados = queue_size(sem->bloqueados);
+   if(cant_bloqueados>0){
+      for(int i=0;cant_bloqueados; i++){
+         t_pcb *carpincho_a_desbloquear = queue_peek(sem->bloqueados);
+         queue_pop(sem->bloqueados);
+         bloqueado_a_listo(carpincho_a_desbloquear);
       }
    }
    sem_post(&mutex_lista_sem_kernel);
