@@ -25,23 +25,22 @@ typedef enum{
     MEMALLOC,
     MEMFREE,
     MEMREAD,
-    MEMWRITE
+    MEMWRITE,
+    MATE_CLOSE
 }cod_op;
 
 //-------------------Type Definitions----------------------/
 
 typedef struct mate_inner_structure{
     uint32_t pid; 
-  //  char* ip;
-  //  char* puerto;
     bool con_kernel;
-    sem_t* sem_instance;
-    void* memory;
+    //sem_t* sem_instance;
+    //void* memory;
+    uint32_t conexion;
 } mate_inner_structure;
 
 typedef struct mate_instance {
-   mate_inner_structure info;
-    uint32_t conexion; 
+   void* group_info; 
 } mate_instance;
 
 

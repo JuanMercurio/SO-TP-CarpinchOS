@@ -30,12 +30,13 @@ typedef struct{
     tiempo_t tiempo;
     char estado;
     int proxima_instruccion;
+    char* io_solicitada;
     sem_t *semaforo_evento;
 
 }t_pcb;
 
 typedef enum{
-    NEW_INSTANCE,
+     NEW_INSTANCE,
     IO,
     INIT_SEMAFORO,
     SEM_WAIT,
@@ -44,7 +45,8 @@ typedef enum{
     MEMALLOC,
     MEMFREE,
     MEMREAD,
-    MEMWRITE
+    MEMWRITE,
+    MATE_CLOSE
 }cod_op;
 
 typedef struct{
@@ -79,7 +81,7 @@ sem_t *cola_ready_con_elementos;
 sem_t *cola_suspendido_bloquedo_con_elementos;
 sem_t *cola_suspendido_listo_con_elementos;
 sem_t *lista_ejecutando_con_elementos;
-sem_t *cola_finalizados_con elementos;
+sem_t *cola_finalizados_con_elementos;
 sem_t *mutex_cola_new;
 sem_t *mutex_cola_ready;
 sem_t *mutex_cola_bloqueado;

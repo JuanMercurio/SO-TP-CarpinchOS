@@ -45,6 +45,7 @@ void receptor(void *arg)
          carpincho->fd_cliente = cliente;
        
             carpincho->pid = crearID(&id_procesos);
+            carpincho->estado ='N';
             char *pid = itoa(carpincho->pid);
             enviar_mensaje(cliente, pid);
             sem_wait(&mutex_cola_new);
@@ -54,33 +55,49 @@ void receptor(void *arg)
          // enviar_mensaje("OK", cliente);
          // aca debe enviar el ok o debe planificarlo y al llegar a exec recien destrabar el carpincho
          break;
-      case INIT_SEMAFORO: t_paquete_semaforo semaforo = recibir_semaforo(cliente);
-                           sem_kernel_init(semaforo.buffer, semaforo.valor);
-
-      case IO: carpincho->proxima_instruccion = IO;
+      case INIT_SEMAFORO:
+               t_paquete_semaforo semaforo = recibir_semaforo(cliente);
+               sem_kernel_init(semaforo.buffer, semaforo.valor);
+               break;
+      case IO: 
+               char* io = recibir_mensaje(cliente);
+               //io_kernel io_to_be_served = *(buscar_io(io, lista_io_kernel));// DIRECTAMENT, AL SER UNA LISTA GLOBAL SE PUEDE ACCEDER DESDE LA FUNJCION Y NO PASARLA TODO EL TIEMPO COMO PARAMEETRO
+               carpincho->io_solicitada = io;              
+               carpincho->proxima_instruccion = IO;
                sem_post(&carpincho->semaforo_evento);
                break;
-      case SEM_WAIT: carpincho->proxima_instruccion = SEM_WAIT;
+
+      case SEM_WAIT: 
+               t_paquete_semaforo semaforo = recibir_semaforo(cliente);
+               sem_kernel_wait(semaforo.buffer, carpincho);
+               sem_kernel to_be_waited = *(buscar_semaforo(semaforo.buffer, lista_sem_kernel));
+               if(to_be_waited.val == 0){/*ACA COMPRUEBA SI SE DEBE BLOQUEAR EL PROCESOS O SEGUIR A LA ESPERA DE INSTRUCCIONES */
+               carpincho->proxima_instruccion = SEM_WAIT;
                sem_post(&carpincho->semaforo_evento);
+               }
          break;
       case SEM_POST: carpincho->proxima_instruccion = SEM_POST;
-               sem_post(&carpincho->semaforo_evento);
+               
          break;
-      case SEM_DESTROY: carpincho->proxima_instruccion = SEM_DESTROY;
-               sem_post(&carpincho->semaforo_evento);
+      case SEM_DESTROY:
+
          break;
       case MEMALLOC: carpincho->proxima_instruccion = MEMALLOC;
-               sem_post(&carpincho->semaforo_evento);
+               
          break;
       case MEMFREE: carpincho->proxima_instruccion = MEMFREE;
-               sem_post(&carpincho->semaforo_evento);
+              
          break;
       case MEMREAD: carpincho->proxima_instruccion = MEMREAD;
-               sem_post(&carpincho->semaforo_evento);
+               
          break;
       case MEMWRITE:carpincho->proxima_instruccion = MEMWRITE;
-               sem_post(&carpincho->semaforo_evento);
+               
          break;
+      case MATE_CLOSE: recibir_mensaje(cliente);
+               carpincho->proxima_instruccion = MATE_CLOSE;
+               sem_post(&carpincho->semaforo_evento);
+      break;
       }
    }
 }
@@ -120,6 +137,7 @@ void inicializar_semaforos(){
    sem_init(&cola_ready_con_elementos, NULL, 0);
    sem_init(&cola_suspendido_bloquedo_con_elementos, NULL, 0);
    sem_init(&cola_suspendido_listo_con_elementos, NULL, 0);
+   sem_init(&cola_finalizados_con_elementos, NULL, 0);
    sem_init(cola_finalizados, NULL, 0);
    sem_init(&mutex_cola_new, NULL, 1);
    sem_init(&mutex_cola_ready, NULL, 1);
@@ -132,18 +150,6 @@ void inicializar_semaforos(){
 
 }
 
-
-void crear_estructuras(t_pcb *carpincho)
-{
-}
-
-void recibir_pbc()
-{
-}
-
-void enviar_ok()
-{
-}
 
 void inicializar_listas_sem_io(){
    lista_io_kernel = list_create();
@@ -254,6 +260,7 @@ void init_dispositivos_io(){
       nueva_io->bloqueados=queue_create();
       list_add(lista_io_kernel, nueva_io);
       i++;
+      printf("COLAS DISPOSITIVOS IO CREADAS\n");
      // free(nueva_io); //va acá o afuera del while?
    }
 }

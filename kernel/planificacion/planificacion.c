@@ -19,30 +19,27 @@ void procesador(){// resolver la cuestion de administacion de los semaforos de l
       carpincho->tiempo.tiempo_de_espera = obtener_tiempo(carpincho->tiempo.time_stamp_inicio, carpincho->tiempo.time_stamp_fin);
       //aca el procesador lo ejecuta por lo tanto hay qu etomar el tiempo d einicio para depues tener lamdiferencia conel timep de salida
       strcpy(carpincho->tiempo.time_stamp_inicio,carpincho->tiempo.time_stamp_fin); // el momento que comeinza a ejecutar es el mismo que cuando termino la espera
-      /*
-      aca activaria al proeso peor no see si con semforo o mensaje
-      */
-      
+      carpincho->estado = 'E';
       enviar_mensaje("OK", carpincho->fd_cliente);
-      sem_wait(&evento_carpincho);
-       char* nombre_semaforo;
-      switch(carpincho->proxima_instruccion){
-         case IO:
+      sem_wait(&carpincho->semaforo_evento);
+
+      switch(carpincho->proxima_instruccion)
+      {
+         case IO: ejecutando_a_bloqueado_por_io(carpincho, carpincho->io_solicitada);
+                  sem_wait(&carpincho->semaforo_evento);
          break;
-         case SEM_WAIT: nombre_semaforo = recibir_semaforo(fd_cliente);
-                        sem_kernel_wait(nombre_semaforo, carpincho);
-         break;
-         case SEM_POST:
-         break;
-         case SEM_DESTROY:
-         break;
-         case MEMALLOC:
-         break;
-         case MEMFREE:
-         break;
-         case MEMREAD:
-         break;
-         case MEMWRITE:
+
+         case SEM_WAIT: ejecutnado_bloquedo_por_semaforo(carpincho); 
+                        sem_wait(&carpincho->semaforo_evento);
+                                        /* la verificacion de bloqueo la hace el receptor que es quien atiende el cliente */
+         break;                       /* ACA SE ATAJAN LOS ENVENTO SUQ HACEN QUE EL CARPINCHO DEJE DE EJECUTAR */
+         
+         
+         case MATE_CLOSE: carpincho->estado = 'F';
+                          sem_wait(&mutex_cola_finalizados);
+                          queue_push(cola_finalizados, (void*)carpincho);
+                          sem_post(&mutex_cola_finalizados);
+                          sem_post(&cola_finalizados_con_elementos);
          break;
 
       }
@@ -52,7 +49,7 @@ void procesador(){// resolver la cuestion de administacion de los semaforos de l
 void iniciar_planificador_corto_plazo()
 { 
    while(1){
-      sem_wait(&controlador_multiprogramacion);// este semaforo contador controla la cantidad de procesos que estaran ordenaod en ready el post lo hara el encargado de finalizar los procesos
+      
       sem_wait(&cola_ready_con_elementos);
       t_pcb *carpincho = queue_pop(cola_ready);
       sem_post(&cola_ready_con_elementos);
@@ -132,6 +129,7 @@ void iniciar_planificador_largo_plazo()
 {
    while (1)
    {
+      sem_wait(&controlador_multiprogramacion);// este semaforo contador controla la cantidad de procesos que estaran ordenaod en ready el post lo hara el encargado de finalizar los procesos
       sem_wait(&cola_new_con_elementos);
       sem_wait(&mutex_cola_new);
       t_pcb *carpincho = queue_pop(cola_new);
