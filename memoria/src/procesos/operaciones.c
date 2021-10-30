@@ -39,8 +39,6 @@ int memalloc(int tamanio, int pid){ //quizas al igual que antes, el carpincho se
 			//si el nuevo metadata esta en otra pagina
 			if(hay_cambio_de_pagina(inicio_actual, ptr_potencial_segmento->nextAlloc)){
 				int num_pag_a_traer = num_pagina_actual + 1; //IMPORTANTE: y si un segmento puede ser mas grande que 1 pagina? es decir, que hay 2 saltos de pagina
-
-				//traigo la siguiente pagina
 				pag_t* pagina_a_traer = list_get(tabla_paginas->tabla_pag, num_pag_a_traer);
 
 				//TODO: la cargo en memoria
@@ -78,13 +76,17 @@ int memalloc(int tamanio, int pid){ //quizas al igual que antes, el carpincho se
 		if(hay_cambio_de_pagina(inicio_actual, ptr_potencial_segmento->nextAlloc)){
 			//El siguiente metadata esta en otra pagina
 			//Obtengo dir fisica de inicio de pagina nueva, luego el metadata esta en [direccion.segmento + configuracion.TAMANIO_PAGINA - inicio_actual]
+			pag_t* pagina_a_traer = list_get(tabla_paginas->tabla_pag, num_pagina_actual+1);
+			//TODO: la cargo en memoria
+			ptr_potencial_segmento = ubicacion_nuevo_segmento(pagina_a_traer->marco, (ptr_potencial_segmento->nextAlloc % configuracion.TAMANIO_PAGINAS)); //TODO: CHECKEAR LOGICA
 			num_pagina_actual++;
+			continue;
 		}
 
 		inicio_actual = ptr_potencial_segmento->nextAlloc;
 		ptr_potencial_segmento += ptr_potencial_segmento->nextAlloc; //TODO: REVISAR
 
-	} while((ptr_potencial_segmento->nextAlloc) != NULL);
+	} while((ptr_potencial_segmento->nextAlloc) != 0); //0 vendria a ser NULL. ¿no falta una iteracion?
 
 	// no hay espacio en ninguna pagina
 
