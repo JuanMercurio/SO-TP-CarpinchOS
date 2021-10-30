@@ -2,7 +2,7 @@
 #define _MATELIB_H_
 
 #include "../conexiones/conexiones.h"
-
+#include "../mensajes/mensajes.h"
 #include <stdint.h>
 #include <stdlib.h>
 #include <stdio.h>
@@ -31,8 +31,7 @@ typedef enum{
 //-------------------Type Definitions----------------------/
 
 typedef struct mate_inner_structure{
-    uint32_t pid;
-    
+    uint32_t pid; 
   //  char* ip;
   //  char* puerto;
     bool con_kernel;

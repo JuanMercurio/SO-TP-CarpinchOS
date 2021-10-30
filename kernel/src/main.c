@@ -29,6 +29,7 @@ void receptor(void *arg)
    free(arg);
    int cod_op;
    bool conectado = true;
+   handshake(cliente, "KERNEL");
 
    while (conectado)
    {
@@ -42,19 +43,19 @@ void receptor(void *arg)
       case NEW_INSTANCE: 
          t_pcb *carpincho = malloc(sizeof(t_pcb)); // aca no recibe la pcb en si , recibe un paquete con datos que habra que guardar en un t_pcb luego de desserializar lo que viene
          carpincho->fd_cliente = cliente;
-         if (registrar_carpincho(carpincho) != -1)// comprobaciion por la memoria????
-         {
-            printf("NO SE PUEDE ALOJAR CARPINCHO\n");
-         }else{
+       
             carpincho->pid = crearID(&id_procesos);
             char *pid = itoa(carpincho->pid);
             enviar_mensaje(cliente, pid);
             sem_wait(&mutex_cola_new);
             queue_push(cola_new, (void*) carpincho); // pensando que el proceso queda trabado en mate init hasta que sea planificado
             sem_post(&mutex_cola_new);
-           }// enviar_mensaje("OK", cliente);
+
+         // enviar_mensaje("OK", cliente);
          // aca debe enviar el ok o debe planificarlo y al llegar a exec recien destrabar el carpincho
          break;
+      case INIT_SEMAFORO: t_paquete_semaforo semaforo = recibir_semaforo(cliente);
+                           sem_kernel_init(semaforo.buffer, semaforo.valor);
 
       case IO: carpincho->proxima_instruccion = IO;
                sem_post(&carpincho->semaforo_evento);
@@ -136,10 +137,6 @@ void crear_estructuras(t_pcb *carpincho)
 {
 }
 
-int registrar_carpincho()
-{
-}
-
 void recibir_pbc()
 {
 }
@@ -159,7 +156,7 @@ sem_kernel *buscar_semaforo(char *nombre, t_list *sems)
    sem_kernel *sem_buscado = malloc(sizeof(sem_kernel));
 
    bool nombre_semaforo(void* elemento){
-      return ((sem_kernel*)elemento)->id == nombre;
+      return (strcmp(((sem_kernel*)elemento)->id ,nombre) == 0);
    }
    //uso la inner function porque list_find requiere un void* como condicion
    sem_buscado = list_find(sems, nombre_semaforo);
@@ -208,7 +205,7 @@ void sem_kernel_init(char* nombre, int value){
    nuevo_sem->val=value;
    nuevo_sem->bloqueados=queue_create();
    list_add(lista_sem_kernel, nuevo_sem); //hace falta mutex acá?
-   free(nuevo_sem);
+
 }
 
 void sem_kernel_destroy(char* nombre){
@@ -226,11 +223,12 @@ void sem_kernel_destroy(char* nombre){
    sem_post(&mutex_lista_sem_kernel);
 
    bool nombre_semaforo(void* elemento){
-      return ((sem_kernel*)elemento)->id == nombre;
+      return (strcmp(((sem_kernel*)elemento)->id, nombre) == 0);
    }
 
    //revisar si está bien planteado
    list_remove_by_condition(lista_sem_kernel, nombre_semaforo);
+   //free(sem);
 }
 
 io_kernel *buscar_io(char *nombre, t_list *ios)
@@ -238,7 +236,7 @@ io_kernel *buscar_io(char *nombre, t_list *ios)
    io_kernel *io_buscada = malloc(sizeof(io_kernel));
 
    bool nombre_io(void* elemento){
-      return ((io_kernel*)elemento)->id == nombre;
+      return (strcmp(((io_kernel*)elemento)->id ,nombre) == 0);
    }
    //uso la inner function porque list_find requiere un void* como condicion
    io_buscada = list_find(ios, nombre_io);

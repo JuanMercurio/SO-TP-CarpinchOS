@@ -1,5 +1,6 @@
 #include "planificacion.h"
 #include "main.h"
+
 void inciar_cpu(){
    pthread_t *cpu[configuracion.GRADO_MULTIPROGRAMACION];
    for(int i = 0 ; i < configuracion.GRADO_MULTIPROCESAMIENTO ; i++){
@@ -151,7 +152,7 @@ void iniciar_gestor_finalizados(){// falta
       sem_post(&controlador_multiprogramacion);
 }
 void eliminar_carpincho(t_pcb *carpincho){// revisar que este este borrando lo necesario y no haya free's de mas
-    free(carpincho->timepo.time_stamp_fin);
+    free(carpincho->tiempo.time_stamp_fin);
     free(carpincho->tiempo.time_stamp_inicio);
     free(carpincho);
 }

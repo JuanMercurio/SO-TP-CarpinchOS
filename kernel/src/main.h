@@ -11,6 +11,7 @@
 #include <commons/collections/list.h>
 #include <commons/temporal.h>
 #include <time.h>
+#include <mensajes/mensajes.h>
 // type struct
 struct timeval *tiempito;
 struct tm *aux;
