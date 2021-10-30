@@ -78,13 +78,13 @@ int memalloc(int tamanio, int pid){ //quizas al igual que antes, el carpincho se
 		if(hay_cambio_de_pagina(inicio_actual, ptr_potencial_segmento->nextAlloc)){
 			//El siguiente metadata esta en otra pagina
 			//Obtengo dir fisica de inicio de pagina nueva, luego el metadata esta en [direccion.segmento + configuracion.TAMANIO_PAGINA - inicio_actual]
-			pagina_actual++;
+			num_pagina_actual++;
 		}
 
 		inicio_actual = ptr_potencial_segmento->nextAlloc;
 		ptr_potencial_segmento += ptr_potencial_segmento->nextAlloc; //TODO: REVISAR
 
-	} while(ptr_potencial_segmento->nextAlloc != NULL);
+	} while((ptr_potencial_segmento->nextAlloc) != NULL);
 
 	// no hay espacio en ninguna pagina
 
