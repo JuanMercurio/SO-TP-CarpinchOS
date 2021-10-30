@@ -11,8 +11,7 @@ int memalloc(int tamanio, int pid){ //quizas al igual que antes, el carpincho se
 
 	tab_pags* tabla_paginas = buscar_page_table(pid);
 	HeapMetadata* ptr_potencial_segmento = primer_segmento(tabla_paginas);
-	int inicio_actual = 0, pagina_actual=0;
-
+	int inicio_actual = 0, num_pagina_actual=0;
 	do{
 		if(ptr_potencial_segmento->isFree && ptr_potencial_segmento->nextAlloc - SIZE_METADATA - inicio_actual >= tamanio) {
 			//encontre el segmento donde entra
@@ -30,34 +29,47 @@ int memalloc(int tamanio, int pid){ //quizas al igual que antes, el carpincho se
 			ptr_potencial_segmento->nextAlloc = inicio_actual + SIZE_METADATA + tamanio;
 
 
-			HeapMetadata* new;
-			new->prevAlloc = inicio_actual;
-			new->nextAlloc = aux_next_alloc;
-			new->isFree = true;
+			HeapMetadata new;
+			new.prevAlloc = inicio_actual;
+			new.nextAlloc = aux_next_alloc;
+			new.isFree = true;
 
+			HeapMetadata* next;
+			pag_t* pagina = list_get(tabla_paginas->tabla_pag, num_pagina_actual);
 			//si el nuevo metadata esta en otra pagina
 			if(hay_cambio_de_pagina(inicio_actual, ptr_potencial_segmento->nextAlloc)){
-				int num_pag_a_traer = pagina_actual + 1; //IMPORTANTE: y si un segmento puede ser mas grande que 1 pagina? es decir, que hay 2 saltos de pagina
+				int num_pag_a_traer = num_pagina_actual + 1; //IMPORTANTE: y si un segmento puede ser mas grande que 1 pagina? es decir, que hay 2 saltos de pagina
 
 				//traigo la siguiente pagina
-				pag_t* pagina__a_traer = list_get(tabla_paginas->tabla_pag, num_pag_a_traer);
+				pag_t* pagina_a_traer = list_get(tabla_paginas->tabla_pag, num_pag_a_traer);
 
 				//TODO: la cargo en memoria
 
-				memcpy(ubicacion_nuevo_segmento(pagina__a_traer->marco, ptr_potencial_segmento->nextAlloc), new, SIZE_METADATA);
+				memcpy(ubicacion_nuevo_segmento(pagina_a_traer->marco, ptr_potencial_segmento->nextAlloc), &new, SIZE_METADATA);
 
-				//caso borde, el segmento a cambiarle el prevalloc tambien esta en otra pagina
-				if(hay_cambio_de_pagina(ptr_potencial_segmento->nextAlloc, new->nextAlloc)){
+				if(hay_cambio_de_pagina(ptr_potencial_segmento->nextAlloc, new.nextAlloc)) { //caso borde, el segmento a cambiarle el prevalloc tambien esta en otra pagina
 					pag_t* pagina_next = list_get(tabla_paginas->tabla_pag, num_pag_a_traer+1);
 					//TODO: la cargo en memoria
-					HeapMetadata* next = ubicacion_nuevo_segmento(pagina_next->marco, new->nextAlloc);
-					next->prevAlloc = ptr_potencial_segmento->nextAlloc;
+					next = ubicacion_nuevo_segmento(pagina_next->marco, new.nextAlloc);
 				}
+				else{
+					next = ubicacion_nuevo_segmento(pagina_a_traer->marco, new.nextAlloc);
+				}
+				next->prevAlloc = ptr_potencial_segmento->nextAlloc;
+				return inicio_actual;
 			}
 
-			memcpy((ram.memoria+ptr_potencial_segmento->nextAlloc), new, SIZE_METADATA); //mal!
-			HeapMetadata* next = ram.memoria + aux_next_alloc; //quizas esta mal
-			next->prevAlloc = ptr_potencial_segmento->nextAlloc; //el prevAlloc es igual al nextAlloc de 2 metadatas atras
+			if(hay_cambio_de_pagina(ptr_potencial_segmento->nextAlloc, new.nextAlloc)){
+				pag_t* pagina_next = list_get(tabla_paginas->tabla_pag, num_pagina_actual+1);
+				//TODO: la cargo en memoria
+				next = ubicacion_nuevo_segmento(pagina_next->marco, new.nextAlloc);
+			}
+			else{
+				next = ubicacion_nuevo_segmento(pagina->marco, new.nextAlloc);
+			}
+			next->prevAlloc = ptr_potencial_segmento->nextAlloc;
+
+			memcpy(ubicacion_nuevo_segmento(pagina->marco, ptr_potencial_segmento->nextAlloc), &new, SIZE_METADATA);
 
 			return inicio_actual;
 		}
@@ -102,7 +114,7 @@ HeapMetadata* primer_segmento(tab_pags* tabla){
 	dir_t direccion_fisica = convertir_a_df(tabla, direccion_logica);
 	int offset = offset_memoria(direccion_fisica);
 
-	HeapMetadata* seg = memoria_principal + offset_memoria;
+	HeapMetadata* seg = ram.memoria + offset;
 	return seg;
 }
 
