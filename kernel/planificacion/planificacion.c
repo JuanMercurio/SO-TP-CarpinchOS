@@ -156,17 +156,31 @@ void eliminar_carpincho(t_pcb *carpincho){// revisar que este este borrando lo n
 }
 
 void ejecutando_a_bloqueado(t_pcb *carpincho){
-   //hay que guardar los tiempos?
-   
+   //¿Está bien este cálculo de tiempos o falta algo?
+   carpincho->tiempo.time_stamp_fin = temporal_get_string_time("%H:%M:%S:%MS");// Guardo el timestamp de cuando terminó de ejecutar
+   carpincho->tiempo.tiempo_ejecutado=obtener_tiempo(carpincho->tiempo.time_stamp_inicio, carpincho->tiempo.time_stamp_fin);
+
    sem_wait(&mutex_lista_ejecutando);
    //sacar carpincho de la lista
    sem_post(&mutex_lista_ejecutando);
    
    sem_wait(&mutex_cola_bloqueado);
-   queue_push(cola_bloqueado,carpincho); 
+   queue_push(cola_bloqueado, (void*)carpincho); 
    sem_post(&mutex_cola_bloqueado);
+
+   carpincho->estado='B';
 }
 
 void bloqueado_a_listo(t_pcb *carpincho){
-   
+   sem_wait(&mutex_cola_bloqueado);
+   queue_pop(cola_bloqueado);
+   sem_post(&mutex_cola_bloqueado);
+
+   sem_wait(&mutex_cola_ready);
+   queue_push(cola_ready, (void*)carpincho);
+   sem_post(&mutex_cola_ready);
+
+   sem_post(&cola_ready_con_elementos); //Esto está bien, ¿no?
+
+   carpincho->tiempo.time_stamp_inicio=temporal_get_string_time("%H:%M:%S:%MS"); //Tomo el tiempo de cuando inicia la espera
 }
