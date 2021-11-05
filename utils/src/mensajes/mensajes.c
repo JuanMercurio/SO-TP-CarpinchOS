@@ -1,8 +1,8 @@
 #include "mensajes.h"
 
+#include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
-#include <stdio.h>
 
 void enviar_mensaje_y_cod_op(char* mensaje, int socket_cliente, int codigo_op){
 	printf("preparando mensjae\n");

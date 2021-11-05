@@ -1,9 +1,10 @@
 #include "main.h"
-#include "signals/signal.h"
+
 #include "configuracion/config.h"
-#include "esquema/tlb.h"
 #include "esquema/paginacion.h"
+#include "esquema/tlb.h"
 #include "procesos/clientes.h"
+#include "signals/signal.h"
 
 #include <conexiones/conexiones.h>
 

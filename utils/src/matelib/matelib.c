@@ -8,17 +8,20 @@ void mate_init(mate_instance *lib_ref, char *config)
   // char *IP = config_get_string_value(configuracion, "IP");
   // char *PUERTO = config_get_string_value(configuracion, "PUERTO");
 
-  lib_ref->pid = INIT;
-  lib_ref->conexion = crear_conexion("127.0.0.1", "5001");
-  lib_ref->conectado_a = recibir_operacion(lib_ref->conexion);
+  int pid = INIT;
+  int conexion = crear_conexion("127.0.0.1", "5001");
+  int server =  recibir_int(conexion);
 
 
-  enviar_int(lib_ref->conexion, NEW_INSTANCE);
+  enviar_int(conexion, NEW_INSTANCE);
 
-  // iniciar el resto de la instancia
+ // No se si hace falta iniciar el sem_instance
 
-  lib_ref->pid = recibir_PID(lib_ref->conexion);
-  //conexion_success(lib_ref->pid);
+  pid = recibir_PID(conexion);
+  printf("werlkjwerRecibi un pid: %d \n", pid);
+  conexion_success(pid);
+
+  lib_ref->group_info = crear_mate_inner(pid, conexion, server);
 }
 
 void conexion_success(int pid){
@@ -34,7 +37,7 @@ int mate_close(mate_instance *lib_ref)
 
 int mate_sem_init(mate_instance *lib_ref, mate_sem_name sem, unsigned int value) {
   
-  if(lib_ref->conectado_a == KERNEL){
+  if(true){
 
   //((mate_inner_structure *)lib_ref->info)->sem_instance = malloc(sizeof(sem_t));
  // sem_init(((mate_inner_structure *)lib_ref->info)->sem_instance, 0, value);
@@ -47,21 +50,15 @@ int mate_sem_init(mate_instance *lib_ref, mate_sem_name sem, unsigned int value)
 }
 
 int mate_sem_wait(mate_instance *lib_ref, mate_sem_name sem) {
-  if(lib_ref->conectado_a == KERNEL){
     // enviar_mensaje_y_cod_op(sem, lib_ref->conexion, SEM_WAIT);
-  }
    // return sem_wait(((mate_inner_structure *)lib_ref->info)->sem_instance);
  }
 
 int mate_sem_post(mate_instance *lib_ref, mate_sem_name sem) {
-  if(lib_ref->conectado_a == KERNEL){
   // enviar_mensaje_y_cod_op(sem, lib_ref->conexion, SEM_POST);
 }
-}
 int mate_sem_destroy(mate_instance *lib_ref, mate_sem_name sem) {
-  if(lib_ref->conectado_a == KERNEL){
   // enviar_mensaje_y_cod_op(sem, lib_ref->conexion, SEM_DESTROY);
-}
 }
 //--------------------IO Functions------------------------/
 
@@ -158,3 +155,29 @@ char* recibir_mensaje(int socket_cliente)
 	return buffer;
 }
 */
+
+int obtener_int(mate_instance* lib_ref, cod_int COD){
+  void* buffer = leer_bloque(lib_ref->group_info, sizeof(int)*COD, sizeof(int));
+  return *(int*)buffer;
+}
+
+void* leer_bloque(void* bloque, int offset, int tamanio){
+  void* buffer = malloc(tamanio);
+  memcpy(buffer, bloque + offset, tamanio);
+  return buffer;
+}
+
+void* crear_mate_inner(int pid, int conexion, int server){
+
+  void* bloque = malloc(sizeof(int)*3 + sizeof(sem_t)); // verificar tamanio para semaforos
+  int offset = 0;
+
+  memcpy(bloque + offset, &pid, sizeof(int));
+  offset += sizeof(int);
+  memcpy(bloque + offset, &conexion, sizeof(int));
+  offset += sizeof(int);
+  memcpy(bloque + offset, &server, sizeof(int));
+  offset += sizeof(int);
+
+  return bloque;
+}

@@ -1,13 +1,14 @@
 #include "tests.h"
-#include "../main.h"
-#include "../esquema/tlb.h"
+
 #include "../configuracion/config.h"
 #include "../esquema/paginacion.h"
+#include "../esquema/tlb.h"
+#include "../main.h"
 
 #include <CUnit/Basic.h>
-#include <stdlib.h>
 #include <conexiones/conexiones.h>
 #include <mensajes/mensajes.h>
+#include <stdlib.h>
 
 
 void tests(int arg, char* argv){

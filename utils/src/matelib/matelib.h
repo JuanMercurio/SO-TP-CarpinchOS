@@ -3,15 +3,15 @@
 
 #include "../mensajes/mensajes.h"
 
-#include <stdint.h>
-#include <stdlib.h>
-#include <stdio.h>
-#include <unistd.h>
-#include <string.h>
-#include <semaphore.h>
-#include <commons/config.h>
 #include <commons/collections/list.h>
+#include <commons/config.h>
+#include <semaphore.h>
+#include <stdint.h>
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
 #include <sys/socket.h>
+#include <unistd.h>
 
 #define INIT 0
 #define NOT_ASIGNED -1
@@ -35,16 +35,14 @@ typedef enum{
 
 typedef struct mate_inner_structure{
     sem_t* sem_instance;
-    void* memory;
+    uint32_t pid;
+    uint32_t conectado_a;
 } mate_inner_structure;
 
 typedef struct mate_instance {
-    mate_inner_structure info;
+    void* group_info;
     uint32_t conexion; 
-    uint32_t conectado_a;
-    uint32_t pid;
 } mate_instance;
-
 
 typedef char *mate_io_resource;
 
@@ -80,4 +78,13 @@ int mate_memread(mate_instance *lib_ref, mate_pointer origin, void *dest, int si
 
 int mate_memwrite(mate_instance *lib_ref, void *origin, mate_pointer dest, int size);
 
+void* leer_bloque(void* bloque, int offset, int tamanio);
+
+typedef enum{
+  PID, SOCKET, SERVER,
+}cod_int;
+
+int obtener_int(mate_instance* lib_ref, cod_int COD);
+
+void* crear_mate_inner(int pid, int conexion, int server);
 #endif

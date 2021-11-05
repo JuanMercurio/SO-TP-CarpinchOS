@@ -5,6 +5,7 @@
 		{"path": "memoria"},
 		{"path": "kernel"},
     {"path": "utils"},
+    {"path": "carpincho"},
   ],
 
   /* aca irian las tasks globales del workspace pero no nos da la version para eso :( */

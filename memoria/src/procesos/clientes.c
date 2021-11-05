@@ -1,12 +1,12 @@
+#include "../esquema/paginacion.h"
 #include "clientes.h"
 #include "operaciones.h"
-#include "../esquema/paginacion.h"
 
 #include <matelib/matelib.h>
 #include <mensajes/mensajes.h>
-#include <utils/utils.h>
-#include <sys/socket.h>
 #include <pthread.h>
+#include <sys/socket.h>
+#include <utils/utils.h>
 
 void atender_proceso(void* arg){
     int cliente = *(int*)arg;
@@ -64,7 +64,7 @@ t_list* iniciar_paginas(int cliente, int pid){
     return tabla->tabla_pag;
 }
 
-void enviar_PID(int *pid, int cliente){
+void enviar_PID(int *pid, int cliente){ 
     *pid = crearID(&ids_memoria);
     enviar_int(cliente, *pid);
 }
