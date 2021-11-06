@@ -12,4 +12,7 @@ int server;
  */
 void terminar_programa();
 
+void iniciar_swamp();
+void atender_clientes();
+
 #endif

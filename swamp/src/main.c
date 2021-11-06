@@ -4,6 +4,7 @@
 
 #include <utils/utils.h> 
 #include <conexiones/conexiones.h>
+#include <stdio.h>
 
 int main(int argc, char* argv[]) {
    
@@ -12,6 +13,12 @@ int main(int argc, char* argv[]) {
 
    /* Este modulo funciona sin hilos. Los clientes esperan a ser atendidos en cola  */
    obtener_config();
+   
+   printf("El ip del server va a ser: %s \n", configuracion.IP);   
+   printf("El ip del server va a ser: %s \n", configuracion.PUERTO);   
+   printf("El ip del server va a ser: %d \n", configuracion.TAMANIO_SWAP);   
+   printf("El ip del server va a ser: %d \n", configuracion.TAMANIO_PAGINA);   
+   printf("El ip del server va a ser: %d \n", configuracion.RETARDO_SWAP);   
 
    iniciar_swamp();
    atender_clientes();
