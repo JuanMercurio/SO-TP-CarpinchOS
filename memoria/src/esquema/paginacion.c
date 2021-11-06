@@ -1,15 +1,18 @@
 #include "paginacion.h"
-#include "../configuracion/config.h"
-#include "algoritmos.h"
 
 #include <stdlib.h>
 #include <stdio.h>
 #include <string.h>
 #include <stdint.h>
+#include <utils/utils.h>
+
+memoria_t ram;
+tablas_t tablas;
+t_list* marcos;
+int ids_memoria;
 
 void iniciar_paginacion(){
-
-    ids_memoria = 1;
+	
     init_ram();
     init_bitmap_frames();
     set_asignacion();
@@ -41,16 +44,6 @@ int crear_pagina(t_list *paginas){
     return list_add(paginas, pagina);
 }
 
-void set_asignacion(){
-    if(strcmp(configuracion.TIPO_ASIGNACION, "FIJA") == 0)
-    {
-        lru = lru_fijo; 
-    }
-    else
-    {
-        lru = lru_dinamico;
-    }
-}
 
 int marco_libre(){
     int n_frames = configuracion.TAMANIO / configuracion.TAMANIO_PAGINAS;

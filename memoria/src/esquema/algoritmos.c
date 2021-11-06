@@ -1,5 +1,7 @@
 #include "algoritmos.h"
 
+int LRU_C = 0;
+
 int clock_mejorado();
 
 pag_t* lru_dinamico(int pid, tab_pags* tabla)

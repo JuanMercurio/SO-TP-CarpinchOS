@@ -1,8 +1,10 @@
 #include "tlb.h"
-#include "../configuracion/config.h"
 
 #include <stdlib.h>
 #include <stdio.h>
+
+
+t_list* tlb;
 
 void iniciar_tlb(){
 

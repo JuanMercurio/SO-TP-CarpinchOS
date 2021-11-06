@@ -1,5 +1,8 @@
 #include "config.h"
 
+t_config* config;
+t_cfg configuracion;
+
 void obtener_config(){
     config = config_create("cfg/memoria.config");
     configuracion.IP = config_get_string_value(config, "IP");

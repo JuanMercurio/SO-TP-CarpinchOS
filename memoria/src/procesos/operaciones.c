@@ -1,4 +1,5 @@
 #include "operaciones.h"
+
 #include "../esquema/paginacion.h"
 #include "../configuracion/config.h"
 

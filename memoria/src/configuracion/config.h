@@ -18,9 +18,9 @@ typedef struct {
    char* PATH_DUMP_TLB;
 }t_cfg;
 
-t_cfg configuracion;
+extern t_cfg configuracion;
 
-t_config* config;
+extern t_config* config;
 
 /*
    @NAME: obtener_config

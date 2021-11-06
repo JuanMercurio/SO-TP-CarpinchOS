@@ -1,10 +1,5 @@
 #include "tests.h"
 
-#include "../configuracion/config.h"
-#include "../esquema/paginacion.h"
-#include "../esquema/tlb.h"
-#include "../main.h"
-
 #include <CUnit/Basic.h>
 #include <conexiones/conexiones.h>
 #include <mensajes/mensajes.h>

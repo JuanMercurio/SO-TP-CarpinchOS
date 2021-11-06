@@ -3,11 +3,13 @@
 
 #include <commons/collections/list.h>
 
-#define TLB_MISS -1
+#include "../configuracion/config.h"
+
+#define TLB_MISS  -1
 #define TLB_EMPTY -1 
 
 /* TLB */
-t_list * tlb;
+extern t_list * tlb;
 
 /* Registros de la tlb */
 typedef struct tlb_t{

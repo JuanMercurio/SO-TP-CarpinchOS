@@ -14,7 +14,8 @@
 
 /* Variables Globales */
 
-int id_procesos;
+extern int id_procesos;
+extern int ids_memoria;
 
 /* Funciones */
 

@@ -3,7 +3,6 @@
 
 #include "../esquema/paginacion.h"
 
-
 /*
     @NAME:  atender_proceso
     @DESC:  hilo que atiene a los procesos que se conectan

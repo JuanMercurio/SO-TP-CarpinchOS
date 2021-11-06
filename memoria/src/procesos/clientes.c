@@ -1,5 +1,7 @@
-#include "../esquema/paginacion.h"
 #include "clientes.h"
+
+#include "../esquema/paginacion.h"
+#include "../esquema/algoritmos.h"
 #include "operaciones.h"
 
 #include <matelib/matelib.h>
@@ -7,6 +9,8 @@
 #include <pthread.h>
 #include <sys/socket.h>
 #include <utils/utils.h>
+
+extern int ids_memoria;
 
 void atender_proceso(void* arg){
     int cliente = *(int*)arg;
