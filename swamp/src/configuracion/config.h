@@ -9,6 +9,7 @@ typedef struct {
    int TAMANIO_SWAP;
    int TAMANIO_PAGINA;
    char* ARCHIVOS_SWAP;
+   char** ARCHIVOS_SWAP_list;
    int MARCOS_MAXIMOS;
    int RETARDO_SWAP;
 }t_cfg;
