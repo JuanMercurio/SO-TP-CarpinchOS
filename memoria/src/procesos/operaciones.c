@@ -28,7 +28,6 @@ int memalloc(int tamanio, int pid){ //quizas al igual que antes, el carpincho se
 			int aux_next_alloc = ptr_potencial_segmento->nextAlloc;
 			ptr_potencial_segmento->nextAlloc = inicio_actual + SIZE_METADATA + tamanio;
 
-
 			HeapMetadata new;
 			new.prevAlloc = inicio_actual;
 			new.nextAlloc = aux_next_alloc;
@@ -38,7 +37,7 @@ int memalloc(int tamanio, int pid){ //quizas al igual que antes, el carpincho se
 			pag_t* pagina = list_get(tabla_paginas->tabla_pag, num_pagina_actual);
 			//si el nuevo metadata esta en otra pagina
 			if(hay_cambio_de_pagina(inicio_actual, ptr_potencial_segmento->nextAlloc)){
-				int num_pag_a_traer = num_pagina_actual + 1; //IMPORTANTE: y si un segmento puede ser mas grande que 1 pagina? es decir, que hay 2 saltos de pagina
+				int num_pag_a_traer = num_pagina_actual + cant_cambios_de_pagina(inicio_actual, ptr_potencial_segmento->nextAlloc);
 				pag_t* pagina_a_traer = list_get(tabla_paginas->tabla_pag, num_pag_a_traer);
 
 				//TODO: la cargo en memoria
@@ -46,7 +45,7 @@ int memalloc(int tamanio, int pid){ //quizas al igual que antes, el carpincho se
 				memcpy(ubicacion_nuevo_segmento(pagina_a_traer->marco, ptr_potencial_segmento->nextAlloc), &new, SIZE_METADATA);
 
 				if(hay_cambio_de_pagina(ptr_potencial_segmento->nextAlloc, new.nextAlloc)) { //caso borde, el segmento a cambiarle el prevalloc tambien esta en otra pagina
-					pag_t* pagina_next = list_get(tabla_paginas->tabla_pag, num_pag_a_traer+1);
+					pag_t* pagina_next = list_get(tabla_paginas->tabla_pag, num_pag_a_traer + cant_cambios_de_pagina(ptr_potencial_segmento->nextAlloc, new.nextAlloc));
 					//TODO: la cargo en memoria
 					next = ubicacion_nuevo_segmento(pagina_next->marco, new.nextAlloc);
 				}
@@ -58,7 +57,7 @@ int memalloc(int tamanio, int pid){ //quizas al igual que antes, el carpincho se
 			}
 
 			if(hay_cambio_de_pagina(ptr_potencial_segmento->nextAlloc, new.nextAlloc)){
-				pag_t* pagina_next = list_get(tabla_paginas->tabla_pag, num_pagina_actual+1);
+				pag_t* pagina_next = list_get(tabla_paginas->tabla_pag, num_pagina_actual + cant_cambios_de_pagina(ptr_potencial_segmento->nextAlloc, new.nextAlloc));
 				//TODO: la cargo en memoria
 				next = ubicacion_nuevo_segmento(pagina_next->marco, new.nextAlloc);
 			}
@@ -76,10 +75,10 @@ int memalloc(int tamanio, int pid){ //quizas al igual que antes, el carpincho se
 		if(hay_cambio_de_pagina(inicio_actual, ptr_potencial_segmento->nextAlloc)){
 			//El siguiente metadata esta en otra pagina
 			//Obtengo dir fisica de inicio de pagina nueva, luego el metadata esta en [direccion.segmento + configuracion.TAMANIO_PAGINA - inicio_actual]
-			pag_t* pagina_a_traer = list_get(tabla_paginas->tabla_pag, num_pagina_actual+1);
+			num_pagina_actual += cant_cambios_de_pagina(inicio_actual, ptr_potencial_segmento->nextAlloc);
+			pag_t* pagina_a_traer = list_get(tabla_paginas->tabla_pag, num_pagina_actual);
 			//TODO: la cargo en memoria
 			ptr_potencial_segmento = ubicacion_nuevo_segmento(pagina_a_traer->marco, (ptr_potencial_segmento->nextAlloc % configuracion.TAMANIO_PAGINAS)); //TODO: CHECKEAR LOGICA
-			num_pagina_actual++;
 			continue;
 		}
 
@@ -127,6 +126,16 @@ bool hay_cambio_de_pagina(int direc_actual, uint32_t next_alloc){
 		}
 	}
 	return false;
+}
+
+int cant_cambios_de_pagina(int direc_actual, uint32_t next_alloc){
+	int cant = 0;
+	for (int i=direc_actual+9; i < next_alloc; i++) {
+		if (i % configuracion.TAMANIO_PAGINAS == 0) {
+			cant++;
+		}
+	}
+	return cant;
 }
 
 void memfree();
