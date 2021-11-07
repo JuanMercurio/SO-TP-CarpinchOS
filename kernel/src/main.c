@@ -109,17 +109,15 @@ void inicializar_proceso_carpincho(t_pcb *carpincho)
    carpincho->tiempo.time_stamp_fin = NULL;
    carpincho->estado = 'N';
    sem_init(&carpincho->semaforo_evento, NULL, 0);
+   sem_init(&carpincho->semaforo_fin_evento, NULL, 0);
 }
-int recibir_operacion(int cliente){}
 
-int recibir_pcb(int cliente){}
 
 void inicializar_planificacion()
 {
    iniciar_colas();
    inicializar_semaforos();
    iniciar_planificador_corto_plazo();
-   iniciar_planificador_mediano_plazo();
    iniciar_planificador_largo_plazo();
    iniciar_gestor_finalizados();
    inciar_cpu();
@@ -147,6 +145,7 @@ void inicializar_semaforos(){
    sem_init(&mutex_cola_finalizados, NULL, 1);
    sem_init(&mutex_lista_oredenada_por_algoritmo, NULL, 1);
    sem_init(&controlador_multiprogramacion, NULL, configuracion.GRADO_MULTIPROGRAMACION);
+  
 
 }
 

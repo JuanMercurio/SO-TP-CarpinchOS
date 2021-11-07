@@ -32,6 +32,7 @@ typedef struct{
     int proxima_instruccion;
     char* io_solicitada;
     sem_t *semaforo_evento;
+    sem_t *semaforo_fin_evento;
 
 }t_pcb;
 
@@ -98,6 +99,8 @@ sem_t *mutex_lista_io_kernel;
 
 
 
+
+
 /*
     @NAME: terminar_programa
     @DESC: Se encarga de liberar todas las estructuras y de hacer lo necesario para
@@ -118,6 +121,8 @@ void iniciar_planificador_largo_plazo();
 void crear_estructuras(t_pcb *carpincho);
 
 void inicializar_listas_sem_io();
+
+void inicializar_proceso_carpincho(t_pcb *carpincho);
 
 sem_kernel* buscar_semaforo(char *nombre, t_list *sems);
 void sem_kernel_wait(char *nombre, t_pcb *carpincho);

@@ -112,7 +112,7 @@ void init_dispositivos_io(){
 void call_io(char *nombre, t_pcb *carpincho){
    io_kernel *io = buscar_io(nombre, lista_io_kernel);
 
-   ejecutando_a_bloqueado(carpincho); //bloqueo el carpincho ya sea que pueda ejecutar io o que tenga que esperar a que otro termine
+   ejecutando_a_bloqueado(carpincho, cola); //bloqueo el carpincho ya sea que pueda ejecutar io o que tenga que esperar a que otro termine
 
    sem_wait(&mutex_lista_io_kernel);
    if(queue_size(io->bloqueados)==0){ //Si está vacía la lista, puede utilizar io
@@ -131,7 +131,7 @@ void realizar_io(t_pcb *carpincho, io_kernel *io){
    //Lo hago esperar el tiempo que tiene la IO de retardo
    usleep(io->retardo);
 
-   bloqueado_a_listo(carpincho);
+   bloqueado_a_listo(carpincho, cola);
    queue_pop(io->bloqueados);
    
    //Si existe algún otro carpincho en esta io lo mando a realizar_io()
