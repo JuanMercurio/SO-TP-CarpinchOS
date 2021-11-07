@@ -23,5 +23,6 @@ void terminar_programa();
 void crearArchivos();
 void iniciar_swamp();
 void atender_clientes();
+int elegirMejorArchivo();
 
 #endif
