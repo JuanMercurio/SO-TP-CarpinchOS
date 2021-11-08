@@ -15,7 +15,7 @@ void iniciar_paginacion(){
 	
     init_ram();
     init_bitmap_frames();
-    set_asignacion();
+    set_algoritmos();
 }
 
 void init_ram(){

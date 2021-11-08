@@ -1,6 +1,10 @@
 #include "algoritmos.h"
 
+#include <stdlib.h>
+
 int LRU_C = 0;
+int LRU_TLB = 0;
+int FIFO_TLB = 0;
 
 int clock_mejorado();
 
@@ -46,6 +50,25 @@ pag_t* lru_en_pag_table(tab_pags* tabla){
 }
 
 
+int fifo_tlb()
+{
+    return 0;
+} 
+
+int lru_tlb()  
+{
+    return 0;
+}
+
+pag_t* clock_fijo(int pid, tab_pags* tabla)
+{
+    pag_t* reg = malloc(0);
+    return reg;
+}
 
 
-
+pag_t* clock_dinamico(int pid, tab_pags* tabla)
+{
+    pag_t* reg = malloc(0);
+    return reg;
+}

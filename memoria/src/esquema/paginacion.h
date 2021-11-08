@@ -1,7 +1,7 @@
 #ifndef _ESQUEMA_PAGINACION_
 #define _ESQUEMA_PAGINACION_
 
-#include "../configuracion/config.h"
+#include "config_pag.h"
 
 #include <commons/collections/list.h>
 #include <math.h>
@@ -14,46 +14,15 @@
 #define NOT_ASIGNED         -1
 
 /* Estructura Memoria */
-typedef struct memoria_t {
-    void* memoria;
-    pthread_mutex_t mutex;
-}memoria_t;
-
+extern tablas_t tablas;
 /* MEMORIA PRINCIPAL */
 extern memoria_t ram;
 
-/* Estructura para la supertabla de tablas  */
-typedef struct tablas_t{
-    t_list* lista;
-    pthread_mutex_t mutex;
-}tablas_t;
 
-/* Lista de tablas de paginas y su mutex */
-extern tablas_t tablas;
 
 /* "Bitmap" de marcos */
 extern t_list* marcos; 
 
-/* Esructura para tablas */
-typedef struct tab_pags{
-    int pid;
-    t_list* tabla_pag;
-}tab_pags;
-
-/* Registros de las tablas de paginas */
-typedef struct pag_t{
-    int marco;
-    int presente;
-    int modificado;
-    int algoritmo;
-}pag_t;
-
-
-/* Estructura para direccionamiento */
-typedef struct dir_t{
-   int segmento;
-   int offset;
-}dir_t;
 
 /*
     @NAME:  iniciar_paginacion

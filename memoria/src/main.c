@@ -12,7 +12,6 @@ int main(int argc, char* argv[]) {
    iniciar_paginacion();
    iniciar_tlb();
 
-   printf("El tamanio de la paguina es: %d", configuracion.TAMANIO_PAGINAS);
    administrar_clientes(configuracion.IP, configuracion.PUERTO, (void*)&atender_proceso);
 
    terminar_programa();

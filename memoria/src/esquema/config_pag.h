@@ -1,13 +1,12 @@
-#ifndef _CONFIG_PAG_
-#define _CONFIG_PAG_
+#ifndef CONFIG_PAG_H
+#define CONFIG_PAG_H
 
+#include "../configuracion/config.h"
 #include "algoritmos.h"
+#include "estructuras.h"
 
-/*
-    @NAME:  set_asignacion
-    @DESC:  segun el config les da valoes a las funciones puntero
- */
-void set_asignacion();
-
+void set_algoritmos();
+void set_alg_principal();
+void set_alg_tlb();
 
 #endif
