@@ -26,23 +26,26 @@ void procesador(){// resolver la cuestion de administacion de los semaforos de l
       switch(carpincho->proxima_instruccion)
       {
       case IO:
-         if(verificar_suspension){
+         if(verificar_suspension()){//verifiva que el grado de multiprogramacion no este copado por carpinchos bloqueados
             planificador_mediano_plazo(carpincho);
          }else{
-         ejecutando_a_bloqueado_por_io(carpincho, carpincho->io_solicitada);
-         //verifiva que el grado de multiprogramacion no este copado por carpinchos bloqueados
-         sem_wait(&carpincho->semaforo_fin_evento);
+            bloquear_por_io(carpincho);
+      
          }
+         carpinchos_bloqueados ++;
          break;
 
       case SEM_WAIT:
-        if(verificar_suspension){
+        if(verificar_suspension()){
             planificador_mediano_plazo(carpincho);
          }else{
-         
-         sem_wait(&carpincho->semaforo_fin_evento); // es necesario para que le procesador se netere si termino el bloqueo o suspendido el proceso
-         }ejecutando_bloquedo_por_semaforo(carpincho); //codear
+         if(verificar_bloqueo_por_semaforo(carpincho, carpincho->semaforo_a_modificar)){//falta
+         //sem_wait(&carpincho->semaforo_fin_evento); // es necesario para que le procesador se netere si termino el bloqueo o suspendido el proceso
+         bloquear_por_semaforo(carpincho);//codear falta
          /* la verificacion de bloqueo la hace el receptor que es quien atiende el cliente */
+         carpinchos_bloqueados ++;
+         }
+         }
          break; /* ACA SE ATAJAN LOS ENVENTO SUQ HACEN QUE EL CARPINCHO PASE A BLOQUEADO */
 
       case MATE_CLOSE:
@@ -57,7 +60,7 @@ void procesador(){// resolver la cuestion de administacion de los semaforos de l
    }   
 }
 bool verificar_suspension(){
-   if(carpinchos_bloqueados == configuracion.GRADO_MULTIPROGRAMACION -1 && list_is_empty(lista_ordenada_por_algoritmo))
+   if(carpinchos_bloqueados == configuracion.GRADO_MULTIPROGRAMACION -1 && list_is_empty(lista_ordenada_por_algoritmo) && !queue_is_empty(cola_new))
    return true;
    else
    
@@ -218,6 +221,7 @@ void bloqueado_a_listo(t_pcb *carpincho, t_queue *cola){
 
    carpincho->tiempo.time_stamp_inicio=temporal_get_string_time("%H:%M:%S:%MS"); //Tomo el tiempo de cuando inicia la espera
 }
-void ejecutando_a_bloqueado_por_io(t_pcb *carpincho,char* io_solicitada){
+void bloquear_por_io(t_pcb *carpincho){
    
 }
+

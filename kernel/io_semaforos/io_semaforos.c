@@ -1,6 +1,7 @@
 #include "io_semaforos.h"
 #include "main.h"
 
+
 sem_kernel *buscar_semaforo(char *nombre, t_list *sems)
 {
    sem_kernel *sem_buscado = malloc(sizeof(sem_kernel));
@@ -98,14 +99,25 @@ void init_dispositivos_io(){
    while (configuracion.DISPOSITIVOS_IO[i]!=NULL)
    {
       io_kernel *nueva_io = malloc(sizeof(io_kernel));
-
       nueva_io->id = (char*)configuracion.DISPOSITIVOS_IO[i];
       nueva_io->retardo = atoi((char*)configuracion.DURACIONES_IO[i]);
-      nueva_io->bloqueados=queue_create();
+      nueva_io->bloqueados = queue_create();
+      sem_init(nueva_io->mutex_io, NULL, 0);
+      sem_init(nueva_io->cola_con_elementos, NULL, 0);
       list_add(lista_io_kernel, nueva_io);
       i++;
       printf("COLAS DISPOSITIVOS IO CREADAS\n");
      // free(nueva_io); //va acá o afuera del while?
+   }
+   iniciar_hilos_gestores_de_io();
+}
+void inicial_hilos_gestores_de_io(){
+   pthread_t hilos_io[list_size(lista_io_kernel)];
+   for(int i=0; i<list_size(lista_io_kernel); i++){
+   if(!pthread_create(hilos_io[i], NULL, (void*) gestor_cola_io, (void*) list_get(lista_io_kernel, i) ))
+      {
+         printf("no se pudo crear hilo gestor de cola io cerado \n");
+      } 
    }
 }
 
@@ -126,7 +138,7 @@ void call_io(char *nombre, t_pcb *carpincho){
    //free(io);
 }
 
-void realizar_io(t_pcb *carpincho, io_kernel *io){
+/* void realizar_io(t_pcb *carpincho, io_kernel *io){
 
    //Lo hago esperar el tiempo que tiene la IO de retardo
    usleep(io->retardo);
@@ -139,4 +151,18 @@ void realizar_io(t_pcb *carpincho, io_kernel *io){
       t_pcb *proximo_carpincho_bloqueado = queue_peek(io->bloqueados);
       realizar_io(proximo_carpincho_bloqueado, io); 
    }
+}*/
+void gestor_cola_io(void *datos){
+   io_kernel *io = (io_kernel*)datos;
+   t_pcb *carpincho;
+   while(1){
+   sem_wait(&io->cola_con_elementos);// el posta  aeste semaforo se lo tiene que dar el procesador al bloquearlo buscando en la lista la io y su resdpectivo semaforo
+   sem_wait(&io->mutex_io);
+   carpincho = queue_pop(io->bloqueados);
+   sem_post(&io->mutex_io);
+   usleep(io->retardo);
+   sem_wait(&mutex_cola_ready);
+   carpincho->tiempo.time_stamp_inicio = temporal_get_string_time("%H:%M:%S:%MS");
+   queue_push(cola_ready, (void*) carpincho);
+}
 }

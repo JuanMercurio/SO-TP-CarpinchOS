@@ -33,7 +33,6 @@ typedef struct{
     char* io_solicitada;
     sem_t *semaforo_evento;
     sem_t *semaforo_fin_evento;
-
 }t_pcb;
 
 typedef enum{
@@ -61,6 +60,8 @@ typedef struct{
     char* id;
     int retardo;
     t_queue* bloqueados;
+    sem_t * mutex_io;
+    sem_t * cola_con_elementos;
 }io_kernel;
 
 //   colas
