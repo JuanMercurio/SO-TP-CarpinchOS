@@ -13,11 +13,11 @@ int memalloc(int tamanio, int pid){ //quizas al igual que antes, el carpincho se
 	HeapMetadata* ptr_potencial_segmento = primer_segmento(tabla_paginas);
 	int inicio_actual = 0, num_pagina_actual=0;
 	do{
-		if(ptr_potencial_segmento->isFree && ptr_potencial_segmento->nextAlloc - SIZE_METADATA - inicio_actual >= tamanio) {
+		if(ptr_potencial_segmento->isFree && ptr_potencial_segmento->nextAlloc - SIZE_METADATA*2 - inicio_actual >= tamanio) { //*2 porque tiene que entrar otra metadata mas
 			//encontre el segmento donde entra
 			//ahora debo evaluar si entra justo o si tengo que dividirlo en 2 partes
 
-			if(ptr_potencial_segmento->nextAlloc - SIZE_METADATA - inicio_actual == tamanio){
+			if(ptr_potencial_segmento->nextAlloc - SIZE_METADATA*2 - inicio_actual == tamanio){
 				//entra justo
 				ptr_potencial_segmento->isFree = false;
 				return inicio_actual; //retorno la direccion logica
@@ -83,13 +83,51 @@ int memalloc(int tamanio, int pid){ //quizas al igual que antes, el carpincho se
 		}
 
 		inicio_actual = ptr_potencial_segmento->nextAlloc;
-		ptr_potencial_segmento += ptr_potencial_segmento->nextAlloc; //TODO: REVISAR
+		ptr_potencial_segmento += ptr_potencial_segmento->nextAlloc - inicio_actual; //TODO: REVISAR
 
 	} while((ptr_potencial_segmento->nextAlloc) != 0); //0 vendria a ser NULL. ¿no falta una iteracion?
 
 	// no hay espacio en ninguna pagina
 
 	//comportamientos distintos: a. si "se genera un nuevo alloc al final del espacio de direcciones" / b. se deniega la operación porque no hay más espacio
+	//se encarga el swap
+
+	//tiene que pedir la cantida de paginas que necesita
+	num_pagina_actual = list_size(tabla_paginas->tabla_pag);
+	int inicio_anterior = inicio_actual;
+	inicio_actual = num_pagina_actual * configuracion.TAMANIO_PAGINAS;
+
+	if(pedir_memoria_a_swap(tamanio+SIZE_METADATA) == false){ //TODO: placeholder
+		return NULL;
+	}
+	else{ //TODO: duda, todas las paginas que pido nuevas se encuentran en memoria?
+		ptr_potencial_segmento->nextAlloc = inicio_actual;
+
+		pag_t* primera_pagina_nueva = list_get(tabla_paginas->tabla_pag, num_pagina_actual);
+		HeapMetadata new;
+		new.isFree = false;
+		new.prevAlloc = inicio_actual;
+		if(tamanio - SIZE_METADATA*2 % configuracion.TAMANIO_PAGINAS == 0){//entra justo
+			new.nextAlloc=0; //TODO: NULL?
+			memcpy(ubicacion_nuevo_segmento(primera_pagina_nueva->marco, 0), &new, SIZE_METADATA); //cargo la nueva metadata
+		}
+		else{
+			//tengo que dividir en 2
+			new.nextAlloc = inicio_actual + SIZE_METADATA + tamanio;
+			memcpy(ubicacion_nuevo_segmento(primera_pagina_nueva->marco, 0), &new, SIZE_METADATA);
+
+			int num_pagina_next = num_pagina_actual + cant_cambios_de_pagina(inicio_actual, new.nextAlloc);
+			pag_t* pagina_next = list_get(tabla_paginas->tabla_pag, num_pagina_next);
+			//hace falta traerla a memoria?
+			HeapMetadata next;
+			next.isFree = true;
+			next.prevAlloc = inicio_actual;
+			next.nextAlloc = 0; //TODO: NULL?
+			memcpy(ubicacion_nuevo_segmento(pagina_next->marco, new.nextAlloc), &next, SIZE_METADATA);
+		}
+
+		return inicio_actual; //retorno la direccion logica
+	}
 }
 
 void* ubicacion_nuevo_segmento(int num_marco, int dir_log){
@@ -138,8 +176,15 @@ int cant_cambios_de_pagina(int direc_actual, uint32_t next_alloc){
 	return cant;
 }
 
-void memfree();
+void memfree(int dir_log, int pid){
+	tab_pags* tabla_paginas = buscar_page_table(pid);
+	HeapMetadata* ptr_potencial_segmento = hallar_metadata(dir_log, tabla_paginas);
+	int inicio_actual = 0, num_pagina_actual=0;
+}
 
+HeapMetadata* hallar_metadata(uint32_t dir_log){
+	do
+}
 
 
 void* memread(tab_pags* tabla, int dir_log, int tamanio){
