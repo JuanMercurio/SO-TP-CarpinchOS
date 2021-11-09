@@ -55,6 +55,6 @@ void estimador_HRRN(t_pcb* carpincho);
 void estimador(t_pcb *carpincho);
 
 void ejecutando_a_bloqueado(t_pcb *carpincho,t_queue *);
-void bloqueado_a_listo(t_pcb *carpincho, t_queue *);
+void bloqueado_a_listo(t_pcb *carpincho, t_queue *,sem_t*);
  
 #endif

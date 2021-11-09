@@ -31,6 +31,7 @@ typedef struct{
     char estado;
     int proxima_instruccion;
     char* io_solicitada;
+    cahr* semaforo_a_modificar;
     sem_t *semaforo_evento;
     sem_t *semaforo_fin_evento;
 }t_pcb;
@@ -54,6 +55,8 @@ typedef struct{
     int val;
     int max_val;
     t_queue* bloqueados;
+    sem_t *mutex;
+    sem_t *mutex_cola;
 }sem_kernel;
 
 typedef struct{
@@ -125,13 +128,13 @@ void inicializar_listas_sem_io();
 
 void inicializar_proceso_carpincho(t_pcb *carpincho);
 
-sem_kernel* buscar_semaforo(char *nombre, t_list *sems);
-void sem_kernel_wait(char *nombre, t_pcb *carpincho);
+sem_kernel* buscar_semaforo(char *nombre);
+void sem_kernel_wait(char *nombre);
 void sem_kernel_post(char *nombre);
 void sem_kernel_init(char* nombre, int value);
 void sem_kernel_destroy(char* nombre);
 
-io_kernel* buscar_io(char *nombre, t_list *ios);
+
 void init_dispositivos_io();
 void call_io(char *nombre, t_pcb *carpincho);
 void realizar_io(t_pcb *carpincho, io_kernel *io);

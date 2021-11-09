@@ -82,7 +82,11 @@ return -1;
 int mate_call_io(mate_instance *lib_ref, mate_io_resource io, void *msg)
 {
   enviar_mensaje_y_cod_op(io, ((mate_inner_structure*)lib_ref->group_info)->conexion, IO);
-  return 0;
+  char* respuesta = recibir_mensaje(((mate_inner_structure*)lib_ref->group_info)->conexion);
+  if(strcmp(respuesta, "OK") == 0){
+    return 0;
+  }
+  return -1;
 }
 
 //--------------Memory Module Functions-------------------/

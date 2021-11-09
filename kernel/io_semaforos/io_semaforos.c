@@ -2,21 +2,21 @@
 #include "main.h"
 
 
-sem_kernel *buscar_semaforo(char *nombre, t_list *sems)
+sem_kernel *buscar_semaforo(char *nombre)
 {
-   sem_kernel *sem_buscado = malloc(sizeof(sem_kernel));
+   sem_kernel *sem_buscado ;
 
    bool nombre_semaforo(void* elemento){
       return (strcmp(((sem_kernel*)elemento)->id ,nombre) == 0);
    }
    //uso la inner function porque list_find requiere un void* como condicion
-   sem_buscado = list_find(sems, nombre_semaforo);
+   sem_buscado = (sem_kernel*)list_find(lista_sem_kernel, nombre_semaforo);
    return sem_buscado;
 }
 
-void sem_kernel_wait(char *nombre, t_pcb *carpincho)
+void sem_kernel_wait2(char *nombre, t_pcb *carpincho)
 {
-   sem_kernel *sem = buscar_semaforo(nombre, lista_sem_kernel);
+   sem_kernel *sem = buscar_semaforo(nombre);
    //agregar mutex{
    sem->val =-1;
   
@@ -28,23 +28,29 @@ void sem_kernel_wait(char *nombre, t_pcb *carpincho)
    }
    free(sem);
 }
-
+void sem_kernel_wait(char *nombre)
+{
+   sem_kernel *sem = buscar_semaforo(nombre);
+   //agregar mutex{
+   sem_wait(&sem->mutex);
+   sem->val =-1;
+   sem_post(&sem->mutex);
+   //logguear
+}
 void sem_kernel_post(char *nombre, t_pcb *carpincho) 
 {
-   sem_kernel *sem = buscar_semaforo(nombre, lista_sem_kernel);
+   sem_kernel *sem = buscar_semaforo(nombre);
    sem_wait(&mutex_lista_sem_kernel);
    sem->val = +1;
-
    //loguear
-   if (sem->val >= 0)
-   { 
-      if(queue_size(sem->bloqueados)>0)
+   
+      if(sem->val >= 0 && !queue_is_empty(sem->bloqueados))
       {
       //Desbloqueo el proceso del sistema y lo paso a listo
-      bloqueado_a_listo(carpincho);
-      queue_pop(sem->bloqueados);
+      bloqueado_a_listo(carpincho, sem->bloqueados, sem->mutex_cola);
+
       }
-   }
+   
    sem_post(&mutex_lista_sem_kernel);
    free(sem);
 }
@@ -55,12 +61,13 @@ void sem_kernel_init(char* nombre, int value){
    nuevo_sem->max_val=value;
    nuevo_sem->val=value;
    nuevo_sem->bloqueados=queue_create();
-   list_add(lista_sem_kernel, nuevo_sem); //hace falta mutex acá?
-
+   sem_wait(&mutex_lista_sem_kernel);
+   list_add(lista_sem_kernel, nuevo_sem); //hace falta mutex acá? si
+   sem_post(&mutex_lista_sem_kernel);
 }
 
-void sem_kernel_destroy(char* nombre){
-   sem_kernel *sem = buscar_semaforo(nombre, lista_sem_kernel);
+void sem_kernel_destroy(char* nombre){// ARREGLAR
+   sem_kernel *sem = buscar_semaforo(nombre);
    
    sem_wait(&mutex_lista_sem_kernel);
    int cant_bloqueados = queue_size(sem->bloqueados);
@@ -82,7 +89,7 @@ void sem_kernel_destroy(char* nombre){
    //free(sem);
 }
 
-io_kernel *buscar_io(char *nombre, t_list *ios)
+io_kernel *buscar_io(char *nombre)
 {
    io_kernel *io_buscada = malloc(sizeof(io_kernel));
 
@@ -90,7 +97,7 @@ io_kernel *buscar_io(char *nombre, t_list *ios)
       return (strcmp(((io_kernel*)elemento)->id ,nombre) == 0);
    }
    //uso la inner function porque list_find requiere un void* como condicion
-   io_buscada = list_find(ios, nombre_io);
+   io_buscada = list_find(lista_io_kernel, nombre_io);
    return io_buscada;
 }
 
@@ -104,23 +111,36 @@ void init_dispositivos_io(){
       nueva_io->bloqueados = queue_create();
       sem_init(nueva_io->mutex_io, NULL, 0);
       sem_init(nueva_io->cola_con_elementos, NULL, 0);
+      sem_wait(&mutex_lista_io_kernel);
       list_add(lista_io_kernel, nueva_io);
+      sem_wait(&mutex_lista_io_kernel);
       i++;
       printf("COLAS DISPOSITIVOS IO CREADAS\n");
-     // free(nueva_io); //va acá o afuera del while?
+     // free(nueva_io); //va acá o afuera del while? BORRAR LA TERMINAR
    }
    iniciar_hilos_gestores_de_io();
 }
 void inicial_hilos_gestores_de_io(){
-   pthread_t hilos_io[list_size(lista_io_kernel)];
-   for(int i=0; i<list_size(lista_io_kernel); i++){
-   if(!pthread_create(hilos_io[i], NULL, (void*) gestor_cola_io, (void*) list_get(lista_io_kernel, i) ))
-      {
-         printf("no se pudo crear hilo gestor de cola io cerado \n");
-      } 
-   }
-}
 
+      pthread_attr_t detached2;
+      pthread_attr_init(&detached2);
+      pthread_attr_setdetachstate(&detached2, PTHREAD_CREATE_DETACHED);
+      int i = list_size(lista_io_kernel);
+      io_kernel * io;
+      while (i != 0)
+      {
+         pthread_t hilo2;
+         io = list_get(lista_io_kernel, i);
+         if (!(pthread_create(hilo2, NULL, (void *)gestor_cola_io, (void *)io)))
+         {
+            printf("no se pudo crear hilo gestor de cola io cerado \n");
+         }
+         printf("se creo GESTOR de io %s\n", io->id); // para controlar que se cree
+            i--;
+      }
+   pthread_attr_destroy(&detached2); 
+}
+/*
 void call_io(char *nombre, t_pcb *carpincho){
    io_kernel *io = buscar_io(nombre, lista_io_kernel);
 
@@ -136,7 +156,7 @@ void call_io(char *nombre, t_pcb *carpincho){
    }
    sem_post(&mutex_lista_io_kernel);
    //free(io);
-}
+}*/
 
 /* void realizar_io(t_pcb *carpincho, io_kernel *io){
 
@@ -161,8 +181,24 @@ void gestor_cola_io(void *datos){
    carpincho = queue_pop(io->bloqueados);
    sem_post(&io->mutex_io);
    usleep(io->retardo);
+   enviar_mensaje("OK", carpincho->fd_cliente);
    sem_wait(&mutex_cola_ready);
    carpincho->tiempo.time_stamp_inicio = temporal_get_string_time("%H:%M:%S:%MS");
    queue_push(cola_ready, (void*) carpincho);
 }
 }
+/*
+   pthread_attr_t detached;
+   pthread_attr_init(&detached);
+   pthread_attr_setdetachstate(&detached, PTHREAD_CREATE_DETACHED);
+
+
+   while(1){
+      pthread_t hilo;
+      int *cliente = malloc(sizeof(int));
+      *cliente= aceptar_cliente(servidor);
+      pthread_create(&hilo, &detached, (void*)funcion,(void*) cliente);
+   }
+
+   pthread_attr_destroy(&detached); 
+} */
