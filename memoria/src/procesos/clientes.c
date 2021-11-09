@@ -24,15 +24,15 @@ void ejecutar_proceso(int cliente) {
 
     int pid = PID_EMPTY;
     t_list* tabla;
-    while(1) //TODO: feo while
+    bool conectado = true;
+    while(conectado) //TODO: feo while
     {
         int operacion = recibir_operacion(cliente);
         switch (operacion)
         {
         case NEW_INSTANCE:
-            // comprobar si puede iniciar
-            // si no puede envia pid como NOT_ASIGNED
-            enviar_PID(&pid, cliente);
+            pid = iniciar_proceso(cliente);
+            enviar_int(cliente, pid);
             tabla = iniciar_paginas(cliente, pid);
             break;
         
@@ -50,21 +50,18 @@ void ejecutar_proceso(int cliente) {
             break;
 
         default:
+            conectado = false;
             break;
         }
     }
 }
 
 t_list* iniciar_paginas(int cliente, int pid){
-    // checkear si puede iniciar
-    // si no puede ser iniciado: pthread_exit(0)
     tab_pags* tabla = malloc(sizeof(tab_pags));
     tabla->pid = pid;
     tabla->tabla_pag = list_create();
 
     add_new_page_table(tabla);
-    // enviar_instancia();  ?
-
     return tabla->tabla_pag;
 }
 
@@ -72,3 +69,30 @@ void enviar_PID(int *pid, int cliente){
     *pid = crearID(&ids_memoria);
     enviar_int(cliente, *pid);
 }
+
+
+
+int iniciar_proceso(int proceso){
+
+    int swamp = crear_conexion("127.0.0.1", "5003");
+    printf("envio una solicitud a swamp");
+    enviar_int(swamp, SOLICITUD_INICIO);
+
+    int estado = recibir_int(swamp);
+    comprobar_inicio(estado, proceso);
+
+    int pid = crearID(&ids_memoria);
+
+    enviar_int(swamp, pid);
+
+    return pid;
+}
+
+void comprobar_inicio(int estado, int socket){
+    if(estado == -1) 
+    {
+        enviar_int(socket, NOT_ASIGNED);
+        pthread_exit(0);
+    }
+}
+

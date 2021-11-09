@@ -1,6 +1,9 @@
 #include "main.h"
 
+#include <mensajes/mensajes.h>
 
+#define VALIDO 0
+#define INVALIDO -1
 
 int main(int argc, char* argv[]) {
    
@@ -26,9 +29,9 @@ int main(int argc, char* argv[]) {
     crearCarpincho (6);
     //crearCarpincho (7);
    /*iniciar_swamp();
-   atender_clientes();
    terminar_programa();*/
-
+   iniciar_swamp();
+   atender_clientes();
    return 0;
 }
 
@@ -132,7 +135,40 @@ void atender_clientes(){
 
    // while feo
    while(1){ 
+
       int cliente = aceptar_cliente(server);
-      printf("Se conecto alguien en el socket: %d\n", cliente);
+
+      int operacion = recibir_operacion(cliente);
+      int estado;
+      switch (operacion)
+      {
+      case SOLICITUD_INICIO:
+      // estado = funcion que determina si puede iniciar un nuevo proceso (0 si puede, -1 si no puede)
+         estado = -1;
+         resolver_estado(estado, cliente);
+         break;
+      
+
+      //faltan las demas operaciones
+      default:
+         break;
+      }
+
    }
+}
+
+int resolver_estado(int estado, int cliente){
+
+   if (estado == INVALIDO)
+   {
+      enviar_int(cliente, INVALIDO);
+      return INVALIDO;
+   }
+
+   if (estado == VALIDO)
+   {
+      enviar_int(cliente, VALIDO);
+      return recibir_int(cliente);
+   }
+
 }

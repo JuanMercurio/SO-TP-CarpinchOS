@@ -25,4 +25,8 @@ t_list* iniciar_paginas(int cliente, int pid);
 
 void enviar_PID(int *pid, int cliente);
 
+void comprobar_inicio(int estado, int socket);
+
+int iniciar_proceso(int proceso);
+
 #endif

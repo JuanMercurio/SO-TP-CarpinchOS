@@ -9,6 +9,15 @@ typedef enum{
     MEMORIA,
 } cod_server;
 
+
+typedef enum{
+    SOLICITUD_INICIO,
+    INICIO,
+    SOLICITUD_PAGINA,
+    ESCRIBIR_PAGINA,
+    INICIO_CONFIG, 
+}cod_swamp;
+
 typedef struct
 {
 	int size;
@@ -86,5 +95,8 @@ void* serializar_mensaje(char* mensaje);
     @DESC: serializa un paquete
  */
 void* serializar_paquete(t_paquete* paquete, int bytes);
+
+void enviar_paquete(int socket, t_paquete* paquete);
+t_paquete* crear_paquete(int op, void* buffer, int size);
 
 #endif

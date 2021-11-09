@@ -44,6 +44,12 @@ void init_ram();
 void init_bitmap_frames();
 
 /*
+    @NAME:  init_estructuras
+    @DESC:  inicia las estrucutas de paginacion
+ */
+void init_estructuras();
+
+/*
     @NAME:  crear_pagina
     @DESC:  crea una pagina vacia y retorna el numero de pagina
  */

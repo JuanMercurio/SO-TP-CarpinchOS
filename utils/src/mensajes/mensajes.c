@@ -103,3 +103,26 @@ void* serializar_mensaje(char* mensaje){
     memcpy(buffer + offset, (void*)mensaje, size);
     return buffer;
 }
+
+
+t_paquete* crear_paquete(int op, void* buffer, int size){
+
+    t_paquete* paquete = malloc(sizeof(t_paquete));
+    paquete->buffer->stream = buffer;
+    paquete->buffer->size = size;
+    paquete->codigo_operacion = op;
+    return paquete;
+}
+
+void enviar_paquete(int socket, t_paquete* paquete){
+
+    int size = sizeof(int) + paquete->buffer->size;
+    void *buffer = malloc(size);
+    memcpy(buffer, paquete->codigo_operacion, sizeof(int));
+    memcpy(buffer + sizeof(int), paquete->buffer->stream, paquete->buffer->size);
+
+    send(socket, buffer, size, 0);
+
+    free(paquete->buffer->stream);
+    free(paquete);
+}

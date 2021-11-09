@@ -25,4 +25,12 @@ void iniciar_swamp();
 void atender_clientes();
 int elegirMejorArchivo();
 
+
+/*
+    @NAME:  resolver_estado
+    @DESC:  envia a memoria si el proceso puede empezar. 
+    @RETN:  Retora el id del proceso que inicia. Si no puede iniciar retora -1
+ */
+int resolver_estado(int , int );
+
 #endif

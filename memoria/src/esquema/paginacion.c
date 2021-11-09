@@ -9,18 +9,24 @@
 memoria_t ram;
 tablas_t tablas;
 t_list* marcos;
-int ids_memoria;
+int ids_memoria = 1;
 
 void iniciar_paginacion(){
 	
     init_ram();
     init_bitmap_frames();
+    init_estructuras();
     set_algoritmos();
 }
 
 void init_ram(){
     ram.memoria = malloc(configuracion.TAMANIO);
     pthread_mutex_init(&ram.mutex, NULL);
+}
+
+void init_estructuras(){
+    tablas.lista = list_create();
+    pthread_mutex_init(&tablas.mutex, NULL);
 }
 
 void init_bitmap_frames(){
@@ -56,7 +62,9 @@ int marco_libre(){
 
 void add_new_page_table(tab_pags* tabla){
     pthread_mutex_lock(&tablas.mutex);
+    
     list_add(tablas.lista, tabla);
+    printf("saturnoooooooo\n");
     pthread_mutex_unlock(&tablas.mutex);
 }
 
