@@ -1,10 +1,16 @@
 #include "paginacion.h"
+#include "tlb.h"
 
+
+#include <mensajes/mensajes.h>
 #include <stdlib.h>
 #include <stdio.h>
 #include <string.h>
 #include <stdint.h>
 #include <utils/utils.h>
+
+#define MEMP_MISS -1
+#define PAGINA_INVALIDA -2
 
 memoria_t ram;
 tablas_t tablas;
@@ -60,11 +66,125 @@ int marco_libre(){
     return NOT_ASIGNED;
 }
 
+int nro_marco(int pagina, tab_pags* tabla){
+
+    if(!pagina_valida(tabla, pagina)) return PAGINA_INVALIDA;
+
+    int marco;
+
+    // Busco en TLB
+    marco = buscar_en_tlb(tabla->pid, pagina);
+    if(marco != TLB_MISS) return marco;
+
+    // Busco en tabla de paginas
+    marco = buscar_en_tabPags(tabla, pagina);
+    if(marco != MEMP_MISS) return marco;
+
+    marco = buscar_en_swap(tabla, pagina);
+    if(marco != -1) return marco;
+
+    return -1;
+}
+
+int buscar_en_swap(tab_pags* tabla, int pagina){
+
+    void* buffer = serializar_pedido_pagina(tabla->pid, pagina);
+    t_paquete* paquete = crear_paquete(SOLICITUD_PAGINA, buffer, sizeof(int)*2 );
+
+    int swap = crear_conexion("127.0.0.1", "5003");
+    enviar_paquete(swap, paquete);
+
+    int op = recibir_int(swap);
+
+    if (op == -1) { 
+        close(swap);
+        return -1; 
+    }
+    
+    void* contenido = recibir_contenido(swap);
+    close(swap);
+
+    t_victima victima = algoritmo_mmu(tabla->pid, tabla);
+    reemplazar_pagina(victima, contenido, pagina, tabla);
+
+    return victima.marco;
+}
+
+void reemplazar_pagina(t_victima victima, void* buffer, int pagina, tab_pags* tabla){
+
+    if(victima.modificado == 1) enviar_pagina_a_swap(victima.pid, victima.pagina, victima.marco);
+    
+    insertar_pagina(buffer, victima.marco);
+
+    actualizar_nueva_pagina(pagina, victima.marco, tabla);
+}
+void enviar_pagina_a_swap(int pid, int pagina, int marco){
+
+}
+void actualizar_nueva_pagina(int pagina, int marco, tab_pags* tabla){
+
+    pthread_mutex_lock(&tablas.mutex);
+
+    pag_t* reg = list_get(tabla->tabla_pag, pagina);
+    reg->presente = 1;
+    reg->marco = marco;
+
+    pthread_mutex_unlock(&tablas.mutex);
+}
+
+void* recibir_marco(int cliente){
+    void* buffer = malloc(0);
+    return buffer;
+}
+
+void insertar_pagina(void* pagina, int marco){
+
+    pthread_mutex_lock(&ram.mutex);
+    memcpy(ram.memoria + marco*configuracion.TAMANIO_PAGINAS, pagina, configuracion.TAMANIO_PAGINAS);
+    pthread_mutex_unlock(&ram.mutex);
+}
+
+void* recibir_contenido(int swap){
+    void* buffer = malloc(configuracion.TAMANIO_PAGINAS);
+    buffer = recibir_marco(swap);
+    return buffer;
+}
+
+void* serializar_pedido_pagina( int pid, int pagina)
+{
+    int size = sizeof(int)*2;
+    void* buffer = malloc(size);
+    memcpy(buffer, &pid, sizeof(int));
+    memcpy(buffer + sizeof(int), &pagina, sizeof(int));
+    return buffer;
+}
+
+bool pagina_valida(tab_pags* tabla, int pagina){
+
+    pthread_mutex_lock(&tablas.mutex);
+    int n_paginas = list_size(tabla->tabla_pag);
+    pthread_mutex_unlock(&tablas.mutex); 
+    return n_paginas > pagina;
+}
+int buscar_en_tabPags(tab_pags* tabla, int pagina){
+
+    pthread_mutex_lock(&tablas.mutex);
+    pag_t* reg = list_get(tabla->tabla_pag, pagina);
+    pthread_mutex_unlock(&tablas.mutex);
+        
+    if(reg->presente == 1)
+    {
+        actualizar_tlb(tabla->pid, reg->marco, pagina);
+        return reg->marco; 
+    }
+
+    return MEMP_MISS;
+}
+
 void add_new_page_table(tab_pags* tabla){
     pthread_mutex_lock(&tablas.mutex);
     
     list_add(tablas.lista, tabla);
-    printf("saturnoooooooo\n");
     pthread_mutex_unlock(&tablas.mutex);
 }
 

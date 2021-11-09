@@ -4,7 +4,6 @@
 #include <pthread.h>
 #include <commons/collections/list.h>
 
-
 /* Lista de tablas de paginas y su mutex */
 typedef struct memoria_t {
     void* memoria;
@@ -37,5 +36,16 @@ typedef struct dir_t{
    int segmento;
    int offset;
 }dir_t;
+
+typedef struct t_victima{
+    int pid;
+    int pagina;
+    int marco;
+    int modificado;
+}t_victima;
+
+/* Estructura Memoria */
+extern tablas_t tablas;
+
 
 #endif

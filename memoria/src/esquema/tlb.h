@@ -32,4 +32,9 @@ void iniciar_tlb();
  */
 int buscar_en_tlb(int pid, int pagina);
 
+/* 
+    @NAME:  enviar_pagina_a_swap
+ */
+void actualizar_tlb(int pid, int marco, int pagina);
+
 #endif

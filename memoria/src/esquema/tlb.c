@@ -36,3 +36,8 @@ int buscar_en_tlb(int pid, int pagina){
 
     return TLB_MISS;
 }
+
+
+void actualizar_tlb(int pid, int marco, int pagina){
+
+}

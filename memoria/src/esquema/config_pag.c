@@ -5,7 +5,7 @@
 #include <stdlib.h>
 
 int (*algoritmo_tlb)();
-pag_t* (*algoritmo_mmu)(int, tab_pags*);
+t_victima (*algoritmo_mmu)(int, tab_pags*);
 
 void set_algoritmos(){
     set_alg_tlb();
