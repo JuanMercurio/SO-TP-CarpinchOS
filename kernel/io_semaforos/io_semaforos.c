@@ -1,5 +1,6 @@
 #include "io_semaforos.h"
 #include "main.h"
+#include <planificacion/planificacion.h>
 
 
 sem_kernel *buscar_semaforo(char *nombre)
@@ -14,21 +15,18 @@ sem_kernel *buscar_semaforo(char *nombre)
    return sem_buscado;
 }
 
-void sem_kernel_wait2(char *nombre, t_pcb *carpincho)
+void sem_kernel_wait2( t_pcb *carpincho)
 {
-   sem_kernel *sem = buscar_semaforo(nombre);
+   sem_kernel *sem = buscar_semaforo(carpincho->semaforo_a_modificar);
    //agregar mutex{
    sem->val =-1;
-  
+  if(sem->val -1 < 0){
+    bloquear_por_semaforo( carpincho); 
+  }
    //loguear-mutex_semaforos
-   if (sem->val < 0)
-   {
-      ejecutando_a_bloqueado(carpincho);
-      queue_push(sem->bloqueados, carpincho);
-   }
-   free(sem);
+  // free(sem); // los semaforos se liberan si se destruyen o cuando el programa termine
 }
-void sem_kernel_wait(char *nombre)
+/* void sem_kernel_wait(char *nombre)
 {
    sem_kernel *sem = buscar_semaforo(nombre);
    //agregar mutex{
@@ -36,6 +34,26 @@ void sem_kernel_wait(char *nombre)
    sem->val =-1;
    sem_post(&sem->mutex);
    //logguear
+}*/
+
+bool verificar_bloqueo_por_semaforo(t_pcb *carpincho){
+   int sem_valor_actual = obtener_valor_semaforo(carpincho->semaforo_a_modificar);
+   if(sem_valor_actual -1 < 0){
+      return true;
+   }else
+   {
+      return false;
+   }
+   
+}
+
+void bloquear_por_semaforo(t_pcb *carpincho){
+   sem_kernel *semaforo = buscar_semaforo(carpincho->semaforo_a_modificar);
+   carpincho->tiempo.time_stamp_fin = temporal_get_string_time("%H:%M:%S:%MS");
+   carpincho->tiempo.tiempo_ejecutado = obtener_tiempo(carpincho->tiempo.time_stamp_inicio, carpincho->tiempo.time_stamp_fin);
+   sem_wait(&semaforo->mutex_cola);
+   queue_push(semaforo->bloqueados, (void*)carpincho);
+   sem_post(&semaforo->mutex_cola);
 }
 void sem_kernel_post(char *nombre, t_pcb *carpincho) 
 {
@@ -69,24 +87,23 @@ void sem_kernel_init(char* nombre, int value){
 void sem_kernel_destroy(char* nombre){// ARREGLAR
    sem_kernel *sem = buscar_semaforo(nombre);
    
-   sem_wait(&mutex_lista_sem_kernel);
+ //  sem_wait(&mutex_lista_sem_kernel);
    int cant_bloqueados = queue_size(sem->bloqueados);
+
    if(cant_bloqueados>0){
       for(int i=0;cant_bloqueados; i++){
-         t_pcb *carpincho_a_desbloquear = queue_peek(sem->bloqueados);
-         queue_pop(sem->bloqueados);
-         bloqueado_a_listo(carpincho_a_desbloquear);
+
+         bloqueado_a_listo(sem->bloqueados, sem->mutex_cola );
       }
    }
-   sem_post(&mutex_lista_sem_kernel);
-
+ //  sem_post(&mutex_lista_sem_kernel);
    bool nombre_semaforo(void* elemento){
       return (strcmp(((sem_kernel*)elemento)->id, nombre) == 0);
    }
 
    //revisar si está bien planteado
    list_remove_by_condition(lista_sem_kernel, nombre_semaforo);
-   //free(sem);
+   free(sem);
 }
 
 io_kernel *buscar_io(char *nombre)
@@ -186,6 +203,15 @@ void gestor_cola_io(void *datos){
    carpincho->tiempo.time_stamp_inicio = temporal_get_string_time("%H:%M:%S:%MS");
    queue_push(cola_ready, (void*) carpincho);
 }
+}
+void bloquear_por_io(t_pcb *carpincho){
+   io_kernel *io = buscar_io(carpincho->io_solicitada);
+   carpincho->tiempo.time_stamp_fin = temporal_get_string_time("%H:%M:%S:%MS");
+   carpincho->tiempo.tiempo_ejecutado = obtener_tiempo(carpincho->tiempo.time_stamp_inicio, carpincho->tiempo.time_stamp_fin);
+   sem_wait(&io->mutex_io);//time stamp
+   queue_push(io->bloqueados, (void*)carpincho);
+   sem_post(&io->mutex_io);
+   sem_post(&io->cola_con_elementos);
 }
 /*
    pthread_attr_t detached;

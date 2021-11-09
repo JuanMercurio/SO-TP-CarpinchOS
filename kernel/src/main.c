@@ -36,7 +36,7 @@ void receptor(void *arg)
       printf("esperando comando\n");
       cod_op = recibir_operacion(cliente);
       printf("CODIGO OPERACION %d de cliente %d\n", cod_op, cliente);
-
+   t_paquete_semaforo semaforo ;
       switch (cod_op)
       {
 
@@ -56,7 +56,7 @@ void receptor(void *arg)
          // aca debe enviar el ok o debe planificarlo y al llegar a exec recien destrabar el carpincho
          break;
       case INIT_SEMAFORO:
-               t_paquete_semaforo semaforo = recibir_semaforo(cliente);
+              semaforo = recibir_semaforo(cliente);
                sem_kernel_init(semaforo.buffer, semaforo.valor);
                break;
       case IO: 
@@ -68,15 +68,15 @@ void receptor(void *arg)
                break;
 
       case SEM_WAIT: 
-               t_paquete_semaforo semaforo = recibir_semaforo(cliente);
-               sem_kernel_wait(semaforo.buffer, carpincho);
-               sem_kernel to_be_waited = *(buscar_semaforo(semaforo.buffer, lista_sem_kernel));
-               if(to_be_waited.val == 0){/*ACA COMPRUEBA SI SE DEBE BLOQUEAR EL PROCESOS O SEGUIR A LA ESPERA DE INSTRUCCIONES */
-               carpincho->proxima_instruccion = SEM_WAIT;
+              semaforo = recibir_semaforo(cliente);
+               carpincho->semaforo_a_modificar = semaforo.buffer;
+              // sem_kernel_wait2(semaforo.buffer, carpincho);
                sem_post(&carpincho->semaforo_evento);
-               }
+               
          break;
-      case SEM_POST: carpincho->proxima_instruccion = SEM_POST;
+
+      case SEM_POST: semaforo = recibir_semaforo(cliente);
+                sem_kernel_post(semaforo.buffer);
                
          break;
       case SEM_DESTROY:

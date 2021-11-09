@@ -12,6 +12,8 @@
 #include <commons/temporal.h>
 #include <time.h>
 #include <mensajes/mensajes.h>
+#include <io_semaforos/io_semaforos.h>
+
 // type struct
 struct timeval *tiempito;
 struct tm *aux;
@@ -129,8 +131,7 @@ void inicializar_listas_sem_io();
 void inicializar_proceso_carpincho(t_pcb *carpincho);
 
 sem_kernel* buscar_semaforo(char *nombre);
-void sem_kernel_wait(char *nombre);
-void sem_kernel_post(char *nombre);
+
 void sem_kernel_init(char* nombre, int value);
 void sem_kernel_destroy(char* nombre);
 

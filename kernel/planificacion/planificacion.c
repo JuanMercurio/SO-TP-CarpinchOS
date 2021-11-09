@@ -37,14 +37,9 @@ void procesador(){// resolver la cuestion de administacion de los semaforos de l
       case SEM_WAIT:
         if(verificar_suspension()){
             planificador_mediano_plazo(carpincho);
-         }else{
-         if(verificar_bloqueo_por_semaforo(carpincho)){//falta
-         //sem_wait(&carpincho->semaforo_fin_evento); // es necesario para que le procesador se netere si termino el bloqueo o suspendido el proceso
-         bloquear_por_semaforo(carpincho);//codear falta
-         /* la verificacion de bloqueo la hace el receptor que es quien atiende el cliente */
-         carpinchos_bloqueados ++;
-         }sem_kernel_wait(carpincho->semaforo_a_modificar);
          }
+         sem_kernel_wait2(carpincho);
+         
          break; /* ACA SE ATAJAN LOS ENVENTO SUQ HACEN QUE EL CARPINCHO PASE A BLOQUEADO */
 
       case MATE_CLOSE:
@@ -55,7 +50,6 @@ void procesador(){// resolver la cuestion de administacion de los semaforos de l
          sem_post(&cola_finalizados_con_elementos);
          break;
       }
-      carpincho->tiempo.time_stamp_fin = temporal_get_string_time("%H:%M:%S:%MS");
    }   
 }
 bool verificar_suspension(){
@@ -145,6 +139,8 @@ bool comparador_HRRN(t_pcb* carpincho1, t_pcb* carpincho2){
 void planificador_mediano_plazo(t_pcb *carpincho)
 {
    carpincho->estado = 'S';
+   carpincho->tiempo.time_stamp_fin = temporal_get_string_time("%H:%M:%S:%MS");
+   carpincho->tiempo.tiempo_ejecutado = obtener_tiempo(carpincho->tiempo.time_stamp_inicio, carpincho->tiempo.time_stamp_fin);
    sem_wait(&carpincho->semaforo_fin_evento);
    sem_wait(&mutex_cola_listo_suspendido);
    queue_push(suspendido_listo, carpincho);
@@ -190,28 +186,28 @@ void eliminar_carpincho(t_pcb *carpincho){// revisar que este este borrando lo n
     free(carpincho);
 }
 
-void ejecutando_a_bloqueado(t_pcb *carpincho, t_queue *cola){
+void ejecutando_a_bloqueado( t_pcb *carpincho, t_queue *cola, sem_t * mutex){
    //¿Está bien este cálculo de tiempos o falta algo?
    carpincho->estado='B';
-   //carpincho->tiempo.time_stamp_fin = temporal_get_string_time("%H:%M:%S:%MS");// Guardo el timestamp de cuando terminó de ejecutar ESTO YA LO HACE EL PROCESASDOR BLOQUEARLO;
-   carpincho->tiempo.tiempo_ejecutado=obtener_tiempo(carpincho->tiempo.time_stamp_inicio, carpincho->tiempo.time_stamp_fin);
+   carpincho->tiempo.time_stamp_fin = temporal_get_string_time("%H:%M:%S:%MS");
+   carpincho->tiempo.tiempo_ejecutado = obtener_tiempo(carpincho->tiempo.time_stamp_inicio, carpincho->tiempo.time_stamp_fin);
 
   //sem_wait(&mutex_lista_ejecutando);
    //sacar carpincho de la lista
   // sem_post(&mutex_lista_ejecutando); AL CARPINCHO LO SACA DE LA LISTA EL PROCESADOR, NO HACE FALTA
    
-   sem_wait(&mutex_cola_bloqueado);
+   sem_wait(&mutex);
    queue_push(cola, (void*)carpincho); 
-   sem_post(&mutex_cola_bloqueado);
+   sem_post(&mutex);
 
   
 }
 
-void bloqueado_a_listo(t_pcb *carpincho, t_queue *cola,sem_t * mutex){// o se le pasa un mutex o no se usa
-
-   sem_wait(&mutex);
+void bloqueado_a_listo(t_pcb *carpincho, t_queue *cola,sem_t * mutex){// ARREGLAR EL CARPINCHO DE CAMBIAR DE ESTADO Y ADEMAS Y DEBE HABER SIDO DESNCOLADO
+/*  sem_wait(&mutex);
  t_pcb *carpincho = queue_pop(cola);
-   sem_post(&mutex);
+   sem_post(&mutex); */
+ 
 
    sem_wait(&mutex_cola_ready);
    queue_push(cola_ready, (void*)carpincho);
@@ -221,30 +217,6 @@ void bloqueado_a_listo(t_pcb *carpincho, t_queue *cola,sem_t * mutex){// o se le
 
    carpincho->tiempo.time_stamp_inicio=temporal_get_string_time("%H:%M:%S:%MS"); //Tomo el tiempo de cuando inicia la espera
 }
-void bloquear_por_io(t_pcb *carpincho){
-   io_kernel *io = buscar_io(carpincho->io_solicitada);
-   sem_wait(&io->mutex_io);//time stamp
-   queue_push(io->bloqueados, (void*)carpincho);
-   sem_post(&io->mutex_io);
-   sem_post(&io->cola_con_elementos);
-}
 
-bool verificar_bloqueo_por_semaforo(t_pcb *carpincho){
-   int sem_valor_actual = obtener_valor_semaforo(carpincho->semaforo_a_modificar);
-   if(sem_valor_actual -1 < 0){
-      return true;
-   }else
-   {
-      return false;
-   }
-   
-}
 
-void bloquear_por_semaforo(t_pcb *carpincho){
-   sem_kernel *semaforo = buscar_semaforo(carpincho->semaforo_a_modificar);
-   sem_wait(&semaforo->mutex_cola);
-   queue_push(semaforo->bloqueados, (void*)carpincho);
-   sem_post(&semaforo->mutex_cola);
-}
 
-void
