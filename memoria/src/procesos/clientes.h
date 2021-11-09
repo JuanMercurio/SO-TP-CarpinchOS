@@ -29,4 +29,16 @@ void comprobar_inicio(int estado, int socket);
 
 int iniciar_proceso(int proceso);
 
+/*
+    @NAME:  comportamiento_memalloc
+    @DESC:  retorna la direccion logica del alloc o -1 si hay error
+ */
+int comportamiento_memalloc(int* pid, int cliente);
+
+/*
+    @NAME:  pid_valido
+    @DESC:  dado un pid dice si existe en el sistema 
+ */
+bool pid_valido(int pid);
+
 #endif

@@ -144,7 +144,7 @@ void atender_clientes(){
       {
       case SOLICITUD_INICIO:
       // estado = funcion que determina si puede iniciar un nuevo proceso (0 si puede, -1 si no puede)
-         estado = -1;
+         estado = 0; 
          resolver_estado(estado, cliente);
          break;
       

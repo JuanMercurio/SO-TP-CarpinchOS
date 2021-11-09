@@ -10,7 +10,6 @@
 #include <sys/socket.h>
 #include <utils/utils.h>
 
-extern int ids_memoria;
 
 void atender_proceso(void* arg){
     int cliente = *(int*)arg;
@@ -37,7 +36,7 @@ void ejecutar_proceso(int cliente) {
             break;
         
         case MEMALLOC:
-            //ejecutar_malloc(tabla, cliente);
+            comportamiento_memalloc(&pid, cliente);
             break;
 
         case MEMFREE:
@@ -96,3 +95,32 @@ void comprobar_inicio(int estado, int socket){
     }
 }
 
+int comportamiento_memalloc(int* pid, int cliente){
+    int pid_cliente = recibir_int(cliente);
+    if(*pid == NOT_ASIGNED) *pid = pid_cliente;
+    if(*pid != pid_cliente)
+    {
+        //comportamiento de pid erroneo
+    }
+    else 
+    {
+        memalloc();
+    }
+}
+
+
+bool pid_valido(int pid){
+
+    bool existe = false;
+    pthread_mutex_lock(&tablas.mutex);
+
+    for(int i=0; i<list_size(tablas.lista); i++){
+        tab_pags* paginas = list_get(tablas.lista, i);
+        existe = paginas->pid == pid;
+        if(existe) break;
+        
+    }
+
+    pthread_mutex_lock(&tablas.mutex);
+    return existe;    
+}

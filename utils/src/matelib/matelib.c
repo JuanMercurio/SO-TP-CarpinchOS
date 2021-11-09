@@ -4,12 +4,12 @@
 
 void mate_init(mate_instance *lib_ref, char *config)
 {
-  // t_config *configuracion = config_create(config);
-  // char *IP = config_get_string_value(configuracion, "IP");
-  // char *PUERTO = config_get_string_value(configuracion, "PUERTO");
+  t_config *configuracion = config_create(config);
+  char *IP = config_get_string_value(configuracion, "IP");
+  char *PUERTO = config_get_string_value(configuracion, "PUERTO");
 
   int pid = INIT;
-  int conexion = crear_conexion("127.0.0.1", "5001");
+  int conexion = crear_conexion(IP, PUERTO);
   int server =  recibir_int(conexion);
 
 
@@ -18,7 +18,7 @@ void mate_init(mate_instance *lib_ref, char *config)
  // No se si hace falta iniciar el sem_instance
 
   pid = recibir_PID(conexion);
-  printf("werlkjwerRecibi un pid: %d \n", pid);
+  printf("me llego el pid %d\n", pid);
   conexion_success(pid);
 
   lib_ref->group_info = crear_mate_inner(pid, conexion, server);

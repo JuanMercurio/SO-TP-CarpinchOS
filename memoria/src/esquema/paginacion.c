@@ -9,7 +9,7 @@
 memoria_t ram;
 tablas_t tablas;
 t_list* marcos;
-int ids_memoria = 1;
+int ids_memoria = 5;
 
 void iniciar_paginacion(){
 	
