@@ -96,7 +96,20 @@ void* serializar_mensaje(char* mensaje);
  */
 void* serializar_paquete(t_paquete* paquete, int bytes);
 
-void enviar_paquete(int socket, t_paquete* paquete);
-t_paquete* crear_paquete(int op, void* buffer, int size);
+/* 
+    @NAME: crear_buffer
+    @DESC: inicializa el buffer determinado de "paquete"
+ */
+void crear_buffer(t_paquete* paquete);
+
+void agregar_a_paquete(t_paquete* paquete, void* valor, int tamanio);
+
+void eliminar_paquete(t_paquete* paquete);
+
+t_paquete* crear_paquete(int codigo);
+
+void enviar_paquete(t_paquete* paquete, int socket_cliente);
+
+void* recibir_buffer_t(int* size, int socket);
 
 #endif

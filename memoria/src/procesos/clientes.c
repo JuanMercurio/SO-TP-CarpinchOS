@@ -36,6 +36,7 @@ void ejecutar_proceso(int cliente) {
             break;
         
         case MEMALLOC:
+            printf("Me llego un memalloc del cliente %d\n", pid);
             comportamiento_memalloc(&pid, cliente);
             break;
 
@@ -74,7 +75,6 @@ void enviar_PID(int *pid, int cliente){
 int iniciar_proceso(int proceso){
 
     int swamp = crear_conexion("127.0.0.1", "5003");
-    printf("envio una solicitud a swamp");
     enviar_int(swamp, SOLICITUD_INICIO);
 
     int estado = recibir_int(swamp);
@@ -94,18 +94,27 @@ void comprobar_inicio(int estado, int socket){
         pthread_exit(0);
     }
 }
-
 int comportamiento_memalloc(int* pid, int cliente){
-    int pid_cliente = recibir_int(cliente);
-    if(*pid == NOT_ASIGNED) *pid = pid_cliente;
-    if(*pid != pid_cliente)
+
+    int tamanio_buffer = recibir_int(cliente);
+    if(tamanio_buffer != sizeof(int)*4) return -1;
+
+    int* size = 0;
+    int* pid_cliente = recibir_buffer_t(size, cliente);
+
+    if(*pid == NOT_ASIGNED) *pid = *pid_cliente;
+    if(*pid != *pid_cliente)
     {
         //comportamiento de pid erroneo
+        printf("Me llego un pid erroreo en memalloc\n");
     }
     else 
     {
-        memalloc();
+        printf("El cliente esta en el sistema continuo con malloc\n");
+        // memalloc();
     }
+
+    return -1;
 }
 
 

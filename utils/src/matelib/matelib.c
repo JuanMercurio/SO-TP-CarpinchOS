@@ -78,7 +78,28 @@ int mate_call_io(mate_instance *lib_ref, mate_io_resource io, void *msg)
 
 mate_pointer mate_memalloc(mate_instance *lib_ref, int size)
 {
-  return 0;
+  mate_pointer dl = NOT_ASIGNED;
+
+  int socket = obtener_int(lib_ref, SOCKET);
+  int pid = obtener_int(lib_ref, PID);
+  printf("voy a mandar el pid: %d\n", pid);
+
+  solicitud_malloc(socket, pid, size);
+  dl = recibir_dl(socket);
+
+  return dl;
+}
+
+void solicitud_malloc(int socket, int pid, int size){
+
+  t_paquete* paquete = crear_paquete(MEMALLOC);
+  
+  agregar_a_paquete(paquete, &pid, sizeof(int));
+  agregar_a_paquete(paquete, &size, sizeof(int));
+
+  enviar_paquete(paquete, socket);
+
+  eliminar_paquete(paquete);
 }
 
 int mate_memfree(mate_instance *lib_ref, mate_pointer addr)
@@ -180,4 +201,16 @@ void* crear_mate_inner(int pid, int conexion, int server){
   offset += sizeof(int);
 
   return bloque;
+}
+
+mate_pointer recibir_dl(int socket){
+  return recibir_int32(socket);
+}
+
+mate_pointer recibir_int32(int socket){
+  void* buffer = malloc(sizeof(mate_pointer));
+  recv(socket, buffer, sizeof(mate_pointer), 0);
+  mate_pointer dl = *(mate_pointer*)buffer;
+  free(buffer);
+  return dl;
 }

@@ -67,6 +67,17 @@ int recibir_operacion(int socket_cliente) {
 	}
 }
 
+
+void* recibir_buffer_t(int* size, int socket){
+	void* buffer;
+
+	recv(socket, size,sizeof(int), MSG_WAITALL);
+	buffer = malloc(*size);
+	recv(socket, buffer, *size, MSG_WAITALL);
+
+	return buffer;
+}
+
 int recibir_int(int socket_cliente) {
     int size;
 	recv(socket_cliente, &size, sizeof(int), MSG_WAITALL);
@@ -105,24 +116,44 @@ void* serializar_mensaje(char* mensaje){
 }
 
 
-t_paquete* crear_paquete(int op, void* buffer, int size){
-
-    t_paquete* paquete = malloc(sizeof(t_paquete));
-    paquete->buffer->stream = buffer;
-    paquete->buffer->size = size;
-    paquete->codigo_operacion = op;
-    return paquete;
+void crear_buffer(t_paquete* paquete)
+{
+	paquete->buffer = malloc(sizeof(t_buffer));
+	paquete->buffer->size = 0;
+	paquete->buffer->stream = NULL;
 }
 
-void enviar_paquete(int socket, t_paquete* paquete){
+t_paquete* crear_paquete(int codigo)
+{
+	t_paquete* paquete = malloc(sizeof(t_paquete));
+	paquete->codigo_operacion = codigo;
+	crear_buffer(paquete);
+	return paquete;
+}
 
-    int size = sizeof(int) + paquete->buffer->size;
-    void *buffer = malloc(size);
-    memcpy(buffer, paquete->codigo_operacion, sizeof(int));
-    memcpy(buffer + sizeof(int), paquete->buffer->stream, paquete->buffer->size);
+void agregar_a_paquete(t_paquete* paquete, void* valor, int tamanio)
+{
+	paquete->buffer->stream = realloc(paquete->buffer->stream, paquete->buffer->size + tamanio + sizeof(int));
 
-    send(socket, buffer, size, 0);
+	memcpy(paquete->buffer->stream + paquete->buffer->size, &tamanio, sizeof(int));
+	memcpy(paquete->buffer->stream + paquete->buffer->size + sizeof(int), valor, tamanio);
 
-    free(paquete->buffer->stream);
-    free(paquete);
+	paquete->buffer->size += tamanio + sizeof(int);
+}
+
+void enviar_paquete(t_paquete* paquete, int socket_cliente)
+{
+	int bytes = paquete->buffer->size + 2*sizeof(int);
+	void* a_enviar = serializar_paquete(paquete, bytes);
+
+	send(socket_cliente, a_enviar, bytes, 0);
+
+	free(a_enviar);
+}
+
+void eliminar_paquete(t_paquete* paquete)
+{
+	free(paquete->buffer->stream);
+	free(paquete->buffer);
+	free(paquete);
 }
