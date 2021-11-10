@@ -1,20 +1,22 @@
 #ifndef _MAIN_KERNEL_
 #define _MAIN_KERNEL_
 
-#include "tests/tests.h"
-#include "configuracion/config.h"
-#include <pthread.h>
-#include <utils/utils.h> 
-#include <conexiones/conexiones.h>
-#include <semaphore.h>
-#include <commons/collections/queue.h>
+
+
 #include <commons/collections/list.h>
+#include <commons/collections/queue.h>
 #include <commons/temporal.h>
+#include <conexiones/conexiones.h>
+#include <mensajes/mensajes.h>
+#include <pthread.h>
+#include <semaphore.h>
 #include <time.h>
+#include <utils/utils.h> 
+
 // type struct
 struct timeval *tiempito;
 struct tm *aux;
-typedef struct{
+typedef struct tiempo_t{
   //  double estimacion_anterior;
     double tiempo_ejecutado;
     double estimacion; // en  hrrn el tiepo de servicio es la estimacion para la proximaejecucion
@@ -23,18 +25,20 @@ typedef struct{
     char* time_stamp_fin;
 }tiempo_t;
 
-typedef struct{
+typedef struct t_pcb{
     int pid;
     int fd_cliente;
     tiempo_t tiempo;
     char estado;
     int proxima_instruccion;
+    char* io_solicitada;
+    char* semaforo_a_modificar;
     sem_t *semaforo_evento;
-
+    sem_t *semaforo_fin_evento;
 }t_pcb;
 
 typedef enum{
-    NEW_INSTANCE,
+     NEW_INSTANCE,
     IO,
     INIT_SEMAFORO,
     SEM_WAIT,
@@ -43,20 +47,25 @@ typedef enum{
     MEMALLOC,
     MEMFREE,
     MEMREAD,
-    MEMWRITE
+    MEMWRITE,
+    MATE_CLOSE
 }cod_op;
 
-typedef struct{
+typedef struct sem_kernel{
     char* id;
     int val;
     int max_val;
     t_queue* bloqueados;
+    sem_t *mutex;
+    sem_t *mutex_cola;
 }sem_kernel;
 
-typedef struct{
+typedef struct io_kernel{
     char* id;
     int retardo;
     t_queue* bloqueados;
+    sem_t * mutex_io;
+    sem_t * cola_con_elementos;
 }io_kernel;
 
 //   colas
@@ -78,7 +87,7 @@ sem_t *cola_ready_con_elementos;
 sem_t *cola_suspendido_bloquedo_con_elementos;
 sem_t *cola_suspendido_listo_con_elementos;
 sem_t *lista_ejecutando_con_elementos;
-sem_t *cola_finalizados_con elementos;
+sem_t *cola_finalizados_con_elementos;
 sem_t *mutex_cola_new;
 sem_t *mutex_cola_ready;
 sem_t *mutex_cola_bloqueado;
@@ -92,6 +101,8 @@ sem_t *controlador_multiprogramacion;
 
 sem_t *mutex_lista_sem_kernel;
 sem_t *mutex_lista_io_kernel;
+
+
 
 
 
@@ -116,13 +127,14 @@ void crear_estructuras(t_pcb *carpincho);
 
 void inicializar_listas_sem_io();
 
-sem_kernel* buscar_semaforo(char *nombre, t_list *sems);
-void sem_kernel_wait(char *nombre, t_pcb *carpincho);
-void sem_kernel_post(char *nombre);
+void inicializar_proceso_carpincho(t_pcb *carpincho);
+
+// sem_kernel* buscar_semaforo(char *nombre);
+
 void sem_kernel_init(char* nombre, int value);
 void sem_kernel_destroy(char* nombre);
 
-io_kernel* buscar_io(char *nombre, t_list *ios);
+
 void init_dispositivos_io();
 void call_io(char *nombre, t_pcb *carpincho);
 void realizar_io(t_pcb *carpincho, io_kernel *io);

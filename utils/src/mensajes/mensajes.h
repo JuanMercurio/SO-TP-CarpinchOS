@@ -30,6 +30,13 @@ typedef struct
 	t_buffer* buffer;
 } t_paquete;
 
+typedef struct
+{
+   int cod_op;
+   t_buffer* buffer;
+   int valor; 
+}t_paquete_semaforo;
+
 /* 
     @NAME:  handshake
     @DESC:  dado un cliente el server le manda el modulo que es 
@@ -104,6 +111,8 @@ void crear_buffer(t_paquete* paquete);
 
 void agregar_a_paquete(t_paquete* paquete, void* valor, int tamanio);
 
+void enviar_mensaje_y_cod_op(char* mensaje, int socket_cliente, int codigo_op);
+
 void eliminar_paquete(t_paquete* paquete);
 
 t_paquete* crear_paquete(int codigo);
@@ -111,5 +120,15 @@ t_paquete* crear_paquete(int codigo);
 void enviar_paquete(t_paquete* paquete, int socket_cliente);
 
 void* recibir_buffer_t(int* size, int socket);
+
+void enviar_sem_init(char* sem, int valor, int conexion, int cod_op);
+
+void* serializar_paquete_semaforo(t_paquete_semaforo * paquete, int bytes);
+
+void* recibir_buffer2(int* size, int socket_cliente);
+
+int recibir_valor_sem(int conexion);
+
+t_paquete_semaforo recibir_semaforo(int conexion);
 
 #endif

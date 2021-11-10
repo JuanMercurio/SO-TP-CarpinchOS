@@ -12,24 +12,27 @@ void mate_init(mate_instance *lib_ref, char *config)
   int conexion = crear_conexion(IP, PUERTO);
   int server =  recibir_int(conexion);
 
-
   enviar_int(conexion, NEW_INSTANCE);
 
- // No se si hace falta iniciar el sem_instance
+  // No se si hace falta iniciar el sem_instance
 
   pid = recibir_PID(conexion);
-  printf("me llego el pid %d\n", pid);
-  conexion_success(pid);
+
+  // Valida si fue validad por el kernel o la memoria
+  conexion_success(pid); 
 
   lib_ref->group_info = crear_mate_inner(pid, conexion, server);
 }
 
 void conexion_success(int pid){
-  if(pid == NOT_ASIGNED) abort();    //definir comportamiento.. si no es aceptado en el sistema vuelve a intentar?
+  if(pid == NOT_ASIGNED) abort();    //definir comportamiento.. si no es aceptado en el sistema vuelve a intentar? retorna -1?
 }
 
 int mate_close(mate_instance *lib_ref)
 {
+  //enviar_mensaje_y_cod_op("ELIMINAME",((mate_inner_structure*)lib_ref->group_info)->conexion, MATE_CLOSE);
+  free(lib_ref->group_info);
+  free(lib_ref);
   return 0;
 }
 
@@ -37,41 +40,48 @@ int mate_close(mate_instance *lib_ref)
 
 int mate_sem_init(mate_instance *lib_ref, mate_sem_name sem, unsigned int value) {
   
-  if(true){
+  if(((mate_inner_structure *)lib_ref->group_info)->conectado_a == MEMORIA) return -1;
 
-  //((mate_inner_structure *)lib_ref->info)->sem_instance = malloc(sizeof(sem_t));
- // sem_init(((mate_inner_structure *)lib_ref->info)->sem_instance, 0, value);
-  // enviar_sem_init(sem, (int)value, lib_ref->conexion, INIT_SEMAFORO); // codear fiuncion; pasar valor
-  char* respuesta = recibir_mensaje(lib_ref->conexion); // espera respuesta para continuar ejecutando condigo???
+  //((mate_inner_structure *)lib_ref->group_info)->sem_instance = malloc(sizeof(sem_t));
+  // sem_init(((mate_inner_structure *)lib_ref->group_info)->sem_instance, 0, value);
+
+  enviar_sem_init(sem, (int)value, ((mate_inner_structure *)lib_ref->group_info)->conexion, INIT_SEMAFORO); // codear fiuncion; pasar valor
+  char* respuesta = recibir_mensaje(((mate_inner_structure *)lib_ref->group_info)->conexion); // espera respuesta para continuar ejecutando condigo???
 
   return 0;
-  }
-  return -1;//PREGUBNTAR POR RETORNO DE ENTERO
 }
 
 int mate_sem_wait(mate_instance *lib_ref, mate_sem_name sem) {
-    // enviar_mensaje_y_cod_op(sem, lib_ref->conexion, SEM_WAIT);
-   // return sem_wait(((mate_inner_structure *)lib_ref->info)->sem_instance);
+  if(conectado_a_memoria(lib_ref)) return -1;
+
+  enviar_mensaje_y_cod_op(sem, ((mate_inner_structure *)lib_ref->group_info)->conexion, SEM_WAIT);
+  return 0;
+  // return sem_wait(((mate_inner_structure *)lib_ref->group_info)->sem_instance);
  }
 
 int mate_sem_post(mate_instance *lib_ref, mate_sem_name sem) {
-  // enviar_mensaje_y_cod_op(sem, lib_ref->conexion, SEM_POST);
+  if(conectado_a_memoria(lib_ref)) return -1;
+
+  enviar_mensaje_y_cod_op(sem, ((mate_inner_structure *)lib_ref->group_info)->conexion, SEM_POST);
+  return 0;
 }
+
 int mate_sem_destroy(mate_instance *lib_ref, mate_sem_name sem) {
-  // enviar_mensaje_y_cod_op(sem, lib_ref->conexion, SEM_DESTROY);
+  if(conectado_a_memoria(lib_ref)) return -1;
+
+  enviar_mensaje_y_cod_op(sem, ((mate_inner_structure *)lib_ref->group_info)->conexion, SEM_DESTROY);
+  return 0;
 }
 //--------------------IO Functions------------------------/
 
 int mate_call_io(mate_instance *lib_ref, mate_io_resource io, void *msg)
 {
-  printf("Doing IO %s...\n", io);
-  usleep(10 * 1000);
-  if (!strncmp(io, "PRINTER", 7))
-  {
-    printf("Printing content: %s\n", (char *)msg);
+  enviar_mensaje_y_cod_op(io, ((mate_inner_structure*)lib_ref->group_info)->conexion, IO);
+  char* respuesta = recibir_mensaje(((mate_inner_structure*)lib_ref->group_info)->conexion);
+  if(strcmp(respuesta, "OK") == 0){
+    return 0;
   }
-  printf("Done with IO %s\n", io);
-  return 0;
+  return -1;
 }
 
 //--------------Memory Module Functions-------------------/
@@ -109,79 +119,37 @@ int mate_memfree(mate_instance *lib_ref, mate_pointer addr)
 
 int mate_memread(mate_instance *lib_ref, mate_pointer origin, void *dest, int size)
 {
+  if (origin != 0)
+  {
+    return -1;
+  }
+  //memcpy(dest, ((mate_inner_structure *)lib_ref->groupinfo)->memory, size);
   return 0;
 }
 
 int mate_memwrite(mate_instance *lib_ref, void *origin, mate_pointer dest, int size)
 {
+  if (dest != 0)
+  {
+    return -1;
+  }
+  //memcpy(((mate_inner_structure *)lib_ref->info)->memory, origin, size);
   return 0;
 }
-
+/*
+ESTAS FUNCIONES DE MEMEMORIA DEBEN TENER LA ESPERA DE UNA CONFIRMACION POR PARTE DEL MODULO PARA SEGUIR EJECUTADO
+INDEPENDIENTEMENTE DEL RETURN PARA EVITA QUE EL PROCEOS HAGA OTRA PETICION Y AUN NO HAYA TERMINADO DE HACER LO ANTERIOR
+ */
 //--------------------Auxiliar Functions-----------------//
 
-uint32_t generar_pid(){ // bucar manera de generar pids sin que se repitan y sin hacer uso de variable globales
-  return 1;
-}
-/* 
-//-------------------Messages Functions------------------//
-int crear_conexion(char *ip, char* puerto)		//puede ser optimizada?
-{
-	struct addrinfo hints;
-	struct addrinfo *server_info;
 
-	memset(&hints, 0, sizeof(hints));
-	hints.ai_family = AF_UNSPEC;
-	hints.ai_socktype = SOCK_STREAM;
-	hints.ai_flags = AI_PASSIVE;
-
-	getaddrinfo(ip, puerto, &hints, &server_info);
-
-	int socket_cliente = socket(server_info->ai_family, server_info->ai_socktype, server_info->ai_protocol);
-
-	if(connect(socket_cliente, server_info->ai_addr, server_info->ai_addrlen) == -1)
-		printf("No se pudo conectar al Servidor\n");
-
-	freeaddrinfo(server_info);
-
-	return socket_cliente;
-}
-
-void enviar_mensaje(char* mensaje, int socket_cliente, int codigo_op){//usada para enviar tarea desde mi ram el codigo de operacion sera indistinto
-	printf("preparando mensjae\n");
-	t_paquete* paquete = malloc(sizeof(t_paquete));
-	paquete->codigo_operacion = codigo_op;
-	paquete->buffer = malloc(sizeof(t_buffer));
-	paquete->buffer->size = strlen(mensaje) + 1;
-	paquete->buffer->stream = malloc(paquete->buffer->size);
-	memcpy(paquete->buffer->stream, mensaje, paquete->buffer->size);
-
-	int bytes = paquete->buffer->size + 2*sizeof(int);
-
-	void* a_enviar = serializar_paquete(paquete, bytes);
-
-	send(socket_cliente, a_enviar, bytes, 0);
-	printf("mensaje enviado\n");
-	free(a_enviar);
-	eliminar_paquete(paquete);
-}
-
-char* recibir_mensaje(int socket_cliente)
-{
-	int size;
-
-	char* buffer = recibir_buffer(&size, socket_cliente);
-
-	printf("recibir_mensaje: Mensaje recibido %s\n", buffer);
-	//log_info(logger, "Me llego el mensaje %s", buffer);
-	return buffer;
-}
-*/
-
+// funcion al pedo pero sirve para lectura
 int obtener_int(mate_instance* lib_ref, cod_int COD){
   void* buffer = leer_bloque(lib_ref->group_info, sizeof(int)*COD, sizeof(int));
   return *(int*)buffer;
 }
 
+// funcion al pedo pero sirve para lectura
 void* leer_bloque(void* bloque, int offset, int tamanio){
   void* buffer = malloc(tamanio);
   memcpy(buffer, bloque + offset, tamanio);
@@ -213,4 +181,8 @@ mate_pointer recibir_int32(int socket){
   mate_pointer dl = *(mate_pointer*)buffer;
   free(buffer);
   return dl;
+}
+
+bool conectado_a_memoria(mate_instance* lib_ref){
+  return ((mate_inner_structure *)lib_ref->group_info)->conectado_a == MEMORIA;
 }

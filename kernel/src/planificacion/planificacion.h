@@ -1,7 +1,11 @@
 #ifndef _PLANIFICACION_
 #define _PLANIFICACION_
 
+#include "../main.h"
+#include "../configuracion/config.h"
 
+t_pcb *ultimo_bloqueado;
+extern int carpinchos_bloqueados;
 
 /* 
     @NAME: inciar_cpu
@@ -17,6 +21,10 @@ void inciar_cpu();
            timestamps para controlar estimaciones.
  */
 void procesador();
+
+void planificador_mediano_plazo(t_pcb *carpincho);
+
+void eliminar_carpincho(t_pcb *carpincho);// revisar que este este borrando lo necesario y no haya free's de mas
 
 /* 
     @NAME: inciar_planifiacdor_corto_plazo
@@ -52,7 +60,9 @@ void estimador_HRRN(t_pcb* carpincho);
 
 void estimador(t_pcb *carpincho);
 
-void ejecutando_a_bloqueado(t_pcb *carpincho);
-void bloqueado_a_listo(t_pcb *carpincho);
+void ejecutando_a_bloqueado(t_pcb*,t_queue *,sem_t*);
+void bloqueado_a_listo(t_pcb*,t_queue *,sem_t*);
+
+bool verificar_suspension();
  
 #endif

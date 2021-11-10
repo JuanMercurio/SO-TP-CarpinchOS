@@ -28,20 +28,22 @@ typedef enum{
     MEMALLOC,
     MEMFREE,
     MEMREAD,
-    MEMWRITE
+    MEMWRITE,
+    MATE_CLOSE
 }cod_op;
 
 //-------------------Type Definitions----------------------/
 
 typedef struct mate_inner_structure{
-    sem_t* sem_instance;
     uint32_t pid;
+    uint32_t conexion; 
     uint32_t conectado_a;
+    //sem_t* sem_instance;
+    //void* memoria;
 } mate_inner_structure;
 
 typedef struct mate_instance {
     void* group_info;
-    uint32_t conexion; 
 } mate_instance;
 
 typedef char *mate_io_resource;
@@ -87,9 +89,15 @@ typedef enum{
 int obtener_int(mate_instance* lib_ref, cod_int COD);
 
 void* crear_mate_inner(int pid, int conexion, int server);
+
 void conexion_success(int pid);
 
+void solicitud_malloc(int socket, int pid, int size);
+
 mate_pointer recibir_dl(int socket);
+
 mate_pointer recibir_int32(int socket);
+
+bool conectado_a_memoria(mate_instance* lib_ref);
 
 #endif

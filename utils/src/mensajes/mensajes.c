@@ -4,6 +4,7 @@
 #include <stdlib.h>
 #include <string.h>
 
+
 void enviar_mensaje_y_cod_op(char* mensaje, int socket_cliente, int codigo_op){
 	printf("preparando mensjae\n");
 	t_paquete* paquete = malloc(sizeof(t_paquete));
@@ -156,4 +157,61 @@ void eliminar_paquete(t_paquete* paquete)
 	free(paquete->buffer->stream);
 	free(paquete->buffer);
 	free(paquete);
+}
+void enviar_sem_init(char* sem, int valor, int conexion, int cod_op){
+	t_paquete_semaforo *paquete = malloc(sizeof(t_paquete_semaforo));
+	paquete->cod_op = cod_op;
+	paquete->buffer = malloc(sizeof(t_buffer));
+	paquete->buffer->size = strlen(sem) + 1;
+	paquete->buffer->stream = malloc(paquete->buffer->size);
+	memcpy(paquete->buffer->stream, sem, paquete->buffer->size);
+	paquete->valor = valor;
+
+	int bytes = paquete->buffer->size + 3* sizeof(int);
+	void* a_enviar = serializar_paquete_semaforo(paquete, bytes);
+
+	send(conexion, a_enviar, bytes, 0);
+	printf("mensaje enviado\n");
+	free(a_enviar);
+}
+
+void* serializar_paquete_semaforo(t_paquete_semaforo * paquete, int bytes){
+	void* magico = malloc(bytes);
+	int desplazamiento = 0;
+
+	memcpy(magico + desplazamiento, &(paquete->cod_op), sizeof(int));
+	desplazamiento+= sizeof(int);
+	memcpy(magico + desplazamiento, &(paquete->buffer->size), sizeof(paquete->buffer->size));
+	desplazamiento+= sizeof(int);
+	memcpy(magico + desplazamiento, paquete->buffer->stream, paquete->buffer->size);
+	desplazamiento+= paquete->buffer->size;
+	memcpy(magico + desplazamiento, &(paquete->valor), sizeof(int));
+	return magico;
+}
+
+t_paquete_semaforo recibir_semaforo(int conexion){
+	t_paquete_semaforo recibido;
+	int size;
+	char* aux;
+	int desplazamiento = 0;
+	void * buffer;
+	buffer = recibir_buffer2(&size, conexion);
+	aux = buffer; 
+	strcpy(recibido.buffer, aux);
+	recibido.valor = recibir_valor_sem(conexion);
+	free(buffer);
+}
+void* recibir_buffer2(int* size, int socket_cliente)
+{
+	void* buffer;
+	recv(socket_cliente, size, sizeof(int), MSG_WAITALL);
+	buffer = malloc(*size+sizeof(int));
+	recv(socket_cliente, buffer, *size, MSG_WAITALL);
+	return buffer;
+}
+
+int recibir_valor_sem(int conexion){
+	void* valor;
+	recv(conexion, valor, sizeof(int), MSG_WAITALL);
+	return *(int*) valor;	
 }
