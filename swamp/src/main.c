@@ -1,9 +1,6 @@
 #include "main.h"
 
-#include <mensajes/mensajes.h>
 
-#define VALIDO 0
-#define INVALIDO -1
 
 int main(int argc, char* argv[]) {
    
@@ -23,15 +20,23 @@ int main(int argc, char* argv[]) {
   */
     //printf("La cantidad de elementos %d \n", lenght(configuracion.ARCHIVOS_SWAP_list));   
    
-   crearArchivos();
-   //int numMejor= elegirMejorArchivo();
-    crearCarpincho (5);
-    crearCarpincho (6);
+   //crearArchivos();
+   
+   /*int num2 =  cantidadCaracteresFile(configuracion.ARCHIVOS_SWAP_list[0]);
+   int num3 =  cantidadCaracteresFile(configuracion.ARCHIVOS_SWAP_list[1]);
+   printf("el num 2 es %d\n",num2);
+   printf("el num 3 es %d\n",num3);*/
+
+   
+    crearCarpincho (5,0);
+    crearCarpincho (6,1);
+    crearCarpincho (5,0);
+    crearCarpincho (6,1);
     //crearCarpincho (7);
    /*iniciar_swamp();
-   terminar_programa();*/
-   iniciar_swamp();
    atender_clientes();
+   terminar_programa();*/
+
    return 0;
 }
 
@@ -64,19 +69,24 @@ void crearArchivos(){
         
 }
 int elegirMejorArchivo(){
-
+    // busca el archivo con el que mas espacio tenga. 
     int i = 0;
-    int mayor = 0;
-    int indiceMayor = 0;
+    int menor = cantidadCaracteresFile (configuracion.ARCHIVOS_SWAP_list[i]);
+    int indiceMenor = 0;
+   int menor2 = cantidadCaracteresFile (configuracion.ARCHIVOS_SWAP_list[1]);
+   printf("valor menor %d\n",menor);
+    printf("valor menor2 %d\n",menor2);
     while(configuracion.ARCHIVOS_SWAP_list[i]){
-       printf("el valor de i es %d.\n",i);
-        if (i == 0){
-           mayor = cantidadCaracteresFile (configuracion.ARCHIVOS_SWAP_list[i]);
-
-        }
-        else if (mayor > cantidadCaracteresFile (configuracion.ARCHIVOS_SWAP_list[i])){
-            mayor = cantidadCaracteresFile (configuracion.ARCHIVOS_SWAP_list[i]);
-            indiceMayor = i;
+         i++;
+         
+       //printf("ENtro al while\n");
+       int otro = cantidadCaracteresFile (configuracion.ARCHIVOS_SWAP_list[i]);
+       if (menor > otro){
+           //printf("el valor de i es %d.\n",i);
+           //printf("el menor es %s.\n",menor);
+            menor = otro;
+           // printf("valor menor %d\n",menor);
+            indiceMenor = i;
         }
         // FUNCION STAT NO USADA
         /*int file = open (configuracion.ARCHIVOS_SWAP_list[i] , 1);
@@ -94,26 +104,41 @@ int elegirMejorArchivo(){
         //printf("El valor del archivo es %s\n",devuelve);
         i++;
     }
-    printf("el mayor es %d\n",indiceMayor);
-    return indiceMayor;
+    //printf("el indice menor es %d.\n",indiceMenor);
+    return indiceMenor;
 }
-void crearCarpincho (int pid){
-    int mejorArchivo = elegirMejorArchivo();
-    FILE* archivo = fopen (configuracion.ARCHIVOS_SWAP_list[mejorArchivo] , "w+");
-    int cant = sizeof("hoola");
-     printf("La cantidad de hoola es %d\n",cant);
+void crearCarpincho (int pid,int mejorArchivo){
+    mejorArchivo = elegirMejorArchivo();
+    printf("el mejor archivo es %d",mejorArchivo);
+    FILE* archivo = fopen (configuracion.ARCHIVOS_SWAP_list[mejorArchivo] , "r+");
+    /*int cant = sizeof("hoola");
+     printf("La cantidad de hoola es %d\n",cant);*/
     //fwrite( pid, sizeof(int), sizeof(pid), archivo );
-    fprintf(archivo, "%s","holaa|\n");
+    fprintf(archivo, "%d",5);
+    fprintf(archivo, "%s","chau|");
+    fprintf(archivo, "%s","send|\n");
+    //fputs(5,archivo);
+    //lfputs("hola",archivo);
     fclose(archivo);
+    printf("FIN CREAR\n");
 }
 int cantidadCaracteresFile (char* path){
     FILE* archivo = fopen (path , "r");
     
     char bufer[configuracion.TAMANIO_SWAP];
-    char* ptr = fgets(bufer, configuracion.TAMANIO_SWAP, archivo);
-    int cant = string_length(ptr);
-    //printf("El valor del archivo es %s\n",bufer);
-    //printf("La cantidad es %d\n",cant);
+    //char* ptr = fgets(bufer, configuracion.TAMANIO_SWAP, archivo);
+    int i = 0;
+    char caracter[configuracion.TAMANIO_SWAP];
+    caracter[i] = fgetc(archivo);
+    while(caracter[i] != EOF){
+        i++;
+        caracter[i] = fgetc(archivo);
+    }
+    //printf("El valor del archivo es %s.\n",caracter);
+    int cant = string_length(caracter);
+    printf("El path es %s.\n",path);
+    //printf("El valor del archivo es %s.\n",bufer);
+    printf("La cantidad es %d.\n",cant);
     
     return cant;
 }
@@ -135,40 +160,7 @@ void atender_clientes(){
 
    // while feo
    while(1){ 
-
       int cliente = aceptar_cliente(server);
-
-      int operacion = recibir_operacion(cliente);
-      int estado;
-      switch (operacion)
-      {
-      case SOLICITUD_INICIO:
-      // estado = funcion que determina si puede iniciar un nuevo proceso (0 si puede, -1 si no puede)
-         estado = 0; 
-         resolver_estado(estado, cliente);
-         break;
-      
-
-      //faltan las demas operaciones
-      default:
-         break;
-      }
-
+      printf("Se conecto alguien en el socket: %d\n", cliente);
    }
-}
-
-int resolver_estado(int estado, int cliente){
-
-   if (estado == INVALIDO)
-   {
-      enviar_int(cliente, INVALIDO);
-      return INVALIDO;
-   }
-
-   if (estado == VALIDO)
-   {
-      enviar_int(cliente, VALIDO);
-      return recibir_int(cliente);
-   }
-
 }
