@@ -1,5 +1,8 @@
 #include "main.h"
+#include <mensajes/mensajes.h>
 
+#define VALIDO 0
+#define INVALIDO -1
 
 
 int main(int argc, char* argv[]) {
@@ -19,11 +22,16 @@ int main(int argc, char* argv[]) {
    printf("Los archivos del server van a ser: %s \n", configuracion.ARCHIVOS_SWAP_list[1]);
   */
     //printf("La cantidad de elementos %d \n", lenght(configuracion.ARCHIVOS_SWAP_list));   
-   asignacionFija = 1;
+    asignacionFija = 1;
+    carpinchosEnArchivo= list_create();
     crearArchivos();
    //int numMejor= elegirMejorArchivo();
     crearCarpincho (5,2,"pagina1");
     crearCarpincho (6,6,"pagina2");
+    crearCarpincho (7,2,"pagina2");
+    char* basura = string_repeat('n',configuracion.TAMANIO_PAGINA);
+    int pudo=remplazoPaginaFija(2,2,basura);
+
     //crearCarpincho (7);
    /*iniciar_swamp();
    terminar_programa();*/
@@ -60,24 +68,24 @@ void crearArchivos(){
      //printf("FIN aapertura archivo y truncate\n");
         
 }
-
 int elegirMejorArchivo(){
     // busca el archivo con el que mas espacio tenga. 
     int i = 0;
     int menor = cantidadCaracteresFile (configuracion.ARCHIVOS_SWAP_list[i]);
     int indiceMenor = 0;
-   int menor2 = cantidadCaracteresFile (configuracion.ARCHIVOS_SWAP_list[1]);
-   printf("valor menor %d\n",menor);
-    printf("valor menor2 %d\n",menor2);
+   
+   //int menor2 = cantidadCaracteresFile (configuracion.ARCHIVOS_SWAP_list[1]);
+   //printf("valor menor %d\n",menor);
+    //printf("valor menor2 %d\n",menor2);
     while(configuracion.ARCHIVOS_SWAP_list[i]){
        //printf("el valor de i es %d.\n",i);
         if (i == 0){
-           mayor = cantidadCaracteresFile (configuracion.ARCHIVOS_SWAP_list[i]);
+           menor = cantidadCaracteresFile (configuracion.ARCHIVOS_SWAP_list[i]);
 
         }
-        else if (mayor > cantidadCaracteresFile (configuracion.ARCHIVOS_SWAP_list[i])){
-            mayor = cantidadCaracteresFile (configuracion.ARCHIVOS_SWAP_list[i]);
-            indiceMayor = i;
+        else if (menor > cantidadCaracteresFile (configuracion.ARCHIVOS_SWAP_list[i])){
+            menor = cantidadCaracteresFile (configuracion.ARCHIVOS_SWAP_list[i]);
+            indiceMenor = i;
         }
         // FUNCION STAT NO USADA
         /*int file = open (configuracion.ARCHIVOS_SWAP_list[i] , 1);
@@ -95,22 +103,70 @@ int elegirMejorArchivo(){
         //printf("El valor del archivo es %s\n",devuelve);
         i++;
     }
-    //printf("el indice menor es %d.\n",indiceMenor);
+    printf("el indice menor es %d.\n",indiceMenor);
     return indiceMenor;
 }
-void crearCarpincho (int pid, int pag, char* contenidoPagina){
+void crearCarpincho (int pidd, int pag, char* contenidoPagina){
     int mejorArchivo = elegirMejorArchivo();
-   
-    
-    int file =  open(configuracion.ARCHIVOS_SWAP_list[mejorArchivo], O_RDWR, S_IRUSR|S_IWUSR,O_APPEND);
-    //write(file,pid,sizeof(pid));
-    char* pag_char = string_itoa(pag);
-    write(file,pag_char,string_length(pag_char));
-    write(file,contenidoPagina,string_length(contenidoPagina));
-    write(file,contenidoPagina,string_length(contenidoPagina));
-     //write(file,"hola soy jana",sizeof("hola soy jana"));*/
+    int file =  open(configuracion.ARCHIVOS_SWAP_list[mejorArchivo], O_RDWR,S_IRUSR|S_IWUSR, O_APPEND);
+    Carpincho_Swamp* carpincho;
+    carpincho = malloc(sizeof(Carpincho_Swamp));
+    carpincho->pid = pidd;
+    carpincho->numeroArchivo = mejorArchivo;
+    list_add(carpinchosEnArchivo,carpincho);
+    if( cantidadCaracteresFile(configuracion.ARCHIVOS_SWAP_list[mejorArchivo]) != 2){
+         lseek (file , cantidadCaracteresFile(configuracion.ARCHIVOS_SWAP_list[mejorArchivo]), 0);
+    }
+    if(asignacionFija){
+        char* basura = string_repeat('-',configuracion.TAMANIO_PAGINA);
+        for(int j = 0; j< configuracion.MARCOS_MAXIMOS; j++){
+            write(file,basura,configuracion.TAMANIO_PAGINA);
+        }
+    }
     close(file);
-
+}
+int remplazoPaginaFija(int pid, int pagina, char*contenido){
+    int mejorArchivo = buscarArchivoDeCarpincho (pid);
+   
+      printf("ENTRO ACA1\n");
+    if(  mejorArchivo != -1 ){
+        printf("ENTRO ACA2\n");
+        int  file =  open(configuracion.ARCHIVOS_SWAP_list[mejorArchivo], O_RDWR, S_IRUSR|S_IWUSR);
+        struct stat sb;
+        
+        char * file_in_memory = mmap(NULL,cantidadCaracteresFile(configuracion.ARCHIVOS_SWAP_list[mejorArchivo]),PROT_READ |PROT_WRITE ,MAP_SHARED, file,0);
+       
+        for (int i = (pagina-1)*configuracion.TAMANIO_PAGINA ;i<pagina*configuracion.TAMANIO_PAGINA;i++){
+            file_in_memory[i]='j';
+        }
+        printf("\n");
+        munmap(file_in_memory,cantidadCaracteresFile(configuracion.ARCHIVOS_SWAP_list[mejorArchivo]));
+        close(file);
+        printf("la cantidad es %d.\n",cantidadCaracteresFile(configuracion.ARCHIVOS_SWAP_list[mejorArchivo]));
+        return 1;
+    }
+    else{
+        printf("NO SE ENCONTRO LA PAGINA");
+        return -1;
+    }
+    
+}
+int buscarArchivoDeCarpincho (int pidd){
+    int max = list_size(carpinchosEnArchivo);
+    Carpincho_Swamp* car = malloc(sizeof(Carpincho_Swamp));
+    printf("el max es %d\n",max);
+    for (int i = 0;i<max;i++){
+        
+        car = (Carpincho_Swamp*) list_get(carpinchosEnArchivo,i);
+        printf("EL pid es %d \n",car->pid);
+        if(car->pid == pidd){
+            printf("EL numero de archivo es %d \n",car->numeroArchivo);
+            int devuelve =car->numeroArchivo;
+            free(car);
+            return devuelve;
+        }
+    }
+    return -1;
 }
 int cantidadCaracteresFile (char* path){
     FILE* archivo = fopen (path , "r");
@@ -127,8 +183,6 @@ int cantidadCaracteresFile (char* path){
 // hacer funcion que escriba un carpincho una pagina
 // hacer que lea una pagina
 // busqueda de pagina por carpincho.
-
-
 void terminar_programa(){
    config_destroy(config);
 }
@@ -143,7 +197,22 @@ void atender_clientes(){
    // while feo
    while(1){ 
       int cliente = aceptar_cliente(server);
-      printf("Se conecto alguien en el socket: %d\n", cliente);
+      //printf("Se conecto alguien en el socket: %d\n", cliente);
+       int operacion = recibir_operacion(cliente);
+      int estado;
+      switch (operacion)
+      {
+      case SOLICITUD_INICIO:
+      // estado = funcion que determina si puede iniciar un nuevo proceso (0 si puede, -1 si no puede)
+         estado = -1;
+         resolver_estado(estado, cliente);
+         break;
+
+
+      //faltan las demas operaciones
+      default:
+         break;
+      }
    }
 }
 

@@ -12,10 +12,18 @@
 #include <unistd.h>
 #include <sys/stat.h>
 #include <commons/string.h>
+#include <sys/mman.h>
+#include <commons/collections/list.h>
 
 int server;
 bool asignacionFija;
-
+t_list* carpinchosEnArchivo;
+typedef struct {
+    int pid;
+    int numeroArchivo;
+    int cantidadPaginas;
+    int orden;
+} Carpincho_Swamp;
 /*
     @NAME: terminar_programa
     @DESC: Se encarga de liberar todas las estructuras y de hacer lo necesario para
@@ -24,9 +32,11 @@ bool asignacionFija;
 int elegirMejorArchivo();
 void crearCarpincho (int pid, int pag, char* contenidoPagina);
 int cantidadCaracteresFile (char* path);
+void crearArchivos();
+int remplazoPaginaFija(int pid, int pagina, char*contenido);
+int buscarArchivoDeCarpincho (int pidd);
 
 void terminar_programa();
-void crearArchivos();
 void iniciar_swamp();
 void atender_clientes();
 
