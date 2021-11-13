@@ -25,13 +25,13 @@ int main(int argc, char* argv[]) {
    
    crearArchivos();
    //int numMejor= elegirMejorArchivo();
-    crearCarpincho (5);
-    crearCarpincho (6);
+    crearCarpincho (5,2,"holaaaa");
+    crearCarpincho (6,6,"COMO ESTAS? ESTO ES UNA PAGINA");
     //crearCarpincho (7);
    /*iniciar_swamp();
    terminar_programa();*/
-   iniciar_swamp();
-   atender_clientes();
+   /*iniciar_swamp();
+   atender_clientes();*/
    return 0;
 }
 
@@ -55,21 +55,22 @@ void crearArchivos(){
         close(file);
         int tamano = statbuf.st_size;
         
-        printf("El valor de truncate es %d\n",tamano);
-         printf("el valor de i es %d.\n",i);
+        //printf("El valor de truncate es %d\n",tamano);
+         //printf("el valor de i es %d.\n",i);
         i++;
        
     }
-     printf("FIN aapertura archivo y truncate\n");
+     //printf("FIN aapertura archivo y truncate\n");
         
 }
+
 int elegirMejorArchivo(){
 
     int i = 0;
     int mayor = 0;
     int indiceMayor = 0;
     while(configuracion.ARCHIVOS_SWAP_list[i]){
-       printf("el valor de i es %d.\n",i);
+       //printf("el valor de i es %d.\n",i);
         if (i == 0){
            mayor = cantidadCaracteresFile (configuracion.ARCHIVOS_SWAP_list[i]);
 
@@ -97,14 +98,26 @@ int elegirMejorArchivo(){
     printf("el mayor es %d\n",indiceMayor);
     return indiceMayor;
 }
-void crearCarpincho (int pid){
+void crearCarpincho (int pid, int pag, char* contenidoPagina){
     int mejorArchivo = elegirMejorArchivo();
     FILE* archivo = fopen (configuracion.ARCHIVOS_SWAP_list[mejorArchivo] , "w+");
-    int cant = sizeof("hoola");
-     printf("La cantidad de hoola es %d\n",cant);
+    
     //fwrite( pid, sizeof(int), sizeof(pid), archivo );
-    fprintf(archivo, "%s","holaa|\n");
+    fprintf(archivo, "%d",pid);
+    fprintf(archivo, "%d",pag);
+    fprintf(archivo, "%s",contenidoPagina);
+    char buffer [100];
+    //configuracion.TAMANIO_PAGINA+sizeof(int)*2
+    //fgets(buffer,100 , archivo);
+    fscanf(archivo, "%s" ,buffer);
+    //size_t devuelve = fread ( buffer, configuracion.TAMANIO_PAGINA+sizeof(int)*2, 1, archivo );
     fclose(archivo);
+    
+    int file =  open(configuracion.ARCHIVOS_SWAP_list[mejorArchivo], O_RDWR, S_IRUSR|S_IWUSR,O_APPEND);
+    write(file,pid,sizeof(pid));
+    write(file,pid,sizeof(pid));
+    clsoe(file);
+
 }
 int cantidadCaracteresFile (char* path){
     FILE* archivo = fopen (path , "r");
@@ -114,7 +127,7 @@ int cantidadCaracteresFile (char* path){
     int cant = string_length(ptr);
     //printf("El valor del archivo es %s\n",bufer);
     //printf("La cantidad es %d\n",cant);
-    
+    fclose(archivo);
     return cant;
 }
 
@@ -126,6 +139,7 @@ int cantidadCaracteresFile (char* path){
 void terminar_programa(){
    config_destroy(config);
 }
+
 
 void iniciar_swamp(){
    server = iniciar_servidor(configuracion.IP, configuracion.PUERTO);

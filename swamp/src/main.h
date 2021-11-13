@@ -19,11 +19,14 @@ int server;
     @DESC: Se encarga de liberar todas las estructuras y de hacer lo necesario para
            que el programa termine sin memory leaks y sin errores
  */
+int elegirMejorArchivo();
+void crearCarpincho (int pid, int pag, char* contenidoPagina);
+int cantidadCaracteresFile (char* path);
+
 void terminar_programa();
 void crearArchivos();
 void iniciar_swamp();
 void atender_clientes();
-int elegirMejorArchivo();
 
 
 /*
