@@ -22,11 +22,11 @@ int main(int argc, char* argv[]) {
    printf("Los archivos del server van a ser: %s \n", configuracion.ARCHIVOS_SWAP_list[1]);
   */
     //printf("La cantidad de elementos %d \n", lenght(configuracion.ARCHIVOS_SWAP_list));   
-   
-   crearArchivos();
+   asignacionFija = 1;
+    crearArchivos();
    //int numMejor= elegirMejorArchivo();
-    crearCarpincho (5,2,"holaaaa");
-    crearCarpincho (6,6,"COMO ESTAS? ESTO ES UNA PAGINA");
+    crearCarpincho (5,2,"pagina1");
+    crearCarpincho (6,6,"pagina2");
     //crearCarpincho (7);
    /*iniciar_swamp();
    terminar_programa();*/
@@ -100,23 +100,16 @@ int elegirMejorArchivo(){
 }
 void crearCarpincho (int pid, int pag, char* contenidoPagina){
     int mejorArchivo = elegirMejorArchivo();
-    FILE* archivo = fopen (configuracion.ARCHIVOS_SWAP_list[mejorArchivo] , "w+");
-    
-    //fwrite( pid, sizeof(int), sizeof(pid), archivo );
-    fprintf(archivo, "%d",pid);
-    fprintf(archivo, "%d",pag);
-    fprintf(archivo, "%s",contenidoPagina);
-    char buffer [100];
-    //configuracion.TAMANIO_PAGINA+sizeof(int)*2
-    //fgets(buffer,100 , archivo);
-    fscanf(archivo, "%s" ,buffer);
-    //size_t devuelve = fread ( buffer, configuracion.TAMANIO_PAGINA+sizeof(int)*2, 1, archivo );
-    fclose(archivo);
+   
     
     int file =  open(configuracion.ARCHIVOS_SWAP_list[mejorArchivo], O_RDWR, S_IRUSR|S_IWUSR,O_APPEND);
-    write(file,pid,sizeof(pid));
-    write(file,pid,sizeof(pid));
-    clsoe(file);
+    //write(file,pid,sizeof(pid));
+    char* pag_char = string_itoa(pag);
+    write(file,pag_char,string_length(pag_char));
+    write(file,contenidoPagina,string_length(contenidoPagina));
+    write(file,contenidoPagina,string_length(contenidoPagina));
+     //write(file,"hola soy jana",sizeof("hola soy jana"));*/
+    close(file);
 
 }
 int cantidadCaracteresFile (char* path){

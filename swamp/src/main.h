@@ -11,8 +11,10 @@
 #include <fcntl.h>
 #include <unistd.h>
 #include <sys/stat.h>
+#include <commons/string.h>
 
 int server;
+bool asignacionFija;
 
 /*
     @NAME: terminar_programa
