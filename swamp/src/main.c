@@ -1,9 +1,6 @@
 #include "main.h"
 
-#include <mensajes/mensajes.h>
 
-#define VALIDO 0
-#define INVALIDO -1
 
 int main(int argc, char* argv[]) {
    
@@ -65,10 +62,13 @@ void crearArchivos(){
 }
 
 int elegirMejorArchivo(){
-
+    // busca el archivo con el que mas espacio tenga. 
     int i = 0;
-    int mayor = 0;
-    int indiceMayor = 0;
+    int menor = cantidadCaracteresFile (configuracion.ARCHIVOS_SWAP_list[i]);
+    int indiceMenor = 0;
+   int menor2 = cantidadCaracteresFile (configuracion.ARCHIVOS_SWAP_list[1]);
+   printf("valor menor %d\n",menor);
+    printf("valor menor2 %d\n",menor2);
     while(configuracion.ARCHIVOS_SWAP_list[i]){
        //printf("el valor de i es %d.\n",i);
         if (i == 0){
@@ -95,8 +95,8 @@ int elegirMejorArchivo(){
         //printf("El valor del archivo es %s\n",devuelve);
         i++;
     }
-    printf("el mayor es %d\n",indiceMayor);
-    return indiceMayor;
+    //printf("el indice menor es %d.\n",indiceMenor);
+    return indiceMenor;
 }
 void crearCarpincho (int pid, int pag, char* contenidoPagina){
     int mejorArchivo = elegirMejorArchivo();
@@ -142,25 +142,8 @@ void atender_clientes(){
 
    // while feo
    while(1){ 
-
       int cliente = aceptar_cliente(server);
-
-      int operacion = recibir_operacion(cliente);
-      int estado;
-      switch (operacion)
-      {
-      case SOLICITUD_INICIO:
-      // estado = funcion que determina si puede iniciar un nuevo proceso (0 si puede, -1 si no puede)
-         estado = 0; 
-         resolver_estado(estado, cliente);
-         break;
-      
-
-      //faltan las demas operaciones
-      default:
-         break;
-      }
-
+      printf("Se conecto alguien en el socket: %d\n", cliente);
    }
 }
 
