@@ -26,8 +26,13 @@ int mate_init(mate_instance *lib_ref, char *config)
   enviar_mensaje_y_cod_op("NUEVO CARPINCHO", ((mate_inner_structure *)lib_ref->group_info)->conexion, NEW_INSTANCE);
   respuesta = recibir_mensaje(((mate_inner_structure *)lib_ref->group_info)->conexion); 
   mate_ref.pid = atoi(respuesta);
-  recibir_mensaje(((mate_inner_structure *)lib_ref->group_info)->conexion); // el procesos queda bloqueado aca hasta recibir un OK del procesador
+  respuesta = recibir_mensaje(((mate_inner_structure *)lib_ref->group_info)->conexion); // el procesos queda bloqueado aca hasta recibir un OK del procesador
+  if(strcmp(respuesta, "OK")==0)
   return 0;
+  else
+  {
+    return -1;
+  }
 }
 
 int mate_close(mate_instance *lib_ref)
@@ -35,7 +40,13 @@ int mate_close(mate_instance *lib_ref)
   enviar_mensaje_y_cod_op("ELIMINAME",((mate_inner_structure*)lib_ref->group_info)->conexion, MATE_CLOSE);
   free(lib_ref->group_info);
   free(lib_ref);
+  char *respuesta =recibir_mensaje(((mate_inner_structure *)lib_ref->group_info)->conexion);
+  if(strcmp(respuesta, "OK")==0)
   return 0;
+  else
+  {
+    return -1;
+  }
 }
 
 //-----------------Semaphore Functions---------------------/
@@ -48,32 +59,49 @@ int mate_sem_init(mate_instance *lib_ref, mate_sem_name sem, unsigned int value)
  // sem_init(((mate_inner_structure *)lib_ref->group_info)->sem_instance, 0, value);
   enviar_sem_init(sem, (int)value, ((mate_inner_structure *)lib_ref->group_info)->conexion, INIT_SEMAFORO); // codear fiuncion; pasar valor
   char* respuesta = recibir_mensaje(((mate_inner_structure *)lib_ref->group_info)->conexion); // espera respuesta para continuar ejecutando condigo???
-
+  if(strcmp(respuesta, "OK")==0)
   return 0;
   }
-  return -1;//PREGUBNTAR POR RETORNO DE ENTERO
+  else
+  {
+    return -1;
+  }
 }
 
 int mate_sem_wait(mate_instance *lib_ref, mate_sem_name sem) {
   if(((mate_inner_structure *)lib_ref->group_info)->con_kernel){
     enviar_mensaje_y_cod_op(sem, ((mate_inner_structure *)lib_ref->group_info)->conexion, SEM_WAIT);
-    return 0;
+  char *respuesta =recibir_mensaje(((mate_inner_structure *)lib_ref->group_info)->conexion);
+  if(strcmp(respuesta, "OK")==0)
+  return 0;
   }
-   // return sem_wait(((mate_inner_structure *)lib_ref->group_info)->sem_instance);
-   return -1;
+  else
+  {
+    return -1;
+  }
  }
 
 int mate_sem_post(mate_instance *lib_ref, mate_sem_name sem) {
+
   if(((mate_inner_structure *)lib_ref->group_info)->con_kernel){
+  
   enviar_mensaje_y_cod_op(sem, ((mate_inner_structure *)lib_ref->group_info)->conexion, SEM_POST);
-  return 0;
+  char *respuesta =recibir_mensaje(((mate_inner_structure *)lib_ref->group_info)->conexion);
+  if(strcmp(respuesta, "OK")==0)
+    return 0; 
+  else
+    return -1; 
 }
 return -1;
 }
 int mate_sem_destroy(mate_instance *lib_ref, mate_sem_name sem) {
   if(((mate_inner_structure *)lib_ref->group_info)->con_kernel){
   enviar_mensaje_y_cod_op(sem, ((mate_inner_structure *)lib_ref->group_info)->conexion, SEM_DESTROY);
-  return 0;
+  char *respuesta =recibir_mensaje(((mate_inner_structure *)lib_ref->group_info)->conexion);
+  if(strcmp(respuesta, "OK")==0)
+    return 0; 
+  else
+    return -1;
 }
 return -1;
 }

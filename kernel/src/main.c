@@ -30,13 +30,16 @@ void receptor(void *arg)
    int cod_op;
    bool conectado = true;
    handshake(cliente, "KERNEL");
+   t_paquete_semaforo semaforo ;
+   char* recibido;
+   sem_kernel *sem ;
 
    while (conectado)
    {
       printf("esperando comando\n");
       cod_op = recibir_operacion(cliente);
       printf("CODIGO OPERACION %d de cliente %d\n", cod_op, cliente);
-   t_paquete_semaforo semaforo ;
+
       switch (cod_op)
       {
 
@@ -55,9 +58,10 @@ void receptor(void *arg)
          // enviar_mensaje("OK", cliente);
          // aca debe enviar el ok o debe planificarlo y al llegar a exec recien destrabar el carpincho
          break;
-      case INIT_SEMAFORO:
+      case INIT_SEMAFORO:// SE PUEDE MODIFICAR PARA CONFIRMAR 
               semaforo = recibir_semaforo(cliente);
                sem_kernel_init(semaforo.buffer, semaforo.valor);
+               enviar_mensaje("OK", cliente);
                break;
       case IO: 
                char* io = recibir_mensaje(cliente);
@@ -65,21 +69,42 @@ void receptor(void *arg)
                carpincho->io_solicitada = io;              
                carpincho->proxima_instruccion = IO;
                sem_post(&carpincho->semaforo_evento);
+         
                break;
 
       case SEM_WAIT: 
-              semaforo = recibir_semaforo(cliente);
-               carpincho->semaforo_a_modificar = semaforo.buffer;
-              // sem_kernel_wait2(semaforo.buffer, carpincho);
-               sem_post(&carpincho->semaforo_evento);
-               
-         break;
+               recibido = recibir_mensaje(cliente);
 
-      case SEM_POST: semaforo = recibir_semaforo(cliente);
-                sem_kernel_post(semaforo.buffer);
-               
+                sem = buscar_semaforo(carpincho->semaforo_a_modificar);
+                if( sem != NULL){
+               strcpy(carpincho->semaforo_a_modificar ,recibido);
+               lista_add(carpincho->semaforos_waiteados, (void*) recibido);
+              // sem_kernel_wait2(semaforo.buffer, carpincho);
+               sem_post(&carpincho->semaforo_evento);  
+                }
+                else
+                {
+               enviar_mensaje("FAIL", cliente);
+                }
+                
+               break;
+
+      case SEM_POST: recibido = recibir_mensaje(cliente);
+       sem = buscar_semaforo(carpincho->semaforo_a_modificar);
+                if( sem != NULL){
+               sem_kernel_post(recibido);
+               postear_lista(carpincho->semaforos_waiteados, recibido);
+               enviar_mensaje("OK", cliente);
+                 }
+                else
+                {
+               enviar_mensaje("FAIL", cliente);
+                }
+
          break;
-      case SEM_DESTROY:
+      case SEM_DESTROY: recibido = recibir_mensaje(cliente);
+               sem_kernel_destroy(recibido);
+               enviar_mensaje("OK", cliente);
 
          break;
       case MEMALLOC: carpincho->proxima_instruccion = MEMALLOC;
@@ -97,9 +122,17 @@ void receptor(void *arg)
       case MATE_CLOSE: recibir_mensaje(cliente);
                carpincho->proxima_instruccion = MATE_CLOSE;
                sem_post(&carpincho->semaforo_evento);
+               enviar_mensaje("OK", cliente);
       break;
       }
    }
+}
+void postear_lista(t_list * lista, char* sem){
+
+bool nombre_semaforo2(void* elemento){
+      return (strcmp(elemento, sem) == 0);
+   }
+   list_remove_by_condition(lista, nombe_semaforo);
 }
 void inicializar_proceso_carpincho(t_pcb *carpincho)
 {
@@ -110,6 +143,7 @@ void inicializar_proceso_carpincho(t_pcb *carpincho)
    carpincho->estado = 'N';
    sem_init(&carpincho->semaforo_evento, NULL, 0);
    sem_init(&carpincho->semaforo_fin_evento, NULL, 0);
+   list_create(carpincho->semaforos_waiteados);
 }
 
 
@@ -119,8 +153,10 @@ void inicializar_planificacion()
    inicializar_semaforos();
    iniciar_planificador_corto_plazo();
    iniciar_planificador_largo_plazo();
+   iniciar_planificador_mediano_plazo();
    iniciar_gestor_finalizados();
    inciar_cpu();
+   algoritmo_deteccion_deadlock();
 }
 void iniciar_colas()
 {
@@ -145,7 +181,7 @@ void inicializar_semaforos(){
    sem_init(&mutex_cola_finalizados, NULL, 1);
    sem_init(&mutex_lista_oredenada_por_algoritmo, NULL, 1);
    sem_init(&controlador_multiprogramacion, NULL, configuracion.GRADO_MULTIPROGRAMACION);
-  
+
 
 }
 
@@ -155,4 +191,15 @@ void inicializar_listas_sem_io(){
    lista_sem_kernel = list_create();
 }
 
+void algoritmo_deteccion_deadlock(){
+   pthread_t hilo;
+   pthread_create(&hilo, NULL, (void*)deteccion_deadlock, NULL);
+}
+
+void deteccion_deadlock(){
+   while(1){
+      usleep(configuracion.TIEMPO_DEADLOCK);
+
+   }
+}
 //_------------------------------------------------------------poner en otro .c

@@ -14,6 +14,7 @@
 #include <mensajes/mensajes.h>
 #include <io_semaforos/io_semaforos.h>
 
+
 // type struct
 struct timeval *tiempito;
 struct tm *aux;
@@ -33,9 +34,10 @@ typedef struct{
     char estado;
     int proxima_instruccion;
     char* io_solicitada;
-    cahr* semaforo_a_modificar;
+    char* semaforo_a_modificar;
     sem_t *semaforo_evento;
     sem_t *semaforo_fin_evento;
+    list_t *semaforos_waiteados;
 }t_pcb;
 
 typedef enum{
@@ -133,7 +135,6 @@ void inicializar_proceso_carpincho(t_pcb *carpincho);
 sem_kernel* buscar_semaforo(char *nombre);
 
 void sem_kernel_init(char* nombre, int value);
-void sem_kernel_destroy(char* nombre);
 
 
 void init_dispositivos_io();
