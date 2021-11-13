@@ -8,5 +8,6 @@
 void set_algoritmos();
 void set_alg_principal();
 void set_alg_tlb();
+int set_campo_algoritmo();
 
 #endif

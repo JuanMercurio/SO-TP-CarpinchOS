@@ -43,3 +43,11 @@ void set_alg_principal(){
 
     abort();
 }
+
+int set_campo_algoritmo(){
+    if(strcmp(configuracion.ALGORITMO_REEMPLAZO_MMU, "CLOCK-M") == 0) return 0;
+    if(strcmp(configuracion.ALGORITMO_REEMPLAZO_MMU, "LRU") == 0) return LRU_C;
+    printf("Algoritmo de MMU erroneo\n");
+    printf("Terminando el programa");
+    abort();
+}

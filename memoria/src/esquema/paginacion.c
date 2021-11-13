@@ -1,7 +1,6 @@
 #include "paginacion.h"
 #include "tlb.h"
 
-
 #include <mensajes/mensajes.h>
 #include <stdlib.h>
 #include <stdio.h>
@@ -15,7 +14,9 @@
 memoria_t ram;
 tablas_t tablas;
 t_list* marcos;
-int ids_memoria = 5;
+int ids_memoria = 1;
+
+/* --------------- INICIACION ---------------------- */
 
 void iniciar_paginacion(){
 	
@@ -47,24 +48,8 @@ void init_bitmap_frames(){
     }
 }
 
-int crear_pagina(t_list *paginas){
-    pag_t *pagina = malloc(sizeof(pag_t));
-    pagina->presente = 0;
-    pagina->marco = 0;
-    pagina->modificado = 0;
-    pagina->algoritmo = 0;
-    return list_add(paginas, pagina);
-}
+/* --------------- Paginas ---------------------- */ 
 
-
-int marco_libre(){
-    int n_frames = configuracion.TAMANIO / configuracion.TAMANIO_PAGINAS;
-    for(int i=0; i<n_frames; i++) {
-        int* marco = list_get(marcos, i);
-        if(*marco==VACIO) return i;
-    }
-    return NOT_ASIGNED;
-}
 
 int nro_marco(int pagina, tab_pags* tabla){
 
@@ -89,11 +74,12 @@ int nro_marco(int pagina, tab_pags* tabla){
 int buscar_en_swap(tab_pags* tabla, int pagina){
 
     void* buffer = serializar_pedido_pagina(tabla->pid, pagina);
-    t_paquete* paquete = crear_paquete(SOLICITUD_PAGINA, buffer, sizeof(int)*2 );
+    t_paquete* paquete = crear_paquete(SOLICITUD_PAGINA);
+    agregar_a_paquete(paquete, buffer, sizeof(int)*2);
 
     int swap = crear_conexion("127.0.0.1", "5003");
-    enviar_paquete(swap, paquete);
-
+    enviar_paquete(paquete, swap);
+    
     int op = recibir_int(swap);
 
     if (op == -1) { 
@@ -181,6 +167,24 @@ int buscar_en_tabPags(tab_pags* tabla, int pagina){
     return MEMP_MISS;
 }
 
+int crear_pagina(t_list *paginas){
+    pag_t *pagina = malloc(sizeof(pag_t));
+    pagina->presente = 0;
+    pagina->marco = NOT_ASIGNED;
+    pagina->modificado = 0;
+    pagina->algoritmo = NOT_ASIGNED;
+    return list_add(paginas, pagina);
+}
+
+int marco_libre(){
+    int n_frames = configuracion.TAMANIO / configuracion.TAMANIO_PAGINAS;
+    for(int i=0; i<n_frames; i++) {
+        int* marco = list_get(marcos, i);
+        if(*marco==VACIO) return i;
+    }
+    return NOT_ASIGNED;
+}
+
 void add_new_page_table(tab_pags* tabla){
     pthread_mutex_lock(&tablas.mutex);
     
@@ -195,6 +199,8 @@ tab_pags* buscar_page_table(int pid){
     }
     return NULL;
 }
+
+/* -------------- DIRECCIONAMIENTO ---------------- */
 
 uint32_t crear_dl(dir_t dl){
 

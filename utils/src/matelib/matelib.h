@@ -87,4 +87,9 @@ typedef enum{
 int obtener_int(mate_instance* lib_ref, cod_int COD);
 
 void* crear_mate_inner(int pid, int conexion, int server);
+void conexion_success(int pid);
+
+mate_pointer recibir_dl(int socket);
+mate_pointer recibir_int32(int socket);
+
 #endif
