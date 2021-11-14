@@ -61,6 +61,7 @@ typedef struct{
     t_queue* bloqueados;
     sem_t *mutex;
     sem_t *mutex_cola;
+    int tomado_por;
 }sem_kernel;
 
 typedef struct{

@@ -23,9 +23,12 @@ bool sem_kernel_wait2( t_pcb *carpincho)
    sem_kernel *sem = buscar_semaforo(carpincho->semaforo_a_modificar);
    
    sem_wait(&sem->mutex);
-   sem->val =-1;
+   sem->val --;
    sem_wait(&sem->mutex);
-  if(sem->val -1 < 0){
+   if(sem->val == 0){
+      sem->tomado_por = carpincho->pid;
+   }
+  if(sem->val  < 0){
     bloquear_por_semaforo( carpincho); 
     return true;
 }
@@ -66,7 +69,7 @@ void sem_kernel_post(char *nombre)
 {
    sem_kernel *sem = buscar_semaforo(nombre);
    sem_wait(&mutex_lista_sem_kernel);
-   sem->val = +1;
+   sem->val ++;
    //loguear
    
       if(sem->val >= 0 && !queue_is_empty(sem->bloqueados))

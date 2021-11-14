@@ -197,9 +197,30 @@ void algoritmo_deteccion_deadlock(){
 }
 
 void deteccion_deadlock(){
+   sem_kernel * semaforo;
    while(1){
       usleep(configuracion.TIEMPO_DEADLOCK);
-
+      //pausar_todo????
+      for(int i =0;i>list_size(lista_sem_kernel); i++){
+           semaforo = (sem_kernel*)list_get(lista_sem_kernel, i); 
+           buscar_en_otras_listas(semaforo->tomado_por, i);
+      }
    }
+}
+
+sem_t* buscar_en_otras_listas(int pid, int index){
+ //  t_list *lista_peticiones = list_create();
+   t_pcb * carpincho_bloqueado;
+    for(int i =0;i>list_size(lista_sem_kernel); i++){
+       if( i == index) continue;
+      sem_kernel *semaforo = (sem_kernel*)list_get(lista_sem_kernel, index +1); 
+      for(int j= 0; j< list_size(semaforo->bloqueados); j++){
+         carpincho_bloqueado = (t_pcb*)list_get(semaforo->bloqueados, j);
+         if(pid == carpincho_bloqueado->pid){
+            //list_add(lista_peticiones, (void*) semaforo->id);// hasta aca solo se tiene un lista de un carpincho que esta reteniendo un semaforo he hizo una peticion
+            return 
+         }
+      }
+    }
 }
 //_------------------------------------------------------------poner en otro .c
