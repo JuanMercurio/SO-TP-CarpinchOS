@@ -12,11 +12,16 @@
 
 
 void atender_proceso(void* arg){
+    loggear_mensaje("Se conecto un cliente");
+
     int cliente = *(int*)arg;
     free(arg);
 
     handshake(cliente, MEMORIA);
     ejecutar_proceso(cliente);
+
+    close(cliente);
+    loggear_mensaje("Se desconecto un cliente");
 }
 
 void ejecutar_proceso(int cliente) {
@@ -24,7 +29,8 @@ void ejecutar_proceso(int cliente) {
     int pid = PID_EMPTY;
     t_list* tabla;
     bool conectado = true;
-    while(conectado) //TODO: feo while
+
+    while(conectado)
     {
         int operacion = recibir_operacion(cliente);
         switch (operacion)
@@ -99,8 +105,8 @@ int comportamiento_memalloc(int* pid, int cliente){
     int tamanio_buffer = recibir_int(cliente);
     if(tamanio_buffer != sizeof(int)*4) return -1;
 
-    int* size = 0;
-    int* pid_cliente = recibir_buffer_t(size, cliente);
+    int size = 0;
+    int* pid_cliente = recibir_buffer_t(&size, cliente);
 
     if(*pid == NOT_ASIGNED) *pid = *pid_cliente;
     if(*pid != *pid_cliente)

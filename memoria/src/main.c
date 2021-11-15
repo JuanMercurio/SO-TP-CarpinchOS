@@ -8,6 +8,7 @@ int main(int argc, char* argv[]) {
    tests(argc, argv[1]);    
    
    obtener_config();
+   iniciar_logger();
    iniciar_signals();
    iniciar_paginacion();
    iniciar_tlb();

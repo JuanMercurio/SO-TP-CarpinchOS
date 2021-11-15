@@ -11,19 +11,39 @@
 #include <fcntl.h>
 #include <unistd.h>
 #include <sys/stat.h>
+#include <commons/string.h>
+#include <sys/mman.h>
+#include <commons/collections/list.h>
 
 int server;
+bool asignacionFija;
+t_list* carpinchosEnArchivo;
 
+typedef struct {
+    int pid;
+    int numeroArchivo;
+    int cantidadPaginas;
+    int orden;
+} Carpincho_Swamp;
 /*
     @NAME: terminar_programa
     @DESC: Se encarga de liberar todas las estructuras y de hacer lo necesario para
            que el programa termine sin memory leaks y sin errores
  */
-void terminar_programa();
+
+int elegirMejorArchivo();
+void crearCarpincho (int pid, int pag, char* contenidoPagina, char letra);
+int cantidadCaracteresFile (char* path);
 void crearArchivos();
+int remplazoPaginaFija(int pid, int pagina, char*contenido);
+int buscarArchivoDeCarpincho (int pidd);
+int buscarOrdenParaAgregar(int num_archivo);
+Carpincho_Swamp* buscarCarpincho(int pidd);
+bool quedaEspacioEnArchivoFija();
+char* buscarPagina(int pid, int pag);
+void terminar_programa();
 void iniciar_swamp();
 void atender_clientes();
-int elegirMejorArchivo();
 
 
 /*

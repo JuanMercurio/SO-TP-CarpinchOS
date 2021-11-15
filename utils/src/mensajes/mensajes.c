@@ -71,8 +71,7 @@ int recibir_operacion(int socket_cliente) {
 
 void* recibir_buffer_t(int* size, int socket){
 	void* buffer;
-
-	recv(socket, size,sizeof(int), MSG_WAITALL);
+	recv(socket, size, sizeof(int), MSG_WAITALL);
 	buffer = malloc(*size);
 	recv(socket, buffer, *size, MSG_WAITALL);
 

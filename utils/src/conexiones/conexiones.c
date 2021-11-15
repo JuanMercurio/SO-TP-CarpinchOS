@@ -46,7 +46,6 @@ int crear_conexion(char *ip, char* puerto){
 
         if (connect(socket_serv, p->ai_addr, p->ai_addrlen) == -1) {
             close(socket_serv);
-            printf("client: connect\n");
             continue;
         }
 
