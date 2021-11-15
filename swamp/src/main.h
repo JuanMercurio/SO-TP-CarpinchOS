@@ -18,6 +18,7 @@
 int server;
 bool asignacionFija;
 t_list* carpinchosEnArchivo;
+
 typedef struct {
     int pid;
     int numeroArchivo;
@@ -29,13 +30,17 @@ typedef struct {
     @DESC: Se encarga de liberar todas las estructuras y de hacer lo necesario para
            que el programa termine sin memory leaks y sin errores
  */
+
 int elegirMejorArchivo();
-void crearCarpincho (int pid, int pag, char* contenidoPagina);
+void crearCarpincho (int pid, int pag, char* contenidoPagina, char letra);
 int cantidadCaracteresFile (char* path);
 void crearArchivos();
 int remplazoPaginaFija(int pid, int pagina, char*contenido);
 int buscarArchivoDeCarpincho (int pidd);
-
+int buscarOrdenParaAgregar(int num_archivo);
+Carpincho_Swamp* buscarCarpincho(int pidd);
+bool quedaEspacioEnArchivoFija();
+char* buscarPagina(int pid, int pag);
 void terminar_programa();
 void iniciar_swamp();
 void atender_clientes();

@@ -1,6 +1,7 @@
 {
     "files.associations": {
         "config.h": "c",
-        "main.h": "c"
+        "main.h": "c",
+        "limits": "c"
     }
 }
