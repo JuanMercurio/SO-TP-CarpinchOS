@@ -14,12 +14,13 @@ extern int FIFO_TLB;
 extern int (*algoritmo_tlb)();
 extern t_victima (*algoritmo_mmu)(int, tab_pags*);
 
-pag_t* clock_fijo(int pid, tab_pags* tabla);
-pag_t* clock_dinamico(int pid, tab_pags* tabla);
-pag_t* lru_dinamico(int pid, tab_pags* tabla);
-pag_t* lru_fijo(int pid, tab_pags* tabla);
 int fifo_tlb();
 int lru_tlb();
-pag_t* lru_en_pag_table(tab_pags* tabla);
+
+t_victima clock_fijo(int pid, tab_pags* tabla);
+t_victima clock_dinamico(int pid, tab_pags* tabla);
+t_victima lru_dinamico(int pid, tab_pags* tabla);
+t_victima lru_fijo(int pid, tab_pags* tabla);
+t_victima lru_en_pag_table(tab_pags* tabla);
 
 #endif

@@ -16,11 +16,8 @@
 /* MEMORIA PRINCIPAL */
 extern memoria_t ram;
 
-
-
 /* "Bitmap" de marcos */
 extern t_list* marcos; 
-
 
 /*
     @NAME:  iniciar_paginacion
