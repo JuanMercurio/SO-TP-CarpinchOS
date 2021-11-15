@@ -58,7 +58,7 @@ int nro_marco(int pagina, tab_pags* tabla){
     int marco;
 
     // Busco en TLB
-    marco = buscar_en_tlb(tabla->pid, pagina);
+    marco = buscar_en_tlb(tabla, pagina);
     if(marco != TLB_MISS) return marco;
 
     // Busco en tabla de paginas
@@ -99,16 +99,27 @@ int buscar_en_swap(tab_pags* tabla, int pagina){
 void reemplazar_pagina(t_victima victima, void* buffer, int pagina, tab_pags* tabla){
 
     if(victima.modificado == 1) enviar_pagina_a_swap(victima.pid, victima.pagina, victima.marco);
-    
     insertar_pagina(buffer, victima.marco);
-
     actualizar_nueva_pagina(pagina, victima.marco, tabla);
 }
+
 void enviar_pagina_a_swap(int pid, int pagina, int marco){
+    int swap = crear_conexion("127.0.0.1", "5003");
+    
+    t_paquete* paquete = crear_paquete(ESCRIBIR_PAGINA);
+    void* contenido = malloc(configuracion.TAMANIO_PAGINAS);
+    memcpy(contenido, ram.memoria + marco*configuracion.TAMANIO_PAGINAS, configuracion.TAMANIO_PAGINAS);
 
+    agregar_a_paquete(paquete, &pagina, sizeof(int));
+    agregar_a_paquete(paquete, contenido, configuracion.TAMANIO_PAGINAS);
+
+    enviar_paquete(paquete, swap);
+
+    free(contenido);
 }
-void actualizar_nueva_pagina(int pagina, int marco, tab_pags* tabla){
 
+void actualizar_nueva_pagina(int pagina, int marco, tab_pags* tabla)
+{
     pthread_mutex_lock(&tablas.mutex);
 
     pag_t* reg = list_get(tabla->tabla_pag, pagina);
@@ -150,8 +161,10 @@ bool pagina_valida(tab_pags* tabla, int pagina){
     pthread_mutex_lock(&tablas.mutex);
     int n_paginas = list_size(tabla->tabla_pag);
     pthread_mutex_unlock(&tablas.mutex); 
+
     return n_paginas > pagina;
 }
+ 
 int buscar_en_tabPags(tab_pags* tabla, int pagina){
 
     pthread_mutex_lock(&tablas.mutex);
@@ -187,7 +200,6 @@ int marco_libre(){
 
 void add_new_page_table(tab_pags* tabla){
     pthread_mutex_lock(&tablas.mutex);
-    
     list_add(tablas.lista, tabla);
     pthread_mutex_unlock(&tablas.mutex);
 }

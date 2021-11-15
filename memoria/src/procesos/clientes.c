@@ -12,16 +12,18 @@
 
 
 void atender_proceso(void* arg){
-    loggear_mensaje("Se conecto un cliente");
 
     int cliente = *(int*)arg;
     free(arg);
+    
+    char mensaje[100];
+    sprintf(mensaje, "Se conecto un cliente - Socket: %d", cliente);
+    loggear_mensaje(mensaje);
 
     handshake(cliente, MEMORIA);
     ejecutar_proceso(cliente);
 
     close(cliente);
-    loggear_mensaje("Se desconecto un cliente");
 }
 
 void ejecutar_proceso(int cliente) {
@@ -60,14 +62,22 @@ void ejecutar_proceso(int cliente) {
             break;
         }
     }
+    char mensaje[100];
+    sprintf(mensaje, "Se desconecto un cliente - Socket: %d - PID: %d", cliente, pid);
+    loggear_mensaje(mensaje);
 }
 
-t_list* iniciar_paginas(int cliente, int pid){
+t_list* iniciar_paginas(int cliente, int pid)
+{
     tab_pags* tabla = malloc(sizeof(tab_pags));
-    tabla->pid = pid;
-    tabla->tabla_pag = list_create();
+
+    tabla->pid        = pid;
+    tabla->TLB_HITS   = 0;
+    tabla->TLB_MISSES = 0;
+    tabla->tabla_pag  = list_create();
 
     add_new_page_table(tabla);
+
     return tabla->tabla_pag;
 }
 
@@ -78,8 +88,8 @@ void enviar_PID(int *pid, int cliente){
 
 
 
-int iniciar_proceso(int proceso){
-
+int iniciar_proceso(int proceso)
+{
     int swamp = crear_conexion("127.0.0.1", "5003");
     enviar_int(swamp, SOLICITUD_INICIO);
 
@@ -87,7 +97,6 @@ int iniciar_proceso(int proceso){
     comprobar_inicio(estado, proceso);
 
     int pid = crearID(&ids_memoria);
-
     enviar_int(swamp, pid);
 
     return pid;
@@ -100,6 +109,7 @@ void comprobar_inicio(int estado, int socket){
         pthread_exit(0);
     }
 }
+
 int comportamiento_memalloc(int* pid, int cliente){
 
     int tamanio_buffer = recibir_int(cliente);

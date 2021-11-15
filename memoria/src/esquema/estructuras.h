@@ -19,6 +19,8 @@ typedef struct tablas_t{
 /* Esructura para tablas */
 typedef struct tab_pags{
     int pid;
+    int TLB_HITS;
+    int TLB_MISSES;
     t_list* tabla_pag;
 }tab_pags;
 

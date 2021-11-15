@@ -4,12 +4,16 @@
 #include <commons/collections/list.h>
 
 #include "../configuracion/config.h"
+#include "estructuras.h"
 
 #define TLB_MISS  -1
 #define TLB_EMPTY -1 
 
 /* TLB */
 extern t_list * tlb;
+
+extern int TLB_MISS_COUNT;
+extern int TLB_HIT_COUNT;
 
 /* Registros de la tlb */
 typedef struct tlb_t{
@@ -30,11 +34,15 @@ void iniciar_tlb();
             la pagina del proceso especificado.
             Si no encuentra la pagina retorna TLB_MISS  
  */
-int buscar_en_tlb(int pid, int pagina);
+int buscar_en_tlb(tab_pags* tabla, int pagina);
 
 /* 
-    @NAME:  enviar_pagina_a_swap
+    @NAME:  actualizar_tlb
  */
 void actualizar_tlb(int pid, int marco, int pagina);
+
+int comportamiento_TLB_HIT(tab_pags* tabla, tlb_t* pagina);
+
+int comportamiento_TLB_MISS(tab_pags* tabla, int pagina);
 
 #endif
