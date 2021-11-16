@@ -22,45 +22,56 @@ int main(int argc, char* argv[]) {
    printf("Los archivos del server van a ser: %s \n", configuracion.ARCHIVOS_SWAP_list[1]);
   */
     //printf("La cantidad de elementos %d \n", lenght(configuracion.ARCHIVOS_SWAP_list));   
+    
     asignacionFija = 1;
     carpinchosEnArchivo= list_create();
     crearArchivos();
    //int numMejor= elegirMejorArchivo();
-   if(quedaEspacioEnArchivoFija()){
-       printf("CREANDOME CAR5.\n");
-       crearCarpincho (5,2,"pagina1", '5');
-   }
-   else{
-       printf("EL carpincho 5 no se puede crear\n");
-   }
-    if(quedaEspacioEnArchivoFija()){
-        printf("CREANDOME CAR6.\n");
-       crearCarpincho (6,6,"pagina2",'6');
-   }
-   else{
-       printf("EL carpincho 6 no se puede crear\n");
-   }
 
-    if(quedaEspacioEnArchivoFija()){
-        printf("CREANDOME CAR7.\n");
-       crearCarpincho (7,2,"pagina2",'7');
-   }
-   else{
-       printf("EL carpincho 7 no se puede crear\n");
+   if ( asignacionFija){
+       if(quedaEspacioEnArchivo()){
+       //printf("CREANDOME CAR5.\n");
+            crearCarpinchoFija (5,2,"pagina1", '5');
+        }
+        else{
+            printf("EL carpincho 5 no se puede crear\n");
+        }
+        if(quedaEspacioEnArchivo()){
+            //printf("CREANDOME CAR6.\n");
+            crearCarpinchoFija (6,6,"pagina2",'6');
+        }
+        else{
+            printf("EL carpincho 6 no se puede crear\n");
+        }
+
+        if(quedaEspacioEnArchivo()){
+            //printf("CREANDOME CAR7.\n");
+            crearCarpinchoFija (7,2,"pagina2",'7');
+        }
+        else{
+            printf("EL carpincho 7 no se puede crear\n");
+        }
+
+        crearCarpinchoFija (4,2,"pagina2",'4');
+        crearCarpinchoFija (8,2,"pagina2",'8');
+        crearCarpinchoFija (8,2,"pagina2",'8');
+        char* basura = string_repeat('n',configuracion.TAMANIO_PAGINA);
+        int pudo=remplazoPaginaFija(5,2,basura);
+        basura = string_repeat('k',configuracion.TAMANIO_PAGINA);
+        pudo=remplazoPaginaFija(7,2,basura);
+        basura = string_repeat('p',configuracion.TAMANIO_PAGINA);
+        pudo=remplazoPaginaFija(4,1,basura);
+
+        char* pal = buscarPaginaFija(4,0);
+        int fin = borrarCarpinchoFija(6);
+        fin = borrarCarpinchoFija(5);
+        fin = borrarCarpinchoFija(7);
+        fin = borrarCarpinchoFija(4);
+        printf("CANTIDAD DE CARPINCHOS EN LISTA %d\n",list_size(carpinchosEnArchivo));
    }
    
-    
-    
-    crearCarpincho (4,2,"pagina2",'4');
-    char* basura = string_repeat('n',configuracion.TAMANIO_PAGINA);
-    int pudo=remplazoPaginaFija(5,2,basura);
-    basura = string_repeat('k',configuracion.TAMANIO_PAGINA);
-    pudo=remplazoPaginaFija(7,2,basura);
-    basura = string_repeat('p',configuracion.TAMANIO_PAGINA);
-    pudo=remplazoPaginaFija(4,1,basura);
 
-    char* pal = buscarPagina(4,0);
-    //crearCarpincho (7);
+    // CONEXIONES
    /*iniciar_swamp();
    terminar_programa();*/
    /*iniciar_swamp();
@@ -68,6 +79,7 @@ int main(int argc, char* argv[]) {
    return 0;
 }
 
+// GENERAL
 void crearArchivos(){
     
     int i = 0;
@@ -76,17 +88,20 @@ void crearArchivos(){
         if (fopen (configuracion.ARCHIVOS_SWAP_list[i],"r") == -1){
                 printf("EL archivo no existe. \n");
         }
-        FILE* archivo = fopen (configuracion.ARCHIVOS_SWAP_list[i],"a");
+        
+        FILE* archivo = fopen (configuracion.ARCHIVOS_SWAP_list[i],"w");
         fputs("/0",archivo);
         fclose(archivo);
         // abre el archivo en modo escritura
         int file = open (configuracion.ARCHIVOS_SWAP_list[i] , 2);
         // le trunca (coloca) un espacio fijo. puede que tenga datos y lo borre
         int trun2 = ftruncate(file,configuracion.TAMANIO_SWAP);
-        struct stat statbuf;
-        int size = fstat(file,&statbuf);
+        //struct stat statbuf;
+        //int size = fstat(file,&statbuf);
+
+
         close(file);
-        int tamano = statbuf.st_size;
+        //int tamano = statbuf.st_size;
         
         //printf("El valor de truncate es %d\n",tamano);
          //printf("el valor de i es %d.\n",i);
@@ -133,95 +148,6 @@ int elegirMejorArchivo(){
     //printf("el indice menor es %d.\n",indiceMenor);
     return indiceMenor;
 }
-void crearCarpincho (int pidd, int pag, char* contenidoPagina , char letra){
-    int mejorArchivo = elegirMejorArchivo();
-    int file =  open(configuracion.ARCHIVOS_SWAP_list[mejorArchivo], O_RDWR,S_IRUSR|S_IWUSR, O_APPEND);
-    Carpincho_Swamp* carpincho;
-    carpincho = malloc(sizeof(Carpincho_Swamp));
-    carpincho->pid = pidd;
-    carpincho->numeroArchivo = mejorArchivo;
-    
-    if( cantidadCaracteresFile(configuracion.ARCHIVOS_SWAP_list[mejorArchivo]) != 2){
-        lseek (file , cantidadCaracteresFile(configuracion.ARCHIVOS_SWAP_list[mejorArchivo]), 0);
-        carpincho->orden = buscarOrdenParaAgregar(mejorArchivo)+1;
-    }
-    else{
-        carpincho->orden = 0;
-    }
-    if(asignacionFija){
-        char* basura = string_repeat(letra,configuracion.TAMANIO_PAGINA);
-        for(int j = 0; j< configuracion.MARCOS_MAXIMOS; j++){
-            write(file,basura,configuracion.TAMANIO_PAGINA);
-        }
-    }
-    printf("Carp: %d arc: %d orden:%d.\n",carpincho->pid,carpincho->numeroArchivo,carpincho->orden);
-    printf("la cantidad es %d.\n",cantidadCaracteresFile(configuracion.ARCHIVOS_SWAP_list[carpincho->numeroArchivo]));  
-   
-    list_add(carpinchosEnArchivo,(void *)carpincho);
-      
-    //Carpincho_Swamp* car = buscarCarpincho(pidd);
-    close(file);
-
-}
-int buscarOrdenParaAgregar(int num_archivo){
-    int max = list_size(carpinchosEnArchivo);
-    Carpincho_Swamp* car = malloc(sizeof(Carpincho_Swamp));
-    int ultimo_orden = -1;
-    for (int i = 0;i<max;i++){
-        
-        car = (Carpincho_Swamp*) list_get(carpinchosEnArchivo,i);
-        
-        if(car->numeroArchivo == num_archivo){
-            ultimo_orden = car->orden;
-        }
-    }
- 
-    return ultimo_orden;
-}
-int remplazoPaginaFija(int pid, int pagina, char*contenido){
-    //int mejorArchivo = buscarArchivoDeCarpincho (pid);
-    // NO SE SI DEVOLVERA BIEN
-     Carpincho_Swamp* car = buscarCarpincho(pid);
-    if(  car->pid != -1 ){
-        int  file =  open(configuracion.ARCHIVOS_SWAP_list[car->numeroArchivo], O_RDWR, S_IRUSR|S_IWUSR);
-        struct stat sb;
-        int base = 0;
-        if (car->orden > 0){
-            base = (car->orden)*configuracion.MARCOS_MAXIMOS*configuracion.TAMANIO_PAGINA;
-        }
-         printf(" base %d carp: %d.\n",base,pid);
-        char * file_in_memory = mmap(NULL,cantidadCaracteresFile(configuracion.ARCHIVOS_SWAP_list[car->numeroArchivo]),PROT_READ |PROT_WRITE ,MAP_SHARED, file,0);
-       // supone que las paginas cuentan desde 0. por eso desde la pagina.. hasta pagina +1..
-        int j = 0;
-        int tope = base + (pagina+1)*configuracion.TAMANIO_PAGINA;
-        for (int i = base + pagina*configuracion.TAMANIO_PAGINA; i < tope ;i++){
-            //printf("%d\n",j);
-            file_in_memory[i]=contenido[j];
-            j++;
-        }
-        printf("\n");
-        munmap(file_in_memory,cantidadCaracteresFile(configuracion.ARCHIVOS_SWAP_list[car->numeroArchivo]));
-        
-        close(file);
-       
-        return 1;
-    }
-    else{
-        printf("NO SE ENCONTRO LA PAGINA\n");
-        return -1;
-    }
-    
-}
-bool quedaEspacioEnArchivoFija(){
-    int i = 0;
-    while(configuracion.ARCHIVOS_SWAP_list[i]){
-        if( cantidadCaracteresFile (configuracion.ARCHIVOS_SWAP_list[i])< configuracion.TAMANIO_SWAP-1){
-            return true;
-        }
-        i++;
-    }
-    return false;
-}
 Carpincho_Swamp* buscarCarpincho(int pidd){
     //printf("BUSCANDO NUMERO CARPINCHO. %d\n",pidd);
     int max = list_size(carpinchosEnArchivo);
@@ -242,23 +168,6 @@ Carpincho_Swamp* buscarCarpincho(int pidd){
     car->pid = -1;
     return car;
 }
-int buscarArchivoDeCarpincho (int pidd){
-    int max = list_size(carpinchosEnArchivo);
-    Carpincho_Swamp* car = malloc(sizeof(Carpincho_Swamp));
-    printf("el max es %d\n",max);
-    for (int i = 0;i<max;i++){
-        
-        car = (Carpincho_Swamp*) list_get(carpinchosEnArchivo,i);
-        printf("EL pid es %d \n",car->pid);
-        if(car->pid == pidd){
-            printf("EL numero de archivo es %d \n",car->numeroArchivo);
-            int devuelve =car->numeroArchivo;
-            free(car);
-            return devuelve;
-        }
-    }
-    return -1;
-}
 int cantidadCaracteresFile (char* path){
     FILE* archivo = fopen (path , "r");
     
@@ -270,7 +179,122 @@ int cantidadCaracteresFile (char* path){
     fclose(archivo);
     return cant;
 }
-char* buscarPagina(int pid, int pagina){
+bool quedaEspacioEnArchivo(){
+    int i = 0;
+    while(configuracion.ARCHIVOS_SWAP_list[i]){
+        if( cantidadCaracteresFile (configuracion.ARCHIVOS_SWAP_list[i])< configuracion.TAMANIO_SWAP-1){
+            return true;
+        }
+        i++;
+    }
+    return false;
+}
+int agregarPaginaDinamica(int pid, int pagina, int contenido){
+
+}
+// ASIGNACION FIJA
+void crearCarpinchoFija (int pidd, int pag, char* contenidoPagina , char letra){
+
+    if (buscarArchivoDeCarpincho (pidd) == -1){
+        int mejorArchivo = elegirMejorArchivo();
+        int file =  open(configuracion.ARCHIVOS_SWAP_list[mejorArchivo], O_RDWR,S_IRUSR|S_IWUSR, O_APPEND);
+        Carpincho_Swamp* carpincho;
+        carpincho = malloc(sizeof(Carpincho_Swamp));
+        carpincho->pid = pidd;
+        carpincho->numeroArchivo = mejorArchivo;
+        
+        if( cantidadCaracteresFile(configuracion.ARCHIVOS_SWAP_list[mejorArchivo]) != 2){
+            lseek (file , cantidadCaracteresFile(configuracion.ARCHIVOS_SWAP_list[mejorArchivo]), 0);
+            carpincho->orden = buscarOrdenParaAgregar(mejorArchivo)+1;
+        }
+        else{
+            carpincho->orden = 0;
+        }
+     
+        char* basura = string_repeat(letra,configuracion.TAMANIO_PAGINA);
+        for(int j = 0; j< configuracion.MARCOS_MAXIMOS; j++){
+            write(file,basura,configuracion.TAMANIO_PAGINA);
+        }
+        
+        //printf("Carp: %d arc: %d orden:%d.\n",carpincho->pid,carpincho->numeroArchivo,carpincho->orden);
+        //printf("la cantidad es %d.\n",cantidadCaracteresFile(configuracion.ARCHIVOS_SWAP_list[carpincho->numeroArchivo]));  
+    
+        list_add(carpinchosEnArchivo,(void *)carpincho);
+        
+        //Carpincho_Swamp* car = buscarCarpincho(pidd);
+        close(file);
+    }
+    else{
+        printf("Carpincho ya existe\n");
+    }
+
+}
+int remplazoPaginaFija(int pid, int pagina, char*contenido){
+
+     Carpincho_Swamp* car = buscarCarpincho(pid);
+    if(  car->pid != -1 ){
+        int  file =  open(configuracion.ARCHIVOS_SWAP_list[car->numeroArchivo], O_RDWR, S_IRUSR|S_IWUSR);
+        struct stat sb;
+        int base = 0;
+        if (car->orden > 0){
+            base = (car->orden)*configuracion.MARCOS_MAXIMOS*configuracion.TAMANIO_PAGINA;
+        }
+         //printf(" base %d carp: %d.\n",base,pid);
+        char * file_in_memory = mmap(NULL,cantidadCaracteresFile(configuracion.ARCHIVOS_SWAP_list[car->numeroArchivo]),PROT_READ |PROT_WRITE ,MAP_SHARED, file,0);
+       // supone que las paginas cuentan desde 0. por eso desde la pagina.. hasta pagina +1..
+        int j = 0;
+        int tope = base + (pagina+1)*configuracion.TAMANIO_PAGINA;
+        for (int i = base + pagina*configuracion.TAMANIO_PAGINA; i < tope ;i++){
+            //printf("%d\n",j);
+            file_in_memory[i]=contenido[j];
+            j++;
+        }
+        //printf("\n");
+        munmap(file_in_memory,cantidadCaracteresFile(configuracion.ARCHIVOS_SWAP_list[car->numeroArchivo]));
+        
+        close(file);
+       
+        return 1;
+    }
+    else{
+        printf("NO SE ENCONTRO LA PAGINA\n");
+        return -1;
+    }
+    
+}
+int buscarOrdenParaAgregar(int num_archivo){
+    int max = list_size(carpinchosEnArchivo);
+    Carpincho_Swamp* car = malloc(sizeof(Carpincho_Swamp));
+    int ultimo_orden = -1;
+    for (int i = 0;i<max;i++){
+        
+        car = (Carpincho_Swamp*) list_get(carpinchosEnArchivo,i);
+        
+        if(car->numeroArchivo == num_archivo){
+            ultimo_orden = car->orden;
+        }
+    }
+ 
+    return ultimo_orden;
+}
+int buscarArchivoDeCarpincho (int pidd){
+    int max = list_size(carpinchosEnArchivo);
+    Carpincho_Swamp* car = malloc(sizeof(Carpincho_Swamp));
+    //printf("el max es %d\n",max);
+    for (int i = 0;i<max;i++){
+        
+        car = (Carpincho_Swamp*) list_get(carpinchosEnArchivo,i);
+       // printf("EL pid es %d \n",car->pid);
+        if(car->pid == pidd){
+           // printf("EL numero de archivo es %d \n",car->numeroArchivo);
+            int devuelve =car->numeroArchivo;
+            //free(car);
+            return devuelve;
+        }
+    }
+    return -1;
+}
+char* buscarPaginaFija(int pid, int pagina){
     Carpincho_Swamp* car = buscarCarpincho(pid);
     if(  car->pid != -1 ){
         int  file =  open(configuracion.ARCHIVOS_SWAP_list[car->numeroArchivo], O_RDWR, S_IRUSR|S_IWUSR);
@@ -278,7 +302,7 @@ char* buscarPagina(int pid, int pagina){
         if (car->orden > 0){
             base = (car->orden)*configuracion.MARCOS_MAXIMOS*configuracion.TAMANIO_PAGINA;
         }
-         printf(" base %d carp: %d.\n",base,pid);
+         //printf(" base %d carp: %d.\n",base,pid);
         char * file_in_memory = mmap(NULL,cantidadCaracteresFile(configuracion.ARCHIVOS_SWAP_list[car->numeroArchivo]),PROT_READ |PROT_WRITE ,MAP_SHARED, file,0);
        // supone que las paginas cuentan desde 0. por eso desde la pagina.. hasta pagina +1..
        int tope = base + (pagina+1)*configuracion.TAMANIO_PAGINA;
@@ -293,18 +317,82 @@ char* buscarPagina(int pid, int pagina){
         //munmap(file_in_memory,cantidadCaracteresFile(configuracion.ARCHIVOS_SWAP_list[car->numeroArchivo]));
         
         close(file);
-        printf("Devuelve: %s.\n",pagina_devolver);
-        printf("CANT CARACTERES: %d.\n",string_length(pagina_devolver));
+        //printf("Devuelve: %s.\n",pagina_devolver);
+        //printf("CANT CARACTERES: %d.\n",string_length(pagina_devolver));
         return pagina_devolver;
     }
     printf("pagina no encontrada\n");
     return "";
     
 }
+int borrarCarpinchoFija(int pid){
+    Carpincho_Swamp* car = buscarCarpincho(pid);
+    if(  car->pid != -1 ){
+        int  file =  open(configuracion.ARCHIVOS_SWAP_list[car->numeroArchivo], O_RDWR, S_IRUSR|S_IWUSR);
+        int base = 0;
+        int baseProx = configuracion.MARCOS_MAXIMOS*configuracion.TAMANIO_PAGINA;
+        if (car->orden > 0){
+            base = (car->orden)*configuracion.MARCOS_MAXIMOS*configuracion.TAMANIO_PAGINA;
+            baseProx = (car->orden+1)*configuracion.MARCOS_MAXIMOS*configuracion.TAMANIO_PAGINA;
+        }
+        
+        //printf("Base%d.\n",base);
+        //printf("BaseProx%d.\n",baseProx);
+        char * file_in_memory = mmap(NULL,cantidadCaracteresFile(configuracion.ARCHIVOS_SWAP_list[car->numeroArchivo]),PROT_READ |PROT_WRITE ,MAP_SHARED, file,0);
+        char* final = string_substring_from(file_in_memory,baseProx);
+        char* inicio;
+        //printf("FInal:%s\n",final);
+        if(base>0){
+            inicio = string_substring_until(file_in_memory, base);
+        }
+        else{
+            inicio = "";
+        }
+        //printf("Inicial:%s\n",inicio);
+        file=open(configuracion.ARCHIVOS_SWAP_list[car->numeroArchivo],O_RDONLY | O_WRONLY | O_TRUNC); 
+        //munmap(file_in_memory,cantidadCaracteresFile(configuracion.ARCHIVOS_SWAP_list[car->numeroArchivo]));
+        write(file,inicio,string_length(inicio));
+        write(file,final,string_length(final));
 
-// hacer funcion que escriba un carpincho una pagina
-// hacer que lea una pagina
-// busqueda de pagina por carpincho.
+        close(file);
+        cambiarOrdenPorBorado(car);
+    
+    }
+    return 0;
+}
+void cambiarOrdenPorBorado( Carpincho_Swamp* car1){
+    
+    int max = list_size(carpinchosEnArchivo);
+    Carpincho_Swamp* car = malloc(sizeof(Carpincho_Swamp));
+
+    for (int i = 0;i<max;i++){
+        
+        car = (Carpincho_Swamp*) list_get(carpinchosEnArchivo,i);
+        //printf("EL pid es %d \n",car->pid);
+        if(car->pid == car1->pid){
+            list_remove(carpinchosEnArchivo, i);
+            i=max;
+        }
+    }
+    
+    int ordenProximo;
+    max = list_size(carpinchosEnArchivo);
+    for (int i = 0;i<max;i++){
+        
+        car = (Carpincho_Swamp*) list_get(carpinchosEnArchivo,i);
+        //printf("EL pid es %d \n",car->pid);
+        if(car->numeroArchivo == car1->numeroArchivo){
+          if(car->orden > car1->orden){
+              car->orden--;
+          }
+        }
+    }
+    //PUEDE QUE HAGA FALLAR
+    free(car1);
+    
+}
+
+// conexiones
 void terminar_programa(){
    config_destroy(config);
 }

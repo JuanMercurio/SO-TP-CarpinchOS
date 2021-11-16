@@ -24,28 +24,41 @@ typedef struct {
     int numeroArchivo;
     int cantidadPaginas;
     int orden;
+    t_list* marcos_paginas;
 } Carpincho_Swamp;
+typedef struct {
+    int pag;
+    int marco;
+} Marcos_x_pagina;
+
+
 /*
     @NAME: terminar_programa
     @DESC: Se encarga de liberar todas las estructuras y de hacer lo necesario para
            que el programa termine sin memory leaks y sin errores
  */
-
-int elegirMejorArchivo();
-void crearCarpincho (int pid, int pag, char* contenidoPagina, char letra);
-int cantidadCaracteresFile (char* path);
+//GENERAL
 void crearArchivos();
+int elegirMejorArchivo();
+Carpincho_Swamp* buscarCarpincho(int pidd);
+int cantidadCaracteresFile (char* path);
+bool quedaEspacioEnArchivo();
+
+//ASIGNACION FIJA
+
+void crearCarpinchoFija (int pid, int pag, char* contenidoPagina, char letra);
 int remplazoPaginaFija(int pid, int pagina, char*contenido);
 int buscarArchivoDeCarpincho (int pidd);
 int buscarOrdenParaAgregar(int num_archivo);
-Carpincho_Swamp* buscarCarpincho(int pidd);
-bool quedaEspacioEnArchivoFija();
-char* buscarPagina(int pid, int pag);
+char* buscarPaginaFija(int pid, int pag);
+int borrarCarpinchoFija(int pid);
+void cambiarOrdenPorBorado( Carpincho_Swamp* car1);
+
+
+//CONEXIONES
 void terminar_programa();
 void iniciar_swamp();
 void atender_clientes();
-
-
 /*
     @NAME:  resolver_estado
     @DESC:  envia a memoria si el proceso puede empezar. 
