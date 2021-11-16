@@ -15,22 +15,27 @@
 #include <sys/mman.h>
 #include <commons/collections/list.h>
 
-int server;
-bool asignacionFija;
-t_list* carpinchosEnArchivo;
+
 
 typedef struct {
     int pid;
     int numeroArchivo;
     int cantidadPaginas;
     int orden;
-    t_list* marcos_paginas;
+
 } Carpincho_Swamp;
 typedef struct {
-    int pag;
+    int pagina;
     int marco;
+    int pid;
+    int numero_archivo;
 } Marcos_x_pagina;
 
+//VARIABLES GLOBALES
+int server;
+bool asignacionFija;
+t_list* lista_carpinchos;
+t_list* lista_marcos;
 
 /*
     @NAME: terminar_programa
@@ -43,6 +48,11 @@ int elegirMejorArchivo();
 Carpincho_Swamp* buscarCarpincho(int pidd);
 int cantidadCaracteresFile (char* path);
 bool quedaEspacioEnArchivo();
+
+//ASIGNACION DINAMICA
+int agregarPaginaDinamica(int pid, int pagina, char* contenido);
+char* buscarPagina(int pid, int pagina);
+Marcos_x_pagina* buscarMarco(int pid, int pagina);
 
 //ASIGNACION FIJA
 
