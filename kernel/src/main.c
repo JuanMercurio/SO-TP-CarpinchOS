@@ -106,6 +106,7 @@ void receptor(void *arg)
 
          break;
       case MEMALLOC: carpincho->proxima_instruccion = MEMALLOC;
+           
                
          break;
       case MEMFREE: carpincho->proxima_instruccion = MEMFREE;
