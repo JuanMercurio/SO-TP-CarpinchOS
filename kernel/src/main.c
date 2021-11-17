@@ -78,8 +78,6 @@ void receptor(void *arg)
                 sem = buscar_semaforo(carpincho->semaforo_a_modificar);
                 if( sem != NULL){
                strcpy(carpincho->semaforo_a_modificar ,recibido);
-               lista_add(carpincho->semaforos_waiteados, (void*) recibido);
-              // sem_kernel_wait2(semaforo.buffer, carpincho);
                sem_post(&carpincho->semaforo_evento);  
                 }
                 else
@@ -93,7 +91,7 @@ void receptor(void *arg)
        sem = buscar_semaforo(carpincho->semaforo_a_modificar);
                 if( sem != NULL){
                sem_kernel_post(recibido);
-               postear_lista(carpincho->semaforos_waiteados, recibido);
+              
                enviar_mensaje("OK", cliente);
                  }
                 else
@@ -123,17 +121,13 @@ void receptor(void *arg)
                carpincho->proxima_instruccion = MATE_CLOSE;
                sem_post(&carpincho->semaforo_evento);
                enviar_mensaje("OK", cliente);
+               close(cliente);
+               conectado = false;
       break;
       }
    }
 }
-void postear_lista(t_list * lista, char* sem){
 
-bool nombre_semaforo2(void* elemento){
-      return (strcmp(elemento, sem) == 0);
-   }
-   list_remove_by_condition(lista, nombe_semaforo);
-}
 void inicializar_proceso_carpincho(t_pcb *carpincho)
 {
    carpincho->tiempo.estimacion = configuracion.ESTIMACION_INICIAL;
@@ -196,31 +190,4 @@ void algoritmo_deteccion_deadlock(){
    pthread_create(&hilo, NULL, (void*)deteccion_deadlock, NULL);
 }
 
-void deteccion_deadlock(){
-   sem_kernel * semaforo;
-   while(1){
-      usleep(configuracion.TIEMPO_DEADLOCK);
-      //pausar_todo????
-      for(int i =0;i>list_size(lista_sem_kernel); i++){
-           semaforo = (sem_kernel*)list_get(lista_sem_kernel, i); 
-           buscar_en_otras_listas(semaforo->tomado_por, i);
-      }
-   }
-}
 
-sem_t* buscar_en_otras_listas(int pid, int index){
- //  t_list *lista_peticiones = list_create();
-   t_pcb * carpincho_bloqueado;
-    for(int i =0;i>list_size(lista_sem_kernel); i++){
-       if( i == index) continue;
-      sem_kernel *semaforo = (sem_kernel*)list_get(lista_sem_kernel, index +1); 
-      for(int j= 0; j< list_size(semaforo->bloqueados); j++){
-         carpincho_bloqueado = (t_pcb*)list_get(semaforo->bloqueados, j);
-         if(pid == carpincho_bloqueado->pid){
-            //list_add(lista_peticiones, (void*) semaforo->id);// hasta aca solo se tiene un lista de un carpincho que esta reteniendo un semaforo he hizo una peticion
-            return 
-         }
-      }
-    }
-}
-//_------------------------------------------------------------poner en otro .c

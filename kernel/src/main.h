@@ -13,7 +13,7 @@
 #include <time.h>
 #include <mensajes/mensajes.h>
 #include <io_semaforos/io_semaforos.h>
-
+#include <deadlock/deadlock.h>
 
 // type struct
 struct timeval *tiempito;
@@ -37,7 +37,6 @@ typedef struct{
     char* semaforo_a_modificar;
     sem_t *semaforo_evento;
     sem_t *semaforo_fin_evento;
-    list_t *semaforos_waiteados;
 }t_pcb;
 
 typedef enum{
