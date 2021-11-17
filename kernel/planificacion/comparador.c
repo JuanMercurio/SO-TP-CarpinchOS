@@ -38,6 +38,8 @@ void procesador(){// resolver la cuestion de administacion de los semaforos de l
         if(sem_kernel_wait2(carpincho) && verificar_suspension()){
            bloquear_por_mediano_plazo(carpincho);
          }
+         
+         
          break; /* ACA SE ATAJAN LOS ENVENTO SUQ HACEN QUE EL CARPINCHO PASE A BLOQUEADO */
 
       case MATE_CLOSE:
@@ -214,10 +216,6 @@ void iniciar_gestor_finalizados(){
 void eliminar_carpincho(t_pcb *carpincho){// revisar que este este borrando lo necesario y no haya free's de mas
     free(carpincho->tiempo.time_stamp_fin);
     free(carpincho->tiempo.time_stamp_inicio);
-    free(carpincho->io_solicitada);
-    free(carpincho->semaforo_a_modificar);
-    sem_destroy(carpincho->semaforo_evento);
-    sem_destroy(carpincho->semaforo_fin_evento);
     free(carpincho);
 }
 
