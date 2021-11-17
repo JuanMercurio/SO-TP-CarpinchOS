@@ -22,6 +22,23 @@ typedef struct
    int valor; 
 }t_paquete_semaforo;
 
+typedef struct
+{
+   int cod_op;
+   int pid;
+   int value;
+}t_paquete_mem_allocfree;
+
+typedef struct 
+{
+   int cod_op;
+   int pid;
+   int origin;
+   int dest;
+   int size;
+}t_paquete_mem_rw;
+
+
 /* 
     @NAME:  handshake
     @DESC:  dado un cliente el server le manda el modulo que es 
@@ -75,4 +92,15 @@ void* serializar_paquete_semaforo(t_paquete_semaforo * paquete, int bytes);
 void* recibir_buffer2(int* size, int socket_cliente);
 int recibir_valor_sem(int conexion);
 t_paquete_semaforo recibir_semaforo(int conexion);
+
+
+void enviar_mem_allocfree(int conexion, int cod_op, int pid, int value);
+void* serializar_paquete_mem_allocfree(t_paquete_mem_allocfree * paquete, int bytes);
+void enviar_mem_rw(int conexion, int cod_op, int pid, int origin, int dest, int size);
+void* serializar_paquete_mem_rw(t_paquete_mem_rw * paquete, int bytes);
+t_paquete_mem_allocfree recibir_mem_allocfree(int conexion);
+t_paquete_mem_rw recibir_mem_rw(int conexion);
+int recibir_valor_int(int conexion);
+
+
 #endif
