@@ -3,6 +3,8 @@
 
 #include <commons/config.h>
 #include <commons/collections/list.h>
+#include <commons/log.h>
+
 
 typedef struct {
    char* IP;
@@ -32,5 +34,9 @@ t_config* config;
           global configuracion
  */
 void obtener_config();
+
+t_log* logger;
+
+void iniciar_logger();
 
 #endif
