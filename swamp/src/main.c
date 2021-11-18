@@ -26,7 +26,7 @@ int main(int argc, char* argv[]) {
     lista_carpinchos= list_create();
     lista_marcos= list_create();
     crearArchivos();
-  
+    
 
    if ( asignacionFija){
        if(quedaEspacioEnArchivo()){
@@ -69,7 +69,7 @@ int main(int argc, char* argv[]) {
         fin = borrarCarpinchoFija(4);
         printf("CANTIDAD DE CARPINCHOS EN LISTA %d\n",list_size(lista_carpinchos));
    }else{
-       char* basura = string_repeat('n',configuracion.TAMANIO_PAGINA);
+       /*char* basura = string_repeat('n',configuracion.TAMANIO_PAGINA);
        int algo;
        algo = agregarPaginaDinamica(6, 6, basura);
        basura = string_repeat('p',configuracion.TAMANIO_PAGINA);
@@ -82,6 +82,13 @@ int main(int argc, char* argv[]) {
        algo = remplazarPagina(6,6, basura);
        basura = string_repeat('Z',configuracion.TAMANIO_PAGINA);
        algo = remplazarPagina(9,1, basura);*/
+       
+       if(quedaEspacioEnArchivoDOS()){
+           printf("hay espacio\n");
+       }
+       printf("La cantidad del archivo 0 es: %d\n",cantidadBarra0File (configuracion.ARCHIVOS_SWAP_list[0]));
+       printf("La cantidad del archivo 1 es: %d\n",cantidadBarra0File (configuracion.ARCHIVOS_SWAP_list[1]));
+      
    }
    
 
@@ -99,15 +106,23 @@ void crearArchivos(){
     int i = 0;
     while(configuracion.ARCHIVOS_SWAP_list[i]){
         // intenta abrirlo apra escritura, si no existe lo crea
-        if (fopen (configuracion.ARCHIVOS_SWAP_list[i],"r") == -1){
-                printf("EL archivo no existe. \n");
-        }
         
+        if (fopen (configuracion.ARCHIVOS_SWAP_list[i],"r") == -1){
+            printf("EL archivo no existe. \n");
+        }
         FILE* archivo = fopen (configuracion.ARCHIVOS_SWAP_list[i],"w");
-        fputs("/0",archivo);
+
+        for ( int j = 0; j< configuracion.TAMANIO_SWAP;j++){
+            fputs("\0",archivo);
+        }
         fclose(archivo);
+        /*int file =  open(configuracion.ARCHIVOS_SWAP_list[i], O_RDWR,S_IRUSR|S_IWUSR, O_APPEND,O_CREAT);
+        for ( int j = 0; j< configuracion.TAMANIO_SWAP;j++){
+            write(file,'\0',1);
+        } */
+
         // abre el archivo en modo escritura
-        int file = open (configuracion.ARCHIVOS_SWAP_list[i] , 2);
+         int file = open (configuracion.ARCHIVOS_SWAP_list[i] , 2);
         // le trunca (coloca) un espacio fijo. puede que tenga datos y lo borre
         int trun2 = ftruncate(file,configuracion.TAMANIO_SWAP);
         //struct stat statbuf;
@@ -128,19 +143,19 @@ void crearArchivos(){
 int elegirMejorArchivo(){
     // busca el archivo con el que mas espacio tenga. 
     int i = 0;
-    int menor = cantidadCaracteresFile (configuracion.ARCHIVOS_SWAP_list[i]);
+    int menor = cantidadBarra0File (configuracion.ARCHIVOS_SWAP_list[i]);
     int indiceMenor = 0;
    
-   //int menor2 = cantidadCaracteresFile (configuracion.ARCHIVOS_SWAP_list[1]);
-   //printf("valor menor %d\n",menor);
+    //int menor2 = cantidadCaracteresFile (configuracion.ARCHIVOS_SWAP_list[1]);
+    //printf("valor menor %d\n",menor);
     //printf("valor menor2 %d\n",menor2);
     while(configuracion.ARCHIVOS_SWAP_list[i]){
        //printf("el valor de i es %d.\n",i);
         if (i == 0){
-           menor = cantidadCaracteresFile (configuracion.ARCHIVOS_SWAP_list[i]);
+           menor = cantidadBarra0File (configuracion.ARCHIVOS_SWAP_list[i]);
         }
-        else if (menor > cantidadCaracteresFile (configuracion.ARCHIVOS_SWAP_list[i])){
-            menor = cantidadCaracteresFile (configuracion.ARCHIVOS_SWAP_list[i]);
+        else if (menor < cantidadBarra0File (configuracion.ARCHIVOS_SWAP_list[i])){
+            menor = cantidadBarra0File (configuracion.ARCHIVOS_SWAP_list[i]);
             indiceMenor = i;
         }
         // FUNCION STAT NO USADA
@@ -192,10 +207,39 @@ int cantidadCaracteresFile (char* path){
     fclose(archivo);
     return cant;
 }
+int cantidadBarra0File (char* path){
+    int  file =  open(path, O_RDWR, S_IRUSR|S_IWUSR);
+    char * file_in_memory = mmap(NULL,configuracion.TAMANIO_SWAP,PROT_READ |PROT_WRITE ,MAP_SHARED, file,0);
+    int k = 0;
+    for(int i = 0; i< configuracion.TAMANIO_SWAP;i++ ){
+        //printf("entro\n");
+        //printf("%c",file_in_memory[i]);
+        if (file_in_memory[i]== '\0'){
+            //printf("entroHOLI\n");
+            k++;
+        }
+    }
+    //printf("El valor del archivo es %s\n",bufer);
+    //printf("La cantidad es %d\n",cant);
+    close(file);
+    return k;
+}
 bool quedaEspacioEnArchivo(){
     int i = 0;
     while(configuracion.ARCHIVOS_SWAP_list[i]){
         if( cantidadCaracteresFile (configuracion.ARCHIVOS_SWAP_list[i])< configuracion.TAMANIO_SWAP-1){
+            return true;
+        }
+        i++;
+    }
+    return false;
+}
+bool quedaEspacioEnArchivoDOS(){
+    int i = 0;
+
+    while(configuracion.ARCHIVOS_SWAP_list[i]){
+        // PUEDE SALTAR ERROR O QUE SEA TAMAÑO PAGINA -1
+        if( cantidadBarra0File (configuracion.ARCHIVOS_SWAP_list[i]) > configuracion.TAMANIO_PAGINA){
             return true;
         }
         i++;
@@ -305,6 +349,47 @@ int remplazarPagina(int pid, int pagina, char* contenido){
 }
 
 // ASIGNACION FIJA
+void crearCarpinchoFijaDOS(int pidd){
+     if (buscarArchivoDeCarpincho (pidd) == -1){
+        int mejorArchivo = elegirMejorArchivo();
+        int file =  open(configuracion.ARCHIVOS_SWAP_list[mejorArchivo], O_RDWR,S_IRUSR|S_IWUSR, O_APPEND);
+        Carpincho_Swamp* carpincho;
+        carpincho = malloc(sizeof(Carpincho_Swamp));
+        carpincho->pid = pidd;
+        carpincho->numeroArchivo = mejorArchivo;
+
+
+        close(file);
+        
+     }
+
+}
+int elegirBaseCarpincho(int num_archivo){
+    int max = list_size(lista_carpinchos);
+    if(max == 0){
+        return 0;
+    }
+    Carpincho_Swamp* car = malloc(sizeof(Carpincho_Swamp));
+    int file =  open(configuracion.ARCHIVOS_SWAP_list[num_archivo], O_RDWR,S_IRUSR|S_IWUSR, O_APPEND);
+    char * file_in_memory = mmap(NULL,configuracion.TAMANIO_SWAP,PROT_READ |PROT_WRITE ,MAP_SHARED, file,0);
+    int k = 0;
+    for(int i = 0; i< configuracion.TAMANIO_SWAP;i = i+configuracion.TAMANIO_PAGINA*configuracion.MARCOS_MAXIMOS){
+        //printf("entro\n");
+        //printf("%c",file_in_memory[i]);
+
+        if (file_in_memory[i]== '\0'){
+            for (int i = 0;i<max;i++){
+        
+                car = (Carpincho_Swamp*) list_get(lista_carpinchos,i);
+                if(car->numeroArchivo == num_archivo && car->base != i){
+                    return i;
+                }
+            }
+
+        }
+    }
+    return -1;
+}
 void crearCarpinchoFija (int pidd, int pag, char* contenidoPagina , char letra){
 
     if (buscarArchivoDeCarpincho (pidd) == -1){

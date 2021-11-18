@@ -22,7 +22,8 @@ typedef struct {
     int numeroArchivo;
     int cantidadPaginas;
     int orden;
-
+    int base;
+    t_list paginas;
 } Carpincho_Swamp;
 typedef struct {
     int pagina;
@@ -48,6 +49,8 @@ int elegirMejorArchivo();
 Carpincho_Swamp* buscarCarpincho(int pidd);
 int cantidadCaracteresFile (char* path);
 bool quedaEspacioEnArchivo();
+int cantidadBarra0File (char* path);
+bool quedaEspacioEnArchivoDOS();
 
 //ASIGNACION DINAMICA
 int agregarPaginaDinamica(int pid, int pagina, char* contenido);
@@ -63,6 +66,7 @@ int buscarOrdenParaAgregar(int num_archivo);
 char* buscarPaginaFija(int pid, int pag);
 int borrarCarpinchoFija(int pid);
 void cambiarOrdenPorBorado( Carpincho_Swamp* car1);
+int elegirBaseCarpincho(int num_archivo);
 
 
 //CONEXIONES
