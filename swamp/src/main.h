@@ -31,12 +31,17 @@ typedef struct {
     int pid;
     int numero_archivo;
 } Marcos_x_pagina;
+typedef struct {
+    int base;
+    int numero_archivo;
+} marcos_libre;
 
 //VARIABLES GLOBALES
 int server;
 bool asignacionFija;
 t_list* lista_carpinchos;
 t_list* lista_marcos;
+t_list* marcos_libres_fija;
 
 /*
     @NAME: terminar_programa
@@ -67,8 +72,8 @@ char* buscarPaginaFija(int pid, int pag);
 int borrarCarpinchoFija(int pid);
 void cambiarOrdenPorBorado( Carpincho_Swamp* car1);
 int elegirBaseCarpincho(int num_archivo);
-
-
+void mostrarCarpinchos();
+void marcosLIbresFija();
 //CONEXIONES
 void terminar_programa();
 void iniciar_swamp();
