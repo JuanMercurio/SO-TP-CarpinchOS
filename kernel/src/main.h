@@ -119,29 +119,17 @@ void terminar_programa();
 void iniciar_colas();
 
 void incializar_planificacion();
-
-void iniciar_planificador_corto_plazo();
-
-void  iniciar_planificador_mediano_plazo();
-
-void iniciar_planificador_largo_plazo();
    
-void crear_estructuras(t_pcb *carpincho);
+//void crear_estructuras(t_pcb *carpincho);
 
 void inicializar_listas_sem_io();
 
 void inicializar_proceso_carpincho(t_pcb *carpincho);
 
-sem_kernel* buscar_semaforo(char *nombre);
-
-void sem_kernel_init(char* nombre, int value);
-
-
-void init_dispositivos_io();
-void call_io(char *nombre, t_pcb *carpincho);
-void realizar_io(t_pcb *carpincho, io_kernel *io);
-
-
 void receptor(void*);
+
+void inicializar_semaforos();
+
+void algoritmo_deteccion_deadlock();
 
 #endif

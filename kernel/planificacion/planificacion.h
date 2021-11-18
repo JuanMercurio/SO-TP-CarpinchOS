@@ -56,5 +56,10 @@ void estimador(t_pcb *carpincho);
 
 void ejecutando_a_bloqueado(t_pcb*,t_queue *,sem_t*);
 void bloqueado_a_listo(t_queue *,sem_t*);
- 
+
+bool verificar_suspension();
+void bloquear_por_mediano_plazo(t_pcb *carpincho);
+void iniciar_planificadores();
+void eliminar_carpincho(t_pcb *carpincho);
+
 #endif
