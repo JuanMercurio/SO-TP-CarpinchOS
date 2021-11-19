@@ -23,18 +23,16 @@ typedef struct {
     int cantidadPaginas;
     int orden;
     int base;
-    t_list paginas;
+    t_list* paginas;
 } Carpincho_Swamp;
 typedef struct {
     int pagina;
-    int marco;
-    int pid;
-    int numero_archivo;
+    int base;
 } Marcos_x_pagina;
 typedef struct {
     int base;
     int numero_archivo;
-} marcos_libre;
+} un_marco_libre;
 
 //VARIABLES GLOBALES
 int server;
@@ -42,6 +40,7 @@ bool asignacionFija;
 t_list* lista_carpinchos;
 t_list* lista_marcos;
 t_list* marcos_libres_fija;
+t_list* marcos_libres;
 
 /*
     @NAME: terminar_programa
@@ -61,6 +60,9 @@ bool quedaEspacioEnArchivoDOS();
 int agregarPaginaDinamica(int pid, int pagina, char* contenido);
 char* buscarPagina(int pid, int pagina);
 Marcos_x_pagina* buscarMarco(int pid, int pagina);
+int CrearCarpincho(int pidd);
+char* buscarPaginaDinamico(int pid, int pagina);
+void marcosLibes();
 
 //ASIGNACION FIJA
 
