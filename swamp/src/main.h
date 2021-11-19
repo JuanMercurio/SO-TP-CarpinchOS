@@ -58,8 +58,6 @@ bool quedaEspacioEnArchivoDOS();
 
 //ASIGNACION DINAMICA
 int agregarPaginaDinamica(int pid, int pagina, char* contenido);
-char* buscarPagina(int pid, int pagina);
-Marcos_x_pagina* buscarMarco(int pid, int pagina);
 int CrearCarpincho(int pidd);
 char* buscarPaginaDinamico(int pid, int pagina);
 void marcosLibes();
