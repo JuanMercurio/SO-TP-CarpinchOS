@@ -1,6 +1,6 @@
 #include "planificacion.h"
 #include "main.h"
-
+#include <mensajes/mensajes.h>
 void inciar_cpu(){
    pthread_t *cpu[configuracion.GRADO_MULTIPROGRAMACION];
    for(int i = 0 ; i < configuracion.GRADO_MULTIPROCESAMIENTO ; i++){
@@ -137,6 +137,8 @@ bool comparador_HRRN(t_pcb* carpincho1, t_pcb* carpincho2){
 void bloquear_por_mediano_plazo(t_pcb *carpincho)
 {
    //AVISAR A MEMORIA QUE EL CARPINCHO ESTA SUSPENDIDO (SWAMP)
+
+   enviar_mensaje_y_cod_op("suspenderme",  carpincho->fd_memoria, SUSPENCION);
    sem_wait(&mutex_cola_bloqueado_suspendido);
    queue_push(suspendido_bloqueado, carpincho);
    sem_post(&mutex_cola_bloqueado_suspendido);
@@ -198,7 +200,9 @@ void iniciar_planificador_largo_plazo()
       sem_wait(&mutex_cola_ready);
       queue_push(cola_ready, carpincho);
       carpincho->tiempo.time_stamp_inicio = temporal_get_string_time("%H:%M:%S:%MS");
+      enviar_mensaje_y_cod_op("sali de suspension", carpincho->fd_memoria, VUELTA_A_READY);
       sem_post(&mutex_cola_ready);
+      sem_post(&cola_ready_con_elementos);
    }
 }
 void iniciar_gestor_finalizados(){

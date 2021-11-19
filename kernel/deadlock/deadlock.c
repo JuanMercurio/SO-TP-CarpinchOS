@@ -180,7 +180,8 @@ void sacar_de_cola_bloqueados(sem_kernel *semaforo, int id)
         sem_post(&semaforo->mutex_cola);
         if (carpincho->pid == id)
         {
-
+            close(carpincho->fd_cliente);
+            close(carpincho->fd_memoria);
             sem_wait(&mutex_cola_finalizados);
             queue_push(cola_finalizados, (void *)carpincho);
             sem_post(&mutex_cola_finalizados);

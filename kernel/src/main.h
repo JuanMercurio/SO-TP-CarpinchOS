@@ -14,6 +14,7 @@
 #include <mensajes/mensajes.h>
 #include <io_semaforos/io_semaforos.h>
 #include <deadlock/deadlock.h>
+#include <mensajes/mensajes.h>
 
 // type struct
 struct timeval *tiempito;
@@ -30,6 +31,7 @@ typedef struct{
 typedef struct{
     int pid;
     int fd_cliente;
+    int fd_memoria;
     tiempo_t tiempo;
     char estado;
     int proxima_instruccion;
@@ -50,7 +52,9 @@ typedef enum{
     MEMFREE,
     MEMREAD,
     MEMWRITE,
-    MATE_CLOSE
+    MATE_CLOSE,
+    SUSPENCION,
+    VUELTA_A_READY
 }cod_op;
 
 typedef struct{

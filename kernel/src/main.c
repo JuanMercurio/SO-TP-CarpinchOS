@@ -33,7 +33,10 @@ void receptor(void *arg)
    t_paquete_semaforo semaforo ;
    char* recibido;
    sem_kernel *sem ;
+   t_paquete* paquete;
 
+   int conexion_memoria = crear_conexion(configuracion.IP_MEMORIA, configuracion.PUERTO_MEMORIA);
+   
    while (conectado)
    {
       printf("esperando comando\n");
@@ -45,8 +48,8 @@ void receptor(void *arg)
 
       case NEW_INSTANCE: 
          t_pcb *carpincho = malloc(sizeof(t_pcb)); // aca no recibe la pcb en si , recibe un paquete con datos que habra que guardar en un t_pcb luego de desserializar lo que viene
-         carpincho->fd_cliente = cliente;
-       
+            carpincho->fd_cliente = cliente;
+            carpincho->fd_memoria = conexion_memoria;
             carpincho->pid = crearID(&id_procesos);
             carpincho->estado ='N';
             char *pid = itoa(carpincho->pid);
@@ -106,7 +109,7 @@ void receptor(void *arg)
 
          break;
       case MEMALLOC: carpincho->proxima_instruccion = MEMALLOC;
-           
+           paquete = recibir_paquete(cliente);
                
          break;
       case MEMFREE: carpincho->proxima_instruccion = MEMFREE;
@@ -123,6 +126,7 @@ void receptor(void *arg)
                sem_post(&carpincho->semaforo_evento);
                enviar_mensaje("OK", cliente);
                close(cliente);
+               close(conexion_memoria);
                conectado = false;
       break;
       }
@@ -138,7 +142,6 @@ void inicializar_proceso_carpincho(t_pcb *carpincho)
    carpincho->estado = 'N';
    sem_init(&carpincho->semaforo_evento, NULL, 0);
    sem_init(&carpincho->semaforo_fin_evento, NULL, 0);
-   list_create(carpincho->semaforos_waiteados);
 }
 
 

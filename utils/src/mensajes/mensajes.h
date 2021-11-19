@@ -93,6 +93,7 @@ void* recibir_buffer2(int* size, int socket_cliente);
 int recibir_valor_sem(int conexion);
 t_paquete_semaforo recibir_semaforo(int conexion);
 
+void enviar_mensaje_y_cod_op(char* mensaje, int socket_cliente, int codigo_op);
 
 void enviar_mem_allocfree(int conexion, int cod_op, int pid, int value);
 void* serializar_paquete_mem_allocfree(t_paquete_mem_allocfree * paquete, int bytes);
