@@ -6,6 +6,7 @@ int main(int argc, char *argv[])
    //solo corre si corremos el binario asi: binario test
    tests(argc, argv[1]);
 
+   iniciar_logger();
    obtener_config();
 
    administrar_clientes(configuracion.IP, configuracion.PUERTO, &receptor);
@@ -21,6 +22,7 @@ int main(int argc, char *argv[])
 void terminar_programa()
 {
    config_destroy(config);
+   log_destroy(logger);
 }
 
 void receptor(void *arg)
@@ -39,10 +41,12 @@ void receptor(void *arg)
    
    while (conectado)
    {
-      printf("esperando comando\n");
+      //printf("esperando comando\n");
+      log_info(logger, "Esperando comando");
       cod_op = recibir_operacion(cliente);
-      printf("CODIGO OPERACION %d de cliente %d\n", cod_op, cliente);
-
+      //printf("CODIGO OPERACION %d de cliente %d\n", cod_op, cliente);
+      log_info(logger,"Se recibio el codigo de operacion %d del cliente %d", cod_op, cliente);
+      
       switch (cod_op)
       {
 
@@ -57,6 +61,7 @@ void receptor(void *arg)
             sem_wait(&mutex_cola_new);
             queue_push(cola_new, (void*) carpincho); // pensando que el proceso queda trabado en mate init hasta que sea planificado
             sem_post(&mutex_cola_new);
+            log_info(logger, "Se agregó el carpincho ID: %d a la cola de new", carpincho->pid);
 
          // enviar_mensaje("OK", cliente);
          // aca debe enviar el ok o debe planificarlo y al llegar a exec recien destrabar el carpincho

@@ -168,7 +168,7 @@ void* serializar_paquete_mem_allocfree(t_paquete_mem_allocfree * paquete, int by
 	memcpy(magico + desplazamiento, &(paquete->cod_op), sizeof(int));
 	desplazamiento+= sizeof(int);
 
-	memcpy(magico + desplazamiento, &(paquete->pid), sizeof(int);
+	memcpy(magico + desplazamiento, &(paquete->pid), sizeof(int));
 	desplazamiento+= sizeof(int);
 
 	memcpy(magico + desplazamiento, &(paquete->value), sizeof(int));
@@ -198,7 +198,7 @@ void* serializar_paquete_mem_rw(t_paquete_mem_rw * paquete, int bytes){
 	memcpy(magico + desplazamiento, &(paquete->cod_op), sizeof(int));
 	desplazamiento+= sizeof(int);
 
-	memcpy(magico + desplazamiento, &(paquete->pid), sizeof(int);
+	memcpy(magico + desplazamiento, &(paquete->pid), sizeof(int));
 	desplazamiento+= sizeof(int);
 
 	memcpy(magico + desplazamiento, &(paquete->origin), sizeof(int));
