@@ -74,6 +74,7 @@ void cambiarOrdenPorBorado( Carpincho_Swamp* car1);
 int elegirBaseCarpincho(int num_archivo);
 void mostrarCarpinchos();
 void marcosLIbresFija();
+void sacarCarpinchoDeLista( int pid);
 //CONEXIONES
 void terminar_programa();
 void iniciar_swamp();

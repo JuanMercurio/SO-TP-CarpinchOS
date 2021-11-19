@@ -29,52 +29,13 @@ int main(int argc, char* argv[]) {
     crearArchivos();
     
 
-   if ( asignacionFija){
-       marcosLIbresFija();
-              /*if(quedaEspacioEnArchivo()){
-       //printf("CREANDOME CAR5.\n");
-            crearCarpinchoFija (5,2,"pagina1", '5');
-        }
-        else{
-            printf("EL carpincho 5 no se puede crear\n");
-        }
-        if(quedaEspacioEnArchivo()){
-            //printf("CREANDOME CAR6.\n");
-            crearCarpinchoFija (6,6,"pagina2",'6');
-        }
-        else{
-            printf("EL carpincho 6 no se puede crear\n");
-        }
-
-        if(quedaEspacioEnArchivo()){
-            //printf("CREANDOME CAR7.\n");
-            crearCarpinchoFija (7,2,"pagina2",'7');
-        }
-        else{
-            printf("EL carpincho 7 no se puede crear\n");
-        }
-
-        crearCarpinchoFija (4,2,"pagina2",'4');
-        crearCarpinchoFija (8,2,"pagina2",'8');
-        crearCarpinchoFija (8,2,"pagina2",'8');
-        char* basura = string_repeat('n',configuracion.TAMANIO_PAGINA);
-        int pudo=remplazoPaginaFija(5,2,basura);
-        basura = string_repeat('k',configuracion.TAMANIO_PAGINA);
-        pudo=remplazoPaginaFija(7,2,basura);
-        basura = string_repeat('p',configuracion.TAMANIO_PAGINA);
-        pudo=remplazoPaginaFija(4,1,basura);
-
-        char* pal = buscarPaginaFija(4,0);
-        int fin = borrarCarpinchoFija(6);
-        fin = borrarCarpinchoFija(5);
-        fin = borrarCarpinchoFija(7);
-        fin = borrarCarpinchoFija(4);
-        printf("CANTIDAD DE CARPINCHOS EN LISTA %d\n",list_size(lista_carpinchos));*/
+    if ( asignacionFija){
+        marcosLIbresFija();
         if(quedaEspacioEnArchivoDOS()){
            printf("hay espacio\n");
-       }
-       //printf("La cantidad del archivo 0 es: %d\n",cantidadBarra0File (configuracion.ARCHIVOS_SWAP_list[0]));
-       //printf("La cantidad del archivo 1 es: %d\n",cantidadBarra0File (configuracion.ARCHIVOS_SWAP_list[1]));
+        }
+        //printf("La cantidad del archivo 0 es: %d\n",cantidadBarra0File (configuracion.ARCHIVOS_SWAP_list[0]));
+        //printf("La cantidad del archivo 1 es: %d\n",cantidadBarra0File (configuracion.ARCHIVOS_SWAP_list[1]));
       
         crearCarpinchoFijaDOS(1);
         crearCarpinchoFijaDOS(2);
@@ -84,16 +45,42 @@ int main(int argc, char* argv[]) {
         //mostrarCarpinchos();
         char* basura = string_repeat('n',configuracion.TAMANIO_PAGINA);
         int pudo=remplazoPaginaFija(1,2,basura);
+        
         basura = string_repeat('k',configuracion.TAMANIO_PAGINA);
         pudo=remplazoPaginaFija(2,2,basura);
+        
         basura = string_repeat('p',configuracion.TAMANIO_PAGINA);
         pudo=remplazoPaginaFija(4,1,basura);
+        basura = string_repeat('A',configuracion.TAMANIO_PAGINA);
+        pudo=remplazoPaginaFija(4,3,basura);
+        //mostrarCarpinchos();
         pudo=remplazoPaginaFija(8,1,basura);
         //mostrarCarpinchos();
-        char* pal = buscarPaginaFija(4,1);
+        char* pal = buscarPaginaFija(2,1);
         printf("pagina 1:%s\n",pal);
+        int error = borrarCarpinchoFija(2);
+        pal = buscarPaginaFija(4,1);
+        if (strcmp (pal,"")){
+            printf("pagina 1:%s\n",pal);
+        }
+        error = borrarCarpinchoFija(5);
+        pal = buscarPaginaFija(4,3);
+        printf("pagina 1:%s\n",pal);
+        crearCarpinchoFijaDOS(6);
+        crearCarpinchoFijaDOS(7);
+        crearCarpinchoFijaDOS(8);
+        crearCarpinchoFijaDOS(9);
+        crearCarpinchoFijaDOS(10);
+        crearCarpinchoFijaDOS(11);
+        crearCarpinchoFijaDOS(12);
+        crearCarpinchoFijaDOS(13);
+        crearCarpinchoFijaDOS(14);
+        crearCarpinchoFijaDOS(15);
+        mostrarCarpinchos();
 
-   }else{
+
+    }
+    else{
        /*char* basura = string_repeat('n',configuracion.TAMANIO_PAGINA);
        int algo;
        algo = agregarPaginaDinamica(6, 6, basura);
@@ -107,9 +94,8 @@ int main(int argc, char* argv[]) {
        algo = remplazarPagina(6,6, basura);
        basura = string_repeat('Z',configuracion.TAMANIO_PAGINA);
        algo = remplazarPagina(9,1, basura);*/
-       
-       
-   }
+
+    }
    
 
     // CONEXIONES
@@ -212,6 +198,7 @@ Carpincho_Swamp* buscarCarpincho(int pidd){
             return car;
         }
     }
+    car = malloc(sizeof(Carpincho_Swamp));
     car->pid = -1;
     return car;
 }
@@ -384,7 +371,9 @@ int remplazarPagina(int pid, int pagina, char* contenido){
 // ASIGNACION FIJA
 void crearCarpinchoFijaDOS(int pidd){
     printf("Creando carpincho %d\n",pidd);
-     if (elegirMejorArchivoDOS (pidd) != -1){
+    Carpincho_Swamp* car = buscarCarpincho(pidd);
+    
+    if (elegirMejorArchivoDOS (pidd) != -1 && car->pid == -1 ){
         //printf("ENTRO %d\n",pidd);
         int mejorArchivo = elegirMejorArchivoDOS();
         int file =  open(configuracion.ARCHIVOS_SWAP_list[mejorArchivo], O_RDWR,S_IRUSR|S_IWUSR, O_APPEND);
@@ -395,8 +384,10 @@ void crearCarpinchoFijaDOS(int pidd){
         carpincho->base = elegirBaseCarpincho(mejorArchivo);
         list_add(lista_carpinchos,carpincho);
         close(file);
-     }
-
+    }
+    else{
+        printf("CARPINCHO YA EXISTENTE o no hay paginas\n");
+    }
 }
 int elegirMejorArchivoDOS(){
     int i = 0;
@@ -407,22 +398,25 @@ int elegirMejorArchivoDOS(){
         contador = 0;
         marcos_libre* mar = malloc (sizeof(marcos_libre));
         int max = list_size(marcos_libres_fija);
-        for (int j = 0;j<max;j++){
-            mar = ( marcos_libre*) list_get(marcos_libres_fija,j);
-            
-            if(mar->numero_archivo == i){
-                //printf("%d-",mar->numero_archivo);
-                contador++;
+        if (max != 0){
+            for (int j = 0;j<max;j++){
+                mar = ( marcos_libre*) list_get(marcos_libres_fija,j);
+                
+                if(mar->numero_archivo == i){
+                    //printf("%d-",mar->numero_archivo);
+                    contador++;
+                }
+            }
+            printf("\n");
+            if (mayorBloque == 0){
+                mayorBloque = contador;
+                archivo_mayor = i;
+            }
+            else if(contador>mayorBloque){
+                archivo_mayor = i;
             }
         }
-        printf("\n");
-        if (mayorBloque == 0){
-            mayorBloque = contador;
-             archivo_mayor = i;
-        }
-        else if(contador>mayorBloque){
-            archivo_mayor = i;
-        }
+        
         i++;
     }
     return archivo_mayor;
@@ -552,25 +546,38 @@ int borrarCarpinchoFija(int pid){
         mar->numero_archivo = car->numeroArchivo;
         mar->base = car->base;
         list_add(marcos_libres_fija,mar);
+        printf("entro1\n");
+        sacarCarpinchoDeLista(car->pid);
         free(car);
 
         close(file);
-    
-    
     }
-    return 0;
+    return -1;
+}
+void sacarCarpinchoDeLista( int pidd){
+    int max = list_size(lista_carpinchos);
+    Carpincho_Swamp* car = malloc(sizeof(Carpincho_Swamp));
+    //printf("Cantidad de carpinchos en lista es %d\n",max);
+  
+    for (int i = 0;i<max;i++){
+        
+        car = (Carpincho_Swamp*) list_get(lista_carpinchos,i);
+        if(car->pid == pidd){
+            list_remove(lista_carpinchos, i);
+            max = max-1;
+            i = max;
+        }
+    }
+  
 }
 
-// conexiones
+// CONEXIONES
 void terminar_programa(){
    config_destroy(config);
 }
-
-
 void iniciar_swamp(){
    server = iniciar_servidor(configuracion.IP, configuracion.PUERTO);
 }
-
 void atender_clientes(){ 
 
    // while feo
