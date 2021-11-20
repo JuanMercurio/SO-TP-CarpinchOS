@@ -6,9 +6,29 @@
 
 
 int main(int argc, char* argv[]) {
-  
+    lista_carpinchos= list_create();
+    lista_marcos= list_create();
+    marcos_libres_fija = list_create();
+    marcos_libres = list_create();
+    lista_pedidos = list_create();
+    mutex_lista_pedidos = malloc(sizeof(sem_t));
+    agrego_lista_pedidos = malloc(sizeof(sem_t));
+    sem_init(mutex_lista_pedidos,0,1);
+    sem_init(agrego_lista_pedidos,0,0);
+    // crear conexion
+    // escuchar asignacion memoria fija o dinamica
+    //crear hilo para escuchar peticiones y agregar a la lista 
+    //crear archivo
+    // hilo principal -> sacar de la lista esas peticiones. 
+    
+    /*iniciar_swamp();
+   terminar_programa();*/
+   /*iniciar_swamp();
+   atender_clientes();*/
+   asignacionFija = 0;
+
    //solo corre si corremos el binario asi: binario test
-   tests(argc, argv[1]);    
+   tests(argc, argv[1]);
 
    /* Este modulo funciona sin hilos. Los clientes esperan a ser atendidos en cola  */
    obtener_config();
@@ -22,16 +42,35 @@ int main(int argc, char* argv[]) {
    printf("Los archivos del server van a ser: %s \n", configuracion.ARCHIVOS_SWAP_list[1]);
   */
     
-    asignacionFija = 0;
-    lista_carpinchos= list_create();
-    lista_marcos= list_create();
-    marcos_libres_fija = list_create();
-    marcos_libres = list_create();
-    crearArchivos();
+    pthread_t tid;
+    pthread_create(&tid, NULL, &agregarPedidosMemoria, NULL);
     
+    crearArchivos();
+    if(asignacionFija){
+        marcosLIbresFija();
+    }
+    else{
+        marcosLibes();
+    }
+    while(1){
+        sem_wait(agrego_lista_pedidos);
+        Pedido* ped = malloc(sizeof(Pedido));
+        sem_wait(mutex_lista_pedidos);
+        ped = list_remove(lista_pedidos,0);
+        sem_post(mutex_lista_pedidos);
+        if(strcmp(ped->nombre_pedido,"agregar")){
+            if(asignacionFija){
+                crearCarpinchoFijaDOS(ped->pid);
+            }
+            else{
+                CrearCarpincho(ped->pid);
+            }
+        }
+        sleep(2);
+    }
 
     if ( asignacionFija){
-        marcosLIbresFija();
+        
         if(quedaEspacioEnArchivoDOS()){
            printf("hay espacio\n");
         }
@@ -81,11 +120,9 @@ int main(int argc, char* argv[]) {
         crearCarpinchoFijaDOS(14);
         crearCarpinchoFijaDOS(15);
         mostrarCarpinchos();
-
-
     }
     else{
-        marcosLibes();
+        
         CrearCarpincho(1);
         CrearCarpincho(2);
         //mostrarCarpinchos();
@@ -119,10 +156,7 @@ int main(int argc, char* argv[]) {
    
 
     // CONEXIONES
-   /*iniciar_swamp();
-   terminar_programa();*/
-   /*iniciar_swamp();
-   atender_clientes();*/
+    pthread_join(tid, NULL);
    return 0;
 }
 
@@ -733,4 +767,25 @@ int resolver_estado(int estado, int cliente){
       return recibir_int(cliente);
    }
 
+}
+void agregarPedidosMemoria (){
+    int i = 0;
+    while(1){
+        
+        Pedido* ped = malloc(sizeof(Pedido));
+        ped->nombre_pedido = "crear";
+        ped->pid = i;
+        sem_wait(mutex_lista_pedidos);
+        list_add(lista_pedidos,ped);
+        sem_post(mutex_lista_pedidos);
+        sem_post(agrego_lista_pedidos);
+        sleep(1);
+        i++;
+        /* char* nombre_pedido;
+            int pid;
+            int pagina;
+            char* contenido_pagina;
+        */
+    }
+    
 }

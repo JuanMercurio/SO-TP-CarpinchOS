@@ -14,7 +14,8 @@
 #include <commons/string.h>
 #include <sys/mman.h>
 #include <commons/collections/list.h>
-
+#include <pthread.h>
+#include <semaphore.h>
 
 
 typedef struct {
@@ -33,6 +34,12 @@ typedef struct {
     int base;
     int numero_archivo;
 } un_marco_libre;
+typedef struct {
+    char* nombre_pedido;
+    int pid;
+    int pagina;
+    char* contenido_pagina;
+} Pedido;
 
 //VARIABLES GLOBALES
 int server;
@@ -41,6 +48,9 @@ t_list* lista_carpinchos;
 t_list* lista_marcos;
 t_list* marcos_libres_fija;
 t_list* marcos_libres;
+t_list* lista_pedidos;
+sem_t* mutex_lista_pedidos;
+sem_t*  agrego_lista_pedidos;
 
 /*
     @NAME: terminar_programa
@@ -85,5 +95,6 @@ void atender_clientes();
     @RETN:  Retora el id del proceso que inicia. Si no puede iniciar retora -1
  */
 int resolver_estado(int , int );
+void agregarPedidosMemoria ();
 
 #endif
