@@ -19,6 +19,7 @@ void iniciar_tlb(){
         registro->marco = TLB_EMPTY;
         registro->pid = TLB_EMPTY;
         registro->pagina = TLB_EMPTY;
+        registro->modificado = 0;
         list_add(tlb, (void*)registro);
     }
 }
@@ -63,4 +64,19 @@ int comportamiento_TLB_MISS(tab_pags* tabla, int pagina){
 
 void actualizar_tlb(int pid, int marco, int pagina){
 
+    int victima = algoritmo_tlb();
+    tlb_t* reg = list_get(tlb, victima);
+
+    if(reg->modificado == 1) paginas_actualizar_modificado(reg->pid, reg->pagina);
+
+    reg->pid = pid;
+    reg->marco = marco;
+    reg->pagina = pagina;
+    
+}
+
+void paginas_actualizar_modificado(int pid, int pagina){
+    tab_pags* tabla = buscar_page_table(pid);
+    pag_t* reg      = list_get(tabla->tabla_pag, pagina);
+    reg->modificado = 1;
 }

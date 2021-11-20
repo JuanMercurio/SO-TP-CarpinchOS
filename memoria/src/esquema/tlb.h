@@ -4,6 +4,7 @@
 #include <commons/collections/list.h>
 
 #include "../configuracion/config.h"
+#include "algoritmos.h"
 #include "estructuras.h"
 
 #define TLB_MISS  -1
@@ -20,6 +21,7 @@ typedef struct tlb_t{
     int pid;
     int pagina;
     int marco;
+    int modificado;
 }tlb_t;
 
 /*
@@ -44,5 +46,7 @@ void actualizar_tlb(int pid, int marco, int pagina);
 int comportamiento_TLB_HIT(tab_pags* tabla, tlb_t* pagina);
 
 int comportamiento_TLB_MISS(tab_pags* tabla, int pagina);
+
+void paginas_actualizar_modificado(int pid, int pagina);
 
 #endif

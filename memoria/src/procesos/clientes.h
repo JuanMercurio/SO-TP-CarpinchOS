@@ -41,4 +41,10 @@ int comportamiento_memalloc(int* pid, int cliente);
  */
 bool pid_valido(int pid);
 
+void tlb_eliminar_proceso(int pid);
+
+void eliminar_proceso_i(int i);
+
+void tablas_eliminar_proceso(int pid);
+
 #endif

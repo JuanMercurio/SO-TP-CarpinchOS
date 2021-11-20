@@ -21,6 +21,7 @@ typedef struct tab_pags{
     int pid;
     int TLB_HITS;
     int TLB_MISSES;
+    int p_clock;
     t_list* tabla_pag;
 }tab_pags;
 

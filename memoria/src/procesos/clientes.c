@@ -1,7 +1,8 @@
 #include "clientes.h"
 
-#include "../esquema/paginacion.h"
 #include "../esquema/algoritmos.h"
+#include "../esquema/paginacion.h"
+#include "../esquema/tlb.h"
 #include "operaciones.h"
 
 #include <matelib/matelib.h>
@@ -62,6 +63,12 @@ void ejecutar_proceso(int cliente) {
             break;
         }
     }
+
+    tablas_eliminar_proceso(pid);
+    tlb_eliminar_proceso(pid);
+
+    //avisar a swamp
+
     char mensaje[100];
     sprintf(mensaje, "Se desconecto un cliente - Socket: %d - PID: %d", cliente, pid);
     loggear_mensaje(mensaje);
@@ -118,7 +125,11 @@ int comportamiento_memalloc(int* pid, int cliente){
     int size = 0;
     int* pid_cliente = recibir_buffer_t(&size, cliente);
 
-    if(*pid == NOT_ASIGNED) *pid = *pid_cliente;
+    if(*pid == NOT_ASIGNED) 
+    {
+        *pid = *pid_cliente;
+        iniciar_paginas(cliente, *pid);
+    } 
     if(*pid != *pid_cliente)
     {
         //comportamiento de pid erroneo
@@ -148,4 +159,38 @@ bool pid_valido(int pid){
 
     pthread_mutex_lock(&tablas.mutex);
     return existe;    
+}
+
+
+
+void tablas_eliminar_proceso(int pid){
+    int tamanio = list_size(tablas.lista);
+    for(int i=0; i < tamanio; i++)
+    {
+        tab_pags* tabla = list_get(tablas.lista, i);
+        if(tabla->pid == pid) 
+        { 
+           eliminar_proceso_i(i);
+           break;
+        }
+    }
+    
+    abort();
+}
+
+void eliminar_proceso_i(int i){
+    tab_pags* tabla = list_remove(tablas.lista, i);
+    free(tabla->tabla_pag);
+}
+
+void tlb_eliminar_proceso(int pid){
+
+    int tamanio = list_size(tlb);
+
+    for(int i=0; i < tamanio; i++)
+    {
+        tlb_t* reg = list_get(tlb, i);
+        if(reg->pid == pid) reg->pid = TLB_EMPTY;
+    }
+
 }
