@@ -22,20 +22,25 @@ typedef struct {
     int numeroArchivo;
     int cantidadPaginas;
     int orden;
-
+    int base;
+    t_list* paginas;
 } Carpincho_Swamp;
 typedef struct {
     int pagina;
-    int marco;
-    int pid;
-    int numero_archivo;
+    int base;
 } Marcos_x_pagina;
+typedef struct {
+    int base;
+    int numero_archivo;
+} un_marco_libre;
 
 //VARIABLES GLOBALES
 int server;
 bool asignacionFija;
 t_list* lista_carpinchos;
 t_list* lista_marcos;
+t_list* marcos_libres_fija;
+t_list* marcos_libres;
 
 /*
     @NAME: terminar_programa
@@ -48,11 +53,14 @@ int elegirMejorArchivo();
 Carpincho_Swamp* buscarCarpincho(int pidd);
 int cantidadCaracteresFile (char* path);
 bool quedaEspacioEnArchivo();
+int cantidadBarra0File (char* path);
+bool quedaEspacioEnArchivoDOS();
 
 //ASIGNACION DINAMICA
 int agregarPaginaDinamica(int pid, int pagina, char* contenido);
-char* buscarPagina(int pid, int pagina);
-Marcos_x_pagina* buscarMarco(int pid, int pagina);
+int CrearCarpincho(int pidd);
+char* buscarPaginaDinamico(int pid, int pagina);
+void marcosLibes();
 
 //ASIGNACION FIJA
 
@@ -63,8 +71,10 @@ int buscarOrdenParaAgregar(int num_archivo);
 char* buscarPaginaFija(int pid, int pag);
 int borrarCarpinchoFija(int pid);
 void cambiarOrdenPorBorado( Carpincho_Swamp* car1);
-
-
+int elegirBaseCarpincho(int num_archivo);
+void mostrarCarpinchos();
+void marcosLIbresFija();
+void sacarCarpinchoDeLista( int pid);
 //CONEXIONES
 void terminar_programa();
 void iniciar_swamp();
