@@ -9,6 +9,9 @@
 #define PAGINA segmento
 #define MARCO segmento
 
+#define LAST_METADATA -1
+#define FIRST_METADATA -2
+
 /* Estructura Memoria */
 typedef struct memoria_t {
     void* memoria;
