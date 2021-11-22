@@ -9,12 +9,15 @@ int main(int argc, char* argv[]) {
    memoria_test_solo(argc);
    
    obtener_config();
+   asignacion_swap();
    iniciar_logger();
    iniciar_signals();
    iniciar_paginacion();
    iniciar_tlb();
 
-   administrar_clientes(configuracion.IP, configuracion.PUERTO, (void*)&atender_proceso);
+   int server = iniciar_servidor(configuracion.IP, configuracion.PUERTO);
+   swap_conexion_init(server);
+   clientes_administrar(server, (void*)&atender_proceso);
 
    terminar_programa();
 

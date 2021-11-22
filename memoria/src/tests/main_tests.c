@@ -55,7 +55,9 @@ void test_inicio_tlb(){
 #define MISSING_PAGE -100
 void test_tlb_miss(){
    iniciar_tlb(); 
-   CU_ASSERT_EQUAL(buscar_en_tlb(MISSING_PID, MISSING_PAGE), TLB_MISS);   
+   tab_pags* tabla = malloc(sizeof(tab_pags));
+   tabla->pid = MISSING_PID;
+   CU_ASSERT_EQUAL(buscar_en_tlb(tabla, MISSING_PAGE), TLB_MISS);   
 }
  
 void test_mensaje_serializado(){

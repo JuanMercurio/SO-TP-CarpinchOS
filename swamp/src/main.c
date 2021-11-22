@@ -9,6 +9,10 @@ int main(int argc, char* argv[]) {
 
     memoria_tests(argc, argv[1]);
 
+    int memoria = crear_conexion("127.0.0.1", "5001");
+    char* tipo_asignacion = recibir_mensaje(memoria);
+    printf("%s\n", tipo_asignacion);
+
     lista_carpinchos= list_create();
     lista_marcos= list_create();
     marcos_libres_fija = list_create();
@@ -811,7 +815,7 @@ void memoria_tests(int argc, char* argv)
 }
 
 
-void atender_clientes(int cliente){
+void memoria_operacion(int cliente){
 
     int codop = recibir_operacion(cliente);
     int tamanio = recibir_int(cliente);

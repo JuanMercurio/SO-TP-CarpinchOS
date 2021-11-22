@@ -130,20 +130,6 @@ void reemplazar_pagina(t_victima victima, void* buffer, int pagina, tab_pags* ta
     actualizar_nueva_pagina(pagina, victima.marco, tabla);
 }
 
-void enviar_pagina_a_swap(int pid, int pagina, int marco){
-    int swap = crear_conexion("127.0.0.1", "5003");
-    
-    t_paquete* paquete = crear_paquete(ESCRIBIR_PAGINA);
-    void* contenido = malloc(configuracion.TAMANIO_PAGINAS);
-    memcpy(contenido, ram.memoria + marco*configuracion.TAMANIO_PAGINAS, configuracion.TAMANIO_PAGINAS);
-
-    agregar_a_paquete(paquete, &pagina, sizeof(int));
-    agregar_a_paquete(paquete, contenido, configuracion.TAMANIO_PAGINAS);
-
-    enviar_paquete(paquete, swap);
-
-    free(contenido);
-}
 
 void actualizar_nueva_pagina(int pagina, int marco, tab_pags* tabla)
 {
@@ -313,4 +299,42 @@ int binario_a_decimal(uint32_t binario) {
         ++i;
     }
     return decimal;
+}
+
+bool pagina_solicitud_swap(int pid){
+    t_paquete* p = crear_paquete(SOLICITUD_PAGINA);
+    agregar_a_paquete(p, &pid, sizeof(int));
+    enviar_paquete(p, swap);
+    eliminar_paquete(p);
+    
+    return recibir_int(swap);
+}
+
+void* pagina_obtener_swap(int pid, int pagina)
+{
+    t_paquete* p = crear_paquete(OBTENER_PAGINA);
+    agregar_a_paquete(p, &pid, sizeof(int));
+    agregar_a_paquete(p, &pagina, sizeof(p));
+    enviar_paquete(p, swap);
+    eliminar_paquete(p);
+
+    void* buffer = recibir_buffer(configuracion.TAMANIO_PAGINAS, swap);
+    return buffer;
+    
+}
+
+
+void enviar_pagina_a_swap(int pid, int pagina, int marco){
+    int swap = crear_conexion("127.0.0.1", "5003");
+    
+    t_paquete* paquete = crear_paquete(ESCRIBIR_PAGINA);
+    void* contenido = malloc(configuracion.TAMANIO_PAGINAS);
+    memcpy(contenido, ram.memoria + marco*configuracion.TAMANIO_PAGINAS, configuracion.TAMANIO_PAGINAS);
+
+    agregar_a_paquete(paquete, &pagina, sizeof(int));
+    agregar_a_paquete(paquete, contenido, configuracion.TAMANIO_PAGINAS);
+
+    enviar_paquete(paquete, swap);
+
+    free(contenido);
 }

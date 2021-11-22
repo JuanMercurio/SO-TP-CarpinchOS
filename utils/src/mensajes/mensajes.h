@@ -13,6 +13,7 @@ typedef enum{
 typedef enum{
     SOLICITUD_INICIO,
     INICIO,
+    OBTENER_PAGINA,
     SOLICITUD_PAGINA,
     ESCRIBIR_PAGINA,
     INICIO_CONFIG, 

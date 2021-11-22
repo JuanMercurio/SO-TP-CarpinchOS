@@ -1,8 +1,11 @@
 #include "config_pag.h"
 
+#include <mensajes/mensajes.h>
 #include <string.h>
 #include <stdio.h>
 #include <stdlib.h>
+
+int swap;
 
 int (*algoritmo_tlb)();
 t_victima (*algoritmo_mmu)(int, tab_pags*);
@@ -50,4 +53,14 @@ int set_campo_algoritmo(){
     printf("Algoritmo de MMU erroneo\n");
     printf("Terminando el programa");
     abort();
+}
+
+
+void asignacion_swap(){
+     enviar_mensaje(swap, configuracion.TIPO_ASIGNACION);
+}
+
+void swap_conexion_init(int server){
+     swap = aceptar_cliente(server);
+     asignacion_swap();
 }

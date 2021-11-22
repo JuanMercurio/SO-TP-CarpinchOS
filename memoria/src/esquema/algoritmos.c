@@ -8,9 +8,6 @@ int FIFO_TLB = 0;
 
 t_clock p_clock;
 
-t_victima clock_mejorado(){
-
-}
 
 t_victima lru_dinamico(int pid, tab_pags* tabla)
 {
