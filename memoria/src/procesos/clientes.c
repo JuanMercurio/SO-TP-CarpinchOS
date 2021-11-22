@@ -180,6 +180,17 @@ void tablas_eliminar_proceso(int pid){
 
 void eliminar_proceso_i(int i){
     tab_pags* tabla = list_remove(tablas.lista, i);
+
+    for(int i=0; i < list_size(tabla->tabla_pag); i++)
+    {
+        pag_t* reg = list_get(tabla->tabla_pag, i);
+        if(reg->presente == 1)
+        {
+            int* marco = list_get(marcos, reg->marco);
+            *marco = 0;
+        }
+    }
+
     free(tabla->tabla_pag);
 }
 

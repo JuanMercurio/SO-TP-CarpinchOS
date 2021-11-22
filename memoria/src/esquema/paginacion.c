@@ -49,7 +49,34 @@ void init_bitmap_frames(){
 }
 
 /* --------------- Paginas ---------------------- */ 
+// insertar pagina asignacion fija
+int insertar_pagina_af(void* contenido, tab_pags* tabla){
 
+    if(marcos_maximos_asignados(tabla))
+    { 
+        // reemplazar_pagina();
+    }
+
+    else
+    {
+        int marco = marco_libre();
+        if(marco != -1) return marco;
+    }
+    
+    return -1;
+}
+
+// insertar pagina asignacion dinamica
+int insertar_pagina_ad(void* contenido){
+
+    int marco = marco_libre();
+    if(marco != -1) return marco;
+}
+
+bool marcos_maximos_asignados(tab_pags* tabla)
+{
+    return configuracion.MARCOS_POR_CARPINCHO < list_size(tabla->tabla_pag);
+}
 
 int nro_marco(int pagina, tab_pags* tabla){
 
