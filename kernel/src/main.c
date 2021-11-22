@@ -8,12 +8,9 @@ int main(int argc, char *argv[])
 
    iniciar_logger();
    obtener_config();
-
-   administrar_clientes(configuracion.IP, configuracion.PUERTO, &receptor);
-
-   inicializar_planificacion();
    inicializar_listas_sem_io();
-
+   inicializar_planificacion();
+   administrar_clientes(configuracion.IP, configuracion.PUERTO, &receptor);
    terminar_programa();
 
    return 0;
@@ -21,8 +18,99 @@ int main(int argc, char *argv[])
 
 void terminar_programa()
 {
+
    config_destroy(config);
    log_destroy(logger);
+   destruir_semaforos();
+
+   destruir_colas_y_listas();
+
+   pthread_attr_destroy(&detached2);
+   pthread_attr_destroy(&detached3); 
+}
+void destruir_colas_y_listas(){
+   if (!list_is_empty(lista_sem_kernel))
+   {
+      list_destroy_and_destroy_elements(lista_sem_kernel, (void *)sem_destroyer);
+   }
+   else
+   {
+      list_destroy(lista_sem_kernel);
+   }
+
+   list_destroy_and_destroy_elements(lista_io_kernel, (void *)io_destroyer);
+
+   if (!queue_is_empty(cola_new))
+   {
+      queue_destroy_and_destroy_elements(cola_new, (void *)eliminar_carpincho);
+   }
+   else
+   {
+      queue_destroy(cola_new);
+   }
+   if (!queue_is_empty(cola_ready))
+   {
+      queue_destroy_and_destroy_elements(cola_ready, (void *)eliminar_carpincho);
+   }
+   else
+   {
+      queue_destroy(cola_ready);
+   }
+   if (!queue_is_empty(suspendido_bloqueado))
+   {
+      queue_destroy_and_destroy_elements(suspendido_bloqueado, (void *)eliminar_carpincho);
+   }
+   else
+   {
+      queue_destroy(suspendido_bloqueado);
+   }
+   if (!queue_is_empty(suspendido_listo))
+   {
+      queue_destroy_and_destroy_elements(suspendido_listo, (void *)eliminar_carpincho);
+   }
+   else
+   {
+      queue_destroy(suspendido_listo);
+   }
+   if (!queue_is_empty(cola_finalizados))
+   {
+      queue_destroy_and_destroy_elements(cola_finalizados, (void *)eliminar_carpincho);
+   }
+   else
+   {
+      queue_destroy(cola_finalizados);
+   }
+
+   if(!list_is_empty(lista_ejecutando)){
+      list_destroy_and_destroy_elements(lista_ejecutando, (void *)eliminar_carpincho);
+   }
+   else{
+      list_destroy(lista_ejecutando);
+   }
+   if(!list_is_empty(lista_ordenada_por_algoritmo)){
+      list_destroy_and_destroy_elements(lista_ordenada_por_algoritmo, (void *)eliminar_carpincho);
+   }
+   else{
+      list_destroy(lista_ejecutando);
+   }
+
+}
+
+void destruir_semaforos(){
+   sem_destroy(&cola_new_con_elementos);
+   sem_destroy(&cola_ready_con_elementos);
+   sem_destroy(&cola_suspendido_bloquedo_con_elementos);
+   sem_destroy(&cola_suspendido_listo_con_elementos);
+   sem_destroy(&cola_finalizados_con_elementos);
+   sem_destroy(cola_finalizados);
+   sem_destroy(&mutex_cola_new);
+   sem_destroy(&mutex_cola_ready);
+   sem_destroy(&mutex_cola_bloqueado_suspendido);
+   sem_destroy(&mutex_cola_listo_suspendido);
+   sem_destroy(&mutex_lista_ejecutando);
+   sem_destroy(&mutex_cola_finalizados);
+   sem_destroy(&mutex_lista_oredenada_por_algoritmo);
+   sem_destroy(&controlador_multiprogramacion);
 }
 
 void receptor(void *arg)
@@ -41,10 +129,10 @@ void receptor(void *arg)
    
    while (conectado)
    {
-      //printf("esperando comando\n");
-      log_info(logger, "Esperando comando");
+      
+      log_info(logger, "Esperando mensaje");
       cod_op = recibir_operacion(cliente);
-      //printf("CODIGO OPERACION %d de cliente %d\n", cod_op, cliente);
+   
       log_info(logger,"Se recibio el codigo de operacion %d del cliente %d", cod_op, cliente);
       
       switch (cod_op)
@@ -138,28 +226,30 @@ void receptor(void *arg)
    }
 }
 
-void inicializar_proceso_carpincho(t_pcb *carpincho)
-{
-   carpincho->tiempo.estimacion = configuracion.ESTIMACION_INICIAL;
-   carpincho->tiempo.tiempo_ejecutado = 0;
-   carpincho->tiempo.time_stamp_inicio = NULL;
-   carpincho->tiempo.time_stamp_fin = NULL;
-   carpincho->estado = 'N';
-   sem_init(&carpincho->semaforo_evento, NULL, 0);
-   sem_init(&carpincho->semaforo_fin_evento, NULL, 0);
-}
-
-
 void inicializar_planificacion()
 {
+   pthread_t hilos_planificadores[6];
+   pthread_attr_t detached3;
+   pthread_attr_init(&detached3);
+   pthread_attr_setdetachstate(&detached3, PTHREAD_CREATE_DETACHED);
+   
    iniciar_colas();
    inicializar_semaforos();
-   iniciar_planificador_corto_plazo();
-   iniciar_planificador_largo_plazo();
-   iniciar_planificador_mediano_plazo();
-   iniciar_gestor_finalizados();
-   inciar_cpu();
-   algoritmo_deteccion_deadlock();
+   if(!pthread_create(&hilos_planificadores[0], &detached3, (void *) iniciar_planificador_corto_plazo, NULL)){
+     looger_info(logger,"NO SE PUDO CREAR HILO PLANIFICADOR CORTO PLAZO\n");
+   }
+  if(!pthread_create(&hilos_planificadores[0], &detached3,  (void *)iniciar_planificador_largo_plazo, NULL)){
+      looger_info(logger, "NO SE PUDO CREAR HILO PLANIFICADOR LARGO PLAZO\n");
+   }if(!pthread_create(&hilos_planificadores[0], &detached3, (void *) iniciar_planificador_mediano_plazo, NULL)){
+       looger_info(logger, "NO SE PUDO CREAR HILO PLANIFICADOR MEDIANO PLAZO\n");
+   }if(!pthread_create(&hilos_planificadores[0], &detached3, (void *) iniciar_gestor_finalizados, NULL)){
+       looger_info(logger, "NO SE PUDO CREAR HILO GESWTOR FINALIZADOS\n");
+   }if(!pthread_create(&hilos_planificadores[0], &detached3, (void *) iniciar_cpu,  NULL)){
+       looger_info(logger, "NO SE PUDO CREAR HILO PLANIFICADOR LARGO PLAZO\n");
+   }if(!pthread_create(&hilos_planificadores[0], &detached3, (void *)deteccion_deadlock, NULL)){
+      looger_info(logger, "NO SE PUDO CREAR HILO DETECCION DEADLOCK\n");
+   }
+
 }
 void iniciar_colas()
 {
@@ -167,6 +257,7 @@ void iniciar_colas()
    cola_ready = queue_create();
    suspendido_bloqueado = queue_create();
    suspendido_listo = queue_create();
+   cola_finalizados = queue_create();
 }
 void inicializar_semaforos(){
    
@@ -187,16 +278,9 @@ void inicializar_semaforos(){
 
 
 }
-
-
 void inicializar_listas_sem_io(){
    lista_io_kernel = list_create();
    lista_sem_kernel = list_create();
-}
-
-void algoritmo_deteccion_deadlock(){
-   pthread_t hilo;
-   pthread_create(&hilo, NULL, (void*)deteccion_deadlock, NULL);
 }
 
 

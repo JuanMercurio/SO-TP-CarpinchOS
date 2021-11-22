@@ -10,7 +10,7 @@ int carpinchos_bloqueados = 0;
     @DESC: incia instancias de cpu segun el grado de
            multiprogramacion creando hilos con la funcion procesador.
  */
-void inciar_cpu();
+void iniciar_cpu();
 
 /* 
     @NAME: procesador
@@ -26,6 +26,7 @@ void procesador();
            enlistandolo ordenadamente segun el algoritmo de planificacion.
  */
 void iniciar_planificador_corto_plazo();
+
 void iniciar_planificador_mediano_plazo();
 
 /* 
@@ -58,8 +59,11 @@ void ejecutando_a_bloqueado(t_pcb*,t_queue *,sem_t*);
 void bloqueado_a_listo(t_queue *,sem_t*);
 
 bool verificar_suspension();
+
 void bloquear_por_mediano_plazo(t_pcb *carpincho);
-void iniciar_planificadores();
+
+void inicializar_proceso_carpincho(t_pcb *carpincho);
+
 void eliminar_carpincho(t_pcb *carpincho);
 
 #endif

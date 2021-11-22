@@ -1,7 +1,6 @@
 #include "planificacion.h"
-#include "main.h"
-#include <mensajes/mensajes.h>
-void inciar_cpu(){
+
+void iniciar_cpu(){
    pthread_t *cpu[configuracion.GRADO_MULTIPROGRAMACION];
    for(int i = 0 ; i < configuracion.GRADO_MULTIPROCESAMIENTO ; i++){
       pthread_create(cpu[i],NULL, (void*) procesador ,NULL);
@@ -11,7 +10,7 @@ void inciar_cpu(){
 void procesador(){// resolver la cuestion de administacion de los semaforos de los procesos 
                     // com va a desalojar al proceso
    int operacion;
-   while(1){
+   while(!terminar){
       sem__wait(&lista_ordenada_por_algoritmo);
       t_pcb *carpincho = (t_pcb*) list_take(lista_ordenada_por_algoritmo, 0);
       sem_post(&lista_ordenada_por_algoritmo);
@@ -61,7 +60,7 @@ bool verificar_suspension(){
 
 void iniciar_planificador_corto_plazo()
 { 
-   while(1){
+   while(!terminar){
       
       sem_wait(&cola_ready_con_elementos);
       t_pcb *carpincho = queue_pop(cola_ready);
@@ -147,7 +146,7 @@ void bloquear_por_mediano_plazo(t_pcb *carpincho)
 }
 void  planificador_mediano_plazo(){
    t_pcb *carpincho;
-   while(1){
+   while(!terminar){
    sem_wait(&cola_suspendido_bloquedo_con_elementos);
    sem_wait(&mutex_cola_bloqueado_suspendido);
    carpincho = (t_pcb*) queue_pop(suspendido_bloqueado);
@@ -161,26 +160,10 @@ void  planificador_mediano_plazo(){
    sem_post(&cola_suspendido_listo_con_elementos);
 }
 }
-void iniciar_planificadores(){
 
-   pthread_t hilo;
-
-   if(!pthread_create(&hilo, NULL, (void*)planificador_mediano_plazo, NULL))
-   printf("no se pudo iniciar planifiacador mediano plazo\n");
-   if(!pthread_create(&hilo, NULL, (void*)iniciar_planificador_corto_plazo, NULL))
-   printf("no se pudo iniciar planifiacador corto plazo\n");
-if(!pthread_create(&hilo, NULL, (void*)iniciar_planificador_largo_plazo, NULL))
-   printf("no se pudo iniciar planifiacador largo plazon");
-if(!pthread_create(&hilo, NULL, (void*)iniciar_gestor_finalizados, NULL))
-   printf("no se pudo iniciar gestor finalizados\n");
-
-
-
-}
-
-void iniciar_planificador_largo_plazo()
-      
-{t_pcb *carpincho = NULL;
+void iniciar_planificador_largo_plazo() 
+{
+   t_pcb *carpincho = NULL;
    while (1)
    {
       sem_wait(&controlador_multiprogramacion);// este semaforo contador controla la cantidad de procesos que estaran ordenaod en ready el post lo hara el encargado de finalizar los procesos
@@ -190,7 +173,7 @@ void iniciar_planificador_largo_plazo()
       sem_wait(&mutex_cola_new);
       carpincho = queue_pop(cola_new);
       sem_post(&mutex_cola_new);
-      inicializar_proceso_carpincho(carpincho); // que estructura hay que crear?? si en la pcb se guardan las estimaciones semaforos??
+      inicializar_proceso_carpincho(carpincho); 
       }
       else{
          sem_wait(&mutex_cola_listo_suspendido);
@@ -205,17 +188,29 @@ void iniciar_planificador_largo_plazo()
       sem_post(&cola_ready_con_elementos);
    }
 }
+
+void inicializar_proceso_carpincho(t_pcb *carpincho)
+{
+   carpincho->tiempo.estimacion = configuracion.ESTIMACION_INICIAL;
+   carpincho->tiempo.tiempo_ejecutado = 0;
+   carpincho->tiempo.time_stamp_inicio = NULL;
+   carpincho->tiempo.time_stamp_fin = NULL;
+   carpincho->estado = 'N';
+   sem_init(&carpincho->semaforo_evento, NULL, 0);
+   sem_init(&carpincho->semaforo_fin_evento, NULL, 0);
+}
 void iniciar_gestor_finalizados(){
-   while(1){
+   while(!terminar){
       sem_wait(&cola_finalizados_con_elementos);
       sem_wait(&mutex_cola_finalizados);
       t_pcb *carpincho = queue_pop(cola_finalizados);
       sem_post(&mutex_cola_finalizados);
-      elminar_carpincho(carpincho);
+      elminar_carpincho((void*)carpincho);
       sem_post(&controlador_multiprogramacion);
    }
 }
-void eliminar_carpincho(t_pcb *carpincho){// revisar que este este borrando lo necesario y no haya free's de mas
+void eliminar_carpincho(void *arg){// revisar que este este borrando lo necesario y no haya free's de mas
+   t_pcb * carpincho = (t_pcb*) arg;
     free(carpincho->tiempo.time_stamp_fin);
     free(carpincho->tiempo.time_stamp_inicio);
     free(carpincho->io_solicitada);

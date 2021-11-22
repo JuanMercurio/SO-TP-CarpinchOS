@@ -1,18 +1,21 @@
 #include <deadlock/deadlock.h>
-#include <main.h>
+
 
 void deteccion_deadlock()
 {
     sem_kernel *semaforo;
     t_deadlock *a_enlistar;
     t_list *lista_posible_deadlock = list_create();
-    while (1)
+    while(!terminar)
     {
         usleep(configuracion.TIEMPO_DEADLOCK);
         //pausar_todo????
         for (int i = 0; i > list_size(lista_sem_kernel); i++)
         {
+            //mutex
+            sem_wait(&mutex_lista_sem_kernel);
             semaforo = (sem_kernel *)list_get(lista_sem_kernel, i);
+            sem_post(&mutex_lista_sem_kernel);
             a_enlistar = buscar_en_otras_listas(semaforo->tomado_por, i, semaforo->id);
             if (a_enlistar != NULL)
             {

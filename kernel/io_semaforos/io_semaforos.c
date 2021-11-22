@@ -1,5 +1,3 @@
-#include "io_semaforos.h"
-#include "main.h"
 #include <planificacion/planificacion.h>
 
 
@@ -110,10 +108,10 @@ void sem_kernel_destroy(char* nombre){// ARREGLAR
       return (strcmp(((sem_kernel*)elemento)->id, nombre) == 0);
    }
 
-  list_remove_and_destroy_by_condition(lista_sem_kernel, nombre_semaforo, sem_destroyer);
+  list_remove_and_destroy_by_condition(lista_sem_kernel, nombre_semaforo, (void*)sem_destroyer);
 }
 
-void sem_detroyer(void* semaforo){
+void sem_destroyer(void* semaforo){
  sem_kernel *a_destruir  = (sem_kernel*) semaforo;
  queue_destroy(a_destruir->bloqueados); 
  sem_destroy(a_destruir->mutex);
@@ -121,6 +119,17 @@ void sem_detroyer(void* semaforo){
 free(a_destruir);
 }
 
+void io_destroyer(void* arg){
+   io_kernel* a_destruir = (io_kernel*) arg;
+   if(!list_is_empty(a_destruir->bloqueados)){
+      while(!list_is_empty(a_destruir->bloqueados)){
+         list_remove_and_destroy_element(a_destruir->bloqueados, (void*)eliminar_carpincho);
+      }
+   }
+   sem_destroy(a_destruir->mutex_io);
+   sem_destroy(a_destruir->retardo);
+   free(a_destruir);
+}
 
 
 io_kernel *buscar_io(char *nombre)
@@ -156,7 +165,7 @@ void init_dispositivos_io(){
 }
 void inicial_hilos_gestores_de_io(){
 
-      pthread_attr_t detached2;
+     
       pthread_attr_init(&detached2);
       pthread_attr_setdetachstate(&detached2, PTHREAD_CREATE_DETACHED);
       int i = list_size(lista_io_kernel);
@@ -165,51 +174,20 @@ void inicial_hilos_gestores_de_io(){
       {
          pthread_t hilo2;
          io = list_get(lista_io_kernel, i);
-         if (!(pthread_create(hilo2, NULL, (void *)gestor_cola_io, (void *)io)))
+         if (!(pthread_create(&hilo2, &detached2, (void *)gestor_cola_io, (void *)io)))
          {
             printf("no se pudo crear hilo gestor de cola io cerado \n");
          }
          printf("se creo GESTOR de io %s\n", io->id); // para controlar que se cree
             i--;
       }
-   pthread_attr_destroy(&detached2); 
-}
-/*
-void call_io(char *nombre, t_pcb *carpincho){
-   io_kernel *io = buscar_io(nombre, lista_io_kernel);
-
-   ejecutando_a_bloqueado(carpincho, cola); //bloqueo el carpincho ya sea que pueda ejecutar io o que tenga que esperar a que otro termine
-
-   sem_wait(&mutex_lista_io_kernel);
-   if(queue_size(io->bloqueados)==0){ //Si está vacía la lista, puede utilizar io
-      queue_push(io->bloqueados, carpincho);
-      realizar_io(carpincho, io->retardo);
-   }
-   else {
-      queue_push(io->bloqueados, carpincho);
-   }
-   sem_post(&mutex_lista_io_kernel);
-   //free(io);
-}*/
-
-/* void realizar_io(t_pcb *carpincho, io_kernel *io){
-
-   //Lo hago esperar el tiempo que tiene la IO de retardo
-   usleep(io->retardo);
-
-   bloqueado_a_listo(carpincho, cola);
-   queue_pop(io->bloqueados);
    
-   //Si existe algún otro carpincho en esta io lo mando a realizar_io()
-   if(queue_size(io->bloqueados)>0){
-      t_pcb *proximo_carpincho_bloqueado = queue_peek(io->bloqueados);
-      realizar_io(proximo_carpincho_bloqueado, io); 
-   }
-}*/
+}
+
 void gestor_cola_io(void *datos){
    io_kernel *io = (io_kernel*)datos;
    t_pcb *carpincho;
-   while(1){
+   while(!terminar){
    sem_wait(&io->cola_con_elementos);// el posta  aeste semaforo se lo tiene que dar el procesador al bloquearlo buscando en la lista la io y su resdpectivo semaforo
    sem_wait(&io->mutex_io);
    carpincho = queue_pop(io->bloqueados);
@@ -233,18 +211,3 @@ void bloquear_por_io(t_pcb *carpincho){
    sem_post(&io->mutex_io);
    sem_post(&io->cola_con_elementos);
 }
-/*
-   pthread_attr_t detached;
-   pthread_attr_init(&detached);
-   pthread_attr_setdetachstate(&detached, PTHREAD_CREATE_DETACHED);
-
-
-   while(1){
-      pthread_t hilo;
-      int *cliente = malloc(sizeof(int));
-      *cliente= aceptar_cliente(servidor);
-      pthread_create(&hilo, &detached, (void*)funcion,(void*) cliente);
-   }
-
-   pthread_attr_destroy(&detached); 
-} */

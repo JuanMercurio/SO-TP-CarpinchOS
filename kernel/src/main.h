@@ -2,7 +2,7 @@
 #define _MAIN_KERNEL_
 
 #include "tests/tests.h"
-#include "configuracion/config.h"
+#include <configuracion/config.h>
 #include <pthread.h>
 #include <utils/utils.h> 
 #include <conexiones/conexiones.h>
@@ -10,11 +10,10 @@
 #include <commons/collections/queue.h>
 #include <commons/collections/list.h>
 #include <commons/temporal.h>
-#include <time.h>
 #include <mensajes/mensajes.h>
 #include <io_semaforos/io_semaforos.h>
 #include <deadlock/deadlock.h>
-#include <mensajes/mensajes.h>
+#include <planificacion/planificacion.h>
 
 // type struct
 struct timeval *tiempito;
@@ -78,12 +77,11 @@ typedef struct{
 //   colas
 t_queue *cola_new;
 t_queue *cola_ready;
-t_queue *cola_bloqueado;
 t_queue *suspendido_bloqueado;
 t_queue *suspendido_listo;
 t_queue *cola_finalizados;
 // listas
-t_list lista_ejecutando;
+t_list *lista_ejecutando;
 t_list *lista_sem_kernel;
 t_list *lista_io_kernel;
 t_list *lista_ordenada_por_algoritmo;
@@ -109,9 +107,9 @@ sem_t *controlador_multiprogramacion;
 sem_t *mutex_lista_sem_kernel;
 sem_t *mutex_lista_io_kernel;
 
+bool terminar = false;
 
-
-
+pthread_attr_t detached2, detached3;
 
 /*
     @NAME: terminar_programa
@@ -128,12 +126,13 @@ void incializar_planificacion();
 
 void inicializar_listas_sem_io();
 
-void inicializar_proceso_carpincho(t_pcb *carpincho);
-
 void receptor(void*);
 
 void inicializar_semaforos();
 
-void algoritmo_deteccion_deadlock();
+void inicializar_listas_sem_io();
+
+void destruir_colas_y_listas();
+
 
 #endif
