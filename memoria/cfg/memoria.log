@@ -1,12 +1,64 @@
-[INFO] 16:08:57:087 Memoria/(4886:5023): Se conecto un cliente
-[INFO] 16:08:57:094 Memoria/(4886:5023): Se desconecto un cliente
-[INFO] 17:06:44:521 Memoria/(13222:13335): Se conecto un cliente
-[INFO] 17:06:44:522 Memoria/(13222:13335): Se desconecto un cliente - Socket: 15 - PID: 1
-[INFO] 17:10:14:199 Memoria/(13834:13836): Se conecto un cliente
-[INFO] 17:10:14:200 Memoria/(13834:13836): Se desconecto un cliente - Socket: 15 - PID: 1
-[INFO] 17:10:32:265 Memoria/(14047:14054): Se conecto un cliente
-[INFO] 17:10:32:266 Memoria/(14047:14054): Se desconecto un cliente - Socket: 15 - PID: 1
-[INFO] 17:11:03:725 Memoria/(14299:14304): Se conecto un cliente - Socket: 15
-[INFO] 17:11:03:726 Memoria/(14299:14304): Se desconecto un cliente - Socket: 15 - PID: 1
-[INFO] 17:22:02:672 Memoria/(15795:15907): Se conecto un cliente - Socket: 15
-[INFO] 17:22:02:673 Memoria/(15795:15907): Se desconecto un cliente - Socket: 15 - PID: 1
+[INFO] 11:42:26:468 Memoria/(20207:20276): Se conecto un cliente - Socket: 16
+[INFO] 11:42:26:468 Memoria/(20207:20275): Se conecto un cliente - Socket: 15
+[INFO] 11:42:26:469 Memoria/(20207:20277): Se conecto un cliente - Socket: 20
+[INFO] 11:42:26:469 Memoria/(20207:20278): Se conecto un cliente - Socket: 21
+[INFO] 11:42:26:470 Memoria/(20207:20276): Se desconecto un cliente - Socket: 16 - PID: 1
+[INFO] 11:42:26:470 Memoria/(20207:20275): Se desconecto un cliente - Socket: 15 - PID: 2
+[INFO] 11:42:26:470 Memoria/(20207:20277): Se desconecto un cliente - Socket: 20 - PID: 3
+[INFO] 11:42:26:471 Memoria/(20207:20278): Se desconecto un cliente - Socket: 21 - PID: 4
+[INFO] 11:44:01:698 Memoria/(20559:20628): Se conecto un cliente - Socket: 15
+[INFO] 11:44:01:698 Memoria/(20559:20629): Se conecto un cliente - Socket: 16
+[INFO] 11:44:01:701 Memoria/(20559:20630): Se conecto un cliente - Socket: 20
+[INFO] 11:44:01:701 Memoria/(20559:20631): Se conecto un cliente - Socket: 21
+[INFO] 11:44:43:101 Memoria/(20857:20923): Se conecto un cliente - Socket: 15
+[INFO] 11:44:43:102 Memoria/(20857:20924): Se conecto un cliente - Socket: 16
+[INFO] 11:44:43:103 Memoria/(20857:20925): Se conecto un cliente - Socket: 20
+[INFO] 11:44:43:121 Memoria/(20857:20926): Se conecto un cliente - Socket: 21
+[INFO] 11:44:43:123 Memoria/(20857:20923): Se desconecto un cliente - Socket: 15 - PID: 1
+[INFO] 11:44:43:123 Memoria/(20857:20924): Se desconecto un cliente - Socket: 16 - PID: 2
+[INFO] 11:44:43:123 Memoria/(20857:20925): Se desconecto un cliente - Socket: 20 - PID: 3
+[INFO] 11:44:43:125 Memoria/(20857:20926): Se desconecto un cliente - Socket: 21 - PID: 4
+[INFO] 11:44:58:533 Memoria/(21122:21188): Se conecto un cliente - Socket: 15
+[INFO] 11:44:58:534 Memoria/(21122:21189): Se conecto un cliente - Socket: 16
+[INFO] 11:44:58:535 Memoria/(21122:21190): Se conecto un cliente - Socket: 20
+[INFO] 11:44:58:542 Memoria/(21122:21191): Se conecto un cliente - Socket: 21
+[INFO] 11:45:32:651 Memoria/(21412:21478): Se conecto un cliente - Socket: 15
+[INFO] 11:45:32:652 Memoria/(21412:21479): Se conecto un cliente - Socket: 16
+[INFO] 11:45:32:653 Memoria/(21412:21480): Se conecto un cliente - Socket: 20
+[INFO] 11:45:32:671 Memoria/(21412:21481): Se conecto un cliente - Socket: 21
+[INFO] 11:46:52:887 Memoria/(21727:21793): Se conecto un cliente - Socket: 15
+[INFO] 11:46:52:888 Memoria/(21727:21794): Se conecto un cliente - Socket: 16
+[INFO] 11:46:52:889 Memoria/(21727:21795): Se conecto un cliente - Socket: 20
+[INFO] 11:46:52:907 Memoria/(21727:21796): Se conecto un cliente - Socket: 21
+[INFO] 11:47:58:426 Memoria/(22040:22106): Se conecto un cliente - Socket: 15
+[INFO] 11:47:58:428 Memoria/(22040:22107): Se conecto un cliente - Socket: 16
+[INFO] 11:47:58:437 Memoria/(22040:22108): Se conecto un cliente - Socket: 20
+[INFO] 11:47:58:437 Memoria/(22040:22109): Se conecto un cliente - Socket: 21
+[INFO] 11:47:58:537 Memoria/(22040:22106): Se desconecto un cliente - Socket: 15 - PID: 1
+[INFO] 11:47:58:610 Memoria/(22040:22107): Se desconecto un cliente - Socket: 16 - PID: 2
+[INFO] 11:47:58:670 Memoria/(22040:22108): Se desconecto un cliente - Socket: 20 - PID: 3
+[INFO] 11:47:58:727 Memoria/(22040:22109): Se desconecto un cliente - Socket: 21 - PID: 4
+[INFO] 11:48:04:232 Memoria/(22040:22179): Se conecto un cliente - Socket: 22
+[INFO] 11:48:04:233 Memoria/(22040:22180): Se conecto un cliente - Socket: 15
+[INFO] 11:48:04:233 Memoria/(22040:22181): Se conecto un cliente - Socket: 16
+[INFO] 11:48:04:240 Memoria/(22040:22182): Se conecto un cliente - Socket: 20
+[INFO] 11:48:04:350 Memoria/(22040:22179): Se desconecto un cliente - Socket: 22 - PID: 5
+[INFO] 11:48:04:458 Memoria/(22040:22180): Se desconecto un cliente - Socket: 15 - PID: 6
+[INFO] 11:48:04:557 Memoria/(22040:22181): Se desconecto un cliente - Socket: 16 - PID: 7
+[INFO] 11:48:04:656 Memoria/(22040:22182): Se desconecto un cliente - Socket: 20 - PID: 8
+[INFO] 11:48:06:513 Memoria/(22040:22252): Se conecto un cliente - Socket: 21
+[INFO] 11:48:06:514 Memoria/(22040:22253): Se conecto un cliente - Socket: 15
+[INFO] 11:48:06:515 Memoria/(22040:22254): Se conecto un cliente - Socket: 16
+[INFO] 11:48:06:532 Memoria/(22040:22255): Se conecto un cliente - Socket: 20
+[INFO] 11:48:06:686 Memoria/(22040:22252): Se desconecto un cliente - Socket: 21 - PID: 9
+[INFO] 11:48:06:801 Memoria/(22040:22253): Se desconecto un cliente - Socket: 15 - PID: 10
+[INFO] 11:48:06:907 Memoria/(22040:22254): Se desconecto un cliente - Socket: 16 - PID: 11
+[INFO] 11:48:06:993 Memoria/(22040:22255): Se desconecto un cliente - Socket: 20 - PID: 12
+[INFO] 11:48:08:124 Memoria/(22040:22322): Se conecto un cliente - Socket: 22
+[INFO] 11:48:08:124 Memoria/(22040:22323): Se conecto un cliente - Socket: 15
+[INFO] 11:48:08:125 Memoria/(22040:22324): Se conecto un cliente - Socket: 16
+[INFO] 11:48:08:142 Memoria/(22040:22325): Se conecto un cliente - Socket: 20
+[INFO] 11:48:08:311 Memoria/(22040:22322): Se desconecto un cliente - Socket: 22 - PID: 13
+[INFO] 11:48:08:415 Memoria/(22040:22323): Se desconecto un cliente - Socket: 15 - PID: 14
+[INFO] 11:48:08:504 Memoria/(22040:22324): Se desconecto un cliente - Socket: 16 - PID: 15
+[INFO] 11:48:08:586 Memoria/(22040:22325): Se desconecto un cliente - Socket: 20 - PID: 16

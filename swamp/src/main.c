@@ -6,6 +6,9 @@
 
 
 int main(int argc, char* argv[]) {
+
+    memoria_tests(argc, argv[1]);
+
     lista_carpinchos= list_create();
     lista_marcos= list_create();
     marcos_libres_fija = list_create();
@@ -727,7 +730,7 @@ void terminar_programa(){
    config_destroy(config);
 }
 void iniciar_swamp(){
-   server = iniciar_servidor(configuracion.IP, configuracion.PUERTO);
+   server = iniciar_servidor("127.0.0.1", "5003");
 }
 void atender_clientes(){ 
 
@@ -741,7 +744,7 @@ void atender_clientes(){
       {
       case SOLICITUD_INICIO:
       // estado = funcion que determina si puede iniciar un nuevo proceso (0 si puede, -1 si no puede)
-         estado = -1;
+         estado = 0;
          resolver_estado(estado, cliente);
          break;
 
@@ -788,4 +791,41 @@ void agregarPedidosMemoria (){
         */
     }
     
+}
+
+
+void recibir_asignacion(int cliente){
+    int op = recibir_operacion(cliente);
+    if(op != INICIO_CONFIG)return ;
+    int size = recibir_int(cliente);
+
+}
+
+// funcion para testear con memoria rapido
+void memoria_tests(int argc, char* argv)
+{
+    if(argc == 1 || strcmp(argv, "memoria") != 0) return;
+    iniciar_swamp();
+    atender_clientes();
+    abort();
+}
+
+
+void atender_clientes(int cliente){
+
+    int codop = recibir_operacion(cliente);
+    int tamanio = recibir_int(cliente);
+
+    switch(codop){
+        case ESCRIBIR_PAGINA:;
+            int tamanio_pid = recibir_int(cliente);
+            int pid = recibir_int(cliente);
+            int tamanio_pagina = recibir_int(cliente);
+            int pagina = recibir_int(cliente);
+            int tamanio;
+            void* buffer = recibir_buffer_t(tamanio, cliente);
+            break;
+
+    }
+
 }

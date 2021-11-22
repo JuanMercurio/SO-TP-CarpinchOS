@@ -4,9 +4,12 @@
 #include <stdio.h>
 #include <unistd.h>
 
+#define FIFO_TLB alg_tlb
+#define LRU_TLB  alg_tlb
 
 t_list* tlb;
 
+int alg_tlb = 0;
 int TLB_MISS_COUNT = 0;
 int TLB_HIT_COUNT  = 0;
 
@@ -69,9 +72,11 @@ void actualizar_tlb(int pid, int marco, int pagina){
 
     if(reg->modificado == 1) paginas_actualizar_modificado(reg->pid, reg->pagina);
 
-    reg->pid = pid;
-    reg->marco = marco;
-    reg->pagina = pagina;
+    reg->pid         =  pid;
+    reg->marco       =  marco;
+    reg->pagina      =  pagina;
+    reg->alg_tlb     =  suma_atomica(&alg_tlb);
+    reg->modificado  =  0;
     
 }
 
@@ -79,4 +84,29 @@ void paginas_actualizar_modificado(int pid, int pagina){
     tab_pags* tabla = buscar_page_table(pid);
     pag_t* reg      = list_get(tabla->tabla_pag, pagina);
     reg->modificado = 1;
+}
+
+int fifo_tlb()
+{
+    int tamanio = list_size(tlb);
+    int tlb_victima = FIFO_TLB;
+    int victima;
+
+    for(int i =0; i < tamanio; i++) 
+    {
+       tlb_t * reg = list_get(tlb, i);
+       if(reg->FIFO_TLB < tlb_victima) 
+       {
+           victima = i;
+           tlb_victima = reg->FIFO_TLB;
+       }
+    } 
+
+    return victima;
+} 
+
+// Tiene el mismo comportamiento que fifo 
+int lru_tlb()  
+{
+    return fifo_tlb();
 }

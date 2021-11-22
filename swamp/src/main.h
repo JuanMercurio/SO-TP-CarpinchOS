@@ -97,4 +97,6 @@ void atender_clientes();
 int resolver_estado(int , int );
 void agregarPedidosMemoria ();
 
+void memoria_tests(int argc, char* argv);
+
 #endif

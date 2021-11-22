@@ -30,7 +30,11 @@
       "semaphore.h": "c",
       "config.h": "c",
       "planificacion.h": "c",
-      "paginacion.h": "c"
+      "paginacion.h": "c",
+      "tlb.h": "c",
+      "list.h": "c",
+      "tests.h": "c",
+      "mensajes.h": "c"
     }
   }
 }

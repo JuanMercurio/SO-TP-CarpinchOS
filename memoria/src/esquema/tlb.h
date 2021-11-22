@@ -2,6 +2,7 @@
 #define _ESQUEMA_MEMORIA_
 
 #include <commons/collections/list.h>
+#include <utils/utils.h>
 
 #include "../configuracion/config.h"
 #include "algoritmos.h"
@@ -16,12 +17,15 @@ extern t_list * tlb;
 extern int TLB_MISS_COUNT;
 extern int TLB_HIT_COUNT;
 
+extern int alg_tlb;
+
 /* Registros de la tlb */
 typedef struct tlb_t{
     int pid;
     int pagina;
     int marco;
     int modificado;
+    int alg_tlb;
 }tlb_t;
 
 /*

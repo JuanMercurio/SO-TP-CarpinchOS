@@ -1,13 +1,13 @@
 #ifndef _MAIN_MEMORIA_
 #define _MAIN_MEMORIA_
 
-#include "tests/tests.h"
 #include "configuracion/config.h"
 #include "esquema/paginacion.h"
 #include "esquema/tlb.h"
 #include "procesos/clientes.h"
 #include "signals/signal.h"
-
+#include "tests/tests.h"
+#include "tests/tests_memoria_sola.h"
 
 /*
     @NAME: terminar_programa

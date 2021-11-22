@@ -42,6 +42,7 @@ void ejecutar_proceso(int cliente) {
             pid = iniciar_proceso(cliente);
             enviar_int(cliente, pid);
             tabla = iniciar_paginas(cliente, pid);
+            printf("termine de iniciar a %d\n", pid);
             break;
         
         case MEMALLOC:
@@ -64,8 +65,10 @@ void ejecutar_proceso(int cliente) {
         }
     }
 
+    pthread_mutex_lock(&tablas.mutex);
     tablas_eliminar_proceso(pid);
     tlb_eliminar_proceso(pid);
+    pthread_mutex_unlock(&tablas.mutex);
 
     //avisar a swamp
 
@@ -164,6 +167,7 @@ bool pid_valido(int pid){
 
 
 void tablas_eliminar_proceso(int pid){
+    printf("eliminando Proceso %d\n", pid);
     int tamanio = list_size(tablas.lista);
     for(int i=0; i < tamanio; i++)
     {
@@ -171,7 +175,7 @@ void tablas_eliminar_proceso(int pid){
         if(tabla->pid == pid) 
         { 
            eliminar_proceso_i(i);
-           break;
+           return;
         }
     }
     

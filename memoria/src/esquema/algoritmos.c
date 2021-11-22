@@ -199,13 +199,3 @@ int clock_buscar_puntero()
 
     return -1;
 }
-
-int fifo_tlb()
-{
-    return 0;
-} 
-
-int lru_tlb()  
-{
-    return 0;
-}

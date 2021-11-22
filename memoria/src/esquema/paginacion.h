@@ -186,4 +186,6 @@ uint32_t decimal_a_binario(int decimal);
  */
 int get_offset(uint32_t dl, int multiplier);
 
+bool marcos_maximos_asignados(tab_pags* tabla);
+
 #endif

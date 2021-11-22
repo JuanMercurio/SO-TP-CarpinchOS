@@ -6,6 +6,7 @@ int main(int argc, char* argv[]) {
 
    //solo corre si corremos el binario asi: binario test
    tests(argc, argv[1]);    
+   memoria_test_solo(argc);
    
    obtener_config();
    iniciar_logger();

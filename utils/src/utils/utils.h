@@ -33,5 +33,4 @@ int crearID(int *n);
     @ARGS:  n - Es el puntero a una variable globlal
  */
 int suma_atomica(int *n);
-
 #endif

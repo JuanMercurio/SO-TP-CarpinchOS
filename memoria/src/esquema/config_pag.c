@@ -26,10 +26,10 @@ void set_alg_tlb(){
 void set_alg_principal(){
 
     if ( strcmp(configuracion.TIPO_ASIGNACION, "FIJA") == 0 && \
-         strcmp(configuracion.ALGORITMO_REEMPLAZO_MMU, "CLOCK-M") == 0) { algoritmo_mmu = clock_fijo; return; }
+         strcmp(configuracion.ALGORITMO_REEMPLAZO_MMU, "CLOCK-M") == 0)          { algoritmo_mmu = clock_fijo; return; }
 
     if ( strcmp(configuracion.TIPO_ASIGNACION, "DINAMICA") == 0 && \
-         strcmp(configuracion.ALGORITMO_REEMPLAZO_MMU, "CLOCK-M") == 0) { algoritmo_mmu = clock_dinamico; return; }
+         strcmp(configuracion.ALGORITMO_REEMPLAZO_MMU, "CLOCK-M") == 0)          { algoritmo_mmu = clock_dinamico; return; }
 
     if ( strcmp(configuracion.TIPO_ASIGNACION, "FIJA") == 0 && \
          strcmp(configuracion.ALGORITMO_REEMPLAZO_MMU, "LRU") == 0)              { algoritmo_mmu = lru_fijo; return; }
