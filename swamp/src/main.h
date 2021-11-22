@@ -39,6 +39,7 @@ typedef struct {
     int pid;
     int pagina;
     char* contenido_pagina;
+    int oper;
 } Pedido;
 
 //VARIABLES GLOBALES
@@ -71,6 +72,9 @@ int agregarPaginaDinamica(int pid, int pagina, char* contenido);
 int CrearCarpincho(int pidd);
 char* buscarPaginaDinamico(int pid, int pagina);
 void marcosLibes();
+bool quedaPaginasEnArchivo(int pid);
+int solicitudPagina(int pid, int pagina);
+void borrarPagina(int pid, int pagina);
 
 //ASIGNACION FIJA
 
@@ -95,7 +99,7 @@ void atender_clientes();
     @RETN:  Retora el id del proceso que inicia. Si no puede iniciar retora -1
  */
 int resolver_estado(int , int );
-void agregarPedidosMemoria ();
+void agregarPedidosMemoria (int cliente);
 
 void memoria_tests(int argc, char* argv);
 

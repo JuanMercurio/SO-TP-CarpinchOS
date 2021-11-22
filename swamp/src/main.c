@@ -11,6 +11,10 @@ int main(int argc, char* argv[]) {
 
     int memoria = crear_conexion("127.0.0.1", "5001");
     char* tipo_asignacion = recibir_mensaje(memoria);
+    asignacionFija = 0;
+    if(strcmp(tipo_asignacion,"fija")){
+        asignacionFija = 1;
+    }
     printf("%s\n", tipo_asignacion);
 
     lista_carpinchos= list_create();
@@ -32,7 +36,7 @@ int main(int argc, char* argv[]) {
    terminar_programa();*/
    /*iniciar_swamp();
    atender_clientes();*/
-   asignacionFija = 0;
+   
 
    //solo corre si corremos el binario asi: binario test
    tests(argc, argv[1]);
@@ -50,7 +54,7 @@ int main(int argc, char* argv[]) {
   */
     
     pthread_t tid;
-    pthread_create(&tid, NULL, &agregarPedidosMemoria, NULL);
+    pthread_create(&tid, NULL, &agregarPedidosMemoria, memoria);
     
     crearArchivos();
     if(asignacionFija){
@@ -65,14 +69,66 @@ int main(int argc, char* argv[]) {
         sem_wait(mutex_lista_pedidos);
         ped = list_remove(lista_pedidos,0);
         sem_post(mutex_lista_pedidos);
-        if(strcmp(ped->nombre_pedido,"agregar")){
+        if(strcmp(ped->nombre_pedido,"ESCRIBIR_PAGINA")){
+            int pido;
+            if(asignacionFija){
+                pido = remplazoPaginaFija(ped->pid, ped->pagina, ped->contenido_pagina);
+            }
+            else{
+                pido = agregarPaginaDinamica(ped->pid, ped->pagina, ped->contenido_pagina);
+            }
+        }
+        else if(strcmp(ped->nombre_pedido,"SOLICITUD_INICIO") ){
+            if(asignacionFija){
+                // SE FIJA SI HAY ESPACIO O SI YA EXISTE ESE CARPINCHO
+                Carpincho_Swamp* car = buscarCarpincho(ped->pid);
+                bool puede = elegirMejorArchivoDOS (ped->pid) != -1 && car->pid == -1;
+            }
+            else{
+                bool hay = quedaPaginasEnArchivo(ped->pid);
+            }
+        }
+        else if(strcmp(ped->nombre_pedido,"INICIO") ){
             if(asignacionFija){
                 crearCarpinchoFijaDOS(ped->pid);
             }
             else{
-                CrearCarpincho(ped->pid);
+                int inicio = CrearCarpincho(ped->pid);
             }
         }
+        else if(strcmp(ped->nombre_pedido,"SOLICITUD_PAGINA") ){
+            // puede pedir una pagina
+            if(asignacionFija){
+                // ¿COMO SERIA?
+                // LLEGUO A SU NUMERO DE MARCOS DE MARCOS. 
+            }
+            else{
+                // ASIGNARLE UN MARCO LIBRE 
+                // PASARME EL PID. 
+                bool hay = quedaPaginasEnArchivo(ped->pid);
+                int error = solicitudPagina(ped->pid, ped->pagina);
+                // DEVOLVER AL SOCKET CON EL OPER Y UN -1
+            }
+        }
+        else if(strcmp(ped->nombre_pedido,"BORRAR_PAGINA") ){
+           
+            if(asignacionFija){
+                BorrarPaginaFija(ped->pid, ped->pagina);
+            }
+            else{
+                borrarPagina(ped->pid, ped->pagina);
+            }
+        }
+        else if(strcmp(ped->nombre_pedido,"BORRAR_CARPINCHO") ){
+           
+            if(asignacionFija){
+                int error = borrarCarpinchoFija(ped->pid);
+            }
+            else{
+                borrarCarpincho(ped->pid);
+            }
+        }
+       
         sleep(2);
     }
 
@@ -347,6 +403,7 @@ bool quedaEspacioEnArchivoDOS(){
     return false;
 }
 
+
 //DINAMICA
 int CrearCarpincho( int pidd){
     printf("Creando carpincho %d\n",pidd);
@@ -398,6 +455,7 @@ int agregarPaginaDinamica(int pid, int pagina, char* contenido){
         printf("CARPINCHO NO ENCONTRADO\n");
     }
 }
+
 char* buscarPaginaDinamico(int pid, int pagina){
     Carpincho_Swamp* car = buscarCarpincho(pid);
     int max= list_size(car->paginas);
@@ -495,8 +553,62 @@ void borrarCarpincho(int pid){
     }
 
 }
+bool quedaPaginasEnArchivo(int pid){
+    Carpincho_Swamp* car = buscarCarpincho(pid);
 
-
+    int max = list_size(marcos_libres);
+    for(int i = 0; i<max;i++){
+        un_marco_libre* mar = malloc (sizeof(un_marco_libre));
+        mar = list_get(marcos_libres,i);
+        if(mar->numero_archivo == car->numeroArchivo){
+            return true;
+        }
+    }
+    return false;
+}
+int solicitudPagina(int pid, int pagina){
+     Carpincho_Swamp* car = buscarCarpincho(pid);
+    if (car->pid != -1){
+        
+        int base = buscarMarcoLibre(car->numeroArchivo);
+        if(base != -1){
+            Marcos_x_pagina* mar_pag = malloc(sizeof(Marcos_x_pagina));
+            mar_pag->base = base;
+            mar_pag->pagina = pagina;
+            list_add(car->paginas,mar_pag);
+            return 1;
+        }
+        //printf("base:%d\n",base);
+       
+    }
+    return -1;
+}
+void borrarPagina(int pid, int pagina){
+    Carpincho_Swamp* car = buscarCarpincho(pid);
+    int max= list_size(car->paginas);
+    Marcos_x_pagina* mar_x_pag;
+    
+    int  file =  open(configuracion.ARCHIVOS_SWAP_list[car->numeroArchivo], O_RDWR, S_IRUSR|S_IWUSR);
+    char * file_in_memory = mmap(NULL,configuracion.TAMANIO_SWAP,PROT_READ |PROT_WRITE ,MAP_SHARED, file,0);
+    for(int i = 0; i<max;i++){
+        
+        mar_x_pag = malloc (sizeof(Marcos_x_pagina));
+        mar_x_pag = list_get(car->paginas,i);
+        if( mar_x_pag->pagina == pagina){
+            for(int j =mar_x_pag->base; j< mar_x_pag->base+configuracion.TAMANIO_PAGINA;j++){
+                file_in_memory[j]='\0';
+            }
+            list_remove(car->paginas,i);
+            un_marco_libre* mar = malloc (sizeof(un_marco_libre));
+            mar->numero_archivo = car->numeroArchivo;
+            mar->base = mar_x_pag->base;
+            list_add(marcos_libres,mar);
+            i = max;
+        }
+      
+    }
+    close(file);
+}
 /*
 int remplazarPagina(int pid, int pagina, char* contenido){
     Marcos_x_pagina* marco =  buscarMarco( pid, pagina);
@@ -689,6 +801,34 @@ char* buscarPaginaFija(int pid, int pagina){
     return "";
     
 }
+void BorrarPaginaFija(int pid, int pagina){
+    Carpincho_Swamp* car = buscarCarpincho(pid);
+    if(  car->pid != -1 ){
+        int  file =  open(configuracion.ARCHIVOS_SWAP_list[car->numeroArchivo], O_RDWR, S_IRUSR|S_IWUSR);
+        
+         //printf(" base %d carp: %d.\n",base,pid);
+        char * file_in_memory = mmap(NULL,configuracion.TAMANIO_SWAP,PROT_READ |PROT_WRITE ,MAP_SHARED, file,0);
+       // supone que las paginas cuentan desde 0. por eso desde la pagina.. hasta pagina +1..
+       for( int i = car->base + pagina*configuracion.TAMANIO_PAGINA; i < (pagina+1)*configuracion.TAMANIO_PAGINA;i++){
+            file_in_memory[i] ='\0'; 
+       }
+        //char* pagina_devolver = string_substring(file_in_memory, car->base + pagina*configuracion.TAMANIO_PAGINA,configuracion.TAMANIO_PAGINA);
+        
+       /* for (int i = base + pagina*configuracion.TAMANIO_PAGINA; i < tope ;i++){
+            //printf("%d\n",j);
+          string_append 
+          
+        }*/
+        //printf("\n");
+        //munmap(file_in_memory,cantidadCaracteresFile(configuracion.ARCHIVOS_SWAP_list[car->numeroArchivo]));
+        
+        close(file);
+        //printf("Devuelve: %s.\n",pagina_devolver);
+        //printf("CANT CARACTERES: %d.\n",string_length(pagina_devolver));
+        //return pagina_devolver;
+    }
+    
+}
 int borrarCarpinchoFija(int pid){
     Carpincho_Swamp* car = buscarCarpincho(pid);
     if(  car->pid != -1 ){
@@ -728,6 +868,8 @@ void sacarCarpinchoDeLista( int pidd){
     }
   
 }
+
+
 
 // CONEXIONES
 void terminar_programa(){
@@ -775,11 +917,12 @@ int resolver_estado(int estado, int cliente){
    }
 
 }
-void agregarPedidosMemoria (){
+void agregarPedidosMemoria (int cliente){
     int i = 0;
     while(1){
+        memoria_operacion(cliente);
         
-        Pedido* ped = malloc(sizeof(Pedido));
+        /*Pedido* ped = malloc(sizeof(Pedido));
         ped->nombre_pedido = "crear";
         ped->pid = i;
         sem_wait(mutex_lista_pedidos);
@@ -819,17 +962,97 @@ void memoria_operacion(int cliente){
 
     int codop = recibir_operacion(cliente);
     int tamanio = recibir_int(cliente);
-
-    switch(codop){
-        case ESCRIBIR_PAGINA:;
-            int tamanio_pid = recibir_int(cliente);
-            int pid = recibir_int(cliente);
-            int tamanio_pagina = recibir_int(cliente);
-            int pagina = recibir_int(cliente);
-            int tamanio;
-            void* buffer = recibir_buffer_t(tamanio, cliente);
+    Pedido* ped = malloc(sizeof(Pedido));
+    int tamanio_pid,pid,tamanio_pagina,pagina,tamanio2;
+   switch(codop){
+        case ESCRIBIR_PAGINA:
+            tamanio_pid = recibir_int(cliente);
+            pid = recibir_int(cliente);
+            tamanio_pagina = recibir_int(cliente);
+            pagina = recibir_int(cliente);
+            tamanio2;
+            void* buffer = recibir_buffer_t(tamanio2, cliente);
+            ped->nombre_pedido = malloc(sizeof("ESCRIBIR_PAGINA"));
+            ped->nombre_pedido = "ESCRIBIR_PAGINA";
+            ped->pid = pid;
+            ped->pagina = pagina;
+            ped->contenido_pagina = buffer;
+            ped->oper = codop;
+            sem_wait(mutex_lista_pedidos);
+            list_add(lista_pedidos,ped);
+            sem_post(mutex_lista_pedidos);
+            sem_post(agrego_lista_pedidos);
             break;
 
+        case SOLICITUD_INICIO:
+            tamanio_pid = recibir_int(cliente);
+            pid = recibir_int(cliente);
+            // queda lugar
+            ped->nombre_pedido = "SOLICITUD_INICIO";
+            ped->pid = pid;
+            ped->oper = codop;
+            sem_wait(mutex_lista_pedidos);
+            list_add(lista_pedidos,ped);
+            sem_post(mutex_lista_pedidos);
+            sem_post(agrego_lista_pedidos);
+            break;
+
+        case INICIO:
+            tamanio_pid = recibir_int(cliente);
+            pid = recibir_int(cliente);
+            ped->nombre_pedido = "INICIO";
+            ped->pid = pid;
+            ped->oper = codop;
+            sem_wait(mutex_lista_pedidos);
+            list_add(lista_pedidos,ped);
+            sem_post(mutex_lista_pedidos);
+            sem_post(agrego_lista_pedidos);
+            break;
+
+        case SOLICITUD_PAGINA:
+            tamanio_pid = recibir_int(cliente);
+            pid = recibir_int(cliente);
+            tamanio_pagina = recibir_int(cliente);
+            pagina = recibir_int(cliente);
+            ped->nombre_pedido = "SOLICITUD_PAGINA";
+            ped->pid = pid;
+            ped->pagina = pagina;
+            ped->oper = codop;
+            sem_wait(mutex_lista_pedidos);
+            list_add(lista_pedidos,ped);
+            sem_post(mutex_lista_pedidos);
+            sem_post(agrego_lista_pedidos);
+            break;
+
+        case BORRAR_PAGINA:
+            tamanio_pid = recibir_int(cliente);
+            pid = recibir_int(cliente);
+            tamanio_pagina = recibir_int(cliente);
+            pagina = recibir_int(cliente);
+            ped->nombre_pedido = "BORRAR_PAGINA";
+            ped->pid = pid;
+            ped->pagina = pagina;
+            ped->oper = codop;
+            sem_wait(mutex_lista_pedidos);
+            list_add(lista_pedidos,ped);
+            sem_post(mutex_lista_pedidos);
+            sem_post(agrego_lista_pedidos);
+            break;
+
+        case BORRAR_CARPINCHO:
+            tamanio_pid = recibir_int(cliente);
+            pid = recibir_int(cliente);
+            ped->nombre_pedido = "BORRAR_CARPINCHO";
+            ped->pid = pid;
+            ped->oper = codop;
+            sem_wait(mutex_lista_pedidos);
+            list_add(lista_pedidos,ped);
+            sem_post(mutex_lista_pedidos);
+            sem_post(agrego_lista_pedidos);
+            break;
+        default:
+            printf("NO ES DE SWAP %d.\n",codop);
+            break;
     }
 
 }
