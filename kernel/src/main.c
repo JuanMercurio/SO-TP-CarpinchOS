@@ -11,7 +11,6 @@ int main(int argc, char *argv[])
    inicializar_listas_sem_io();
    inicializar_planificacion();
    administrar_clientes(configuracion.IP, configuracion.PUERTO, &receptor);
-   terminar_programa();
 
    return 0;
 }
@@ -228,7 +227,7 @@ void receptor(void *arg)
 
 void inicializar_planificacion()
 {
-   pthread_t hilos_planificadores[6];
+   pthread_t hilos_planificadores[7];
    pthread_attr_t detached3;
    pthread_attr_init(&detached3);
    pthread_attr_setdetachstate(&detached3, PTHREAD_CREATE_DETACHED);
@@ -238,19 +237,32 @@ void inicializar_planificacion()
    if(!pthread_create(&hilos_planificadores[0], &detached3, (void *) iniciar_planificador_corto_plazo, NULL)){
      looger_info(logger,"NO SE PUDO CREAR HILO PLANIFICADOR CORTO PLAZO\n");
    }
-  if(!pthread_create(&hilos_planificadores[0], &detached3,  (void *)iniciar_planificador_largo_plazo, NULL)){
+  if(!pthread_create(&hilos_planificadores[1], &detached3,  (void *)iniciar_planificador_largo_plazo, NULL)){
       looger_info(logger, "NO SE PUDO CREAR HILO PLANIFICADOR LARGO PLAZO\n");
-   }if(!pthread_create(&hilos_planificadores[0], &detached3, (void *) iniciar_planificador_mediano_plazo, NULL)){
+   }if(!pthread_create(&hilos_planificadores[2], &detached3, (void *) iniciar_planificador_mediano_plazo, NULL)){
        looger_info(logger, "NO SE PUDO CREAR HILO PLANIFICADOR MEDIANO PLAZO\n");
-   }if(!pthread_create(&hilos_planificadores[0], &detached3, (void *) iniciar_gestor_finalizados, NULL)){
+   }if(!pthread_create(&hilos_planificadores[3], &detached3, (void *) iniciar_gestor_finalizados, NULL)){
        looger_info(logger, "NO SE PUDO CREAR HILO GESWTOR FINALIZADOS\n");
-   }if(!pthread_create(&hilos_planificadores[0], &detached3, (void *) iniciar_cpu,  NULL)){
+   }if(!pthread_create(&hilos_planificadores[4], &detached3, (void *) iniciar_cpu,  NULL)){
        looger_info(logger, "NO SE PUDO CREAR HILO PLANIFICADOR LARGO PLAZO\n");
-   }if(!pthread_create(&hilos_planificadores[0], &detached3, (void *)deteccion_deadlock, NULL)){
+   }if(!pthread_create(&hilos_planificadores[5], &detached3, (void *)deteccion_deadlock, NULL)){
       looger_info(logger, "NO SE PUDO CREAR HILO DETECCION DEADLOCK\n");
    }
+   if(!pthread_create(&hilos_planificadores[6], &detached3, (void *)program_killer, NULL)){
+      looger_info(logger, "NO SE PUDO CREAR HILO PARATERMINAR PROGRAMA\n");
+   }
+   
+   logger_info(logger, "PLANIFICADORES Y DETECTOR DEADLOCK CREADOS\n");
+
 
 }
+void program_killer(){
+   char* leido;
+   looger_info(logger, "Para terminar precione cualquier tecla.\n");
+   scanf(leido);
+   terminar = true;
+}
+
 void iniciar_colas()
 {
    cola_new = queue_create();
