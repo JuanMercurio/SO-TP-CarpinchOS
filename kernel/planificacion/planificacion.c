@@ -27,6 +27,7 @@ void procesador(){// resolver la cuestion de administacion de los semaforos de l
       case IO:
          if(verificar_suspension()){//verifiva que el grado de multiprogramacion no este copado por carpinchos bloqueados
             bloquear_por_mediano_plazo(carpincho);
+            log_info(logger, "El carpincho %d fue suspendido", carpincho->pid);
          }
             bloquear_por_io(carpincho);
          
@@ -36,6 +37,7 @@ void procesador(){// resolver la cuestion de administacion de los semaforos de l
       case SEM_WAIT:
         if(sem_kernel_wait2(carpincho) && verificar_suspension()){
            bloquear_por_mediano_plazo(carpincho);
+           log_info(logger, "El carpincho %d fue suspendido", carpincho->pid);
          }
          break; /* ACA SE ATAJAN LOS ENVENTO SUQ HACEN QUE EL CARPINCHO PASE A BLOQUEADO */
 
@@ -221,14 +223,9 @@ void eliminar_carpincho(void *arg){// revisar que este este borrando lo necesari
 }
 
 void ejecutando_a_bloqueado( t_pcb *carpincho, t_queue *cola, sem_t * mutex){
-   //¿Está bien este cálculo de tiempos o falta algo?
    carpincho->estado='B';
    carpincho->tiempo.time_stamp_fin = temporal_get_string_time("%H:%M:%S:%MS");
    carpincho->tiempo.tiempo_ejecutado = obtener_tiempo(carpincho->tiempo.time_stamp_inicio, carpincho->tiempo.time_stamp_fin);
-
-  //sem_wait(&mutex_lista_ejecutando);
-   //sacar carpincho de la lista
-  // sem_post(&mutex_lista_ejecutando); AL CARPINCHO LO SACA DE LA LISTA EL PROCESADOR, NO HACE FALTA
    
    sem_wait(&mutex);
    queue_push(cola, (void*)carpincho); 

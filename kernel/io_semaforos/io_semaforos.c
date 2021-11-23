@@ -30,8 +30,8 @@ bool sem_kernel_wait2( t_pcb *carpincho)
     bloquear_por_semaforo( carpincho); 
     return true;
 }
-   //loguear-mutex_semaforos
-  // free(sem); // los semaforos se liberan si se destruyen o cuando el programa termine
+   log_info(logger, "El carpincho %d realizo un SEM WAIT al semaforo %s", carpincho->pid, carpincho->semaforo_a_modificar);
+
   return false;
 }
 /* void sem_kernel_wait(char *nombre)
@@ -62,13 +62,13 @@ void bloquear_por_semaforo(t_pcb *carpincho){
    sem_wait(&semaforo->mutex_cola);
    queue_push(semaforo->bloqueados, (void*)carpincho);
    sem_post(&semaforo->mutex_cola);
+   log_info(logger, "El carpincho %d está bloqueado por el semáforo %s", carpincho->pid, semaforo->id);
 }
 void sem_kernel_post(char *nombre) 
 {
    sem_kernel *sem = buscar_semaforo(nombre);
    sem_wait(&mutex_lista_sem_kernel);
    sem->val ++;
-   //loguear
    
       if(sem->val >= 0 && !queue_is_empty(sem->bloqueados))
       {
@@ -158,7 +158,7 @@ void init_dispositivos_io(){
       list_add(lista_io_kernel, nueva_io);
       sem_wait(&mutex_lista_io_kernel);
       i++;
-      printf("COLAS DISPOSITIVOS IO CREADAS\n");
+      log_info(logger,"COLAS DISPOSITIVOS IO CREADAS");
      // free(nueva_io); //va acá o afuera del while? BORRAR LA TERMINAR
    }
    iniciar_hilos_gestores_de_io();
@@ -176,9 +176,9 @@ void inicial_hilos_gestores_de_io(){
          io = list_get(lista_io_kernel, i);
          if (!(pthread_create(&hilo2, &detached2, (void *)gestor_cola_io, (void *)io)))
          {
-            printf("no se pudo crear hilo gestor de cola io cerado \n");
+            log_info(logger, "No se pudo crear hilo gestor de cola io");
          }
-         printf("se creo GESTOR de io %s\n", io->id); // para controlar que se cree
+         log_info(logger, "Se creó GESTOR de io %s", io->id); // para controlar que se cree
             i--;
       }
    
@@ -210,4 +210,5 @@ void bloquear_por_io(t_pcb *carpincho){
    queue_push(io->bloqueados, (void*)carpincho);
    sem_post(&io->mutex_io);
    sem_post(&io->cola_con_elementos);
+   log_info(logger, "El carpincho %d está bloqueado por IO %s", carpincho->pid, io->id);
 }

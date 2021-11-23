@@ -128,20 +128,19 @@ void receptor(void *arg)
    t_paquete* paquete;
 
    int conexion_memoria = crear_conexion(configuracion.IP_MEMORIA, configuracion.PUERTO_MEMORIA);
-   
+   //¿Tiene que hacer algún handshake o confirmar de alguna forma la conexión?
+
    while (conectado)
    {
       
       log_info(logger, "Esperando mensaje");
       cod_op = recibir_operacion(cliente);
-   
-      log_info(logger,"Se recibio el codigo de operacion %d del cliente %d", cod_op, cliente);
-      
+         
       switch (cod_op)
       {
 
       case NEW_INSTANCE: 
-         t_pcb *carpincho = malloc(sizeof(t_pcb)); // aca no recibe la pcb en si , recibe un paquete con datos que habra que guardar en un t_pcb luego de desserializar lo que viene
+            t_pcb *carpincho = malloc(sizeof(t_pcb)); // aca no recibe la pcb en si , recibe un paquete con datos que habra que guardar en un t_pcb luego de desserializar lo que viene
             carpincho->fd_cliente = cliente;
             carpincho->fd_memoria = conexion_memoria;
             carpincho->pid = crearID(&id_procesos);
@@ -155,9 +154,11 @@ void receptor(void *arg)
 
          // enviar_mensaje("OK", cliente);
          // aca debe enviar el ok o debe planificarlo y al llegar a exec recien destrabar el carpincho
-         break;
+            break;
+
       case INIT_SEMAFORO:// SE PUEDE MODIFICAR PARA CONFIRMAR 
-              semaforo = recibir_semaforo(cliente);
+               semaforo = recibir_semaforo(cliente);
+               log_info(logger, "Se recibió del carpincho %d un SEM INIT para el semáforo %s ", carpincho->pid, semaforo.buffer);
                sem_kernel_init(semaforo.buffer, semaforo.valor);
                enviar_mensaje("OK", cliente);
                break;
@@ -167,66 +168,74 @@ void receptor(void *arg)
                carpincho->io_solicitada = io;              
                carpincho->proxima_instruccion = IO;
                sem_post(&carpincho->semaforo_evento);
-         
+               log_info(logger, "Se recibió del carpincho %d un CALL IO para %s", carpincho->pid, io);
+
                break;
 
       case SEM_WAIT: 
                recibido = recibir_mensaje(cliente);
-
-                sem = buscar_semaforo(carpincho->semaforo_a_modificar);
-                if( sem != NULL){
-               strcpy(carpincho->semaforo_a_modificar ,recibido);
-               sem_post(&carpincho->semaforo_evento);  
-                }
-                else
-                {
-               enviar_mensaje("FAIL", cliente);
-                }
+               sem = buscar_semaforo(carpincho->semaforo_a_modificar);
+               if( sem != NULL){
+                  strcpy(carpincho->semaforo_a_modificar ,recibido);
+                  sem_post(&carpincho->semaforo_evento);  
+                  log_info(logger, "Se recibió del carpincho %d un SEM WAIT para %s", carpincho->pid, sem->id);
+               }
+               else
+               {
+                  log_info(logger, "Se recibió del carpincho %d un SEM WAIT para un semáforo que no existe", carpincho->pid);
+                  enviar_mensaje("FAIL", cliente);
+               }
                 
                break;
 
       case SEM_POST: recibido = recibir_mensaje(cliente);
-       sem = buscar_semaforo(carpincho->semaforo_a_modificar);
-                if( sem != NULL){
-               sem_kernel_post(recibido);
-              
-               enviar_mensaje("OK", cliente);
-                 }
-                else
-                {
-               enviar_mensaje("FAIL", cliente);
-                }
-
-         break;
+               sem = buscar_semaforo(carpincho->semaforo_a_modificar);
+               if( sem != NULL){
+                  sem_kernel_post(recibido);
+                  log_info(logger, "Se recibió del carpincho %d un SEM POST para %s", carpincho->pid, sem->id);
+                  enviar_mensaje("OK", cliente);
+               }
+               else
+               {
+                  log_info(logger, "Se recibió del carpincho %d un SEM POST para un semáforo que no existe", carpincho->pid);
+                  enviar_mensaje("FAIL", cliente);
+               }
+               break;
+      
       case SEM_DESTROY: recibido = recibir_mensaje(cliente);
+               log_info(logger, "Se recibió del carpincho %d un SEM DESTROY para %s", carpincho->pid, recibido);
                sem_kernel_destroy(recibido);
                enviar_mensaje("OK", cliente);
-         break;
+               break;
+      
       case MEMALLOC: carpincho->proxima_instruccion = MEMALLOC;
-            mem_allocfree = recibir_mem_allocfree(cliente);
-            enviar_mem_allocfree(carpincho->fd_memoria,MEMALLOC,mem_allocfree.pid,mem_allocfree.value);
-            //ESPERAR RTA MEMORIA
-            enviar_mensaje("OK", cliente);     
-         break;
+               mem_allocfree = recibir_mem_allocfree(cliente);
+               log_info(logger, "Se recibió del carpincho %d un MEM ALLOC", carpincho->pid);
+               enviar_mem_allocfree(carpincho->fd_memoria,MEMALLOC,mem_allocfree.pid,mem_allocfree.value);
+               //ESPERAR RTA MEMORIA
+               enviar_mensaje("OK", cliente);     
+               break;
 
       case MEMFREE: carpincho->proxima_instruccion = MEMFREE;
-            mem_allocfree = recibir_mem_allocfree(cliente);
-            enviar_mem_allocfree(carpincho->fd_memoria,MEMFREE,mem_allocfree.pid,mem_allocfree.value);
-            //ESPERAR RTA MEMORIA
-            enviar_mensaje("OK", cliente);
-         break;
+               mem_allocfree = recibir_mem_allocfree(cliente);
+               log_info(logger, "Se recibió del carpincho %d un MEM FREE", carpincho->pid);
+               enviar_mem_allocfree(carpincho->fd_memoria,MEMFREE,mem_allocfree.pid,mem_allocfree.value);
+               //ESPERAR RTA MEMORIA
+               enviar_mensaje("OK", cliente);
+               break;
 
       case MEMREAD: carpincho->proxima_instruccion = MEMREAD;
-            mem_read=recibir_mem_read(cliente);
-            enviar_mem_read(carpincho->fd_memoria,MEMREAD,mem_read.pid,mem_read.origin,mem_read.dest,mem_read.size);
-            //ESPERAR RTA MEMORIA Y ENVIAR PAQUETE AL CLIENTE
-         break;
+               mem_read=recibir_mem_read(cliente);
+               log_info(logger, "Se recibió del carpincho %d un MEM READ desde la posición %d hasta %d", carpincho->pid,mem_read.origin,mem_read.dest);
+               enviar_mem_read(carpincho->fd_memoria,MEMREAD,mem_read.pid,mem_read.origin,mem_read.dest,mem_read.size);
+               //ESPERAR RTA MEMORIA Y ENVIAR PAQUETE AL CLIENTE
+               break;
 
       case MEMWRITE:carpincho->proxima_instruccion = MEMWRITE;
-               
-         break;
+            break;
 
       case MATE_CLOSE: recibir_mensaje(cliente);
+               log_info(logger, "Se recibió del carpincho %d un MATE CLOSE", carpincho->pid);
                carpincho->proxima_instruccion = MATE_CLOSE;
                sem_post(&carpincho->semaforo_evento);
                enviar_mensaje("OK", cliente);
