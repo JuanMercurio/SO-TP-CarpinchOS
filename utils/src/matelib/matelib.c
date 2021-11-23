@@ -122,37 +122,34 @@ int mate_call_io(mate_instance *lib_ref, mate_io_resource io, void *msg)
 mate_pointer mate_memalloc(mate_instance *lib_ref, int size)
 {
   //((mate_inner_structure *)lib_ref->group_info)->memory = malloc(size);
-  return 0;
+  enviar_mem_allocfree(((mate_inner_structure*)lib_ref->group_info)->conexion,MEMALLOC,((mate_inner_structure*)lib_ref->group_info)->pid,size);
+  char* respuesta = recibir_mensaje(((mate_inner_structure*)lib_ref->group_info)->conexion);
+  if(strcmp(respuesta, "OK") == 0){
+    return 0;
+  }
+  return -1;
 }
 
 int mate_memfree(mate_instance *lib_ref, mate_pointer addr)
 {
-  if (addr != 0)
-  {
-    return -1;
+  enviar_mem_allocfree(((mate_inner_structure*)lib_ref->group_info)->conexion,MEMFREE,((mate_inner_structure*)lib_ref->group_info)->pid,addr);
+  char* respuesta = recibir_mensaje(((mate_inner_structure*)lib_ref->group_info)->conexion);
+  if(strcmp(respuesta, "OK") == 0){
+    return 0;
   }
-  //free(((mate_inner_structure *)lib_ref->group_info)->memory);
-  return 0;
+  return -1;
 }
 
 int mate_memread(mate_instance *lib_ref, mate_pointer origin, void *dest, int size)
 {
-  if (origin != 0)
-  {
-    return -1;
-  }
-  //memcpy(dest, ((mate_inner_structure *)lib_ref->groupinfo)->memory, size);
-  return 0;
+  enviar_mem_read(((mate_inner_structure*)lib_ref->group_info)->conexion,MEMREAD,((mate_inner_structure*)lib_ref->group_info)->pid,origin,dest,size);
+  //RECIBIR READ
+
 }
 
 int mate_memwrite(mate_instance *lib_ref, void *origin, mate_pointer dest, int size)
 {
-  if (dest != 0)
-  {
-    return -1;
-  }
-  //memcpy(((mate_inner_structure *)lib_ref->info)->memory, origin, size);
-  return 0;
+  //HACER FUNCION PARA ENVIAR WRITE
 }
 /*
 ESTAS FUNCIONES DE MEMEMORIA DEBEN TENER LA ESPERA DE UNA CONFIRMACION POR PARTE DEL MODULO PARA SEGUIR EJECUTADO

@@ -64,6 +64,6 @@ void bloquear_por_mediano_plazo(t_pcb *carpincho);
 
 void inicializar_proceso_carpincho(t_pcb *carpincho);
 
-void eliminar_carpincho(t_pcb *carpincho);
+void eliminar_carpincho(void *arg);
 
 #endif

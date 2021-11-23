@@ -120,6 +120,9 @@ void receptor(void *arg)
    bool conectado = true;
    handshake(cliente, "KERNEL");
    t_paquete_semaforo semaforo ;
+   t_paquete_mem_allocfree mem_allocfree;
+   t_paquete_mem_read mem_read;
+   
    char* recibido;
    sem_kernel *sem ;
    t_paquete* paquete;
@@ -198,21 +201,31 @@ void receptor(void *arg)
       case SEM_DESTROY: recibido = recibir_mensaje(cliente);
                sem_kernel_destroy(recibido);
                enviar_mensaje("OK", cliente);
-
          break;
       case MEMALLOC: carpincho->proxima_instruccion = MEMALLOC;
-           paquete = recibir_paquete(cliente);
-               
+            mem_allocfree = recibir_mem_allocfree(cliente);
+            enviar_mem_allocfree(carpincho->fd_memoria,MEMALLOC,mem_allocfree.pid,mem_allocfree.value);
+            //ESPERAR RTA MEMORIA
+            enviar_mensaje("OK", cliente);     
          break;
+
       case MEMFREE: carpincho->proxima_instruccion = MEMFREE;
-              
+            mem_allocfree = recibir_mem_allocfree(cliente);
+            enviar_mem_allocfree(carpincho->fd_memoria,MEMFREE,mem_allocfree.pid,mem_allocfree.value);
+            //ESPERAR RTA MEMORIA
+            enviar_mensaje("OK", cliente);
          break;
+
       case MEMREAD: carpincho->proxima_instruccion = MEMREAD;
-               
+            mem_read=recibir_mem_read(cliente);
+            enviar_mem_read(carpincho->fd_memoria,MEMREAD,mem_read.pid,mem_read.origin,mem_read.dest,mem_read.size);
+            //ESPERAR RTA MEMORIA Y ENVIAR PAQUETE AL CLIENTE
          break;
+
       case MEMWRITE:carpincho->proxima_instruccion = MEMWRITE;
                
          break;
+
       case MATE_CLOSE: recibir_mensaje(cliente);
                carpincho->proxima_instruccion = MATE_CLOSE;
                sem_post(&carpincho->semaforo_evento);
