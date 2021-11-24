@@ -67,7 +67,7 @@ int comportamiento_TLB_MISS(tab_pags* tabla, int pagina){
 
 void actualizar_tlb(int pid, int marco, int pagina){
 
-    int victima = algoritmo_tlb();
+    int victima = tlb_obtener_victima();
     tlb_t* reg = list_get(tlb, victima);
 
     if(reg->modificado == 1) paginas_actualizar_modificado(reg->pid, reg->pagina);
@@ -77,7 +77,20 @@ void actualizar_tlb(int pid, int marco, int pagina){
     reg->pagina      =  pagina;
     reg->alg_tlb     =  suma_atomica(&alg_tlb);
     reg->modificado  =  0;
+}
+
+int tlb_obtener_victima(){
     
+    int victima = tlb_lugar_libre();
+    if(victima != -1) return victima;
+
+    victima = algoritmo_tlb;
+
+    return victima; 
+}
+
+int tlb_lugar_libre(){
+    return 0;
 }
 
 void paginas_actualizar_modificado(int pid, int pagina){
@@ -109,4 +122,10 @@ int fifo_tlb()
 int lru_tlb()  
 {
     return fifo_tlb();
+}
+
+void tlb_page_use_fifo(tlb_t* reg){}
+
+void tlb_page_use_lru(tlb_t* reg){
+    reg->alg_tlb = suma_atomica(&LRU_TLB);
 }

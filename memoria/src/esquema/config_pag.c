@@ -8,6 +8,8 @@
 int swap;
 
 int (*algoritmo_tlb)();
+void (*tlb_page_use)(tlb_t* reg);
+void (*page_use)(int, tab_pags*);
 t_victima (*algoritmo_mmu)(int, tab_pags*);
 
 void set_algoritmos(){
@@ -29,7 +31,13 @@ void set_alg_tlb(){
 void set_alg_principal(){
 
     if ( strcmp(configuracion.TIPO_ASIGNACION, "FIJA") == 0 && \
-         strcmp(configuracion.ALGORITMO_REEMPLAZO_MMU, "CLOCK-M") == 0)          { algoritmo_mmu = clock_fijo; return; }
+         strcmp(configuracion.ALGORITMO_REEMPLAZO_MMU, "CLOCK-M") == 0)        
+       { 
+          algoritmo_mmu = clock_fijo;
+          page_use = page_use_clock_modificado;
+          return;
+       }
+                                                                               
 
     if ( strcmp(configuracion.TIPO_ASIGNACION, "DINAMICA") == 0 && \
          strcmp(configuracion.ALGORITMO_REEMPLAZO_MMU, "CLOCK-M") == 0)          { algoritmo_mmu = clock_dinamico; return; }

@@ -54,7 +54,7 @@ int insertar_pagina_af(void* contenido, tab_pags* tabla){
 
     if(marcos_maximos_asignados(tabla))
     { 
-        // reemplazar_pagina();
+        return -1;
     }
 
     else
@@ -75,7 +75,19 @@ int insertar_pagina_ad(void* contenido){
 
 bool marcos_maximos_asignados(tab_pags* tabla)
 {
-    return configuracion.MARCOS_POR_CARPINCHO < list_size(tabla->tabla_pag);
+    return configuracion.MARCOS_POR_CARPINCHO < paginas_presentes(tabla->tabla_pag);
+}
+
+int paginas_presentes(tab_pags* t){
+    int presente = 0;
+    int tamanio = list_size(t);
+    for(int i=0; i<tamanio; i++)
+    {
+        pag_t* p = list_get(t, i); 
+        if(p->presente == 1) presente++;
+    }
+
+    return presente;
 }
 
 int nro_marco(int pagina, tab_pags* tabla){
@@ -337,3 +349,8 @@ void enviar_pagina_a_swap(int pid, int pagina, int marco){
 
     free(contenido);
 }
+
+
+
+
+

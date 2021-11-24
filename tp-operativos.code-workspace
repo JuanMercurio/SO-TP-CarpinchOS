@@ -34,7 +34,8 @@
       "tlb.h": "c",
       "list.h": "c",
       "tests.h": "c",
-      "mensajes.h": "c"
+      "mensajes.h": "c",
+      "config_pag.h": "c"
     }
   }
 }

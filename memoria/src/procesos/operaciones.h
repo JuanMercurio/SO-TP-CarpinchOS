@@ -62,4 +62,23 @@ int desginar_PID(int cliente);
  */
 uint32_t alloc_memory(t_list* tabla, int size);
 
+/*
+    @NAME:  memoria_leer
+    @DESC:  lee ram segun un dir_t y tamanio
+ */
+void* memoria_leer(tab_pags* tabla, dir_t dl, int tamanio);
+
+/*
+    @NAME:  read_verify_size
+    @DESC:  retorna true si es posible leer el tamanio en la dl
+ */
+bool read_verify_size(tab_pags* t, dir_t dl, int tamanio);
+
+/*
+    @NAME:  read_get_readable_bytes
+    @DESC:  retorna la cantidad de bytes que es posible leer 
+            segun un dl
+ */
+int read_get_readable_bytes(dir_t dl, int count);
+
 #endif

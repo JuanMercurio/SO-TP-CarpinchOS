@@ -460,25 +460,49 @@ void TEST_agregar_nueva_pagina(tab_pags* tabla, int marco){
 
 void* memread(tab_pags* tabla, int dir_log, int tamanio){
 
-   dir_t dl = traducir_dir_log(dir_log);
-   dir_t df = convertir_a_df(tabla->tabla_pag, dl);
-
-   int leido = 0;
-   int size_in_page = configuracion.TAMANIO_PAGINAS - tamanio;
-
-   void* buffer = malloc(tamanio);
-
-   while(leido<tamanio)
-   {
-		if(size_in_page > tamanio)
-		{
-			memcpy(buffer + leido, ram.memoria + offset_memoria(df), tamanio);
-		}
-   }
-
-   return NULL;
+    dir_t dl = traducir_dir_log(dir_log);
+    return memoria_leer(tabla, dl, tamanio);
 }
 
+void* memoria_leer(tab_pags* tabla, dir_t dl, int tamanio){
+
+    if(!read_verify_size(dl.PAGINA, dl, tamanio)) return NULL;
+
+    int leido = 0;
+    int pagina = dl.PAGINA;
+    int bytes_remaining = tamanio;
+    int page_remaining_space = configuracion.TAMANIO_PAGINAS - dl.offset;
+
+    void* buffer = malloc(tamanio);
+
+    while(bytes_remaining > 0)
+    {
+        int marco = nro_marco(pagina, tabla);
+        dir_t df = { marco, dl.offset };
+        int leer = min_get(bytes_remaining, page_remaining_space);
+
+        memcpy(buffer + leido, ram.memoria + offset_memoria(df), leer);
+        page_use(pagina, tabla);
+
+        page_remaining_space = configuracion.TAMANIO_PAGINAS;
+        bytes_remaining -= leer;
+        leido += leer;
+        pagina++;
+    }
+
+    return buffer;
+}
+
+bool read_verify_size(tab_pags* t, dir_t dl, int tamanio){
+    int pages_count = list_size(t);
+    int readable_bytes = read_get_readable_bytes(dl, pages_count);
+    return readable_bytes >= tamanio;
+}
+
+int read_get_readable_bytes(dir_t dl, int count){ 
+    int readable_bytes = count*configuracion.TAMANIO_PAGINAS;
+    readable_bytes -= dl.PAGINA*configuracion.TAMANIO_PAGINAS - dl.offset;
+}
 
 void memwrite();
 

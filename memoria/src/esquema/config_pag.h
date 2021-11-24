@@ -14,4 +14,5 @@ int set_campo_algoritmo();
 void asignacion_swap();
 void swap_conexion_init(int server);
 
+
 #endif

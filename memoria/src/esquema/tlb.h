@@ -19,15 +19,6 @@ extern int TLB_HIT_COUNT;
 
 extern int alg_tlb;
 
-/* Registros de la tlb */
-typedef struct tlb_t{
-    int pid;
-    int pagina;
-    int marco;
-    int modificado;
-    int alg_tlb;
-}tlb_t;
-
 /*
     @NAME:  iniciar_tlb
     @DESC:  inicia la tlb poniendo todos sus registros en EMPTY
@@ -52,5 +43,9 @@ int comportamiento_TLB_HIT(tab_pags* tabla, tlb_t* pagina);
 int comportamiento_TLB_MISS(tab_pags* tabla, int pagina);
 
 void paginas_actualizar_modificado(int pid, int pagina);
+
+int tlb_obtener_victima();
+
+int tlb_lugar_libre();
 
 #endif

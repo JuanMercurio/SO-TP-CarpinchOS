@@ -1,6 +1,7 @@
 #include "algoritmos.h"
 
 #include <stdlib.h>
+#include <utils/utils.h>
 
 int LRU_C = 0;
 int LRU_TLB = 0;
@@ -231,4 +232,18 @@ int clock_buscar_puntero()
     }
 
     return -1;
+}
+
+void page_use_lru(int pagina, tab_pags* tabla)
+{
+   pag_t* p = list_get(tabla->tabla_pag, pagina);
+   p->presente = 1;
+   p->algoritmo = suma_atomica(&LRU_C);
+}
+
+void page_use_clock_modificado(int pagina, tab_pags* tabla)
+{
+   pag_t* p = list_get(tabla->tabla_pag, pagina);
+   p->presente = 1;
+   p->algoritmo = 1;
 }

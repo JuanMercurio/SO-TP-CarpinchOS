@@ -19,6 +19,8 @@ extern int FIFO_TLB;
 
 extern int (*algoritmo_tlb)();
 extern t_victima (*algoritmo_mmu)(int, tab_pags*);
+extern void (*page_use)(int, tab_pags*);
+extern void (*tlb_page_use)(tlb_t* reg);
 
 int fifo_tlb();
 int lru_tlb();
@@ -31,5 +33,11 @@ t_victima clock_dinamico(int pid, tab_pags* tabla);
 t_victima lru_dinamico(int pid, tab_pags* tabla);
 t_victima lru_fijo(int pid, tab_pags* tabla);
 t_victima lru_en_pag_table(tab_pags* tabla);
+
+void page_use_clock_modificado(int pagina, tab_pags* tabla);
+void page_use_lru(int pagina, tab_pags* tabla);
+
+void tlb_page_use_fifo(tlb_t* reg);
+void tlb_page_use_lru(tlb_t* reg);
 
 #endif

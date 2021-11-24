@@ -10,6 +10,15 @@ typedef struct memoria_t {
     pthread_mutex_t mutex;
 }memoria_t;
 
+/* Registros de la tlb */
+typedef struct tlb_t{
+    int pid;
+    int pagina;
+    int marco;
+    int modificado;
+    int alg_tlb;
+}tlb_t;
+
 /* Estructura para la supertabla de tablas  */
 typedef struct tablas_t{
     t_list* lista;
