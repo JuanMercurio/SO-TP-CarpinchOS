@@ -93,13 +93,56 @@ t_victima clock_fijo(int pid, tab_pags* tabla)
     victima.marco      = reg->marco;
     victima.modificado = reg->modificado;
     victima.pagina     = pagina;
+    victima.pid        = pid;
+
+    return victima;
+}
+
+t_victima clock_dinamico(int pid, tab_pags* tabla)
+{
+    int posicion = clock_buscar_puntero();
+    int cantidad_procesos = list_size(tablas.lista);
+    tab_pags* t; 
+    int pagina = -1;
+    while(pagina != -1)
+    {
+        t = list_get(tablas.lista, posicion);
+
+        pagina = clock_buscar_00(t);
+        if(pagina != -1) break;
+
+        pagina = clock_buscar_01(t);
+        if(pagina != -1) break;
+
+        if(posicion++ == cantidad_procesos) 
+            posicion = 0;
+        else
+            posicion++;
+
+        t->p_clock = -1;
+    }
+
+    pag_t* p = list_get(t->tabla_pag, pagina);
+
+    t_victima victima;
+
+    victima.marco      =  p->marco;
+    victima.modificado =  p->modificado;
+    victima.pagina     =  pagina;
+    victima.pid        =  t->pid;
 
     return victima;
 }
 
 int clock_buscar_00(tab_pags* tabla)
 {
-    int i = tabla->p_clock;
+    int i;
+
+    if(tabla->p_clock == -1) 
+        i = 0;
+    else
+        i = tabla->p_clock;
+
     int iteracion = 0;
     int tamanio = list_size(tabla->tabla_pag);
 
@@ -108,6 +151,9 @@ int clock_buscar_00(tab_pags* tabla)
         if(i == list_size(tabla->tabla_pag)) i = 0;
         
         pag_t* reg = list_get(tabla->tabla_pag, tabla->p_clock);
+
+        if(reg->presente != 1) continue;
+
         if(reg->modificado == 0 && reg->algoritmo == 0) 
         {
             if(i++ == tamanio)
@@ -131,7 +177,13 @@ int clock_buscar_00(tab_pags* tabla)
 
 int clock_buscar_01(tab_pags* tabla)
 {
-    int i = tabla->p_clock;
+    int i;
+
+    if(tabla->p_clock == -1) 
+        i = 0;
+    else
+        i = tabla->p_clock;
+
     int iteracion = 0;
     int tamanio = list_size(tabla->tabla_pag);
 
@@ -140,6 +192,8 @@ int clock_buscar_01(tab_pags* tabla)
         if(i == list_size(tabla->tabla_pag)) i = 0;
         
         pag_t* reg = list_get(tabla->tabla_pag, tabla->p_clock);
+
+        if(reg->presente != 1) continue;
 
         /* codigo horrible  */
         if(reg->modificado == 1 && reg->algoritmo == 0) 
@@ -164,24 +218,6 @@ int clock_buscar_01(tab_pags* tabla)
     }
 
     return -1;
-}
-
-t_victima clock_dinamico(int pid, tab_pags* tabla)
-{
-    int posicion = clock_buscar_puntero();
-    int cantidad_procesos = list_size(tablas.lista);
-
-    while(1)
-    {
-         
-        if(posicion++ == cantidad_procesos) 
-            posicion = 0;
-        else
-            posicion++;
-    }
-
-    t_victima victima = {0};
-    return victima;
 }
 
 int clock_buscar_puntero()

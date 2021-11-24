@@ -325,7 +325,6 @@ void* pagina_obtener_swap(int pid, int pagina)
 
 
 void enviar_pagina_a_swap(int pid, int pagina, int marco){
-    int swap = crear_conexion("127.0.0.1", "5003");
     
     t_paquete* paquete = crear_paquete(ESCRIBIR_PAGINA);
     void* contenido = malloc(configuracion.TAMANIO_PAGINAS);
