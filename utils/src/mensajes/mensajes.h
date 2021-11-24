@@ -25,14 +25,12 @@ typedef struct
 typedef struct
 {
    int cod_op;
-   int pid;
    int value;
 }t_paquete_mem_allocfree;
 
 typedef struct 
 {
    int cod_op;
-   int pid;
    int origin;
    int dest;
    int size;
@@ -100,7 +98,7 @@ void* serializar_paquete_mem_allocfree(t_paquete_mem_allocfree * paquete, int by
 void enviar_mem_read(int conexion, int cod_op, int pid, int origin, int dest, int size);
 void* serializar_paquete_mem_read(t_paquete_mem_read * paquete, int bytes);
 t_paquete_mem_allocfree recibir_mem_allocfree(int conexion);
-t_paquete_mem_read recibir_mem_rw(int conexion);
+t_paquete_mem_read recibir_mem_read(int conexion);
 int recibir_valor_int(int conexion);
 
 

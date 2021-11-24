@@ -119,6 +119,7 @@ void receptor(void *arg)
    int cod_op;
    bool conectado = true;
    handshake(cliente, "KERNEL");
+   t_pcb *carpincho;
    t_paquete_semaforo semaforo ;
    t_paquete_mem_allocfree mem_allocfree;
    t_paquete_mem_read mem_read;
@@ -140,7 +141,7 @@ void receptor(void *arg)
       {
 
       case NEW_INSTANCE: 
-            t_pcb *carpincho = malloc(sizeof(t_pcb)); // aca no recibe la pcb en si , recibe un paquete con datos que habra que guardar en un t_pcb luego de desserializar lo que viene
+            carpincho = malloc(sizeof(t_pcb)); // aca no recibe la pcb en si , recibe un paquete con datos que habra que guardar en un t_pcb luego de desserializar lo que viene
             carpincho->fd_cliente = cliente;
             carpincho->fd_memoria = conexion_memoria;
             carpincho->pid = crearID(&id_procesos);
@@ -151,6 +152,7 @@ void receptor(void *arg)
             queue_push(cola_new, (void*) carpincho); // pensando que el proceso queda trabado en mate init hasta que sea planificado
             sem_post(&mutex_cola_new);
             log_info(logger, "Se agregó el carpincho ID: %d a la cola de new", carpincho->pid);
+            //FAlTA avisar a memoria de la nueva instancia
 
          // enviar_mensaje("OK", cliente);
          // aca debe enviar el ok o debe planificarlo y al llegar a exec recien destrabar el carpincho
@@ -225,7 +227,7 @@ void receptor(void *arg)
                break;
 
       case MEMREAD: carpincho->proxima_instruccion = MEMREAD;
-               mem_read=recibir_mem_read(cliente);
+               mem_read = recibir_mem_read(cliente);
                log_info(logger, "Se recibió del carpincho %d un MEM READ desde la posición %d hasta %d", carpincho->pid,mem_read.origin,mem_read.dest);
                enviar_mem_read(carpincho->fd_memoria,MEMREAD,mem_read.pid,mem_read.origin,mem_read.dest,mem_read.size);
                //ESPERAR RTA MEMORIA Y ENVIAR PAQUETE AL CLIENTE

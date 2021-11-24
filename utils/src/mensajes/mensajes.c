@@ -147,13 +147,15 @@ int recibir_valor_sem(int conexion){
 	return *(int*) valor;	
 }
 
+//----------------------------------------------------------------------
+
 void enviar_mem_allocfree(int conexion, int cod_op, int pid, int value){
 	t_paquete_mem_allocfree *paquete = malloc(sizeof(t_paquete_mem_allocfree));
 	paquete->cod_op = cod_op;
-	paquete->pid = pid,
+	//paquete->pid = pid,
 	paquete->value = value;
 
-	int bytes = 3* sizeof(int);
+	int bytes = 2* sizeof(int);
 	void* a_enviar = serializar_paquete_mem_allocfree(paquete, bytes);
 
 	send(conexion, a_enviar, bytes, 0);
@@ -168,8 +170,8 @@ void* serializar_paquete_mem_allocfree(t_paquete_mem_allocfree * paquete, int by
 	memcpy(magico + desplazamiento, &(paquete->cod_op), sizeof(int));
 	desplazamiento+= sizeof(int);
 
-	memcpy(magico + desplazamiento, &(paquete->pid), sizeof(int));
-	desplazamiento+= sizeof(int);
+	//memcpy(magico + desplazamiento, &(paquete->pid), sizeof(int));
+	//desplazamiento+= sizeof(int);
 
 	memcpy(magico + desplazamiento, &(paquete->value), sizeof(int));
 	return magico;
@@ -178,7 +180,6 @@ void* serializar_paquete_mem_allocfree(t_paquete_mem_allocfree * paquete, int by
 void enviar_mem_read(int conexion, int cod_op, int pid, int origin, int dest, int size){
 	t_paquete_mem_read *paquete = malloc(sizeof(t_paquete_mem_read));
 	paquete->cod_op = cod_op;
-	paquete->pid = pid,
 	paquete->origin = origin;
 	paquete->dest = dest;
 	paquete->size = size;
@@ -229,6 +230,6 @@ t_paquete_mem_read recibir_mem_read(int conexion){
 
 int recibir_valor_int(int conerecibir_mem_readxion){
 	void* valor;
-	recv(conexion, valor, sizeof(int), MSG_WAITALL);
+	recv(conerecibir_mem_readxion, &valor, sizeof(int), MSG_WAITALL);
 	return *(int*) valor;	
 }
