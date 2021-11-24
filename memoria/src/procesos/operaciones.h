@@ -68,6 +68,7 @@ uint32_t alloc_memory(t_list* tabla, int size);
  */
 void* memoria_leer(tab_pags* tabla, dir_t dl, int tamanio);
 
+int memoria_escribir(tab_pags* tabla, dir_t dl, void* contenido, int tamanio);
 /*
     @NAME:  read_verify_size
     @DESC:  retorna true si es posible leer el tamanio en la dl
@@ -80,5 +81,11 @@ bool read_verify_size(tab_pags* t, dir_t dl, int tamanio);
             segun un dl
  */
 int read_get_readable_bytes(dir_t dl, int count);
+
+dir_t heap_get_location(dir_t dl, tab_pags* t);
+
+bool alloc_valido(dir_t dl, tab_pags* t, int tamanio);
+
+bool heap_lectura_valida(HeapMetadata* data, dir_t dl, int tamanio);
 
 #endif

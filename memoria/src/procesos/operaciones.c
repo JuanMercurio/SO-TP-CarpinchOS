@@ -459,8 +459,9 @@ void TEST_agregar_nueva_pagina(tab_pags* tabla, int marco){
 // }
 
 void* memread(tab_pags* tabla, int dir_log, int tamanio){
-
     dir_t dl = traducir_dir_log(dir_log);
+    if(!alloc_valido(dl, tabla, tamanio)) return NULL;     // checkea si donde va a leer hay un alloc valido
+
     return memoria_leer(tabla, dl, tamanio);
 }
 
@@ -493,6 +494,46 @@ void* memoria_leer(tab_pags* tabla, dir_t dl, int tamanio){
     return buffer;
 }
 
+
+int memwrite(tab_pags* tabla, int dir_log, void* contenido, int tamanio){
+    dir_t dl = traducir_dir_log(dir_log);
+    if(!alloc_valido(dl, tabla, tamanio)) return -1;
+
+    return memoria_escribir(tabla, dl, contenido, tamanio);
+}
+
+int memoria_escribir(tab_pags* tabla, dir_t dl, void* contenido, int tamanio){
+    
+}
+
+bool alloc_valido(dir_t dl, tab_pags* t, int tamanio){
+    dir_t heap_location = heap_get_location(dl, t);
+    HeapMetadata* data = (HeapMetadata*) memoria_leer(t, heap_location, sizeof(HeapMetadata));
+
+    return data->isFree == false && heap_lectura_valida(data, dl, tamanio);
+}
+
+bool heap_lectura_valida(HeapMetadata* data, dir_t dl, int tamanio){
+    int tamanio_posible = data->nextAlloc - configuracion.TAMANIO_PAGINAS*dl.PAGINA +dl.offset;
+    return tamanio_posible >= tamanio;
+}
+
+dir_t heap_get_location(dir_t dl, tab_pags* t){
+    if(dl.offset - sizeof(HeapMetadata) < 0)
+    {
+        dl.PAGINA--;
+        dl.offset = configuracion.TAMANIO_PAGINAS + (dl.offset - sizeof(HeapMetadata));
+    }
+
+    else
+    {
+       dl.offset -= sizeof(HeapMetadata);
+    }
+
+    return dl; 
+}
+
+
 bool read_verify_size(tab_pags* t, dir_t dl, int tamanio){
     int pages_count = list_size(t->tabla_pag);
     int readable_bytes = read_get_readable_bytes(dl, pages_count);
@@ -505,5 +546,5 @@ int read_get_readable_bytes(dir_t dl, int count){
     return readable_bytes;
 }
 
-void memwrite();
+
 
