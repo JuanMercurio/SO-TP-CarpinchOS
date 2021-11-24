@@ -27,6 +27,13 @@ extern t_list* marcos;
 void iniciar_paginacion();
 
 /*
+    @NAME:  nro_marco
+    @DESC:  retorna un numero de marco segun una pagina y la tabla del proceso.
+            se encarga de buscar y hacer los reemplazos que se requieren
+ */
+int nro_marco(int pagina, tab_pags* tabla);
+
+/*
     @NAME:  init_ram
     @DESC:  aloca la memoria principal y inicia el mutex
  */
@@ -187,5 +194,7 @@ uint32_t decimal_a_binario(int decimal);
 int get_offset(uint32_t dl, int multiplier);
 
 bool marcos_maximos_asignados(tab_pags* tabla);
+
+int paginas_presentes(tab_pags* t);
 
 #endif

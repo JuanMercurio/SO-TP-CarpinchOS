@@ -71,19 +71,21 @@ int insertar_pagina_ad(void* contenido){
 
     int marco = marco_libre();
     if(marco != -1) return marco;
+
+    return -1;
 }
 
 bool marcos_maximos_asignados(tab_pags* tabla)
 {
-    return configuracion.MARCOS_POR_CARPINCHO < paginas_presentes(tabla->tabla_pag);
+    return configuracion.MARCOS_POR_CARPINCHO < paginas_presentes(tabla);
 }
 
 int paginas_presentes(tab_pags* t){
     int presente = 0;
-    int tamanio = list_size(t);
+    int tamanio = list_size(t->tabla_pag);
     for(int i=0; i<tamanio; i++)
     {
-        pag_t* p = list_get(t, i); 
+        pag_t* p = list_get(t->tabla_pag, i); 
         if(p->presente == 1) presente++;
     }
 

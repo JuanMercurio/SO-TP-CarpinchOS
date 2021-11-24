@@ -1,10 +1,10 @@
 #ifndef _OPERACIONES_MEMORIA_
 #define _OPERACIONES_MEMORIA_
 
-
-#include <stdint.h>
-#include <commons/collections/list.h>
 #include "../esquema/paginacion.h"
+
+#include <commons/collections/list.h>
+#include <stdint.h>
 
 #define PID_EMPTY 0 
 

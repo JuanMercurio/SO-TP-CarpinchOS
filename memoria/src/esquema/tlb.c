@@ -84,7 +84,7 @@ int tlb_obtener_victima(){
     int victima = tlb_lugar_libre();
     if(victima != -1) return victima;
 
-    victima = algoritmo_tlb;
+    victima = algoritmo_tlb();
 
     return victima; 
 }

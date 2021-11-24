@@ -466,10 +466,9 @@ void* memread(tab_pags* tabla, int dir_log, int tamanio){
 
 void* memoria_leer(tab_pags* tabla, dir_t dl, int tamanio){
 
-    if(!read_verify_size(dl.PAGINA, dl, tamanio)) return NULL;
+    if(!read_verify_size(tabla, dl, tamanio)) return NULL;
 
     int leido = 0;
-    int pagina = dl.PAGINA;
     int bytes_remaining = tamanio;
     int page_remaining_space = configuracion.TAMANIO_PAGINAS - dl.offset;
 
@@ -477,24 +476,25 @@ void* memoria_leer(tab_pags* tabla, dir_t dl, int tamanio){
 
     while(bytes_remaining > 0)
     {
-        int marco = nro_marco(pagina, tabla);
+        int marco = nro_marco(dl.PAGINA, tabla);
         dir_t df = { marco, dl.offset };
         int leer = min_get(bytes_remaining, page_remaining_space);
 
         memcpy(buffer + leido, ram.memoria + offset_memoria(df), leer);
-        page_use(pagina, tabla);
+        page_use(dl.PAGINA, tabla);
 
         page_remaining_space = configuracion.TAMANIO_PAGINAS;
         bytes_remaining -= leer;
         leido += leer;
-        pagina++;
+        dl.offset = 0;
+        dl.PAGINA++;
     }
 
     return buffer;
 }
 
 bool read_verify_size(tab_pags* t, dir_t dl, int tamanio){
-    int pages_count = list_size(t);
+    int pages_count = list_size(t->tabla_pag);
     int readable_bytes = read_get_readable_bytes(dl, pages_count);
     return readable_bytes >= tamanio;
 }
@@ -502,6 +502,7 @@ bool read_verify_size(tab_pags* t, dir_t dl, int tamanio){
 int read_get_readable_bytes(dir_t dl, int count){ 
     int readable_bytes = count*configuracion.TAMANIO_PAGINAS;
     readable_bytes -= dl.PAGINA*configuracion.TAMANIO_PAGINAS - dl.offset;
+    return readable_bytes;
 }
 
 void memwrite();
