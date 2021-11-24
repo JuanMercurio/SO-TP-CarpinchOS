@@ -41,7 +41,7 @@ typedef struct{
 }t_pcb;
 
 typedef enum{
-     NEW_INSTANCE,
+    NEW_INSTANCE,
     IO,
     INIT_SEMAFORO,
     SEM_WAIT,
@@ -52,6 +52,7 @@ typedef enum{
     MEMREAD,
     MEMWRITE,
     MATE_CLOSE,
+    NEW_INSTANCE_KERNEL,
     SUSPENCION,
     VUELTA_A_READY
 }cod_op;

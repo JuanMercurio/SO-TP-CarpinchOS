@@ -150,41 +150,54 @@ int recibir_valor_sem(int conexion){
 //----------------------------------------------------------------------
 
 void enviar_mem_allocfree(int conexion, int cod_op, int pid, int value){
-	t_paquete_mem_allocfree *paquete = malloc(sizeof(t_paquete_mem_allocfree));
+	t_paquete_mem *paquete = malloc(sizeof(t_paquete_mem));
 	paquete->cod_op = cod_op;
-	//paquete->pid = pid,
 	paquete->value = value;
 
 	int bytes = 2* sizeof(int);
-	void* a_enviar = serializar_paquete_mem_allocfree(paquete, bytes);
+	void* a_enviar = serializar_paquete_mem(paquete, bytes);
 
 	send(conexion, a_enviar, bytes, 0);
 	printf("mensaje enviado\n");
 	free(a_enviar);
 }
 
-void* serializar_paquete_mem_allocfree(t_paquete_mem_allocfree * paquete, int bytes){
+void* serializar_paquete_mem(t_paquete_mem * paquete, int bytes){
 	void* magico = malloc(bytes);
 	int desplazamiento = 0;
 
 	memcpy(magico + desplazamiento, &(paquete->cod_op), sizeof(int));
 	desplazamiento+= sizeof(int);
 
-	//memcpy(magico + desplazamiento, &(paquete->pid), sizeof(int));
-	//desplazamiento+= sizeof(int);
-
 	memcpy(magico + desplazamiento, &(paquete->value), sizeof(int));
 	return magico;
 }
+void enviar_cod_op_e_int(int conexion, int cod_op, int valor){
+	t_paquete_mem *paquete = malloc(sizeof(t_paquete_mem));
+	paquete->cod_op = cod_op;
+	paquete->value = valor;
 
-void enviar_mem_read(int conexion, int cod_op, int pid, int origin, int dest, int size){
+	int bytes = 2* sizeof(int);
+	void* a_enviar = serializar_paquete_mem(paquete, bytes);
+
+	send(conexion, a_enviar, bytes, 0);
+	printf("mensaje enviado\n");
+	free(a_enviar);
+}
+
+void enviar_mem_read(int conexion, int cod_op, int origin,void *dest, int size){// probar que llegue el char dest
 	t_paquete_mem_read *paquete = malloc(sizeof(t_paquete_mem_read));
 	paquete->cod_op = cod_op;
 	paquete->origin = origin;
-	paquete->dest = dest;
-	paquete->size = size;
+	paquete->buffer = malloc(sizeof(t_buffer));
 
-	int bytes = 5* sizeof(int);
+	print("lo que hay en DEST com void* %s\n", dest);
+	print("lo que hay en DEST com (char*) %s\n", (char*) dest);
+	paquete->buffer->size = strlen(dest) + 1;
+	paquete->buffer->stream = malloc(paquete->buffer->size);
+	memcpy(paquete->buffer->stream, dest, paquete->buffer->size);
+
+	int bytes = 3* sizeof(int) + paquete->buffer->size;
 	void* a_enviar = serializar_paquete_mem_read(paquete, bytes);
 
 	send(conexion, a_enviar, bytes, 0);
@@ -199,37 +212,32 @@ void* serializar_paquete_mem_read(t_paquete_mem_read * paquete, int bytes){
 	memcpy(magico + desplazamiento, &(paquete->cod_op), sizeof(int));
 	desplazamiento+= sizeof(int);
 
-	memcpy(magico + desplazamiento, &(paquete->pid), sizeof(int));
-	desplazamiento+= sizeof(int);
-
 	memcpy(magico + desplazamiento, &(paquete->origin), sizeof(int));
 	desplazamiento+= sizeof(int);
 
-	memcpy(magico + desplazamiento, &(paquete->dest), sizeof(int));
+	memcpy(magico + desplazamiento, &(paquete->buffer->size), sizeof(paquete->buffer->size));
 	desplazamiento+= sizeof(int);
 
-	memcpy(magico + desplazamiento, &(paquete->size), sizeof(int));	
+	memcpy(magico + desplazamiento, paquete->buffer->stream, paquete->buffer->size);
+	desplazamiento+= paquete->buffer->size;
+
 	return magico;
 }
 
-t_paquete_mem_allocfree recibir_mem_allocfree(int conexion){
-	t_paquete_mem_allocfree recibido;
-	//recibido.cod_op = recibir_valor_int(conexion);
-	recibido.pid = recibir_valor_int(conexion);
-	recibido.value = recibir_valor_int(conexion);
+int recibir_int_mem(int conexion){ 
+	int value = recibir_valor_int(conexion);
+	return value;
 } 
 
 t_paquete_mem_read recibir_mem_read(int conexion){
 	t_paquete_mem_read recibido;
-	//recibido.cod_op = recibir_valor_int(conexion);
-	recibido.pid = recibir_valor_int(conexion);
-	recibido.origin = recibir_valor_int(conexion);
-	recibido.dest = recibir_valor_int(conexion);
-	recibido.size = recibir_valor_int(conexion);
+	recibido.origin = recibir_operacion(conexion);
+	recibido.buffer->stream = (void*) recibir_mensaje(conexion);
+	return recibido;
 } 
-
-int recibir_valor_int(int conerecibir_mem_readxion){
-	void* valor;
+/*int recibir_valor_int(int conerecibir_mem_readxion){
+	int valor;
 	recv(conerecibir_mem_readxion, &valor, sizeof(int), MSG_WAITALL);
 	return *(int*) valor;	
 }
+ */

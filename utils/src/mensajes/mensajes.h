@@ -26,14 +26,13 @@ typedef struct
 {
    int cod_op;
    int value;
-}t_paquete_mem_allocfree;
+}t_paquete_mem;
 
 typedef struct 
 {
    int cod_op;
    int origin;
-   int dest;
-   int size;
+   t_buffer* buffer ;
 }t_paquete_mem_read;
 
 
@@ -93,11 +92,11 @@ t_paquete_semaforo recibir_semaforo(int conexion);
 
 void enviar_mensaje_y_cod_op(char* mensaje, int socket_cliente, int codigo_op);
 
-void enviar_mem_allocfree(int conexion, int cod_op, int pid, int value);
-void* serializar_paquete_mem_allocfree(t_paquete_mem_allocfree * paquete, int bytes);
-void enviar_mem_read(int conexion, int cod_op, int pid, int origin, int dest, int size);
+void enviar_mem(int conexion, int cod_op, int pid, int value);
+void* serializar_paquete_mem(t_paquete_mem * paquete, int bytes);
+void enviar_mem_read(int conexion, int cod_op, int origin,void *dest, int size);
 void* serializar_paquete_mem_read(t_paquete_mem_read * paquete, int bytes);
-t_paquete_mem_allocfree recibir_mem_allocfree(int conexion);
+void enviar_cod_op_e_int(int conexion, int cod_op, int valor);
 t_paquete_mem_read recibir_mem_read(int conexion);
 int recibir_valor_int(int conexion);
 

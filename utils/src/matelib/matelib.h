@@ -26,9 +26,17 @@ typedef enum{
     MEMFREE,
     MEMREAD,
     MEMWRITE,
-    MATE_CLOSE
+    MATE_CLOSE,
+    NEW_INSTANCE_KERNEL,
+    SUSPENCION,
+    VUELTA_A_READY
 }cod_op;
 
+enum mate_errors {
+    MATE_FREE_FAULT = -5,
+    MATE_READ_FAULT = -6,
+    MATE_WRITE_FAULT = -7
+};
 //-------------------Type Definitions----------------------/
 
 typedef struct mate_inner_structure{

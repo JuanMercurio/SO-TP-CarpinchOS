@@ -122,30 +122,40 @@ int mate_call_io(mate_instance *lib_ref, mate_io_resource io, void *msg)
 mate_pointer mate_memalloc(mate_instance *lib_ref, int size)
 {
   //((mate_inner_structure *)lib_ref->group_info)->memory = malloc(size);
-  enviar_mem_allocfree(((mate_inner_structure*)lib_ref->group_info)->conexion,MEMALLOC,((mate_inner_structure*)lib_ref->group_info)->pid,size);
-  char* respuesta = recibir_mensaje(((mate_inner_structure*)lib_ref->group_info)->conexion);
-  if(strcmp(respuesta, "OK") == 0){
-    return 0;
+  enviar_cod_op_e_int(((mate_inner_structure*)lib_ref->group_info)->conexion,MEMALLOC,size);
+  recibir_operacion(((mate_inner_structure*)lib_ref->group_info)->conexion);
+  int32_t respuesta = (int32_t)recibir_operacion(((mate_inner_structure*)lib_ref->group_info)->conexion);
+  if( (int) respuesta == -1){
+    return NULL;
+  }else{
+    return respuesta;
   }
-  return -1;
 }
 
 int mate_memfree(mate_instance *lib_ref, mate_pointer addr)
 {
-  enviar_mem_allocfree(((mate_inner_structure*)lib_ref->group_info)->conexion,MEMFREE,((mate_inner_structure*)lib_ref->group_info)->pid,addr);
-  char* respuesta = recibir_mensaje(((mate_inner_structure*)lib_ref->group_info)->conexion);
-  if(strcmp(respuesta, "OK") == 0){
+  enviar_cod_op_e_int(((mate_inner_structure*)lib_ref->group_info)->conexion,MEMFREE,addr);
+  int respuesta = recibir_operacion(((mate_inner_structure*)lib_ref->group_info)->conexion);
+   if( (int) respuesta == -5){
+    return MATE_FREE_FAULT;
+  }else{
+    return respuesta;
+  }
+}
+
+int mate_memread(mate_instance *lib_ref, mate_pointer origin, void *dest, int size)// revisar que retorna
+{
+  enviar_mem_read(((mate_inner_structure*)lib_ref->group_info)->conexion, MEMREAD, origin, dest, size);
+ int respuesta = recibir_mensaje(((mate_inner_structure*)lib_ref->group_info)->conexion);
+  if(strcmp(respuesta, "-6") == 0){
+    return MATE_READ_FAULT;
+  }else{
     return 0;
   }
-  return -1;
-}
-
-int mate_memread(mate_instance *lib_ref, mate_pointer origin, void *dest, int size)
-{
-  enviar_mem_read(((mate_inner_structure*)lib_ref->group_info)->conexion,MEMREAD,((mate_inner_structure*)lib_ref->group_info)->pid,origin,dest,size);
-  //RECIBIR READ
 
 }
+
+
 
 int mate_memwrite(mate_instance *lib_ref, void *origin, mate_pointer dest, int size)
 {
