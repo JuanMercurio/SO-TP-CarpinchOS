@@ -15,7 +15,7 @@ void obtener_config(){
     configuracion.GRADO_MULTIPROCESAMIENTO = config_get_int_value(config, "GRADO_MULTIPROCESAMIENTO");
 
     configuracion.ALPHA = config_get_double_value(config, "ALPHA");
-    configuracion.ESTIMACION_INICIAL = config_get_int_double(config, "ESTIMACION_INICIAL");
+    configuracion.ESTIMACION_INICIAL = config_get_double_value(config, "ESTIMACION_INICIAL");
 
     configuracion.TIEMPO_DEADLOCK = config_get_int_value(config, "TIEMPO_DEADLOCK");
 

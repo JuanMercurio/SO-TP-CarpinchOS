@@ -106,6 +106,6 @@ void* serializar_paquete_mem_write(t_paquete_mem_write * paquete, int bytes);
 void enviar_cod_op_e_int(int conexion, int cod_op, int valor);
 t_paquete_mem_read recibir_mem_read(int conexion);
 int recibir_valor_int(int conexion);
-t_paquete_mem_write recibir_mem_write(cliente);
+t_paquete_mem_write recibir_mem_write(int cliente);
 
 #endif

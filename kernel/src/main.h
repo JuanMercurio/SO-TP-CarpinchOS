@@ -136,4 +136,5 @@ void inicializar_listas_sem_io();
 void destruir_colas_y_listas();
 
 
+void inicializar_planificacion();
 #endif
