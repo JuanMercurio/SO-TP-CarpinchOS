@@ -42,8 +42,8 @@ void generar_dump(){
     struct tm tm = *localtime(&t);
 
     char* separator = "------------------------------------------------------------------------------\n";
-    char sdate[10];
-    char shour[10];
+    char sdate[20];
+    char shour[20];
     char path[50];
     char title[70];
 
@@ -83,7 +83,7 @@ void tlb_print_on_file(FILE* dump_file)
            pagina = "-";
            marco = "-";
            pid = "-";
-           estado = "ocupado";
+           estado = "Libre";
        }
 
        else

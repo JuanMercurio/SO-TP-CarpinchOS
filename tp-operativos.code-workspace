@@ -35,7 +35,9 @@
       "list.h": "c",
       "tests.h": "c",
       "mensajes.h": "c",
-      "config_pag.h": "c"
+      "config_pag.h": "c",
+      "tests_memoria_sola.h": "c",
+      "io_semaforos.h": "c"
     }
   }
 }
