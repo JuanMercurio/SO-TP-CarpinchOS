@@ -2,7 +2,7 @@
 #define _MAIN_KERNEL_
 
 #include "tests/tests.h"
-#include <configuracion/config.h>
+#include "configuracion/config.h"
 #include <pthread.h>
 #include <utils/utils.h> 
 #include <conexiones/conexiones.h>
@@ -11,9 +11,9 @@
 #include <commons/collections/list.h>
 #include <commons/temporal.h>
 #include <mensajes/mensajes.h>
-#include <io_semaforos/io_semaforos.h>
-#include <deadlock/deadlock.h>
-#include <planificacion/planificacion.h>
+#include "../io_semaforos/io_semaforos.h"
+#include "../deadlock/deadlock.h"
+#include "../planificacion/planificacion.h"
 
 // type struct
 struct timeval *tiempito;

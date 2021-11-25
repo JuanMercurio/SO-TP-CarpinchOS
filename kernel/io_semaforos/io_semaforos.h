@@ -1,7 +1,7 @@
 #ifndef _IOSEMAFOROS_
 #define _IOSEMAFOROS_
-#include "main.h"
-#include "io_semaforos.h"
+#include "../src/main.h"
+//#include "io_semaforos.h"
 
 sem_kernel *buscar_semaforo(char *nombre);
 //void sem_kernel_wait(char *nombre, t_pcb *carpincho);

@@ -1,6 +1,6 @@
 #ifndef _PLANIFICACION_
 #define _PLANIFICACION_
-#include "main.h"
+#include "../src/main.h"
 
 t_pcb *ultimo_bloqueado;
 int carpinchos_bloqueados = 0;

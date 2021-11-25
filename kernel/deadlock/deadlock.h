@@ -1,6 +1,6 @@
 #ifndef _DEADLOCK_
 #define _DEADLOCK_
-#include "main.h"
+#include "../src/main.h"
 
 typedef struct{
    int pid;

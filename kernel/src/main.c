@@ -126,6 +126,7 @@ void receptor(void *arg)
    char* recibido;
    sem_kernel *sem ;
    t_paquete* paquete;
+   char* io;
 
   
    //¿Tiene que hacer algún handshake o confirmar de alguna forma la conexión?
@@ -165,7 +166,7 @@ void receptor(void *arg)
                enviar_mensaje("OK", cliente);
                break;
       case IO: 
-               char* io = recibir_mensaje(cliente);
+               io = recibir_mensaje(cliente);
                //io_kernel io_to_be_served = *(buscar_io(io, lista_io_kernel));// DIRECTAMENT, AL SER UNA LISTA GLOBAL SE PUEDE ACCEDER DESDE LA FUNJCION Y NO PASARLA TODO EL TIEMPO COMO PARAMEETRO
                carpincho->io_solicitada = io;              
                carpincho->proxima_instruccion = IO;
