@@ -1,9 +1,9 @@
 #include "operaciones.h"
+#include "paginacion.h"
+
 #include <string.h>
 #include <stdlib.h>
 #include <stdio.h>
-#include "../configuracion/config.h"
-#include "../esquema/paginacion.h"
 
 
 #define SIZE_METADATA sizeof(HeapMetadata)
@@ -16,6 +16,10 @@ void TEST_agregar_nueva_pagina(tab_pags* tabla, int marco){
 
 int memalloc(int tamanio, int pid){ //quizas al igual que antes, el carpincho se guarda local en el hilo? entonces no habría que pasarlo como parametro
 	printf("- Memalloc: quiero reservar %i para el carpincho %i.\n", tamanio, pid);
+	if(tamanio==0){
+		puts("- Memalloc: no se puede reservar espacio 0. Abortando.");
+		return -2;
+	}
 	puts("- Memalloc: llamo a buscar la pagina del pid");
 	tab_pags* tabla_paginas = buscar_page_table(pid);
 	if(tabla_paginas == NULL){
@@ -29,14 +33,14 @@ int memalloc(int tamanio, int pid){ //quizas al igual que antes, el carpincho se
 	int inicio_actual = 0, num_pagina_actual=0;
 	pag_t* pagina = list_get(tabla_paginas->tabla_pag, num_pagina_actual);
 	puts("- Memalloc: entro al while.");
-	int numero_magico; //si nextAlloc es 0, entonces esta variable vale la ultima direccion de memoria, sino vale nextAlloc
+	int numero_magico; //si nextAlloc es 0, entonces esta variable vale la ultima direccion de memoria+1 (por ejemplo 128), sino vale nextAlloc
 	int espacio_en_alloc;
 	while(1){
 
 		//  ****BUSCO SI ENTRA****
 		printf("- Memalloc->While->CUENTA:\n");
-		numero_magico = (ptr_potencial_segmento->nextAlloc == LAST_METADATA ? (list_size(tabla_paginas->tabla_pag)*configuracion.TAMANIO_PAGINAS -1) : ptr_potencial_segmento->nextAlloc);
-		espacio_en_alloc = numero_magico - SIZE_METADATA - inicio_actual +1;
+		numero_magico = (ptr_potencial_segmento->nextAlloc == LAST_METADATA ? (list_size(tabla_paginas->tabla_pag)*configuracion.TAMANIO_PAGINAS) : ptr_potencial_segmento->nextAlloc);
+		espacio_en_alloc = numero_magico - SIZE_METADATA - inicio_actual;
 		printf("\t\tsegmento->nextAlloc: %i.\n", numero_magico);
 		printf("\t\tsize_metadata: %i.\n", SIZE_METADATA);
 		printf("\t\tinicio_actual %i.\n", inicio_actual);
@@ -52,7 +56,7 @@ int memalloc(int tamanio, int pid){ //quizas al igual que antes, el carpincho se
 				return inicio_actual + SIZE_METADATA; //retorno la direccion logica
 			}
 
-			if(espacio_en_alloc >= tamanio+SIZE_METADATA) {
+			if(espacio_en_alloc >= tamanio+SIZE_METADATA) { //ACA TENDRIA QUE TENER EN CUENTA SI EL METADATA PUEDE DIVIDRSE EN 2 PAGINAS
 				//encontre el segmento donde entra
 				//ahora debo evaluar si entra justo o si tengo que dividirlo en 2 partes
 				printf("\t\tComo isFree es %i y %i >= %i (%i + %i), entro en el if.\n", ptr_potencial_segmento->isFree, espacio_en_alloc, tamanio+SIZE_METADATA, tamanio, SIZE_METADATA);
@@ -65,7 +69,7 @@ int memalloc(int tamanio, int pid){ //quizas al igual que antes, el carpincho se
 				//				return inicio_actual; //retorno la direccion logica
 				//			}
 				puts("- Memalloc->While: tengo que dividir en 2.");
-				//tengo que dividir en 2                   			DUDA: que pasa si el lugar que queda es menor al tamaño de un metadata?
+				//tengo que dividir en 2                   			TODO:divide en 2
 				ptr_potencial_segmento->isFree = false;
 				int aux_next_alloc = ptr_potencial_segmento->nextAlloc;
 				ptr_potencial_segmento->nextAlloc = inicio_actual + SIZE_METADATA + tamanio;
@@ -78,6 +82,7 @@ int memalloc(int tamanio, int pid){ //quizas al igual que antes, el carpincho se
 				HeapMetadata* next;
 				//si el nuevo metadata esta en otra pagina
 				if(hay_cambio_de_pagina(inicio_actual, ptr_potencial_segmento->nextAlloc)){
+					printf("HAY CAMBIO DE PAGINA ENTRE %i Y %i.\n", inicio_actual, ptr_potencial_segmento->nextAlloc);
 					puts("- Memalloc->While: el metadata esta en otra pagina.");
 					int num_pag_a_traer = num_pagina_actual + cant_cambios_de_pagina(inicio_actual, ptr_potencial_segmento->nextAlloc);
 					printf("- Memalloc->While: debo traer la pagina %i.\n", num_pag_a_traer);
@@ -102,14 +107,17 @@ int memalloc(int tamanio, int pid){ //quizas al igual que antes, el carpincho se
 				}
 				else{
 					puts("- Memalloc->While: el metadata NO esta en otra pagina.");
-					if(new.nextAlloc!=0) {
+					if(new.nextAlloc != LAST_METADATA) {
 						if(hay_cambio_de_pagina(ptr_potencial_segmento->nextAlloc, new.nextAlloc)){
+							printf("- Memalloc->While: hay cambio de pagina entre %i y %i.\n", ptr_potencial_segmento->nextAlloc, new.nextAlloc);
 							puts("- Memalloc->While: el metadata next (para cambiarle el prevAlloc) esta en otra pagina.");
+
 							pag_t* pagina_next = list_get(tabla_paginas->tabla_pag, num_pagina_actual + cant_cambios_de_pagina(ptr_potencial_segmento->nextAlloc, new.nextAlloc));
 							//TODO: la cargo en memoria
 							next = ubicacion_nuevo_segmento(pagina_next->marco, new.nextAlloc);
 						}
 						else{
+							printf("- Memalloc->While: NO hay cambio de pagina entre %i y %i.\n", ptr_potencial_segmento->nextAlloc, new.nextAlloc);
 							puts("- Memalloc->While: el metadata next (para cambiarle el prevAlloc) NO esta en orta pagina.");
 							next = ubicacion_nuevo_segmento(pagina->marco, new.nextAlloc);
 						}
@@ -119,6 +127,7 @@ int memalloc(int tamanio, int pid){ //quizas al igual que antes, el carpincho se
 					else puts("- Memalloc->While: no existe metadata next");
 				}
 
+				//QUIZAS ACA TENDRIA QUE EVALUAR POR METADATA DIVIDIDO
 				memcpy(ubicacion_nuevo_segmento(pagina->marco, ptr_potencial_segmento->nextAlloc), &new, SIZE_METADATA);
 				printf("- Memalloc->While: cargue el nuevo segmento en la direccion logica %i, puntero %p.\n", ptr_potencial_segmento->nextAlloc, ubicacion_nuevo_segmento(pagina->marco, ptr_potencial_segmento->nextAlloc));
 
@@ -133,12 +142,17 @@ int memalloc(int tamanio, int pid){ //quizas al igual que antes, el carpincho se
 
 		if(ptr_potencial_segmento->nextAlloc == LAST_METADATA){
 			puts("- Memalloc->While: llegue al final y no encontre nada");
+			if(espacio_en_alloc >= tamanio){
+				puts("- Memalloc->While: la razon por la que no entra es que no le entra el nuevo metadata.\n"
+						"Esto significa que nunca le va a entrar el nuevo metadata, por lo que declino la operación sin agregar pagina nueva.");
+				return -1;
+			}
 
 			printf("- Memalloc->Pedir: estoy en la pagina numero %i.\n", num_pagina_actual);
 			printf("- Memalloc->Pedir: mi inicio actual es %i.\n", inicio_actual);
 
 			puts("- Memalloc->Pedir: AGREGO PAG NUEVA.");
-			TEST_agregar_nueva_pagina(tabla_paginas, 1);
+			//TEST_agregar_nueva_pagina(tabla_paginas, 3);
 			//if(pedir_memoria_a_swap(tamanio+SIZE_METADATA*2) == false){ //TODO: placeholder
 			if(false){
 				return -1; //mate_noseque_fault
@@ -152,6 +166,7 @@ int memalloc(int tamanio, int pid){ //quizas al igual que antes, el carpincho se
 					}
 					puts("- Memalloc->Pedir->Free: tengo que dividir en 2.");
 					//tengo que dividir en 2                   			DUDA: que pasa si el lugar que queda es menor al tamaño de un metadata?
+					printf("ESPACIO_EN_ALLOC: %i", espacio_en_alloc);
 					ptr_potencial_segmento->isFree = false;
 					ptr_potencial_segmento->nextAlloc = inicio_actual + SIZE_METADATA + tamanio;
 
@@ -290,7 +305,7 @@ HeapMetadata* primer_segmento(tab_pags* tabla){
 }
 
 bool hay_cambio_de_pagina(int direc_actual, uint32_t next_alloc){
-	for (int i=direc_actual+9; i <= next_alloc; i++) {
+	for (int i=direc_actual+1; i <= next_alloc; i++) {
 		if (i % configuracion.TAMANIO_PAGINAS == 0) {
 			return true;
 		}
@@ -300,11 +315,20 @@ bool hay_cambio_de_pagina(int direc_actual, uint32_t next_alloc){
 
 int cant_cambios_de_pagina(int direc_actual, uint32_t next_alloc){
 	int cant = 0;
-	for (int i=direc_actual+9; i <= next_alloc; i++) {
-		if (i % configuracion.TAMANIO_PAGINAS == 0) {
-			cant++;
+	if(direc_actual < next_alloc){
+		for (int i=direc_actual; i <= next_alloc; i++) {
+			if (i % configuracion.TAMANIO_PAGINAS == 0) {
+				cant++;
+			}
+		}
+	} else {
+		for (int i=next_alloc; i <= direc_actual; i++) {
+			if (i % configuracion.TAMANIO_PAGINAS == 0) {
+				cant--;
+			}
 		}
 	}
+
 	return cant;
 }
 
@@ -314,6 +338,8 @@ int memfree(int dir_log, int pid){
 	tab_pags* tabla_paginas = buscar_page_table(pid);
 	int num_pag;
 	HeapMetadata* ptr_segmento = hallar_metadata(dir_log, tabla_paginas, &num_pag);
+
+
 	if(ptr_segmento == NULL){
 		puts("- Memfree->ERROR: direccion logica invalida");
 		return -1; //
@@ -331,12 +357,14 @@ int memfree(int dir_log, int pid){
 
 	int inicio_actual = dir_log;
 	HeapMetadata *ptr_derecha, *ptr_izquierda;
+	int dir_nextAlloc = ptr_segmento->nextAlloc;
 
 	puts("- Memfree->Derecha: reviso a derecha.");
 	if(ptr_segmento->nextAlloc != LAST_METADATA){
 		if(hay_cambio_de_pagina(inicio_actual, ptr_segmento->nextAlloc)){
 			puts("- Memfree->Derecha: el derecho esta en otra pagina.");
 			pag_t* pagina_derecha = list_get(tabla_paginas->tabla_pag, num_pag + cant_cambios_de_pagina(inicio_actual, ptr_segmento->nextAlloc));
+			//TODO: la cargo en memoria
 			ptr_derecha = ubicacion_nuevo_segmento(pagina_derecha->marco, ptr_segmento->nextAlloc);
 		}else{
 			ptr_derecha = ubicacion_nuevo_segmento(pagina_actual->marco, ptr_segmento->nextAlloc); //TODO: REVISAR
@@ -345,30 +373,37 @@ int memfree(int dir_log, int pid){
 		if(ptr_derecha->isFree){
 			puts("- Memfree->Derecha: el puntero a derecha esta libre. Procedo a liberarlo.");
 			ptr_segmento->nextAlloc = ptr_derecha->nextAlloc;
+			dir_nextAlloc = ptr_segmento->nextAlloc;
 		} else puts("- Memfree->Derecha: el puntero a derecha esta ocupado.");
 	} else puts("- Memfree->Derecha: no existe puntero a derecha.");
 
 
-	//reviso a izquierda TODO:checkear
+	//TODO:checkear
 	puts("- Memfree->Izquierda: reviso a izquierda.");
 	if(ptr_segmento->prevAlloc != FIRST_METADATA){
 		if(hay_cambio_de_pagina(ptr_segmento->prevAlloc, inicio_actual)){
 			puts("- Memfree->Izquierda: el izquierdo esta en otra pagina.");
-			pag_t* pagina_izquierda = list_get(tabla_paginas->tabla_pag, num_pag - cant_cambios_de_pagina(ptr_segmento->prevAlloc, inicio_actual));
+			pag_t* pagina_izquierda = list_get(tabla_paginas->tabla_pag, num_pag + cant_cambios_de_pagina(inicio_actual, ptr_segmento->prevAlloc)); //TODO: checkear porque cambie - por +
+			//TODO: la cargo en memoria
 			ptr_izquierda = ubicacion_nuevo_segmento(pagina_izquierda->marco, ptr_segmento->prevAlloc);
 		}else{
 			ptr_izquierda = ubicacion_nuevo_segmento(pagina_actual->marco, ptr_segmento->prevAlloc); //TODO: REVISAR
 		}
 		printf("- Memfree->Izquierda: el puntero a izquierda esta en el puntero %p.\n", ptr_izquierda);
 		if(ptr_izquierda->isFree){
+			num_pag += cant_cambios_de_pagina(inicio_actual, ptr_segmento->nextAlloc);
 			puts("- Memfree->Izquierda: el puntero a izquierda esta libre. Procedo a eliminarlo.");
 			ptr_izquierda->nextAlloc = ptr_segmento->nextAlloc;
+			inicio_actual = ptr_segmento->prevAlloc;
 		} else puts("- Memfree->Izquierda: el puntero a izquierda esta ocupado.");
 	} else puts("- Memfree->Izquierda: no existe puntero a izquierda.");
 
+
+	puts("- Memfree->Liberar: reviso si hay que liberar paginas.");
+
 	return 1;
-	//Checkear por paginas desocupadas y liberarlas
 }
+
 
 bool pedir_memoria_a_swap(int tamanio){
 	return true;
@@ -409,12 +444,12 @@ void TEST_report_metadatas(int pid){
 	pag_t* pagina = list_get(tabla_paginas->tabla_pag, num_pagina_actual);
 	int numero_magico, espacio_en_alloc;
 	int num_meta = 0;
-	puts("\tPAGINA 0:");
+	printf("\tPAGINA 0 (MARCO %i):\n", pagina->marco);
 	while(1){
 
-		numero_magico = (ptr_potencial_segmento->nextAlloc == LAST_METADATA ? (list_size(tabla_paginas->tabla_pag)*configuracion.TAMANIO_PAGINAS -1) : ptr_potencial_segmento->nextAlloc);
+		numero_magico = (ptr_potencial_segmento->nextAlloc == LAST_METADATA ? (list_size(tabla_paginas->tabla_pag)*configuracion.TAMANIO_PAGINAS) : ptr_potencial_segmento->nextAlloc);
 
-		espacio_en_alloc = numero_magico - SIZE_METADATA - inicio_actual +1;
+		espacio_en_alloc = numero_magico - SIZE_METADATA - inicio_actual;
 		printf("\tMetadata %i:\tinicio\t\tprev\t\tnext\t\ttamanio\t\tisFree\n", num_meta++);
 		printf("\t\t\t%i\t\t%i\t\t%i\t\t%i\t\t", inicio_actual, ptr_potencial_segmento->prevAlloc, ptr_potencial_segmento->nextAlloc, espacio_en_alloc);
 		printf((ptr_potencial_segmento->isFree) ? "true\n" : "false\n");
@@ -432,7 +467,7 @@ void TEST_report_metadatas(int pid){
 		if(hay_cambio_de_pagina(inicio_actual, ptr_potencial_segmento->nextAlloc)){
 			num_pagina_actual += cant_cambios_de_pagina(inicio_actual, ptr_potencial_segmento->nextAlloc);
 			pagina = list_get(tabla_paginas->tabla_pag, num_pagina_actual);
-			printf("\tPAGINA %i:\n", num_pagina_actual);
+			printf("\tPAGINA %i (MARCO %i):\n", num_pagina_actual, pagina->marco);
 
 		}
 		inicio_actual = ptr_potencial_segmento->nextAlloc;
