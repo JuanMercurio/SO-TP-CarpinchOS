@@ -9,6 +9,7 @@ int main(int argc, char *argv[])
    iniciar_logger();
    obtener_config();
    inicializar_listas_sem_io();
+   init_dispositivos_io();
    inicializar_planificacion();
    administrar_clientes(configuracion.IP, configuracion.PUERTO, &receptor);
 
@@ -17,16 +18,14 @@ int main(int argc, char *argv[])
 
 void terminar_programa()
 {
-
    config_destroy(config);
    log_destroy(logger);
    destruir_semaforos();
-
    destruir_colas_y_listas();
-
    pthread_attr_destroy(&detached2);
    pthread_attr_destroy(&detached3); 
 }
+
 void destruir_colas_y_listas(){
    if (!list_is_empty(lista_sem_kernel))
    {
@@ -122,7 +121,7 @@ void receptor(void *arg)
    t_pcb *carpincho;
    t_paquete_semaforo semaforo ;
    t_paquete_mem_read mem_read;
-   
+   t_paquete_mem_write mem_write;
    char* recibido;
    sem_kernel *sem ;
    t_paquete* paquete;
@@ -242,8 +241,8 @@ void receptor(void *arg)
 
       case MEMREAD: carpincho->proxima_instruccion = MEMREAD;
                mem_read = recibir_mem_read(cliente);
-               log_info(logger, "Se recibió del carpincho %d un MEM READ desde la posición %d hasta %s", carpincho->pid,mem_read.origin,mem_read.buffer->stream);
-               enviar_mem_read(carpincho->fd_memoria,MEMREAD,mem_read.origin,mem_read.buffer->stream,strlen(mem_read.buffer->stream));
+               log_info(logger, "Se recibió del carpincho %d un MEM READ desde la posición %d ", carpincho->pid,mem_read.origin);
+               enviar_mem_read(carpincho->fd_memoria,MEMREAD,mem_read.origin,mem_read.size);
                recibido = recibir_mensaje(carpincho->fd_memoria);
                if (strcmp(recibido,"-6") == 0){
                    enviar_mensaje(cliente,"-6");
@@ -254,7 +253,17 @@ void receptor(void *arg)
                break;
 
       case MEMWRITE:carpincho->proxima_instruccion = MEMWRITE;
-            break;
+               mem_write = recibir_mem_write(cliente);
+               log_info(logger, "Se recibió del carpincho %d un MEM write desde la posición %d con el mensjaje %s", carpincho->pid, mem_write.dest, mem_write.buffer->stream);
+               enviar_mem_write(carpincho->fd_memoria, MEMWRITE, mem_write.buffer->stream,mem_write.dest, mem_write.buffer->size);
+               aux_int = recibir_operacion(carpincho->fd_memoria);
+               if (aux_int != -7){
+                   enviar_cod_op_e_int(cliente, 0, aux_int);
+               }else{
+                   enviar_cod_op_e_int(cliente, 0, -7);
+               }
+                 
+               break;
 
       case MATE_CLOSE: recibir_mensaje(cliente);
                log_info(logger, "Se recibió del carpincho %d un MATE CLOSE", carpincho->pid);
@@ -306,6 +315,7 @@ void program_killer(){
    looger_info(logger, "Para terminar precione cualquier tecla.\n");
    scanf(leido);
    terminar = true;
+   terminar_programa();
 }
 
 void iniciar_colas()

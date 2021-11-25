@@ -119,18 +119,22 @@ void sem_destroyer(void* semaforo){
 free(a_destruir);
 }
 
-void io_destroyer(void* arg){
-   io_kernel* a_destruir = (io_kernel*) arg;
-   if(!list_is_empty(a_destruir->bloqueados)){
-      while(!list_is_empty(a_destruir->bloqueados)){
-         list_remove_and_destroy_element(a_destruir->bloqueados, (void*)eliminar_carpincho);
-      }
+void io_destroyer(void *arg)
+{
+   io_kernel *a_destruir = (io_kernel *)arg;
+   if (queue_is_empty(a_destruir->bloqueados))
+   {
+      queue_destroy(a_destruir->bloqueados);
    }
+   else
+   {
+      queue_destroy_and_destroy_elements(a_destruir->bloqueados, (void *)eliminar_carpincho);
+   }
+
    sem_destroy(a_destruir->mutex_io);
    sem_destroy(a_destruir->retardo);
    free(a_destruir);
 }
-
 
 io_kernel *buscar_io(char *nombre)
 {

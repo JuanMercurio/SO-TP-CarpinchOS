@@ -184,20 +184,13 @@ void enviar_cod_op_e_int(int conexion, int cod_op, int valor){
 	printf("mensaje enviado\n");
 	free(a_enviar);
 }
-
-void enviar_mem_read(int conexion, int cod_op, int origin,void *dest, int size){// probar que llegue el char dest
+void enviar_mem_read(int conexion, int cod_op, int origin, int size){// probar que llegue el char dest
 	t_paquete_mem_read *paquete = malloc(sizeof(t_paquete_mem_read));
 	paquete->cod_op = cod_op;
 	paquete->origin = origin;
-	paquete->buffer = malloc(sizeof(t_buffer));
+	paquete->size = size;
 
-	print("lo que hay en DEST com void* %s\n", dest);
-	print("lo que hay en DEST com (char*) %s\n", (char*) dest);
-	paquete->buffer->size = strlen(dest) + 1;
-	paquete->buffer->stream = malloc(paquete->buffer->size);
-	memcpy(paquete->buffer->stream, dest, paquete->buffer->size);
-
-	int bytes = 3* sizeof(int) + paquete->buffer->size;
+	int bytes = 3* sizeof(int);
 	void* a_enviar = serializar_paquete_mem_read(paquete, bytes);
 
 	send(conexion, a_enviar, bytes, 0);
@@ -205,6 +198,41 @@ void enviar_mem_read(int conexion, int cod_op, int origin,void *dest, int size){
 	free(a_enviar);
 }
 
+void enviar_mem_write(int conexion, int cod_op, void* origin, int dest, int size){// probar que llegue el char dest
+	t_paquete_mem_write *paquete = malloc(sizeof(t_paquete_mem_write));
+	paquete->cod_op = cod_op;
+	
+	paquete->buffer = malloc(sizeof(t_buffer));
+	print("lo que hay en DEST com void* %s\n", origin);
+	print("lo que hay en DEST com (char*) %s\n", (char*) origin);
+	paquete->buffer->size = strlen(origin) + 1;
+	paquete->buffer->stream = malloc(paquete->buffer->size);
+	memcpy(paquete->buffer->stream, dest, paquete->buffer->size);
+	paquete->dest = dest;
+	int bytes = 3* sizeof(int) + paquete->buffer->size;
+	void* a_enviar = serializar_paquete_mem_write(paquete, bytes);
+
+	send(conexion, a_enviar, bytes, 0);
+	printf("mensaje enviado\n");
+	free(a_enviar);
+}
+void* serializar_paquete_mem_write(t_paquete_mem_write * paquete, int bytes){
+	void* magico = malloc(bytes);
+	int desplazamiento = 0;
+
+	memcpy(magico + desplazamiento, &(paquete->cod_op), sizeof(int));
+	desplazamiento+= sizeof(int);
+
+	memcpy(magico + desplazamiento, &(paquete->buffer->size), sizeof(paquete->buffer->size));
+	desplazamiento+= sizeof(int);
+
+	memcpy(magico + desplazamiento, paquete->buffer->stream, paquete->buffer->size);
+	desplazamiento+= paquete->buffer->size;
+
+	memcpy(magico + desplazamiento, &(paquete->dest), sizeof(int));
+	desplazamiento+= sizeof(int);
+	return magico;
+}
 void* serializar_paquete_mem_read(t_paquete_mem_read * paquete, int bytes){
 	void* magico = malloc(bytes);
 	int desplazamiento = 0;
@@ -215,11 +243,8 @@ void* serializar_paquete_mem_read(t_paquete_mem_read * paquete, int bytes){
 	memcpy(magico + desplazamiento, &(paquete->origin), sizeof(int));
 	desplazamiento+= sizeof(int);
 
-	memcpy(magico + desplazamiento, &(paquete->buffer->size), sizeof(paquete->buffer->size));
+	memcpy(magico + desplazamiento, &(paquete->size), sizeof(int));
 	desplazamiento+= sizeof(int);
-
-	memcpy(magico + desplazamiento, paquete->buffer->stream, paquete->buffer->size);
-	desplazamiento+= paquete->buffer->size;
 
 	return magico;
 }
@@ -232,9 +257,18 @@ int recibir_int_mem(int conexion){
 t_paquete_mem_read recibir_mem_read(int conexion){
 	t_paquete_mem_read recibido;
 	recibido.origin = recibir_operacion(conexion);
-	recibido.buffer->stream = (void*) recibir_mensaje(conexion);
+	recibido.size = recibir_operacion(conexion);
 	return recibido;
 } 
+t_paquete_mem_write recibir_mem_write(int cliente){
+	t_paquete_mem_write recibido;
+	recibido.buffer->size = recibir_operacion(cliente);
+	char* buffer = recibir_buffer(recibido.buffer->size, cliente);
+	strcpy(recibido.buffer->stream, buffer);
+	recibido.dest = recibir_operacion(cliente);
+	free(buffer);
+	return recibido;
+}
 /*int recibir_valor_int(int conerecibir_mem_readxion){
 	int valor;
 	recv(conerecibir_mem_readxion, &valor, sizeof(int), MSG_WAITALL);

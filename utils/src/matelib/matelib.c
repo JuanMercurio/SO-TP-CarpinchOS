@@ -136,7 +136,7 @@ int mate_memfree(mate_instance *lib_ref, mate_pointer addr)
 {
   enviar_cod_op_e_int(((mate_inner_structure*)lib_ref->group_info)->conexion,MEMFREE,addr);
   int respuesta = recibir_operacion(((mate_inner_structure*)lib_ref->group_info)->conexion);
-   if( (int) respuesta == -5){
+   if( respuesta == -5){
     return MATE_FREE_FAULT;
   }else{
     return respuesta;
@@ -145,9 +145,9 @@ int mate_memfree(mate_instance *lib_ref, mate_pointer addr)
 
 int mate_memread(mate_instance *lib_ref, mate_pointer origin, void *dest, int size)// revisar que retorna
 {
-  enviar_mem_read(((mate_inner_structure*)lib_ref->group_info)->conexion, MEMREAD, origin, dest, size);
- int respuesta = recibir_mensaje(((mate_inner_structure*)lib_ref->group_info)->conexion);
-  if(strcmp(respuesta, "-6") == 0){
+  enviar_mem_read(((mate_inner_structure*)lib_ref->group_info)->conexion, MEMREAD, (int)origin, size);
+  dest = recibir_mensaje(((mate_inner_structure*)lib_ref->group_info)->conexion);
+  if(strcmp(dest, "-6") == 0){
     return MATE_READ_FAULT;
   }else{
     return 0;
@@ -159,7 +159,13 @@ int mate_memread(mate_instance *lib_ref, mate_pointer origin, void *dest, int si
 
 int mate_memwrite(mate_instance *lib_ref, void *origin, mate_pointer dest, int size)
 {
-  //HACER FUNCION PARA ENVIAR WRITE
+  enviar_mem_write(((mate_inner_structure*)lib_ref->group_info)->conexion, MEMREAD, origin,(int) dest, size);
+  int recibido = recibir_operacion(((mate_inner_structure*)lib_ref->group_info)->conexion);
+    if(  recibido == -7){
+    return MATE_WRITE_FAULT;
+  }else{
+    return recibido;
+  }
 }
 /*
 ESTAS FUNCIONES DE MEMEMORIA DEBEN TENER LA ESPERA DE UNA CONFIRMACION POR PARTE DEL MODULO PARA SEGUIR EJECUTADO

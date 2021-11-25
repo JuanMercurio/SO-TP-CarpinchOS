@@ -32,10 +32,15 @@ typedef struct
 {
    int cod_op;
    int origin;
-   t_buffer* buffer ;
+   int size;
 }t_paquete_mem_read;
 
-
+typedef struct{
+   int cod_op;
+   t_buffer *buffer;
+   int dest;
+   int size;
+}t_paquete_mem_write;
 /* 
     @NAME:  handshake
     @DESC:  dado un cliente el server le manda el modulo que es 
@@ -94,11 +99,13 @@ void enviar_mensaje_y_cod_op(char* mensaje, int socket_cliente, int codigo_op);
 
 void enviar_mem(int conexion, int cod_op, int pid, int value);
 void* serializar_paquete_mem(t_paquete_mem * paquete, int bytes);
-void enviar_mem_read(int conexion, int cod_op, int origin,void *dest, int size);
+void enviar_mem_read(int conexion, int cod_op, int origin, int size);
+void enviar_mem_write(int conexion, int cod_op, void* origin, int dest, int size);
 void* serializar_paquete_mem_read(t_paquete_mem_read * paquete, int bytes);
+void* serializar_paquete_mem_write(t_paquete_mem_write * paquete, int bytes);
 void enviar_cod_op_e_int(int conexion, int cod_op, int valor);
 t_paquete_mem_read recibir_mem_read(int conexion);
 int recibir_valor_int(int conexion);
-
+t_paquete_mem_write recibir_mem_write(cliente);
 
 #endif
