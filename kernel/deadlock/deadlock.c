@@ -1,4 +1,4 @@
-#include <deadlock/deadlock.h>
+#include "main.h"
 
 
 void deteccion_deadlock()

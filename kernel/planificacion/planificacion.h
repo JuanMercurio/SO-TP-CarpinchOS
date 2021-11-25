@@ -1,6 +1,6 @@
 #ifndef _PLANIFICACION_
 #define _PLANIFICACION_
-#include <src/main.h>
+#include "../src/main.h"
 
 t_pcb *ultimo_bloqueado;
 int carpinchos_bloqueados = 0;
@@ -65,5 +65,4 @@ void bloquear_por_mediano_plazo(t_pcb *carpincho);
 void inicializar_proceso_carpincho(t_pcb *carpincho);
 
 void eliminar_carpincho(void *arg);
-
 #endif

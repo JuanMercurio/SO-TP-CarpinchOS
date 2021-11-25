@@ -1,7 +1,6 @@
 #ifndef _IOSEMAFOROS_
 #define _IOSEMAFOROS_
-#include "main.h"
-
+#include "../src/main.h"
 
 sem_kernel *buscar_semaforo(char *nombre);
 //void sem_kernel_wait(char *nombre, t_pcb *carpincho);
@@ -21,4 +20,6 @@ void init_dispositivos_io();
 void inicial_hilos_gestores_de_io();
 void gestor_cola_io(void *datos);
 void bloquear_por_io(t_pcb *carpincho);
+
+
 #endif

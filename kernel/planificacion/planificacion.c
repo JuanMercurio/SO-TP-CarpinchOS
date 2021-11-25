@@ -1,4 +1,4 @@
-#include "planificacion.h"
+#include "main.h"
 
 void iniciar_cpu(){
    pthread_t *cpu[configuracion.GRADO_MULTIPROGRAMACION];

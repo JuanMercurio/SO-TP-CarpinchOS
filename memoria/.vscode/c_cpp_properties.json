@@ -14,6 +14,7 @@
                 "/usr/include",
                 "${workspaceFolder}/src",
                 "${workspaceFolder:utils}/src"
+                
             ],
             "defines": [
                 "_GNU_SOURCE"

@@ -1,6 +1,7 @@
 #ifndef _DEADLOCK_
 #define _DEADLOCK_
-#include "main.h"
+#include "src/main.h"
+
 
 typedef struct{
    int pid;
@@ -17,6 +18,5 @@ bool encontrar_circulo(t_deadlock *a_evaluar, t_list *lista, t_list *lista_aux);
 bool comparar_lista(t_deadlock *alf, t_list *list, int *index);
 void finalizar_involucrados(t_list *lista_deadlock);
 void sacar_de_cola_bloqueados(sem_kernel *semaforo, int id);
-
 
 #endif

@@ -1,4 +1,4 @@
-#include <planificacion/planificacion.h>
+#include "main.h"
 
 
 sem_kernel *buscar_semaforo(char *nombre)

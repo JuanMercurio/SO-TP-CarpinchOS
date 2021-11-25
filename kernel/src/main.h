@@ -4,13 +4,14 @@
 #include "tests/tests.h"
 #include "configuracion/config.h"
 #include <pthread.h>
-#include <utils/utils.h> 
-#include <conexiones/conexiones.h>
+#include <utils/utils.h>
+#include "conexiones/conexiones.h"
 #include <semaphore.h>
 #include <commons/collections/queue.h>
+#include <commons/string.h>
 #include <commons/collections/list.h>
 #include <commons/temporal.h>
-#include <mensajes/mensajes.h>
+#include "mensajes/mensajes.h"
 #include "../io_semaforos/io_semaforos.h"
 #include "../deadlock/deadlock.h"
 #include "../planificacion/planificacion.h"
@@ -135,6 +136,19 @@ void inicializar_listas_sem_io();
 
 void destruir_colas_y_listas();
 
+void destruir_semaforos();
 
 void inicializar_planificacion();
+
+void program_killer();
+
+
+//-------------------------------------------------sancocho
+
+
+//_____________________________________________________________deadlock
+
+//----------------------------------------------------------planificacion
+
+
 #endif

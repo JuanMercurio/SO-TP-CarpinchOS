@@ -95,20 +95,19 @@ void destruir_colas_y_listas(){
 }
 
 void destruir_semaforos(){
-   sem_destroy(&cola_new_con_elementos);
-   sem_destroy(&cola_ready_con_elementos);
-   sem_destroy(&cola_suspendido_bloquedo_con_elementos);
-   sem_destroy(&cola_suspendido_listo_con_elementos);
-   sem_destroy(&cola_finalizados_con_elementos);
-   sem_destroy(cola_finalizados);
-   sem_destroy(&mutex_cola_new);
-   sem_destroy(&mutex_cola_ready);
-   sem_destroy(&mutex_cola_bloqueado_suspendido);
-   sem_destroy(&mutex_cola_listo_suspendido);
-   sem_destroy(&mutex_lista_ejecutando);
-   sem_destroy(&mutex_cola_finalizados);
-   sem_destroy(&mutex_lista_oredenada_por_algoritmo);
-   sem_destroy(&controlador_multiprogramacion);
+   sem_destroy(cola_new_con_elementos);
+   sem_destroy(cola_ready_con_elementos);
+   sem_destroy(cola_suspendido_bloquedo_con_elementos);
+   sem_destroy(cola_suspendido_listo_con_elementos);
+   sem_destroy(cola_finalizados_con_elementos);
+   sem_destroy(mutex_cola_new);
+   sem_destroy(mutex_cola_ready);
+   sem_destroy(mutex_cola_bloqueado_suspendido);
+   sem_destroy(mutex_cola_listo_suspendido);
+   sem_destroy(mutex_lista_ejecutando);
+   sem_destroy(mutex_cola_finalizados);
+   sem_destroy(mutex_lista_oredenada_por_algoritmo);
+   sem_destroy(controlador_multiprogramacion);
 }
 
 void receptor(void *arg)
@@ -124,7 +123,7 @@ void receptor(void *arg)
    t_paquete_mem_write mem_write;
    char* recibido;
    sem_kernel *sem ;
-   t_paquete* paquete;
+   
    char* io;
 
   
@@ -145,11 +144,11 @@ void receptor(void *arg)
             carpincho->fd_memoria =  crear_conexion(configuracion.IP_MEMORIA, configuracion.PUERTO_MEMORIA);
             carpincho->pid = crearID(&id_procesos);
             carpincho->estado ='N';
-            char *pid = itoa(carpincho->pid);
+            char *pid = string_itoa(carpincho->pid);
             enviar_mensaje(cliente, pid);
-            sem_wait(&mutex_cola_new);
+            sem_wait(mutex_cola_new);
             queue_push(cola_new, (void*) carpincho); // pensando que el proceso queda trabado en mate init hasta que sea planificado
-            sem_post(&mutex_cola_new);
+            sem_post(mutex_cola_new);
             log_info(logger, "Se agregó el carpincho ID: %d a la cola de new", carpincho->pid);
             //FAlTA avisar a memoria de la nueva instancia
 
@@ -161,8 +160,8 @@ void receptor(void *arg)
       case INIT_SEMAFORO:// SE PUEDE MODIFICAR PARA CONFIRMAR 
                semaforo = recibir_semaforo(cliente);
                log_info(logger, "Se recibió del carpincho %d un SEM INIT para el semáforo %s ", carpincho->pid, semaforo.buffer);
-               sem_kernel_init(semaforo.buffer, semaforo.valor);
-               enviar_mensaje("OK", cliente);
+               sem_kernel_init(semaforo.buffer, semaforo.valor);// PORBLEMA CON BUFFER
+               enviar_mensaje(cliente, "OK");
                break;
       case IO: 
                io = recibir_mensaje(cliente);
@@ -185,7 +184,7 @@ void receptor(void *arg)
                else
                {
                   log_info(logger, "Se recibió del carpincho %d un SEM WAIT para un semáforo que no existe", carpincho->pid);
-                  enviar_mensaje("FAIL", cliente);
+                  enviar_mensaje(cliente, "FAIL ");
                }
                 free(recibido);
                break;
@@ -328,20 +327,19 @@ void iniciar_colas()
 }
 void inicializar_semaforos(){
    
-   sem_init(&cola_new_con_elementos, NULL, 0);
-   sem_init(&cola_ready_con_elementos, NULL, 0);
-   sem_init(&cola_suspendido_bloquedo_con_elementos, NULL, 0);
-   sem_init(&cola_suspendido_listo_con_elementos, NULL, 0);
-   sem_init(&cola_finalizados_con_elementos, NULL, 0);
-   sem_init(cola_finalizados, NULL, 0);
-   sem_init(&mutex_cola_new, NULL, 1);
-   sem_init(&mutex_cola_ready, NULL, 1);
-   sem_init(&mutex_cola_bloqueado_suspendido, NULL, 1);
-   sem_init(&mutex_cola_listo_suspendido, NULL, 1);
-   sem_init(&mutex_lista_ejecutando, NULL, 1);
-   sem_init(&mutex_cola_finalizados, NULL, 1);
-   sem_init(&mutex_lista_oredenada_por_algoritmo, NULL, 1);
-   sem_init(&controlador_multiprogramacion, NULL, configuracion.GRADO_MULTIPROGRAMACION);
+   sem_init(cola_new_con_elementos, 0, 0);
+   sem_init(cola_ready_con_elementos, 0, 0);
+   sem_init(cola_suspendido_bloquedo_con_elementos, 0, 0);
+   sem_init(cola_suspendido_listo_con_elementos, 0, 0);
+   sem_init(cola_finalizados_con_elementos, 0, 0);
+   sem_init(mutex_cola_new, 0, 1);
+   sem_init(mutex_cola_ready,0, 1);
+   sem_init(mutex_cola_bloqueado_suspendido, 0, 1);
+   sem_init(mutex_cola_listo_suspendido, 0, 1);
+   sem_init(mutex_lista_ejecutando,0, 1);
+   sem_init(mutex_cola_finalizados, 0, 1);
+   sem_init(mutex_lista_oredenada_por_algoritmo,0, 1);
+   sem_init(controlador_multiprogramacion, 0, configuracion.GRADO_MULTIPROGRAMACION);
 
 
 }

@@ -59,27 +59,32 @@ int mate_sem_init(mate_instance *lib_ref, mate_sem_name sem, unsigned int value)
  // sem_init(((mate_inner_structure *)lib_ref->group_info)->sem_instance, 0, value);
   enviar_sem_init(sem, (int)value, ((mate_inner_structure *)lib_ref->group_info)->conexion, INIT_SEMAFORO); // codear fiuncion; pasar valor
   char* respuesta = recibir_mensaje(((mate_inner_structure *)lib_ref->group_info)->conexion); // espera respuesta para continuar ejecutando condigo???
-  if(strcmp(respuesta, "OK")==0)
-  return 0;
-  }
-  else
-  {
-    return -1;
-  }
+  
+  if(strcmp(respuesta, "OK")==0){
+  return  0;
+  }else   
+  return -1;
+}else 
+  return -1;
 }
 
 int mate_sem_wait(mate_instance *lib_ref, mate_sem_name sem) {
   if(((mate_inner_structure *)lib_ref->group_info)->con_kernel){
     enviar_mensaje_y_cod_op(sem, ((mate_inner_structure *)lib_ref->group_info)->conexion, SEM_WAIT);
   char *respuesta =recibir_mensaje(((mate_inner_structure *)lib_ref->group_info)->conexion);
-  if(strcmp(respuesta, "OK")==0)
+  if(strcmp(respuesta, "OK")==0){
   return 0;
   }
   else
   {
     return -1;
   }
+ }else
+ {
+   return -1;
  }
+}
+ 
 
 int mate_sem_post(mate_instance *lib_ref, mate_sem_name sem) {
 
@@ -126,7 +131,7 @@ mate_pointer mate_memalloc(mate_instance *lib_ref, int size)
   recibir_operacion(((mate_inner_structure*)lib_ref->group_info)->conexion);
   int32_t respuesta = (int32_t)recibir_operacion(((mate_inner_structure*)lib_ref->group_info)->conexion);
   if( (int) respuesta == -1){
-    return NULL;
+    return -1;
   }else{
     return respuesta;
   }

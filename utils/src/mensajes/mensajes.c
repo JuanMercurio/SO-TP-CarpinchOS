@@ -141,7 +141,7 @@ void* recibir_buffer2(int* size, int socket_cliente)
 	return buffer;
 }
 
-int recibir_valor_sem(int conexion){
+/* */int recibir_valor_sem(int conexion){//arrelgar parece que se puede usar recibir operacion simplemente
 	void* valor;
 	recv(conexion, valor, sizeof(int), MSG_WAITALL);
 	return *(int*) valor;	
@@ -203,8 +203,8 @@ void enviar_mem_write(int conexion, int cod_op, void* origin, int dest, int size
 	paquete->cod_op = cod_op;
 	
 	paquete->buffer = malloc(sizeof(t_buffer));
-	print("lo que hay en DEST com void* %s\n", origin);
-	print("lo que hay en DEST com (char*) %s\n", (char*) origin);
+	printf("lo que hay en DEST com void* %s\n", (char*)origin);
+	printf("lo que hay en DEST com (char*) %s\n", (char*) origin);
 	paquete->buffer->size = strlen(origin) + 1;
 	paquete->buffer->stream = malloc(paquete->buffer->size);
 	memcpy(paquete->buffer->stream, dest, paquete->buffer->size);
@@ -260,9 +260,11 @@ t_paquete_mem_read recibir_mem_read(int conexion){
 	recibido.size = recibir_operacion(conexion);
 	return recibido;
 } 
-t_paquete_mem_write recibir_mem_write(int cliente){
+t_paquete_mem_write recibir_mem_write(int cliente){// arrgelar
 	t_paquete_mem_write recibido;
-	recibido.buffer->size = recibir_operacion(cliente);
+	recibido.size = recibir_operacion(cliente);
+	recibido.buffer = malloc(sizeof(t_buffer));
+
 	char* buffer = recibir_buffer(recibido.buffer->size, cliente);
 	strcpy(recibido.buffer->stream, buffer);
 	recibido.dest = recibir_operacion(cliente);
