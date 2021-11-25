@@ -460,14 +460,21 @@ void TEST_agregar_nueva_pagina(tab_pags* tabla, int marco){
 
 void* memread(tab_pags* tabla, int dir_log, int tamanio){
     dir_t dl = traducir_dir_log(dir_log);
-    if(!alloc_valido(dl, tabla, tamanio)) return NULL;     // checkea si donde va a leer hay un alloc valido
+    if(!alloc_valido(dl, tabla, tamanio)) return NULL; 
 
     return memoria_leer(tabla, dl, tamanio);
 }
 
+int memwrite(tab_pags* tabla, int dir_log, void* contenido, int tamanio){
+    dir_t dl = traducir_dir_log(dir_log);
+    if(!alloc_valido(dl, tabla, tamanio)) return MATE_WRITE_FAULT;
+
+    return memoria_escribir(tabla, dl, contenido, tamanio);
+}
+
 void* memoria_leer(tab_pags* tabla, dir_t dl, int tamanio){
 
-    if(!read_verify_size(tabla, dl, tamanio)) return NULL;
+    if(!read_verify_size(tabla, dl, tamanio)) return NULL; 
 
     int leido = 0;
     int bytes_remaining = tamanio;
@@ -494,16 +501,31 @@ void* memoria_leer(tab_pags* tabla, dir_t dl, int tamanio){
     return buffer;
 }
 
-
-int memwrite(tab_pags* tabla, int dir_log, void* contenido, int tamanio){
-    dir_t dl = traducir_dir_log(dir_log);
-    if(!alloc_valido(dl, tabla, tamanio)) return -1;
-
-    return memoria_escribir(tabla, dl, contenido, tamanio);
-}
-
 int memoria_escribir(tab_pags* tabla, dir_t dl, void* contenido, int tamanio){
     
+    if(!read_verify_size(tabla, dl, tamanio)) return MATE_WRITE_FAULT;    
+
+    int written = 0;
+    int bytes_remaining = tamanio;
+    int bytes_remaining_space = configuracion.TAMANIO_PAGINAS - dl.offset;
+
+    while(bytes_remaining > 0)
+    {
+        int marco = nro_marco(dl.PAGINA, tabla);
+        dir_t df = { marco, dl.offset };
+        int bytes_to_write = min_get(bytes_remaining, bytes_remaining_space);
+
+        memcpy(ram.memoria + offset_memoria(df), contenido + written, bytes_to_write);
+        page_use(dl.PAGINA, tabla);
+
+        bytes_remaining_space = configuracion.TAMANIO_PAGINAS;
+        bytes_remaining -= bytes_to_write;
+        written += bytes_to_write;
+        dl.offset = 0;
+        dl.PAGINA++;
+    }
+
+    return 0;
 }
 
 bool alloc_valido(dir_t dl, tab_pags* t, int tamanio){

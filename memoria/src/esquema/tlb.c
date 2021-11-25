@@ -25,6 +25,7 @@ void iniciar_tlb(){
         registro->modificado = 0;
         list_add(tlb, (void*)registro);
     }
+    loggear_mensaje("Tlb Inicializada");
 }
 
 int buscar_en_tlb(tab_pags* tabla, int pagina){

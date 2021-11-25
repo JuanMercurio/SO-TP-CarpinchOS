@@ -23,4 +23,6 @@ void limpiar_TLB();
 void tabla_actualizar(tlb_t* reg);
 void tlb_imprimir_reg(tab_pags* reg);
 
+char* itos(int n);
+void tlb_print_on_file(FILE* tlb);
 #endif

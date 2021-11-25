@@ -32,6 +32,12 @@ typedef enum{
     MATE_CLOSE
 }cod_op;
 
+typedef enum{
+    MATE_FREE_FAULT = -5,
+    MATE_READ_FAULT = -6,
+    MATE_WRITE_FAULT = -7,
+}mate_errors;
+
 //-------------------Type Definitions----------------------/
 
 typedef struct mate_inner_structure{
