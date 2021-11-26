@@ -29,6 +29,7 @@ typedef struct {
 typedef struct {
     int pagina;
     int base;
+    int marco;
 } Marcos_x_pagina;
 typedef struct {
     int base;
@@ -79,6 +80,7 @@ void borrarPagina(int pid, int pagina);
 //ASIGNACION FIJA
 
 void crearCarpinchoFija (int pid, int pag, char* contenidoPagina, char letra);
+int agregarPaginaFija(int pid, int pagina, char* contenido);
 int remplazoPaginaFija(int pid, int pagina, char*contenido);
 int buscarArchivoDeCarpincho (int pidd);
 int buscarOrdenParaAgregar(int num_archivo);
@@ -89,6 +91,7 @@ int elegirBaseCarpincho(int num_archivo);
 void mostrarCarpinchos();
 void marcosLIbresFija();
 void sacarCarpinchoDeLista( int pid);
+Marcos_x_pagina* buscarMarcoXPagina( Carpincho_Swamp* car, int pagina);
 //CONEXIONES
 void terminar_programa();
 void iniciar_swamp();

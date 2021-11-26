@@ -17,6 +17,8 @@ typedef enum{
     SOLICITUD_PAGINA,
     ESCRIBIR_PAGINA,
     INICIO_CONFIG, 
+    BORRAR_PAGINA,
+    BORRAR_CARPINCHO,
 }cod_swamp;
 
 typedef struct
