@@ -19,7 +19,8 @@ int num_pagina_a_traer(uint32_t inicio);
 bool hay_cambio_de_pagina(int direc_actual, uint32_t next_alloc);
 int cant_cambios_de_pagina(int direc_actual, uint32_t next_alloc);
 
-HeapMetadata* hallar_metadata(uint32_t dir_log, tab_pags* tabla, int* num_pag);
+//CAMBIADO
+HeapMetadata* hallar_metadata(uint32_t dir_log, tab_pags* tabla);//, int* num_pag);
 
 bool pedir_memoria_a_swap(int tamanio);
 
@@ -28,5 +29,12 @@ int memfree(int dir_log, int pid);
 
 void TEST_agregar_nueva_pagina(tab_pags* tabla, int marco);
 void TEST_report_metadatas(int pid);
+
+bool read_verify_size(tab_pags* t, dir_t dl, int tamanio);
+int read_get_readable_bytes(dir_t dl, int count);
+int memoria_escribir(tab_pags* tabla, dir_t dl, void* contenido, int tamanio);
+void* memoria_leer(tab_pags* tabla, dir_t dl, int tamanio);
+int memoria_escribir_por_dirlog(tab_pags* tabla, int dl, void* contenido, int tamanio);
+void* memoria_leer_por_dirlog(tab_pags* tabla, int dl, int tamanio);
 
 #endif
