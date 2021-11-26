@@ -167,7 +167,7 @@ int memalloc(int tamanio, int pid){ //quizas al igual que antes, el carpincho se
 //					printf("\t\t\tinicio_actual: %i.\n", inicio_actual);
 //					printf("\t\t\tnextAlloc: %i.\n", ptr_potencial_segmento->nextAlloc);
 //					printf("\t\t\tcant_cambios_de_pagina: %i.\n", cant_cambios_de_pagina(inicio_actual, ptr_potencial_segmento->nextAlloc));
-//					int num_pag_a_traer = num_pagina_actual + cant_cambios_de_pagina(inicio_actual, ptr_potencial_segmento->nextAlloc); //TODO:deberia ser siempre la ultima, no?
+//					int num_pag_a_traer = num_pagina_actual + cant_cambios_de_pagina(inicio_actual, ptr_potencial_segmento->nextAlloc); //deberia ser siempre la ultima, no?
 //					printf("- Memalloc->Pedir->Free: debo traer la pagina %i.\n", num_pag_a_traer);
 //					pagina = list_get(tabla_paginas->tabla_pag, num_pag_a_traer);
 //					puts("- Memalloc->Pedir->Free: traje la pagina");
@@ -259,13 +259,13 @@ int memalloc(int tamanio, int pid){ //quizas al igual que antes, el carpincho se
 //			num_pagina_actual += cant_cambios_de_pagina(inicio_actual, ptr_potencial_segmento->nextAlloc);
 //			printf("- Memalloc->While: tengo que buscar la pagina %i.\n", num_pagina_actual);
 //			pagina = list_get(tabla_paginas->tabla_pag, num_pagina_actual);
-//			//TODO: la cargo en memoria
+//			//: la cargo en memoria
 //		}
 
 		inicio_actual = ptr_potencial_segmento->nextAlloc;
 		printf("- Memalloc->While: el nuevo inicio sera %i.\n", inicio_actual);
 		//CAMBIADO
-//		ptr_potencial_segmento = ubicacion_nuevo_segmento(pagina->marco, ptr_potencial_segmento->nextAlloc); //TODO: REVISAR
+//		ptr_potencial_segmento = ubicacion_nuevo_segmento(pagina->marco, ptr_potencial_segmento->nextAlloc); //: REVISAR
 		ptr_potencial_segmento = memoria_leer_por_dirlog(tabla_paginas, ptr_potencial_segmento->nextAlloc, SIZE_METADATA);
 		printf("- Memalloc->While: el nuevo puntero a revisar es el %p.\n", ptr_potencial_segmento);
 	}
@@ -366,7 +366,7 @@ int memfree(int dir_log, int pid){
 //			//: la cargo en memoria
 //			ptr_derecha = ubicacion_nuevo_segmento(pagina_derecha->marco, ptr_segmento->nextAlloc);
 //		}else{
-//			ptr_derecha = ubicacion_nuevo_segmento(pagina_actual->marco, ptr_segmento->nextAlloc); //TODO: REVISAR
+//			ptr_derecha = ubicacion_nuevo_segmento(pagina_actual->marco, ptr_segmento->nextAlloc); //: REVISAR
 //		}
 //		printf("- Memfree->Derecha: el puntero a derecha esta en el puntero %p.\n", ptr_derecha);
 		ptr_derecha = memoria_leer_por_dirlog(tabla_paginas, ptr_segmento->nextAlloc, SIZE_METADATA);
@@ -378,17 +378,17 @@ int memfree(int dir_log, int pid){
 	} else puts("- Memfree->Derecha: no existe puntero a derecha.");
 
 
-	//TODO:checkear
+	//
 	puts("- Memfree->Izquierda: reviso a izquierda.");
 	if(ptr_segmento->prevAlloc != FIRST_METADATA){
 		//CAMBIADO
 //		if(hay_cambio_de_pagina(ptr_segmento->prevAlloc, inicio_actual)){
 //			puts("- Memfree->Izquierda: el izquierdo esta en otra pagina.");
-//			pag_t* pagina_izquierda = list_get(tabla_paginas->tabla_pag, num_pag + cant_cambios_de_pagina(inicio_actual, ptr_segmento->prevAlloc)); //TODO: checkear porque cambie - por +
+//			pag_t* pagina_izquierda = list_get(tabla_paginas->tabla_pag, num_pag + cant_cambios_de_pagina(inicio_actual, ptr_segmento->prevAlloc)); //: checkear porque cambie - por +
 //			//: la cargo en memoria
 //			ptr_izquierda = ubicacion_nuevo_segmento(pagina_izquierda->marco, ptr_segmento->prevAlloc);
 //		}else{
-//			ptr_izquierda = ubicacion_nuevo_segmento(pagina_actual->marco, ptr_segmento->prevAlloc); //TODO: REVISAR
+//			ptr_izquierda = ubicacion_nuevo_segmento(pagina_actual->marco, ptr_segmento->prevAlloc); //: REVISAR
 //		}
 //		printf("- Memfree->Izquierda: el puntero a izquierda esta en el puntero %p.\n", ptr_izquierda);
 		ptr_izquierda = memoria_leer_por_dirlog(tabla_paginas, ptr_segmento->prevAlloc, SIZE_METADATA);
