@@ -1,4 +1,5 @@
-#include "main.h"
+#include "deadlock.h"
+#include "../io_semaforos/io_semaforos.h"
 
 
 void deteccion_deadlock()
@@ -16,17 +17,18 @@ void deteccion_deadlock()
             sem_wait(&mutex_lista_sem_kernel);
             semaforo = (sem_kernel *)list_get(lista_sem_kernel, i);
             sem_post(&mutex_lista_sem_kernel);
-            a_enlistar = buscar_en_otras_listas(semaforo->tomado_por, i, semaforo->id);
+            a_enlistar = buscar_en_otras_listas(semaforo->tomado_por, i, semaforo->id);// ruido
             if (a_enlistar != NULL)
             {
                 list_add(lista_posible_deadlock, (void *)a_enlistar);
             }
         }
+
         if (!list_is_empty(lista_posible_deadlock))
         {
             t_list *lista_con_deadlock = verificar_espera_circular(lista_posible_deadlock);
 
-            while (lista_con_deadlock = NULL)
+            while (lista_con_deadlock == NULL)
             {
                 finalizar_involucrados(lista_con_deadlock); // falta codear
                                                             //  list_destroy_and_destroy_elements(lista_posible_deadlock, lista_deadlock_destroyer);
@@ -47,33 +49,37 @@ t_deadlock *buscar_en_otras_listas(int pid, int index, char *semaforo_retenido)
 {
     //  t_list *lista_peticiones = list_create();
     t_pcb *carpincho_bloqueado;
+    int i = 0;
+    bool encontrado = false;
     t_deadlock *carpincho_deadlock = malloc(sizeof(t_deadlock));
-    for (int i = 0; i > list_size(lista_sem_kernel); i++)
+    while (i < list_size(lista_sem_kernel) && !encontrado)
     {
         if (i == index)
             continue;
-        sem_kernel *semaforo = (sem_kernel *)list_get(lista_sem_kernel, index + 1);
-        for (int j = 0; j < list_size(semaforo->bloqueados); j++)
+        sem_kernel *semaforo = (sem_kernel *)list_get(lista_sem_kernel, i);
+        while(!queue_is_empty(semaforo->bloqueados) && !encontrado)
         {
-            carpincho_bloqueado = (t_pcb *)list_get(semaforo->bloqueados, j);
+            carpincho_bloqueado = (t_pcb *)queue_pop(semaforo->bloqueados);
             if (pid == carpincho_bloqueado->pid)
             {
                 carpincho_deadlock->pid = pid;
                 strcpy(carpincho_deadlock->retenido, semaforo_retenido);
                 strcpy(carpincho_deadlock->esperando, semaforo->id);
-                return carpincho_deadlock;
+                encontrado = true;
             }
             else
             {
-                return NULL;
+                carpincho_deadlock = NULL;;
             }
         }
+        i++;
     }
+    return carpincho_deadlock;
 }
 t_list *verificar_espera_circular(t_list *lista)
 {
     t_list *lista_aux = list_create();
-    int i = 0;
+
     bool cerrado = false;
     while (!list_is_empty(lista))
     {
@@ -152,12 +158,12 @@ bool comparar_lista(t_deadlock *alf, t_list *list, int *index)
 
 void finalizar_involucrados(t_list *lista_deadlock)
 {
-    int mayor_id = 0, i = 0;
+    int mayor_id = 0;
     t_deadlock *aux;
-    char *retenido_a_liberar;
-    char *esperando_a_sacar;
+    char *retenido_a_liberar = string_new();
+    char *esperando_a_sacar = string_new();
     sem_kernel *semaforo;
-    for (i; i < list_size(lista_deadlock); i++)
+    for (int i=0; i < list_size(lista_deadlock); i++)
     {
         aux = list_get(lista_deadlock, i);
         if (mayor_id < aux->pid)

@@ -1,6 +1,7 @@
 #ifndef _IOSEMAFOROS_
 #define _IOSEMAFOROS_
-#include "../src/main.h"
+#include "../main.h"
+
 
 sem_kernel *buscar_semaforo(char *nombre);
 //void sem_kernel_wait(char *nombre, t_pcb *carpincho);
@@ -17,9 +18,10 @@ io_kernel *buscar_io(char *nombre);
 void init_dispositivos_io();
 //void call_io(char *nombre, t_pcb *carpincho);
 //void realizar_io(t_pcb *carpincho, io_kernel *io);
-void inicial_hilos_gestores_de_io();
+void iniciar_hilos_gestores_de_io();
 void gestor_cola_io(void *datos);
 void bloquear_por_io(t_pcb *carpincho);
+int obtener_valor_semaforo(char* semaforo_a_modificar);
 
 
 #endif

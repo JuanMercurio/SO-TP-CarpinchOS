@@ -1,15 +1,25 @@
 #include "main.h"
-
+#include "io_semaforos/io_semaforos.h"
+#include "planificacion/planificacion.h"
+#include "deadlock/deadlock.h"
+bool terminar = false;
+int carpinchos_bloqueados = 0;
 int main(int argc, char *argv[])
 {
 
    //solo corre si corremos el binario asi: binario test
-   tests(argc, argv[1]);
-
+   //tests(argc, argv[1]);
+ printf("arranca o no arranca?\n");
    iniciar_logger();
+   printf("paso logger\n");
    obtener_config();
+   printf("paso config\n");
+   inicializar_semaforos();
+   printf("incializo semaforos\n");
    inicializar_listas_sem_io();
+   printf("inicio listas io\n");
    init_dispositivos_io();
+   printf("inicio dispositivos io\n");
    inicializar_planificacion();
    administrar_clientes(configuracion.IP, configuracion.PUERTO, &receptor);
 
@@ -22,8 +32,8 @@ void terminar_programa()
    log_destroy(logger);
    destruir_semaforos();
    destruir_colas_y_listas();
-   pthread_attr_destroy(&detached2);
-   pthread_attr_destroy(&detached3); 
+   //pthread_attr_destroy(&detached2);
+   //pthread_attr_destroy(&detached3); 
 }
 
 void destruir_colas_y_listas(){
@@ -95,23 +105,24 @@ void destruir_colas_y_listas(){
 }
 
 void destruir_semaforos(){
-   sem_destroy(cola_new_con_elementos);
-   sem_destroy(cola_ready_con_elementos);
-   sem_destroy(cola_suspendido_bloquedo_con_elementos);
-   sem_destroy(cola_suspendido_listo_con_elementos);
-   sem_destroy(cola_finalizados_con_elementos);
-   sem_destroy(mutex_cola_new);
-   sem_destroy(mutex_cola_ready);
-   sem_destroy(mutex_cola_bloqueado_suspendido);
-   sem_destroy(mutex_cola_listo_suspendido);
-   sem_destroy(mutex_lista_ejecutando);
-   sem_destroy(mutex_cola_finalizados);
-   sem_destroy(mutex_lista_oredenada_por_algoritmo);
-   sem_destroy(controlador_multiprogramacion);
+   sem_destroy(&cola_new_con_elementos);
+   sem_destroy(&cola_ready_con_elementos);
+   sem_destroy(&cola_suspendido_bloquedo_con_elementos);
+   sem_destroy(&cola_suspendido_listo_con_elementos);
+   sem_destroy(&cola_finalizados_con_elementos);
+   sem_destroy(&mutex_cola_new);
+   sem_destroy(&mutex_cola_ready);
+   sem_destroy(&mutex_cola_bloqueado_suspendido);
+   sem_destroy(&mutex_cola_listo_suspendido);
+   sem_destroy(&mutex_lista_ejecutando);
+   sem_destroy(&mutex_cola_finalizados);
+   sem_destroy(&mutex_lista_oredenada_por_algoritmo);
+   sem_destroy(&controlador_multiprogramacion);
 }
 
 void receptor(void *arg)
 {
+
    int cliente = *(int *)arg;
    free(arg);
    int cod_op , mem_int, aux_int;
@@ -146,9 +157,9 @@ void receptor(void *arg)
             carpincho->estado ='N';
             char *pid = string_itoa(carpincho->pid);
             enviar_mensaje(cliente, pid);
-            sem_wait(mutex_cola_new);
+            sem_wait(&mutex_cola_new);
             queue_push(cola_new, (void*) carpincho); // pensando que el proceso queda trabado en mate init hasta que sea planificado
-            sem_post(mutex_cola_new);
+            sem_post(&mutex_cola_new);
             log_info(logger, "Se agregó el carpincho ID: %d a la cola de new", carpincho->pid);
             //FAlTA avisar a memoria de la nueva instancia
 
@@ -157,11 +168,13 @@ void receptor(void *arg)
          // aca debe enviar el ok o debe planificarlo y al llegar a exec recien destrabar el carpincho
             break;
 
-      case INIT_SEMAFORO:// SE PUEDE MODIFICAR PARA CONFIRMAR 
+      case INIT_SEMAFORO:// SE PUEDE MODIFICAR PARA CONFIRMAR  MAL
                semaforo = recibir_semaforo(cliente);
                log_info(logger, "Se recibió del carpincho %d un SEM INIT para el semáforo %s ", carpincho->pid, semaforo.buffer);
-               sem_kernel_init(semaforo.buffer, semaforo.valor);// PORBLEMA CON BUFFER
+               recibido = (char*)semaforo.buffer->stream;
+               sem_kernel_init(recibido, semaforo.valor);// PORBLEMA CON BUFFER
                enviar_mensaje(cliente, "OK");
+               free(semaforo.buffer);
                break;
       case IO: 
                io = recibir_mensaje(cliente);
@@ -194,12 +207,12 @@ void receptor(void *arg)
                if( sem != NULL){
                   sem_kernel_post(recibido);
                   log_info(logger, "Se recibió del carpincho %d un SEM POST para %s", carpincho->pid, sem->id);
-                  enviar_mensaje("OK", cliente);
+                  enviar_mensaje(cliente, "OK");
                }
                else
                {
                   log_info(logger, "Se recibió del carpincho %d un SEM POST para un semáforo que no existe", carpincho->pid);
-                  enviar_mensaje("FAIL", cliente);
+                  enviar_mensaje(cliente, "FAIL");
                }
                free(recibido);
                break;
@@ -207,7 +220,7 @@ void receptor(void *arg)
       case SEM_DESTROY: recibido = recibir_mensaje(cliente);
                log_info(logger, "Se recibió del carpincho %d un SEM DESTROY para %s", carpincho->pid, recibido);
                sem_kernel_destroy(recibido);
-               enviar_mensaje("OK", cliente);
+               enviar_mensaje( cliente, "OK");
                free(recibido);
                break;
       
@@ -268,7 +281,7 @@ void receptor(void *arg)
                log_info(logger, "Se recibió del carpincho %d un MATE CLOSE", carpincho->pid);
                carpincho->proxima_instruccion = MATE_CLOSE;
                sem_post(&carpincho->semaforo_evento);
-               enviar_mensaje("OK", cliente);
+               enviar_mensaje( cliente, "OK");
                close(cliente);
                close(carpincho->fd_memoria);
                conectado = false;
@@ -280,39 +293,58 @@ void receptor(void *arg)
 
 void inicializar_planificacion()
 {
-   pthread_t hilos_planificadores[7];
+   pthread_t hilos_planificadores;
    pthread_attr_t detached3;
    pthread_attr_init(&detached3);
    pthread_attr_setdetachstate(&detached3, PTHREAD_CREATE_DETACHED);
    
    iniciar_colas();
-   inicializar_semaforos();
-   if(!pthread_create(&hilos_planificadores[0], &detached3, (void *) iniciar_planificador_corto_plazo, NULL)){
-     looger_info(logger,"NO SE PUDO CREAR HILO PLANIFICADOR CORTO PLAZO\n");
-   }
-  if(!pthread_create(&hilos_planificadores[1], &detached3,  (void *)iniciar_planificador_largo_plazo, NULL)){
-      looger_info(logger, "NO SE PUDO CREAR HILO PLANIFICADOR LARGO PLAZO\n");
-   }if(!pthread_create(&hilos_planificadores[2], &detached3, (void *) iniciar_planificador_mediano_plazo, NULL)){
-       looger_info(logger, "NO SE PUDO CREAR HILO PLANIFICADOR MEDIANO PLAZO\n");
-   }if(!pthread_create(&hilos_planificadores[3], &detached3, (void *) iniciar_gestor_finalizados, NULL)){
-       looger_info(logger, "NO SE PUDO CREAR HILO GESWTOR FINALIZADOS\n");
-   }if(!pthread_create(&hilos_planificadores[4], &detached3, (void *) iniciar_cpu,  NULL)){
-       looger_info(logger, "NO SE PUDO CREAR HILO PLANIFICADOR LARGO PLAZO\n");
-   }if(!pthread_create(&hilos_planificadores[5], &detached3, (void *)deteccion_deadlock, NULL)){
-      looger_info(logger, "NO SE PUDO CREAR HILO DETECCION DEADLOCK\n");
-   }
-   if(!pthread_create(&hilos_planificadores[6], &detached3, (void *)program_killer, NULL)){
-      looger_info(logger, "NO SE PUDO CREAR HILO PARATERMINAR PROGRAMA\n");
+   log_info(logger, "INICIO COLAS PLANIFICADORAS");
+   if(pthread_create(&hilos_planificadores, &detached3, (void *) iniciar_planificador_corto_plazo, NULL)!= 0){
+     log_info(logger,"NO SE PUDO CREAR HILO PLANIFICADOR CORTO PLAZO\n");
+   }else{
+log_info(logger, "PLANIFICADORES Y DETECTOR DEADLOCK CREADOS");
+
    }
    
-   logger_info(logger, "PLANIFICADORES Y DETECTOR DEADLOCK CREADOS\n");
+   if(pthread_create(&hilos_planificadores, &detached3,  (void *)iniciar_planificador_largo_plazo, NULL)!= 0){
+      log_info(logger, "NO SE PUDO CREAR HILO PLANIFICADOR LARGO PLAZO\n");
+   }else{
+log_info(logger, "PLANIFICADORES Y DETECTOR DEADLOCK CREADOS");
 
+   }
+   if(pthread_create(&hilos_planificadores, &detached3, (void *) iniciar_gestor_finalizados, NULL)!= 0){
+       log_info(logger, "NO SE PUDO CREAR HILO GESWTOR FINALIZADOS\n");
+   }else{
+log_info(logger, "PLANIFICADORES Y DETECTOR DEADLOCK CREADOS");
+
+   
+  
+
+   }if(pthread_create(&hilos_planificadores, &detached3, (void *)&deteccion_deadlock, NULL)!= 0){
+      log_info(logger, "NO SE PUDO CREAR HILO DETECCION DEADLOCK\n");
+   }else{
+log_info(logger, "PLANIFICADORES Y DETECTOR DEADLOCK CREADOS");
+
+   }
+   if(pthread_create(&hilos_planificadores, &detached3, (void *)&program_killer, NULL) != 0){
+      log_info(logger, "NO SE PUDO CREAR HILO PARATERMINAR PROGRAMA");
+   }else{
+log_info(logger, "PLANIFICADORES Y DETECTOR DEADLOCK CREADOS");
+
+   }
+    if(pthread_create(&hilos_planificadores, &detached3, (void *)iniciar_cpu,  NULL)!= 0){
+       log_info(logger, "NO SE PUDO CREAR HILO PLANIFICADOR LARGO PLAZO\n");
+   }else{
+log_info(logger, "PLANIFICADORES Y DETECTOR DEADLOCK CREADOS\n");
+   }
+   
 
 }
 void program_killer(){
-   char* leido;
-   looger_info(logger, "Para terminar precione cualquier tecla.\n");
-   scanf(leido);
+   char* leido  = string_new();
+   log_info(logger, "Para terminar precione cualquier tecla.\n");
+   scanf("%s",leido);
    terminar = true;
    terminar_programa();
 }
@@ -327,19 +359,22 @@ void iniciar_colas()
 }
 void inicializar_semaforos(){
    
-   sem_init(cola_new_con_elementos, 0, 0);
-   sem_init(cola_ready_con_elementos, 0, 0);
-   sem_init(cola_suspendido_bloquedo_con_elementos, 0, 0);
-   sem_init(cola_suspendido_listo_con_elementos, 0, 0);
-   sem_init(cola_finalizados_con_elementos, 0, 0);
-   sem_init(mutex_cola_new, 0, 1);
-   sem_init(mutex_cola_ready,0, 1);
-   sem_init(mutex_cola_bloqueado_suspendido, 0, 1);
-   sem_init(mutex_cola_listo_suspendido, 0, 1);
-   sem_init(mutex_lista_ejecutando,0, 1);
-   sem_init(mutex_cola_finalizados, 0, 1);
-   sem_init(mutex_lista_oredenada_por_algoritmo,0, 1);
-   sem_init(controlador_multiprogramacion, 0, configuracion.GRADO_MULTIPROGRAMACION);
+   sem_init(&cola_new_con_elementos, 0, 0);
+   sem_init(&cola_ready_con_elementos, 0, 0);
+   sem_init(&cola_suspendido_bloquedo_con_elementos, 0, 0);
+   sem_init(&cola_suspendido_listo_con_elementos, 0, 0);
+   sem_init(&cola_finalizados_con_elementos, 0, 0);
+
+   sem_init(&mutex_cola_new, 0, 1);
+   sem_init(&mutex_cola_ready,0, 1);
+   sem_init(&mutex_cola_bloqueado_suspendido, 0, 1);
+   sem_init(&mutex_cola_listo_suspendido, 0, 1);
+   sem_init(&mutex_lista_ejecutando,0, 1);
+   sem_init(&mutex_cola_finalizados, 0, 1);
+   sem_init(&mutex_lista_oredenada_por_algoritmo,0, 1);
+   sem_init(&mutex_lista_sem_kernel,0,1);
+   sem_init(&mutex_lista_io_kernel,0,1);
+   sem_init(&controlador_multiprogramacion, 0, configuracion.GRADO_MULTIPROGRAMACION);
 
 
 }

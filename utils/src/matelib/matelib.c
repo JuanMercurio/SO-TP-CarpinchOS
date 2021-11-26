@@ -3,7 +3,7 @@
 
 //------------------General Functions---------------------/
 
-int mate_init(mate_instance *lib_ref, char *config)
+int mate_init(mate_instance *lib_ref, char *config)//AGREGAR LOG
 {
   t_config *configuracion = config_create(config);
   char *IP = config_get_string_value(configuracion, "IP");
@@ -153,6 +153,7 @@ int mate_memread(mate_instance *lib_ref, mate_pointer origin, void *dest, int si
   enviar_mem_read(((mate_inner_structure*)lib_ref->group_info)->conexion, MEMREAD, (int)origin, size);
   dest = recibir_mensaje(((mate_inner_structure*)lib_ref->group_info)->conexion);
   if(strcmp(dest, "-6") == 0){
+    dest = NULL;
     return MATE_READ_FAULT;
   }else{
     return 0;

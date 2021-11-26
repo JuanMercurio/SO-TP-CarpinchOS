@@ -1,4 +1,5 @@
-#include "main.h"
+#include "io_semaforos.h"
+#include "../planificacion/planificacion.h"
 
 
 sem_kernel *buscar_semaforo(char *nombre)
@@ -22,7 +23,7 @@ bool sem_kernel_wait2( t_pcb *carpincho)
    
    sem_wait(&sem->mutex);
    sem->val --;
-   sem_wait(&sem->mutex);
+   sem_post(&sem->mutex);
    if(sem->val == 0){
       sem->tomado_por = carpincho->pid;
    }
@@ -45,7 +46,7 @@ bool sem_kernel_wait2( t_pcb *carpincho)
 }*/
 
 bool verificar_bloqueo_por_semaforo(t_pcb *carpincho){
-   int sem_valor_actual = obtener_valor_semaforo(carpincho->semaforo_a_modificar);
+   int sem_valor_actual = obtener_valor_semaforo(carpincho->semaforo_a_modificar); // falta
    if(sem_valor_actual -1 < 0){
       return true;
    }else
@@ -53,6 +54,10 @@ bool verificar_bloqueo_por_semaforo(t_pcb *carpincho){
       return false;
    }
    
+}
+int obtener_valor_semaforo(char* semaforo_a_modificar){
+   sem_kernel * sem = buscar_semaforo(semaforo_a_modificar);
+return sem->val;
 }
 
 void bloquear_por_semaforo(t_pcb *carpincho){
@@ -73,7 +78,7 @@ void sem_kernel_post(char *nombre)
       if(sem->val >= 0 && !queue_is_empty(sem->bloqueados))
       {
       //Desbloqueo el proceso del sistema y lo paso a listo
-     bloqueado_a_listo(sem->bloqueados, sem->mutex_cola);
+     bloqueado_a_listo(sem->bloqueados, &sem->mutex_cola);
       }
    
    sem_post(&mutex_lista_sem_kernel);
@@ -100,7 +105,7 @@ void sem_kernel_destroy(char* nombre){// ARREGLAR
    if(cant_bloqueados>0){
       for(int i=0;cant_bloqueados; i++){
 
-         bloqueado_a_listo(sem->bloqueados, sem->mutex_cola);
+         bloqueado_a_listo(sem->bloqueados, &sem->mutex_cola);
       }
    }
  //  sem_post(&mutex_lista_sem_kernel);
@@ -114,8 +119,8 @@ void sem_kernel_destroy(char* nombre){// ARREGLAR
 void sem_destroyer(void* semaforo){
  sem_kernel *a_destruir  = (sem_kernel*) semaforo;
  queue_destroy(a_destruir->bloqueados); 
- sem_destroy(a_destruir->mutex);
- sem_destroy(a_destruir->mutex_cola);
+ sem_destroy(&a_destruir->mutex);
+ sem_destroy(&a_destruir->mutex_cola);
 free(a_destruir);
 }
 
@@ -131,8 +136,8 @@ void io_destroyer(void *arg)
       queue_destroy_and_destroy_elements(a_destruir->bloqueados, (void *)eliminar_carpincho);
    }
 
-   sem_destroy(a_destruir->mutex_io);
-   sem_destroy(a_destruir->retardo);
+   sem_destroy(&a_destruir->mutex_io);
+   sem_destroy(&a_destruir->cola_con_elementos);
    free(a_destruir);
 }
 
@@ -156,39 +161,46 @@ void init_dispositivos_io(){
       nueva_io->id = (char*)configuracion.DISPOSITIVOS_IO[i];
       nueva_io->retardo = atoi((char*)configuracion.DURACIONES_IO[i]);
       nueva_io->bloqueados = queue_create();
-      sem_init(nueva_io->mutex_io, NULL, 0);
-      sem_init(nueva_io->cola_con_elementos, NULL, 0);
+   
+      sem_init(&nueva_io->mutex_io, 0, 0);
+      sem_init(&nueva_io->cola_con_elementos, 0, 0);
       sem_wait(&mutex_lista_io_kernel);
       list_add(lista_io_kernel, nueva_io);
-      sem_wait(&mutex_lista_io_kernel);
+      sem_post(&mutex_lista_io_kernel);
       i++;
       log_info(logger,"COLAS DISPOSITIVOS IO CREADAS");
      // free(nueva_io); //va acá o afuera del while? BORRAR LA TERMINAR
    }
    iniciar_hilos_gestores_de_io();
 }
-void inicial_hilos_gestores_de_io(){
+void iniciar_hilos_gestores_de_io(){
 
      
       pthread_attr_init(&detached2);
       pthread_attr_setdetachstate(&detached2, PTHREAD_CREATE_DETACHED);
+
       int i = list_size(lista_io_kernel);
       io_kernel * io;
-      while (i != 0)
-      {
+      while (i > 0)
+      {  
          pthread_t hilo2;
-         io = list_get(lista_io_kernel, i);
-         if (!(pthread_create(&hilo2, &detached2, (void *)gestor_cola_io, (void *)io)))
+         io = (io_kernel*)list_get(lista_io_kernel, i-1);
+         if ((pthread_create(&hilo2, NULL, (void*)gestor_cola_io, (void *)io))!=0)
          {
             log_info(logger, "No se pudo crear hilo gestor de cola io");
-         }
+         }else
+         {  
          log_info(logger, "Se creó GESTOR de io %s", io->id); // para controlar que se cree
+         }
+        
             i--;
       }
    
 }
 
 void gestor_cola_io(void *datos){
+   printf("acacacacacacaa\n");
+   log_info(logger, "creo gestor de io");
    io_kernel *io = (io_kernel*)datos;
    t_pcb *carpincho;
    while(!terminar){

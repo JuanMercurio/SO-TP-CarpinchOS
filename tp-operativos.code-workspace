@@ -29,7 +29,9 @@
       "semaphore.h": "c",
       "config.h": "c",
       "tests.h": "c",
-      "planificacion.h": "c"
+      "planificacion.h": "c",
+      "io_semaforos.h": "c",
+      "deadlock.h": "c"
     }
   }
 }

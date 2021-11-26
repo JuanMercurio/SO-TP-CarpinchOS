@@ -1,7 +1,6 @@
 #include "clientes.h"
 #include "operaciones.h"
 #include "../esquema/paginacion.h"
-
 #include <matelib/matelib.h>
 #include <mensajes/mensajes.h>
 #include <utils/utils.h>

@@ -40,6 +40,7 @@ typedef struct{
    t_buffer *buffer;
    int dest;
    int size;
+   char* stream;
 }t_paquete_mem_write;
 /* 
     @NAME:  handshake

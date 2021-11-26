@@ -11,10 +11,10 @@
 #include <commons/string.h>
 #include <commons/collections/list.h>
 #include <commons/temporal.h>
-#include "mensajes/mensajes.h"
-#include "../io_semaforos/io_semaforos.h"
-#include "../deadlock/deadlock.h"
-#include "../planificacion/planificacion.h"
+#include <mensajes/mensajes.h>
+
+extern bool terminar;
+extern int carpinchos_bloqueados;
 
 // type struct
 struct timeval *tiempito;
@@ -37,8 +37,8 @@ typedef struct{
     int proxima_instruccion;
     char* io_solicitada;
     char* semaforo_a_modificar;
-    sem_t *semaforo_evento;
-    sem_t *semaforo_fin_evento;
+    sem_t semaforo_evento;
+    sem_t semaforo_fin_evento;
 }t_pcb;
 
 typedef enum{
@@ -63,8 +63,8 @@ typedef struct{
     int val;
     int max_val;
     t_queue* bloqueados;
-    sem_t *mutex;
-    sem_t *mutex_cola;
+    sem_t mutex;
+    sem_t mutex_cola;
     int tomado_por;
 }sem_kernel;
 
@@ -72,9 +72,11 @@ typedef struct{
     char* id;
     int retardo;
     t_queue* bloqueados;
-    sem_t * mutex_io;
-    sem_t * cola_con_elementos;
+    sem_t mutex_io;
+    sem_t cola_con_elementos;
 }io_kernel;
+
+
 
 //   colas
 t_queue *cola_new;
@@ -89,29 +91,28 @@ t_list *lista_io_kernel;
 t_list *lista_ordenada_por_algoritmo;
 
 // semaforos
-sem_t *cola_new_con_elementos;
-sem_t *cola_ready_con_elementos;
-sem_t *cola_suspendido_bloquedo_con_elementos;
-sem_t *cola_suspendido_listo_con_elementos;
-sem_t *lista_ejecutando_con_elementos;
-sem_t *cola_finalizados_con_elementos;
-sem_t *mutex_cola_new;
-sem_t *mutex_cola_ready;
-sem_t *mutex_cola_bloqueado;
-sem_t *mutex_cola_bloqueado_suspendido;
-sem_t *mutex_cola_listo_suspendido;
-sem_t *mutex_lista_ejecutando;
+sem_t cola_new_con_elementos;
+sem_t cola_ready_con_elementos;
+sem_t cola_suspendido_bloquedo_con_elementos;
+sem_t cola_suspendido_listo_con_elementos;
+sem_t lista_ejecutando_con_elementos;
+sem_t cola_finalizados_con_elementos;
+sem_t mutex_cola_new;
+sem_t mutex_cola_ready;
+sem_t mutex_cola_bloqueado_suspendido;
+sem_t mutex_cola_listo_suspendido;
+sem_t mutex_lista_ejecutando;
 
-sem_t *mutex_cola_finalizados;
-sem_t *mutex_lista_oredenada_por_algoritmo;
-sem_t *controlador_multiprogramacion;
+sem_t mutex_cola_finalizados;
+sem_t mutex_lista_oredenada_por_algoritmo;
+sem_t controlador_multiprogramacion;
 
-sem_t *mutex_lista_sem_kernel;
-sem_t *mutex_lista_io_kernel;
+sem_t mutex_lista_sem_kernel;
+sem_t mutex_lista_io_kernel;
 
-bool terminar = false;
 
-pthread_attr_t detached2, detached3;
+
+ pthread_attr_t detached2, detached3;
 
 /*
     @NAME: terminar_programa

@@ -77,6 +77,7 @@ char* recibir_mensaje(int socket){
     void* buffer = malloc(size);
     buffer = recibir_buffer(size, socket);
     return (char*)buffer;
+
 }
 
 void* serializar_mensaje(char* mensaje){
@@ -104,6 +105,8 @@ void enviar_sem_init(char* sem, int valor, int conexion, int cod_op){
 	send(conexion, a_enviar, bytes, 0);
 	printf("mensaje enviado\n");
 	free(a_enviar);
+	free(paquete->buffer);
+	free(paquete);
 }
 
 void* serializar_paquete_semaforo(t_paquete_semaforo * paquete, int bytes){
@@ -122,15 +125,12 @@ void* serializar_paquete_semaforo(t_paquete_semaforo * paquete, int bytes){
 
 t_paquete_semaforo recibir_semaforo(int conexion){
 	t_paquete_semaforo recibido;
-	int size;
-	char* aux;
-	int desplazamiento = 0;
-	void * buffer;
-	buffer = recibir_buffer2(&size, conexion);
-	aux = buffer; 
-	strcpy(recibido.buffer, aux);
-	recibido.valor = recibir_valor_sem(conexion);
-	free(buffer);
+	char* buffer;
+	buffer = recibir_mensaje(conexion);
+	recibido.buffer->stream = (void*)buffer; 
+	recibido.valor = recibir_operacion(conexion);
+	//free(buffer);
+	return recibido;
 }
 void* recibir_buffer2(int* size, int socket_cliente)
 {
@@ -141,11 +141,11 @@ void* recibir_buffer2(int* size, int socket_cliente)
 	return buffer;
 }
 
-/* */int recibir_valor_sem(int conexion){//arrelgar parece que se puede usar recibir operacion simplemente
+/*int recibir_valor_sem(int conexion){//arrelgar parece que se puede usar recibir operacion simplemente
 	void* valor;
 	recv(conexion, valor, sizeof(int), MSG_WAITALL);
 	return *(int*) valor;	
-}
+} */
 
 //----------------------------------------------------------------------
 
@@ -207,7 +207,7 @@ void enviar_mem_write(int conexion, int cod_op, void* origin, int dest, int size
 	printf("lo que hay en DEST com (char*) %s\n", (char*) origin);
 	paquete->buffer->size = strlen(origin) + 1;
 	paquete->buffer->stream = malloc(paquete->buffer->size);
-	memcpy(paquete->buffer->stream, dest, paquete->buffer->size);
+	memcpy(paquete->buffer->stream, origin, paquete->buffer->size);
 	paquete->dest = dest;
 	int bytes = 3* sizeof(int) + paquete->buffer->size;
 	void* a_enviar = serializar_paquete_mem_write(paquete, bytes);
@@ -215,6 +215,8 @@ void enviar_mem_write(int conexion, int cod_op, void* origin, int dest, int size
 	send(conexion, a_enviar, bytes, 0);
 	printf("mensaje enviado\n");
 	free(a_enviar);
+	free(paquete->buffer);
+	free(paquete);
 }
 void* serializar_paquete_mem_write(t_paquete_mem_write * paquete, int bytes){
 	void* magico = malloc(bytes);
@@ -248,11 +250,11 @@ void* serializar_paquete_mem_read(t_paquete_mem_read * paquete, int bytes){
 
 	return magico;
 }
-
-int recibir_int_mem(int conexion){ 
-	int value = recibir_valor_int(conexion);
+/*int recibir_int_mem(int conexion){ 
+	int value = recibir_operacion(conexion);
 	return value;
 } 
+ */
 
 t_paquete_mem_read recibir_mem_read(int conexion){
 	t_paquete_mem_read recibido;
@@ -260,13 +262,11 @@ t_paquete_mem_read recibir_mem_read(int conexion){
 	recibido.size = recibir_operacion(conexion);
 	return recibido;
 } 
-t_paquete_mem_write recibir_mem_write(int cliente){// arrgelar
+t_paquete_mem_write recibir_mem_write(int cliente){
 	t_paquete_mem_write recibido;
 	recibido.size = recibir_operacion(cliente);
-	recibido.buffer = malloc(sizeof(t_buffer));
-
-	char* buffer = recibir_buffer(recibido.buffer->size, cliente);
-	strcpy(recibido.buffer->stream, buffer);
+	char* buffer = recibir_buffer(recibido.size, cliente);
+	strcpy(recibido.stream, buffer);
 	recibido.dest = recibir_operacion(cliente);
 	free(buffer);
 	return recibido;
