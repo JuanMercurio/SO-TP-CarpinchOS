@@ -1,59 +1,23 @@
 #ifndef _ESQUEMA_PAGINACION_
 #define _ESQUEMA_PAGINACION_
 
+#include "config_pag.h"
+
 #include <commons/collections/list.h>
+#include <math.h>
 #include <pthread.h>
 #include <stdint.h>
-#include <math.h>
 
-#define PAGINA segmento
-#define MARCO segmento
-#define VACIO 0
-#define NOT_ASIGNED -1
-
-/* Estructura Memoria */
-typedef struct memoria_t {
-    void* memoria;
-    pthread_mutex_t mutex;
-}memoria_t;
+#define PAGINA        segmento
+#define MARCO         segmento
+#define VACIO                0
+#define NOT_ASIGNED         -1
 
 /* MEMORIA PRINCIPAL */
-memoria_t ram;
-
-/* Estructura para la supertabla de tablas  */
-typedef struct tablas_t{
-    t_list* lista;
-    pthread_mutex_t mutex;
-}tablas_t;
-
-/* Lista de tablas de paginas y su mutex */
-tablas_t tablas;
+extern memoria_t ram;
 
 /* "Bitmap" de marcos */
-t_list* marcos; 
-
-/* Esructura para tablas */
-typedef struct tab_pags{
-    int pid;
-    t_list* tabla_pag;
-}tab_pags;
-
-/* Registros de las tablas de paginas */
-typedef struct pag_t{
-    int marco;
-    int presente;
-    int modificado;
-    int algoritmo;
-}pag_t;
-
-/* Varibale para generar los id en memoria */
-int ids_memoria;
-
-/* Estructura para direccionamiento */
-typedef struct dir_t{
-   int segmento;
-   int offset;
-}dir_t;
+extern t_list* marcos; 
 
 /*
     @NAME:  iniciar_paginacion
@@ -61,6 +25,13 @@ typedef struct dir_t{
             para utilizar paginacion
  */
 void iniciar_paginacion();
+
+/*
+    @NAME:  nro_marco
+    @DESC:  retorna un numero de marco segun una pagina y la tabla del proceso.
+            se encarga de buscar y hacer los reemplazos que se requieren
+ */
+int nro_marco(int pagina, tab_pags* tabla);
 
 /*
     @NAME:  init_ram
@@ -73,6 +44,12 @@ void init_ram();
     @DESC:  iniciar el bitmap de frames de la memoria fisica
  */
 void init_bitmap_frames();
+
+/*
+    @NAME:  init_estructuras
+    @DESC:  inicia las estrucutas de paginacion
+ */
+void init_estructuras();
 
 /*
     @NAME:  crear_pagina
@@ -94,11 +71,79 @@ int marco_libre();
  */
 void add_new_page_table(tab_pags*);
 
+
+/*
+    @NAME:  pagina_valida
+    @DESC:  nos dice sin pedido de pagina es valido
+ */
+bool pagina_valida(tab_pags* tabla, int pagina);
+
+
+/*
+    @NAME:  buscar_en_tabPags
+    @DESC:  busca en la tabla de paginas del proceso si 
+            la pagina esta presente en memoria y retorna su numero de frame
+            si no esta en memoria retorna -1
+ */
+int buscar_en_tabPags(tab_pags* tabla, int pagina);
+
+/*
+    @NAME:  buscar_en_swap
+    @DESC:  busca en swap la pagina que queremos.
+            Se encarga de todas las tareas administrativas
+            que requiere pedir una pagina a memoria virtual
+ */
+int buscar_en_swap(tab_pags* tabla, int pagina);
+
+/*
+    @NAME:  reemplazar_pagina
+    @DESC:  reemplaza la pagina "victima" con "pagina"
+            se encarga de actualizar swamp si "victima" 
+            fue modificada
+ */
+void reemplazar_pagina(t_victima victima, void* buffer, int pagina, tab_pags* tabla);
+
+/*
+    @NAME:  actualizar_nueva_pagina
+    @DESC:  actualiza el marco de "pagina"
+ */
+void actualizar_nueva_pagina(int pagina, int marco, tab_pags* tabla);
+
+/*
+    @NAME:  insertar_pagina
+    @DESC:  inserta el contenido de "pagina" 
+            en memoria segun "marco"
+ */
+void insertar_pagina(void* pagina, int marco);
+
+/* 
+    @NAME:  recibir_contenido
+    @DESC:  recibe el contenido de una pagina desde swap
+ */
+void* recibir_contenido(int swap);
+
+/* 
+    @NAME:  serializar_pedido_pagina
+    @DESC:  recibe el contenido de una pagina desde swap
+ */
+void* serializar_pedido_pagina( int pid, int pagina);
+
+/* 
+    @NAME:  enviar_pagina_a_swap
+ */
+void enviar_pagina_a_swap(int pid, int pagina, int marco);
+
+/* 
+    @NAME:  enviar_pagina_a_swap
+ */
+void* recibir_marco(int cliente);
+
 /*
     @NAME:  set_asignacion
     @DESC:  segun el config les da valoes a las funciones puntero
  */
 void set_asignacion();
+
 /*
     @name:  obinario_a_decimal
     @desc:  dado un binario retorna su decimal
@@ -147,5 +192,9 @@ uint32_t decimal_a_binario(int decimal);
     @DESC:  retorna el desplazamiento de un dl binario
  */
 int get_offset(uint32_t dl, int multiplier);
+
+bool marcos_maximos_asignados(tab_pags* tabla);
+
+int paginas_presentes(tab_pags* t);
 
 #endif

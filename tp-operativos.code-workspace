@@ -5,6 +5,7 @@
 		{"path": "memoria"},
 		{"path": "kernel"},
     {"path": "utils"},
+    {"path": "carpincho"},
   ],
 
   /* aca irian las tasks globales del workspace pero no nos da la version para eso :( */
@@ -28,10 +29,22 @@
       "queue.h": "c",
       "semaphore.h": "c",
       "config.h": "c",
+<<<<<<< HEAD
       "tests.h": "c",
       "planificacion.h": "c",
       "io_semaforos.h": "c",
       "deadlock.h": "c"
+=======
+      "planificacion.h": "c",
+      "paginacion.h": "c",
+      "tlb.h": "c",
+      "list.h": "c",
+      "tests.h": "c",
+      "mensajes.h": "c",
+      "config_pag.h": "c",
+      "tests_memoria_sola.h": "c",
+      "io_semaforos.h": "c"
+>>>>>>> merge
     }
   }
 }

@@ -2,6 +2,7 @@
 #define _MEMORIA_CONFIG_
 
 #include <commons/config.h>
+#include <commons/log.h>
 
 typedef struct {
    char* IP;
@@ -18,9 +19,10 @@ typedef struct {
    char* PATH_DUMP_TLB;
 }t_cfg;
 
-t_cfg configuracion;
-
-t_config* config;
+extern pthread_mutex_t mutex_log;
+extern t_cfg configuracion;
+extern t_config* config;
+extern t_log* logger;
 
 /*
    @NAME: obtener_config
@@ -29,5 +31,18 @@ t_config* config;
           global configuracion
  */
 void obtener_config();
+
+/*
+   @NAME: iniciar_logger
+   @DESC: inicia el loger principal de toda la memoria
+ */
+void iniciar_logger();
+
+/*
+   @NAME: obtener_config
+   @DESC: logea un mensaje a cfg/memoria.log
+          Es thread safe
+ */
+void loggear_mensaje(char* mensaje);
 
 #endif

@@ -9,13 +9,14 @@ typedef struct {
    int TAMANIO_SWAP;
    int TAMANIO_PAGINA;
    char* ARCHIVOS_SWAP;
+   char** ARCHIVOS_SWAP_list;
    int MARCOS_MAXIMOS;
    int RETARDO_SWAP;
 }t_cfg;
 
-t_cfg configuracion;
+extern t_cfg configuracion;
 
-t_config* config;
+extern t_config* config;
 
 /*
    @NAME: obtener_config

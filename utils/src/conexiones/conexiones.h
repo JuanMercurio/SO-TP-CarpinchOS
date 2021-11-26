@@ -11,6 +11,7 @@
  */
 int crear_conexion(char *IP, char* PUERTO);
 
+void clientes_administrar(int servidor, void (*funcion)(void*));
 /*
     NAME: iniciar_servidor
     DESC: Inicia y pone a escuchar a un servidor en IP y PUERTO

@@ -1,23 +1,39 @@
 #include "paginacion.h"
-#include "../configuracion/config.h"
-#include "algoritmos.h"
+#include "tlb.h"
 
+#include <mensajes/mensajes.h>
 #include <stdlib.h>
 #include <stdio.h>
 #include <string.h>
 #include <stdint.h>
+#include <utils/utils.h>
+
+#define MEMP_MISS -1
+#define PAGINA_INVALIDA -2
+
+memoria_t ram;
+tablas_t tablas;
+t_list* marcos;
+int ids_memoria = 1;
+
+/* --------------- INICIACION ---------------------- */
 
 void iniciar_paginacion(){
-
-    ids_memoria = 0;
+	
     init_ram();
     init_bitmap_frames();
-    set_asignacion();
+    init_estructuras();
+    set_algoritmos();
 }
 
 void init_ram(){
     ram.memoria = malloc(configuracion.TAMANIO);
     pthread_mutex_init(&ram.mutex, NULL);
+}
+
+void init_estructuras(){
+    tablas.lista = list_create();
+    pthread_mutex_init(&tablas.mutex, NULL);
 }
 
 void init_bitmap_frames(){
@@ -32,24 +48,172 @@ void init_bitmap_frames(){
     }
 }
 
+/* --------------- Paginas ---------------------- */ 
+// insertar pagina asignacion fija
+int insertar_pagina_af(void* contenido, tab_pags* tabla){
+
+    if(marcos_maximos_asignados(tabla))
+    { 
+        return -1;
+    }
+
+    else
+    {
+        int marco = marco_libre();
+        if(marco != -1) return marco;
+    }
+    
+    return -1;
+}
+
+// insertar pagina asignacion dinamica
+int insertar_pagina_ad(void* contenido){
+
+    int marco = marco_libre();
+    if(marco != -1) return marco;
+
+    return -1;
+}
+
+bool marcos_maximos_asignados(tab_pags* tabla)
+{
+    return configuracion.MARCOS_POR_CARPINCHO < paginas_presentes(tabla);
+}
+
+int paginas_presentes(tab_pags* t){
+    int presente = 0;
+    int tamanio = list_size(t->tabla_pag);
+    for(int i=0; i<tamanio; i++)
+    {
+        pag_t* p = list_get(t->tabla_pag, i); 
+        if(p->presente == 1) presente++;
+    }
+
+    return presente;
+}
+
+int nro_marco(int pagina, tab_pags* tabla){
+
+    if(!pagina_valida(tabla, pagina)) return PAGINA_INVALIDA;
+
+    int marco;
+
+    // Busco en TLB
+    marco = buscar_en_tlb(tabla, pagina);
+    if(marco != TLB_MISS) return marco;
+
+    // Busco en tabla de paginas
+    marco = buscar_en_tabPags(tabla, pagina);
+    if(marco != MEMP_MISS) return marco;
+
+    marco = buscar_en_swap(tabla, pagina);
+    if(marco != -1) return marco;
+
+    return -1;
+}
+
+int buscar_en_swap(tab_pags* tabla, int pagina){
+
+    void* buffer = serializar_pedido_pagina(tabla->pid, pagina);
+    t_paquete* paquete = crear_paquete(SOLICITUD_PAGINA);
+    agregar_a_paquete(paquete, buffer, sizeof(int)*2);
+
+    int swap = crear_conexion("127.0.0.1", "5003");
+    enviar_paquete(paquete, swap);
+    
+    int op = recibir_int(swap);
+
+    if (op == -1) { 
+        close(swap);
+        return -1; 
+    }
+    
+    void* contenido = recibir_contenido(swap);
+    close(swap);
+
+    t_victima victima = algoritmo_mmu(tabla->pid, tabla);
+    reemplazar_pagina(victima, contenido, pagina, tabla);
+
+    return victima.marco;
+}
+
+void reemplazar_pagina(t_victima victima, void* buffer, int pagina, tab_pags* tabla){
+
+    if(victima.modificado == 1) enviar_pagina_a_swap(victima.pid, victima.pagina, victima.marco);
+    insertar_pagina(buffer, victima.marco);
+    actualizar_nueva_pagina(pagina, victima.marco, tabla);
+}
+
+
+void actualizar_nueva_pagina(int pagina, int marco, tab_pags* tabla)
+{
+    pthread_mutex_lock(&tablas.mutex);
+
+    pag_t* reg = list_get(tabla->tabla_pag, pagina);
+    reg->presente = 1;
+    reg->marco = marco;
+
+    pthread_mutex_unlock(&tablas.mutex);
+}
+
+void* recibir_marco(int cliente){
+    void* buffer = malloc(0);
+    return buffer;
+}
+
+void insertar_pagina(void* pagina, int marco){
+
+    pthread_mutex_lock(&ram.mutex);
+    memcpy(ram.memoria + marco*configuracion.TAMANIO_PAGINAS, pagina, configuracion.TAMANIO_PAGINAS);
+    pthread_mutex_unlock(&ram.mutex);
+}
+
+void* recibir_contenido(int swap){
+    void* buffer = malloc(configuracion.TAMANIO_PAGINAS);
+    buffer = recibir_marco(swap);
+    return buffer;
+}
+
+void* serializar_pedido_pagina( int pid, int pagina)
+{
+    int size = sizeof(int)*2;
+    void* buffer = malloc(size);
+    memcpy(buffer, &pid, sizeof(int));
+    memcpy(buffer + sizeof(int), &pagina, sizeof(int));
+    return buffer;
+}
+
+bool pagina_valida(tab_pags* tabla, int pagina){
+
+    pthread_mutex_lock(&tablas.mutex);
+    int n_paginas = list_size(tabla->tabla_pag);
+    pthread_mutex_unlock(&tablas.mutex); 
+
+    return n_paginas > pagina;
+}
+ 
+int buscar_en_tabPags(tab_pags* tabla, int pagina){
+
+    pthread_mutex_lock(&tablas.mutex);
+    pag_t* reg = list_get(tabla->tabla_pag, pagina);
+    pthread_mutex_unlock(&tablas.mutex);
+        
+    if(reg->presente == 1)
+    {
+        actualizar_tlb(tabla->pid, reg->marco, pagina);
+        return reg->marco; 
+    }
+
+    return MEMP_MISS;
+}
+
 int crear_pagina(t_list *paginas){
     pag_t *pagina = malloc(sizeof(pag_t));
     pagina->presente = 0;
-    pagina->marco = 0;
+    pagina->marco = NOT_ASIGNED;
     pagina->modificado = 0;
-    pagina->algoritmo = 0;
+    pagina->algoritmo = NOT_ASIGNED;
     return list_add(paginas, pagina);
-}
-
-void set_asignacion(){
-    if(strcmp(configuracion.TIPO_ASIGNACION, "FIJA") == 0)
-    {
-        lru = lru_fijo; 
-    }
-    else
-    {
-        lru = lru_dinamico;
-    }
 }
 
 int marco_libre(){
@@ -74,6 +238,8 @@ tab_pags* buscar_page_table(int pid){
     }
     return NULL;
 }
+
+/* -------------- DIRECCIONAMIENTO ---------------- */
 
 uint32_t crear_dl(dir_t dl){
 
@@ -148,3 +314,45 @@ int binario_a_decimal(uint32_t binario) {
     }
     return decimal;
 }
+
+bool pagina_solicitud_swap(int pid){
+    t_paquete* p = crear_paquete(SOLICITUD_PAGINA);
+    agregar_a_paquete(p, &pid, sizeof(int));
+    enviar_paquete(p, swap);
+    eliminar_paquete(p);
+    
+    return recibir_int(swap);
+}
+
+void* pagina_obtener_swap(int pid, int pagina)
+{
+    t_paquete* p = crear_paquete(OBTENER_PAGINA);
+    agregar_a_paquete(p, &pid, sizeof(int));
+    agregar_a_paquete(p, &pagina, sizeof(p));
+    enviar_paquete(p, swap);
+    eliminar_paquete(p);
+
+    void* buffer = recibir_buffer(configuracion.TAMANIO_PAGINAS, swap);
+    return buffer;
+    
+}
+
+
+void enviar_pagina_a_swap(int pid, int pagina, int marco){
+    
+    t_paquete* paquete = crear_paquete(ESCRIBIR_PAGINA);
+    void* contenido = malloc(configuracion.TAMANIO_PAGINAS);
+    memcpy(contenido, ram.memoria + marco*configuracion.TAMANIO_PAGINAS, configuracion.TAMANIO_PAGINAS);
+
+    agregar_a_paquete(paquete, &pagina, sizeof(int));
+    agregar_a_paquete(paquete, contenido, configuracion.TAMANIO_PAGINAS);
+
+    enviar_paquete(paquete, swap);
+
+    free(contenido);
+}
+
+
+
+
+

@@ -3,6 +3,8 @@
 #include "planificacion/planificacion.h"
 #include "deadlock/deadlock.h"
 bool terminar = false;
+
+int id_procesos = 0;
 int carpinchos_bloqueados = 0;
 int main(int argc, char *argv[])
 {

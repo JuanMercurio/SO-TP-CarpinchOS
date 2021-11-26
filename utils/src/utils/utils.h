@@ -14,7 +14,8 @@
 
 /* Variables Globales */
 
-int id_procesos;
+extern int id_procesos;
+extern int ids_memoria;
 
 /* Funciones */
 
@@ -32,5 +33,9 @@ int crearID(int *n);
     @ARGS:  n - Es el puntero a una variable globlal
  */
 int suma_atomica(int *n);
+
+int min_get(int , int);
+
+int max_get(int , int);
 
 #endif

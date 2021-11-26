@@ -1,6 +1,12 @@
 #ifndef _TESTS_MEMORIA_
 #define _TESTS_MEMORIA_
 
+#include "../configuracion/config.h"
+#include "../esquema/paginacion.h"
+#include "../esquema/tlb.h"
+#include "../main.h"
+
+
 /*
     @NAME: run_tests
     @DESC: Funcion principal que corre los tests

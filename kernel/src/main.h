@@ -10,6 +10,7 @@
 #include <commons/collections/queue.h>
 #include <commons/string.h>
 #include <commons/collections/list.h>
+#include <commons/collections/queue.h>
 #include <commons/temporal.h>
 #include <mensajes/mensajes.h>
 
@@ -19,7 +20,7 @@ extern int carpinchos_bloqueados;
 // type struct
 struct timeval *tiempito;
 struct tm *aux;
-typedef struct{
+typedef struct tiempo_t{
   //  double estimacion_anterior;
     double tiempo_ejecutado;
     double estimacion; // en  hrrn el tiepo de servicio es la estimacion para la proximaejecucion
@@ -28,7 +29,7 @@ typedef struct{
     char* time_stamp_fin;
 }tiempo_t;
 
-typedef struct{
+typedef struct t_pcb{
     int pid;
     int fd_cliente;
     int fd_memoria;
@@ -58,7 +59,7 @@ typedef enum{
     VUELTA_A_READY
 }cod_op;
 
-typedef struct{
+typedef struct sem_kernel{
     char* id;
     int val;
     int max_val;
@@ -68,7 +69,7 @@ typedef struct{
     int tomado_por;
 }sem_kernel;
 
-typedef struct{
+typedef struct io_kernel{
     char* id;
     int retardo;
     t_queue* bloqueados;

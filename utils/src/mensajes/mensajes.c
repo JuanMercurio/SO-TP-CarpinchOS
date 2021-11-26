@@ -1,8 +1,8 @@
 #include "mensajes.h"
 
+#include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
-#include <stdio.h>
 
 
 void enviar_mensaje_y_cod_op(char* mensaje, int socket_cliente, int codigo_op){
@@ -42,6 +42,14 @@ void handshake(int cliente, char* modulo){
     enviar_mensaje(cliente, modulo);
 }
 
+void enviar_int(int socket, int codigo){
+
+	void* buffer = malloc(sizeof(int));
+	memcpy(buffer, &codigo, sizeof(int));
+	send(socket, buffer, sizeof(int), 0);
+	free(buffer);
+}
+
 void enviar_mensaje(int cliente, char* mensaje){
     int size = strlen(mensaje) + 1 + sizeof(int);
     void* paquete = serializar_mensaje(mensaje);
@@ -60,10 +68,28 @@ int recibir_operacion(int socket_cliente) {
 	}
 }
 
-int recibir_tamanio(int socket_cliente) {
+
+void* recibir_buffer_t(int* size, int socket){
+	void* buffer;
+	recv(socket, size, sizeof(int), MSG_WAITALL);
+	buffer = malloc(*size);
+	recv(socket, buffer, *size, MSG_WAITALL);
+
+	return buffer;
+}
+
+int recibir_int(int socket_cliente) {
     int size;
 	recv(socket_cliente, &size, sizeof(int), MSG_WAITALL);
     return size;
+}
+
+int recibir_PID(int socket_cliente){
+	return recibir_operacion(socket_cliente);
+}
+
+int recibir_tamanio(int socket_cliente) {
+	return recibir_int(socket_cliente);
 }
 
 void* recibir_buffer(int size, int socket_cliente) {
@@ -90,6 +116,48 @@ void* serializar_mensaje(char* mensaje){
     return buffer;
 }
 
+
+void crear_buffer(t_paquete* paquete)
+{
+	paquete->buffer = malloc(sizeof(t_buffer));
+	paquete->buffer->size = 0;
+	paquete->buffer->stream = NULL;
+}
+
+t_paquete* crear_paquete(int codigo)
+{
+	t_paquete* paquete = malloc(sizeof(t_paquete));
+	paquete->codigo_operacion = codigo;
+	crear_buffer(paquete);
+	return paquete;
+}
+
+void agregar_a_paquete(t_paquete* paquete, void* valor, int tamanio)
+{
+	paquete->buffer->stream = realloc(paquete->buffer->stream, paquete->buffer->size + tamanio + sizeof(int));
+
+	memcpy(paquete->buffer->stream + paquete->buffer->size, &tamanio, sizeof(int));
+	memcpy(paquete->buffer->stream + paquete->buffer->size + sizeof(int), valor, tamanio);
+
+	paquete->buffer->size += tamanio + sizeof(int);
+}
+
+void enviar_paquete(t_paquete* paquete, int socket_cliente)
+{
+	int bytes = paquete->buffer->size + 2*sizeof(int);
+	void* a_enviar = serializar_paquete(paquete, bytes);
+
+	send(socket_cliente, a_enviar, bytes, 0);
+
+	free(a_enviar);
+}
+
+void eliminar_paquete(t_paquete* paquete)
+{
+	free(paquete->buffer->stream);
+	free(paquete->buffer);
+	free(paquete);
+}
 void enviar_sem_init(char* sem, int valor, int conexion, int cod_op){
 	t_paquete_semaforo *paquete = malloc(sizeof(t_paquete_semaforo));
 	paquete->cod_op = cod_op;
@@ -275,5 +343,4 @@ t_paquete_mem_write recibir_mem_write(int cliente){
 	int valor;
 	recv(conerecibir_mem_readxion, &valor, sizeof(int), MSG_WAITALL);
 	return *(int*) valor;	
-}
  */

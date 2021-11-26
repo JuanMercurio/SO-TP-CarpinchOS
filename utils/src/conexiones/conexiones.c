@@ -23,6 +23,24 @@ void administrar_clientes(char* IP, char* PUERTO, void (*funcion)(void*)){
    }
 
    pthread_attr_destroy(&detached); 
+
+}
+
+void clientes_administrar(int servidor, void (*funcion)(void*)){
+
+   pthread_attr_t detached;
+   pthread_attr_init(&detached);
+   pthread_attr_setdetachstate(&detached, PTHREAD_CREATE_DETACHED);
+
+   /* Revisar Condicion para terminar este while */
+   while(1){
+      pthread_t hilo;
+      int *cliente = malloc(sizeof(int));
+      *cliente= aceptar_cliente(servidor);
+      pthread_create(&hilo, &detached, (void*)funcion,(void*) cliente);
+   }
+
+   pthread_attr_destroy(&detached); 
 }
 
 int crear_conexion(char *ip, char* puerto){		
@@ -40,13 +58,11 @@ int crear_conexion(char *ip, char* puerto){
     for(p = server_info; p != NULL; p = p->ai_next) {
         if ((socket_serv = socket(p->ai_family, p->ai_socktype,
                 p->ai_protocol)) == -1) {
-            printf("client: socket\n");
             continue;
         }
 
         if (connect(socket_serv, p->ai_addr, p->ai_addrlen) == -1) {
             close(socket_serv);
-            printf("client: connect\n");
             continue;
         }
 
