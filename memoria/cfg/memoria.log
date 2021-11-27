@@ -1,312 +1,64 @@
-[INFO] 11:42:26:468 Memoria/(20207:20276): Se conecto un cliente - Socket: 16
-[INFO] 11:42:26:468 Memoria/(20207:20275): Se conecto un cliente - Socket: 15
-[INFO] 11:42:26:469 Memoria/(20207:20277): Se conecto un cliente - Socket: 20
-[INFO] 11:42:26:469 Memoria/(20207:20278): Se conecto un cliente - Socket: 21
-[INFO] 11:42:26:470 Memoria/(20207:20276): Se desconecto un cliente - Socket: 16 - PID: 1
-[INFO] 11:42:26:470 Memoria/(20207:20275): Se desconecto un cliente - Socket: 15 - PID: 2
-[INFO] 11:42:26:470 Memoria/(20207:20277): Se desconecto un cliente - Socket: 20 - PID: 3
-[INFO] 11:42:26:471 Memoria/(20207:20278): Se desconecto un cliente - Socket: 21 - PID: 4
-[INFO] 11:44:01:698 Memoria/(20559:20628): Se conecto un cliente - Socket: 15
-[INFO] 11:44:01:698 Memoria/(20559:20629): Se conecto un cliente - Socket: 16
-[INFO] 11:44:01:701 Memoria/(20559:20630): Se conecto un cliente - Socket: 20
-[INFO] 11:44:01:701 Memoria/(20559:20631): Se conecto un cliente - Socket: 21
-[INFO] 11:44:43:101 Memoria/(20857:20923): Se conecto un cliente - Socket: 15
-[INFO] 11:44:43:102 Memoria/(20857:20924): Se conecto un cliente - Socket: 16
-[INFO] 11:44:43:103 Memoria/(20857:20925): Se conecto un cliente - Socket: 20
-[INFO] 11:44:43:121 Memoria/(20857:20926): Se conecto un cliente - Socket: 21
-[INFO] 11:44:43:123 Memoria/(20857:20923): Se desconecto un cliente - Socket: 15 - PID: 1
-[INFO] 11:44:43:123 Memoria/(20857:20924): Se desconecto un cliente - Socket: 16 - PID: 2
-[INFO] 11:44:43:123 Memoria/(20857:20925): Se desconecto un cliente - Socket: 20 - PID: 3
-[INFO] 11:44:43:125 Memoria/(20857:20926): Se desconecto un cliente - Socket: 21 - PID: 4
-[INFO] 11:44:58:533 Memoria/(21122:21188): Se conecto un cliente - Socket: 15
-[INFO] 11:44:58:534 Memoria/(21122:21189): Se conecto un cliente - Socket: 16
-[INFO] 11:44:58:535 Memoria/(21122:21190): Se conecto un cliente - Socket: 20
-[INFO] 11:44:58:542 Memoria/(21122:21191): Se conecto un cliente - Socket: 21
-[INFO] 11:45:32:651 Memoria/(21412:21478): Se conecto un cliente - Socket: 15
-[INFO] 11:45:32:652 Memoria/(21412:21479): Se conecto un cliente - Socket: 16
-[INFO] 11:45:32:653 Memoria/(21412:21480): Se conecto un cliente - Socket: 20
-[INFO] 11:45:32:671 Memoria/(21412:21481): Se conecto un cliente - Socket: 21
-[INFO] 11:46:52:887 Memoria/(21727:21793): Se conecto un cliente - Socket: 15
-[INFO] 11:46:52:888 Memoria/(21727:21794): Se conecto un cliente - Socket: 16
-[INFO] 11:46:52:889 Memoria/(21727:21795): Se conecto un cliente - Socket: 20
-[INFO] 11:46:52:907 Memoria/(21727:21796): Se conecto un cliente - Socket: 21
-[INFO] 11:47:58:426 Memoria/(22040:22106): Se conecto un cliente - Socket: 15
-[INFO] 11:47:58:428 Memoria/(22040:22107): Se conecto un cliente - Socket: 16
-[INFO] 11:47:58:437 Memoria/(22040:22108): Se conecto un cliente - Socket: 20
-[INFO] 11:47:58:437 Memoria/(22040:22109): Se conecto un cliente - Socket: 21
-[INFO] 11:47:58:537 Memoria/(22040:22106): Se desconecto un cliente - Socket: 15 - PID: 1
-[INFO] 11:47:58:610 Memoria/(22040:22107): Se desconecto un cliente - Socket: 16 - PID: 2
-[INFO] 11:47:58:670 Memoria/(22040:22108): Se desconecto un cliente - Socket: 20 - PID: 3
-[INFO] 11:47:58:727 Memoria/(22040:22109): Se desconecto un cliente - Socket: 21 - PID: 4
-[INFO] 11:48:04:232 Memoria/(22040:22179): Se conecto un cliente - Socket: 22
-[INFO] 11:48:04:233 Memoria/(22040:22180): Se conecto un cliente - Socket: 15
-[INFO] 11:48:04:233 Memoria/(22040:22181): Se conecto un cliente - Socket: 16
-[INFO] 11:48:04:240 Memoria/(22040:22182): Se conecto un cliente - Socket: 20
-[INFO] 11:48:04:350 Memoria/(22040:22179): Se desconecto un cliente - Socket: 22 - PID: 5
-[INFO] 11:48:04:458 Memoria/(22040:22180): Se desconecto un cliente - Socket: 15 - PID: 6
-[INFO] 11:48:04:557 Memoria/(22040:22181): Se desconecto un cliente - Socket: 16 - PID: 7
-[INFO] 11:48:04:656 Memoria/(22040:22182): Se desconecto un cliente - Socket: 20 - PID: 8
-[INFO] 11:48:06:513 Memoria/(22040:22252): Se conecto un cliente - Socket: 21
-[INFO] 11:48:06:514 Memoria/(22040:22253): Se conecto un cliente - Socket: 15
-[INFO] 11:48:06:515 Memoria/(22040:22254): Se conecto un cliente - Socket: 16
-[INFO] 11:48:06:532 Memoria/(22040:22255): Se conecto un cliente - Socket: 20
-[INFO] 11:48:06:686 Memoria/(22040:22252): Se desconecto un cliente - Socket: 21 - PID: 9
-[INFO] 11:48:06:801 Memoria/(22040:22253): Se desconecto un cliente - Socket: 15 - PID: 10
-[INFO] 11:48:06:907 Memoria/(22040:22254): Se desconecto un cliente - Socket: 16 - PID: 11
-[INFO] 11:48:06:993 Memoria/(22040:22255): Se desconecto un cliente - Socket: 20 - PID: 12
-[INFO] 11:48:08:124 Memoria/(22040:22322): Se conecto un cliente - Socket: 22
-[INFO] 11:48:08:124 Memoria/(22040:22323): Se conecto un cliente - Socket: 15
-[INFO] 11:48:08:125 Memoria/(22040:22324): Se conecto un cliente - Socket: 16
-[INFO] 11:48:08:142 Memoria/(22040:22325): Se conecto un cliente - Socket: 20
-[INFO] 11:48:08:311 Memoria/(22040:22322): Se desconecto un cliente - Socket: 22 - PID: 13
-[INFO] 11:48:08:415 Memoria/(22040:22323): Se desconecto un cliente - Socket: 15 - PID: 14
-[INFO] 11:48:08:504 Memoria/(22040:22324): Se desconecto un cliente - Socket: 16 - PID: 15
-[INFO] 11:48:08:586 Memoria/(22040:22325): Se desconecto un cliente - Socket: 20 - PID: 16
-[INFO] 14:00:51:843 Memoria/(26824:26824): Tlb inicializada
-[INFO] 14:01:38:702 Memoria/(27065:27065): Tlb inicializada
-[INFO] 14:10:28:499 Memoria/(27670:27670): Tlb Inicializada
-[INFO] 14:11:27:630 Memoria/(27916:27916): Tlb Inicializada
-[INFO] 14:12:04:894 Memoria/(28140:28140): Tlb Inicializada
-[INFO] 14:12:47:160 Memoria/(28371:28371): Tlb Inicializada
-[INFO] 14:14:05:503 Memoria/(28653:28653): Tlb Inicializada
-[INFO] 14:14:57:498 Memoria/(28895:28895): Tlb Inicializada
-[INFO] 14:16:17:179 Memoria/(29245:29245): Tlb Inicializada
-[INFO] 14:17:53:142 Memoria/(29531:29531): Tlb Inicializada
-[INFO] 14:18:59:845 Memoria/(29820:29820): Tlb Inicializada
-[INFO] 14:21:34:647 Memoria/(30141:30141): Tlb Inicializada
-[INFO] 14:24:53:864 Memoria/(30506:30506): Tlb Inicializada
-[INFO] 14:25:21:320 Memoria/(30730:30730): Tlb Inicializada
-[INFO] 14:25:52:371 Memoria/(30955:30955): Tlb Inicializada
-[INFO] 14:26:20:136 Memoria/(31176:31176): Tlb Inicializada
-[INFO] 14:32:22:228 Memoria/(31641:31641): Tlb Inicializada
-[INFO] 14:35:09:815 Memoria/(31963:31963): Tlb Inicializada
-[INFO] 14:36:04:781 Memoria/(32208:32208): Tlb Inicializada
-[INFO] 14:36:40:090 Memoria/(32437:32437): Tlb Inicializada
-[INFO] 14:37:11:333 Memoria/(32661:32661): Tlb Inicializada
-[INFO] 14:40:44:079 Memoria/(563:563): Tlb Inicializada
-[INFO] 14:41:13:180 Memoria/(782:782): Tlb Inicializada
-[INFO] 14:41:43:471 Memoria/(1020:1020): Tlb Inicializada
-[INFO] 14:42:02:699 Memoria/(1265:1265): Tlb Inicializada
-[INFO] 14:43:11:264 Memoria/(1544:1544): Tlb Inicializada
-[INFO] 14:43:43:960 Memoria/(1774:1774): Tlb Inicializada
-[INFO] 14:44:12:262 Memoria/(1998:1998): Tlb Inicializada
-[INFO] 14:46:02:476 Memoria/(2299:2299): Tlb Inicializada
-[INFO] 14:46:38:657 Memoria/(2529:2529): Tlb Inicializada
-[INFO] 14:48:00:561 Memoria/(2794:2794): Tlb Inicializada
-[INFO] 14:48:45:043 Memoria/(3035:3035): Tlb Inicializada
-[INFO] 14:53:32:106 Memoria/(3531:3531): Tlb Inicializada
-[INFO] 14:53:54:391 Memoria/(3802:3802): Tlb Inicializada
-[INFO] 14:54:35:302 Memoria/(4034:4034): Tlb Inicializada
-[INFO] 14:55:25:783 Memoria/(4281:4281): Tlb Inicializada
-[INFO] 15:09:56:191 Memoria/(5339:5339): Tlb Inicializada
-[INFO] 15:10:40:019 Memoria/(5581:5581): Tlb Inicializada
-[INFO] 15:10:56:159 Memoria/(5788:5788): Tlb Inicializada
-[INFO] 15:11:16:703 Memoria/(6014:6014): Tlb Inicializada
-[INFO] 15:12:18:548 Memoria/(6259:6259): Tlb Inicializada
-[INFO] 15:12:33:788 Memoria/(6468:6468): Tlb Inicializada
-[INFO] 15:13:00:631 Memoria/(6697:6697): Tlb Inicializada
-[INFO] 15:13:26:109 Memoria/(6930:6930): Tlb Inicializada
-[INFO] 15:13:41:698 Memoria/(7132:7132): Tlb Inicializada
-[INFO] 15:25:10:231 Memoria/(8029:8029): Tlb Inicializada
-[INFO] 15:25:16:590 Memoria/(8029:8029): TLB Dump
-[INFO] 15:25:16:590 Memoria/(8029:8029): TLB Dump
-[INFO] 15:25:16:590 Memoria/(8029:8029): TLB Dump
-[INFO] 15:25:16:590 Memoria/(8029:8029): TLB Dump
-[INFO] 15:25:16:590 Memoria/(8029:8029): TLB Dump
-[INFO] 15:25:16:590 Memoria/(8029:8029): TLB Dump
-[INFO] 15:25:16:590 Memoria/(8029:8029): TLB Dump
-[INFO] 15:25:16:590 Memoria/(8029:8029): TLB Dump
-[INFO] 15:25:16:590 Memoria/(8029:8029): TLB Dump
-[INFO] 15:25:16:590 Memoria/(8029:8029): TLB Dump
-[INFO] 15:25:16:590 Memoria/(8029:8029): TLB Dump
-[INFO] 15:25:16:590 Memoria/(8029:8029): TLB Dump
-[INFO] 15:25:16:590 Memoria/(8029:8029): TLB Dump
-[INFO] 15:25:16:590 Memoria/(8029:8029): TLB Dump
-[INFO] 15:25:16:590 Memoria/(8029:8029): TLB Dump
-[INFO] 15:25:16:590 Memoria/(8029:8029): TLB Dump
-[INFO] 15:26:17:104 Memoria/(8285:8285): Tlb Inicializada
-[INFO] 15:26:21:643 Memoria/(8285:8285): TLB Dump
-[INFO] 15:26:21:643 Memoria/(8285:8285): TLB Dump
-[INFO] 15:26:21:643 Memoria/(8285:8285): TLB Dump
-[INFO] 15:26:21:643 Memoria/(8285:8285): TLB Dump
-[INFO] 15:26:21:643 Memoria/(8285:8285): TLB Dump
-[INFO] 15:26:21:643 Memoria/(8285:8285): TLB Dump
-[INFO] 15:26:21:643 Memoria/(8285:8285): TLB Dump
-[INFO] 15:26:21:643 Memoria/(8285:8285): TLB Dump
-[INFO] 15:26:21:643 Memoria/(8285:8285): TLB Dump
-[INFO] 15:26:21:643 Memoria/(8285:8285): TLB Dump
-[INFO] 15:26:21:643 Memoria/(8285:8285): TLB Dump
-[INFO] 15:26:21:643 Memoria/(8285:8285): TLB Dump
-[INFO] 15:26:21:643 Memoria/(8285:8285): TLB Dump
-[INFO] 15:26:21:643 Memoria/(8285:8285): TLB Dump
-[INFO] 15:26:21:643 Memoria/(8285:8285): TLB Dump
-[INFO] 15:26:21:643 Memoria/(8285:8285): TLB Dump
-[INFO] 15:28:00:237 Memoria/(8582:8582): Tlb Inicializada
-[INFO] 15:28:06:955 Memoria/(8582:8582): TLB Dump
-[INFO] 15:28:06:955 Memoria/(8582:8582): TLB Dump
-[INFO] 15:28:06:955 Memoria/(8582:8582): TLB Dump
-[INFO] 15:28:06:955 Memoria/(8582:8582): TLB Dump
-[INFO] 15:28:06:955 Memoria/(8582:8582): TLB Dump
-[INFO] 15:28:06:955 Memoria/(8582:8582): TLB Dump
-[INFO] 15:28:06:955 Memoria/(8582:8582): TLB Dump
-[INFO] 15:28:06:955 Memoria/(8582:8582): TLB Dump
-[INFO] 15:28:06:955 Memoria/(8582:8582): TLB Dump
-[INFO] 15:28:06:955 Memoria/(8582:8582): TLB Dump
-[INFO] 15:28:06:955 Memoria/(8582:8582): TLB Dump
-[INFO] 15:28:06:955 Memoria/(8582:8582): TLB Dump
-[INFO] 15:28:06:955 Memoria/(8582:8582): TLB Dump
-[INFO] 15:28:06:955 Memoria/(8582:8582): TLB Dump
-[INFO] 15:28:06:955 Memoria/(8582:8582): TLB Dump
-[INFO] 15:28:06:955 Memoria/(8582:8582): TLB Dump
-[INFO] 15:28:37:905 Memoria/(8826:8826): Tlb Inicializada
-[INFO] 15:28:42:040 Memoria/(8826:8826): TLB Dump
-[INFO] 15:28:42:040 Memoria/(8826:8826): TLB Dump
-[INFO] 15:28:42:040 Memoria/(8826:8826): TLB Dump
-[INFO] 15:28:42:040 Memoria/(8826:8826): TLB Dump
-[INFO] 15:28:42:040 Memoria/(8826:8826): TLB Dump
-[INFO] 15:28:42:040 Memoria/(8826:8826): TLB Dump
-[INFO] 15:28:42:040 Memoria/(8826:8826): TLB Dump
-[INFO] 15:28:42:040 Memoria/(8826:8826): TLB Dump
-[INFO] 15:28:42:040 Memoria/(8826:8826): TLB Dump
-[INFO] 15:28:42:040 Memoria/(8826:8826): TLB Dump
-[INFO] 15:28:42:040 Memoria/(8826:8826): TLB Dump
-[INFO] 15:28:42:040 Memoria/(8826:8826): TLB Dump
-[INFO] 15:28:42:040 Memoria/(8826:8826): TLB Dump
-[INFO] 15:28:42:040 Memoria/(8826:8826): TLB Dump
-[INFO] 15:28:42:040 Memoria/(8826:8826): TLB Dump
-[INFO] 15:28:42:040 Memoria/(8826:8826): TLB Dump
-[INFO] 15:35:34:614 Memoria/(9386:9386): Tlb Inicializada
-[INFO] 15:36:26:756 Memoria/(9624:9624): Tlb Inicializada
-[INFO] 15:37:40:114 Memoria/(9873:9873): Tlb Inicializada
-[INFO] 15:37:46:010 Memoria/(9873:9873): TLB Dump
-[INFO] 15:37:46:010 Memoria/(9873:9873): TLB Dump
-[INFO] 15:37:46:010 Memoria/(9873:9873): TLB Dump
-[INFO] 15:37:46:010 Memoria/(9873:9873): TLB Dump
-[INFO] 15:37:46:010 Memoria/(9873:9873): TLB Dump
-[INFO] 15:37:46:010 Memoria/(9873:9873): TLB Dump
-[INFO] 15:37:46:010 Memoria/(9873:9873): TLB Dump
-[INFO] 15:37:46:010 Memoria/(9873:9873): TLB Dump
-[INFO] 15:37:46:010 Memoria/(9873:9873): TLB Dump
-[INFO] 15:37:46:010 Memoria/(9873:9873): TLB Dump
-[INFO] 15:37:46:010 Memoria/(9873:9873): TLB Dump
-[INFO] 15:37:46:010 Memoria/(9873:9873): TLB Dump
-[INFO] 15:37:46:010 Memoria/(9873:9873): TLB Dump
-[INFO] 15:37:46:010 Memoria/(9873:9873): TLB Dump
-[INFO] 15:37:46:010 Memoria/(9873:9873): TLB Dump
-[INFO] 15:37:46:010 Memoria/(9873:9873): TLB Dump
-[INFO] 15:39:43:196 Memoria/(10193:10193): Tlb Inicializada
-[INFO] 15:39:51:424 Memoria/(10193:10193): TLB Dump
-[INFO] 15:39:51:424 Memoria/(10193:10193): TLB Dump
-[INFO] 15:39:51:424 Memoria/(10193:10193): TLB Dump
-[INFO] 15:39:51:424 Memoria/(10193:10193): TLB Dump
-[INFO] 15:39:51:424 Memoria/(10193:10193): TLB Dump
-[INFO] 15:39:51:424 Memoria/(10193:10193): TLB Dump
-[INFO] 15:39:51:424 Memoria/(10193:10193): TLB Dump
-[INFO] 15:39:51:424 Memoria/(10193:10193): TLB Dump
-[INFO] 15:39:51:424 Memoria/(10193:10193): TLB Dump
-[INFO] 15:39:51:424 Memoria/(10193:10193): TLB Dump
-[INFO] 15:39:51:424 Memoria/(10193:10193): TLB Dump
-[INFO] 15:39:51:424 Memoria/(10193:10193): TLB Dump
-[INFO] 15:39:51:424 Memoria/(10193:10193): TLB Dump
-[INFO] 15:39:51:424 Memoria/(10193:10193): TLB Dump
-[INFO] 15:39:51:424 Memoria/(10193:10193): TLB Dump
-[INFO] 15:39:51:424 Memoria/(10193:10193): TLB Dump
-[INFO] 15:42:16:779 Memoria/(10502:10502): Tlb Inicializada
-[INFO] 15:42:21:401 Memoria/(10502:10502): TLB Dump
-[INFO] 15:42:21:401 Memoria/(10502:10502): TLB Dump
-[INFO] 15:42:21:401 Memoria/(10502:10502): TLB Dump
-[INFO] 15:42:21:401 Memoria/(10502:10502): TLB Dump
-[INFO] 15:42:21:401 Memoria/(10502:10502): TLB Dump
-[INFO] 15:42:21:401 Memoria/(10502:10502): TLB Dump
-[INFO] 15:42:21:401 Memoria/(10502:10502): TLB Dump
-[INFO] 15:42:21:401 Memoria/(10502:10502): TLB Dump
-[INFO] 15:42:21:401 Memoria/(10502:10502): TLB Dump
-[INFO] 15:42:21:401 Memoria/(10502:10502): TLB Dump
-[INFO] 15:42:21:401 Memoria/(10502:10502): TLB Dump
-[INFO] 15:42:21:401 Memoria/(10502:10502): TLB Dump
-[INFO] 15:42:21:401 Memoria/(10502:10502): TLB Dump
-[INFO] 15:42:21:401 Memoria/(10502:10502): TLB Dump
-[INFO] 15:42:21:401 Memoria/(10502:10502): TLB Dump
-[INFO] 15:42:21:401 Memoria/(10502:10502): TLB Dump
-[INFO] 15:50:09:503 Memoria/(11167:11167): Tlb Inicializada
-[INFO] 15:50:17:809 Memoria/(11167:11167): TLB Dump
-[INFO] 15:50:17:809 Memoria/(11167:11167): TLB Dump
-[INFO] 15:50:17:809 Memoria/(11167:11167): TLB Dump
-[INFO] 15:50:17:809 Memoria/(11167:11167): TLB Dump
-[INFO] 15:50:17:809 Memoria/(11167:11167): TLB Dump
-[INFO] 15:50:17:810 Memoria/(11167:11167): TLB Dump
-[INFO] 15:50:17:810 Memoria/(11167:11167): TLB Dump
-[INFO] 15:50:17:810 Memoria/(11167:11167): TLB Dump
-[INFO] 15:50:17:810 Memoria/(11167:11167): TLB Dump
-[INFO] 15:50:17:810 Memoria/(11167:11167): TLB Dump
-[INFO] 15:50:17:810 Memoria/(11167:11167): TLB Dump
-[INFO] 15:50:17:810 Memoria/(11167:11167): TLB Dump
-[INFO] 15:50:17:810 Memoria/(11167:11167): TLB Dump
-[INFO] 15:50:17:810 Memoria/(11167:11167): TLB Dump
-[INFO] 15:50:17:810 Memoria/(11167:11167): TLB Dump
-[INFO] 15:50:17:810 Memoria/(11167:11167): TLB Dump
-[INFO] 15:51:53:681 Memoria/(11449:11449): Tlb Inicializada
-[INFO] 15:52:11:156 Memoria/(11449:11449): TLB Dump
-[INFO] 15:52:11:156 Memoria/(11449:11449): TLB Dump
-[INFO] 15:52:11:156 Memoria/(11449:11449): TLB Dump
-[INFO] 15:52:11:156 Memoria/(11449:11449): TLB Dump
-[INFO] 15:52:11:156 Memoria/(11449:11449): TLB Dump
-[INFO] 15:52:11:156 Memoria/(11449:11449): TLB Dump
-[INFO] 15:52:11:156 Memoria/(11449:11449): TLB Dump
-[INFO] 15:52:11:156 Memoria/(11449:11449): TLB Dump
-[INFO] 15:52:11:156 Memoria/(11449:11449): TLB Dump
-[INFO] 15:52:11:156 Memoria/(11449:11449): TLB Dump
-[INFO] 15:52:11:156 Memoria/(11449:11449): TLB Dump
-[INFO] 15:52:11:156 Memoria/(11449:11449): TLB Dump
-[INFO] 15:52:11:156 Memoria/(11449:11449): TLB Dump
-[INFO] 15:52:11:156 Memoria/(11449:11449): TLB Dump
-[INFO] 15:52:11:156 Memoria/(11449:11449): TLB Dump
-[INFO] 15:52:11:156 Memoria/(11449:11449): TLB Dump
-[INFO] 15:53:17:786 Memoria/(11717:11717): Tlb Inicializada
-[INFO] 15:53:30:552 Memoria/(11717:11717): TLB Dump
-[INFO] 15:53:30:552 Memoria/(11717:11717): TLB Dump
-[INFO] 15:53:30:552 Memoria/(11717:11717): TLB Dump
-[INFO] 15:53:30:552 Memoria/(11717:11717): TLB Dump
-[INFO] 15:53:30:552 Memoria/(11717:11717): TLB Dump
-[INFO] 15:53:30:552 Memoria/(11717:11717): TLB Dump
-[INFO] 15:53:30:552 Memoria/(11717:11717): TLB Dump
-[INFO] 15:53:30:552 Memoria/(11717:11717): TLB Dump
-[INFO] 15:53:30:552 Memoria/(11717:11717): TLB Dump
-[INFO] 15:53:30:552 Memoria/(11717:11717): TLB Dump
-[INFO] 15:53:30:552 Memoria/(11717:11717): TLB Dump
-[INFO] 15:53:30:552 Memoria/(11717:11717): TLB Dump
-[INFO] 15:53:30:552 Memoria/(11717:11717): TLB Dump
-[INFO] 15:53:30:552 Memoria/(11717:11717): TLB Dump
-[INFO] 15:53:30:552 Memoria/(11717:11717): TLB Dump
-[INFO] 15:53:30:552 Memoria/(11717:11717): TLB Dump
-[INFO] 15:55:31:247 Memoria/(11717:11717): TLB Dump
-[INFO] 15:55:31:247 Memoria/(11717:11717): TLB Dump
-[INFO] 15:55:31:247 Memoria/(11717:11717): TLB Dump
-[INFO] 15:55:31:247 Memoria/(11717:11717): TLB Dump
-[INFO] 15:55:31:247 Memoria/(11717:11717): TLB Dump
-[INFO] 15:55:31:247 Memoria/(11717:11717): TLB Dump
-[INFO] 15:55:31:247 Memoria/(11717:11717): TLB Dump
-[INFO] 15:55:31:247 Memoria/(11717:11717): TLB Dump
-[INFO] 15:55:31:247 Memoria/(11717:11717): TLB Dump
-[INFO] 15:55:31:247 Memoria/(11717:11717): TLB Dump
-[INFO] 15:55:31:247 Memoria/(11717:11717): TLB Dump
-[INFO] 15:55:31:247 Memoria/(11717:11717): TLB Dump
-[INFO] 15:55:31:247 Memoria/(11717:11717): TLB Dump
-[INFO] 15:55:31:247 Memoria/(11717:11717): TLB Dump
-[INFO] 15:55:31:247 Memoria/(11717:11717): TLB Dump
-[INFO] 15:55:31:247 Memoria/(11717:11717): TLB Dump
-[INFO] 16:29:50:481 Memoria/(13999:13999): Tlb Inicializada
-[INFO] 16:33:10:812 Memoria/(15615:15615): Tlb Inicializada
-[INFO] 16:33:32:399 Memoria/(15806:15806): Tlb Inicializada
-[INFO] 16:34:49:984 Memoria/(16646:16646): Tlb Inicializada
-[INFO] 16:36:50:252 Memoria/(16935:16935): Tlb Inicializada
-[INFO] 16:39:14:859 Memoria/(17240:17240): Tlb Inicializada
-[INFO] 16:40:00:645 Memoria/(17480:17480): Tlb Inicializada
-[INFO] 16:41:11:215 Memoria/(17729:17729): Tlb Inicializada
-[INFO] 16:42:18:765 Memoria/(17978:17978): Tlb Inicializada
-[INFO] 16:43:54:652 Memoria/(18256:18256): Tlb Inicializada
-[INFO] 17:09:00:352 Memoria/(20510:20510): Tlb Inicializada
-[INFO] 17:13:45:745 Memoria/(20927:20927): Tlb Inicializada
-[INFO] 17:14:10:820 Memoria/(21139:21139): Tlb Inicializada
-[INFO] 17:14:51:212 Memoria/(21363:21363): Tlb Inicializada
-[INFO] 22:52:17:343 Memoria/(7095:7095): Tlb Inicializada
+[INFO] 01:35:01:216 Memoria/(4630:4630): Tlb Inicializada
+[INFO] 01:35:12:798 Memoria/(4630:4790): Se conecto un cliente - Socket: 16
+[INFO] 01:35:12:798 Memoria/(4630:4791): Se conecto un cliente - Socket: 20
+[INFO] 01:37:53:979 Memoria/(5414:5414): Tlb Inicializada
+[INFO] 01:38:03:956 Memoria/(5414:5441): Se conecto un cliente - Socket: 16
+[INFO] 01:38:03:957 Memoria/(5414:5442): Se conecto un cliente - Socket: 20
+[INFO] 01:38:37:719 Memoria/(6031:6031): Tlb Inicializada
+[INFO] 01:38:40:706 Memoria/(6031:6037): Se conecto un cliente - Socket: 16
+[INFO] 01:38:40:707 Memoria/(6031:6038): Se conecto un cliente - Socket: 20
+[INFO] 01:39:17:808 Memoria/(6480:6480): Tlb Inicializada
+[INFO] 01:39:19:352 Memoria/(6480:6486): Se conecto un cliente - Socket: 16
+[INFO] 01:39:19:353 Memoria/(6480:6487): Se conecto un cliente - Socket: 20
+[INFO] 01:39:44:462 Memoria/(6480:6684): Se conecto un cliente - Socket: 21
+[INFO] 01:40:58:617 Memoria/(7306:7306): Tlb Inicializada
+[INFO] 01:40:59:749 Memoria/(7306:7312): Se conecto un cliente - Socket: 16
+[INFO] 01:40:59:750 Memoria/(7306:7313): Se conecto un cliente - Socket: 20
+[INFO] 01:41:55:345 Memoria/(7903:7903): Tlb Inicializada
+[INFO] 01:41:57:139 Memoria/(7903:7909): Se conecto un cliente - Socket: 16
+[INFO] 01:41:57:140 Memoria/(7903:7910): Se conecto un cliente - Socket: 20
+[INFO] 01:41:57:141 Memoria/(7903:7911): Se conecto un cliente - Socket: 21
+[INFO] 01:42:47:323 Memoria/(8411:8411): Tlb Inicializada
+[INFO] 01:42:52:537 Memoria/(8411:8528): Se conecto un cliente - Socket: 16
+[INFO] 01:42:52:537 Memoria/(8411:8529): Se conecto un cliente - Socket: 20
+[INFO] 01:44:28:122 Memoria/(9040:9040): Tlb Inicializada
+[INFO] 01:44:32:472 Memoria/(9040:9185): Se conecto un cliente - Socket: 16
+[INFO] 01:44:32:473 Memoria/(9040:9186): Se conecto un cliente - Socket: 20
+[INFO] 01:45:04:220 Memoria/(9040:9465): Se conecto un cliente - Socket: 21
+[INFO] 01:45:32:938 Memoria/(9864:9864): Tlb Inicializada
+[INFO] 01:46:01:512 Memoria/(9864:10034): Se conecto un cliente - Socket: 16
+[INFO] 01:46:10:841 Memoria/(10416:10416): Tlb Inicializada
+[INFO] 01:47:12:441 Memoria/(10416:10646): Se conecto un cliente - Socket: 16
+[INFO] 01:47:26:941 Memoria/(10806:10806): Tlb Inicializada
+[INFO] 02:16:16:400 Memoria/(13825:13825): Tlb Inicializada
+[INFO] 02:16:38:231 Memoria/(13992:13992): Tlb Inicializada
+[INFO] 02:19:45:179 Memoria/(14666:14666): Tlb Inicializada
+[INFO] 02:20:47:702 Memoria/(14933:14933): Tlb Inicializada
+[INFO] 02:22:01:222 Memoria/(15230:15230): Tlb Inicializada
+[INFO] 02:22:06:233 Memoria/(15230:15239): Se conecto un cliente - Socket: 15
+[INFO] 02:22:52:787 Memoria/(15508:15508): Tlb Inicializada
+[INFO] 02:22:55:407 Memoria/(15508:15511): Se conecto un cliente - Socket: 15
+[INFO] 02:24:10:171 Memoria/(16198:16198): Tlb Inicializada
+[INFO] 02:24:10:844 Memoria/(16198:16201): Se conecto un cliente - Socket: 15
+[INFO] 02:24:49:519 Memoria/(16816:16816): Tlb Inicializada
+[INFO] 02:24:52:597 Memoria/(16816:16822): Se conecto un cliente - Socket: 15
+[INFO] 02:27:30:958 Memoria/(17415:17415): Tlb Inicializada
+[INFO] 02:27:31:728 Memoria/(17415:17418): Se conecto un cliente - Socket: 15
+[INFO] 02:27:43:259 Memoria/(17415:17594): Se conecto un cliente - Socket: 16
+[INFO] 02:28:45:286 Memoria/(17874:17874): Tlb Inicializada
+[INFO] 02:28:47:823 Memoria/(17874:17933): Se conecto un cliente - Socket: 15
+[INFO] 02:29:10:760 Memoria/(18390:18390): Tlb Inicializada
+[INFO] 02:29:13:337 Memoria/(18390:18496): Se conecto un cliente - Socket: 15
+[INFO] 02:29:38:348 Memoria/(18668:18668): Tlb Inicializada
+[INFO] 02:29:43:693 Memoria/(18668:18688): Se conecto un cliente - Socket: 15
+[INFO] 02:32:50:538 Memoria/(19174:19174): Tlb Inicializada
+[INFO] 02:32:54:732 Memoria/(19174:19239): Se conecto un cliente - Socket: 15
+[INFO] 02:33:52:438 Memoria/(20041:20041): Tlb Inicializada
+[INFO] 02:33:56:285 Memoria/(20041:20153): Se conecto un cliente - Socket: 15
+[INFO] 02:34:17:412 Memoria/(20554:20554): Tlb Inicializada
+[INFO] 02:34:28:511 Memoria/(20744:20744): Tlb Inicializada
+[INFO] 02:34:31:028 Memoria/(20744:20850): Se conecto un cliente - Socket: 15
+[INFO] 02:34:49:761 Memoria/(21298:21298): Tlb Inicializada
+[INFO] 02:37:06:730 Memoria/(21852:21852): Tlb Inicializada
+[INFO] 02:37:09:884 Memoria/(21852:21959): Se conecto un cliente - Socket: 15
+[INFO] 09:45:56:716 Memoria/(4341:4341): Tlb Inicializada

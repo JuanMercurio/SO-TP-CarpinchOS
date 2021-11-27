@@ -10,11 +10,14 @@ void memoria_test_solo(int c_args)
     iniciar_paginacion();
     iniciar_tlb();
 
-    iniciar_paginas(123, 1);
-    iniciar_paginas(123, 10);
-    iniciar_paginas(123, 1010);
-    iniciar_paginas(123, 1337);
-    iniciar_paginas(123, 1986);
+    tab_pags* tabla = malloc(sizeof(tab_pags));
+    tabla->pid = 123;
+
+    iniciar_paginas(tabla);
+    iniciar_paginas(tabla);
+    iniciar_paginas(tabla);
+    iniciar_paginas(tabla);
+    iniciar_paginas(tabla);
 
     procesos_imprimir();    
 

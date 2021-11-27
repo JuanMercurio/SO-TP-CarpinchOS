@@ -26,8 +26,10 @@ HeapMetadata* hallar_metadata(uint32_t dir_log, tab_pags* tabla, int* num_pag);
 
 bool pedir_memoria_a_swap(int tamanio);
 
-int memalloc(int tamanio, int pid);
-int memfree(int dir_log, int pid);
+int memalloc(tab_pags *tabla, int tamanio);
+int memfree(tab_pags *tabla, int dl);
+int memwrite(tab_pags* tabla, int dir_log, void* contenido, int tamanio);
+void* memread(tab_pags* tabla, int dir_log, int tamanio);
 
 void TEST_agregar_nueva_pagina(tab_pags* tabla, int marco);
 void TEST_report_metadatas(int pid);

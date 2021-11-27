@@ -226,9 +226,7 @@ int marco_libre(){
 }
 
 void add_new_page_table(tab_pags* tabla){
-    pthread_mutex_lock(&tablas.mutex);
     list_add(tablas.lista, tabla);
-    pthread_mutex_unlock(&tablas.mutex);
 }
 
 tab_pags* buscar_page_table(int pid){ 

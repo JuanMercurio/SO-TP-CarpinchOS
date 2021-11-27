@@ -458,6 +458,9 @@ void TEST_agregar_nueva_pagina(tab_pags* tabla, int marco){
 // 	}
 // }
 
+int memalloc(tab_pags *tabla, int tamanio){return 0;}
+int memfree(tab_pags *tabla, int dl){return 0;}
+
 void* memread(tab_pags* tabla, int dir_log, int tamanio){
     dir_t dl = traducir_dir_log(dir_log);
     if(!alloc_valido(dl, tabla, tamanio)) return NULL; 

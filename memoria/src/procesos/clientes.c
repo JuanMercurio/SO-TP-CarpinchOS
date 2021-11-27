@@ -1,7 +1,6 @@
 #include "clientes.h"
 
 #include "../esquema/algoritmos.h"
-#include "../esquema/paginacion.h"
 #include "../esquema/tlb.h"
 #include "operaciones.h"
 
@@ -21,150 +20,196 @@ void atender_proceso(void* arg){
     sprintf(mensaje, "Se conecto un cliente - Socket: %d", cliente);
     loggear_mensaje(mensaje);
 
-    handshake(cliente, MEMORIA);
+    handshake(cliente, "MEMORIA");
     ejecutar_proceso(cliente);
 
     close(cliente);
 }
 
-void ejecutar_proceso(int cliente) {
-
-    int pid = PID_EMPTY;
-    t_list* tabla;
+void ejecutar_proceso(int cliente)
+{
+    tab_pags* tabla = tabla_init();
     bool conectado = true;
 
     while(conectado)
     {
         int operacion = recibir_operacion(cliente);
+        
         switch (operacion)
         {
-        case NEW_INSTANCE:
-            pid = iniciar_proceso(cliente);
-            enviar_int(cliente, pid);
-            tabla = iniciar_paginas(cliente, pid);
-            printf("termine de iniciar a %d\n", pid);
-            break;
+            case NEW_INSTANCE:
+            printf("mellego un new instance \n");
+                new_instance_comportamiento(tabla, cliente, &conectado);
+                break;
 
-        case MEMALLOC:
-            comportamiento_memalloc(&pid, cliente);
-            /* RECIBE EDE KERNEL EL TAMAÑO A ALLOCAR
-                DEVUELVE UN INT CON LA DL O UN -1 PARA DENEGAR ASIGNACION
-             */
-            break;
+            case MEMALLOC:
+                memalloc_comportamiento(tabla, cliente);
+                break;
 
-        case MEMFREE:
-            /* RECIBE EDE KERNEL EL TAMAÑO A LIBERAR
-                DEVUELVE UN INT CON LA DL O UN -5 PARA DENEGAR 
-             */
+            case MEMFREE:
+                memfree_comportamiento(tabla, cliente);
+                break;
 
-            break;
+            case MEMREAD:
+                memread_comportamiento(tabla, cliente);
+                break;
 
-        case MEMREAD:
-            /* recibe una estructura con el int del ptr origen un void* que es un char* con el nombre de una io (segun ejemplo)
-         Se usa para obtener información de la memoria. Con la dirección lógica que nos proveen y  la tabla de páginas hacemos la traducción a direcciones
-          físicas y retornamos el contenido. 
-        En caso de que se quiera leer una posición de memoria errónea, se deberá devolver el error MATE_READ_FAULT definido en el
-         enum mate_errors de la matelib correspondiente con el valor -6.
-*/
-            break;
+            case MEMWRITE:
+                memwrite_comportamiento(tabla, cliente);
+                break;
 
-        case MEMWRITE:
-            break;
+            case NEW_INSTANCE_KERNEL:
+                new_instance_kernel_comportamiento(tabla, cliente, &conectado);
+                break;
 
-        case NEW_INSTANCE_KERNEL:
-            pid = recibir_operacion(cliente); // del otro lado se envia solamente el cod op y el pid
-            tabla = iniciar_paginas(cliente, pid);
-            break;
+            case MATE_CLOSE: 
+                mate_close_comportamiento(tabla, cliente, &conectado);
+                break;
 
-        case MATE_CLOSE: recibir_mensaje(cliente); /* DEBERA ELIMINAR LAS TABLAS DEL PROCESO CERRADO?? */
-         close(cliente);
-
-        default:
-            conectado = false;
-            break;
+            default:
+                conectado = false;
+                break;
         }
     }
 
+}
+
+
+/* Functions */ 
+
+void new_instance_comportamiento(tab_pags* tabla, int cliente, bool *conectado)
+{   
+    // int respuesta = swap_solicitud_iniciar(tabla->pid);
+
+    // if(respuesta == -1) 
+    // {
+    //     enviar_int(cliente, -1);
+    //     free(tabla->tabla_pag);
+    //     free(tabla);
+    //     *conectado = false;
+    //     return;
+    // }
+
+    // tabla->pid = crearID(&ids_memoria);
+    // printf("cree el carpincho %d", 4);
+
+    enviar_int(cliente, 4);
+    iniciar_paginas(tabla);
+}
+
+
+void new_instance_kernel_comportamiento(tab_pags* tabla, int cliente, bool *conectado){ 
+    tabla->pid = recibir_operacion(cliente); 
+    //falta preguntarle a swap si puede iniciar y mandarle 0 o -1 al kernel
+    inicio_comprobar(tabla, cliente, conectado);
+}
+
+
+int swap_solicitud_iniciar(int pid){
+    return 0;
+    // enviar_int(swap, SOLICITUD_INICIO);
+    // int estado = recibir_int(swap);
+    // return estado;
+}
+
+void memalloc_comportamiento(tab_pags* tabla, int cliente){
+
+    int tamanio = recibir_int(cliente);
+    int dl = memalloc(tabla, tamanio);
+    enviar_int(cliente, dl);
+}
+
+
+void memfree_comportamiento(tab_pags* tabla, int cliente){
+
+    int dl = recibir_int(cliente);
+    int result_memfree = memfree(tabla, dl);
+
+    enviar_int(cliente, result_memfree);
+}
+
+void memread_comportamiento(tab_pags* tabla, int cliente){
+
+    int tamanio = recibir_int(cliente);
+    int dl = recibir_int(cliente);
+
+    void* buffer = memread(tabla, dl, tamanio);
+    enviar_mensaje(cliente, buffer);
+}
+
+void memwrite_comportamiento(tab_pags* tabla, int cliente){
+
+    int tamanio = recibir_int(cliente);
+    void* buffer = recibir_mensaje(cliente);
+    int dl = recibir_int(cliente);
+
+    int result_memwrite = memwrite(tabla, dl, buffer, tamanio);
+    enviar_int(cliente, result_memwrite);
+}
+
+void mate_close_comportamiento(tab_pags *tabla, int cliente, bool *conectado){ 
+    cliente_terminar(tabla, cliente);
+    *conectado = false;
+}
+
+
+
+void inicio_comprobar(tab_pags* tabla, int cliente, bool* conectado){
+    
+    int respuesta = swap_solicitud_iniciar(tabla->pid);
+
+    if(respuesta == -1) 
+    {
+        enviar_mensaje(cliente, "No se pudo iniciar"); 
+        free(tabla->tabla_pag);
+        free(tabla);
+        *conectado = false;
+        return;
+    }
+
+    enviar_int(swap, tabla->pid);
+    enviar_mensaje(cliente, "OK");
+    iniciar_paginas(tabla);
+}
+
+void cliente_terminar(tab_pags* tabla, int cliente)
+{ 
     pthread_mutex_lock(&tablas.mutex);
-    tablas_eliminar_proceso(pid);
-    tlb_eliminar_proceso(pid);
+    tablas_eliminar_proceso(tabla->pid);
+    tlb_eliminar_proceso(tabla->pid);
     pthread_mutex_unlock(&tablas.mutex);
 
     //avisar a swamp
 
     char mensaje[100];
-    sprintf(mensaje, "Se desconecto un cliente - Socket: %d - PID: %d", cliente, pid);
+    sprintf(mensaje, "Se desconecto un cliente - Socket: %d - PID: %d", cliente, tabla->pid);
     loggear_mensaje(mensaje);
+    close(cliente);
 }
 
-t_list* iniciar_paginas(int cliente, int pid)
-{
-    tab_pags* tabla = malloc(sizeof(tab_pags));
+tab_pags* tabla_init()
+{ 
+    tab_pags *tabla= malloc(sizeof(tab_pags));
+    tabla->pid = NOT_ASIGNED;
+    return tabla;
+}
 
-    tabla->pid        = pid;
+
+
+
+void iniciar_paginas(tab_pags* tabla)
+{
+
     tabla->TLB_HITS   = 0;
     tabla->TLB_MISSES = 0;
     tabla->tabla_pag  = list_create();
 
     add_new_page_table(tabla);
-
-    return tabla->tabla_pag;
 }
 
 void enviar_PID(int *pid, int cliente){ 
     *pid = crearID(&ids_memoria);
     enviar_int(cliente, *pid);
-}
-
-
-
-int iniciar_proceso(int proceso)
-{
-    int swamp = crear_conexion("127.0.0.1", "5003");
-    enviar_int(swamp, SOLICITUD_INICIO);
-
-    int estado = recibir_int(swamp);
-    comprobar_inicio(estado, proceso);
-
-    int pid = crearID(&ids_memoria);
-    enviar_int(swamp, pid);
-
-    return pid;
-}
-
-void comprobar_inicio(int estado, int socket){
-    if(estado == -1) 
-    {
-        enviar_int(socket, NOT_ASIGNED);
-        pthread_exit(0);
-    }
-}
-
-int comportamiento_memalloc(int* pid, int cliente){
-
-    int tamanio_buffer = recibir_int(cliente);
-    if(tamanio_buffer != sizeof(int)*4) return -1;
-
-    int size = 0;
-    int* pid_cliente = recibir_buffer_t(&size, cliente);
-
-    if(*pid == NOT_ASIGNED) 
-    {
-        *pid = *pid_cliente;
-        iniciar_paginas(cliente, *pid);
-    } 
-    if(*pid != *pid_cliente)
-    {
-        //comportamiento de pid erroneo
-        printf("Me llego un pid erroreo en memalloc\n");
-    }
-    else 
-    {
-        printf("El cliente esta en el sistema continuo con malloc\n");
-        // memalloc();
-    }
-
-    return -1;
 }
 
 
@@ -187,7 +232,6 @@ bool pid_valido(int pid){
 
 
 void tablas_eliminar_proceso(int pid){
-    printf("eliminando Proceso %d\n", pid);
     int tamanio = list_size(tablas.lista);
     for(int i=0; i < tamanio; i++)
     {

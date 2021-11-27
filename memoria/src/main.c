@@ -16,7 +16,7 @@ int main(int argc, char* argv[]) {
    iniciar_tlb();
 
    int server = iniciar_servidor(configuracion.IP, configuracion.PUERTO);
-   swap_conexion_init(server);
+   // swap_conexion_init(server);
    clientes_administrar(server, (void*)&atender_proceso);
 
    terminar_programa();
