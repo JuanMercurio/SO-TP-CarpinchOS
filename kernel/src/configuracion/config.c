@@ -18,10 +18,10 @@ void obtener_config(){
     configuracion.ESTIMACION_INICIAL = config_get_double_value(config, "ESTIMACION_INICIAL");
 
     configuracion.TIEMPO_DEADLOCK = config_get_int_value(config, "TIEMPO_DEADLOCK");
-
+    log_info(logger, "Configuración obtenida");
 }
 
 void iniciar_logger(){
     logger = log_create("cfg/kernel.log", "Kernel", 0, LOG_LEVEL_INFO);
-    log_info(logger,"log creado");
+    log_info(logger,"Log creado");
 }

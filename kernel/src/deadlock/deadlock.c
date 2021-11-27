@@ -10,6 +10,7 @@ void deteccion_deadlock()
     while(!terminar)
     {
         usleep(configuracion.TIEMPO_DEADLOCK);
+        log_info(logger, "Comienza la ejecución de la detección de Deadlock");
         //pausar_todo????
         for (int i = 0; i > list_size(lista_sem_kernel); i++)
         {
@@ -24,8 +25,11 @@ void deteccion_deadlock()
             }
         }
 
+        log_info(logger, "Finaliza la búsqueda de carpinchos en posible deadlock");
+
         if (!list_is_empty(lista_posible_deadlock))
         {
+            log_info(logger, "Verificando espera circular");
             t_list *lista_con_deadlock = verificar_espera_circular(lista_posible_deadlock);
 
             while (lista_con_deadlock == NULL)
@@ -34,6 +38,9 @@ void deteccion_deadlock()
                                                             //  list_destroy_and_destroy_elements(lista_posible_deadlock, lista_deadlock_destroyer);
                 lista_con_deadlock = verificar_espera_circular(lista_posible_deadlock);
             }
+        }
+        else{
+                log_info(logger, "No se encontraron carpinchos en posible deadlock");
         }
     }
 }
@@ -62,6 +69,7 @@ t_deadlock *buscar_en_otras_listas(int pid, int index, char *semaforo_retenido)
             carpincho_bloqueado = (t_pcb *)queue_pop(semaforo->bloqueados);
             if (pid == carpincho_bloqueado->pid)
             {
+                log_info(logger, "El carpincho %d está en posible deadlock - Semáforo retenido: %s - Semáforo por el que se bloqueó: %s", pid, semaforo_retenido, semaforo->id);
                 carpincho_deadlock->pid = pid;
                 strcpy(carpincho_deadlock->retenido, semaforo_retenido);
                 strcpy(carpincho_deadlock->esperando, semaforo->id);
@@ -92,10 +100,13 @@ t_list *verificar_espera_circular(t_list *lista)
     }
     if (cerrado)
     {
+        log_info(logger, "Espera circular detectada");
         return lista_aux;
     }
-    else
+    else{
+        log_info(logger, "No se detectó espera circular");    
         return NULL;
+    }
 }
 //--------------------------------------------------------------
 bool encontrar_circulo(t_deadlock *a_evaluar, t_list *lista, t_list *lista_aux)
@@ -173,6 +184,7 @@ void finalizar_involucrados(t_list *lista_deadlock)
             strcpy(esperando_a_sacar, aux->esperando);
         }
     }
+    log_info(logger, "Se finaliza el carpincho PID %d", mayor_id);
     semaforo = buscar_semaforo(esperando_a_sacar);
     sacar_de_cola_bloqueados(semaforo, mayor_id);
     sem_kernel_post(retenido_a_liberar);
