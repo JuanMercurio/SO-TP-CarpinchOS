@@ -8,10 +8,11 @@ int id_procesos = 0;
 int carpinchos_bloqueados = 0;
 int main(int argc, char *argv[])
 {
+   log_info(logger, "Iniciando Kernel");
 
    //solo corre si corremos el binario asi: binario test
    //tests(argc, argv[1]);
- printf("arranca o no arranca?\n");
+   printf("arranca o no arranca?\n");
    iniciar_logger();
    printf("paso logger\n");
    obtener_config();
@@ -24,12 +25,13 @@ int main(int argc, char *argv[])
    printf("inicio dispositivos io\n");
    inicializar_planificacion();
    administrar_clientes(configuracion.IP, configuracion.PUERTO, &receptor);
-
+   log_info(logger, "Kernel listo para recibir solicitudes");
    return 0;
 }
 
 void terminar_programa()
 {
+   log_info(logger, "Terminando programa");
    config_destroy(config);
    log_destroy(logger);
    destruir_semaforos();
@@ -103,7 +105,8 @@ void destruir_colas_y_listas(){
    else{
       list_destroy(lista_ejecutando);
    }
-
+   
+   log_info(logger, "Colas, listas y sus respectivos elementos destruidos");
 }
 
 void destruir_semaforos(){
@@ -120,6 +123,7 @@ void destruir_semaforos(){
    sem_destroy(&mutex_cola_finalizados);
    sem_destroy(&mutex_lista_oredenada_por_algoritmo);
    sem_destroy(&controlador_multiprogramacion);
+   log_info(logger, "Semáforos destruidos");
 }
 
 void receptor(void *arg)
@@ -136,11 +140,7 @@ void receptor(void *arg)
    t_paquete_mem_write mem_write;
    char* recibido;
    sem_kernel *sem ;
-   
    char* io;
-
-  
-   //¿Tiene que hacer algún handshake o confirmar de alguna forma la conexión?
 
    while (conectado)
    {
@@ -151,7 +151,8 @@ void receptor(void *arg)
       switch (cod_op)
       {
 
-      case NEW_INSTANCE: 
+      case NEW_INSTANCE:
+            log_info(logger, "Se recibió un NEW INSTANCE. Comienza creación del carpincho");
             carpincho = malloc(sizeof(t_pcb)); // aca no recibe la pcb en si , recibe un paquete con datos que habra que guardar en un t_pcb luego de desserializar lo que viene
             carpincho->fd_cliente = cliente;
             carpincho->fd_memoria =  crear_conexion(configuracion.IP_MEMORIA, configuracion.PUERTO_MEMORIA);
@@ -185,7 +186,6 @@ void receptor(void *arg)
                carpincho->proxima_instruccion = IO;
                sem_post(&carpincho->semaforo_evento);
                log_info(logger, "Se recibió del carpincho %d un CALL IO para %s", carpincho->pid, io);
-
                break;
 
       case SEM_WAIT: 
@@ -301,51 +301,48 @@ void inicializar_planificacion()
    pthread_attr_setdetachstate(&detached3, PTHREAD_CREATE_DETACHED);
    
    iniciar_colas();
-   log_info(logger, "INICIO COLAS PLANIFICADORAS");
+   log_info(logger, "Inicio colas de planificación");
    if(pthread_create(&hilos_planificadores, &detached3, (void *) iniciar_planificador_corto_plazo, NULL)!= 0){
-     log_info(logger,"NO SE PUDO CREAR HILO PLANIFICADOR CORTO PLAZO\n");
+      log_info(logger,"No se pudo crear el hilo Planificador Corto Plazo");
    }else{
-log_info(logger, "PLANIFICADORES Y DETECTOR DEADLOCK CREADOS");
-
+      log_info(logger, "Hilo Planificador Corto Plazo creado");
    }
    
    if(pthread_create(&hilos_planificadores, &detached3,  (void *)iniciar_planificador_largo_plazo, NULL)!= 0){
-      log_info(logger, "NO SE PUDO CREAR HILO PLANIFICADOR LARGO PLAZO\n");
+      log_info(logger,"No se pudo crear el hilo Planificador Largo Plazo");
    }else{
-log_info(logger, "PLANIFICADORES Y DETECTOR DEADLOCK CREADOS");
-
+      log_info(logger, "Hilo Planificador Largo Plazo creado");
    }
+
    if(pthread_create(&hilos_planificadores, &detached3, (void *) iniciar_gestor_finalizados, NULL)!= 0){
-       log_info(logger, "NO SE PUDO CREAR HILO GESWTOR FINALIZADOS\n");
+      log_info(logger,"No se pudo crear el hilo Gestor Finalizados");
    }else{
-log_info(logger, "PLANIFICADORES Y DETECTOR DEADLOCK CREADOS");
-
-   
-  
-
-   }if(pthread_create(&hilos_planificadores, &detached3, (void *)&deteccion_deadlock, NULL)!= 0){
-      log_info(logger, "NO SE PUDO CREAR HILO DETECCION DEADLOCK\n");
-   }else{
-log_info(logger, "PLANIFICADORES Y DETECTOR DEADLOCK CREADOS");
-
+      log_info(logger, "Hilo Planificador Gestro Finalizados creado");
    }
+
+   if(pthread_create(&hilos_planificadores, &detached3, (void *)&deteccion_deadlock, NULL)!= 0){
+      log_info(logger,"No se pudo crear el hilo Detección Deadlock");
+   }else{
+      log_info(logger, "Hilo Detección Deadlock creado");
+   }
+
    if(pthread_create(&hilos_planificadores, &detached3, (void *)&program_killer, NULL) != 0){
-      log_info(logger, "NO SE PUDO CREAR HILO PARATERMINAR PROGRAMA");
+      log_info(logger,"No se pudo crear el hilo para terminar el programa");
    }else{
-log_info(logger, "PLANIFICADORES Y DETECTOR DEADLOCK CREADOS");
-
+      log_info(logger, "Hilo para terminar el programa creado");
    }
+
     if(pthread_create(&hilos_planificadores, &detached3, (void *)iniciar_cpu,  NULL)!= 0){
-       log_info(logger, "NO SE PUDO CREAR HILO PLANIFICADOR LARGO PLAZO\n");
+      log_info(logger,"No se pudo crear el hilo CPU");
    }else{
-log_info(logger, "PLANIFICADORES Y DETECTOR DEADLOCK CREADOS\n");
+      log_info(logger, "Hilo CPU creado");
    }
    
 
 }
 void program_killer(){
    char* leido  = string_new();
-   log_info(logger, "Para terminar precione cualquier tecla.\n");
+   log_info(logger, "Para terminar precione cualquier tecla.");
    scanf("%s",leido);
    terminar = true;
    terminar_programa();
@@ -378,6 +375,7 @@ void inicializar_semaforos(){
    sem_init(&mutex_lista_io_kernel,0,1);
    sem_init(&controlador_multiprogramacion, 0, configuracion.GRADO_MULTIPROGRAMACION);
 
+   log_info(logger, "Semáforos inicializados");
 
 }
 void inicializar_listas_sem_io(){

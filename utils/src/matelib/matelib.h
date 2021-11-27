@@ -5,6 +5,7 @@
 
 #include <commons/collections/list.h>
 #include <commons/config.h>
+#include <commons/log.h>
 #include <semaphore.h>
 #include <stdint.h>
 #include <stdio.h>
@@ -59,6 +60,8 @@ typedef char *mate_io_resource;
 typedef char *mate_sem_name;
 
 typedef int32_t mate_pointer;
+
+t_log* logger;
 
 //------------------General Functions---------------------/
 int mate_init(mate_instance *lib_ref, char *config);
