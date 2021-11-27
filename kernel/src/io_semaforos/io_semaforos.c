@@ -168,9 +168,9 @@ void init_dispositivos_io(){
       list_add(lista_io_kernel, nueva_io);
       sem_post(&mutex_lista_io_kernel);
       i++;
+      log_info(logger,"COLAS DISPOSITIVOS IO CREADAS");
+     // free(nueva_io); //va acá o afuera del while? BORRAR LA TERMINAR
    }
-   log_info(logger,"Colas de dispositivos IO creadas");
-
    iniciar_hilos_gestores_de_io();
 }
 void iniciar_hilos_gestores_de_io(){
@@ -187,10 +187,10 @@ void iniciar_hilos_gestores_de_io(){
          io = (io_kernel*)list_get(lista_io_kernel, i-1);
          if ((pthread_create(&hilo2, NULL, (void*)gestor_cola_io, (void *)io))!=0)
          {
-            log_info(logger, "No se pudo crear el hilo gestor de la IO %s", io->id);
+            log_info(logger, "No se pudo crear hilo gestor de cola io");
          }else
          {  
-         log_info(logger, "Se creó el hilo gestor de la IO %s", io->id); // para controlar que se cree
+         log_info(logger, "Se creó GESTOR de io %s", io->id); // para controlar que se cree
          }
         
             i--;
@@ -200,17 +200,14 @@ void iniciar_hilos_gestores_de_io(){
 
 void gestor_cola_io(void *datos){
    printf("acacacacacacaa\n");
-   log_info(logger, "Creando gestor de IO");
+   log_info(logger, "creo gestor de io");
    io_kernel *io = (io_kernel*)datos;
    t_pcb *carpincho;
    while(!terminar){
-   log_info(logger,"IO %s lista para recibir carpinchos", io->id);
    sem_wait(&io->cola_con_elementos);// el posta  aeste semaforo se lo tiene que dar el procesador al bloquearlo buscando en la lista la io y su resdpectivo semaforo
    sem_wait(&io->mutex_io);
    carpincho = queue_pop(io->bloqueados);
    sem_post(&io->mutex_io);
-   log_info(logger,"Retardo de %d para el carpincho PID %d", io->retardo, carpincho->pid);
-
    usleep(io->retardo);
    //enviar_mensaje("OK", carpincho->fd_cliente);
    sem_wait(&mutex_cola_ready);
