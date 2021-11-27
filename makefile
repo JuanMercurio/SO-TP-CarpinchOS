@@ -106,7 +106,7 @@ delete: $(BASE_PROJECT)
 
 	@echo "$(name) was removed"
 
-clean: 
+clean: $(DIRECTORIES)
 	@for dir in $(DIRECTORIES); 	\
 	do 								\
 		cd $$dir; 					\

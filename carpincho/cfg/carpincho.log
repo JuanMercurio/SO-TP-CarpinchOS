@@ -1,1 +1,446 @@
-Soy un log
+[INFO] 10:28:56:571 Matelib/(17303:17310): Log Matelib creado
+[INFO] 10:28:56:571 Matelib/(17303:17310): Esperando respuesta de servidor
+[INFO] 10:28:56:571 Matelib/(17303:17311): Log Matelib creado
+[INFO] 10:28:56:572 Matelib/(17303:17311): Esperando respuesta de servidor
+[INFO] 10:28:56:572 Matelib/(17303:17312): Log Matelib creado
+[INFO] 10:28:56:572 Matelib/(17303:17312): Esperando respuesta de servidor
+[INFO] 10:28:56:572 Matelib/(17303:17313): Log Matelib creado
+[INFO] 10:28:56:572 Matelib/(17303:17313): Esperando respuesta de servidor
+[INFO] 10:28:56:572 Matelib/(17303:17309): Log Matelib creado
+[INFO] 10:28:56:572 Matelib/(17303:17308): Log Matelib creado
+[INFO] 10:28:56:572 Matelib/(17303:17308): Esperando respuesta de servidor
+[INFO] 10:28:56:572 Matelib/(17303:17309): Esperando respuesta de servidor
+[INFO] 10:28:56:572 Matelib/(17303:17307): Log Matelib creado
+[INFO] 10:28:56:572 Matelib/(17303:17307): Esperando respuesta de servidor
+[INFO] 10:28:56:572 Matelib/(17303:17306): Log Matelib creado
+[INFO] 10:28:56:572 Matelib/(17303:17306): Esperando respuesta de servidor
+[INFO] 10:28:56:572 Matelib/(17303:17310): NUEVO CARPINCHO
+[INFO] 10:28:56:572 Matelib/(17303:17311): NUEVO CARPINCHO
+[INFO] 10:28:56:572 Matelib/(17303:17312): NUEVO CARPINCHO
+[INFO] 10:28:56:573 Matelib/(17303:17313): NUEVO CARPINCHO
+[INFO] 10:28:56:573 Matelib/(17303:17309): NUEVO CARPINCHO
+[INFO] 10:28:56:573 Matelib/(17303:17308): NUEVO CARPINCHO
+[INFO] 10:28:56:573 Matelib/(17303:17305): Log Matelib creado
+[INFO] 10:28:56:574 Matelib/(17303:17307): NUEVO CARPINCHO
+[INFO] 10:28:56:574 Matelib/(17303:17305): Esperando respuesta de servidor
+[INFO] 10:28:56:574 Matelib/(17303:17306): NUEVO CARPINCHO
+[INFO] 10:28:56:574 Matelib/(17303:17304): Log Matelib creado
+[INFO] 10:28:56:574 Matelib/(17303:17305): NUEVO CARPINCHO
+[INFO] 10:28:56:575 Matelib/(17303:17304): Esperando respuesta de servidor
+[INFO] 10:28:56:575 Matelib/(17303:17304): NUEVO CARPINCHO
+[INFO] 10:28:56:612 Matelib/(17303:17304): Carpincho creado correctamente con el pid: 10
+[INFO] 10:28:56:612 Matelib/(17303:17305): Carpincho creado correctamente con el pid: 9
+[INFO] 10:28:56:612 Matelib/(17303:17306): Carpincho creado correctamente con el pid: 8
+[INFO] 10:28:56:612 Matelib/(17303:17307): Carpincho creado correctamente con el pid: 7
+[INFO] 10:28:56:612 Matelib/(17303:17308): Carpincho creado correctamente con el pid: 6
+[INFO] 10:28:56:612 Matelib/(17303:17309): Carpincho creado correctamente con el pid: 5
+[INFO] 10:28:56:612 Matelib/(17303:17313): Carpincho creado correctamente con el pid: 4
+[INFO] 10:28:56:612 Matelib/(17303:17312): Carpincho creado correctamente con el pid: 3
+[INFO] 10:29:44:384 Matelib/(17649:17656): Log Matelib creado
+[INFO] 10:29:44:384 Matelib/(17649:17656): Esperando respuesta de servidor
+[INFO] 10:29:44:384 Matelib/(17649:17657): Log Matelib creado
+[INFO] 10:29:44:384 Matelib/(17649:17657): Esperando respuesta de servidor
+[INFO] 10:29:44:384 Matelib/(17649:17658): Log Matelib creado
+[INFO] 10:29:44:384 Matelib/(17649:17658): Esperando respuesta de servidor
+[INFO] 10:29:44:384 Matelib/(17649:17659): Log Matelib creado
+[INFO] 10:29:44:384 Matelib/(17649:17659): Esperando respuesta de servidor
+[INFO] 10:29:44:384 Matelib/(17649:17655): Log Matelib creado
+[INFO] 10:29:44:384 Matelib/(17649:17655): Esperando respuesta de servidor
+[INFO] 10:29:44:384 Matelib/(17649:17654): Log Matelib creado
+[INFO] 10:29:44:385 Matelib/(17649:17654): Esperando respuesta de servidor
+[INFO] 10:29:44:385 Matelib/(17649:17653): Log Matelib creado
+[INFO] 10:29:44:385 Matelib/(17649:17653): Esperando respuesta de servidor
+[INFO] 10:29:44:385 Matelib/(17649:17652): Log Matelib creado
+[INFO] 10:29:44:385 Matelib/(17649:17652): Esperando respuesta de servidor
+[INFO] 10:29:44:385 Matelib/(17649:17656): NUEVO CARPINCHO
+[INFO] 10:29:44:385 Matelib/(17649:17657): NUEVO CARPINCHO
+[INFO] 10:29:44:385 Matelib/(17649:17658): NUEVO CARPINCHO
+[INFO] 10:29:44:385 Matelib/(17649:17659): NUEVO CARPINCHO
+[INFO] 10:29:44:385 Matelib/(17649:17655): NUEVO CARPINCHO
+[INFO] 10:29:44:386 Matelib/(17649:17654): NUEVO CARPINCHO
+[INFO] 10:29:44:386 Matelib/(17649:17651): Log Matelib creado
+[INFO] 10:29:44:386 Matelib/(17649:17653): NUEVO CARPINCHO
+[INFO] 10:29:44:386 Matelib/(17649:17651): Esperando respuesta de servidor
+[INFO] 10:29:44:386 Matelib/(17649:17652): NUEVO CARPINCHO
+[INFO] 10:29:44:386 Matelib/(17649:17650): Log Matelib creado
+[INFO] 10:29:44:386 Matelib/(17649:17650): Esperando respuesta de servidor
+[INFO] 10:29:44:386 Matelib/(17649:17651): NUEVO CARPINCHO
+[INFO] 10:29:44:386 Matelib/(17649:17650): NUEVO CARPINCHO
+[INFO] 10:29:44:424 Matelib/(17649:17650): Carpincho creado correctamente con el pid: 10
+[INFO] 10:29:44:424 Matelib/(17649:17651): Carpincho creado correctamente con el pid: 9
+[INFO] 10:29:44:424 Matelib/(17649:17652): Carpincho creado correctamente con el pid: 8
+[INFO] 10:29:44:424 Matelib/(17649:17653): Carpincho creado correctamente con el pid: 7
+[INFO] 10:29:44:424 Matelib/(17649:17654): Carpincho creado correctamente con el pid: 6
+[INFO] 10:29:44:424 Matelib/(17649:17655): Carpincho creado correctamente con el pid: 5
+[INFO] 10:29:44:424 Matelib/(17649:17659): Carpincho creado correctamente con el pid: 4
+[INFO] 10:29:44:424 Matelib/(17649:17656): Carpincho creado correctamente con el pid: 3
+[INFO] 10:30:33:963 Matelib/(18282:18289): Log Matelib creado
+[INFO] 10:30:33:963 Matelib/(18282:18289): Esperando respuesta de servidor
+[INFO] 10:30:33:963 Matelib/(18282:18290): Log Matelib creado
+[INFO] 10:30:33:963 Matelib/(18282:18290): Esperando respuesta de servidor
+[INFO] 10:30:33:963 Matelib/(18282:18291): Log Matelib creado
+[INFO] 10:30:33:963 Matelib/(18282:18291): Esperando respuesta de servidor
+[INFO] 10:30:33:963 Matelib/(18282:18292): Log Matelib creado
+[INFO] 10:30:33:963 Matelib/(18282:18292): Esperando respuesta de servidor
+[INFO] 10:30:33:963 Matelib/(18282:18288): Log Matelib creado
+[INFO] 10:30:33:963 Matelib/(18282:18288): Esperando respuesta de servidor
+[INFO] 10:30:33:963 Matelib/(18282:18287): Log Matelib creado
+[INFO] 10:30:33:963 Matelib/(18282:18287): Esperando respuesta de servidor
+[INFO] 10:30:33:963 Matelib/(18282:18286): Log Matelib creado
+[INFO] 10:30:33:963 Matelib/(18282:18286): Esperando respuesta de servidor
+[INFO] 10:30:33:963 Matelib/(18282:18285): Log Matelib creado
+[INFO] 10:30:33:963 Matelib/(18282:18285): Esperando respuesta de servidor
+[INFO] 10:30:33:964 Matelib/(18282:18289): NUEVO CARPINCHO
+[INFO] 10:30:33:964 Matelib/(18282:18290): NUEVO CARPINCHO
+[INFO] 10:30:33:964 Matelib/(18282:18291): NUEVO CARPINCHO
+[INFO] 10:30:33:964 Matelib/(18282:18292): NUEVO CARPINCHO
+[INFO] 10:30:33:964 Matelib/(18282:18288): NUEVO CARPINCHO
+[INFO] 10:30:33:964 Matelib/(18282:18287): NUEVO CARPINCHO
+[INFO] 10:30:33:964 Matelib/(18282:18284): Log Matelib creado
+[INFO] 10:30:33:965 Matelib/(18282:18286): NUEVO CARPINCHO
+[INFO] 10:30:33:965 Matelib/(18282:18284): Esperando respuesta de servidor
+[INFO] 10:30:33:965 Matelib/(18282:18285): NUEVO CARPINCHO
+[INFO] 10:30:33:965 Matelib/(18282:18283): Log Matelib creado
+[INFO] 10:30:33:965 Matelib/(18282:18283): Esperando respuesta de servidor
+[INFO] 10:30:33:965 Matelib/(18282:18284): NUEVO CARPINCHO
+[INFO] 10:30:33:965 Matelib/(18282:18283): NUEVO CARPINCHO
+[INFO] 10:30:34:000 Matelib/(18282:18292): Carpincho creado correctamente con el pid: 4
+[INFO] 10:30:34:000 Matelib/(18282:18291): Carpincho creado correctamente con el pid: 3
+[INFO] 10:32:40:421 Matelib/(18956:18963): Log Matelib creado
+[INFO] 10:32:40:421 Matelib/(18956:18963): Esperando respuesta de servidor
+[INFO] 10:32:40:421 Matelib/(18956:18964): Log Matelib creado
+[INFO] 10:32:40:421 Matelib/(18956:18964): Esperando respuesta de servidor
+[INFO] 10:32:40:421 Matelib/(18956:18965): Log Matelib creado
+[INFO] 10:32:40:421 Matelib/(18956:18965): Esperando respuesta de servidor
+[INFO] 10:32:40:421 Matelib/(18956:18966): Log Matelib creado
+[INFO] 10:32:40:421 Matelib/(18956:18966): Esperando respuesta de servidor
+[INFO] 10:32:40:421 Matelib/(18956:18962): Log Matelib creado
+[INFO] 10:32:40:421 Matelib/(18956:18962): Esperando respuesta de servidor
+[INFO] 10:32:40:421 Matelib/(18956:18961): Log Matelib creado
+[INFO] 10:32:40:422 Matelib/(18956:18961): Esperando respuesta de servidor
+[INFO] 10:32:40:422 Matelib/(18956:18960): Log Matelib creado
+[INFO] 10:32:40:422 Matelib/(18956:18960): Esperando respuesta de servidor
+[INFO] 10:32:40:422 Matelib/(18956:18959): Log Matelib creado
+[INFO] 10:32:40:422 Matelib/(18956:18959): Esperando respuesta de servidor
+[INFO] 10:32:40:422 Matelib/(18956:18963): NUEVO CARPINCHO
+[INFO] 10:32:40:422 Matelib/(18956:18964): NUEVO CARPINCHO
+[INFO] 10:32:40:422 Matelib/(18956:18965): NUEVO CARPINCHO
+[INFO] 10:32:40:422 Matelib/(18956:18966): NUEVO CARPINCHO
+[INFO] 10:32:40:422 Matelib/(18956:18962): NUEVO CARPINCHO
+[INFO] 10:32:40:423 Matelib/(18956:18961): NUEVO CARPINCHO
+[INFO] 10:32:40:423 Matelib/(18956:18958): Log Matelib creado
+[INFO] 10:32:40:423 Matelib/(18956:18960): NUEVO CARPINCHO
+[INFO] 10:32:40:423 Matelib/(18956:18958): Esperando respuesta de servidor
+[INFO] 10:32:40:424 Matelib/(18956:18959): NUEVO CARPINCHO
+[INFO] 10:32:40:424 Matelib/(18956:18957): Log Matelib creado
+[INFO] 10:32:40:424 Matelib/(18956:18958): NUEVO CARPINCHO
+[INFO] 10:32:40:424 Matelib/(18956:18957): Esperando respuesta de servidor
+[INFO] 10:32:40:424 Matelib/(18956:18957): NUEVO CARPINCHO
+[INFO] 10:32:40:460 Matelib/(18956:18957): Carpincho creado correctamente con el pid: 10
+[INFO] 10:32:40:460 Matelib/(18956:18958): Carpincho creado correctamente con el pid: 9
+[INFO] 10:32:40:460 Matelib/(18956:18959): Carpincho creado correctamente con el pid: 8
+[INFO] 10:32:40:460 Matelib/(18956:18960): Carpincho creado correctamente con el pid: 7
+[INFO] 10:32:40:460 Matelib/(18956:18961): Carpincho creado correctamente con el pid: 6
+[INFO] 10:32:40:460 Matelib/(18956:18962): Carpincho creado correctamente con el pid: 5
+[INFO] 10:32:40:460 Matelib/(18956:18966): Carpincho creado correctamente con el pid: 4
+[INFO] 10:32:40:460 Matelib/(18956:18965): Carpincho creado correctamente con el pid: 3
+[INFO] 10:34:10:584 Matelib/(19359:19366): Log Matelib creado
+[INFO] 10:34:10:585 Matelib/(19359:19366): Esperando respuesta de servidor
+[INFO] 10:34:10:585 Matelib/(19359:19367): Log Matelib creado
+[INFO] 10:34:10:585 Matelib/(19359:19367): Esperando respuesta de servidor
+[INFO] 10:34:10:585 Matelib/(19359:19368): Log Matelib creado
+[INFO] 10:34:10:585 Matelib/(19359:19368): Esperando respuesta de servidor
+[INFO] 10:34:10:585 Matelib/(19359:19369): Log Matelib creado
+[INFO] 10:34:10:585 Matelib/(19359:19369): Esperando respuesta de servidor
+[INFO] 10:34:10:585 Matelib/(19359:19365): Log Matelib creado
+[INFO] 10:34:10:585 Matelib/(19359:19365): Esperando respuesta de servidor
+[INFO] 10:34:10:585 Matelib/(19359:19364): Log Matelib creado
+[INFO] 10:34:10:585 Matelib/(19359:19364): Esperando respuesta de servidor
+[INFO] 10:34:10:585 Matelib/(19359:19363): Log Matelib creado
+[INFO] 10:34:10:585 Matelib/(19359:19363): Esperando respuesta de servidor
+[INFO] 10:34:10:585 Matelib/(19359:19362): Log Matelib creado
+[INFO] 10:34:10:585 Matelib/(19359:19362): Esperando respuesta de servidor
+[INFO] 10:34:10:585 Matelib/(19359:19366): NUEVO CARPINCHO
+[INFO] 10:34:10:586 Matelib/(19359:19367): NUEVO CARPINCHO
+[INFO] 10:34:10:586 Matelib/(19359:19368): NUEVO CARPINCHO
+[INFO] 10:34:10:586 Matelib/(19359:19369): NUEVO CARPINCHO
+[INFO] 10:34:10:586 Matelib/(19359:19365): NUEVO CARPINCHO
+[INFO] 10:34:10:586 Matelib/(19359:19364): NUEVO CARPINCHO
+[INFO] 10:34:10:586 Matelib/(19359:19361): Log Matelib creado
+[INFO] 10:34:10:587 Matelib/(19359:19363): NUEVO CARPINCHO
+[INFO] 10:34:10:587 Matelib/(19359:19361): Esperando respuesta de servidor
+[INFO] 10:34:10:587 Matelib/(19359:19362): NUEVO CARPINCHO
+[INFO] 10:34:10:587 Matelib/(19359:19360): Log Matelib creado
+[INFO] 10:34:10:588 Matelib/(19359:19361): NUEVO CARPINCHO
+[INFO] 10:34:10:588 Matelib/(19359:19360): Esperando respuesta de servidor
+[INFO] 10:34:10:588 Matelib/(19359:19360): NUEVO CARPINCHO
+[INFO] 10:34:10:624 Matelib/(19359:19360): Carpincho creado correctamente con el pid: 10
+[INFO] 10:34:10:624 Matelib/(19359:19361): Carpincho creado correctamente con el pid: 9
+[INFO] 10:34:10:624 Matelib/(19359:19362): Carpincho creado correctamente con el pid: 8
+[INFO] 10:34:10:624 Matelib/(19359:19363): Carpincho creado correctamente con el pid: 7
+[INFO] 10:34:10:624 Matelib/(19359:19364): Carpincho creado correctamente con el pid: 6
+[INFO] 10:34:10:624 Matelib/(19359:19365): Carpincho creado correctamente con el pid: 5
+[INFO] 10:34:10:624 Matelib/(19359:19369): Carpincho creado correctamente con el pid: 4
+[INFO] 10:34:10:624 Matelib/(19359:19368): Carpincho creado correctamente con el pid: 3
+[INFO] 10:34:45:826 Matelib/(19677:19684): Log Matelib creado
+[INFO] 10:34:45:826 Matelib/(19677:19684): Esperando respuesta de servidor
+[INFO] 10:34:45:826 Matelib/(19677:19685): Log Matelib creado
+[INFO] 10:34:45:826 Matelib/(19677:19685): Esperando respuesta de servidor
+[INFO] 10:34:45:826 Matelib/(19677:19686): Log Matelib creado
+[INFO] 10:34:45:826 Matelib/(19677:19686): Esperando respuesta de servidor
+[INFO] 10:34:45:826 Matelib/(19677:19687): Log Matelib creado
+[INFO] 10:34:45:826 Matelib/(19677:19687): Esperando respuesta de servidor
+[INFO] 10:34:45:826 Matelib/(19677:19683): Log Matelib creado
+[INFO] 10:34:45:826 Matelib/(19677:19683): Esperando respuesta de servidor
+[INFO] 10:34:45:826 Matelib/(19677:19682): Log Matelib creado
+[INFO] 10:34:45:827 Matelib/(19677:19682): Esperando respuesta de servidor
+[INFO] 10:34:45:827 Matelib/(19677:19681): Log Matelib creado
+[INFO] 10:34:45:827 Matelib/(19677:19681): Esperando respuesta de servidor
+[INFO] 10:34:45:827 Matelib/(19677:19680): Log Matelib creado
+[INFO] 10:34:45:828 Matelib/(19677:19680): Esperando respuesta de servidor
+[INFO] 10:34:45:828 Matelib/(19677:19684): NUEVO CARPINCHO
+[INFO] 10:34:45:828 Matelib/(19677:19685): NUEVO CARPINCHO
+[INFO] 10:34:45:828 Matelib/(19677:19686): NUEVO CARPINCHO
+[INFO] 10:34:45:828 Matelib/(19677:19687): NUEVO CARPINCHO
+[INFO] 10:34:45:828 Matelib/(19677:19683): NUEVO CARPINCHO
+[INFO] 10:34:45:828 Matelib/(19677:19682): NUEVO CARPINCHO
+[INFO] 10:34:45:829 Matelib/(19677:19679): Log Matelib creado
+[INFO] 10:34:45:829 Matelib/(19677:19681): NUEVO CARPINCHO
+[INFO] 10:34:45:829 Matelib/(19677:19679): Esperando respuesta de servidor
+[INFO] 10:34:45:829 Matelib/(19677:19680): NUEVO CARPINCHO
+[INFO] 10:34:45:829 Matelib/(19677:19679): NUEVO CARPINCHO
+[INFO] 10:34:45:829 Matelib/(19677:19678): Log Matelib creado
+[INFO] 10:34:45:829 Matelib/(19677:19678): Esperando respuesta de servidor
+[INFO] 10:34:45:829 Matelib/(19677:19678): NUEVO CARPINCHO
+[INFO] 10:34:45:868 Matelib/(19677:19678): Carpincho creado correctamente con el pid: 10
+[INFO] 10:35:18:026 Matelib/(20244:20251): Log Matelib creado
+[INFO] 10:35:18:026 Matelib/(20244:20251): Esperando respuesta de servidor
+[INFO] 10:35:18:026 Matelib/(20244:20252): Log Matelib creado
+[INFO] 10:35:18:026 Matelib/(20244:20252): Esperando respuesta de servidor
+[INFO] 10:35:18:027 Matelib/(20244:20253): Log Matelib creado
+[INFO] 10:35:18:027 Matelib/(20244:20253): Esperando respuesta de servidor
+[INFO] 10:35:18:027 Matelib/(20244:20254): Log Matelib creado
+[INFO] 10:35:18:027 Matelib/(20244:20254): Esperando respuesta de servidor
+[INFO] 10:35:18:027 Matelib/(20244:20250): Log Matelib creado
+[INFO] 10:35:18:027 Matelib/(20244:20250): Esperando respuesta de servidor
+[INFO] 10:35:18:027 Matelib/(20244:20249): Log Matelib creado
+[INFO] 10:35:18:027 Matelib/(20244:20249): Esperando respuesta de servidor
+[INFO] 10:35:18:027 Matelib/(20244:20248): Log Matelib creado
+[INFO] 10:35:18:027 Matelib/(20244:20248): Esperando respuesta de servidor
+[INFO] 10:35:18:027 Matelib/(20244:20247): Log Matelib creado
+[INFO] 10:35:18:027 Matelib/(20244:20247): Esperando respuesta de servidor
+[INFO] 10:35:18:027 Matelib/(20244:20251): NUEVO CARPINCHO
+[INFO] 10:35:18:027 Matelib/(20244:20252): NUEVO CARPINCHO
+[INFO] 10:35:18:027 Matelib/(20244:20253): NUEVO CARPINCHO
+[INFO] 10:35:18:028 Matelib/(20244:20254): NUEVO CARPINCHO
+[INFO] 10:35:18:028 Matelib/(20244:20250): NUEVO CARPINCHO
+[INFO] 10:35:18:028 Matelib/(20244:20249): NUEVO CARPINCHO
+[INFO] 10:35:18:028 Matelib/(20244:20246): Log Matelib creado
+[INFO] 10:35:18:029 Matelib/(20244:20248): NUEVO CARPINCHO
+[INFO] 10:35:18:029 Matelib/(20244:20246): Esperando respuesta de servidor
+[INFO] 10:35:18:029 Matelib/(20244:20247): NUEVO CARPINCHO
+[INFO] 10:35:18:029 Matelib/(20244:20245): Log Matelib creado
+[INFO] 10:35:18:029 Matelib/(20244:20246): NUEVO CARPINCHO
+[INFO] 10:35:18:029 Matelib/(20244:20245): Esperando respuesta de servidor
+[INFO] 10:35:18:030 Matelib/(20244:20245): NUEVO CARPINCHO
+[INFO] 10:35:18:064 Matelib/(20244:20251): Carpincho creado correctamente con el pid: 2
+[INFO] 10:36:43:910 Matelib/(20969:20976): Log Matelib creado
+[INFO] 10:36:43:910 Matelib/(20969:20976): Esperando respuesta de servidor
+[INFO] 10:36:43:910 Matelib/(20969:20977): Log Matelib creado
+[INFO] 10:36:43:911 Matelib/(20969:20977): Esperando respuesta de servidor
+[INFO] 10:36:43:911 Matelib/(20969:20978): Log Matelib creado
+[INFO] 10:36:43:911 Matelib/(20969:20978): Esperando respuesta de servidor
+[INFO] 10:36:43:911 Matelib/(20969:20979): Log Matelib creado
+[INFO] 10:36:43:911 Matelib/(20969:20979): Esperando respuesta de servidor
+[INFO] 10:36:43:911 Matelib/(20969:20975): Log Matelib creado
+[INFO] 10:36:43:911 Matelib/(20969:20975): Esperando respuesta de servidor
+[INFO] 10:36:43:911 Matelib/(20969:20974): Log Matelib creado
+[INFO] 10:36:43:911 Matelib/(20969:20974): Esperando respuesta de servidor
+[INFO] 10:36:43:911 Matelib/(20969:20973): Log Matelib creado
+[INFO] 10:36:43:911 Matelib/(20969:20973): Esperando respuesta de servidor
+[INFO] 10:36:43:911 Matelib/(20969:20972): Log Matelib creado
+[INFO] 10:36:43:911 Matelib/(20969:20972): Esperando respuesta de servidor
+[INFO] 10:36:43:911 Matelib/(20969:20976): NUEVO CARPINCHO
+[INFO] 10:36:43:911 Matelib/(20969:20977): NUEVO CARPINCHO
+[INFO] 10:36:43:911 Matelib/(20969:20978): NUEVO CARPINCHO
+[INFO] 10:36:43:912 Matelib/(20969:20979): NUEVO CARPINCHO
+[INFO] 10:36:43:912 Matelib/(20969:20975): NUEVO CARPINCHO
+[INFO] 10:36:43:912 Matelib/(20969:20974): NUEVO CARPINCHO
+[INFO] 10:36:43:912 Matelib/(20969:20971): Log Matelib creado
+[INFO] 10:36:43:912 Matelib/(20969:20973): NUEVO CARPINCHO
+[INFO] 10:36:43:912 Matelib/(20969:20971): Esperando respuesta de servidor
+[INFO] 10:36:43:912 Matelib/(20969:20972): NUEVO CARPINCHO
+[INFO] 10:36:43:913 Matelib/(20969:20970): Log Matelib creado
+[INFO] 10:36:43:913 Matelib/(20969:20970): Esperando respuesta de servidor
+[INFO] 10:36:43:913 Matelib/(20969:20971): NUEVO CARPINCHO
+[INFO] 10:36:43:913 Matelib/(20969:20970): NUEVO CARPINCHO
+[INFO] 10:36:43:948 Matelib/(20969:20979): Carpincho creado correctamente con el pid: 4
+[INFO] 10:36:43:948 Matelib/(20969:20978): Carpincho creado correctamente con el pid: 3
+[INFO] 10:36:43:948 Matelib/(20969:20976): Carpincho creado correctamente con el pid: 2
+[INFO] 10:36:43:948 Matelib/(20969:20977): Carpincho creado correctamente con el pid: 1
+[INFO] 10:36:43:952 Matelib/(20969:20970): Carpincho creado correctamente con el pid: 10
+[INFO] 10:36:43:952 Matelib/(20969:20971): Carpincho creado correctamente con el pid: 9
+[INFO] 10:36:43:952 Matelib/(20969:20972): Carpincho creado correctamente con el pid: 8
+[INFO] 10:36:43:952 Matelib/(20969:20973): Carpincho creado correctamente con el pid: 7
+[INFO] 10:36:43:952 Matelib/(20969:20974): Carpincho creado correctamente con el pid: 6
+[INFO] 10:36:43:952 Matelib/(20969:20975): Carpincho creado correctamente con el pid: 5
+[INFO] 10:38:51:162 Matelib/(21703:21710): Log Matelib creado
+[INFO] 10:38:51:162 Matelib/(21703:21710): Esperando respuesta de servidor
+[INFO] 10:38:51:162 Matelib/(21703:21711): Log Matelib creado
+[INFO] 10:38:51:162 Matelib/(21703:21711): Esperando respuesta de servidor
+[INFO] 10:38:51:162 Matelib/(21703:21712): Log Matelib creado
+[INFO] 10:38:51:162 Matelib/(21703:21712): Esperando respuesta de servidor
+[INFO] 10:38:51:162 Matelib/(21703:21713): Log Matelib creado
+[INFO] 10:38:51:162 Matelib/(21703:21713): Esperando respuesta de servidor
+[INFO] 10:38:51:162 Matelib/(21703:21709): Log Matelib creado
+[INFO] 10:38:51:162 Matelib/(21703:21709): Esperando respuesta de servidor
+[INFO] 10:38:51:162 Matelib/(21703:21708): Log Matelib creado
+[INFO] 10:38:51:162 Matelib/(21703:21708): Esperando respuesta de servidor
+[INFO] 10:38:51:162 Matelib/(21703:21707): Log Matelib creado
+[INFO] 10:38:51:163 Matelib/(21703:21707): Esperando respuesta de servidor
+[INFO] 10:38:51:163 Matelib/(21703:21706): Log Matelib creado
+[INFO] 10:38:51:163 Matelib/(21703:21706): Esperando respuesta de servidor
+[INFO] 10:38:51:163 Matelib/(21703:21710): NUEVO CARPINCHO
+[INFO] 10:38:51:163 Matelib/(21703:21711): NUEVO CARPINCHO
+[INFO] 10:38:51:163 Matelib/(21703:21712): NUEVO CARPINCHO
+[INFO] 10:38:51:163 Matelib/(21703:21713): NUEVO CARPINCHO
+[INFO] 10:38:51:163 Matelib/(21703:21709): NUEVO CARPINCHO
+[INFO] 10:38:51:163 Matelib/(21703:21708): NUEVO CARPINCHO
+[INFO] 10:38:51:164 Matelib/(21703:21705): Log Matelib creado
+[INFO] 10:38:51:164 Matelib/(21703:21707): NUEVO CARPINCHO
+[INFO] 10:38:51:164 Matelib/(21703:21705): Esperando respuesta de servidor
+[INFO] 10:38:51:164 Matelib/(21703:21706): NUEVO CARPINCHO
+[INFO] 10:38:51:164 Matelib/(21703:21704): Log Matelib creado
+[INFO] 10:38:51:164 Matelib/(21703:21704): Esperando respuesta de servidor
+[INFO] 10:38:51:164 Matelib/(21703:21705): NUEVO CARPINCHO
+[INFO] 10:38:51:164 Matelib/(21703:21704): NUEVO CARPINCHO
+[INFO] 10:38:51:200 Matelib/(21703:21705): Carpincho creado correctamente con el pid: 9
+[INFO] 10:38:51:200 Matelib/(21703:21706): Carpincho creado correctamente con el pid: 8
+[INFO] 10:38:51:200 Matelib/(21703:21707): Carpincho creado correctamente con el pid: 7
+[INFO] 10:38:51:200 Matelib/(21703:21708): Carpincho creado correctamente con el pid: 6
+[INFO] 10:38:51:200 Matelib/(21703:21709): Carpincho creado correctamente con el pid: 5
+[INFO] 10:38:51:200 Matelib/(21703:21713): Carpincho creado correctamente con el pid: 4
+[INFO] 10:38:51:200 Matelib/(21703:21712): Carpincho creado correctamente con el pid: 3
+[INFO] 10:38:51:200 Matelib/(21703:21710): Carpincho creado correctamente con el pid: 2
+[INFO] 10:38:51:200 Matelib/(21703:21711): Carpincho creado correctamente con el pid: 1
+[INFO] 10:38:51:204 Matelib/(21703:21704): Carpincho creado correctamente con el pid: 10
+[INFO] 10:38:59:139 Matelib/(21837:21844): Log Matelib creado
+[INFO] 10:38:59:139 Matelib/(21837:21844): Esperando respuesta de servidor
+[INFO] 10:38:59:140 Matelib/(21837:21845): Log Matelib creado
+[INFO] 10:38:59:140 Matelib/(21837:21845): Esperando respuesta de servidor
+[INFO] 10:38:59:140 Matelib/(21837:21846): Log Matelib creado
+[INFO] 10:38:59:140 Matelib/(21837:21847): Log Matelib creado
+[INFO] 10:38:59:140 Matelib/(21837:21847): Esperando respuesta de servidor
+[INFO] 10:38:59:140 Matelib/(21837:21843): Log Matelib creado
+[INFO] 10:38:59:140 Matelib/(21837:21843): Esperando respuesta de servidor
+[INFO] 10:38:59:140 Matelib/(21837:21846): Esperando respuesta de servidor
+[INFO] 10:38:59:140 Matelib/(21837:21842): Log Matelib creado
+[INFO] 10:38:59:140 Matelib/(21837:21842): Esperando respuesta de servidor
+[INFO] 10:38:59:140 Matelib/(21837:21841): Log Matelib creado
+[INFO] 10:38:59:140 Matelib/(21837:21841): Esperando respuesta de servidor
+[INFO] 10:38:59:140 Matelib/(21837:21840): Log Matelib creado
+[INFO] 10:38:59:140 Matelib/(21837:21840): Esperando respuesta de servidor
+[INFO] 10:38:59:140 Matelib/(21837:21844): NUEVO CARPINCHO
+[INFO] 10:38:59:140 Matelib/(21837:21845): NUEVO CARPINCHO
+[INFO] 10:38:59:141 Matelib/(21837:21847): NUEVO CARPINCHO
+[INFO] 10:38:59:141 Matelib/(21837:21843): NUEVO CARPINCHO
+[INFO] 10:38:59:141 Matelib/(21837:21846): NUEVO CARPINCHO
+[INFO] 10:38:59:141 Matelib/(21837:21842): NUEVO CARPINCHO
+[INFO] 10:38:59:141 Matelib/(21837:21839): Log Matelib creado
+[INFO] 10:38:59:141 Matelib/(21837:21841): NUEVO CARPINCHO
+[INFO] 10:38:59:141 Matelib/(21837:21839): Esperando respuesta de servidor
+[INFO] 10:38:59:141 Matelib/(21837:21840): NUEVO CARPINCHO
+[INFO] 10:38:59:141 Matelib/(21837:21838): Log Matelib creado
+[INFO] 10:38:59:142 Matelib/(21837:21838): Esperando respuesta de servidor
+[INFO] 10:38:59:142 Matelib/(21837:21839): NUEVO CARPINCHO
+[INFO] 10:38:59:142 Matelib/(21837:21838): NUEVO CARPINCHO
+[INFO] 10:38:59:180 Matelib/(21837:21841): Carpincho creado correctamente con el pid: 17
+[INFO] 10:38:59:180 Matelib/(21837:21842): Carpincho creado correctamente con el pid: 16
+[INFO] 10:38:59:180 Matelib/(21837:21846): Carpincho creado correctamente con el pid: 15
+[INFO] 10:38:59:180 Matelib/(21837:21843): Carpincho creado correctamente con el pid: 14
+[INFO] 10:38:59:180 Matelib/(21837:21847): Carpincho creado correctamente con el pid: 13
+[INFO] 10:38:59:180 Matelib/(21837:21844): Carpincho creado correctamente con el pid: 12
+[INFO] 10:38:59:180 Matelib/(21837:21845): Carpincho creado correctamente con el pid: 11
+[INFO] 10:38:59:180 Matelib/(21837:21840): Carpincho creado correctamente con el pid: 18
+[INFO] 10:38:59:180 Matelib/(21837:21839): Carpincho creado correctamente con el pid: 19
+[INFO] 10:38:59:180 Matelib/(21837:21838): Carpincho creado correctamente con el pid: 20
+[INFO] 10:39:46:173 Matelib/(22286:22293): Log Matelib creado
+[INFO] 10:39:46:173 Matelib/(22286:22293): Esperando respuesta de servidor
+[INFO] 10:39:46:173 Matelib/(22286:22294): Log Matelib creado
+[INFO] 10:39:46:173 Matelib/(22286:22294): Esperando respuesta de servidor
+[INFO] 10:39:46:173 Matelib/(22286:22295): Log Matelib creado
+[INFO] 10:39:46:173 Matelib/(22286:22295): Esperando respuesta de servidor
+[INFO] 10:39:46:173 Matelib/(22286:22296): Log Matelib creado
+[INFO] 10:39:46:173 Matelib/(22286:22296): Esperando respuesta de servidor
+[INFO] 10:39:46:173 Matelib/(22286:22292): Log Matelib creado
+[INFO] 10:39:46:173 Matelib/(22286:22292): Esperando respuesta de servidor
+[INFO] 10:39:46:174 Matelib/(22286:22291): Log Matelib creado
+[INFO] 10:39:46:174 Matelib/(22286:22291): Esperando respuesta de servidor
+[INFO] 10:39:46:174 Matelib/(22286:22290): Log Matelib creado
+[INFO] 10:39:46:174 Matelib/(22286:22290): Esperando respuesta de servidor
+[INFO] 10:39:46:174 Matelib/(22286:22289): Log Matelib creado
+[INFO] 10:39:46:174 Matelib/(22286:22289): Esperando respuesta de servidor
+[INFO] 10:39:46:174 Matelib/(22286:22293): NUEVO CARPINCHO
+[INFO] 10:39:46:174 Matelib/(22286:22294): NUEVO CARPINCHO
+[INFO] 10:39:46:174 Matelib/(22286:22295): NUEVO CARPINCHO
+[INFO] 10:39:46:174 Matelib/(22286:22296): NUEVO CARPINCHO
+[INFO] 10:39:46:174 Matelib/(22286:22292): NUEVO CARPINCHO
+[INFO] 10:39:46:174 Matelib/(22286:22291): NUEVO CARPINCHO
+[INFO] 10:39:46:174 Matelib/(22286:22288): Log Matelib creado
+[INFO] 10:39:46:175 Matelib/(22286:22290): NUEVO CARPINCHO
+[INFO] 10:39:46:175 Matelib/(22286:22288): Esperando respuesta de servidor
+[INFO] 10:39:46:175 Matelib/(22286:22289): NUEVO CARPINCHO
+[INFO] 10:39:46:175 Matelib/(22286:22287): Log Matelib creado
+[INFO] 10:39:46:175 Matelib/(22286:22287): Esperando respuesta de servidor
+[INFO] 10:39:46:175 Matelib/(22286:22288): NUEVO CARPINCHO
+[INFO] 10:39:46:175 Matelib/(22286:22287): NUEVO CARPINCHO
+[INFO] 10:39:46:213 Matelib/(22286:22287): Carpincho creado correctamente con el pid: 10
+[INFO] 10:39:46:213 Matelib/(22286:22288): Carpincho creado correctamente con el pid: 9
+[INFO] 10:39:46:213 Matelib/(22286:22289): Carpincho creado correctamente con el pid: 8
+[INFO] 10:39:46:213 Matelib/(22286:22290): Carpincho creado correctamente con el pid: 7
+[INFO] 10:39:46:213 Matelib/(22286:22291): Carpincho creado correctamente con el pid: 6
+[INFO] 10:39:46:213 Matelib/(22286:22292): Carpincho creado correctamente con el pid: 5
+[INFO] 10:39:46:213 Matelib/(22286:22296): Carpincho creado correctamente con el pid: 4
+[INFO] 10:39:46:213 Matelib/(22286:22295): Carpincho creado correctamente con el pid: 3
+[INFO] 10:39:46:213 Matelib/(22286:22293): Carpincho creado correctamente con el pid: 2
+[INFO] 10:39:46:213 Matelib/(22286:22294): Carpincho creado correctamente con el pid: 1
+[INFO] 10:46:59:976 Matelib/(25244:25251): Log Matelib creado
+[INFO] 10:46:59:976 Matelib/(25244:25252): Log Matelib creado
+[INFO] 10:46:59:976 Matelib/(25244:25252): Esperando respuesta de servidor
+[INFO] 10:46:59:976 Matelib/(25244:25253): Log Matelib creado
+[INFO] 10:46:59:977 Matelib/(25244:25253): Esperando respuesta de servidor
+[INFO] 10:46:59:977 Matelib/(25244:25254): Log Matelib creado
+[INFO] 10:46:59:977 Matelib/(25244:25254): Esperando respuesta de servidor
+[INFO] 10:46:59:977 Matelib/(25244:25250): Log Matelib creado
+[INFO] 10:46:59:977 Matelib/(25244:25250): Esperando respuesta de servidor
+[INFO] 10:46:59:977 Matelib/(25244:25249): Log Matelib creado
+[INFO] 10:46:59:977 Matelib/(25244:25249): Esperando respuesta de servidor
+[INFO] 10:46:59:977 Matelib/(25244:25251): Esperando respuesta de servidor
+[INFO] 10:46:59:977 Matelib/(25244:25248): Log Matelib creado
+[INFO] 10:46:59:977 Matelib/(25244:25248): Esperando respuesta de servidor
+[INFO] 10:46:59:977 Matelib/(25244:25247): Log Matelib creado
+[INFO] 10:46:59:977 Matelib/(25244:25247): Esperando respuesta de servidor
+[INFO] 10:46:59:977 Matelib/(25244:25251): NUEVO CARPINCHO
+[INFO] 10:46:59:977 Matelib/(25244:25252): NUEVO CARPINCHO
+[INFO] 10:46:59:977 Matelib/(25244:25253): NUEVO CARPINCHO
+[INFO] 10:46:59:977 Matelib/(25244:25254): NUEVO CARPINCHO
+[INFO] 10:46:59:977 Matelib/(25244:25250): NUEVO CARPINCHO
+[INFO] 10:46:59:978 Matelib/(25244:25249): NUEVO CARPINCHO
+[INFO] 10:46:59:978 Matelib/(25244:25246): Log Matelib creado
+[INFO] 10:46:59:978 Matelib/(25244:25248): NUEVO CARPINCHO
+[INFO] 10:46:59:978 Matelib/(25244:25246): Esperando respuesta de servidor
+[INFO] 10:46:59:978 Matelib/(25244:25247): NUEVO CARPINCHO
+[INFO] 10:46:59:978 Matelib/(25244:25245): Log Matelib creado
+[INFO] 10:46:59:978 Matelib/(25244:25245): Esperando respuesta de servidor
+[INFO] 10:46:59:978 Matelib/(25244:25246): NUEVO CARPINCHO
+[INFO] 10:46:59:978 Matelib/(25244:25245): NUEVO CARPINCHO
+[INFO] 10:47:00:016 Matelib/(25244:25245): Carpincho creado correctamente con el pid: 10
+[INFO] 10:47:00:016 Matelib/(25244:25246): Carpincho creado correctamente con el pid: 9
+[INFO] 10:47:00:016 Matelib/(25244:25247): Carpincho creado correctamente con el pid: 8
+[INFO] 10:47:00:016 Matelib/(25244:25248): Carpincho creado correctamente con el pid: 7
+[INFO] 10:47:00:016 Matelib/(25244:25249): Carpincho creado correctamente con el pid: 6
+[INFO] 10:47:00:016 Matelib/(25244:25250): Carpincho creado correctamente con el pid: 5
+[INFO] 10:47:00:016 Matelib/(25244:25254): Carpincho creado correctamente con el pid: 4
+[INFO] 10:47:00:016 Matelib/(25244:25253): Carpincho creado correctamente con el pid: 3
+[INFO] 10:47:00:016 Matelib/(25244:25251): Carpincho creado correctamente con el pid: 2
+[INFO] 10:47:00:016 Matelib/(25244:25252): Carpincho creado correctamente con el pid: 1

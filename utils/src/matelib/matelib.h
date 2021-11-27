@@ -111,4 +111,6 @@ mate_pointer recibir_int32(int socket);
 
 bool conectado_a_memoria(mate_instance* lib_ref);
 
+void conexion_set_server(mate_inner_structure *mate_ref, char* respuesta, t_log* logger);
+
 #endif

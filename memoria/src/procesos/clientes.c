@@ -38,7 +38,6 @@ void ejecutar_proceso(int cliente)
         switch (operacion)
         {
             case NEW_INSTANCE:
-            printf("mellego un new instance \n");
                 new_instance_comportamiento(tabla, cliente, &conectado);
                 break;
 
@@ -79,21 +78,23 @@ void ejecutar_proceso(int cliente)
 
 void new_instance_comportamiento(tab_pags* tabla, int cliente, bool *conectado)
 {   
-    // int respuesta = swap_solicitud_iniciar(tabla->pid);
+    int respuesta = swap_solicitud_iniciar(tabla->pid);
 
-    // if(respuesta == -1) 
-    // {
-    //     enviar_int(cliente, -1);
-    //     free(tabla->tabla_pag);
-    //     free(tabla);
-    //     *conectado = false;
-    //     return;
-    // }
+    if(respuesta == -1) 
+    {
+        enviar_int(cliente, -1);
+        enviar_mensaje(cliente, "No es posible iniciar");
+        free(tabla->tabla_pag);
+        free(tabla);
+        *conectado = false;
+        return;
+    }
 
-    // tabla->pid = crearID(&ids_memoria);
-    // printf("cree el carpincho %d", 4);
+    tabla->pid = crearID(&ids_memoria);
 
-    enviar_int(cliente, 4);
+    enviar_int(cliente, tabla->pid);
+    // enviar_int(swap, tabla->pid);
+    enviar_mensaje(cliente, "OK");
     iniciar_paginas(tabla);
 }
 
@@ -105,7 +106,7 @@ void new_instance_kernel_comportamiento(tab_pags* tabla, int cliente, bool *cone
 }
 
 
-int swap_solicitud_iniciar(int pid){
+int swap_solicitud_iniciar(){
     return 0;
     // enviar_int(swap, SOLICITUD_INICIO);
     // int estado = recibir_int(swap);
@@ -156,7 +157,7 @@ void mate_close_comportamiento(tab_pags *tabla, int cliente, bool *conectado){
 
 void inicio_comprobar(tab_pags* tabla, int cliente, bool* conectado){
     
-    int respuesta = swap_solicitud_iniciar(tabla->pid);
+    int respuesta = swap_solicitud_iniciar();
 
     if(respuesta == -1) 
     {

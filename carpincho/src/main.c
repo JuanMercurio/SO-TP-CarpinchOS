@@ -3,7 +3,7 @@
 #include <matelib/matelib.h>
 #include <pthread.h>
 
-#define CANT_CARPINCHOS 4
+#define CANT_CARPINCHOS 10
 
 int main(int argc, char* argv[]) {
 
@@ -24,7 +24,10 @@ void carpincho_comportamiento(void* arg)
 {
    mate_instance* ref = malloc(sizeof(mate_instance));
    mate_init(ref, "cfg/carpincho.config");
-   printf("Termine\n");
+
+   int pid =  ((mate_inner_structure*)ref->group_info)->pid;
+   printf("Termine con el pid %d\n", pid);
+
 //   mate_pointer dl = mate_memalloc(ref, 100);
 
 }

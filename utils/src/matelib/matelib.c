@@ -2,6 +2,15 @@
 
 //------------------General Functions---------------------/
 
+/* 
+  - recibe un mensaje (handshake)
+  - envia NEW_INSTANCE
+  - recibe un pid
+  - recibe confirmacion 
+        - "OK"    --> true
+        - != "OK" --> false
+
+ */
 int mate_init(mate_instance *lib_ref, char *config) //AGREGAR LOG
 {
   t_config *configuracion = config_create(config);
@@ -12,35 +21,24 @@ int mate_init(mate_instance *lib_ref, char *config) //AGREGAR LOG
   logger = log_create(ARCHIVO_LOG, "Matelib", 0, LOG_LEVEL_INFO);
   log_info(logger, "Log Matelib creado");
 
-  lib_ref->group_info = malloc(sizeof(mate_inner_structure));
-  mate_inner_structure mate_ref;
-  lib_ref->group_info = &mate_ref;
+  mate_inner_structure *mate_ref = malloc(sizeof(mate_inner_structure));
+  lib_ref->group_info = mate_ref;
 
-  log_info(logger, "Conectando con el servidor");
-  ((mate_inner_structure *)lib_ref->group_info)->conexion = crear_conexion(IP, PUERTO);
+  mate_ref->conexion = crear_conexion(IP, PUERTO);
+
   log_info(logger, "Esperando respuesta de servidor");
-
-  char *respuesta = recibir_mensaje(((mate_inner_structure *)lib_ref->group_info)->conexion);
-  //TOOD: debera retronar -1 si por algo no se puede crear la instancia??
-  if (strcmp(respuesta, "KERNEL") == 0)
-  {
-    log_info(logger, "Conectado con Kernel");
-    ((mate_inner_structure *)lib_ref->group_info)->con_kernel = true;
-  }
-  else
-  {
-    ((mate_inner_structure *)lib_ref->group_info)->con_kernel = false;
-    log_info(logger, "Conectado con Memoria");
-  }
+  char *respuesta = recibir_mensaje(mate_ref->conexion);
+  conexion_set_server(mate_ref, respuesta, logger);
 
   log_info(logger, "NUEVO CARPINCHO");
-  enviar_mensaje_y_cod_op("NUEVO CARPINCHO", ((mate_inner_structure *)lib_ref->group_info)->conexion, NEW_INSTANCE);
-  respuesta = recibir_mensaje(((mate_inner_structure *)lib_ref->group_info)->conexion);
-  mate_ref.pid = atoi(respuesta);
-  respuesta = recibir_mensaje(((mate_inner_structure *)lib_ref->group_info)->conexion); // el procesos queda bloqueado aca hasta recibir un OK del procesador
-  if (strcmp(respuesta, "OK") == 0)
+  enviar_int(mate_ref->conexion, NEW_INSTANCE);
+  mate_ref->pid  = recibir_int(mate_ref->conexion);
+
+  char* estado = recibir_mensaje(mate_ref->conexion); // el procesos queda bloqueado aca hasta recibir un OK del procesador
+
+  if (strcmp(estado, "OK") == 0)
   {
-    log_info(logger, "Carpincho creado correctamente");
+    log_info(logger, "Carpincho creado correctamente con el pid: %d", mate_ref->pid);
     return 0;
   }
   else
@@ -343,4 +341,17 @@ mate_pointer recibir_int32(int socket)
 bool conectado_a_memoria(mate_instance *lib_ref)
 {
   return !((mate_inner_structure *)lib_ref->group_info)->con_kernel;
+}
+
+
+
+void conexion_set_server(mate_inner_structure *mate_ref, char* respuesta, t_log* logger)
+{ 
+  if (strcmp(respuesta, "KERNEL") == 0)
+    mate_ref->con_kernel = true;
+  else
+    mate_ref->con_kernel = false;
+
+  char mensaje[50];
+  sprintf(mensaje, "Conectado a %s", respuesta);
 }
