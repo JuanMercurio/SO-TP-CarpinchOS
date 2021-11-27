@@ -10,7 +10,7 @@ void deteccion_deadlock()
     while(!terminar)
     {
         usleep(configuracion.TIEMPO_DEADLOCK);
-        log_info(logger, "Comienza la ejecución de la detección de Deadlock");
+        //log_info(logger, "Comienza la ejecución de la detección de Deadlock");
         //pausar_todo????
         for (int i = 0; i > list_size(lista_sem_kernel); i++)
         {
@@ -25,7 +25,7 @@ void deteccion_deadlock()
             }
         }
 
-        log_info(logger, "Finaliza la búsqueda de carpinchos en posible deadlock");
+        //log_info(logger, "Finaliza la búsqueda de carpinchos en posible deadlock");
 
         if (!list_is_empty(lista_posible_deadlock))
         {
@@ -40,7 +40,7 @@ void deteccion_deadlock()
             }
         }
         else{
-                log_info(logger, "No se encontraron carpinchos en posible deadlock");
+                //log_info(logger, "No se encontraron carpinchos en posible deadlock");
         }
     }
 }
