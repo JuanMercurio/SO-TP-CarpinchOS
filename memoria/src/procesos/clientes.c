@@ -46,7 +46,7 @@ void ejecutar_proceso(int cliente) {
             break;
 
         case MEMALLOC:
-            ejecutar_malloc(tabla, cliente);
+            comportamiento_memalloc(&pid, cliente);
             /* RECIBE EDE KERNEL EL TAMAÑO A ALLOCAR
                 DEVUELVE UN INT CON LA DL O UN -1 PARA DENEGAR ASIGNACION
              */

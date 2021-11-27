@@ -29,22 +29,16 @@
       "queue.h": "c",
       "semaphore.h": "c",
       "config.h": "c",
-<<<<<<< HEAD
       "tests.h": "c",
       "planificacion.h": "c",
       "io_semaforos.h": "c",
-      "deadlock.h": "c"
-=======
-      "planificacion.h": "c",
+      "deadlock.h": "c",
       "paginacion.h": "c",
       "tlb.h": "c",
       "list.h": "c",
-      "tests.h": "c",
       "mensajes.h": "c",
       "config_pag.h": "c",
       "tests_memoria_sola.h": "c",
-      "io_semaforos.h": "c"
->>>>>>> merge
     }
   }
 }
