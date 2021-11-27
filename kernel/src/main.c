@@ -8,8 +8,6 @@ int id_procesos = 0;
 int carpinchos_bloqueados = 0;
 int main(int argc, char *argv[])
 {
-   log_info(logger,"Retardo de %d para el carpincho PID %d", io->retardo, carpincho->pid);
-
    //solo corre si corremos el binario asi: binario test
    //tests(argc, argv[1]);
  printf("arranca o no arranca?\n");
