@@ -3,12 +3,12 @@
 #include <matelib/matelib.h>
 #include <pthread.h>
 
-#define CANT_CARPINCHOS 10
+#define CANT_CARPINCHOS 1
 
 int main(int argc, char* argv[]) {
 
    pthread_t hilos[CANT_CARPINCHOS];
-
+   printf("entro al main carpincho\n");
    for(int i=0; i < CANT_CARPINCHOS; i++) {
       pthread_create(&hilos[i], NULL, (void*)carpincho_comportamiento, NULL);
    }
@@ -23,11 +23,15 @@ int main(int argc, char* argv[]) {
 void carpincho_comportamiento(void* arg)
 {
    mate_instance* ref = malloc(sizeof(mate_instance));
-   mate_init(ref, "cfg/carpincho.config");
-
-   int pid =  ((mate_inner_structure*)ref->group_info)->pid;
-   printf("Termine con el pid %d\n", pid);
-
+    printf("creo instancia\n");
+   int devolvio = mate_init(ref, "cfg/carpincho.config");
+   printf("devolvio %d\n", devolvio);
+   printf("VOY A MANDAR UN SEM INIT\n");
+   sleep(1);
+   devolvio = mate_sem_init(ref, "SEM_HELLO", 0);
+    printf("devolvio %d\n", devolvio);
+   sleep(2);
+   printf("Termine\n");
 //   mate_pointer dl = mate_memalloc(ref, 100);
 
 }

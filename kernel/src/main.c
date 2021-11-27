@@ -22,7 +22,7 @@ int main(int argc, char *argv[])
    init_dispositivos_io();
    printf("inicio dispositivos io\n");
    inicializar_planificacion();
-   administrar_clientes(configuracion.IP, configuracion.PUERTO, &receptor);
+   administrar_clientes(configuracion.IP, configuracion.PUERTO,(void*) &receptor);
    log_info(logger, "Kernel listo para recibir solicitudes");
    return 0;
 }
@@ -125,11 +125,12 @@ void destruir_semaforos(){
 
 void receptor(void *arg)
 {
-
+   printf("RECEPTOR DE CLIENTE %d\n", *(int*)arg );
    int cliente = *(int *)arg;
    free(arg);
    int cod_op , mem_int, aux_int;
    bool conectado = true;
+   printf("por ahcer handshake\n");
    handshake(cliente, "KERNEL");
    t_pcb *carpincho;
    t_paquete_semaforo semaforo ;
@@ -142,10 +143,9 @@ void receptor(void *arg)
    while (conectado)
    {
       
-      log_info(logger, "Esperando mensaje");
-      cod_op = recibir_operacion(cliente);
-         
-      switch (cod_op)
+      int operacion = recibir_operacion(cliente);
+         printf("RECEPTOR:recibi codigo de operacion %d\n", operacion);
+      switch (operacion)
       {
 
       case NEW_INSTANCE: 
@@ -155,23 +155,31 @@ void receptor(void *arg)
             carpincho->fd_memoria =  crear_conexion(configuracion.IP_MEMORIA, configuracion.PUERTO_MEMORIA);
             carpincho->pid = crearID(&id_procesos);
             carpincho->estado ='N';
-            char *pid = string_itoa(carpincho->pid);
-            enviar_mensaje(cliente, pid);
+           // enviar_cod_op_e_int(carpincho->fd_memoria, NEW_INSTANCE_KERNEL, carpincho->pid);
+           // aux_int = recibir_int(carpincho->fd_memoria);
+           // if(aux_int == 0){
+            printf("carpincho creado\n");
+            enviar_int(cliente, carpincho->pid);
             sem_wait(&mutex_cola_new);
+            printf("paso wait de cola new\n");
             queue_push(cola_new, (void*) carpincho); // pensando que el proceso queda trabado en mate init hasta que sea planificado
             sem_post(&mutex_cola_new);
+            sem_post(&cola_new_con_elementos);
+            printf("encolo en new\n");
             log_info(logger, "Se agregó el carpincho ID: %d a la cola de new", carpincho->pid);
-            //FAlTA avisar a memoria de la nueva instancia
+           // }else{
+            //    enviar_mensaje(cliente, "FAIL");
+           // }
 
-
-         // enviar_mensaje("OK", cliente);
-         // aca debe enviar el ok o debe planificarlo y al llegar a exec recien destrabar el carpincho
             break;
 
       case INIT_SEMAFORO:// SE PUEDE MODIFICAR PARA CONFIRMAR  MAL
-               semaforo = recibir_semaforo(cliente);
+               printf("MAIN:recibi un init semaforo\n");
+               semaforo = recibir_semaforo(cliente);// aca esta el problemita
+               printf("RECEPTOR: recibio el paquete semaforo\n");
                log_info(logger, "Se recibió del carpincho %d un SEM INIT para el semáforo %s ", carpincho->pid, semaforo.buffer);
                recibido = (char*)semaforo.buffer->stream;
+               printf("MAIN: semafor nombre %s\n", recibido);
                sem_kernel_init(recibido, semaforo.valor);// PORBLEMA CON BUFFER
                enviar_mensaje(cliente, "OK");
                free(semaforo.buffer);
@@ -225,11 +233,11 @@ void receptor(void *arg)
                break;
       
       case MEMALLOC: carpincho->proxima_instruccion = MEMALLOC;
-                mem_int = recibir_operacion(cliente);
+                mem_int = recibir_int(cliente);
                log_info(logger, "Se recibió del carpincho %d un MEM ALLOC", carpincho->pid);
                enviar_cod_op_e_int(carpincho->fd_memoria,MEMALLOC,mem_int);
                //ESPERAR RTA MEMORIA
-               aux_int = recibir_operacion(carpincho->fd_memoria);
+               aux_int = recibir_int(carpincho->fd_memoria);
                if (aux_int != -1){
                    enviar_cod_op_e_int(cliente, 0, aux_int);
                }else{
@@ -239,10 +247,10 @@ void receptor(void *arg)
                break;
 
       case MEMFREE: carpincho->proxima_instruccion = MEMFREE;
-               mem_int = recibir_operacion(cliente);
+               mem_int = recibir_int(cliente);
                log_info(logger, "Se recibió del carpincho %d un MEM FREE", carpincho->pid);
                enviar_cod_op_e_int(carpincho->fd_memoria, MEMFREE,mem_int);
-               aux_int = recibir_operacion(carpincho->fd_memoria);
+               aux_int = recibir_int(carpincho->fd_memoria);
                if (aux_int != -5){
                    enviar_cod_op_e_int(cliente, 0, 0);
                }else{
@@ -268,7 +276,7 @@ void receptor(void *arg)
                mem_write = recibir_mem_write(cliente);
                log_info(logger, "Se recibió del carpincho %d un MEM write desde la posición %d con el mensjaje %s", carpincho->pid, mem_write.dest, mem_write.buffer->stream);
                enviar_mem_write(carpincho->fd_memoria, MEMWRITE, mem_write.buffer->stream,mem_write.dest, mem_write.buffer->size);
-               aux_int = recibir_operacion(carpincho->fd_memoria);
+               aux_int = recibir_int(carpincho->fd_memoria);
                if (aux_int != -7){
                    enviar_cod_op_e_int(cliente, 0, aux_int);
                }else{
@@ -286,6 +294,11 @@ void receptor(void *arg)
                close(carpincho->fd_memoria);
                conectado = false;
                enviar_mensaje_y_cod_op("CERRAR CONEXION", carpincho->fd_memoria, MATE_CLOSE);
+      break;
+
+      default: 
+      printf("codigo erroneo\n");
+      conectado = false;
       break;
       }
    }
@@ -353,6 +366,7 @@ void iniciar_colas()
    suspendido_bloqueado = queue_create();
    suspendido_listo = queue_create();
    cola_finalizados = queue_create();
+   lista_ordenada_por_algoritmo = list_create();
 }
 void inicializar_semaforos(){
    
