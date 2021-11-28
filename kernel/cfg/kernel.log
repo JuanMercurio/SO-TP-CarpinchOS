@@ -1,21 +1,448 @@
-[INFO] 14:08:21:694 Kernel/(6844:6844): Log creado
-[INFO] 14:08:21:695 Kernel/(6844:6844): Configuración obtenida
-[INFO] 14:08:21:695 Kernel/(6844:6844): Semáforos inicializados
-[INFO] 14:08:21:695 Kernel/(6844:6844): Colas de dispositivos IO creadas
-[INFO] 14:08:21:695 Kernel/(6844:6844): Se creó el hilo gestor de la IO hierbitas
-[INFO] 14:08:21:695 Kernel/(6844:6844): Se creó el hilo gestor de la IO laguna
-[INFO] 14:08:21:695 Kernel/(6844:6844): Inicio colas de planificación
-[INFO] 14:08:21:696 Kernel/(6844:6844): Hilo Planificador Corto Plazo creado
-[INFO] 14:08:21:696 Kernel/(6844:6844): Hilo Planificador Largo Plazo creado
-[INFO] 14:08:21:696 Kernel/(6844:6844): Hilo Planificador Gestro Finalizados creado
-[INFO] 14:08:21:696 Kernel/(6844:6844): Hilo Detección Deadlock creado
-[INFO] 14:08:21:696 Kernel/(6844:6844): Hilo para terminar el programa creado
-[INFO] 14:08:21:696 Kernel/(6844:6844): Hilo CPU creado
-[INFO] 14:08:21:699 Kernel/(6844:6851): Para terminar precione cualquier tecla.
-[INFO] 14:08:21:701 Kernel/(6844:6847): hola soy EL plani corto
-[INFO] 14:08:21:701 Kernel/(6844:6846): Creando gestor de IO
-[INFO] 14:08:21:702 Kernel/(6844:6846): IO laguna lista para recibir carpinchos
-[INFO] 14:08:21:704 Kernel/(6844:6845): Creando gestor de IO
-[INFO] 14:08:21:704 Kernel/(6844:6845): IO hierbitas lista para recibir carpinchos
-[INFO] 14:09:20:326 Kernel/(6844:7166): Se recibió un NEW INSTANCE. Comienza creación del carpincho
-[INFO] 14:09:20:326 Kernel/(6844:7166): Se agregó el carpincho ID: 0 a la cola de new
+[INFO] 17:44:50:624 Kernel/(10192:10192): Log creado
+[INFO] 17:44:50:630 Kernel/(10192:10192): Configuración obtenida
+[INFO] 17:44:50:630 Kernel/(10192:10192): Semáforos inicializados
+[INFO] 17:44:50:630 Kernel/(10192:10192): Colas de dispositivos IO creadas
+[INFO] 17:44:50:630 Kernel/(10192:10192): Se creó el hilo gestor de la IO hierbitas
+[INFO] 17:44:50:630 Kernel/(10192:10192): Se creó el hilo gestor de la IO laguna
+[INFO] 17:44:50:630 Kernel/(10192:10192): Inicio colas de planificación
+[INFO] 17:44:50:630 Kernel/(10192:10192): Hilo Planificador Corto Plazo creado
+[INFO] 17:44:50:630 Kernel/(10192:10192): Hilo Planificador Largo Plazo creado
+[INFO] 17:44:50:630 Kernel/(10192:10192): Hilo Planificador Gestro Finalizados creado
+[INFO] 17:44:50:630 Kernel/(10192:10192): Hilo Detección Deadlock creado
+[INFO] 17:44:50:630 Kernel/(10192:10192): Hilo para terminar el programa creado
+[INFO] 17:44:50:630 Kernel/(10192:10192): Hilo CPU creado
+[INFO] 17:44:50:633 Kernel/(10192:10199): Para terminar precione cualquier tecla.
+[INFO] 17:44:50:634 Kernel/(10192:10195): hola soy EL plani corto
+[INFO] 17:44:50:634 Kernel/(10192:10194): Creando gestor de IO
+[INFO] 17:44:50:634 Kernel/(10192:10194): IO laguna lista para recibir carpinchos
+[INFO] 17:44:50:634 Kernel/(10192:10193): Creando gestor de IO
+[INFO] 17:44:50:634 Kernel/(10192:10193): IO hierbitas lista para recibir carpinchos
+[INFO] 17:44:53:479 Kernel/(10192:10275): Se recibió un NEW INSTANCE. Comienza creación del carpincho
+[INFO] 17:44:53:480 Kernel/(10192:10275): Se agregó el carpincho ID: 0 a la cola de new
+[INFO] 17:44:54:519 Kernel/(10192:10275): Se recibió del carpincho 0 un SEM INIT para el semáforo SEM_HELLO 
+[INFO] 17:45:23:027 Kernel/(10411:10411): Log creado
+[INFO] 17:45:23:030 Kernel/(10411:10411): Configuración obtenida
+[INFO] 17:45:23:030 Kernel/(10411:10411): Semáforos inicializados
+[INFO] 17:45:23:030 Kernel/(10411:10411): Colas de dispositivos IO creadas
+[INFO] 17:45:23:030 Kernel/(10411:10411): Se creó el hilo gestor de la IO hierbitas
+[INFO] 17:45:23:030 Kernel/(10411:10411): Se creó el hilo gestor de la IO laguna
+[INFO] 17:45:23:030 Kernel/(10411:10411): Inicio colas de planificación
+[INFO] 17:45:23:030 Kernel/(10411:10411): Hilo Planificador Corto Plazo creado
+[INFO] 17:45:23:030 Kernel/(10411:10411): Hilo Planificador Largo Plazo creado
+[INFO] 17:45:23:030 Kernel/(10411:10411): Hilo Planificador Gestro Finalizados creado
+[INFO] 17:45:23:030 Kernel/(10411:10411): Hilo Detección Deadlock creado
+[INFO] 17:45:23:030 Kernel/(10411:10411): Hilo para terminar el programa creado
+[INFO] 17:45:23:030 Kernel/(10411:10411): Hilo CPU creado
+[INFO] 17:45:23:030 Kernel/(10411:10418): Para terminar precione cualquier tecla.
+[INFO] 17:45:23:031 Kernel/(10411:10414): hola soy EL plani corto
+[INFO] 17:45:23:031 Kernel/(10411:10413): Creando gestor de IO
+[INFO] 17:45:23:031 Kernel/(10411:10413): IO laguna lista para recibir carpinchos
+[INFO] 17:45:23:031 Kernel/(10411:10412): Creando gestor de IO
+[INFO] 17:45:23:031 Kernel/(10411:10412): IO hierbitas lista para recibir carpinchos
+[INFO] 17:45:26:127 Kernel/(10411:10485): Se recibió un NEW INSTANCE. Comienza creación del carpincho
+[INFO] 17:45:26:128 Kernel/(10411:10485): Se agregó el carpincho ID: 0 a la cola de new
+[INFO] 17:45:27:169 Kernel/(10411:10485): Se recibió del carpincho 0 un SEM INIT para el semáforo SEM_HELLO 
+[INFO] 17:47:00:429 Kernel/(11609:11609): Log creado
+[INFO] 17:47:00:430 Kernel/(11609:11609): Configuración obtenida
+[INFO] 17:47:00:430 Kernel/(11609:11609): Semáforos inicializados
+[INFO] 17:47:00:430 Kernel/(11609:11609): Colas de dispositivos IO creadas
+[INFO] 17:47:00:430 Kernel/(11609:11609): Se creó el hilo gestor de la IO hierbitas
+[INFO] 17:47:00:430 Kernel/(11609:11609): Se creó el hilo gestor de la IO laguna
+[INFO] 17:47:00:430 Kernel/(11609:11609): Inicio colas de planificación
+[INFO] 17:47:00:430 Kernel/(11609:11609): Hilo Planificador Corto Plazo creado
+[INFO] 17:47:00:430 Kernel/(11609:11609): Hilo Planificador Largo Plazo creado
+[INFO] 17:47:00:430 Kernel/(11609:11609): Hilo Planificador Gestro Finalizados creado
+[INFO] 17:47:00:430 Kernel/(11609:11609): Hilo Detección Deadlock creado
+[INFO] 17:47:00:430 Kernel/(11609:11609): Hilo para terminar el programa creado
+[INFO] 17:47:00:430 Kernel/(11609:11609): Hilo CPU creado
+[INFO] 17:47:00:430 Kernel/(11609:11616): Para terminar precione cualquier tecla.
+[INFO] 17:47:00:431 Kernel/(11609:11612): hola soy EL plani corto
+[INFO] 17:47:00:431 Kernel/(11609:11611): Creando gestor de IO
+[INFO] 17:47:00:431 Kernel/(11609:11611): IO laguna lista para recibir carpinchos
+[INFO] 17:47:00:431 Kernel/(11609:11610): Creando gestor de IO
+[INFO] 17:47:00:431 Kernel/(11609:11610): IO hierbitas lista para recibir carpinchos
+[INFO] 17:48:20:563 Kernel/(11749:11749): Log creado
+[INFO] 17:48:20:564 Kernel/(11749:11749): Configuración obtenida
+[INFO] 17:48:20:564 Kernel/(11749:11749): Semáforos inicializados
+[INFO] 17:48:20:565 Kernel/(11749:11749): Colas de dispositivos IO creadas
+[INFO] 17:48:20:565 Kernel/(11749:11749): Se creó el hilo gestor de la IO hierbitas
+[INFO] 17:48:20:565 Kernel/(11749:11749): Se creó el hilo gestor de la IO laguna
+[INFO] 17:48:20:565 Kernel/(11749:11749): Inicio colas de planificación
+[INFO] 17:48:20:565 Kernel/(11749:11749): Hilo Planificador Corto Plazo creado
+[INFO] 17:48:20:565 Kernel/(11749:11749): Hilo Planificador Largo Plazo creado
+[INFO] 17:48:20:566 Kernel/(11749:11749): Hilo Planificador Gestro Finalizados creado
+[INFO] 17:48:20:566 Kernel/(11749:11749): Hilo Detección Deadlock creado
+[INFO] 17:48:20:566 Kernel/(11749:11749): Hilo para terminar el programa creado
+[INFO] 17:48:20:566 Kernel/(11749:11749): Hilo CPU creado
+[INFO] 17:48:20:566 Kernel/(11749:11756): Para terminar precione cualquier tecla.
+[INFO] 17:48:20:578 Kernel/(11749:11752): hola soy EL plani corto
+[INFO] 17:48:20:581 Kernel/(11749:11751): Creando gestor de IO
+[INFO] 17:48:20:581 Kernel/(11749:11751): IO laguna lista para recibir carpinchos
+[INFO] 17:48:20:585 Kernel/(11749:11750): Creando gestor de IO
+[INFO] 17:48:20:585 Kernel/(11749:11750): IO hierbitas lista para recibir carpinchos
+[INFO] 17:48:22:882 Kernel/(11749:11867): Se recibió un NEW INSTANCE. Comienza creación del carpincho
+[INFO] 17:48:22:892 Kernel/(11749:11867): Se agregó el carpincho ID: 0 a la cola de new
+[INFO] 17:48:23:935 Kernel/(11749:11867): Se recibió del carpincho 0 un SEM INIT para el semáforo SEM_HELLO 
+[INFO] 17:48:25:939 Kernel/(11749:11867): Se recibió del carpincho 0 un MATE CLOSE
+[INFO] 17:50:31:621 Kernel/(12109:12109): Log creado
+[INFO] 17:50:31:621 Kernel/(12109:12109): Configuración obtenida
+[INFO] 17:50:31:622 Kernel/(12109:12109): Semáforos inicializados
+[INFO] 17:50:31:623 Kernel/(12109:12109): Colas de dispositivos IO creadas
+[INFO] 17:50:31:623 Kernel/(12109:12109): Se creó el hilo gestor de la IO hierbitas
+[INFO] 17:50:31:623 Kernel/(12109:12109): Se creó el hilo gestor de la IO laguna
+[INFO] 17:50:31:624 Kernel/(12109:12109): Inicio colas de planificación
+[INFO] 17:50:31:624 Kernel/(12109:12109): Hilo Planificador Corto Plazo creado
+[INFO] 17:50:31:624 Kernel/(12109:12109): Hilo Planificador Largo Plazo creado
+[INFO] 17:50:31:624 Kernel/(12109:12109): Hilo Planificador Gestro Finalizados creado
+[INFO] 17:50:31:625 Kernel/(12109:12109): Hilo Detección Deadlock creado
+[INFO] 17:50:31:625 Kernel/(12109:12109): Hilo para terminar el programa creado
+[INFO] 17:50:31:625 Kernel/(12109:12109): Hilo CPU creado
+[INFO] 17:50:31:635 Kernel/(12109:12116): Para terminar precione cualquier tecla.
+[INFO] 17:50:31:636 Kernel/(12109:12112): hola soy EL plani corto
+[INFO] 17:50:31:638 Kernel/(12109:12111): Creando gestor de IO
+[INFO] 17:50:31:638 Kernel/(12109:12111): IO laguna lista para recibir carpinchos
+[INFO] 17:50:31:641 Kernel/(12109:12110): Creando gestor de IO
+[INFO] 17:50:31:641 Kernel/(12109:12110): IO hierbitas lista para recibir carpinchos
+[INFO] 17:50:35:397 Kernel/(12109:12183): Se recibió un NEW INSTANCE. Comienza creación del carpincho
+[INFO] 17:50:35:398 Kernel/(12109:12183): Se agregó el carpincho ID: 0 a la cola de new
+[INFO] 17:50:36:435 Kernel/(12109:12183): Se recibió del carpincho 0 un SEM INIT para el semáforo SEM_HELLO 
+[INFO] 17:50:38:466 Kernel/(12109:12183): Se recibió del carpincho 0 un MATE CLOSE
+[INFO] 21:59:49:555 Kernel/(4197:4197): Log creado
+[INFO] 21:59:49:562 Kernel/(4197:4197): Configuración obtenida
+[INFO] 21:59:49:562 Kernel/(4197:4197): Semáforos inicializados
+[INFO] 21:59:49:562 Kernel/(4197:4197): Colas de dispositivos IO creadas
+[INFO] 21:59:49:562 Kernel/(4197:4197): Se creó el hilo gestor de la IO hierbitas
+[INFO] 21:59:49:562 Kernel/(4197:4197): Se creó el hilo gestor de la IO laguna
+[INFO] 21:59:49:562 Kernel/(4197:4197): Inicio colas de planificación
+[INFO] 21:59:49:562 Kernel/(4197:4197): Hilo Planificador Corto Plazo creado
+[INFO] 21:59:49:562 Kernel/(4197:4197): Hilo Planificador Largo Plazo creado
+[INFO] 21:59:49:562 Kernel/(4197:4197): Hilo Planificador Gestro Finalizados creado
+[INFO] 21:59:49:562 Kernel/(4197:4197): Hilo Detección Deadlock creado
+[INFO] 21:59:49:562 Kernel/(4197:4197): Hilo para terminar el programa creado
+[INFO] 21:59:49:562 Kernel/(4197:4197): Hilo CPU creado
+[INFO] 21:59:49:569 Kernel/(4197:4204): Para terminar precione cualquier tecla.
+[INFO] 21:59:49:578 Kernel/(4197:4200): hola soy EL plani corto
+[INFO] 21:59:49:578 Kernel/(4197:4199): Creando gestor de IO
+[INFO] 21:59:49:578 Kernel/(4197:4199): IO laguna lista para recibir carpinchos
+[INFO] 21:59:49:578 Kernel/(4197:4198): Creando gestor de IO
+[INFO] 21:59:49:578 Kernel/(4197:4198): IO hierbitas lista para recibir carpinchos
+[INFO] 21:59:55:539 Kernel/(4197:4278): Se recibió un NEW INSTANCE. Comienza creación del carpincho
+[INFO] 21:59:55:544 Kernel/(4197:4278): Se agregó el carpincho ID: 0 a la cola de new
+[INFO] 21:59:56:583 Kernel/(4197:4278): Se recibió del carpincho 0 un SEM INIT para el semáforo SEM_HELLO 
+[INFO] 21:59:58:584 Kernel/(4197:4278): Se recibió del carpincho 0 un MATE CLOSE
+[INFO] 22:02:20:678 Kernel/(4688:4688): Log creado
+[INFO] 22:02:20:678 Kernel/(4688:4688): Configuración obtenida
+[INFO] 22:02:20:678 Kernel/(4688:4688): Semáforos inicializados
+[INFO] 22:02:20:678 Kernel/(4688:4688): Colas de dispositivos IO creadas
+[INFO] 22:02:20:678 Kernel/(4688:4688): Se creó el hilo gestor de la IO hierbitas
+[INFO] 22:02:20:678 Kernel/(4688:4688): Se creó el hilo gestor de la IO laguna
+[INFO] 22:02:20:678 Kernel/(4688:4688): Inicio colas de planificación
+[INFO] 22:02:20:678 Kernel/(4688:4688): Hilo Planificador Corto Plazo creado
+[INFO] 22:02:20:678 Kernel/(4688:4688): Hilo Planificador Largo Plazo creado
+[INFO] 22:02:20:678 Kernel/(4688:4688): Hilo Planificador Gestro Finalizados creado
+[INFO] 22:02:20:678 Kernel/(4688:4688): Hilo Detección Deadlock creado
+[INFO] 22:02:20:678 Kernel/(4688:4688): Hilo para terminar el programa creado
+[INFO] 22:02:20:679 Kernel/(4688:4688): Hilo CPU creado
+[INFO] 22:02:20:686 Kernel/(4688:4695): Para terminar precione cualquier tecla.
+[INFO] 22:02:20:692 Kernel/(4688:4691): hola soy EL plani corto
+[INFO] 22:02:20:692 Kernel/(4688:4690): Creando gestor de IO
+[INFO] 22:02:20:692 Kernel/(4688:4690): IO laguna lista para recibir carpinchos
+[INFO] 22:02:20:692 Kernel/(4688:4689): Creando gestor de IO
+[INFO] 22:02:20:692 Kernel/(4688:4689): IO hierbitas lista para recibir carpinchos
+[INFO] 22:02:30:598 Kernel/(4688:4817): Se recibió un NEW INSTANCE. Comienza creación del carpincho
+[INFO] 22:02:30:603 Kernel/(4688:4817): Se agregó el carpincho ID: 0 a la cola de new
+[INFO] 22:02:31:643 Kernel/(4688:4817): Se recibió del carpincho 0 un SEM INIT para el semáforo SEM_HELLO 
+[INFO] 22:05:02:016 Kernel/(6397:6397): Log creado
+[INFO] 22:05:02:016 Kernel/(6397:6397): Configuración obtenida
+[INFO] 22:05:02:016 Kernel/(6397:6397): Semáforos inicializados
+[INFO] 22:05:02:016 Kernel/(6397:6397): Colas de dispositivos IO creadas
+[INFO] 22:05:02:016 Kernel/(6397:6397): Se creó el hilo gestor de la IO hierbitas
+[INFO] 22:05:02:016 Kernel/(6397:6397): Se creó el hilo gestor de la IO laguna
+[INFO] 22:05:02:017 Kernel/(6397:6397): Inicio colas de planificación
+[INFO] 22:05:02:017 Kernel/(6397:6397): Hilo Planificador Corto Plazo creado
+[INFO] 22:05:02:017 Kernel/(6397:6397): Hilo Planificador Largo Plazo creado
+[INFO] 22:05:02:017 Kernel/(6397:6397): Hilo Planificador Gestro Finalizados creado
+[INFO] 22:05:02:017 Kernel/(6397:6397): Hilo Detección Deadlock creado
+[INFO] 22:05:02:017 Kernel/(6397:6397): Hilo para terminar el programa creado
+[INFO] 22:05:02:017 Kernel/(6397:6397): Hilo CPU creado
+[INFO] 22:05:02:022 Kernel/(6397:6407): Para terminar precione cualquier tecla.
+[INFO] 22:05:02:024 Kernel/(6397:6403): hola soy EL plani corto
+[INFO] 22:05:02:025 Kernel/(6397:6402): Creando gestor de IO
+[INFO] 22:05:02:025 Kernel/(6397:6402): IO laguna lista para recibir carpinchos
+[INFO] 22:05:02:025 Kernel/(6397:6401): Creando gestor de IO
+[INFO] 22:05:02:025 Kernel/(6397:6401): IO hierbitas lista para recibir carpinchos
+[INFO] 22:05:05:866 Kernel/(6397:6713): Se recibió un NEW INSTANCE. Comienza creación del carpincho
+[INFO] 22:05:05:871 Kernel/(6397:6713): Se agregó el carpincho ID: 0 a la cola de new
+[INFO] 22:05:06:911 Kernel/(6397:6713): Se recibió del carpincho 0 un SEM INIT para el semáforo SEM_HELLO 
+[INFO] 22:05:08:912 Kernel/(6397:6713): Se recibió del carpincho 0 un MATE CLOSE
+[INFO] 22:06:42:197 Kernel/(6397:6911): Se recibió un NEW INSTANCE. Comienza creación del carpincho
+[INFO] 22:06:42:205 Kernel/(6397:6911): Se agregó el carpincho ID: 1 a la cola de new
+[INFO] 22:06:43:243 Kernel/(6397:6911): Se recibió del carpincho 1 un SEM INIT para el semáforo SEM_HELLO 
+[INFO] 22:06:45:244 Kernel/(6397:6911): Se recibió del carpincho 1 un MATE CLOSE
+[INFO] 22:07:32:027 Kernel/(7146:7146): Log creado
+[INFO] 22:07:32:028 Kernel/(7146:7146): Configuración obtenida
+[INFO] 22:07:32:028 Kernel/(7146:7146): Semáforos inicializados
+[INFO] 22:07:32:028 Kernel/(7146:7146): Colas de dispositivos IO creadas
+[INFO] 22:07:32:034 Kernel/(7146:7146): Se creó el hilo gestor de la IO hierbitas
+[INFO] 22:07:32:034 Kernel/(7146:7146): Se creó el hilo gestor de la IO laguna
+[INFO] 22:07:32:034 Kernel/(7146:7146): Inicio colas de planificación
+[INFO] 22:07:32:034 Kernel/(7146:7146): Hilo Planificador Corto Plazo creado
+[INFO] 22:07:32:034 Kernel/(7146:7146): Hilo Planificador Largo Plazo creado
+[INFO] 22:07:32:034 Kernel/(7146:7146): Hilo Planificador Gestro Finalizados creado
+[INFO] 22:07:32:034 Kernel/(7146:7146): Hilo Detección Deadlock creado
+[INFO] 22:07:32:034 Kernel/(7146:7146): Hilo para terminar el programa creado
+[INFO] 22:07:32:034 Kernel/(7146:7146): Hilo CPU creado
+[INFO] 22:07:32:040 Kernel/(7146:7153): Para terminar precione cualquier tecla.
+[INFO] 22:07:32:041 Kernel/(7146:7149): hola soy EL plani corto
+[INFO] 22:07:32:041 Kernel/(7146:7148): Creando gestor de IO
+[INFO] 22:07:32:041 Kernel/(7146:7148): IO laguna lista para recibir carpinchos
+[INFO] 22:07:32:042 Kernel/(7146:7147): Creando gestor de IO
+[INFO] 22:07:32:042 Kernel/(7146:7147): IO hierbitas lista para recibir carpinchos
+[INFO] 22:07:34:149 Kernel/(7146:7221): Se recibió un NEW INSTANCE. Comienza creación del carpincho
+[INFO] 22:07:34:153 Kernel/(7146:7221): Se agregó el carpincho ID: 0 a la cola de new
+[INFO] 22:07:35:191 Kernel/(7146:7221): Se recibió del carpincho 0 un SEM INIT para el semáforo SEM_HELLO 
+[INFO] 22:07:37:192 Kernel/(7146:7221): Se recibió del carpincho 0 un MATE CLOSE
+[INFO] 22:08:45:710 Kernel/(8313:8313): Log creado
+[INFO] 22:08:45:710 Kernel/(8313:8313): Configuración obtenida
+[INFO] 22:08:45:710 Kernel/(8313:8313): Semáforos inicializados
+[INFO] 22:08:45:710 Kernel/(8313:8313): Colas de dispositivos IO creadas
+[INFO] 22:08:45:710 Kernel/(8313:8313): Se creó el hilo gestor de la IO hierbitas
+[INFO] 22:08:45:710 Kernel/(8313:8313): Se creó el hilo gestor de la IO laguna
+[INFO] 22:08:45:710 Kernel/(8313:8313): Inicio colas de planificación
+[INFO] 22:08:45:710 Kernel/(8313:8313): Hilo Planificador Corto Plazo creado
+[INFO] 22:08:45:711 Kernel/(8313:8313): Hilo Planificador Largo Plazo creado
+[INFO] 22:08:45:711 Kernel/(8313:8313): Hilo Planificador Gestro Finalizados creado
+[INFO] 22:08:45:711 Kernel/(8313:8313): Hilo Detección Deadlock creado
+[INFO] 22:08:45:711 Kernel/(8313:8313): Hilo para terminar el programa creado
+[INFO] 22:08:45:711 Kernel/(8313:8313): Hilo CPU creado
+[INFO] 22:08:45:711 Kernel/(8313:8320): Para terminar precione cualquier tecla.
+[INFO] 22:08:45:713 Kernel/(8313:8316): hola soy EL plani corto
+[INFO] 22:08:45:713 Kernel/(8313:8315): Creando gestor de IO
+[INFO] 22:08:45:713 Kernel/(8313:8315): IO laguna lista para recibir carpinchos
+[INFO] 22:08:45:713 Kernel/(8313:8314): Creando gestor de IO
+[INFO] 22:08:45:713 Kernel/(8313:8314): IO hierbitas lista para recibir carpinchos
+[INFO] 22:08:50:171 Kernel/(8313:8431): Se recibió un NEW INSTANCE. Comienza creación del carpincho
+[INFO] 22:08:50:175 Kernel/(8313:8431): Se agregó el carpincho ID: 0 a la cola de new
+[INFO] 22:08:51:211 Kernel/(8313:8431): Se recibió del carpincho 0 un SEM INIT para el semáforo SEM_HELLO 
+[INFO] 22:08:53:211 Kernel/(8313:8431): Se recibió del carpincho 0 un MATE CLOSE
+[INFO] 22:20:10:435 Kernel/(9964:9964): Log creado
+[INFO] 22:20:10:436 Kernel/(9964:9964): Configuración obtenida
+[INFO] 22:20:10:438 Kernel/(9964:9964): Semáforos inicializados
+[INFO] 22:20:10:438 Kernel/(9964:9964): Colas de dispositivos IO creadas
+[INFO] 22:20:10:439 Kernel/(9964:9964): Se creó el hilo gestor de la IO hierbitas
+[INFO] 22:20:10:439 Kernel/(9964:9964): Se creó el hilo gestor de la IO laguna
+[INFO] 22:20:10:439 Kernel/(9964:9964): Inicio colas de planificación
+[INFO] 22:20:10:439 Kernel/(9964:9964): Hilo Planificador Corto Plazo creado
+[INFO] 22:20:10:439 Kernel/(9964:9964): Hilo Planificador Largo Plazo creado
+[INFO] 22:20:10:439 Kernel/(9964:9964): Hilo Planificador Gestro Finalizados creado
+[INFO] 22:20:10:439 Kernel/(9964:9964): Hilo Detección Deadlock creado
+[INFO] 22:20:10:439 Kernel/(9964:9964): Hilo para terminar el programa creado
+[INFO] 22:20:10:439 Kernel/(9964:9964): Hilo CPU creado
+[INFO] 22:20:10:442 Kernel/(9964:9971): Para terminar precione cualquier tecla.
+[INFO] 22:20:10:443 Kernel/(9964:9967): hola soy EL plani corto
+[INFO] 22:20:10:443 Kernel/(9964:9966): Creando gestor de IO
+[INFO] 22:20:10:443 Kernel/(9964:9966): IO laguna lista para recibir carpinchos
+[INFO] 22:20:10:443 Kernel/(9964:9965): Creando gestor de IO
+[INFO] 22:20:10:443 Kernel/(9964:9965): IO hierbitas lista para recibir carpinchos
+[INFO] 22:20:15:602 Kernel/(9964:10094): Se recibió un NEW INSTANCE. Comienza creación del carpincho
+[INFO] 22:20:15:611 Kernel/(9964:10094): Se agregó el carpincho ID: 0 a la cola de new
+[INFO] 22:20:16:651 Kernel/(9964:10094): Se recibió del carpincho 0 un SEM INIT para el semáforo SEM_HELLO con valor &d
+ 
+[INFO] 22:21:36:686 Kernel/(10315:10315): Log creado
+[INFO] 22:21:36:691 Kernel/(10315:10315): Configuración obtenida
+[INFO] 22:21:36:692 Kernel/(10315:10315): Semáforos inicializados
+[INFO] 22:21:36:692 Kernel/(10315:10315): Colas de dispositivos IO creadas
+[INFO] 22:21:36:693 Kernel/(10315:10315): Se creó el hilo gestor de la IO hierbitas
+[INFO] 22:21:36:693 Kernel/(10315:10315): Se creó el hilo gestor de la IO laguna
+[INFO] 22:21:36:693 Kernel/(10315:10315): Inicio colas de planificación
+[INFO] 22:21:36:693 Kernel/(10315:10315): Hilo Planificador Corto Plazo creado
+[INFO] 22:21:36:693 Kernel/(10315:10315): Hilo Planificador Largo Plazo creado
+[INFO] 22:21:36:693 Kernel/(10315:10315): Hilo Planificador Gestro Finalizados creado
+[INFO] 22:21:36:693 Kernel/(10315:10315): Hilo Detección Deadlock creado
+[INFO] 22:21:36:693 Kernel/(10315:10315): Hilo para terminar el programa creado
+[INFO] 22:21:36:693 Kernel/(10315:10315): Hilo CPU creado
+[INFO] 22:21:36:700 Kernel/(10315:10322): Para terminar precione cualquier tecla.
+[INFO] 22:21:36:701 Kernel/(10315:10318): hola soy EL plani corto
+[INFO] 22:21:36:701 Kernel/(10315:10317): Creando gestor de IO
+[INFO] 22:21:36:701 Kernel/(10315:10317): IO laguna lista para recibir carpinchos
+[INFO] 22:21:36:702 Kernel/(10315:10316): Creando gestor de IO
+[INFO] 22:21:36:702 Kernel/(10315:10316): IO hierbitas lista para recibir carpinchos
+[INFO] 22:21:38:957 Kernel/(10315:10389): Se recibió un NEW INSTANCE. Comienza creación del carpincho
+[INFO] 22:21:38:968 Kernel/(10315:10389): Se agregó el carpincho ID: 0 a la cola de new
+[INFO] 22:21:40:007 Kernel/(10315:10389): Se recibió del carpincho 0 un SEM INIT para el semáforo SEM_HELLO con valor &d
+ 
+[INFO] 22:22:35:403 Kernel/(10544:10544): Log creado
+[INFO] 22:22:35:403 Kernel/(10544:10544): Configuración obtenida
+[INFO] 22:22:35:403 Kernel/(10544:10544): Semáforos inicializados
+[INFO] 22:22:35:403 Kernel/(10544:10544): Colas de dispositivos IO creadas
+[INFO] 22:22:35:404 Kernel/(10544:10544): Se creó el hilo gestor de la IO hierbitas
+[INFO] 22:22:35:404 Kernel/(10544:10544): Se creó el hilo gestor de la IO laguna
+[INFO] 22:22:35:404 Kernel/(10544:10544): Inicio colas de planificación
+[INFO] 22:22:35:404 Kernel/(10544:10544): Hilo Planificador Corto Plazo creado
+[INFO] 22:22:35:404 Kernel/(10544:10544): Hilo Planificador Largo Plazo creado
+[INFO] 22:22:35:404 Kernel/(10544:10544): Hilo Planificador Gestro Finalizados creado
+[INFO] 22:22:35:404 Kernel/(10544:10544): Hilo Detección Deadlock creado
+[INFO] 22:22:35:404 Kernel/(10544:10544): Hilo para terminar el programa creado
+[INFO] 22:22:35:404 Kernel/(10544:10544): Hilo CPU creado
+[INFO] 22:22:35:412 Kernel/(10544:10551): Para terminar precione cualquier tecla.
+[INFO] 22:22:35:413 Kernel/(10544:10547): hola soy EL plani corto
+[INFO] 22:22:35:414 Kernel/(10544:10546): Creando gestor de IO
+[INFO] 22:22:35:414 Kernel/(10544:10546): IO laguna lista para recibir carpinchos
+[INFO] 22:22:35:414 Kernel/(10544:10545): Creando gestor de IO
+[INFO] 22:22:35:414 Kernel/(10544:10545): IO hierbitas lista para recibir carpinchos
+[INFO] 22:22:36:971 Kernel/(10544:10618): Se recibió un NEW INSTANCE. Comienza creación del carpincho
+[INFO] 22:22:36:981 Kernel/(10544:10618): Se agregó el carpincho ID: 0 a la cola de new
+[INFO] 22:22:38:019 Kernel/(10544:10618): Se recibió del carpincho 0 un SEM INIT para el semáforo SEM_HELLO con valor &d
+ 
+[INFO] 22:23:57:172 Kernel/(10857:10857): Log creado
+[INFO] 22:23:57:172 Kernel/(10857:10857): Configuración obtenida
+[INFO] 22:23:57:172 Kernel/(10857:10857): Semáforos inicializados
+[INFO] 22:23:57:172 Kernel/(10857:10857): Colas de dispositivos IO creadas
+[INFO] 22:23:57:172 Kernel/(10857:10857): Se creó el hilo gestor de la IO hierbitas
+[INFO] 22:23:57:172 Kernel/(10857:10857): Se creó el hilo gestor de la IO laguna
+[INFO] 22:23:57:172 Kernel/(10857:10857): Inicio colas de planificación
+[INFO] 22:23:57:172 Kernel/(10857:10857): Hilo Planificador Corto Plazo creado
+[INFO] 22:23:57:172 Kernel/(10857:10857): Hilo Planificador Largo Plazo creado
+[INFO] 22:23:57:173 Kernel/(10857:10857): Hilo Planificador Gestro Finalizados creado
+[INFO] 22:23:57:173 Kernel/(10857:10857): Hilo Detección Deadlock creado
+[INFO] 22:23:57:173 Kernel/(10857:10857): Hilo para terminar el programa creado
+[INFO] 22:23:57:173 Kernel/(10857:10857): Hilo CPU creado
+[INFO] 22:23:57:173 Kernel/(10857:10864): Para terminar precione cualquier tecla.
+[INFO] 22:23:57:175 Kernel/(10857:10860): hola soy EL plani corto
+[INFO] 22:23:57:176 Kernel/(10857:10859): Creando gestor de IO
+[INFO] 22:23:57:176 Kernel/(10857:10859): IO laguna lista para recibir carpinchos
+[INFO] 22:23:57:181 Kernel/(10857:10858): Creando gestor de IO
+[INFO] 22:23:57:181 Kernel/(10857:10858): IO hierbitas lista para recibir carpinchos
+[INFO] 22:24:00:441 Kernel/(10857:10931): Se recibió un NEW INSTANCE. Comienza creación del carpincho
+[INFO] 22:24:00:446 Kernel/(10857:10931): Se agregó el carpincho ID: 0 a la cola de new
+[INFO] 22:24:01:483 Kernel/(10857:10931): Se recibió del carpincho 0 un SEM INIT para el semáforo SEM_HELLO con valor &d
+ 
+[INFO] 22:27:10:634 Kernel/(11229:11229): Log creado
+[INFO] 22:27:10:634 Kernel/(11229:11229): Configuración obtenida
+[INFO] 22:27:10:634 Kernel/(11229:11229): Semáforos inicializados
+[INFO] 22:27:10:634 Kernel/(11229:11229): Colas de dispositivos IO creadas
+[INFO] 22:27:10:634 Kernel/(11229:11229): Se creó el hilo gestor de la IO hierbitas
+[INFO] 22:27:10:634 Kernel/(11229:11229): Se creó el hilo gestor de la IO laguna
+[INFO] 22:27:10:634 Kernel/(11229:11229): Inicio colas de planificación
+[INFO] 22:27:10:634 Kernel/(11229:11229): Hilo Planificador Corto Plazo creado
+[INFO] 22:27:10:634 Kernel/(11229:11229): Hilo Planificador Largo Plazo creado
+[INFO] 22:27:10:634 Kernel/(11229:11229): Hilo Planificador Gestro Finalizados creado
+[INFO] 22:27:10:634 Kernel/(11229:11229): Hilo Detección Deadlock creado
+[INFO] 22:27:10:634 Kernel/(11229:11229): Hilo para terminar el programa creado
+[INFO] 22:27:10:634 Kernel/(11229:11229): Hilo CPU creado
+[INFO] 22:27:10:634 Kernel/(11229:11236): Para terminar precione cualquier tecla.
+[INFO] 22:27:10:637 Kernel/(11229:11232): hola soy EL plani corto
+[INFO] 22:27:10:637 Kernel/(11229:11231): Creando gestor de IO
+[INFO] 22:27:10:637 Kernel/(11229:11231): IO laguna lista para recibir carpinchos
+[INFO] 22:27:10:637 Kernel/(11229:11230): Creando gestor de IO
+[INFO] 22:27:10:637 Kernel/(11229:11230): IO hierbitas lista para recibir carpinchos
+[INFO] 22:27:13:878 Kernel/(11229:11310): Se recibió un NEW INSTANCE. Comienza creación del carpincho
+[INFO] 22:27:13:879 Kernel/(11229:11310): Se agregó el carpincho ID: 0 a la cola de new
+[INFO] 22:27:14:918 Kernel/(11229:11310): Se recibió del carpincho 0 un SEM INIT para el semáforo SEM_HELLO con valor &d
+ 
+[INFO] 22:38:39:331 Kernel/(12605:12605): Log creado
+[INFO] 22:38:39:332 Kernel/(12605:12605): Configuración obtenida
+[INFO] 22:38:39:332 Kernel/(12605:12605): Semáforos inicializados
+[INFO] 22:38:39:333 Kernel/(12605:12605): Colas de dispositivos IO creadas
+[INFO] 22:38:39:333 Kernel/(12605:12605): Se creó el hilo gestor de la IO hierbitas
+[INFO] 22:38:39:333 Kernel/(12605:12605): Se creó el hilo gestor de la IO laguna
+[INFO] 22:38:39:333 Kernel/(12605:12605): Inicio colas de planificación
+[INFO] 22:38:39:333 Kernel/(12605:12605): Hilo Planificador Corto Plazo creado
+[INFO] 22:38:39:333 Kernel/(12605:12605): Hilo Planificador Largo Plazo creado
+[INFO] 22:38:39:333 Kernel/(12605:12605): Hilo Planificador Gestro Finalizados creado
+[INFO] 22:38:39:333 Kernel/(12605:12605): Hilo Detección Deadlock creado
+[INFO] 22:38:39:333 Kernel/(12605:12605): Hilo para terminar el programa creado
+[INFO] 22:38:39:333 Kernel/(12605:12605): Hilo CPU creado
+[INFO] 22:38:39:340 Kernel/(12605:12612): Para terminar precione cualquier tecla.
+[INFO] 22:38:39:341 Kernel/(12605:12608): hola soy EL plani corto
+[INFO] 22:38:39:341 Kernel/(12605:12607): Creando gestor de IO
+[INFO] 22:38:39:341 Kernel/(12605:12607): IO laguna lista para recibir carpinchos
+[INFO] 22:38:39:341 Kernel/(12605:12606): Creando gestor de IO
+[INFO] 22:38:39:341 Kernel/(12605:12606): IO hierbitas lista para recibir carpinchos
+[INFO] 22:39:29:533 Kernel/(12605:12734): Se recibió un NEW INSTANCE. Comienza creación del carpincho
+[INFO] 22:39:29:534 Kernel/(12605:12734): Se agregó el carpincho ID: 0 a la cola de new
+[INFO] 22:39:30:574 Kernel/(12605:12734): Se recibió del carpincho 0 un SEM INIT para el semáforo SEM_HELLO con valor &d
+ 
+[INFO] 22:39:30:574 Kernel/(12605:12734): SEMAFORO SEM_HELLO inicializado con 0
+
+[INFO] 22:39:32:574 Kernel/(12605:12734): Se recibió del carpincho 0 un MATE CLOSE
+[INFO] 22:41:42:018 Kernel/(12605:13872): Se recibió un NEW INSTANCE. Comienza creación del carpincho
+[INFO] 22:41:42:022 Kernel/(12605:13872): Se agregó el carpincho ID: 1 a la cola de new
+[INFO] 22:41:43:061 Kernel/(12605:13872): Se recibió del carpincho 1 un SEM INIT para el semáforo SEM_HELLO con valor &d
+ 
+[INFO] 22:41:43:062 Kernel/(12605:13872): SEMAFORO YA INICIALIZADO
+
+[INFO] 22:41:45:062 Kernel/(12605:13872): Se recibió del carpincho 1 un MATE CLOSE
+[INFO] 22:41:52:114 Kernel/(12605:13945): Se recibió un NEW INSTANCE. Comienza creación del carpincho
+[INFO] 22:41:52:119 Kernel/(12605:13945): Se agregó el carpincho ID: 2 a la cola de new
+[INFO] 22:41:53:157 Kernel/(12605:13945): Se recibió del carpincho 2 un SEM INIT para el semáforo SEM_HELLO con valor &d
+ 
+[INFO] 22:41:53:157 Kernel/(12605:13945): SEMAFORO YA INICIALIZADO
+
+[INFO] 22:41:55:158 Kernel/(12605:13945): Se recibió del carpincho 2 un MATE CLOSE
+[INFO] 22:42:30:297 Kernel/(14036:14036): Log creado
+[INFO] 22:42:30:297 Kernel/(14036:14036): Configuración obtenida
+[INFO] 22:42:30:297 Kernel/(14036:14036): Semáforos inicializados
+[INFO] 22:42:30:297 Kernel/(14036:14036): Colas de dispositivos IO creadas
+[INFO] 22:42:30:297 Kernel/(14036:14036): Se creó el hilo gestor de la IO hierbitas
+[INFO] 22:42:30:297 Kernel/(14036:14036): Se creó el hilo gestor de la IO laguna
+[INFO] 22:42:30:297 Kernel/(14036:14036): Inicio colas de planificación
+[INFO] 22:42:30:297 Kernel/(14036:14036): Hilo Planificador Corto Plazo creado
+[INFO] 22:42:30:297 Kernel/(14036:14036): Hilo Planificador Largo Plazo creado
+[INFO] 22:42:30:297 Kernel/(14036:14036): Hilo Planificador Gestro Finalizados creado
+[INFO] 22:42:30:297 Kernel/(14036:14036): Hilo Detección Deadlock creado
+[INFO] 22:42:30:298 Kernel/(14036:14036): Hilo para terminar el programa creado
+[INFO] 22:42:30:298 Kernel/(14036:14036): Hilo CPU creado
+[INFO] 22:42:30:301 Kernel/(14036:14043): Para terminar precione cualquier tecla.
+[INFO] 22:42:30:302 Kernel/(14036:14039): hola soy EL plani corto
+[INFO] 22:42:30:302 Kernel/(14036:14038): Creando gestor de IO
+[INFO] 22:42:30:302 Kernel/(14036:14038): IO laguna lista para recibir carpinchos
+[INFO] 22:42:30:302 Kernel/(14036:14037): Creando gestor de IO
+[INFO] 22:42:30:302 Kernel/(14036:14037): IO hierbitas lista para recibir carpinchos
+[INFO] 22:42:32:848 Kernel/(14036:14117): Se recibió un NEW INSTANCE. Comienza creación del carpincho
+[INFO] 22:42:32:849 Kernel/(14036:14117): Se agregó el carpincho ID: 0 a la cola de new
+[INFO] 22:42:33:889 Kernel/(14036:14117): Se recibió del carpincho 0 un SEM INIT para el semáforo SEM_HELLO con valor &d
+ 
+[INFO] 22:42:33:889 Kernel/(14036:14117): SEMAFORO SEM_HELLO inicializado con 0
+
+[INFO] 22:42:35:890 Kernel/(14036:14117): Se recibió del carpincho 0 un MATE CLOSE
+[INFO] 22:42:59:345 Kernel/(14036:14188): Se recibió un NEW INSTANCE. Comienza creación del carpincho
+[INFO] 22:42:59:346 Kernel/(14036:14188): Se agregó el carpincho ID: 1 a la cola de new
+[INFO] 22:43:00:386 Kernel/(14036:14188): Se recibió del carpincho 1 un SEM INIT para el semáforo SEM_HELLO con valor &d
+ 
+[INFO] 22:43:00:386 Kernel/(14036:14188): SEMAFORO YA INICIALIZADO
+
+[INFO] 22:43:02:386 Kernel/(14036:14188): Se recibió del carpincho 1 un MATE CLOSE
+[INFO] 22:48:58:323 Kernel/(15534:15534): Log creado
+[INFO] 22:48:58:324 Kernel/(15534:15534): Configuración obtenida
+[INFO] 22:48:58:324 Kernel/(15534:15534): Semáforos inicializados
+[INFO] 22:48:58:325 Kernel/(15534:15534): Colas de dispositivos IO creadas
+[INFO] 22:48:58:325 Kernel/(15534:15534): Se creó el hilo gestor de la IO hierbitas
+[INFO] 22:48:58:325 Kernel/(15534:15534): Se creó el hilo gestor de la IO laguna
+[INFO] 22:48:58:326 Kernel/(15534:15534): Inicio colas de planificación
+[INFO] 22:48:58:326 Kernel/(15534:15534): Hilo Planificador Corto Plazo creado
+[INFO] 22:48:58:326 Kernel/(15534:15534): Hilo Planificador Largo Plazo creado
+[INFO] 22:48:58:326 Kernel/(15534:15534): Hilo Planificador Gestro Finalizados creado
+[INFO] 22:48:58:326 Kernel/(15534:15534): Hilo Detección Deadlock creado
+[INFO] 22:48:58:326 Kernel/(15534:15534): Hilo para terminar el programa creado
+[INFO] 22:48:58:326 Kernel/(15534:15534): Hilo CPU creado
+[INFO] 22:48:58:326 Kernel/(15534:15541): Para terminar precione cualquier tecla.
+[INFO] 22:48:58:327 Kernel/(15534:15537): hola soy EL plani corto
+[INFO] 22:48:58:328 Kernel/(15534:15536): Creando gestor de IO
+[INFO] 22:48:58:328 Kernel/(15534:15536): IO laguna lista para recibir carpinchos
+[INFO] 22:48:58:329 Kernel/(15534:15535): Creando gestor de IO
+[INFO] 22:48:58:329 Kernel/(15534:15535): IO hierbitas lista para recibir carpinchos
+[INFO] 22:49:06:665 Kernel/(15534:15653): Se recibió un NEW INSTANCE. Comienza creación del carpincho
+[INFO] 22:49:06:669 Kernel/(15534:15653): Se agregó el carpincho ID: 0 a la cola de new
+[INFO] 22:49:07:706 Kernel/(15534:15653): Se recibió del carpincho 0 un SEM INIT para el semáforo SEM_HELLO con valor &d
+ 
+[INFO] 22:49:07:706 Kernel/(15534:15653): SEMAFORO SEM_HELLO inicializado con 0
+
+[INFO] 22:49:09:707 Kernel/(15534:15653): Se recibió del carpincho 0 un MATE CLOSE
+[INFO] 22:49:11:896 Kernel/(15534:15721): Se recibió un NEW INSTANCE. Comienza creación del carpincho
+[INFO] 22:49:11:897 Kernel/(15534:15721): Se agregó el carpincho ID: 1 a la cola de new
+[INFO] 22:49:12:937 Kernel/(15534:15721): Se recibió del carpincho 1 un SEM INIT para el semáforo SEM_HELLO con valor &d
+ 
+[INFO] 22:49:12:937 Kernel/(15534:15721): SEMAFORO YA INICIALIZADO
+
+[INFO] 22:49:14:938 Kernel/(15534:15721): Se recibió del carpincho 1 un MATE CLOSE

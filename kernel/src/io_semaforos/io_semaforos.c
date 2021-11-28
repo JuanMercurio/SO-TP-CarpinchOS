@@ -5,16 +5,29 @@
 sem_kernel *buscar_semaforo(char *nombre)
 {
    sem_kernel *sem_buscado ;
-
-   bool nombre_semaforo(void* elemento){
-      return (strcmp(((sem_kernel*)elemento)->id ,nombre) == 0);
-   }
    //uso la inner function porque list_find requiere un void* como condicion
-   sem_buscado = (sem_kernel*)list_find(lista_sem_kernel, nombre_semaforo);
+   printf("BUSCAR SEMAFORO: ENTRO\n");
+  // sem_buscado = (sem_kernel*)list_find(lista_sem_kernel, nombre_semaforo((void*)nombre));
    if(sem_buscado != NULL)
    return sem_buscado;
    else
       return NULL;  
+}
+   bool nombre_semaforo(void* elemento){
+     // printf("BUSCAR SEMAFORO: usando comparador\n");
+      return (strcmp(((sem_kernel*)elemento)->id ,elemento) == 0);
+   }
+
+sem_kernel * buscar_semaforo2(char* nombre){
+   sem_kernel * comparado = NULL;
+   bool encontrado = false;
+   int i = 0;
+   while(  i < list_size(lista_sem_kernel) && !encontrado){
+      comparado = list_get(lista_sem_kernel, i);
+      if(strcmp(comparado->id, nombre)==0){
+         encontrado = true;
+      }i++;
+   }return comparado;
 }
 
 bool sem_kernel_wait2( t_pcb *carpincho)
@@ -85,7 +98,15 @@ void sem_kernel_post(char *nombre)
    free(sem);
 }
 
-void sem_kernel_init(char* nombre, int value){
+int sem_kernel_init(char* nombre, int value){
+ printf("SEM_KERNEL_INIT: ENTRO\n");
+   sem_kernel * comparador = buscar_semaforo2(nombre);
+   if(comparador != NULL){
+      printf("SEM_KERNEL_INIT: encontro semaforo ya inicializado\n");
+      log_info(logger, "SEMAFORO YA INICIALIZADO\n");
+      return -1;
+   }else{
+       printf("SEM_KERNEL_INIT: creando semaforo\n");
    sem_kernel *nuevo_sem = malloc(sizeof(sem_kernel));
    nuevo_sem->id=nombre;
    nuevo_sem->max_val=value;
@@ -94,6 +115,11 @@ void sem_kernel_init(char* nombre, int value){
    sem_wait(&mutex_lista_sem_kernel);
    list_add(lista_sem_kernel, nuevo_sem);
    sem_post(&mutex_lista_sem_kernel);
+   log_info(logger, "SEMAFORO %s inicializado con %d\n", nombre, value);
+    printf("SEM_KERNEL_INIT: semaforo inicializado y en lista\n");
+    printf("SEM_KERNEL_INT: elementos en lista %d lo que hay %s\n", list_size(lista_sem_kernel), list_get(lista_sem_kernel,0));
+   return 0;
+   }
 }
 
 void sem_kernel_destroy(char* nombre){// ARREGLAR

@@ -133,7 +133,7 @@ void receptor(void *arg)
    printf("por ahcer handshake\n");
    handshake(cliente, "KERNEL");
    t_pcb *carpincho;
-   t_paquete_semaforo semaforo ;
+   t_paquete_semaforo *semaforo ;
    t_paquete_mem_read mem_read;
    t_paquete_mem_write mem_write;
    char* recibido;
@@ -167,7 +167,7 @@ void receptor(void *arg)
             sem_post(&cola_new_con_elementos);
             printf("encolo en new\n");
             log_info(logger, "Se agregó el carpincho ID: %d a la cola de new", carpincho->pid);
-           // }else{
+                       // }else{
             //    enviar_mensaje(cliente, "FAIL");
            // }
 
@@ -175,14 +175,15 @@ void receptor(void *arg)
 
       case INIT_SEMAFORO:// SE PUEDE MODIFICAR PARA CONFIRMAR  MAL
                printf("MAIN:recibi un init semaforo\n");
-               semaforo = recibir_semaforo(cliente);// aca esta el problemita
-               printf("RECEPTOR: recibio el paquete semaforo\n");
-               log_info(logger, "Se recibió del carpincho %d un SEM INIT para el semáforo %s ", carpincho->pid, semaforo.buffer);
-               recibido = (char*)semaforo.buffer->stream;
-               printf("MAIN: semafor nombre %s\n", recibido);
-               sem_kernel_init(recibido, semaforo.valor);// PORBLEMA CON BUFFER
-               enviar_mensaje(cliente, "OK");
-               free(semaforo.buffer);
+               semaforo = recibir_semaforo(cliente);// recibe el puntero
+               log_info(logger, "Se recibió del carpincho %d un SEM INIT para el semáforo %s con valor &d\n ", carpincho->pid, semaforo->nombre_semaforo, semaforo->valor);
+               int resultado = sem_kernel_init(semaforo->nombre_semaforo, semaforo->valor);// usa lo que necesita
+   
+               enviar_int(cliente, resultado);// responde peticion con ok 
+               
+                  free(semaforo->nombre_semaforo);// bora lo que alloco 
+                  free(semaforo);
+            
                break;
       case IO: 
                io = recibir_mensaje(cliente);
@@ -285,15 +286,15 @@ void receptor(void *arg)
                  
                break;
 
-      case MATE_CLOSE: recibir_mensaje(cliente);
-               log_info(logger, "Se recibió del carpincho %d un MATE CLOSE", carpincho->pid);
+      case MATE_CLOSE:
+              log_info(logger, "Se recibió del carpincho %d un MATE CLOSE", carpincho->pid);
+              printf("RECEPTOR: recibi mate close\n");
                carpincho->proxima_instruccion = MATE_CLOSE;
                sem_post(&carpincho->semaforo_evento);
                enviar_mensaje( cliente, "OK");
-               close(cliente);
-               close(carpincho->fd_memoria);
+               // enviar_int(carpincho->fd_memoria, MATE_CLOSE)
                conectado = false;
-               enviar_mensaje_y_cod_op("CERRAR CONEXION", carpincho->fd_memoria, MATE_CLOSE);
+              printf("RECEPTOR: terminando conexion... carpincho fue asado\n");
       break;
 
       default: 

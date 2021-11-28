@@ -50,21 +50,24 @@ int mate_init(mate_instance *lib_ref, char *config) //AGREGAR LOG
 
 int mate_close(mate_instance *lib_ref)
 {
-  log_info(logger, "MATE_CLOSE");
-  //enviar_mensaje_y_cod_op("ELIMINAME",((mate_inner_structure*)lib_ref->group_info)->conexion, MATE_CLOSE);
-  free(lib_ref->group_info);
-  free(lib_ref);
+  //log_info(logger, "MATE_CLOSE");
+  log_info(logger, "LA CONCHA DE TU MADRE");
+  enviar_int(((mate_inner_structure*)lib_ref->group_info)->conexion, MATE_CLOSE);
+  log_info(logger, "MATE_CLOSE: mensaje enviado a kernel");
   char *respuesta = recibir_mensaje(((mate_inner_structure *)lib_ref->group_info)->conexion);
-  if (strcmp(respuesta, "OK") == 0)
-  {
+  //enviar_mensaje_y_cod_op("ELIMINAME",((mate_inner_structure*)lib_ref->group_info)->conexion, MATE_CLOSE);
+  log_info(logger, "respuesta de kernel: %s", respuesta);
+  free(lib_ref->group_info);
+log_info(logger, "libero memoria");
+  free(lib_ref);
+  log_info(logger, "libero memoria");
+ 
+
+
     log_info(logger, "Carpincho eliminado");
-    return 0;
-  }
-  else
-  {
-    return -1;
-  }
-}
+    //log_destroy(logger);
+
+ }
 
 //-----------------Semaphore Functions---------------------/
 
@@ -83,18 +86,9 @@ int mate_sem_init(mate_instance *lib_ref, mate_sem_name sem, unsigned int value)
   // sem_init(((mate_inner_structure *)lib_ref->group_info)->sem_instance, 0, value);
 
   enviar_sem_init(sem, (int)value, ((mate_inner_structure *)lib_ref->group_info)->conexion, INIT_SEMAFORO); // codear fiuncion; pasar valor
-  char *respuesta = recibir_mensaje(((mate_inner_structure *)lib_ref->group_info)->conexion);               // espera respuesta para continuar ejecutando condigo???
+  int respuesta = recibir_int(((mate_inner_structure *)lib_ref->group_info)->conexion);               // espera respuesta para continuar ejecutando condigo???
 
-  if (strcmp(respuesta, "OK") == 0)
-  {
-    log_info(logger, "Se creó correctamente el semáforo %s", sem);
-    return 0;
-  }
-  else
-  {
-    log_info(logger, "Error al crear el semáforo %s", sem);
-    return -1;
-  }
+return respuesta;
 }
 
 int mate_sem_wait(mate_instance *lib_ref, mate_sem_name sem)

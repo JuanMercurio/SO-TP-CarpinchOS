@@ -23,14 +23,13 @@ void procesador()
        printf("PROCESADOR: paso wait de lista\n");
       t_pcb *carpincho = (t_pcb *)list_remove(lista_ordenada_por_algoritmo, 0);
       sem_post(&mutex_lista_oredenada_por_algoritmo);
-      printf("PROCESADOR: saco de lista ejecutando ordenada\n");
+      printf("PROCESADOR: saco de lista ejecutando ordenada a carpincho %d\n", carpincho->pid);
       carpincho->tiempo.time_stamp_fin = temporal_get_string_time("%H:%M:%S:%MS"); // al comenzar a ejecutar corta el eltiempo de espera
       carpincho->tiempo.tiempo_de_espera = obtener_tiempo(carpincho->tiempo.time_stamp_inicio, carpincho->tiempo.time_stamp_fin);
       //aca el procesador lo ejecuta por lo tanto hay qu etomar el tiempo d einicio para depues tener lamdiferencia conel timep de salida
       strcpy(carpincho->tiempo.time_stamp_inicio, carpincho->tiempo.time_stamp_fin); // el momento que comeinza a ejecutar es el mismo que cuando termino la espera
       carpincho->estado = 'E';
       printf("PROCESADORRR: estado carpincho %c", carpincho->estado);
-      sleep(5);
       enviar_mensaje(carpincho->fd_cliente, "OK");
        printf("PROCESADOR: ESPERANDO EVENTO BLOQUEANTE\n");
       sem_wait(&carpincho->semaforo_evento);
@@ -58,6 +57,7 @@ void procesador()
 
       case MATE_CLOSE:
          carpincho->estado = 'F';
+         printf("PROCESADOR: carpincho al asador\n");
          sem_wait(&mutex_cola_finalizados);
          queue_push(cola_finalizados, (void *)carpincho);
          sem_post(&mutex_cola_finalizados);
@@ -252,6 +252,8 @@ void inicializar_proceso_carpincho(t_pcb *carpincho)
    carpincho->tiempo.tiempo_ejecutado = 0;
    carpincho->tiempo.time_stamp_inicio = NULL;
    carpincho->tiempo.time_stamp_fin = NULL;
+   carpincho->io_solicitada = NULL;
+   carpincho->semaforo_a_modificar = NULL;
    carpincho->estado = 'N';
    sem_init(&carpincho->semaforo_evento, 0, 0);
    sem_init(&carpincho->semaforo_fin_evento, 0, 0);
@@ -261,23 +263,45 @@ void iniciar_gestor_finalizados()
    while (!terminar)
    {
       sem_wait(&cola_finalizados_con_elementos);
+      printf("GESTOR DE FINALIZADOS: asando un carpincho rico....\n");
       sem_wait(&mutex_cola_finalizados);
       t_pcb *carpincho = (t_pcb*)queue_pop(cola_finalizados);
       sem_post(&mutex_cola_finalizados);
+           printf("GESTOR DE FINALIZADOS: saco carpincho %d\n", carpincho->pid);
       eliminar_carpincho((void *)carpincho);
       sem_post(&controlador_multiprogramacion);
+       printf("GESTOR DE FINALIZADOS: ...estuvo rico\n");
    }
 }
 void eliminar_carpincho(void *arg)
 { // revisar que este este borrando lo necesario y no haya free's de mas
+printf("ELIMINAR CARPINCHO: entro a eliminar\n");
    t_pcb *carpincho = (t_pcb *)arg;
+   if(carpincho->tiempo.time_stamp_fin != NULL){
    free(carpincho->tiempo.time_stamp_fin);
+   printf("ELIMINAR CARPINCHO: libero estamps de tiempo\n");
+   }
+   if(carpincho->tiempo.time_stamp_inicio != NULL){
    free(carpincho->tiempo.time_stamp_inicio);
+    printf("ELIMINAR CARPINCHO: libero estamps de tiempo\n");
+   }
+  if(carpincho->io_solicitada != NULL){
+      printf("ELIMINAR CARPINCHO: libero chars\n");
    free(carpincho->io_solicitada);
-   free(carpincho->semaforo_a_modificar);
+   printf("ELIMINAR CARPINCHO: libero chars\n");
+   }
+   if(carpincho->semaforo_a_modificar != NULL){
+      free(carpincho->semaforo_a_modificar);
+   }
+   
    sem_destroy(&carpincho->semaforo_evento);
    sem_destroy(&carpincho->semaforo_fin_evento);
+   printf("ELIMINAR CARPINCHO:destruyo semaforos\n");
+   close(carpincho->fd_cliente);
+   close(carpincho->fd_memoria);
+   printf("ELIMINAR CARPINCHO: cerro conexiones\n");
    free(carpincho);
+printf("ELIMINAR CARPINCHO: elimino carpincho\n");
 }
 
 void ejecutando_a_bloqueado(t_pcb *carpincho, t_queue *cola, sem_t *mutex)

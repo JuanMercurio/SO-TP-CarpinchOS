@@ -191,12 +191,14 @@ void* serializar_paquete_semaforo(t_paquete_semaforo * paquete, int bytes){
 	return magico;
 }
 
-t_paquete_semaforo recibir_semaforo(int conexion){
-	t_paquete_semaforo recibido;
-	char* buffer;
-	buffer = recibir_mensaje(conexion);
-	recibido.buffer->stream = (void*)buffer; 
-	recibido.valor = recibir_operacion(conexion);
+t_paquete_semaforo *recibir_semaforo(int conexion){
+	t_paquete_semaforo *recibido = malloc(sizeof(t_paquete_semaforo));
+	printf("entro a recibir semaforo\n");
+	recibido->nombre_semaforo = recibir_mensaje(conexion);
+	printf("recibio mensaje con string %s\n", recibido->nombre_semaforo);
+	recibido->valor = recibir_operacion(conexion);
+	printf("recibiov valor %d\n", recibido->valor);
+
 	//free(buffer);
 	return recibido;
 }

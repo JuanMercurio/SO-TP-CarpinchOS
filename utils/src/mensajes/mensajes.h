@@ -38,6 +38,7 @@ typedef struct
    int cod_op;
    t_buffer* buffer;
    int valor; 
+   char * nombre_semaforo;
 }t_paquete_semaforo;
 
 typedef struct
@@ -152,7 +153,7 @@ void* recibir_buffer2(int* size, int socket_cliente);
 
 int recibir_valor_sem(int conexion);
 
-t_paquete_semaforo recibir_semaforo(int conexion);
+t_paquete_semaforo *recibir_semaforo(int conexion);
 
 void enviar_mensaje_y_cod_op(char* mensaje, int socket_cliente, int codigo_op);
 

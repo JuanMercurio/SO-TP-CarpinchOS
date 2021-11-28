@@ -26,11 +26,15 @@ void carpincho_comportamiento(void* arg)
     printf("creo instancia\n");
    int devolvio = mate_init(ref, "cfg/carpincho.config");
    printf("devolvio %d\n", devolvio);
-   printf("VOY A MANDAR UN SEM INIT\n");
+   
    sleep(1);
+   printf("VOY A MANADAR UN SEM INIT\n");
    devolvio = mate_sem_init(ref, "SEM_HELLO", 0);
     printf("devolvio %d\n", devolvio);
    sleep(2);
+      printf("VOY A cerrar instancia\n");
+   mate_close(ref);
+
    printf("Termine\n");
 //   mate_pointer dl = mate_memalloc(ref, 100);
 
