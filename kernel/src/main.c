@@ -180,7 +180,7 @@ void receptor(void *arg)
                int resultado = sem_kernel_init(semaforo->nombre_semaforo, semaforo->valor);// usa lo que necesita
    
                enviar_int(cliente, resultado);// responde peticion con ok 
-               
+
                   free(semaforo->nombre_semaforo);// bora lo que alloco 
                   free(semaforo);
             
@@ -228,8 +228,8 @@ void receptor(void *arg)
       
       case SEM_DESTROY: recibido = recibir_mensaje(cliente);
                log_info(logger, "Se recibió del carpincho %d un SEM DESTROY para %s", carpincho->pid, recibido);
-               sem_kernel_destroy(recibido);
-               enviar_mensaje( cliente, "OK");
+               aux_int = sem_kernel_destroy(recibido);
+               enviar_int( cliente, "OK");
                free(recibido);
                break;
       

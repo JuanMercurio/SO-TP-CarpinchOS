@@ -18,16 +18,25 @@ sem_kernel *buscar_semaforo(char *nombre)
       return (strcmp(((sem_kernel*)elemento)->id ,elemento) == 0);
    }
 
-sem_kernel * buscar_semaforo2(char* nombre){
+sem_kernel * buscar_semaforo2(char* nombre, int* pos){
    sem_kernel * comparado = NULL;
    bool encontrado = false;
    int i = 0;
+   printf("BUSCAR SEMAFOROOOOO: tamaño lista %d\n", list_size(lista_sem_kernel));
    while(  i < list_size(lista_sem_kernel) && !encontrado){
-      comparado = list_get(lista_sem_kernel, i);
+      comparado = (sem_kernel*)list_get(lista_sem_kernel, i);
+      printf("BUSCAR SEMAFOROOOOO=entro a donde quiero %s ------- con valor %d\n", comparado->id, comparado->val);
+      printf("BUSCAR SEMAFOROOOOO=entro a donde quiero nombre sem %s y nombre pasado %s\n", comparado->id, nombre);
       if(strcmp(comparado->id, nombre)==0){
-         encontrado = true;
-      }i++;
-   }return comparado;
+        printf("BUSCAR SEMAFOROOOOO=entro a donde quiero\n");
+         *pos = i;
+         printf("BUSCAR =========!!!!!!!!!!!!!!!!!!!!!!!pos %d\n", *pos);
+          encontrado = true;
+      }
+      i++;
+     
+   } printf("BUSCAR SEMAFOROOOOO======================================pos %d\n", *pos);
+   return comparado;
 }
 
 bool sem_kernel_wait2( t_pcb *carpincho)
@@ -100,7 +109,8 @@ void sem_kernel_post(char *nombre)
 
 int sem_kernel_init(char* nombre, int value){
  printf("SEM_KERNEL_INIT: ENTRO\n");
-   sem_kernel * comparador = buscar_semaforo2(nombre);
+ int *pos = malloc(sizeof(int));
+   sem_kernel * comparador = buscar_semaforo2(nombre, pos);
    if(comparador != NULL){
       printf("SEM_KERNEL_INIT: encontro semaforo ya inicializado\n");
       log_info(logger, "SEMAFORO YA INICIALIZADO\n");
@@ -108,46 +118,53 @@ int sem_kernel_init(char* nombre, int value){
    }else{
        printf("SEM_KERNEL_INIT: creando semaforo\n");
    sem_kernel *nuevo_sem = malloc(sizeof(sem_kernel));
-   nuevo_sem->id=nombre;
+   nuevo_sem->id = string_duplicate(nombre);
    nuevo_sem->max_val=value;
    nuevo_sem->val=value;
    nuevo_sem->bloqueados=queue_create();
    sem_wait(&mutex_lista_sem_kernel);
-   list_add(lista_sem_kernel, nuevo_sem);
+   list_add(lista_sem_kernel,(void*) nuevo_sem);
+   sem_kernel *aaa = (sem_kernel*)list_get(lista_sem_kernel,0);
+   printf("LO QUE BUSCO---------------------------------%s\n", aaa->id);
    sem_post(&mutex_lista_sem_kernel);
-   log_info(logger, "SEMAFORO %s inicializado con %d\n", nombre, value);
+   log_info(logger, "SEMAFORO %s inicializado con %d\n",(char*) nombre, value);
     printf("SEM_KERNEL_INIT: semaforo inicializado y en lista\n");
-    printf("SEM_KERNEL_INT: elementos en lista %d lo que hay %s\n", list_size(lista_sem_kernel), list_get(lista_sem_kernel,0));
+    
+    printf("SEM_INIT:)))))))))))))))))))))))))))))))))pos %d\n", *pos);
+    free(pos);
    return 0;
    }
 }
 
-void sem_kernel_destroy(char* nombre){// ARREGLAR
-   sem_kernel *sem = buscar_semaforo(nombre);
-   
- //  sem_wait(&mutex_lista_sem_kernel);
-   int cant_bloqueados = queue_size(sem->bloqueados);
+int sem_kernel_destroy(char* nombre){// ARREGLAR
+int pos;
+ printf("SEM_KERNEL_DESTROY:entro\n");
+   sem_kernel *sem = buscar_semaforo2(nombre, &pos);
+   if(sem == NULL){
+      printf("SEM_KERNEL_DESTROY: semaforo inexistente\n");
+      log_info(logger, "SEMAFORO YA destruido\n");
+      return -1;
+   }else{
 
-   if(cant_bloqueados>0){
-      for(int i=0;cant_bloqueados; i++){
-
+while(!queue_is_empty(sem->bloqueados)){
          bloqueado_a_listo(sem->bloqueados, &sem->mutex_cola);
+         printf("SEM_KERNEL_DESTROY: carpinchos desbloqueados\n");
       }
-   }
- //  sem_post(&mutex_lista_sem_kernel);
-   bool nombre_semaforo(void* elemento){
-      return (strcmp(((sem_kernel*)elemento)->id, nombre) == 0);
-   }
-
-  list_remove_and_destroy_by_condition(lista_sem_kernel, nombre_semaforo, (void*)sem_destroyer);
+   list_remove(lista_sem_kernel, pos);
+    printf("SEM_KERNEL_DESTROY: removido de lista\n");
+    sem_destroyer(sem);
 }
-
+}
 void sem_destroyer(void* semaforo){
+    printf("SEM_DESTROYER: entro\n"); 
  sem_kernel *a_destruir  = (sem_kernel*) semaforo;
  queue_destroy(a_destruir->bloqueados); 
+  printf("SEM_DESTROYER: destruyo cola de bloqueados\n"); 
  sem_destroy(&a_destruir->mutex);
  sem_destroy(&a_destruir->mutex_cola);
 free(a_destruir);
+
+ printf("SEM_DESTROYER: semaforo destruido\n"); 
 }
 
 void io_destroyer(void *arg)

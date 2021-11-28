@@ -30,8 +30,10 @@ void carpincho_comportamiento(void* arg)
    sleep(1);
    printf("VOY A MANADAR UN SEM INIT\n");
    devolvio = mate_sem_init(ref, "SEM_HELLO", 0);
-    printf("devolvio %d\n", devolvio);
-   sleep(2);
+    printf("devolvio el sem_init: %d\n", devolvio);
+   sleep(1);
+   devolvio = mate_sem_destroy(ref, "SEM_HELLO");
+   printf("devolvio el sem_destroy: %d\n", devolvio);
       printf("VOY A cerrar instancia\n");
    mate_close(ref);
 

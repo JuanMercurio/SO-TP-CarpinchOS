@@ -152,9 +152,9 @@ int mate_sem_destroy(mate_instance *lib_ref, mate_sem_name sem)
   }
 
   enviar_mensaje_y_cod_op(sem, ((mate_inner_structure *)lib_ref->group_info)->conexion, SEM_DESTROY);
-  char *respuesta = recibir_mensaje(((mate_inner_structure *)lib_ref->group_info)->conexion);
+  int respuesta = recibir_int(((mate_inner_structure *)lib_ref->group_info)->conexion);
 
-  if (strcmp(respuesta, "OK") == 0)
+  if (respuesta == 0)
   {
     log_info(logger, "Se realizó el DESTROY correctamente");
     return 0;
