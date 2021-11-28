@@ -178,18 +178,17 @@ int mate_call_io(mate_instance *lib_ref, mate_io_resource io, void *msg)
   }
 
   enviar_mensaje_y_cod_op(io, ((mate_inner_structure *)lib_ref->group_info)->conexion, IO);
-  char *respuesta = recibir_mensaje(((mate_inner_structure *)lib_ref->group_info)->conexion);
+ int respuesta = recibir_int(((mate_inner_structure *)lib_ref->group_info)->conexion);
 
-  if (strcmp(respuesta, "OK") == 0)
+  if (respuesta == 0)
   {
     log_info(logger, "Se realizó el CALL IO correctamente");
-    return 0;
   }
   else
   {
     log_info(logger, "Error al realizar el CALL IO");
-    return -1;
   }
+  return respuesta;
 }
 
 //--------------Memory Module Functions-------------------/

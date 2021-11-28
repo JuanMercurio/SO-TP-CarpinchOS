@@ -43,7 +43,7 @@ void procesador()
             log_info(logger, "El carpincho %d fue suspendido", carpincho->pid);
          }
          bloquear_por_io(carpincho);
-
+            log_info(logger, "El carpincho %d fue BLOQUEADO por io", carpincho->pid);
          carpinchos_bloqueados++;
          break;
 

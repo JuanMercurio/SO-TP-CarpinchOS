@@ -138,7 +138,6 @@ void receptor(void *arg)
    t_paquete_mem_write mem_write;
    char* recibido;
    sem_kernel *sem ;
-   char* io;
 
    while (conectado)
    {
@@ -186,13 +185,13 @@ void receptor(void *arg)
             
                break;
       case IO: 
-               io = recibir_mensaje(cliente);
+               recibido = recibir_mensaje(cliente);
                //io_kernel io_to_be_served = *(buscar_io(io, lista_io_kernel));// DIRECTAMENT, AL SER UNA LISTA GLOBAL SE PUEDE ACCEDER DESDE LA FUNJCION Y NO PASARLA TODO EL TIEMPO COMO PARAMEETRO
-               carpincho->io_solicitada = io;              
+               carpincho->io_solicitada = string_duplicate(recibido);              
                carpincho->proxima_instruccion = IO;
                sem_post(&carpincho->semaforo_evento);
-               log_info(logger, "Se recibió del carpincho %d un CALL IO para %s", carpincho->pid, io);
-
+               log_info(logger, "Se recibió del carpincho %d un CALL IO para %s", carpincho->pid, recibido);
+               free(recibido);
                break;
 
       case SEM_WAIT: 
