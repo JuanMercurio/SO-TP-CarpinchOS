@@ -6,7 +6,7 @@
 #define CANT_CARPINCHOS 1
 
 int main(int argc, char* argv[]) {
-   if ( argc>=1 && (strcmp(argv[1], "memoria")== 0)) memoria_carpincho();
+  // if ( argc>=1 && (strcmp(argv[1], "memoria")== 0)) memoria_carpincho();
 
    pthread_t hilos[CANT_CARPINCHOS];
    printf("entro al main carpincho\n");
@@ -30,13 +30,14 @@ void carpincho_comportamiento(void* arg)
    
    sleep(1);
    printf("VOY A MANADAR UN SEM INIT\n");
-   devolvio = mate_sem_init(ref, "SEM_HELLO", 0);
-    printf("devolvio el sem_init: %d\n", devolvio);
+  // devolvio = mate_sem_init(ref, "SEM_HELLO", 0);
+   // printf("devolvio el sem_init: %d\n", devolvio);
    sleep(1);
 
-mate_call_io(ref, "laguna","nada");
-   devolvio = mate_sem_destroy(ref, "SEM_HELLO");
-   printf("devolvio el sem_destroy: %d\n", devolvio);
+ devolvio = mate_call_io(ref, "hierbitas","nada");
+  printf("devolvio call io: %d\n", devolvio);
+  devolvio = mate_sem_destroy(ref, "SEM_HELLO");
+  printf("devolvio el sem_destroy: %d\n", devolvio);
       printf("VOY A cerrar instancia\n");
    mate_close(ref);
 

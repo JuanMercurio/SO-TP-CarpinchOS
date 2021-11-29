@@ -34,3 +34,539 @@
 [INFO] 21:18:04:299 Matelib/(23548:23549): libero memoria
 [INFO] 21:18:04:299 Matelib/(23548:23549): libero memoria
 [INFO] 21:18:04:299 Matelib/(23548:23549): Carpincho eliminado
+[INFO] 23:30:10:062 Matelib/(6343:6344): Log Matelib creado
+[INFO] 23:30:10:062 Matelib/(6343:6344): Esperando respuesta de servidor
+[INFO] 23:30:17:360 Matelib/(6485:6486): Log Matelib creado
+[INFO] 23:30:17:361 Matelib/(6485:6486): Esperando respuesta de servidor
+[INFO] 23:30:17:361 Matelib/(6485:6486): NUEVO CARPINCHO
+[INFO] 23:30:17:406 Matelib/(6485:6486): Carpincho creado correctamente con el pid: 0
+[INFO] 23:30:18:407 Matelib/(6485:6486): SEM_INIT
+[INFO] 23:30:19:410 Matelib/(6485:6486): CALL_IO a laguna
+[INFO] 23:30:19:436 Matelib/(6485:6486): Error al realizar el CALL IO
+[INFO] 23:30:19:436 Matelib/(6485:6486): SEM_DESTROY al semáforo SEM_HELLO
+[INFO] 23:30:19:437 Matelib/(6485:6486): Error al realizar el DESTROY
+[INFO] 23:30:19:438 Matelib/(6485:6486): LA CONCHA DE TU MADRE
+[INFO] 23:30:19:438 Matelib/(6485:6486): MATE_CLOSE: mensaje enviado a kernel
+[INFO] 23:30:19:438 Matelib/(6485:6486): respuesta de kernel: 
+[INFO] 23:30:19:438 Matelib/(6485:6486): libero memoria
+[INFO] 23:30:19:438 Matelib/(6485:6486): libero memoria
+[INFO] 23:30:19:438 Matelib/(6485:6486): Carpincho eliminado
+[INFO] 23:34:51:327 Matelib/(6657:6658): Log Matelib creado
+[INFO] 23:34:51:328 Matelib/(6657:6658): Esperando respuesta de servidor
+[INFO] 23:34:51:328 Matelib/(6657:6658): NUEVO CARPINCHO
+[INFO] 23:34:51:370 Matelib/(6657:6658): Carpincho creado correctamente con el pid: 1
+[INFO] 23:34:52:370 Matelib/(6657:6658): SEM_INIT
+[INFO] 23:34:53:371 Matelib/(6657:6658): CALL_IO a laguna
+[INFO] 23:34:53:397 Matelib/(6657:6658): Error al realizar el CALL IO
+[INFO] 23:34:53:397 Matelib/(6657:6658): SEM_DESTROY al semáforo SEM_HELLO
+[INFO] 23:34:53:398 Matelib/(6657:6658): Error al realizar el DESTROY
+[INFO] 23:34:53:398 Matelib/(6657:6658): LA CONCHA DE TU MADRE
+[INFO] 23:34:53:398 Matelib/(6657:6658): MATE_CLOSE: mensaje enviado a kernel
+[INFO] 23:34:53:398 Matelib/(6657:6658): respuesta de kernel: 
+[INFO] 23:34:53:398 Matelib/(6657:6658): libero memoria
+[INFO] 23:34:53:398 Matelib/(6657:6658): libero memoria
+[INFO] 23:34:53:398 Matelib/(6657:6658): Carpincho eliminado
+[INFO] 23:35:02:860 Matelib/(6848:6849): Log Matelib creado
+[INFO] 23:35:02:860 Matelib/(6848:6849): Esperando respuesta de servidor
+[INFO] 23:35:02:861 Matelib/(6848:6849): NUEVO CARPINCHO
+[INFO] 23:35:02:906 Matelib/(6848:6849): Carpincho creado correctamente con el pid: 0
+[INFO] 23:35:03:908 Matelib/(6848:6849): SEM_INIT
+[INFO] 23:35:04:908 Matelib/(6848:6849): CALL_IO a laguna
+[INFO] 23:35:04:937 Matelib/(6848:6849): Error al realizar el CALL IO
+[INFO] 23:35:04:937 Matelib/(6848:6849): SEM_DESTROY al semáforo SEM_HELLO
+[INFO] 23:35:04:937 Matelib/(6848:6849): Error al realizar el DESTROY
+[INFO] 23:35:04:937 Matelib/(6848:6849): LA CONCHA DE TU MADRE
+[INFO] 23:35:04:937 Matelib/(6848:6849): MATE_CLOSE: mensaje enviado a kernel
+[INFO] 23:35:04:937 Matelib/(6848:6849): respuesta de kernel: 
+[INFO] 23:35:04:938 Matelib/(6848:6849): libero memoria
+[INFO] 23:35:04:938 Matelib/(6848:6849): libero memoria
+[INFO] 23:35:04:938 Matelib/(6848:6849): Carpincho eliminado
+[INFO] 23:43:59:761 Matelib/(7317:7318): Log Matelib creado
+[INFO] 23:43:59:761 Matelib/(7317:7318): Esperando respuesta de servidor
+[INFO] 23:43:59:762 Matelib/(7317:7318): NUEVO CARPINCHO
+[INFO] 23:43:59:802 Matelib/(7317:7318): Carpincho creado correctamente con el pid: 0
+[INFO] 23:44:00:804 Matelib/(7317:7318): SEM_INIT
+[INFO] 23:44:01:804 Matelib/(7317:7318): CALL_IO a laguna
+[INFO] 23:44:01:831 Matelib/(7317:7318): Error al realizar el CALL IO
+[INFO] 23:44:01:831 Matelib/(7317:7318): SEM_DESTROY al semáforo SEM_HELLO
+[INFO] 23:44:01:831 Matelib/(7317:7318): Error al realizar el DESTROY
+[INFO] 23:44:01:831 Matelib/(7317:7318): LA CONCHA DE TU MADRE
+[INFO] 23:44:01:831 Matelib/(7317:7318): MATE_CLOSE: mensaje enviado a kernel
+[INFO] 23:44:01:831 Matelib/(7317:7318): respuesta de kernel: 
+[INFO] 23:44:01:831 Matelib/(7317:7318): libero memoria
+[INFO] 23:44:01:832 Matelib/(7317:7318): libero memoria
+[INFO] 23:44:01:832 Matelib/(7317:7318): Carpincho eliminado
+[INFO] 23:44:25:018 Matelib/(7546:7547): Log Matelib creado
+[INFO] 23:44:25:018 Matelib/(7546:7547): Esperando respuesta de servidor
+[INFO] 23:44:25:019 Matelib/(7546:7547): NUEVO CARPINCHO
+[INFO] 23:44:25:062 Matelib/(7546:7547): Carpincho creado correctamente con el pid: 0
+[INFO] 23:44:26:063 Matelib/(7546:7547): SEM_INIT
+[INFO] 23:44:27:063 Matelib/(7546:7547): CALL_IO a laguna
+[INFO] 23:44:27:089 Matelib/(7546:7547): Error al realizar el CALL IO
+[INFO] 23:44:27:089 Matelib/(7546:7547): SEM_DESTROY al semáforo SEM_HELLO
+[INFO] 23:44:27:089 Matelib/(7546:7547): Error al realizar el DESTROY
+[INFO] 23:44:27:090 Matelib/(7546:7547): LA CONCHA DE TU MADRE
+[INFO] 23:44:27:090 Matelib/(7546:7547): MATE_CLOSE: mensaje enviado a kernel
+[INFO] 23:44:27:090 Matelib/(7546:7547): respuesta de kernel: 
+[INFO] 23:44:27:090 Matelib/(7546:7547): libero memoria
+[INFO] 23:44:27:090 Matelib/(7546:7547): libero memoria
+[INFO] 23:44:27:090 Matelib/(7546:7547): Carpincho eliminado
+[INFO] 23:45:29:776 Matelib/(7992:7993): Log Matelib creado
+[INFO] 23:45:29:776 Matelib/(7992:7993): Esperando respuesta de servidor
+[INFO] 23:45:29:777 Matelib/(7992:7993): NUEVO CARPINCHO
+[INFO] 23:45:29:819 Matelib/(7992:7993): Carpincho creado correctamente con el pid: 0
+[INFO] 23:45:30:820 Matelib/(7992:7993): SEM_INIT
+[INFO] 23:45:31:821 Matelib/(7992:7993): CALL_IO a laguna
+[INFO] 23:45:31:848 Matelib/(7992:7993): Error al realizar el CALL IO
+[INFO] 23:45:31:848 Matelib/(7992:7993): SEM_DESTROY al semáforo SEM_HELLO
+[INFO] 23:45:31:848 Matelib/(7992:7993): Error al realizar el DESTROY
+[INFO] 23:45:31:848 Matelib/(7992:7993): LA CONCHA DE TU MADRE
+[INFO] 23:45:31:848 Matelib/(7992:7993): MATE_CLOSE: mensaje enviado a kernel
+[INFO] 23:45:31:849 Matelib/(7992:7993): respuesta de kernel: 
+[INFO] 23:45:31:849 Matelib/(7992:7993): libero memoria
+[INFO] 23:45:31:849 Matelib/(7992:7993): libero memoria
+[INFO] 23:45:31:849 Matelib/(7992:7993): Carpincho eliminado
+[INFO] 23:46:48:763 Matelib/(8193:8194): Log Matelib creado
+[INFO] 23:46:48:764 Matelib/(8193:8194): Esperando respuesta de servidor
+[INFO] 23:46:48:764 Matelib/(8193:8194): NUEVO CARPINCHO
+[INFO] 23:46:48:807 Matelib/(8193:8194): Carpincho creado correctamente con el pid: 1
+[INFO] 23:46:49:807 Matelib/(8193:8194): SEM_INIT
+[INFO] 23:46:50:808 Matelib/(8193:8194): CALL_IO a laguna
+[INFO] 23:46:50:834 Matelib/(8193:8194): Error al realizar el CALL IO
+[INFO] 23:46:50:834 Matelib/(8193:8194): SEM_DESTROY al semáforo SEM_HELLO
+[INFO] 23:46:50:835 Matelib/(8193:8194): Error al realizar el DESTROY
+[INFO] 23:46:50:835 Matelib/(8193:8194): LA CONCHA DE TU MADRE
+[INFO] 23:46:50:835 Matelib/(8193:8194): MATE_CLOSE: mensaje enviado a kernel
+[INFO] 23:46:50:835 Matelib/(8193:8194): respuesta de kernel: 
+[INFO] 23:46:50:835 Matelib/(8193:8194): libero memoria
+[INFO] 23:46:50:835 Matelib/(8193:8194): libero memoria
+[INFO] 23:46:50:835 Matelib/(8193:8194): Carpincho eliminado
+[INFO] 23:47:50:915 Matelib/(9385:9386): Log Matelib creado
+[INFO] 23:47:50:915 Matelib/(9385:9386): Esperando respuesta de servidor
+[INFO] 23:47:50:916 Matelib/(9385:9386): NUEVO CARPINCHO
+[INFO] 23:47:50:963 Matelib/(9385:9386): Carpincho creado correctamente con el pid: 0
+[INFO] 23:47:51:963 Matelib/(9385:9386): SEM_INIT
+[INFO] 23:47:52:966 Matelib/(9385:9386): CALL_IO a laguna
+[INFO] 23:47:52:994 Matelib/(9385:9386): Error al realizar el CALL IO
+[INFO] 23:47:52:994 Matelib/(9385:9386): SEM_DESTROY al semáforo SEM_HELLO
+[INFO] 23:47:52:995 Matelib/(9385:9386): respuesta IO 19279
+
+[INFO] 23:47:52:995 Matelib/(9385:9386): Error al realizar el DESTROY
+[INFO] 23:47:52:995 Matelib/(9385:9386): LA CONCHA DE TU MADRE
+[INFO] 23:47:52:995 Matelib/(9385:9386): MATE_CLOSE: mensaje enviado a kernel
+[INFO] 23:47:52:996 Matelib/(9385:9386): respuesta de kernel: 
+[INFO] 23:47:52:996 Matelib/(9385:9386): libero memoria
+[INFO] 23:47:52:996 Matelib/(9385:9386): libero memoria
+[INFO] 23:47:52:996 Matelib/(9385:9386): Carpincho eliminado
+[INFO] 23:48:57:124 Matelib/(9478:9479): Log Matelib creado
+[INFO] 23:48:57:124 Matelib/(9478:9479): Esperando respuesta de servidor
+[INFO] 23:48:57:125 Matelib/(9478:9479): NUEVO CARPINCHO
+[INFO] 23:48:57:168 Matelib/(9478:9479): Carpincho creado correctamente con el pid: 1
+[INFO] 23:48:58:168 Matelib/(9478:9479): SEM_INIT
+[INFO] 23:48:59:169 Matelib/(9478:9479): CALL_IO a laguna
+[INFO] 23:48:59:197 Matelib/(9478:9479): Error al realizar el CALL IO
+[INFO] 23:48:59:197 Matelib/(9478:9479): SEM_DESTROY al semáforo SEM_HELLO
+[INFO] 23:48:59:198 Matelib/(9478:9479): respuesta IO 19279
+
+[INFO] 23:48:59:198 Matelib/(9478:9479): Error al realizar el DESTROY
+[INFO] 23:48:59:198 Matelib/(9478:9479): LA CONCHA DE TU MADRE
+[INFO] 23:48:59:198 Matelib/(9478:9479): MATE_CLOSE: mensaje enviado a kernel
+[INFO] 23:48:59:198 Matelib/(9478:9479): respuesta de kernel: 
+[INFO] 23:48:59:198 Matelib/(9478:9479): libero memoria
+[INFO] 23:48:59:198 Matelib/(9478:9479): libero memoria
+[INFO] 23:48:59:198 Matelib/(9478:9479): Carpincho eliminado
+[INFO] 23:50:13:297 Matelib/(10691:10692): Log Matelib creado
+[INFO] 23:50:13:298 Matelib/(10691:10692): Esperando respuesta de servidor
+[INFO] 23:50:13:307 Matelib/(10691:10692): NUEVO CARPINCHO
+[INFO] 23:50:13:343 Matelib/(10691:10692): Carpincho creado correctamente con el pid: 0
+[INFO] 23:50:14:344 Matelib/(10691:10692): SEM_INIT
+[INFO] 23:50:15:344 Matelib/(10691:10692): CALL_IO a laguna
+[INFO] 23:50:15:371 Matelib/(10691:10692): Error al realizar el CALL IO
+[INFO] 23:50:15:371 Matelib/(10691:10692): SEM_DESTROY al semáforo SEM_HELLO
+[INFO] 23:50:20:371 Matelib/(10691:10692): respuesta IO 19279
+
+[INFO] 23:50:20:371 Matelib/(10691:10692): Error al realizar el DESTROY
+[INFO] 23:50:20:371 Matelib/(10691:10692): LA CONCHA DE TU MADRE
+[INFO] 23:50:20:371 Matelib/(10691:10692): MATE_CLOSE: mensaje enviado a kernel
+[INFO] 23:50:20:372 Matelib/(10691:10692): respuesta de kernel: 
+[INFO] 23:50:20:372 Matelib/(10691:10692): libero memoria
+[INFO] 23:50:20:373 Matelib/(10691:10692): libero memoria
+[INFO] 23:50:20:373 Matelib/(10691:10692): Carpincho eliminado
+[INFO] 23:51:18:661 Matelib/(11827:11828): Log Matelib creado
+[INFO] 23:51:18:661 Matelib/(11827:11828): Esperando respuesta de servidor
+[INFO] 23:51:18:662 Matelib/(11827:11828): NUEVO CARPINCHO
+[INFO] 23:51:18:703 Matelib/(11827:11828): Carpincho creado correctamente con el pid: 1
+[INFO] 23:51:19:704 Matelib/(11827:11828): SEM_INIT
+[INFO] 23:51:20:705 Matelib/(11827:11828): CALL_IO a laguna
+[INFO] 23:51:20:732 Matelib/(11827:11828): Error al realizar el CALL IO
+[INFO] 23:51:20:732 Matelib/(11827:11828): SEM_DESTROY al semáforo SEM_HELLO
+[INFO] 23:51:25:733 Matelib/(11827:11828): respuesta IO 19279
+
+[INFO] 23:51:25:733 Matelib/(11827:11828): Error al realizar el DESTROY
+[INFO] 23:51:25:733 Matelib/(11827:11828): LA CONCHA DE TU MADRE
+[INFO] 23:51:25:733 Matelib/(11827:11828): MATE_CLOSE: mensaje enviado a kernel
+[INFO] 23:51:25:733 Matelib/(11827:11828): respuesta de kernel: 
+[INFO] 23:51:25:734 Matelib/(11827:11828): libero memoria
+[INFO] 23:51:25:734 Matelib/(11827:11828): libero memoria
+[INFO] 23:51:25:734 Matelib/(11827:11828): Carpincho eliminado
+[INFO] 23:58:29:612 Matelib/(15433:15434): Log Matelib creado
+[INFO] 23:58:29:612 Matelib/(15433:15434): Esperando respuesta de servidor
+[INFO] 23:58:29:613 Matelib/(15433:15434): NUEVO CARPINCHO
+[INFO] 23:58:29:656 Matelib/(15433:15434): Carpincho creado correctamente con el pid: 0
+[INFO] 23:58:30:657 Matelib/(15433:15434): SEM_INIT
+[INFO] 23:58:31:660 Matelib/(15433:15434): CALL_IO a laguna
+[INFO] 23:58:31:688 Matelib/(15433:15434): RESPUESA DE IO RECIBIDA 3 
+[INFO] 23:58:31:688 Matelib/(15433:15434): Error al realizar el CALL IO
+[INFO] 23:58:31:688 Matelib/(15433:15434): SEM_DESTROY al semáforo SEM_HELLO
+[INFO] 23:58:31:688 Matelib/(15433:15434): respuesta SEM DDESTROY 19279
+
+[INFO] 23:58:31:688 Matelib/(15433:15434): Error al realizar el DESTROY
+[INFO] 23:58:31:688 Matelib/(15433:15434): LA CONCHA DE TU MADRE
+[INFO] 23:58:31:688 Matelib/(15433:15434): MATE_CLOSE: mensaje enviado a kernel
+[INFO] 23:58:31:689 Matelib/(15433:15434): respuesta de kernel: 
+[INFO] 23:58:31:689 Matelib/(15433:15434): libero memoria
+[INFO] 23:58:31:689 Matelib/(15433:15434): libero memoria
+[INFO] 23:58:31:689 Matelib/(15433:15434): Carpincho eliminado
+[INFO] 00:00:58:334 Matelib/(16817:16819): Log Matelib creado
+[INFO] 00:00:58:334 Matelib/(16817:16819): Esperando respuesta de servidor
+[INFO] 00:00:58:335 Matelib/(16817:16819): NUEVO CARPINCHO
+[INFO] 00:00:58:377 Matelib/(16817:16819): Carpincho creado correctamente con el pid: 0
+[INFO] 00:00:59:378 Matelib/(16817:16819): SEM_INIT
+[INFO] 00:01:00:379 Matelib/(16817:16819): CALL_IO a laguna
+[INFO] 00:01:00:406 Matelib/(16817:16819): RESPUESA DE IO RECIBIDA 3 
+[INFO] 00:01:00:406 Matelib/(16817:16819): Error al realizar el CALL IO
+[INFO] 00:01:00:406 Matelib/(16817:16819): SEM_DESTROY al semáforo SEM_HELLO
+[INFO] 00:01:00:406 Matelib/(16817:16819): respuesta SEM DDESTROY 19279
+
+[INFO] 00:01:00:406 Matelib/(16817:16819): Error al realizar el DESTROY
+[INFO] 00:01:00:406 Matelib/(16817:16819): LA CONCHA DE TU MADRE
+[INFO] 00:01:00:406 Matelib/(16817:16819): MATE_CLOSE: mensaje enviado a kernel
+[INFO] 00:01:00:406 Matelib/(16817:16819): respuesta de kernel: 
+[INFO] 00:01:00:406 Matelib/(16817:16819): libero memoria
+[INFO] 00:01:00:406 Matelib/(16817:16819): libero memoria
+[INFO] 00:01:00:406 Matelib/(16817:16819): Carpincho eliminado
+[INFO] 00:01:58:591 Matelib/(17280:17281): Log Matelib creado
+[INFO] 00:01:58:592 Matelib/(17280:17281): Esperando respuesta de servidor
+[INFO] 00:01:58:592 Matelib/(17280:17281): NUEVO CARPINCHO
+[INFO] 00:16:46:838 Matelib/(20087:20088): Log Matelib creado
+[INFO] 00:16:46:839 Matelib/(20087:20088): Esperando respuesta de servidor
+[INFO] 00:16:46:840 Matelib/(20087:20088): NUEVO CARPINCHO
+[INFO] 00:17:25:785 Matelib/(20290:20291): Log Matelib creado
+[INFO] 00:17:25:786 Matelib/(20290:20291): Esperando respuesta de servidor
+[INFO] 00:17:25:786 Matelib/(20290:20291): NUEVO CARPINCHO
+[INFO] 00:17:25:837 Matelib/(20290:20291): Carpincho creado correctamente con el pid: 0
+[INFO] 00:17:26:838 Matelib/(20290:20291): SEM_INIT
+[INFO] 00:17:27:839 Matelib/(20290:20291): CALL_IO a laguna
+[INFO] 00:17:27:871 Matelib/(20290:20291): RESPUESA DE IO RECIBIDA 0 
+[INFO] 00:17:27:872 Matelib/(20290:20291): Se realizó el CALL IO correctamente
+[INFO] 00:17:27:872 Matelib/(20290:20291): SEM_DESTROY al semáforo SEM_HELLO
+[INFO] 00:17:27:872 Matelib/(20290:20291): respuesta SEM DDESTROY 0
+
+[INFO] 00:17:27:872 Matelib/(20290:20291): Se realizó el DESTROY correctamente
+[INFO] 00:17:27:872 Matelib/(20290:20291): LA CONCHA DE TU MADRE
+[INFO] 00:17:27:872 Matelib/(20290:20291): MATE_CLOSE: mensaje enviado a kernel
+[INFO] 00:17:27:873 Matelib/(20290:20291): respuesta de kernel: OK
+[INFO] 00:17:27:873 Matelib/(20290:20291): libero memoria
+[INFO] 00:17:27:873 Matelib/(20290:20291): libero memoria
+[INFO] 00:17:27:873 Matelib/(20290:20291): Carpincho eliminado
+[INFO] 00:20:20:810 Matelib/(21514:21515): Log Matelib creado
+[INFO] 00:20:20:810 Matelib/(21514:21515): Esperando respuesta de servidor
+[INFO] 00:20:20:819 Matelib/(21514:21515): NUEVO CARPINCHO
+[INFO] 00:20:20:857 Matelib/(21514:21515): Carpincho creado correctamente con el pid: 0
+[INFO] 00:20:21:857 Matelib/(21514:21515): SEM_INIT
+[INFO] 00:20:22:858 Matelib/(21514:21515): CALL_IO a laguna
+[INFO] 00:20:22:884 Matelib/(21514:21515): RESPUESA DE IO RECIBIDA 0 
+[INFO] 00:20:22:884 Matelib/(21514:21515): Se realizó el CALL IO correctamente
+[INFO] 00:20:22:884 Matelib/(21514:21515): SEM_DESTROY al semáforo SEM_HELLO
+[INFO] 00:20:22:885 Matelib/(21514:21515): respuesta SEM DDESTROY 0
+
+[INFO] 00:20:22:885 Matelib/(21514:21515): Se realizó el DESTROY correctamente
+[INFO] 00:20:22:885 Matelib/(21514:21515): MATE_CLOSE
+[INFO] 00:20:22:885 Matelib/(21514:21515): MATE_CLOSE: mensaje enviado a kernel
+[INFO] 00:20:22:887 Matelib/(21514:21515): respuesta de kernel: OK
+[INFO] 00:20:22:887 Matelib/(21514:21515): libero memoria
+[INFO] 00:20:22:887 Matelib/(21514:21515): libero memoria
+[INFO] 00:20:22:887 Matelib/(21514:21515): Carpincho eliminado
+[INFO] 00:20:54:817 Matelib/(21633:21634): Log Matelib creado
+[INFO] 00:20:54:817 Matelib/(21633:21634): Esperando respuesta de servidor
+[INFO] 00:20:54:818 Matelib/(21633:21634): NUEVO CARPINCHO
+[INFO] 00:20:54:866 Matelib/(21633:21634): Carpincho creado correctamente con el pid: 1
+[INFO] 00:20:55:867 Matelib/(21633:21634): SEM_INIT
+[INFO] 00:20:56:868 Matelib/(21633:21634): SEM_DESTROY al semáforo SEM_HELLO
+[INFO] 00:20:56:869 Matelib/(21633:21634): respuesta SEM DDESTROY 0
+
+[INFO] 00:20:56:869 Matelib/(21633:21634): Se realizó el DESTROY correctamente
+[INFO] 00:20:56:869 Matelib/(21633:21634): MATE_CLOSE
+[INFO] 00:20:56:869 Matelib/(21633:21634): MATE_CLOSE: mensaje enviado a kernel
+[INFO] 00:20:56:869 Matelib/(21633:21634): respuesta de kernel: OK
+[INFO] 00:20:56:869 Matelib/(21633:21634): libero memoria
+[INFO] 00:20:56:869 Matelib/(21633:21634): libero memoria
+[INFO] 00:20:56:869 Matelib/(21633:21634): Carpincho eliminado
+[INFO] 00:21:30:826 Matelib/(21809:21810): Log Matelib creado
+[INFO] 00:21:30:826 Matelib/(21809:21810): Esperando respuesta de servidor
+[INFO] 00:21:30:827 Matelib/(21809:21810): NUEVO CARPINCHO
+[INFO] 00:21:30:877 Matelib/(21809:21810): Carpincho creado correctamente con el pid: 0
+[INFO] 00:21:31:878 Matelib/(21809:21810): SEM_INIT
+[INFO] 00:21:32:879 Matelib/(21809:21810): SEM_DESTROY al semáforo SEM_HELLO
+[INFO] 00:21:32:879 Matelib/(21809:21810): respuesta SEM DDESTROY 0
+
+[INFO] 00:21:32:880 Matelib/(21809:21810): Se realizó el DESTROY correctamente
+[INFO] 00:21:32:880 Matelib/(21809:21810): MATE_CLOSE
+[INFO] 00:21:32:880 Matelib/(21809:21810): MATE_CLOSE: mensaje enviado a kernel
+[INFO] 00:21:32:880 Matelib/(21809:21810): respuesta de kernel: OK
+[INFO] 00:21:32:880 Matelib/(21809:21810): libero memoria
+[INFO] 00:21:32:880 Matelib/(21809:21810): libero memoria
+[INFO] 00:21:32:880 Matelib/(21809:21810): Carpincho eliminado
+[INFO] 00:21:55:133 Matelib/(22958:22959): Log Matelib creado
+[INFO] 00:21:55:133 Matelib/(22958:22959): Esperando respuesta de servidor
+[INFO] 00:21:55:141 Matelib/(22958:22959): NUEVO CARPINCHO
+[INFO] 00:21:55:182 Matelib/(22958:22959): Carpincho creado correctamente con el pid: 0
+[INFO] 00:21:57:182 Matelib/(22958:22959): SEM_DESTROY al semáforo SEM_HELLO
+[INFO] 00:21:57:186 Matelib/(22958:22959): respuesta SEM DDESTROY -1
+
+[INFO] 00:21:57:186 Matelib/(22958:22959): Error al realizar el DESTROY
+[INFO] 00:21:57:187 Matelib/(22958:22959): MATE_CLOSE
+[INFO] 00:21:57:187 Matelib/(22958:22959): MATE_CLOSE: mensaje enviado a kernel
+[INFO] 00:21:57:188 Matelib/(22958:22959): respuesta de kernel: OK
+[INFO] 00:21:57:188 Matelib/(22958:22959): libero memoria
+[INFO] 00:21:57:188 Matelib/(22958:22959): libero memoria
+[INFO] 00:21:57:188 Matelib/(22958:22959): Carpincho eliminado
+[INFO] 00:22:45:214 Matelib/(23123:23124): Log Matelib creado
+[INFO] 00:22:45:214 Matelib/(23123:23124): Esperando respuesta de servidor
+[INFO] 00:22:45:215 Matelib/(23123:23124): NUEVO CARPINCHO
+[INFO] 00:22:45:261 Matelib/(23123:23124): Carpincho creado correctamente con el pid: 1
+[INFO] 00:22:46:262 Matelib/(23123:23124): SEM_INIT
+[INFO] 00:22:47:262 Matelib/(23123:23124): CALL_IO a asador
+[INFO] 00:22:47:265 Matelib/(23123:23124): RESPUESA DE IO RECIBIDA 0 
+[INFO] 00:22:47:265 Matelib/(23123:23124): Se realizó el CALL IO correctamente
+[INFO] 00:22:47:265 Matelib/(23123:23124): MATE_CLOSE
+[INFO] 00:22:47:265 Matelib/(23123:23124): MATE_CLOSE: mensaje enviado a kernel
+[INFO] 00:22:47:265 Matelib/(23123:23124): respuesta de kernel: OK
+[INFO] 00:22:47:265 Matelib/(23123:23124): libero memoria
+[INFO] 00:22:47:265 Matelib/(23123:23124): libero memoria
+[INFO] 00:22:47:265 Matelib/(23123:23124): Carpincho eliminado
+[INFO] 00:23:19:551 Matelib/(23234:23235): Log Matelib creado
+[INFO] 00:23:19:551 Matelib/(23234:23235): Esperando respuesta de servidor
+[INFO] 00:23:19:552 Matelib/(23234:23235): NUEVO CARPINCHO
+[INFO] 00:23:19:602 Matelib/(23234:23235): Carpincho creado correctamente con el pid: 2
+[INFO] 00:23:20:603 Matelib/(23234:23235): SEM_INIT
+[INFO] 00:23:21:603 Matelib/(23234:23235): CALL_IO a asador
+[INFO] 00:23:21:606 Matelib/(23234:23235): RESPUESA DE IO RECIBIDA 0 
+[INFO] 00:23:21:606 Matelib/(23234:23235): Se realizó el CALL IO correctamente
+[INFO] 00:23:21:606 Matelib/(23234:23235): MATE_CLOSE
+[INFO] 00:23:21:606 Matelib/(23234:23235): MATE_CLOSE: mensaje enviado a kernel
+[INFO] 00:23:21:606 Matelib/(23234:23235): respuesta de kernel: OK
+[INFO] 00:23:21:606 Matelib/(23234:23235): libero memoria
+[INFO] 00:23:21:606 Matelib/(23234:23235): libero memoria
+[INFO] 00:23:21:606 Matelib/(23234:23235): Carpincho eliminado
+[INFO] 00:23:44:462 Matelib/(23379:23380): Log Matelib creado
+[INFO] 00:23:44:462 Matelib/(23379:23380): Esperando respuesta de servidor
+[INFO] 00:23:44:463 Matelib/(23379:23380): NUEVO CARPINCHO
+[INFO] 00:23:44:509 Matelib/(23379:23380): Carpincho creado correctamente con el pid: 3
+[INFO] 00:23:45:511 Matelib/(23379:23380): SEM_INIT
+[INFO] 00:23:46:512 Matelib/(23379:23380): CALL_IO a asador
+[INFO] 00:23:46:515 Matelib/(23379:23380): RESPUESA DE IO RECIBIDA 0 
+[INFO] 00:23:46:515 Matelib/(23379:23380): Se realizó el CALL IO correctamente
+[INFO] 00:23:46:515 Matelib/(23379:23380): SEM_DESTROY al semáforo SEM_HELLO
+[INFO] 00:23:46:516 Matelib/(23379:23380): respuesta SEM DDESTROY 0
+
+[INFO] 00:23:46:516 Matelib/(23379:23380): Se realizó el DESTROY correctamente
+[INFO] 00:23:46:516 Matelib/(23379:23380): MATE_CLOSE
+[INFO] 00:23:46:516 Matelib/(23379:23380): MATE_CLOSE: mensaje enviado a kernel
+[INFO] 00:23:46:516 Matelib/(23379:23380): respuesta de kernel: OK
+[INFO] 00:23:46:516 Matelib/(23379:23380): libero memoria
+[INFO] 00:23:46:516 Matelib/(23379:23380): libero memoria
+[INFO] 00:23:46:516 Matelib/(23379:23380): Carpincho eliminado
+[INFO] 00:23:57:007 Matelib/(23441:23442): Log Matelib creado
+[INFO] 00:23:57:007 Matelib/(23441:23442): Esperando respuesta de servidor
+[INFO] 00:23:57:018 Matelib/(23441:23442): NUEVO CARPINCHO
+[INFO] 00:23:57:057 Matelib/(23441:23442): Carpincho creado correctamente con el pid: 4
+[INFO] 00:23:58:058 Matelib/(23441:23442): SEM_INIT
+[INFO] 00:23:59:060 Matelib/(23441:23442): CALL_IO a asador
+[INFO] 00:23:59:062 Matelib/(23441:23442): RESPUESA DE IO RECIBIDA 0 
+[INFO] 00:23:59:062 Matelib/(23441:23442): Se realizó el CALL IO correctamente
+[INFO] 00:23:59:062 Matelib/(23441:23442): SEM_DESTROY al semáforo SEM_HELLO
+[INFO] 00:23:59:063 Matelib/(23441:23442): respuesta SEM DDESTROY 0
+
+[INFO] 00:23:59:063 Matelib/(23441:23442): Se realizó el DESTROY correctamente
+[INFO] 00:23:59:063 Matelib/(23441:23442): MATE_CLOSE
+[INFO] 00:23:59:063 Matelib/(23441:23442): MATE_CLOSE: mensaje enviado a kernel
+[INFO] 00:23:59:063 Matelib/(23441:23442): respuesta de kernel: OK
+[INFO] 00:23:59:063 Matelib/(23441:23442): libero memoria
+[INFO] 00:23:59:063 Matelib/(23441:23442): libero memoria
+[INFO] 00:23:59:063 Matelib/(23441:23442): Carpincho eliminado
+[INFO] 00:33:22:207 Matelib/(24827:24828): Log Matelib creado
+[INFO] 00:33:22:207 Matelib/(24827:24828): Esperando respuesta de servidor
+[INFO] 00:33:22:208 Matelib/(24827:24828): NUEVO CARPINCHO
+[INFO] 00:33:22:254 Matelib/(24827:24828): Carpincho creado correctamente con el pid: 0
+[INFO] 00:33:23:254 Matelib/(24827:24828): SEM_INIT
+[INFO] 00:33:24:255 Matelib/(24827:24828): CALL_IO a asador
+[INFO] 00:33:24:255 Matelib/(24827:24828): RESPUESA DE IO RECIBIDA -1 
+[INFO] 00:34:29:432 Matelib/(24827:24828): Error al realizar el CALL IO
+[INFO] 00:34:29:433 Matelib/(24827:24828): SEM_DESTROY al semáforo SEM_HELLO
+[INFO] 00:34:29:433 Matelib/(24827:24828): respuesta SEM DDESTROY -1
+
+[INFO] 00:34:29:433 Matelib/(24827:24828): Error al realizar el DESTROY
+[INFO] 00:34:29:433 Matelib/(24827:24828): MATE_CLOSE
+[INFO] 00:34:29:433 Matelib/(24827:24828): MATE_CLOSE: mensaje enviado a kernel
+[INFO] 00:34:29:433 Matelib/(24827:24828): respuesta de kernel: (null)
+[INFO] 00:34:29:433 Matelib/(24827:24828): libero memoria
+[INFO] 00:34:29:433 Matelib/(24827:24828): libero memoria
+[INFO] 00:34:29:433 Matelib/(24827:24828): Carpincho eliminado
+[INFO] 00:34:34:161 Matelib/(25055:25056): Log Matelib creado
+[INFO] 00:34:34:161 Matelib/(25055:25056): Esperando respuesta de servidor
+[INFO] 00:34:34:162 Matelib/(25055:25056): NUEVO CARPINCHO
+[INFO] 00:34:34:209 Matelib/(25055:25056): Carpincho creado correctamente con el pid: 0
+[INFO] 00:34:35:209 Matelib/(25055:25056): SEM_INIT
+[INFO] 00:34:36:210 Matelib/(25055:25056): CALL_IO a asador
+[INFO] 00:34:36:211 Matelib/(25055:25056): RESPUESA DE IO RECIBIDA -1 
+[INFO] 00:36:27:643 Matelib/(25055:25056): Error al realizar el CALL IO
+[INFO] 00:36:27:643 Matelib/(25055:25056): SEM_DESTROY al semáforo SEM_HELLO
+[INFO] 00:36:27:644 Matelib/(25055:25056): respuesta SEM DDESTROY -1
+
+[INFO] 00:36:27:644 Matelib/(25055:25056): Error al realizar el DESTROY
+[INFO] 00:36:27:644 Matelib/(25055:25056): MATE_CLOSE
+[INFO] 00:36:27:644 Matelib/(25055:25056): MATE_CLOSE: mensaje enviado a kernel
+[INFO] 00:36:27:644 Matelib/(25055:25056): respuesta de kernel: (null)
+[INFO] 00:36:27:644 Matelib/(25055:25056): libero memoria
+[INFO] 00:36:27:644 Matelib/(25055:25056): libero memoria
+[INFO] 00:36:27:644 Matelib/(25055:25056): Carpincho eliminado
+[INFO] 00:36:33:111 Matelib/(26230:26231): Log Matelib creado
+[INFO] 00:36:33:112 Matelib/(26230:26231): Esperando respuesta de servidor
+[INFO] 00:36:33:114 Matelib/(26230:26231): NUEVO CARPINCHO
+[INFO] 00:36:33:154 Matelib/(26230:26231): Carpincho creado correctamente con el pid: 0
+[INFO] 00:36:34:155 Matelib/(26230:26231): SEM_INIT
+[INFO] 00:36:35:155 Matelib/(26230:26231): CALL_IO a asador
+[INFO] 00:36:35:156 Matelib/(26230:26231): RESPUESA DE IO RECIBIDA -1 
+[INFO] 00:38:24:678 Matelib/(26230:26231): Error al realizar el CALL IO
+[INFO] 00:38:24:679 Matelib/(26230:26231): SEM_DESTROY al semáforo SEM_HELLO
+[INFO] 00:38:24:679 Matelib/(26230:26231): respuesta SEM DDESTROY -1
+
+[INFO] 00:38:24:679 Matelib/(26230:26231): Error al realizar el DESTROY
+[INFO] 00:38:24:679 Matelib/(26230:26231): MATE_CLOSE
+[INFO] 00:38:24:679 Matelib/(26230:26231): MATE_CLOSE: mensaje enviado a kernel
+[INFO] 00:38:24:679 Matelib/(26230:26231): respuesta de kernel: (null)
+[INFO] 00:38:24:679 Matelib/(26230:26231): libero memoria
+[INFO] 00:38:24:679 Matelib/(26230:26231): libero memoria
+[INFO] 00:38:24:679 Matelib/(26230:26231): Carpincho eliminado
+[INFO] 00:38:30:900 Matelib/(27435:27436): Log Matelib creado
+[INFO] 00:38:30:900 Matelib/(27435:27436): Esperando respuesta de servidor
+[INFO] 00:38:30:901 Matelib/(27435:27436): NUEVO CARPINCHO
+[INFO] 00:38:30:947 Matelib/(27435:27436): Carpincho creado correctamente con el pid: 0
+[INFO] 00:38:31:947 Matelib/(27435:27436): SEM_INIT
+[INFO] 00:38:32:948 Matelib/(27435:27436): CALL_IO a asador
+[INFO] 00:38:32:949 Matelib/(27435:27436): RESPUESA DE IO RECIBIDA -1 
+[INFO] 00:38:32:949 Matelib/(27435:27436): Error al realizar el CALL IO
+[INFO] 00:38:32:949 Matelib/(27435:27436): SEM_DESTROY al semáforo SEM_HELLO
+[INFO] 00:38:32:949 Matelib/(27435:27436): respuesta SEM DDESTROY 0
+
+[INFO] 00:38:32:949 Matelib/(27435:27436): Se realizó el DESTROY correctamente
+[INFO] 00:38:32:949 Matelib/(27435:27436): MATE_CLOSE
+[INFO] 00:38:32:949 Matelib/(27435:27436): MATE_CLOSE: mensaje enviado a kernel
+[INFO] 00:38:32:950 Matelib/(27435:27436): respuesta de kernel: OK
+[INFO] 00:38:32:950 Matelib/(27435:27436): libero memoria
+[INFO] 00:38:32:950 Matelib/(27435:27436): libero memoria
+[INFO] 00:38:32:950 Matelib/(27435:27436): Carpincho eliminado
+[INFO] 00:39:42:466 Matelib/(27690:27691): Log Matelib creado
+[INFO] 00:39:42:466 Matelib/(27690:27691): Esperando respuesta de servidor
+[INFO] 00:39:42:467 Matelib/(27690:27691): NUEVO CARPINCHO
+[INFO] 00:39:42:513 Matelib/(27690:27691): Carpincho creado correctamente con el pid: 0
+[INFO] 00:39:43:513 Matelib/(27690:27691): SEM_INIT
+[INFO] 00:39:44:514 Matelib/(27690:27691): CALL_IO a asador
+[INFO] 00:39:44:515 Matelib/(27690:27691): RESPUESA DE IO RECIBIDA -1 
+[INFO] 00:39:44:515 Matelib/(27690:27691): Error al realizar el CALL IO
+[INFO] 00:39:44:515 Matelib/(27690:27691): SEM_DESTROY al semáforo SEM_HELLO
+[INFO] 00:39:44:515 Matelib/(27690:27691): respuesta SEM DDESTROY 0
+
+[INFO] 00:39:44:515 Matelib/(27690:27691): Se realizó el DESTROY correctamente
+[INFO] 00:39:44:515 Matelib/(27690:27691): MATE_CLOSE
+[INFO] 00:39:44:515 Matelib/(27690:27691): MATE_CLOSE: mensaje enviado a kernel
+[INFO] 00:39:44:515 Matelib/(27690:27691): respuesta de kernel: OK
+[INFO] 00:39:44:515 Matelib/(27690:27691): libero memoria
+[INFO] 00:39:44:515 Matelib/(27690:27691): libero memoria
+[INFO] 00:39:44:515 Matelib/(27690:27691): Carpincho eliminado
+[INFO] 00:39:59:155 Matelib/(27809:27810): Log Matelib creado
+[INFO] 00:39:59:155 Matelib/(27809:27810): Esperando respuesta de servidor
+[INFO] 00:39:59:156 Matelib/(27809:27810): NUEVO CARPINCHO
+[INFO] 00:39:59:202 Matelib/(27809:27810): Carpincho creado correctamente con el pid: 1
+[INFO] 00:40:00:202 Matelib/(27809:27810): SEM_INIT
+[INFO] 00:40:01:203 Matelib/(27809:27810): CALL_IO a laguna
+[INFO] 00:40:01:230 Matelib/(27809:27810): RESPUESA DE IO RECIBIDA 0 
+[INFO] 00:40:01:230 Matelib/(27809:27810): Se realizó el CALL IO correctamente
+[INFO] 00:40:01:230 Matelib/(27809:27810): SEM_DESTROY al semáforo SEM_HELLO
+[INFO] 00:40:01:230 Matelib/(27809:27810): respuesta SEM DDESTROY 0
+
+[INFO] 00:40:01:230 Matelib/(27809:27810): Se realizó el DESTROY correctamente
+[INFO] 00:40:01:230 Matelib/(27809:27810): MATE_CLOSE
+[INFO] 00:40:01:230 Matelib/(27809:27810): MATE_CLOSE: mensaje enviado a kernel
+[INFO] 00:40:01:231 Matelib/(27809:27810): respuesta de kernel: OK
+[INFO] 00:40:01:231 Matelib/(27809:27810): libero memoria
+[INFO] 00:40:01:231 Matelib/(27809:27810): libero memoria
+[INFO] 00:40:01:231 Matelib/(27809:27810): Carpincho eliminado
+[INFO] 00:40:12:925 Matelib/(27946:27947): Log Matelib creado
+[INFO] 00:40:12:926 Matelib/(27946:27947): Esperando respuesta de servidor
+[INFO] 00:40:12:927 Matelib/(27946:27947): NUEVO CARPINCHO
+[INFO] 00:40:12:974 Matelib/(27946:27947): Carpincho creado correctamente con el pid: 2
+[INFO] 00:40:13:974 Matelib/(27946:27947): SEM_INIT
+[INFO] 00:40:14:976 Matelib/(27946:27947): CALL_IO a hierbitas
+[INFO] 00:40:14:979 Matelib/(27946:27947): RESPUESA DE IO RECIBIDA 0 
+[INFO] 00:40:14:979 Matelib/(27946:27947): Se realizó el CALL IO correctamente
+[INFO] 00:40:14:979 Matelib/(27946:27947): SEM_DESTROY al semáforo SEM_HELLO
+[INFO] 00:40:14:980 Matelib/(27946:27947): respuesta SEM DDESTROY 0
+
+[INFO] 00:40:14:980 Matelib/(27946:27947): Se realizó el DESTROY correctamente
+[INFO] 00:40:14:980 Matelib/(27946:27947): MATE_CLOSE
+[INFO] 00:40:14:980 Matelib/(27946:27947): MATE_CLOSE: mensaje enviado a kernel
+[INFO] 00:40:14:980 Matelib/(27946:27947): respuesta de kernel: OK
+[INFO] 00:40:14:980 Matelib/(27946:27947): libero memoria
+[INFO] 00:40:14:980 Matelib/(27946:27947): libero memoria
+[INFO] 00:40:14:980 Matelib/(27946:27947): Carpincho eliminado
+[INFO] 00:40:36:232 Matelib/(28088:28089): Log Matelib creado
+[INFO] 00:40:36:233 Matelib/(28088:28089): Esperando respuesta de servidor
+[INFO] 00:40:36:234 Matelib/(28088:28089): NUEVO CARPINCHO
+[INFO] 00:40:36:278 Matelib/(28088:28089): Carpincho creado correctamente con el pid: 3
+[INFO] 00:40:37:278 Matelib/(28088:28089): SEM_INIT
+[INFO] 00:40:38:279 Matelib/(28088:28089): CALL_IO a hierbitas
+[INFO] 00:40:38:281 Matelib/(28088:28089): RESPUESA DE IO RECIBIDA 0 
+[INFO] 00:40:38:281 Matelib/(28088:28089): Se realizó el CALL IO correctamente
+[INFO] 00:40:38:281 Matelib/(28088:28089): MATE_CLOSE
+[INFO] 00:40:38:281 Matelib/(28088:28089): MATE_CLOSE: mensaje enviado a kernel
+[INFO] 00:40:38:281 Matelib/(28088:28089): respuesta de kernel: OK
+[INFO] 00:40:38:281 Matelib/(28088:28089): libero memoria
+[INFO] 00:40:38:281 Matelib/(28088:28089): libero memoria
+[INFO] 00:40:38:281 Matelib/(28088:28089): Carpincho eliminado
+[INFO] 00:40:55:332 Matelib/(28215:28216): Log Matelib creado
+[INFO] 00:40:55:332 Matelib/(28215:28216): Esperando respuesta de servidor
+[INFO] 00:40:55:334 Matelib/(28215:28216): NUEVO CARPINCHO
+[INFO] 00:40:55:381 Matelib/(28215:28216): Carpincho creado correctamente con el pid: 4
+[INFO] 00:40:56:382 Matelib/(28215:28216): SEM_INIT
+[INFO] 00:40:57:383 Matelib/(28215:28216): CALL_IO a hierbitas
+[INFO] 00:40:57:385 Matelib/(28215:28216): RESPUESA DE IO RECIBIDA 0 
+[INFO] 00:40:57:385 Matelib/(28215:28216): Se realizó el CALL IO correctamente
+[INFO] 00:40:57:386 Matelib/(28215:28216): SEM_DESTROY al semáforo SEM_HELLO
+[INFO] 00:40:57:386 Matelib/(28215:28216): respuesta SEM DDESTROY 0
+
+[INFO] 00:40:57:386 Matelib/(28215:28216): Se realizó el DESTROY correctamente
+[INFO] 00:40:57:386 Matelib/(28215:28216): MATE_CLOSE
+[INFO] 00:40:57:386 Matelib/(28215:28216): MATE_CLOSE: mensaje enviado a kernel
+[INFO] 00:40:57:386 Matelib/(28215:28216): respuesta de kernel: OK
+[INFO] 00:40:57:386 Matelib/(28215:28216): libero memoria
+[INFO] 00:40:57:386 Matelib/(28215:28216): libero memoria
+[INFO] 00:40:57:386 Matelib/(28215:28216): Carpincho eliminado
+[INFO] 00:41:34:944 Matelib/(28347:28348): Log Matelib creado
+[INFO] 00:41:34:945 Matelib/(28347:28348): Esperando respuesta de servidor
+[INFO] 00:41:34:946 Matelib/(28347:28348): NUEVO CARPINCHO
+[INFO] 00:41:34:993 Matelib/(28347:28348): Carpincho creado correctamente con el pid: 5
+[INFO] 00:41:36:994 Matelib/(28347:28348): CALL_IO a hierbitas
+[INFO] 00:41:36:997 Matelib/(28347:28348): RESPUESA DE IO RECIBIDA 0 
+[INFO] 00:41:36:997 Matelib/(28347:28348): Se realizó el CALL IO correctamente
+[INFO] 00:41:36:997 Matelib/(28347:28348): SEM_DESTROY al semáforo SEM_HELLO
+[INFO] 00:41:36:997 Matelib/(28347:28348): respuesta SEM DDESTROY -1
+
+[INFO] 00:41:36:997 Matelib/(28347:28348): Error al realizar el DESTROY
+[INFO] 00:41:36:997 Matelib/(28347:28348): MATE_CLOSE
+[INFO] 00:41:36:997 Matelib/(28347:28348): MATE_CLOSE: mensaje enviado a kernel
+[INFO] 00:41:36:997 Matelib/(28347:28348): respuesta de kernel: OK
+[INFO] 00:41:36:997 Matelib/(28347:28348): libero memoria
+[INFO] 00:41:36:997 Matelib/(28347:28348): libero memoria
+[INFO] 00:41:36:997 Matelib/(28347:28348): Carpincho eliminado

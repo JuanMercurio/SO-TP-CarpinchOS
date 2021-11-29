@@ -189,9 +189,15 @@ void receptor(void *arg)
                //io_kernel io_to_be_served = *(buscar_io(io, lista_io_kernel));// DIRECTAMENT, AL SER UNA LISTA GLOBAL SE PUEDE ACCEDER DESDE LA FUNJCION Y NO PASARLA TODO EL TIEMPO COMO PARAMEETRO
                carpincho->io_solicitada = string_duplicate(recibido);              
                carpincho->proxima_instruccion = IO;
-               sem_post(&carpincho->semaforo_evento);
+               aux_int = bloquear_por_io(carpincho);
+               printf("RECEPTOR: io: recibido de bloquear por io %d\n");
+               if(aux_int == -1){
+                  enviar_int(cliente, -1);
+               }else
+               {sem_post(&carpincho->semaforo_evento);
                log_info(logger, "Se recibió del carpincho %d un CALL IO para %s", carpincho->pid, recibido);
-               free(recibido);
+               
+               }free(recibido);
                break;
 
       case SEM_WAIT: 
@@ -228,7 +234,8 @@ void receptor(void *arg)
       case SEM_DESTROY: recibido = recibir_mensaje(cliente);
                log_info(logger, "Se recibió del carpincho %d un SEM DESTROY para %s", carpincho->pid, recibido);
                aux_int = sem_kernel_destroy(recibido);
-               enviar_int( cliente, "OK");
+               printf("RECEPTOR: SEM DESTROY auxint%d\n", aux_int);
+               enviar_int(cliente, aux_int);
                free(recibido);
                break;
       

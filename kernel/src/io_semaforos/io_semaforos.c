@@ -19,24 +19,25 @@ sem_kernel *buscar_semaforo(char *nombre)
    }
 
 sem_kernel * buscar_semaforo2(char* nombre, int* pos){
-   sem_kernel * comparado = NULL;
+   sem_kernel * comparado ;
    bool encontrado = false;
    int i = 0;
    printf("BUSCAR SEMAFOROOOOO: tamaño lista %d\n", list_size(lista_sem_kernel));
    while(  i < list_size(lista_sem_kernel) && !encontrado){
       comparado = (sem_kernel*)list_get(lista_sem_kernel, i);
-      printf("BUSCAR SEMAFOROOOOO=entro a donde quiero %s ------- con valor %d\n", comparado->id, comparado->val);
-      printf("BUSCAR SEMAFOROOOOO=entro a donde quiero nombre sem %s y nombre pasado %s\n", comparado->id, nombre);
+    
       if(strcmp(comparado->id, nombre)==0){
-        printf("BUSCAR SEMAFOROOOOO=entro a donde quiero\n");
          *pos = i;
-         printf("BUSCAR =========!!!!!!!!!!!!!!!!!!!!!!!pos %d\n", *pos);
           encontrado = true;
       }
       i++;
      
-   } printf("BUSCAR SEMAFOROOOOO======================================pos %d\n", *pos);
+   } 
+   if(encontrado){
    return comparado;
+   }else{
+      return NULL;
+   }
 }
 
 
@@ -154,6 +155,7 @@ while(!queue_is_empty(sem->bloqueados)){
    list_remove(lista_sem_kernel, pos);
     printf("SEM_KERNEL_DESTROY: removido de lista\n");
     sem_destroyer(sem);
+    return 0;
 }
 }
 void sem_destroyer(void* semaforo){
@@ -201,7 +203,14 @@ io_kernel *buscar_io(char *nombre)
       i++;
      
    }  printf("BUSCAR IO: encontro io %s\n", comparado->id);
+   if(encontrado)
    return comparado;
+   else
+   {
+      printf("_____________________-------va a devolver NULL\n");
+      return NULL;
+   }
+   
 }
 
 void init_dispositivos_io(){
@@ -261,18 +270,24 @@ void gestor_cola_io(void *datos){
    printf("GESTOR_COLA_IO: %s recibi carpincho %d\n", io->id, carpincho->pid);
    log_info(logger,"Retardo de %d para el carpincho PID %d", io->retardo, carpincho->pid);
    usleep(io->retardo);
-   //enviar_mensaje("OK", carpincho->fd_cliente);
    sem_wait(&mutex_cola_ready);
    carpincho->tiempo.time_stamp_inicio = temporal_get_string_time("%H:%M:%S:%MS");
- //  sem_post(&carpincho->semaforo_fin_evento);
+    printf("GESTOR_COLA_IO: enviando resultado de io..\n");
+    enviar_int(carpincho->fd_cliente, 0);
    queue_push(cola_ready, (void*) carpincho);
    sem_post(&mutex_cola_ready);
    sem_post(&cola_ready_con_elementos);
+    printf("GESTOR_COLA_IO: carpincho volviendo de io a ready\n");
+
 }
 }
-void bloquear_por_io(t_pcb *carpincho){
+int bloquear_por_io(t_pcb *carpincho){
    printf("BLOQUEARPO IO: entro\n");
    io_kernel *io = buscar_io(carpincho->io_solicitada);
+   if(io == NULL){
+       printf("BLOQUEARPO IO: devuelve -1\n");
+      return -1;
+   }else{
     printf("BLOQUEARPO IO: paso buscar io\n");
    carpincho->tiempo.time_stamp_fin = temporal_get_string_time("%H:%M:%S:%MS");
    carpincho->tiempo.tiempo_ejecutado = obtener_tiempo(carpincho->tiempo.time_stamp_inicio, carpincho->tiempo.time_stamp_fin);
@@ -284,4 +299,6 @@ void bloquear_por_io(t_pcb *carpincho){
     printf("BLOQUEARPO IO: ecolo\n");
    sem_post(&io->cola_con_elementos);
    log_info(logger, "El carpincho %d está bloqueado por IO %s", carpincho->pid, io->id);
+   return 0;
+   }
 }

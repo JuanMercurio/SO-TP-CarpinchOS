@@ -20,7 +20,7 @@ void init_dispositivos_io();
 //void realizar_io(t_pcb *carpincho, io_kernel *io);
 void iniciar_hilos_gestores_de_io();
 void gestor_cola_io(void *datos);
-void bloquear_por_io(t_pcb *carpincho);
+int bloquear_por_io(t_pcb *carpincho);
 int obtener_valor_semaforo(char* semaforo_a_modificar);
 
  bool nombre_semaforo(void* elemento);

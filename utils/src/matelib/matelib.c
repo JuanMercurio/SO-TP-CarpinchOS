@@ -50,8 +50,8 @@ int mate_init(mate_instance *lib_ref, char *config) //AGREGAR LOG
 
 int mate_close(mate_instance *lib_ref)
 {
-  //log_info(logger, "MATE_CLOSE");
-  log_info(logger, "LA CONCHA DE TU MADRE");
+  log_info(logger, "MATE_CLOSE");
+
   enviar_int(((mate_inner_structure*)lib_ref->group_info)->conexion, MATE_CLOSE);
   log_info(logger, "MATE_CLOSE: mensaje enviado a kernel");
   char *respuesta = recibir_mensaje(((mate_inner_structure *)lib_ref->group_info)->conexion);
@@ -152,7 +152,8 @@ int mate_sem_destroy(mate_instance *lib_ref, mate_sem_name sem)
   }
 
   enviar_mensaje_y_cod_op(sem, ((mate_inner_structure *)lib_ref->group_info)->conexion, SEM_DESTROY);
-  int respuesta = recibir_int(((mate_inner_structure *)lib_ref->group_info)->conexion);
+  int respuesta = recibir_operacion(((mate_inner_structure *)lib_ref->group_info)->conexion);
+ log_info(logger, "respuesta SEM DDESTROY %d\n", respuesta);
 
   if (respuesta == 0)
   {
@@ -178,10 +179,13 @@ int mate_call_io(mate_instance *lib_ref, mate_io_resource io, void *msg)
   }
 
   enviar_mensaje_y_cod_op(io, ((mate_inner_structure *)lib_ref->group_info)->conexion, IO);
- int respuesta = recibir_int(((mate_inner_structure *)lib_ref->group_info)->conexion);
+ int respuesta = recibir_operacion(((mate_inner_structure *)lib_ref->group_info)->conexion);
+log_info(logger, "RESPUESA DE IO RECIBIDA %d ", respuesta);
+
 
   if (respuesta == 0)
   {
+     recibir_mensaje(((mate_inner_structure *)lib_ref->group_info)->conexion);
     log_info(logger, "Se realizó el CALL IO correctamente");
   }
   else

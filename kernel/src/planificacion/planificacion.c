@@ -42,7 +42,7 @@ void procesador()
             bloquear_por_mediano_plazo(carpincho);
             log_info(logger, "El carpincho %d fue suspendido", carpincho->pid);
          }
-         bloquear_por_io(carpincho);
+        //int aux = bloquear_por_io(carpincho);
             log_info(logger, "El carpincho %d fue BLOQUEADO por io", carpincho->pid);
          carpinchos_bloqueados++;
          break;
