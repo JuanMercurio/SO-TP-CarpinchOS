@@ -325,7 +325,9 @@ void bloqueado_a_listo(t_queue *cola, sem_t *mutex)
    sem_wait(&mutex_cola_ready);
    queue_push(cola_ready, (void *)carpincho);
    sem_post(&mutex_cola_ready);
+   printf("BLOQUEADO_A_LISTO: desbloqueado\n");
    //sem_post(&carpincho->semaforo_fin_evento);
    sem_post(&cola_ready_con_elementos);
    carpincho->tiempo.time_stamp_inicio = temporal_get_string_time("%H:%M:%S:%MS"); //Tomo el tiempo de cuando inicia la espera
+    printf("BLOQUEADO_A_LISTO: time stamp\n");
 }

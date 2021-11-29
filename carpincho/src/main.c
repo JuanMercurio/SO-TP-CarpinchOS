@@ -13,47 +13,75 @@ int main(int argc, char* argv[]) {
    for (int i=0; i < CANT_CARPINCHOS; i++) {
       pthread_create(&hilos[i], NULL, (void*)carpincho_comportamiento, NULL);
    }
+   sleep(2);
+   pthread_t hilo;
+
+ pthread_create(&hilo, NULL, (void*)carpincho_comportamiento2, NULL);
 
    for (int i=0; i < CANT_CARPINCHOS; i++) {
       pthread_join(hilos[i], NULL);
    }
-
+ pthread_join(hilo, NULL);
    return 0;
 }
 
-void carpincho_comportamiento(void* arg)
+void carpincho_comportamiento(void *arg)
 {
-   mate_instance* ref = malloc(sizeof(mate_instance));
-    printf("creo instancia\n");
+   mate_instance *ref = malloc(sizeof(mate_instance));
+   printf("creo instancia\n");
    int devolvio = mate_init(ref, "cfg/carpincho.config");
    printf("devolvio %d\n", devolvio);
-   
-   sleep(1);
+
    printf("VOY A MANADAR UN SEM INIT\n");
-   devolvio = mate_sem_init(ref, "SEM_HELLO", 1);
-    printf("devolvio el sem_init: %d\n", devolvio);
-     devolvio = mate_sem_init(ref, "SEM_HELLO", 1);
-    printf("devolvio el sem_init: %d\n", devolvio);
-   sleep(1);
-      devolvio =mate_sem_wait(ref, "SEM_HELLO");
-    printf("devolvio sem wait: %d\n", devolvio);
-   devolvio =mate_sem_wait(ref, "SEM_HEL");
+   devolvio = mate_sem_init(ref, "SEM_HELLO", 0);
 
- devolvio = mate_call_io(ref, "hierbitas","nada");
-  printf("devolvio call io: %d\n", devolvio);
-  
-       devolvio =mate_sem_wait(ref, "SEM_HELLO");
-    printf("devolvio sem wait: %d\n", devolvio);
+   printf("devolvio el sem_init: %d\n", devolvio);
+   devolvio = mate_sem_init(ref, "SEM_BYE", 0);
+
+   printf("devolvio el sem_init: %d\n", devolvio);
+   printf("QUEDO TRABADO EN WAIT\n");
+
+   devolvio = mate_sem_wait(ref, "SEM_HELLO");
+   printf("devolvio sem wait: %d\n", devolvio);
+   printf(" PASO WAIT\n");
 
 
-  devolvio = mate_sem_destroy(ref, "SEM_HELLO");
-  printf("devolvio el sem_destroy: %d\n", devolvio);
-      printf("VOY A cerrar instancia\n");
+   devolvio = mate_sem_destroy(ref, "SEM_HELLO");
+   printf("devolvio el sem_destroy: %d\n", devolvio);
+sleep(5);
+      devolvio = mate_sem_post(ref, "SEM_BYE");
+   printf("devolvio sem post: %d\n", devolvio);
+
+
+   printf("VOY A cerrar instancia\n");
    mate_close(ref);
 
-   printf("Termine\n");
-//   mate_pointer dl = mate_memalloc(ref, 100);
+   printf("-------------------------------------Termine\n");
+   //   mate_pointer dl = mate_memalloc(ref, 100);
+}
+void carpincho_comportamiento2(void* arg){
+  mate_instance* ref = malloc(sizeof(mate_instance));
+    printf("creo instancia\n");
+   int devolvio = mate_init(ref, "cfg/carpincho.config");
+   printf("devolvio -2 %d\n", devolvio);
+   sleep(1);
 
+ devolvio = mate_call_io(ref, "hierbitas","nada");
+  printf("devolvio call io -2: %d\n", devolvio);
+  
+       devolvio =mate_sem_post(ref, "SEM_HELLO");
+    printf("devolvio sem post -2: %d\n", devolvio);
+
+       devolvio =mate_sem_wait(ref, "SEM_BYE");
+    printf("devolvio sem wait -2: %d\n", devolvio);
+
+       devolvio =mate_sem_destroy(ref, "SEM_BYE");
+    printf("devolvio sem destroy -2: %d\n", devolvio);
+
+      printf("===========================0VOY A cerrar instancia\n");
+   mate_close(ref);
+
+   printf("=======================================0Termine\n");
 }
 
 void carpincho_comportamiento_memoria(void* arg)

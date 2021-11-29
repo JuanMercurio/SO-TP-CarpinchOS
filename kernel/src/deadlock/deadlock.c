@@ -185,7 +185,8 @@ void finalizar_involucrados(t_list *lista_deadlock)
         }
     }
     log_info(logger, "Se finaliza el carpincho PID %d", mayor_id);
-    semaforo = buscar_semaforo(esperando_a_sacar);
+    int pos;
+    semaforo = buscar_semaforo2(esperando_a_sacar, &pos);
     sacar_de_cola_bloqueados(semaforo, mayor_id);
     sem_kernel_post(retenido_a_liberar);
 }
