@@ -570,3 +570,748 @@
 [INFO] 00:41:36:997 Matelib/(28347:28348): libero memoria
 [INFO] 00:41:36:997 Matelib/(28347:28348): libero memoria
 [INFO] 00:41:36:997 Matelib/(28347:28348): Carpincho eliminado
+[INFO] 01:10:23:867 Matelib/(31489:31490): Log Matelib creado
+[INFO] 01:10:23:867 Matelib/(31489:31490): Esperando respuesta de servidor
+[INFO] 01:10:23:868 Matelib/(31489:31490): NUEVO CARPINCHO
+[INFO] 01:10:23:910 Matelib/(31489:31490): Carpincho creado correctamente con el pid: 0
+[INFO] 01:10:24:911 Matelib/(31489:31490): SEM_INIT
+[INFO] 01:10:25:912 Matelib/(31489:31490): SEM_WAIT al semáforo SEM_HELLO
+[INFO] 01:12:53:915 Matelib/(31489:31490): Error al realizar el WAIT
+[INFO] 01:12:53:915 Matelib/(31489:31490): CALL_IO a hierbitas
+[INFO] 01:12:53:915 Matelib/(31489:31490): RESPUESA DE IO RECIBIDA -1 
+[INFO] 01:12:53:915 Matelib/(31489:31490): Error al realizar el CALL IO
+[INFO] 01:12:53:916 Matelib/(31489:31490): SEM_DESTROY al semáforo SEM_HELLO
+[INFO] 01:12:53:916 Matelib/(31489:31490): respuesta SEM DDESTROY 18
+
+[INFO] 01:12:53:916 Matelib/(31489:31490): Error al realizar el DESTROY
+[INFO] 01:12:53:916 Matelib/(31489:31490): MATE_CLOSE
+[INFO] 01:12:53:916 Matelib/(31489:31490): MATE_CLOSE: mensaje enviado a kernel
+[INFO] 01:12:53:916 Matelib/(31489:31490): respuesta de kernel: (null)
+[INFO] 01:12:53:916 Matelib/(31489:31490): libero memoria
+[INFO] 01:12:53:916 Matelib/(31489:31490): libero memoria
+[INFO] 01:12:53:916 Matelib/(31489:31490): Carpincho eliminado
+[INFO] 01:12:58:145 Matelib/(31748:31749): Log Matelib creado
+[INFO] 01:12:58:145 Matelib/(31748:31749): Esperando respuesta de servidor
+[INFO] 01:12:58:146 Matelib/(31748:31749): NUEVO CARPINCHO
+[INFO] 01:12:58:191 Matelib/(31748:31749): Carpincho creado correctamente con el pid: 0
+[INFO] 01:12:59:191 Matelib/(31748:31749): SEM_INIT
+[INFO] 01:13:00:192 Matelib/(31748:31749): SEM_WAIT al semáforo SEM_HELLO
+[INFO] 01:15:46:411 Matelib/(31748:31749): Error al realizar el WAIT
+[INFO] 01:15:46:412 Matelib/(31748:31749): CALL_IO a hierbitas
+[INFO] 01:15:46:412 Matelib/(31748:31749): RESPUESA DE IO RECIBIDA -1 
+[INFO] 01:15:46:412 Matelib/(31748:31749): Error al realizar el CALL IO
+[INFO] 01:15:46:412 Matelib/(31748:31749): SEM_DESTROY al semáforo SEM_HELLO
+[INFO] 01:15:46:412 Matelib/(31748:31749): respuesta SEM DDESTROY 18
+
+[INFO] 01:15:46:412 Matelib/(31748:31749): Error al realizar el DESTROY
+[INFO] 01:15:46:412 Matelib/(31748:31749): MATE_CLOSE
+[INFO] 01:15:46:412 Matelib/(31748:31749): MATE_CLOSE: mensaje enviado a kernel
+[INFO] 01:15:46:412 Matelib/(31748:31749): respuesta de kernel: (null)
+[INFO] 01:15:46:412 Matelib/(31748:31749): libero memoria
+[INFO] 01:15:46:412 Matelib/(31748:31749): libero memoria
+[INFO] 01:15:46:412 Matelib/(31748:31749): Carpincho eliminado
+[INFO] 01:15:50:909 Matelib/(32057:32058): Log Matelib creado
+[INFO] 01:15:50:909 Matelib/(32057:32058): Esperando respuesta de servidor
+[INFO] 01:15:50:910 Matelib/(32057:32058): NUEVO CARPINCHO
+[INFO] 01:15:50:955 Matelib/(32057:32058): Carpincho creado correctamente con el pid: 0
+[INFO] 01:15:51:955 Matelib/(32057:32058): SEM_INIT
+[INFO] 01:15:52:956 Matelib/(32057:32058): SEM_WAIT al semáforo SEM_HELLO
+[INFO] 01:16:30:396 Matelib/(32057:32058): Error al realizar el WAIT
+[INFO] 01:16:30:396 Matelib/(32057:32058): CALL_IO a hierbitas
+[INFO] 01:16:30:396 Matelib/(32057:32058): RESPUESA DE IO RECIBIDA -1 
+[INFO] 01:16:30:396 Matelib/(32057:32058): Error al realizar el CALL IO
+[INFO] 01:16:30:396 Matelib/(32057:32058): SEM_DESTROY al semáforo SEM_HELLO
+[INFO] 01:16:30:396 Matelib/(32057:32058): respuesta SEM DDESTROY 18
+
+[INFO] 01:16:30:396 Matelib/(32057:32058): Error al realizar el DESTROY
+[INFO] 01:16:30:396 Matelib/(32057:32058): MATE_CLOSE
+[INFO] 01:16:30:396 Matelib/(32057:32058): MATE_CLOSE: mensaje enviado a kernel
+[INFO] 01:16:30:396 Matelib/(32057:32058): respuesta de kernel: (null)
+[INFO] 01:16:30:396 Matelib/(32057:32058): libero memoria
+[INFO] 01:16:30:396 Matelib/(32057:32058): libero memoria
+[INFO] 01:16:30:396 Matelib/(32057:32058): Carpincho eliminado
+[INFO] 01:16:34:777 Matelib/(32268:32269): Log Matelib creado
+[INFO] 01:16:34:777 Matelib/(32268:32269): Esperando respuesta de servidor
+[INFO] 01:16:34:778 Matelib/(32268:32269): NUEVO CARPINCHO
+[INFO] 01:16:34:819 Matelib/(32268:32269): Carpincho creado correctamente con el pid: 0
+[INFO] 01:16:35:820 Matelib/(32268:32269): SEM_INIT
+[INFO] 01:16:36:820 Matelib/(32268:32269): SEM_WAIT al semáforo SEM_HELLO
+[INFO] 01:19:03:418 Matelib/(32268:32269): Error al realizar el WAIT
+[INFO] 01:19:03:418 Matelib/(32268:32269): CALL_IO a hierbitas
+[INFO] 01:19:03:418 Matelib/(32268:32269): RESPUESA DE IO RECIBIDA -1 
+[INFO] 01:19:03:418 Matelib/(32268:32269): Error al realizar el CALL IO
+[INFO] 01:19:03:418 Matelib/(32268:32269): SEM_DESTROY al semáforo SEM_HELLO
+[INFO] 01:19:03:418 Matelib/(32268:32269): respuesta SEM DDESTROY 18
+
+[INFO] 01:19:03:418 Matelib/(32268:32269): Error al realizar el DESTROY
+[INFO] 01:19:03:418 Matelib/(32268:32269): MATE_CLOSE
+[INFO] 01:19:03:418 Matelib/(32268:32269): MATE_CLOSE: mensaje enviado a kernel
+[INFO] 01:19:03:418 Matelib/(32268:32269): respuesta de kernel: (null)
+[INFO] 01:19:03:418 Matelib/(32268:32269): libero memoria
+[INFO] 01:19:03:418 Matelib/(32268:32269): libero memoria
+[INFO] 01:19:03:418 Matelib/(32268:32269): Carpincho eliminado
+[INFO] 01:19:08:531 Matelib/(32553:32554): Log Matelib creado
+[INFO] 01:19:08:531 Matelib/(32553:32554): Esperando respuesta de servidor
+[INFO] 01:19:08:543 Matelib/(32553:32554): NUEVO CARPINCHO
+[INFO] 01:19:08:583 Matelib/(32553:32554): Carpincho creado correctamente con el pid: 0
+[INFO] 01:19:09:583 Matelib/(32553:32554): SEM_INIT
+[INFO] 01:19:10:584 Matelib/(32553:32554): SEM_WAIT al semáforo SEM_HELLO
+[INFO] 01:20:16:390 Matelib/(32553:32554): Error al realizar el WAIT
+[INFO] 01:20:16:390 Matelib/(32553:32554): CALL_IO a hierbitas
+[INFO] 01:20:16:390 Matelib/(32553:32554): RESPUESA DE IO RECIBIDA -1 
+[INFO] 01:20:16:390 Matelib/(32553:32554): Error al realizar el CALL IO
+[INFO] 01:20:16:390 Matelib/(32553:32554): SEM_DESTROY al semáforo SEM_HELLO
+[INFO] 01:20:16:390 Matelib/(32553:32554): respuesta SEM DDESTROY 18
+
+[INFO] 01:20:16:390 Matelib/(32553:32554): Error al realizar el DESTROY
+[INFO] 01:20:16:390 Matelib/(32553:32554): MATE_CLOSE
+[INFO] 01:20:16:390 Matelib/(32553:32554): MATE_CLOSE: mensaje enviado a kernel
+[INFO] 01:20:16:390 Matelib/(32553:32554): respuesta de kernel: (null)
+[INFO] 01:20:16:390 Matelib/(32553:32554): libero memoria
+[INFO] 01:20:16:390 Matelib/(32553:32554): libero memoria
+[INFO] 01:20:16:390 Matelib/(32553:32554): Carpincho eliminado
+[INFO] 01:21:17:755 Matelib/(1027:1028): Log Matelib creado
+[INFO] 01:21:17:756 Matelib/(1027:1028): Esperando respuesta de servidor
+[INFO] 01:21:17:757 Matelib/(1027:1028): NUEVO CARPINCHO
+[INFO] 01:21:17:795 Matelib/(1027:1028): Carpincho creado correctamente con el pid: 0
+[INFO] 01:21:18:797 Matelib/(1027:1028): SEM_INIT
+[INFO] 01:21:19:798 Matelib/(1027:1028): SEM_WAIT al semáforo SEM_HELLO
+[INFO] 01:21:19:798 Matelib/(1027:1028): Se realizó el WAIT correctamente
+[INFO] 01:21:19:798 Matelib/(1027:1028): CALL_IO a hierbitas
+[INFO] 01:21:19:801 Matelib/(1027:1028): RESPUESA DE IO RECIBIDA 0 
+[INFO] 01:21:19:839 Matelib/(1027:1028): Se realizó el CALL IO correctamente
+[INFO] 01:21:19:839 Matelib/(1027:1028): SEM_DESTROY al semáforo SEM_HELLO
+[INFO] 01:21:19:839 Matelib/(1027:1028): respuesta SEM DDESTROY 0
+
+[INFO] 01:21:19:839 Matelib/(1027:1028): Se realizó el DESTROY correctamente
+[INFO] 01:21:19:839 Matelib/(1027:1028): MATE_CLOSE
+[INFO] 01:21:19:839 Matelib/(1027:1028): MATE_CLOSE: mensaje enviado a kernel
+[INFO] 01:21:19:839 Matelib/(1027:1028): respuesta de kernel: OK
+[INFO] 01:21:19:839 Matelib/(1027:1028): libero memoria
+[INFO] 01:21:19:839 Matelib/(1027:1028): libero memoria
+[INFO] 01:21:19:839 Matelib/(1027:1028): Carpincho eliminado
+[INFO] 01:22:10:530 Matelib/(1657:1658): Log Matelib creado
+[INFO] 01:22:10:530 Matelib/(1657:1658): Esperando respuesta de servidor
+[INFO] 01:22:10:532 Matelib/(1657:1658): NUEVO CARPINCHO
+[INFO] 01:22:10:575 Matelib/(1657:1658): Carpincho creado correctamente con el pid: 1
+[INFO] 01:22:11:575 Matelib/(1657:1658): SEM_INIT
+[INFO] 01:22:12:576 Matelib/(1657:1658): SEM_WAIT al semáforo SEM_HELLO
+[INFO] 01:22:12:577 Matelib/(1657:1658): Se realizó el WAIT correctamente
+[INFO] 01:22:12:577 Matelib/(1657:1658): SEM_WAIT al semáforo SEM_HELL
+[INFO] 01:22:12:921 Matelib/(1657:1658): Error al realizar el WAIT
+[INFO] 01:22:12:921 Matelib/(1657:1658): SEM_WAIT al semáforo SEM_HELLO
+[INFO] 01:22:12:921 Matelib/(1657:1658): Error al realizar el WAIT
+[INFO] 01:22:12:921 Matelib/(1657:1658): CALL_IO a hierbitas
+[INFO] 01:23:36:274 Matelib/(1879:1880): Log Matelib creado
+[INFO] 01:23:36:274 Matelib/(1879:1880): Esperando respuesta de servidor
+[INFO] 01:23:36:276 Matelib/(1879:1880): NUEVO CARPINCHO
+[INFO] 01:23:36:320 Matelib/(1879:1880): Carpincho creado correctamente con el pid: 0
+[INFO] 01:23:37:321 Matelib/(1879:1880): SEM_INIT
+[INFO] 01:23:38:322 Matelib/(1879:1880): SEM_WAIT al semáforo SEM_HEL
+[INFO] 01:23:38:699 Matelib/(1879:1880): Error al realizar el WAIT
+[INFO] 01:23:38:699 Matelib/(1879:1880): CALL_IO a hierbitas
+[INFO] 01:23:38:699 Matelib/(1879:1880): RESPUESA DE IO RECIBIDA -1 
+[INFO] 01:23:38:699 Matelib/(1879:1880): Error al realizar el CALL IO
+[INFO] 01:23:38:699 Matelib/(1879:1880): SEM_DESTROY al semáforo SEM_HELLO
+[INFO] 01:23:38:699 Matelib/(1879:1880): respuesta SEM DDESTROY 18
+
+[INFO] 01:23:38:699 Matelib/(1879:1880): Error al realizar el DESTROY
+[INFO] 01:23:38:700 Matelib/(1879:1880): MATE_CLOSE
+[INFO] 01:23:38:700 Matelib/(1879:1880): MATE_CLOSE: mensaje enviado a kernel
+[INFO] 01:23:38:700 Matelib/(1879:1880): respuesta de kernel: (null)
+[INFO] 01:23:38:700 Matelib/(1879:1880): libero memoria
+[INFO] 01:23:38:700 Matelib/(1879:1880): libero memoria
+[INFO] 01:23:38:700 Matelib/(1879:1880): Carpincho eliminado
+[INFO] 01:26:55:711 Matelib/(2224:2226): Log Matelib creado
+[INFO] 01:26:55:711 Matelib/(2224:2226): Esperando respuesta de servidor
+[INFO] 01:26:55:712 Matelib/(2224:2226): NUEVO CARPINCHO
+[INFO] 01:26:55:759 Matelib/(2224:2226): Carpincho creado correctamente con el pid: 0
+[INFO] 01:26:56:759 Matelib/(2224:2226): SEM_INIT
+[INFO] 01:26:57:760 Matelib/(2224:2226): SEM_WAIT al semáforo SEM_HEL
+[INFO] 01:26:58:087 Matelib/(2224:2226): Error al realizar el WAIT
+[INFO] 01:26:58:087 Matelib/(2224:2226): CALL_IO a hierbitas
+[INFO] 01:26:58:087 Matelib/(2224:2226): RESPUESA DE IO RECIBIDA -1 
+[INFO] 01:26:58:087 Matelib/(2224:2226): Error al realizar el CALL IO
+[INFO] 01:26:58:087 Matelib/(2224:2226): SEM_DESTROY al semáforo SEM_HELLO
+[INFO] 01:26:58:087 Matelib/(2224:2226): respuesta SEM DDESTROY 18
+
+[INFO] 01:26:58:087 Matelib/(2224:2226): Error al realizar el DESTROY
+[INFO] 01:26:58:087 Matelib/(2224:2226): MATE_CLOSE
+[INFO] 01:26:58:087 Matelib/(2224:2226): MATE_CLOSE: mensaje enviado a kernel
+[INFO] 01:26:58:087 Matelib/(2224:2226): respuesta de kernel: (null)
+[INFO] 01:26:58:087 Matelib/(2224:2226): libero memoria
+[INFO] 01:26:58:087 Matelib/(2224:2226): libero memoria
+[INFO] 01:26:58:087 Matelib/(2224:2226): Carpincho eliminado
+[INFO] 01:27:55:371 Matelib/(2452:2453): Log Matelib creado
+[INFO] 01:27:55:371 Matelib/(2452:2453): Esperando respuesta de servidor
+[INFO] 01:27:55:372 Matelib/(2452:2453): NUEVO CARPINCHO
+[INFO] 01:27:55:419 Matelib/(2452:2453): Carpincho creado correctamente con el pid: 0
+[INFO] 01:27:56:419 Matelib/(2452:2453): SEM_INIT
+[INFO] 01:27:57:421 Matelib/(2452:2453): SEM_WAIT al semáforo SEM_HEL
+[INFO] 01:27:57:742 Matelib/(2452:2453): Error al realizar el WAIT
+[INFO] 01:27:57:742 Matelib/(2452:2453): CALL_IO a hierbitas
+[INFO] 01:27:57:742 Matelib/(2452:2453): RESPUESA DE IO RECIBIDA -1 
+[INFO] 01:27:57:742 Matelib/(2452:2453): Error al realizar el CALL IO
+[INFO] 01:27:57:742 Matelib/(2452:2453): SEM_DESTROY al semáforo SEM_HELLO
+[INFO] 01:27:57:742 Matelib/(2452:2453): respuesta SEM DDESTROY 18
+
+[INFO] 01:27:57:742 Matelib/(2452:2453): Error al realizar el DESTROY
+[INFO] 01:27:57:742 Matelib/(2452:2453): MATE_CLOSE
+[INFO] 01:27:57:742 Matelib/(2452:2453): MATE_CLOSE: mensaje enviado a kernel
+[INFO] 01:27:57:742 Matelib/(2452:2453): respuesta de kernel: (null)
+[INFO] 01:27:57:742 Matelib/(2452:2453): libero memoria
+[INFO] 01:27:57:742 Matelib/(2452:2453): libero memoria
+[INFO] 01:27:57:742 Matelib/(2452:2453): Carpincho eliminado
+[INFO] 01:28:34:459 Matelib/(2678:2679): Log Matelib creado
+[INFO] 01:28:34:460 Matelib/(2678:2679): Esperando respuesta de servidor
+[INFO] 01:28:34:461 Matelib/(2678:2679): NUEVO CARPINCHO
+[INFO] 01:28:34:511 Matelib/(2678:2679): Carpincho creado correctamente con el pid: 0
+[INFO] 01:28:35:511 Matelib/(2678:2679): SEM_INIT
+[INFO] 01:28:36:512 Matelib/(2678:2679): SEM_WAIT al semáforo SEM_HEL
+[INFO] 01:28:36:513 Matelib/(2678:2679): Error al realizar el WAIT
+[INFO] 01:28:36:513 Matelib/(2678:2679): CALL_IO a hierbitas
+[INFO] 01:28:36:514 Matelib/(2678:2679): RESPUESA DE IO RECIBIDA 0 
+[INFO] 01:28:36:551 Matelib/(2678:2679): Se realizó el CALL IO correctamente
+[INFO] 01:28:36:551 Matelib/(2678:2679): SEM_DESTROY al semáforo SEM_HELLO
+[INFO] 01:28:36:551 Matelib/(2678:2679): respuesta SEM DDESTROY 0
+
+[INFO] 01:28:36:551 Matelib/(2678:2679): Se realizó el DESTROY correctamente
+[INFO] 01:28:36:552 Matelib/(2678:2679): MATE_CLOSE
+[INFO] 01:28:36:552 Matelib/(2678:2679): MATE_CLOSE: mensaje enviado a kernel
+[INFO] 01:28:36:552 Matelib/(2678:2679): respuesta de kernel: OK
+[INFO] 01:28:36:552 Matelib/(2678:2679): libero memoria
+[INFO] 01:28:36:552 Matelib/(2678:2679): libero memoria
+[INFO] 01:28:36:552 Matelib/(2678:2679): Carpincho eliminado
+[INFO] 01:29:35:192 Matelib/(2834:2835): Log Matelib creado
+[INFO] 01:29:35:192 Matelib/(2834:2835): Esperando respuesta de servidor
+[INFO] 01:29:35:193 Matelib/(2834:2835): NUEVO CARPINCHO
+[INFO] 01:29:35:243 Matelib/(2834:2835): Carpincho creado correctamente con el pid: 1
+[INFO] 01:29:36:243 Matelib/(2834:2835): SEM_INIT
+[INFO] 01:29:37:244 Matelib/(2834:2835): SEM_WAIT al semáforo SEM_HEL
+[INFO] 01:29:37:244 Matelib/(2834:2835): Error al realizar el WAIT
+[INFO] 01:29:37:244 Matelib/(2834:2835): SEM_INIT
+[INFO] 01:29:37:244 Matelib/(2834:2835): CALL_IO a hierbitas
+[INFO] 01:29:37:247 Matelib/(2834:2835): RESPUESA DE IO RECIBIDA 0 
+[INFO] 01:29:37:286 Matelib/(2834:2835): Se realizó el CALL IO correctamente
+[INFO] 01:29:37:286 Matelib/(2834:2835): SEM_DESTROY al semáforo SEM_HELLO
+[INFO] 01:29:37:287 Matelib/(2834:2835): respuesta SEM DDESTROY 0
+
+[INFO] 01:29:37:287 Matelib/(2834:2835): Se realizó el DESTROY correctamente
+[INFO] 01:29:37:287 Matelib/(2834:2835): MATE_CLOSE
+[INFO] 01:29:37:287 Matelib/(2834:2835): MATE_CLOSE: mensaje enviado a kernel
+[INFO] 01:29:37:287 Matelib/(2834:2835): respuesta de kernel: OK
+[INFO] 01:29:37:287 Matelib/(2834:2835): libero memoria
+[INFO] 01:29:37:287 Matelib/(2834:2835): libero memoria
+[INFO] 01:29:37:287 Matelib/(2834:2835): Carpincho eliminado
+[INFO] 01:30:49:558 Matelib/(2933:2934): Log Matelib creado
+[INFO] 01:30:49:558 Matelib/(2933:2934): Esperando respuesta de servidor
+[INFO] 01:30:49:559 Matelib/(2933:2934): NUEVO CARPINCHO
+[INFO] 01:30:49:606 Matelib/(2933:2934): Carpincho creado correctamente con el pid: 2
+[INFO] 01:30:50:607 Matelib/(2933:2934): SEM_INIT
+[INFO] 01:30:51:608 Matelib/(2933:2934): SEM_WAIT al semáforo SEM_HEL
+[INFO] 01:30:51:608 Matelib/(2933:2934): Error al realizar el WAIT
+[INFO] 01:30:51:608 Matelib/(2933:2934): SEM_INIT
+[INFO] 01:30:51:609 Matelib/(2933:2934): CALL_IO a hierbitas
+[INFO] 01:30:51:612 Matelib/(2933:2934): RESPUESA DE IO RECIBIDA 0 
+[INFO] 01:30:51:651 Matelib/(2933:2934): Se realizó el CALL IO correctamente
+[INFO] 01:30:51:651 Matelib/(2933:2934): SEM_DESTROY al semáforo SEM_HELLO
+[INFO] 01:30:51:651 Matelib/(2933:2934): respuesta SEM DDESTROY 0
+
+[INFO] 01:30:51:651 Matelib/(2933:2934): Se realizó el DESTROY correctamente
+[INFO] 01:30:51:652 Matelib/(2933:2934): MATE_CLOSE
+[INFO] 01:30:51:652 Matelib/(2933:2934): MATE_CLOSE: mensaje enviado a kernel
+[INFO] 01:30:51:652 Matelib/(2933:2934): respuesta de kernel: OK
+[INFO] 01:30:51:652 Matelib/(2933:2934): libero memoria
+[INFO] 01:30:51:652 Matelib/(2933:2934): libero memoria
+[INFO] 01:30:51:652 Matelib/(2933:2934): Carpincho eliminado
+[INFO] 01:32:45:105 Matelib/(3166:3170): Log Matelib creado
+[INFO] 01:32:45:105 Matelib/(3166:3170): Esperando respuesta de servidor
+[INFO] 01:32:45:106 Matelib/(3166:3170): NUEVO CARPINCHO
+[INFO] 01:32:45:150 Matelib/(3166:3170): Carpincho creado correctamente con el pid: 3
+[INFO] 01:32:46:151 Matelib/(3166:3170): SEM_INIT
+[INFO] 01:32:46:151 Matelib/(3166:3170): SEM_INIT
+[INFO] 01:32:47:151 Matelib/(3166:3170): SEM_WAIT al semáforo SEM_HELLO
+[INFO] 01:32:47:152 Matelib/(3166:3170): Se realizó el WAIT correctamente
+[INFO] 01:32:47:152 Matelib/(3166:3170): SEM_WAIT al semáforo SEM_HEL
+[INFO] 01:32:47:152 Matelib/(3166:3170): Error al realizar el WAIT
+[INFO] 01:32:47:153 Matelib/(3166:3170): SEM_WAIT al semáforo SEM_HELLO
+[INFO] 01:32:47:466 Matelib/(3166:3170): Error al realizar el WAIT
+[INFO] 01:32:47:466 Matelib/(3166:3170): CALL_IO a hierbitas
+[INFO] 01:32:47:466 Matelib/(3166:3170): RESPUESA DE IO RECIBIDA -1 
+[INFO] 01:32:47:466 Matelib/(3166:3170): Error al realizar el CALL IO
+[INFO] 01:32:47:466 Matelib/(3166:3170): SEM_DESTROY al semáforo SEM_HELLO
+[INFO] 01:32:47:466 Matelib/(3166:3170): respuesta SEM DDESTROY 18
+
+[INFO] 01:32:47:466 Matelib/(3166:3170): Error al realizar el DESTROY
+[INFO] 01:32:47:466 Matelib/(3166:3170): MATE_CLOSE
+[INFO] 01:32:47:466 Matelib/(3166:3170): MATE_CLOSE: mensaje enviado a kernel
+[INFO] 01:32:47:466 Matelib/(3166:3170): respuesta de kernel: (null)
+[INFO] 01:32:47:466 Matelib/(3166:3170): libero memoria
+[INFO] 01:32:47:466 Matelib/(3166:3170): libero memoria
+[INFO] 01:32:47:466 Matelib/(3166:3170): Carpincho eliminado
+[INFO] 01:33:49:484 Matelib/(3389:3390): Log Matelib creado
+[INFO] 01:33:49:484 Matelib/(3389:3390): Esperando respuesta de servidor
+[INFO] 01:34:00:965 Matelib/(3610:3611): Log Matelib creado
+[INFO] 01:34:00:966 Matelib/(3610:3611): Esperando respuesta de servidor
+[INFO] 01:34:00:967 Matelib/(3610:3611): NUEVO CARPINCHO
+[INFO] 01:34:01:015 Matelib/(3610:3611): Carpincho creado correctamente con el pid: 0
+[INFO] 01:34:02:015 Matelib/(3610:3611): SEM_INIT
+[INFO] 01:34:02:017 Matelib/(3610:3611): SEM_INIT
+[INFO] 01:34:03:022 Matelib/(3610:3611): SEM_WAIT al semáforo SEM_HELLO
+[INFO] 01:34:03:023 Matelib/(3610:3611): Se realizó el WAIT correctamente
+[INFO] 01:34:03:023 Matelib/(3610:3611): SEM_WAIT al semáforo SEM_HEL
+[INFO] 01:34:03:023 Matelib/(3610:3611): Error al realizar el WAIT
+[INFO] 01:34:03:023 Matelib/(3610:3611): CALL_IO a hierbitas
+[INFO] 01:34:03:025 Matelib/(3610:3611): RESPUESA DE IO RECIBIDA 0 
+[INFO] 01:34:03:063 Matelib/(3610:3611): Se realizó el CALL IO correctamente
+[INFO] 01:34:03:063 Matelib/(3610:3611): SEM_WAIT al semáforo SEM_HELLO
+[INFO] 01:34:03:491 Matelib/(3610:3611): Error al realizar el WAIT
+[INFO] 01:34:03:491 Matelib/(3610:3611): SEM_DESTROY al semáforo SEM_HELLO
+[INFO] 01:34:03:491 Matelib/(3610:3611): respuesta SEM DDESTROY -1
+
+[INFO] 01:34:03:491 Matelib/(3610:3611): Error al realizar el DESTROY
+[INFO] 01:34:03:491 Matelib/(3610:3611): MATE_CLOSE
+[INFO] 01:34:03:491 Matelib/(3610:3611): MATE_CLOSE: mensaje enviado a kernel
+[INFO] 01:34:03:491 Matelib/(3610:3611): respuesta de kernel: (null)
+[INFO] 01:34:03:491 Matelib/(3610:3611): libero memoria
+[INFO] 01:34:03:491 Matelib/(3610:3611): libero memoria
+[INFO] 01:34:03:491 Matelib/(3610:3611): Carpincho eliminado
+[INFO] 01:37:50:315 Matelib/(3915:3916): Log Matelib creado
+[INFO] 01:37:50:315 Matelib/(3915:3916): Esperando respuesta de servidor
+[INFO] 01:37:50:316 Matelib/(3915:3916): NUEVO CARPINCHO
+[INFO] 01:37:50:367 Matelib/(3915:3916): Carpincho creado correctamente con el pid: 0
+[INFO] 01:37:51:367 Matelib/(3915:3916): SEM_INIT
+[INFO] 01:37:51:368 Matelib/(3915:3916): SEM_INIT
+[INFO] 01:37:52:368 Matelib/(3915:3916): SEM_WAIT al semáforo SEM_HELLO
+[INFO] 01:37:52:369 Matelib/(3915:3916): Se realizó el WAIT correctamente
+[INFO] 01:37:52:369 Matelib/(3915:3916): SEM_WAIT al semáforo SEM_HEL
+[INFO] 01:37:52:369 Matelib/(3915:3916): Error al realizar el WAIT
+[INFO] 01:37:52:369 Matelib/(3915:3916): CALL_IO a hierbitas
+[INFO] 01:37:52:370 Matelib/(3915:3916): RESPUESA DE IO RECIBIDA 0 
+[INFO] 01:37:52:407 Matelib/(3915:3916): Se realizó el CALL IO correctamente
+[INFO] 01:37:52:407 Matelib/(3915:3916): SEM_WAIT al semáforo SEM_HELLO
+[INFO] 01:37:52:797 Matelib/(3915:3916): Error al realizar el WAIT
+[INFO] 01:37:52:797 Matelib/(3915:3916): SEM_DESTROY al semáforo SEM_HELLO
+[INFO] 01:37:52:797 Matelib/(3915:3916): respuesta SEM DDESTROY -1
+
+[INFO] 01:37:52:797 Matelib/(3915:3916): Error al realizar el DESTROY
+[INFO] 01:37:52:797 Matelib/(3915:3916): MATE_CLOSE
+[INFO] 01:37:52:797 Matelib/(3915:3916): MATE_CLOSE: mensaje enviado a kernel
+[INFO] 01:37:52:797 Matelib/(3915:3916): respuesta de kernel: (null)
+[INFO] 01:37:52:797 Matelib/(3915:3916): libero memoria
+[INFO] 01:37:52:797 Matelib/(3915:3916): libero memoria
+[INFO] 01:37:52:797 Matelib/(3915:3916): Carpincho eliminado
+[INFO] 01:38:41:659 Matelib/(4118:4119): Log Matelib creado
+[INFO] 01:38:41:660 Matelib/(4118:4119): Esperando respuesta de servidor
+[INFO] 01:38:41:661 Matelib/(4118:4119): NUEVO CARPINCHO
+[INFO] 01:38:41:707 Matelib/(4118:4119): Carpincho creado correctamente con el pid: 0
+[INFO] 01:38:42:707 Matelib/(4118:4119): SEM_INIT
+[INFO] 01:38:42:708 Matelib/(4118:4119): SEM_INIT
+[INFO] 01:38:43:709 Matelib/(4118:4119): SEM_WAIT al semáforo SEM_HELLO
+[INFO] 01:38:43:711 Matelib/(4118:4119): Se realizó el WAIT correctamente
+[INFO] 01:38:43:711 Matelib/(4118:4119): SEM_WAIT al semáforo SEM_HEL
+[INFO] 01:38:43:712 Matelib/(4118:4119): Error al realizar el WAIT
+[INFO] 01:38:43:713 Matelib/(4118:4119): CALL_IO a hierbitas
+[INFO] 01:38:43:717 Matelib/(4118:4119): RESPUESA DE IO RECIBIDA 0 
+[INFO] 01:38:43:755 Matelib/(4118:4119): Se realizó el CALL IO correctamente
+[INFO] 01:38:43:756 Matelib/(4118:4119): SEM_WAIT al semáforo SEM_HELLO
+[INFO] 01:38:44:173 Matelib/(4118:4119): Error al realizar el WAIT
+[INFO] 01:38:44:173 Matelib/(4118:4119): SEM_DESTROY al semáforo SEM_HELLO
+[INFO] 01:38:44:173 Matelib/(4118:4119): respuesta SEM DDESTROY -1
+
+[INFO] 01:38:44:173 Matelib/(4118:4119): Error al realizar el DESTROY
+[INFO] 01:38:44:173 Matelib/(4118:4119): MATE_CLOSE
+[INFO] 01:38:44:173 Matelib/(4118:4119): MATE_CLOSE: mensaje enviado a kernel
+[INFO] 01:38:44:173 Matelib/(4118:4119): respuesta de kernel: (null)
+[INFO] 01:38:44:173 Matelib/(4118:4119): libero memoria
+[INFO] 01:38:44:173 Matelib/(4118:4119): libero memoria
+[INFO] 01:38:44:173 Matelib/(4118:4119): Carpincho eliminado
+[INFO] 01:42:27:023 Matelib/(4354:4355): Log Matelib creado
+[INFO] 01:42:27:023 Matelib/(4354:4355): Esperando respuesta de servidor
+[INFO] 01:42:27:025 Matelib/(4354:4355): NUEVO CARPINCHO
+[INFO] 01:42:27:072 Matelib/(4354:4355): Carpincho creado correctamente con el pid: 0
+[INFO] 01:42:28:073 Matelib/(4354:4355): SEM_INIT
+[INFO] 01:42:28:073 Matelib/(4354:4355): SEM_INIT
+[INFO] 01:42:29:074 Matelib/(4354:4355): SEM_WAIT al semáforo SEM_HELLO
+[INFO] 01:42:29:075 Matelib/(4354:4355): Se realizó el WAIT correctamente
+[INFO] 01:42:29:075 Matelib/(4354:4355): SEM_WAIT al semáforo SEM_HEL
+[INFO] 01:42:29:076 Matelib/(4354:4355): Error al realizar el WAIT
+[INFO] 01:42:29:076 Matelib/(4354:4355): CALL_IO a hierbitas
+[INFO] 01:42:29:077 Matelib/(4354:4355): RESPUESA DE IO RECIBIDA 0 
+[INFO] 01:42:29:115 Matelib/(4354:4355): Se realizó el CALL IO correctamente
+[INFO] 01:42:29:115 Matelib/(4354:4355): SEM_WAIT al semáforo SEM_HELLO
+[INFO] 01:42:29:510 Matelib/(4354:4355): Error al realizar el WAIT
+[INFO] 01:42:29:510 Matelib/(4354:4355): SEM_DESTROY al semáforo SEM_HELLO
+[INFO] 01:42:29:511 Matelib/(4354:4355): respuesta SEM DDESTROY -1
+
+[INFO] 01:42:29:511 Matelib/(4354:4355): Error al realizar el DESTROY
+[INFO] 01:42:29:511 Matelib/(4354:4355): MATE_CLOSE
+[INFO] 01:42:29:511 Matelib/(4354:4355): MATE_CLOSE: mensaje enviado a kernel
+[INFO] 01:42:29:511 Matelib/(4354:4355): respuesta de kernel: (null)
+[INFO] 01:42:29:511 Matelib/(4354:4355): libero memoria
+[INFO] 01:42:29:511 Matelib/(4354:4355): libero memoria
+[INFO] 01:42:29:511 Matelib/(4354:4355): Carpincho eliminado
+[INFO] 01:43:16:833 Matelib/(4656:4657): Log Matelib creado
+[INFO] 01:43:16:833 Matelib/(4656:4657): Esperando respuesta de servidor
+[INFO] 01:43:16:834 Matelib/(4656:4657): NUEVO CARPINCHO
+[INFO] 01:43:16:883 Matelib/(4656:4657): Carpincho creado correctamente con el pid: 0
+[INFO] 01:43:17:884 Matelib/(4656:4657): SEM_INIT
+[INFO] 01:43:17:885 Matelib/(4656:4657): SEM_INIT
+[INFO] 01:43:18:885 Matelib/(4656:4657): SEM_WAIT al semáforo SEM_HELLO
+[INFO] 01:43:18:886 Matelib/(4656:4657): Se realizó el WAIT correctamente
+[INFO] 01:43:18:886 Matelib/(4656:4657): SEM_WAIT al semáforo SEM_HEL
+[INFO] 01:43:18:887 Matelib/(4656:4657): Error al realizar el WAIT
+[INFO] 01:43:18:887 Matelib/(4656:4657): CALL_IO a hierbitas
+[INFO] 01:43:18:891 Matelib/(4656:4657): RESPUESA DE IO RECIBIDA 0 
+[INFO] 01:43:18:931 Matelib/(4656:4657): Se realizó el CALL IO correctamente
+[INFO] 01:43:18:931 Matelib/(4656:4657): SEM_WAIT al semáforo SEM_HELLO
+[INFO] 01:43:19:334 Matelib/(4656:4657): Error al realizar el WAIT
+[INFO] 01:43:19:334 Matelib/(4656:4657): SEM_DESTROY al semáforo SEM_HELLO
+[INFO] 01:43:19:335 Matelib/(4656:4657): respuesta SEM DDESTROY -1
+
+[INFO] 01:43:19:335 Matelib/(4656:4657): Error al realizar el DESTROY
+[INFO] 01:43:19:335 Matelib/(4656:4657): MATE_CLOSE
+[INFO] 01:43:19:335 Matelib/(4656:4657): MATE_CLOSE: mensaje enviado a kernel
+[INFO] 01:43:19:335 Matelib/(4656:4657): respuesta de kernel: (null)
+[INFO] 01:43:19:335 Matelib/(4656:4657): libero memoria
+[INFO] 01:43:19:335 Matelib/(4656:4657): libero memoria
+[INFO] 01:43:19:335 Matelib/(4656:4657): Carpincho eliminado
+[INFO] 01:44:10:634 Matelib/(5761:5762): Log Matelib creado
+[INFO] 01:44:10:634 Matelib/(5761:5762): Esperando respuesta de servidor
+[INFO] 01:44:10:637 Matelib/(5761:5762): NUEVO CARPINCHO
+[INFO] 01:44:10:683 Matelib/(5761:5762): Carpincho creado correctamente con el pid: 0
+[INFO] 01:44:11:683 Matelib/(5761:5762): SEM_INIT
+[INFO] 01:44:11:684 Matelib/(5761:5762): SEM_INIT
+[INFO] 01:44:12:684 Matelib/(5761:5762): SEM_WAIT al semáforo SEM_HELLO
+[INFO] 01:44:12:685 Matelib/(5761:5762): Se realizó el WAIT correctamente
+[INFO] 01:44:12:685 Matelib/(5761:5762): SEM_WAIT al semáforo SEM_HEL
+[INFO] 01:44:12:685 Matelib/(5761:5762): Error al realizar el WAIT
+[INFO] 01:44:12:685 Matelib/(5761:5762): CALL_IO a hierbitas
+[INFO] 01:44:12:687 Matelib/(5761:5762): RESPUESA DE IO RECIBIDA 0 
+[INFO] 01:44:12:726 Matelib/(5761:5762): Se realizó el CALL IO correctamente
+[INFO] 01:44:12:727 Matelib/(5761:5762): SEM_WAIT al semáforo SEM_HELLO
+[INFO] 01:44:13:103 Matelib/(5761:5762): Error al realizar el WAIT
+[INFO] 01:44:13:104 Matelib/(5761:5762): SEM_DESTROY al semáforo SEM_HELLO
+[INFO] 01:44:13:104 Matelib/(5761:5762): respuesta SEM DDESTROY -1
+
+[INFO] 01:44:13:104 Matelib/(5761:5762): Error al realizar el DESTROY
+[INFO] 01:44:13:104 Matelib/(5761:5762): MATE_CLOSE
+[INFO] 01:44:13:104 Matelib/(5761:5762): MATE_CLOSE: mensaje enviado a kernel
+[INFO] 01:44:13:104 Matelib/(5761:5762): respuesta de kernel: (null)
+[INFO] 01:44:13:104 Matelib/(5761:5762): libero memoria
+[INFO] 01:44:13:104 Matelib/(5761:5762): libero memoria
+[INFO] 01:44:13:104 Matelib/(5761:5762): Carpincho eliminado
+[INFO] 01:45:23:445 Matelib/(6016:6017): Log Matelib creado
+[INFO] 01:45:23:445 Matelib/(6016:6017): Esperando respuesta de servidor
+[INFO] 01:45:23:446 Matelib/(6016:6017): NUEVO CARPINCHO
+[INFO] 01:45:23:494 Matelib/(6016:6017): Carpincho creado correctamente con el pid: 0
+[INFO] 01:45:24:496 Matelib/(6016:6017): SEM_INIT
+[INFO] 01:45:24:497 Matelib/(6016:6017): SEM_INIT
+[INFO] 01:45:25:497 Matelib/(6016:6017): SEM_WAIT al semáforo SEM_HELLO
+[INFO] 01:45:25:497 Matelib/(6016:6017): Se realizó el WAIT correctamente
+[INFO] 01:45:25:498 Matelib/(6016:6017): SEM_WAIT al semáforo SEM_HEL
+[INFO] 01:45:25:498 Matelib/(6016:6017): Error al realizar el WAIT
+[INFO] 01:45:25:498 Matelib/(6016:6017): CALL_IO a hierbitas
+[INFO] 01:45:25:500 Matelib/(6016:6017): RESPUESA DE IO RECIBIDA 0 
+[INFO] 01:45:25:540 Matelib/(6016:6017): Se realizó el CALL IO correctamente
+[INFO] 01:45:25:541 Matelib/(6016:6017): SEM_WAIT al semáforo SEM_HELLO
+[INFO] 01:45:25:919 Matelib/(6016:6017): Error al realizar el WAIT
+[INFO] 01:45:25:919 Matelib/(6016:6017): SEM_DESTROY al semáforo SEM_HELLO
+[INFO] 01:45:25:919 Matelib/(6016:6017): respuesta SEM DDESTROY -1
+
+[INFO] 01:45:25:919 Matelib/(6016:6017): Error al realizar el DESTROY
+[INFO] 01:45:25:919 Matelib/(6016:6017): MATE_CLOSE
+[INFO] 01:45:25:919 Matelib/(6016:6017): MATE_CLOSE: mensaje enviado a kernel
+[INFO] 01:45:25:919 Matelib/(6016:6017): respuesta de kernel: (null)
+[INFO] 01:45:25:919 Matelib/(6016:6017): libero memoria
+[INFO] 01:45:25:919 Matelib/(6016:6017): libero memoria
+[INFO] 01:45:25:919 Matelib/(6016:6017): Carpincho eliminado
+[INFO] 01:46:33:559 Matelib/(6229:6230): Log Matelib creado
+[INFO] 01:46:33:560 Matelib/(6229:6230): Esperando respuesta de servidor
+[INFO] 01:46:33:561 Matelib/(6229:6230): NUEVO CARPINCHO
+[INFO] 01:46:33:611 Matelib/(6229:6230): Carpincho creado correctamente con el pid: 0
+[INFO] 01:46:34:611 Matelib/(6229:6230): SEM_INIT
+[INFO] 01:46:34:613 Matelib/(6229:6230): SEM_INIT
+[INFO] 01:46:35:614 Matelib/(6229:6230): SEM_WAIT al semáforo SEM_HELLO
+[INFO] 01:46:35:615 Matelib/(6229:6230): Se realizó el WAIT correctamente
+[INFO] 01:46:35:615 Matelib/(6229:6230): SEM_WAIT al semáforo SEM_HEL
+[INFO] 01:46:35:615 Matelib/(6229:6230): Error al realizar el WAIT
+[INFO] 01:46:35:615 Matelib/(6229:6230): CALL_IO a hierbitas
+[INFO] 01:46:35:617 Matelib/(6229:6230): RESPUESA DE IO RECIBIDA 0 
+[INFO] 01:46:35:654 Matelib/(6229:6230): Se realizó el CALL IO correctamente
+[INFO] 01:46:35:655 Matelib/(6229:6230): SEM_WAIT al semáforo SEM_HELLO
+[INFO] 01:46:36:030 Matelib/(6229:6230): Error al realizar el WAIT
+[INFO] 01:46:36:030 Matelib/(6229:6230): SEM_DESTROY al semáforo SEM_HELLO
+[INFO] 01:46:36:030 Matelib/(6229:6230): respuesta SEM DDESTROY -1
+
+[INFO] 01:46:36:030 Matelib/(6229:6230): Error al realizar el DESTROY
+[INFO] 01:46:36:030 Matelib/(6229:6230): MATE_CLOSE
+[INFO] 01:46:36:030 Matelib/(6229:6230): MATE_CLOSE: mensaje enviado a kernel
+[INFO] 01:46:36:030 Matelib/(6229:6230): respuesta de kernel: (null)
+[INFO] 01:46:36:030 Matelib/(6229:6230): libero memoria
+[INFO] 01:46:36:030 Matelib/(6229:6230): libero memoria
+[INFO] 01:46:36:030 Matelib/(6229:6230): Carpincho eliminado
+[INFO] 01:47:44:361 Matelib/(6435:6436): Log Matelib creado
+[INFO] 01:47:44:361 Matelib/(6435:6436): Esperando respuesta de servidor
+[INFO] 01:47:44:362 Matelib/(6435:6436): NUEVO CARPINCHO
+[INFO] 01:47:44:406 Matelib/(6435:6436): Carpincho creado correctamente con el pid: 0
+[INFO] 01:47:45:407 Matelib/(6435:6436): SEM_INIT
+[INFO] 01:47:45:407 Matelib/(6435:6436): SEM_INIT
+[INFO] 01:47:46:407 Matelib/(6435:6436): SEM_WAIT al semáforo SEM_HELLO
+[INFO] 01:47:46:408 Matelib/(6435:6436): Se realizó el WAIT correctamente
+[INFO] 01:47:46:408 Matelib/(6435:6436): SEM_WAIT al semáforo SEM_HEL
+[INFO] 01:47:46:408 Matelib/(6435:6436): Error al realizar el WAIT
+[INFO] 01:47:46:408 Matelib/(6435:6436): CALL_IO a hierbitas
+[INFO] 01:47:46:410 Matelib/(6435:6436): RESPUESA DE IO RECIBIDA 0 
+[INFO] 01:47:46:447 Matelib/(6435:6436): Se realizó el CALL IO correctamente
+[INFO] 01:47:46:447 Matelib/(6435:6436): SEM_WAIT al semáforo SEM_HELLO
+[INFO] 01:47:46:890 Matelib/(6435:6436): Error al realizar el WAIT
+[INFO] 01:47:46:890 Matelib/(6435:6436): SEM_DESTROY al semáforo SEM_HELLO
+[INFO] 01:47:46:890 Matelib/(6435:6436): respuesta SEM DDESTROY -1
+
+[INFO] 01:47:46:890 Matelib/(6435:6436): Error al realizar el DESTROY
+[INFO] 01:47:46:890 Matelib/(6435:6436): MATE_CLOSE
+[INFO] 01:47:46:890 Matelib/(6435:6436): MATE_CLOSE: mensaje enviado a kernel
+[INFO] 01:47:46:890 Matelib/(6435:6436): respuesta de kernel: (null)
+[INFO] 01:47:46:890 Matelib/(6435:6436): libero memoria
+[INFO] 01:47:46:890 Matelib/(6435:6436): libero memoria
+[INFO] 01:47:46:890 Matelib/(6435:6436): Carpincho eliminado
+[INFO] 01:48:39:795 Matelib/(6793:6794): Log Matelib creado
+[INFO] 01:48:39:795 Matelib/(6793:6794): Esperando respuesta de servidor
+[INFO] 01:48:39:796 Matelib/(6793:6794): NUEVO CARPINCHO
+[INFO] 01:48:39:839 Matelib/(6793:6794): Carpincho creado correctamente con el pid: 0
+[INFO] 01:48:40:839 Matelib/(6793:6794): SEM_INIT
+[INFO] 01:48:40:840 Matelib/(6793:6794): SEM_INIT
+[INFO] 01:48:41:840 Matelib/(6793:6794): SEM_WAIT al semáforo SEM_HELLO
+[INFO] 01:48:41:841 Matelib/(6793:6794): Se realizó el WAIT correctamente
+[INFO] 01:48:41:841 Matelib/(6793:6794): SEM_WAIT al semáforo SEM_HEL
+[INFO] 01:48:41:841 Matelib/(6793:6794): Error al realizar el WAIT
+[INFO] 01:48:41:841 Matelib/(6793:6794): CALL_IO a hierbitas
+[INFO] 01:48:41:844 Matelib/(6793:6794): RESPUESA DE IO RECIBIDA 0 
+[INFO] 01:48:41:882 Matelib/(6793:6794): Se realizó el CALL IO correctamente
+[INFO] 01:48:41:883 Matelib/(6793:6794): SEM_WAIT al semáforo SEM_HELLO
+[INFO] 01:48:42:279 Matelib/(6793:6794): Error al realizar el WAIT
+[INFO] 01:48:42:279 Matelib/(6793:6794): SEM_DESTROY al semáforo SEM_HELLO
+[INFO] 01:48:42:280 Matelib/(6793:6794): respuesta SEM DDESTROY -1
+
+[INFO] 01:48:42:280 Matelib/(6793:6794): Error al realizar el DESTROY
+[INFO] 01:48:42:280 Matelib/(6793:6794): MATE_CLOSE
+[INFO] 01:48:42:280 Matelib/(6793:6794): MATE_CLOSE: mensaje enviado a kernel
+[INFO] 01:48:42:280 Matelib/(6793:6794): respuesta de kernel: (null)
+[INFO] 01:48:42:280 Matelib/(6793:6794): libero memoria
+[INFO] 01:48:42:280 Matelib/(6793:6794): libero memoria
+[INFO] 01:48:42:280 Matelib/(6793:6794): Carpincho eliminado
+[INFO] 01:49:34:130 Matelib/(7005:7006): Log Matelib creado
+[INFO] 01:49:34:130 Matelib/(7005:7006): Esperando respuesta de servidor
+[INFO] 01:49:34:131 Matelib/(7005:7006): NUEVO CARPINCHO
+[INFO] 01:49:34:175 Matelib/(7005:7006): Carpincho creado correctamente con el pid: 0
+[INFO] 01:49:35:175 Matelib/(7005:7006): SEM_INIT
+[INFO] 01:49:35:176 Matelib/(7005:7006): SEM_INIT
+[INFO] 01:49:36:176 Matelib/(7005:7006): SEM_WAIT al semáforo SEM_HELLO
+[INFO] 01:49:36:177 Matelib/(7005:7006): Se realizó el WAIT correctamente
+[INFO] 01:49:36:178 Matelib/(7005:7006): SEM_WAIT al semáforo SEM_HEL
+[INFO] 01:49:36:179 Matelib/(7005:7006): Error al realizar el WAIT
+[INFO] 01:49:36:179 Matelib/(7005:7006): CALL_IO a hierbitas
+[INFO] 01:49:36:181 Matelib/(7005:7006): RESPUESA DE IO RECIBIDA 0 
+[INFO] 01:49:36:220 Matelib/(7005:7006): Se realizó el CALL IO correctamente
+[INFO] 01:49:36:221 Matelib/(7005:7006): SEM_WAIT al semáforo SEM_HELLO
+[INFO] 01:49:36:632 Matelib/(7005:7006): Error al realizar el WAIT
+[INFO] 01:49:36:632 Matelib/(7005:7006): SEM_DESTROY al semáforo SEM_HELLO
+[INFO] 01:49:36:633 Matelib/(7005:7006): respuesta SEM DDESTROY -1
+
+[INFO] 01:49:36:633 Matelib/(7005:7006): Error al realizar el DESTROY
+[INFO] 01:49:36:633 Matelib/(7005:7006): MATE_CLOSE
+[INFO] 01:49:36:633 Matelib/(7005:7006): MATE_CLOSE: mensaje enviado a kernel
+[INFO] 01:49:36:633 Matelib/(7005:7006): respuesta de kernel: (null)
+[INFO] 01:49:36:633 Matelib/(7005:7006): libero memoria
+[INFO] 01:49:36:633 Matelib/(7005:7006): libero memoria
+[INFO] 01:49:36:633 Matelib/(7005:7006): Carpincho eliminado
+[INFO] 01:49:57:366 Matelib/(7199:7200): Log Matelib creado
+[INFO] 01:49:57:366 Matelib/(7199:7200): Esperando respuesta de servidor
+[INFO] 01:49:57:367 Matelib/(7199:7200): NUEVO CARPINCHO
+[INFO] 01:49:57:407 Matelib/(7199:7200): Carpincho creado correctamente con el pid: 0
+[INFO] 01:49:58:407 Matelib/(7199:7200): SEM_INIT
+[INFO] 01:49:58:408 Matelib/(7199:7200): SEM_INIT
+[INFO] 01:49:59:409 Matelib/(7199:7200): SEM_WAIT al semáforo SEM_HELLO
+[INFO] 01:49:59:409 Matelib/(7199:7200): Se realizó el WAIT correctamente
+[INFO] 01:49:59:409 Matelib/(7199:7200): SEM_WAIT al semáforo SEM_HEL
+[INFO] 01:49:59:409 Matelib/(7199:7200): Error al realizar el WAIT
+[INFO] 01:49:59:409 Matelib/(7199:7200): CALL_IO a hierbitas
+[INFO] 01:49:59:412 Matelib/(7199:7200): RESPUESA DE IO RECIBIDA 0 
+[INFO] 01:49:59:450 Matelib/(7199:7200): Se realizó el CALL IO correctamente
+[INFO] 01:49:59:451 Matelib/(7199:7200): SEM_WAIT al semáforo SEM_HELLO
+[INFO] 01:49:59:845 Matelib/(7199:7200): Error al realizar el WAIT
+[INFO] 01:49:59:845 Matelib/(7199:7200): SEM_DESTROY al semáforo SEM_HELLO
+[INFO] 01:49:59:845 Matelib/(7199:7200): respuesta SEM DDESTROY -1
+
+[INFO] 01:49:59:845 Matelib/(7199:7200): Error al realizar el DESTROY
+[INFO] 01:49:59:845 Matelib/(7199:7200): MATE_CLOSE
+[INFO] 01:49:59:845 Matelib/(7199:7200): MATE_CLOSE: mensaje enviado a kernel
+[INFO] 01:49:59:845 Matelib/(7199:7200): respuesta de kernel: (null)
+[INFO] 01:49:59:845 Matelib/(7199:7200): libero memoria
+[INFO] 01:49:59:845 Matelib/(7199:7200): libero memoria
+[INFO] 01:49:59:845 Matelib/(7199:7200): Carpincho eliminado
+[INFO] 01:51:04:754 Matelib/(7431:7432): Log Matelib creado
+[INFO] 01:51:04:754 Matelib/(7431:7432): Esperando respuesta de servidor
+[INFO] 01:51:04:755 Matelib/(7431:7432): NUEVO CARPINCHO
+[INFO] 01:51:04:799 Matelib/(7431:7432): Carpincho creado correctamente con el pid: 0
+[INFO] 01:51:05:800 Matelib/(7431:7432): SEM_INIT
+[INFO] 01:51:05:801 Matelib/(7431:7432): SEM_INIT
+[INFO] 01:51:06:801 Matelib/(7431:7432): SEM_WAIT al semáforo SEM_HELLO
+[INFO] 01:51:06:802 Matelib/(7431:7432): Se realizó el WAIT correctamente
+[INFO] 01:51:06:802 Matelib/(7431:7432): SEM_WAIT al semáforo SEM_HEL
+[INFO] 01:51:06:802 Matelib/(7431:7432): Error al realizar el WAIT
+[INFO] 01:51:06:802 Matelib/(7431:7432): CALL_IO a hierbitas
+[INFO] 01:51:06:804 Matelib/(7431:7432): RESPUESA DE IO RECIBIDA 0 
+[INFO] 01:51:06:842 Matelib/(7431:7432): Se realizó el CALL IO correctamente
+[INFO] 01:51:06:843 Matelib/(7431:7432): SEM_WAIT al semáforo SEM_HELLO
+[INFO] 01:51:07:240 Matelib/(7431:7432): Error al realizar el WAIT
+[INFO] 01:51:07:240 Matelib/(7431:7432): SEM_DESTROY al semáforo SEM_HELLO
+[INFO] 01:51:07:240 Matelib/(7431:7432): respuesta SEM DDESTROY -1
+
+[INFO] 01:51:07:240 Matelib/(7431:7432): Error al realizar el DESTROY
+[INFO] 01:51:07:240 Matelib/(7431:7432): MATE_CLOSE
+[INFO] 01:51:07:240 Matelib/(7431:7432): MATE_CLOSE: mensaje enviado a kernel
+[INFO] 01:51:07:240 Matelib/(7431:7432): respuesta de kernel: (null)
+[INFO] 01:51:07:240 Matelib/(7431:7432): libero memoria
+[INFO] 01:51:07:240 Matelib/(7431:7432): libero memoria
+[INFO] 01:51:07:240 Matelib/(7431:7432): Carpincho eliminado
+[INFO] 01:51:40:784 Matelib/(7653:7654): Log Matelib creado
+[INFO] 01:51:40:784 Matelib/(7653:7654): Esperando respuesta de servidor
+[INFO] 01:51:40:785 Matelib/(7653:7654): NUEVO CARPINCHO
+[INFO] 01:51:40:827 Matelib/(7653:7654): Carpincho creado correctamente con el pid: 0
+[INFO] 01:51:41:827 Matelib/(7653:7654): SEM_INIT
+[INFO] 01:51:41:828 Matelib/(7653:7654): SEM_INIT
+[INFO] 01:51:42:829 Matelib/(7653:7654): SEM_WAIT al semáforo SEM_HELLO
+[INFO] 01:51:42:830 Matelib/(7653:7654): Se realizó el WAIT correctamente
+[INFO] 01:51:42:830 Matelib/(7653:7654): SEM_WAIT al semáforo SEM_HEL
+[INFO] 01:51:42:830 Matelib/(7653:7654): Error al realizar el WAIT
+[INFO] 01:51:42:830 Matelib/(7653:7654): CALL_IO a hierbitas
+[INFO] 01:51:42:832 Matelib/(7653:7654): RESPUESA DE IO RECIBIDA 0 
+[INFO] 01:51:42:871 Matelib/(7653:7654): Se realizó el CALL IO correctamente
+[INFO] 01:51:42:871 Matelib/(7653:7654): SEM_WAIT al semáforo SEM_HELLO
+[INFO] 01:51:43:255 Matelib/(7653:7654): Error al realizar el WAIT
+[INFO] 01:51:43:255 Matelib/(7653:7654): SEM_DESTROY al semáforo SEM_HELLO
+[INFO] 01:51:43:256 Matelib/(7653:7654): respuesta SEM DDESTROY -1
+
+[INFO] 01:51:43:256 Matelib/(7653:7654): Error al realizar el DESTROY
+[INFO] 01:51:43:256 Matelib/(7653:7654): MATE_CLOSE
+[INFO] 01:51:43:256 Matelib/(7653:7654): MATE_CLOSE: mensaje enviado a kernel
+[INFO] 01:51:43:256 Matelib/(7653:7654): respuesta de kernel: (null)
+[INFO] 01:51:43:256 Matelib/(7653:7654): libero memoria
+[INFO] 01:51:43:256 Matelib/(7653:7654): libero memoria
+[INFO] 01:51:43:256 Matelib/(7653:7654): Carpincho eliminado
+[INFO] 01:52:23:538 Matelib/(7869:7870): Log Matelib creado
+[INFO] 01:52:23:538 Matelib/(7869:7870): Esperando respuesta de servidor
+[INFO] 01:52:23:539 Matelib/(7869:7870): NUEVO CARPINCHO
+[INFO] 01:52:23:582 Matelib/(7869:7870): Carpincho creado correctamente con el pid: 0
+[INFO] 01:52:24:584 Matelib/(7869:7870): SEM_INIT
+[INFO] 01:52:24:585 Matelib/(7869:7870): SEM_INIT
+[INFO] 01:52:25:585 Matelib/(7869:7870): SEM_WAIT al semáforo SEM_HELLO
+[INFO] 01:52:25:586 Matelib/(7869:7870): Se realizó el WAIT correctamente
+[INFO] 01:52:25:586 Matelib/(7869:7870): SEM_WAIT al semáforo SEM_HEL
+[INFO] 01:52:25:586 Matelib/(7869:7870): Error al realizar el WAIT
+[INFO] 01:52:25:586 Matelib/(7869:7870): CALL_IO a hierbitas
+[INFO] 01:52:25:589 Matelib/(7869:7870): RESPUESA DE IO RECIBIDA 0 
+[INFO] 01:52:25:627 Matelib/(7869:7870): Se realizó el CALL IO correctamente
+[INFO] 01:52:25:627 Matelib/(7869:7870): SEM_WAIT al semáforo SEM_HELLO
+[INFO] 01:52:26:017 Matelib/(7869:7870): Error al realizar el WAIT
+[INFO] 01:52:26:017 Matelib/(7869:7870): SEM_DESTROY al semáforo SEM_HELLO
+[INFO] 01:52:26:017 Matelib/(7869:7870): respuesta SEM DDESTROY -1
+
+[INFO] 01:52:26:017 Matelib/(7869:7870): Error al realizar el DESTROY
+[INFO] 01:52:26:017 Matelib/(7869:7870): MATE_CLOSE
+[INFO] 01:52:26:017 Matelib/(7869:7870): MATE_CLOSE: mensaje enviado a kernel
+[INFO] 01:52:26:017 Matelib/(7869:7870): respuesta de kernel: (null)
+[INFO] 01:52:26:017 Matelib/(7869:7870): libero memoria
+[INFO] 01:52:26:017 Matelib/(7869:7870): libero memoria
+[INFO] 01:52:26:017 Matelib/(7869:7870): Carpincho eliminado
+[INFO] 01:55:10:435 Matelib/(8104:8105): Log Matelib creado
+[INFO] 01:55:10:435 Matelib/(8104:8105): Esperando respuesta de servidor
+[INFO] 01:55:10:436 Matelib/(8104:8105): NUEVO CARPINCHO
+[INFO] 01:55:10:479 Matelib/(8104:8105): Carpincho creado correctamente con el pid: 0
+[INFO] 01:55:11:479 Matelib/(8104:8105): SEM_INIT
+[INFO] 01:55:11:480 Matelib/(8104:8105): SEM_INIT
+[INFO] 01:55:12:481 Matelib/(8104:8105): SEM_WAIT al semáforo SEM_HELLO
+[INFO] 01:55:12:481 Matelib/(8104:8105): Se realizó el WAIT correctamente
+[INFO] 01:55:12:482 Matelib/(8104:8105): SEM_WAIT al semáforo SEM_HEL
+[INFO] 01:55:12:482 Matelib/(8104:8105): Error al realizar el WAIT
+[INFO] 01:55:12:482 Matelib/(8104:8105): CALL_IO a hierbitas
+[INFO] 01:55:12:484 Matelib/(8104:8105): RESPUESA DE IO RECIBIDA 0 
+[INFO] 01:55:12:523 Matelib/(8104:8105): Se realizó el CALL IO correctamente
+[INFO] 01:55:12:523 Matelib/(8104:8105): SEM_WAIT al semáforo SEM_HELLO
+[INFO] 01:55:12:952 Matelib/(8104:8105): Error al realizar el WAIT
+[INFO] 01:55:12:952 Matelib/(8104:8105): SEM_DESTROY al semáforo SEM_HELLO
+[INFO] 01:55:12:952 Matelib/(8104:8105): respuesta SEM DDESTROY -1
+
+[INFO] 01:55:12:952 Matelib/(8104:8105): Error al realizar el DESTROY
+[INFO] 01:55:12:952 Matelib/(8104:8105): MATE_CLOSE
+[INFO] 01:55:12:952 Matelib/(8104:8105): MATE_CLOSE: mensaje enviado a kernel
+[INFO] 01:55:12:952 Matelib/(8104:8105): respuesta de kernel: (null)
+[INFO] 01:55:12:952 Matelib/(8104:8105): libero memoria
+[INFO] 01:55:12:952 Matelib/(8104:8105): libero memoria
+[INFO] 01:55:12:952 Matelib/(8104:8105): Carpincho eliminado
+[INFO] 01:56:48:224 Matelib/(8318:8319): Log Matelib creado
+[INFO] 01:56:48:224 Matelib/(8318:8319): Esperando respuesta de servidor
+[INFO] 01:56:48:225 Matelib/(8318:8319): NUEVO CARPINCHO
+[INFO] 01:56:48:271 Matelib/(8318:8319): Carpincho creado correctamente con el pid: 0
+[INFO] 01:56:49:271 Matelib/(8318:8319): SEM_INIT
+[INFO] 01:56:49:272 Matelib/(8318:8319): SEM_INIT
+[INFO] 01:56:50:273 Matelib/(8318:8319): SEM_WAIT al semáforo SEM_HELLO
+[INFO] 01:56:50:276 Matelib/(8318:8319): Se realizó el WAIT correctamente
+[INFO] 01:56:50:276 Matelib/(8318:8319): SEM_WAIT al semáforo SEM_HEL
+[INFO] 01:56:50:277 Matelib/(8318:8319): Error al realizar el WAIT
+[INFO] 01:56:50:277 Matelib/(8318:8319): CALL_IO a hierbitas
+[INFO] 01:56:50:281 Matelib/(8318:8319): RESPUESA DE IO RECIBIDA 0 
+[INFO] 01:56:50:318 Matelib/(8318:8319): Se realizó el CALL IO correctamente
+[INFO] 01:56:50:318 Matelib/(8318:8319): SEM_WAIT al semáforo SEM_HELLO
+[INFO] 01:56:50:733 Matelib/(8318:8319): Error al realizar el WAIT
+[INFO] 01:56:50:733 Matelib/(8318:8319): SEM_DESTROY al semáforo SEM_HELLO
+[INFO] 01:56:50:733 Matelib/(8318:8319): respuesta SEM DDESTROY -1
+
+[INFO] 01:56:50:733 Matelib/(8318:8319): Error al realizar el DESTROY
+[INFO] 01:56:50:733 Matelib/(8318:8319): MATE_CLOSE
+[INFO] 01:56:50:733 Matelib/(8318:8319): MATE_CLOSE: mensaje enviado a kernel
+[INFO] 01:56:50:733 Matelib/(8318:8319): respuesta de kernel: (null)
+[INFO] 01:56:50:733 Matelib/(8318:8319): libero memoria
+[INFO] 01:56:50:733 Matelib/(8318:8319): libero memoria
+[INFO] 01:56:50:733 Matelib/(8318:8319): Carpincho eliminado
+[INFO] 01:57:44:773 Matelib/(8529:8530): Log Matelib creado
+[INFO] 01:57:44:773 Matelib/(8529:8530): Esperando respuesta de servidor
+[INFO] 01:57:44:774 Matelib/(8529:8530): NUEVO CARPINCHO
+[INFO] 01:57:44:815 Matelib/(8529:8530): Carpincho creado correctamente con el pid: 0
+[INFO] 01:57:45:816 Matelib/(8529:8530): SEM_INIT
+[INFO] 01:57:45:816 Matelib/(8529:8530): SEM_INIT
+[INFO] 01:57:46:817 Matelib/(8529:8530): SEM_WAIT al semáforo SEM_HELLO
+[INFO] 01:57:46:817 Matelib/(8529:8530): Se realizó el WAIT correctamente
+[INFO] 01:57:46:817 Matelib/(8529:8530): SEM_WAIT al semáforo SEM_HEL
+[INFO] 01:57:46:817 Matelib/(8529:8530): Error al realizar el WAIT
+[INFO] 01:57:46:817 Matelib/(8529:8530): CALL_IO a hierbitas
+[INFO] 01:57:46:820 Matelib/(8529:8530): RESPUESA DE IO RECIBIDA 0 
+[INFO] 01:57:46:859 Matelib/(8529:8530): Se realizó el CALL IO correctamente
+[INFO] 01:57:46:859 Matelib/(8529:8530): SEM_WAIT al semáforo SEM_HELLO
+[INFO] 01:57:47:267 Matelib/(8529:8530): Error al realizar el WAIT
+[INFO] 01:57:47:267 Matelib/(8529:8530): SEM_DESTROY al semáforo SEM_HELLO
+[INFO] 01:57:47:267 Matelib/(8529:8530): respuesta SEM DDESTROY -1
+
+[INFO] 01:57:47:267 Matelib/(8529:8530): Error al realizar el DESTROY
+[INFO] 01:57:47:267 Matelib/(8529:8530): MATE_CLOSE
+[INFO] 01:57:47:267 Matelib/(8529:8530): MATE_CLOSE: mensaje enviado a kernel
+[INFO] 01:57:47:267 Matelib/(8529:8530): respuesta de kernel: (null)
+[INFO] 01:57:47:267 Matelib/(8529:8530): libero memoria
+[INFO] 01:57:47:267 Matelib/(8529:8530): libero memoria
+[INFO] 01:57:47:267 Matelib/(8529:8530): Carpincho eliminado
+[INFO] 02:00:01:521 Matelib/(8792:8793): Log Matelib creado
+[INFO] 02:00:01:522 Matelib/(8792:8793): Esperando respuesta de servidor
+[INFO] 02:00:01:523 Matelib/(8792:8793): NUEVO CARPINCHO
+[INFO] 02:00:01:567 Matelib/(8792:8793): Carpincho creado correctamente con el pid: 0
+[INFO] 02:00:02:567 Matelib/(8792:8793): SEM_INIT
+[INFO] 02:00:02:568 Matelib/(8792:8793): SEM_INIT
+[INFO] 02:00:03:568 Matelib/(8792:8793): SEM_WAIT al semáforo SEM_HELLO
+[INFO] 02:00:03:569 Matelib/(8792:8793): Se realizó el WAIT correctamente
+[INFO] 02:00:03:569 Matelib/(8792:8793): SEM_WAIT al semáforo SEM_HEL
+[INFO] 02:00:03:569 Matelib/(8792:8793): Error al realizar el WAIT
+[INFO] 02:00:03:569 Matelib/(8792:8793): CALL_IO a hierbitas
+[INFO] 02:00:03:573 Matelib/(8792:8793): RESPUESA DE IO RECIBIDA 0 
+[INFO] 02:00:03:611 Matelib/(8792:8793): Se realizó el CALL IO correctamente
+[INFO] 02:00:03:611 Matelib/(8792:8793): SEM_WAIT al semáforo SEM_HELLO

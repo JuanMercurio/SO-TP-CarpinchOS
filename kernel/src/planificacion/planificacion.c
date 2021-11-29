@@ -48,11 +48,12 @@ void procesador()
          break;
 
       case SEM_WAIT:
-         if (sem_kernel_wait2(carpincho) && verificar_suspension())
+         if (verificar_suspension())
          {
             bloquear_por_mediano_plazo(carpincho);
             log_info(logger, "El carpincho %d fue suspendido", carpincho->pid);
          }
+         printf("PROCESADOR: carpincho se blqueara por semaforo\n");
          break; /* ACA SE ATAJAN LOS ENVENTO SUQ HACEN QUE EL CARPINCHO PASE A BLOQUEADO */
 
       case MATE_CLOSE:

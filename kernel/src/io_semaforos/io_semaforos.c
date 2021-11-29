@@ -22,17 +22,14 @@ sem_kernel * buscar_semaforo2(char* nombre, int* pos){
    sem_kernel * comparado ;
    bool encontrado = false;
    int i = 0;
-   printf("BUSCAR SEMAFOROOOOO: tamaño lista %d\n", list_size(lista_sem_kernel));
    while(  i < list_size(lista_sem_kernel) && !encontrado){
       comparado = (sem_kernel*)list_get(lista_sem_kernel, i);
-    
       if(strcmp(comparado->id, nombre)==0){
          *pos = i;
           encontrado = true;
       }
-      i++;
-     
-   } 
+      i++;   
+   }
    if(encontrado){
    return comparado;
    }else{
@@ -43,11 +40,12 @@ sem_kernel * buscar_semaforo2(char* nombre, int* pos){
 
 bool sem_kernel_wait2( t_pcb *carpincho)
 {
-   sem_kernel *sem = buscar_semaforo(carpincho->semaforo_a_modificar);
-   
+   int pos;
+   sem_kernel *sem = buscar_semaforo2(carpincho->semaforo_a_modificar, &pos);
    sem_wait(&sem->mutex);
    sem->val --;
    sem_post(&sem->mutex);
+
    if(sem->val == 0){
       sem->tomado_por = carpincho->pid;
    }
@@ -85,12 +83,19 @@ return sem->val;
 }
 
 void bloquear_por_semaforo(t_pcb *carpincho){
-   sem_kernel *semaforo = buscar_semaforo(carpincho->semaforo_a_modificar);
+    printf("BLOQUE POR IO: carpincho %d\n", carpincho->pid);
+    printf("BLOQUE POR IO: semaforo modificado %s\n", carpincho->semaforo_a_modificar);
+    int *pos;
+   sem_kernel *semaforo = buscar_semaforo2(carpincho->semaforo_a_modificar, pos);
+ printf("BLOQUE POR IO: semaforo encontrado %s\n", semaforo->id);
    carpincho->tiempo.time_stamp_fin = temporal_get_string_time("%H:%M:%S:%MS");
    carpincho->tiempo.tiempo_ejecutado = obtener_tiempo(carpincho->tiempo.time_stamp_inicio, carpincho->tiempo.time_stamp_fin);
+   printf("BLOQUE POR IO: obtuvo tiempo \n ");
    sem_wait(&semaforo->mutex_cola);
+    printf("BLOQUE POR IO: hizo wait \n ");
    queue_push(semaforo->bloqueados, (void*)carpincho);
    sem_post(&semaforo->mutex_cola);
+    printf("BLOQUE POR IO: encolo en cola de semaforo \n ");
    log_info(logger, "El carpincho %d está bloqueado por el semáforo %s", carpincho->pid, semaforo->id);
 }
 void sem_kernel_post(char *nombre) 
@@ -124,6 +129,7 @@ int sem_kernel_init(char* nombre, int value){
    nuevo_sem->max_val=value;
    nuevo_sem->val=value;
    nuevo_sem->bloqueados=queue_create();
+   sem_init(&nuevo_sem->mutex_cola, 0,1);
    sem_wait(&mutex_lista_sem_kernel);
    list_add(lista_sem_kernel,(void*) nuevo_sem);
    sem_kernel *aaa = (sem_kernel*)list_get(lista_sem_kernel,0);
