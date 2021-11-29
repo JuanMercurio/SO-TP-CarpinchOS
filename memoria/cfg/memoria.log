@@ -667,3 +667,38 @@
 [INFO] 10:46:59:978 Memoria/(25084:25262): Se conecto un cliente - Socket: 27
 [INFO] 10:46:59:978 Memoria/(25084:25263): Se conecto un cliente - Socket: 28
 [INFO] 10:46:59:978 Memoria/(25084:25264): Se conecto un cliente - Socket: 29
+[INFO] 19:58:35:540 Memoria/(9386:9386): Tlb Inicializada
+[INFO] 20:09:16:931 Memoria/(9386:11020): Se conecto un cliente - Socket: 15
+[INFO] 20:11:37:851 Memoria/(11610:11610): Tlb Inicializada
+[INFO] 20:11:47:488 Memoria/(11610:11623): Se conecto un cliente - Socket: 15
+[INFO] 20:14:47:626 Memoria/(12088:12088): Tlb Inicializada
+[INFO] 20:14:55:874 Memoria/(12088:12098): Se conecto un cliente - Socket: 15
+[INFO] 20:17:15:396 Memoria/(12664:12664): Tlb Inicializada
+[INFO] 20:17:17:473 Memoria/(12664:12668): Se conecto un cliente - Socket: 15
+[INFO] 20:19:36:767 Memoria/(13515:13515): Tlb Inicializada
+[INFO] 20:20:40:985 Memoria/(13515:13756): Se conecto un cliente - Socket: 15
+[INFO] 20:24:47:865 Memoria/(14654:14654): Tlb Inicializada
+[INFO] 20:24:53:647 Memoria/(14654:14768): Se conecto un cliente - Socket: 15
+[INFO] 20:28:54:175 Memoria/(15532:15532): Tlb Inicializada
+[INFO] 20:28:56:576 Memoria/(15532:15537): Se conecto un cliente - Socket: 15
+[INFO] 20:29:38:371 Memoria/(15769:15769): Tlb Inicializada
+[INFO] 20:29:40:095 Memoria/(15769:15829): Se conecto un cliente - Socket: 15
+[INFO] 20:36:22:345 Memoria/(17003:17003): Tlb Inicializada
+[INFO] 20:36:23:392 Memoria/(17003:17007): Se conecto un cliente - Socket: 15
+[INFO] 20:39:43:079 Memoria/(17431:17431): Tlb Inicializada
+[INFO] 20:39:44:512 Memoria/(17431:17440): Se conecto un cliente - Socket: 15
+[INFO] 20:39:50:181 Memoria/(17431:17449): Se conecto un cliente - Socket: 16
+[INFO] 20:41:03:584 Memoria/(17431:17666): Se conecto un cliente - Socket: 15
+[INFO] 20:43:17:592 Memoria/(17431:18666): Se conecto un cliente - Socket: 16
+[INFO] 20:45:12:924 Memoria/(19130:19130): Tlb Inicializada
+[INFO] 20:45:15:401 Memoria/(19130:19142): Se conecto un cliente - Socket: 15
+[INFO] 20:46:10:731 Memoria/(19773:19773): Tlb Inicializada
+[INFO] 20:46:12:315 Memoria/(19773:19780): Se conecto un cliente - Socket: 15
+[INFO] 20:47:53:835 Memoria/(20116:20116): Tlb Inicializada
+[INFO] 20:47:55:720 Memoria/(20116:20120): Se conecto un cliente - Socket: 15
+[INFO] 20:50:01:830 Memoria/(20519:20519): Tlb Inicializada
+[INFO] 20:50:29:710 Memoria/(20754:20754): Tlb Inicializada
+[INFO] 20:50:32:846 Memoria/(20754:20817): Se conecto un cliente - Socket: 15
+[INFO] 21:18:01:929 Memoria/(23546:23546): Tlb Inicializada
+[INFO] 21:18:04:257 Memoria/(23546:23550): Se conecto un cliente - Socket: 15
+[INFO] 21:18:04:299 Memoria/(23546:23550): Se desconecto un cliente - Socket: 15 - PID: 1

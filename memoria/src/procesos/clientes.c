@@ -113,42 +113,51 @@ int swap_solicitud_iniciar(){
     // return estado;
 }
 
-void memalloc_comportamiento(tab_pags* tabla, int cliente){
-
+void memalloc_comportamiento(tab_pags* tabla, int cliente)
+{
+    printf("me llego un malloc\n");
     int tamanio = recibir_int(cliente);
-    int dl = memalloc(tabla, tamanio);
-    enviar_int(cliente, dl);
+    // int dl = memalloc(tabla, tamanio);
+    int a = -1;
+    // enviar_int(cliente, dl);
+    enviar_int(cliente, a);
 }
 
 
-void memfree_comportamiento(tab_pags* tabla, int cliente){
-
+void memfree_comportamiento(tab_pags* tabla, int cliente)
+{
+    printf("me llego un free\n");
     int dl = recibir_int(cliente);
-    int result_memfree = memfree(tabla, dl);
+    // int result_memfree = memfree(tabla, dl);
 
-    enviar_int(cliente, result_memfree);
+    // enviar_int(cliente, result_memfree);
+    enviar_int(cliente, -5);
 }
 
-void memread_comportamiento(tab_pags* tabla, int cliente){
-
+void memread_comportamiento(tab_pags* tabla, int cliente)
+{
     int tamanio = recibir_int(cliente);
     int dl = recibir_int(cliente);
 
-    void* buffer = memread(tabla, dl, tamanio);
-    enviar_mensaje(cliente, buffer);
+    // void* buffer = memread(tabla, dl, tamanio);
+
+    // enviar_buffer(cliente, buffer, tamanio);
+    enviar_int(cliente, -1);
 }
 
-void memwrite_comportamiento(tab_pags* tabla, int cliente){
-
-    int tamanio = recibir_int(cliente);
+void memwrite_comportamiento(tab_pags* tabla, int cliente)
+{
     void* buffer = recibir_mensaje(cliente);
     int dl = recibir_int(cliente);
 
-    int result_memwrite = memwrite(tabla, dl, buffer, tamanio);
-    enviar_int(cliente, result_memwrite);
+    // int result_memwrite = memwrite(tabla, dl, buffer, tamanio);
+    // enviar_int(cliente, result_memwrite);
+    int a = -7;
+    enviar_int(cliente, a);
 }
 
-void mate_close_comportamiento(tab_pags *tabla, int cliente, bool *conectado){ 
+void mate_close_comportamiento(tab_pags *tabla, int cliente, bool *conectado)
+{
     cliente_terminar(tabla, cliente);
     *conectado = false;
 }

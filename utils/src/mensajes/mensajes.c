@@ -106,6 +106,10 @@ char* recibir_mensaje(int socket){
 
 }
 
+ void enviar_buffer( int cliente, void* buffer, int tamanio){
+	 send(cliente, buffer, tamanio, 0);
+ }
+
 void* serializar_mensaje(char* mensaje){
     int size = strlen(mensaje) + 1;
     void* buffer = malloc(sizeof(int) + size);
@@ -275,7 +279,7 @@ void enviar_mem_write(int conexion, int cod_op, void* origin, int dest, int size
 	paquete->buffer = malloc(sizeof(t_buffer));
 	printf("lo que hay en DEST com void* %s\n", (char*)origin);
 	printf("lo que hay en DEST com (char*) %s\n", (char*) origin);
-	paquete->buffer->size = strlen(origin) + 1;
+	paquete->buffer->size = size;
 	paquete->buffer->stream = malloc(paquete->buffer->size);
 	memcpy(paquete->buffer->stream, origin, paquete->buffer->size);
 	paquete->dest = dest;

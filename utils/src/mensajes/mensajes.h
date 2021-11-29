@@ -168,4 +168,5 @@ t_paquete_mem_read recibir_mem_read(int conexion);
 int recibir_valor_int(int conexion);
 t_paquete_mem_write recibir_mem_write(int cliente);
 
+ void enviar_buffer( int cliente, void* buffer, int tamanio);
 #endif

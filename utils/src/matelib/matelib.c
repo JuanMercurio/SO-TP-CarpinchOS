@@ -66,7 +66,7 @@ log_info(logger, "libero memoria");
 
     log_info(logger, "Carpincho eliminado");
     //log_destroy(logger);
-
+    return 0;
  }
 
 //-----------------Semaphore Functions---------------------/
@@ -200,7 +200,6 @@ mate_pointer mate_memalloc(mate_instance *lib_ref, int size)
   //((mate_inner_structure *)lib_ref->group_info)->memory = malloc(size);
 
   enviar_cod_op_e_int(((mate_inner_structure *)lib_ref->group_info)->conexion, MEMALLOC, size);
-  recibir_operacion(((mate_inner_structure *)lib_ref->group_info)->conexion);
 
   int32_t respuesta = (int32_t)recibir_operacion(((mate_inner_structure *)lib_ref->group_info)->conexion);
 
@@ -240,31 +239,30 @@ int mate_memfree(mate_instance *lib_ref, mate_pointer addr)
 
 int mate_memread(mate_instance *lib_ref, mate_pointer origin, void *dest, int size) // revisar que retorna
 {
+  mate_inner_structure* info = (mate_inner_structure*)lib_ref->group_info;
+
   log_info(logger, "MEM_READ desde %d el size %d", origin, size);
 
-  enviar_mem_read(((mate_inner_structure *)lib_ref->group_info)->conexion, MEMREAD, (int)origin, size);
+  enviar_mem_read(info->conexion, MEMREAD, (int)origin, size);
 
-  dest = recibir_mensaje(((mate_inner_structure *)lib_ref->group_info)->conexion);
-
-  if (strcmp(dest, "-6") == 0)
-  {
-    log_info(logger, "Error al realizar el MEM_READ");
+  int estado = recibir_int(info->conexion);
+  if (estado == -1){
     dest = NULL;
+    log_info(logger, "Error al realizar el MEM_READ");
     return MATE_READ_FAULT;
   }
-  else
-  {
-    log_info(logger, "Se realizó el MEM_READ correctamente. El contenido es: %s", (char *)dest);
 
-    return 0;
-  }
+  dest = recibir_mensaje(info->conexion);
+  log_info(logger, "Se realizó el MEM_READ correctamente. El contenido es: %s", (char *)dest);
+
+  return 0;
 }
 
 int mate_memwrite(mate_instance *lib_ref, void *origin, mate_pointer dest, int size)
 {
   log_info(logger, "MEM_WRITE el mensaje %s en %d", (char *)origin, dest);
 
-  enviar_mem_write(((mate_inner_structure *)lib_ref->group_info)->conexion, MEMREAD, origin, (int)dest, size);
+  enviar_mem_write(((mate_inner_structure *)lib_ref->group_info)->conexion, MEMWRITE, origin, (int)dest, size);
   int recibido = recibir_operacion(((mate_inner_structure *)lib_ref->group_info)->conexion);
 
   if (recibido == -7)
