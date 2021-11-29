@@ -175,7 +175,7 @@ void receptor(void *arg)
       case INIT_SEMAFORO:// SE PUEDE MODIFICAR PARA CONFIRMAR  MAL
                printf("MAIN:recibi un init semaforo\n");
                semaforo = recibir_semaforo(cliente);// recibe el puntero
-               log_info(logger, "Se recibió del carpincho %d un SEM INIT para el semáforo %s con valor &d\n ", carpincho->pid, semaforo->nombre_semaforo, semaforo->valor);
+               log_info(logger, "Se recibió del carpincho %d un SEM INIT para el semáforo %s con valor %d\n ", carpincho->pid, semaforo->nombre_semaforo, semaforo->valor);
                int resultado = sem_kernel_init(semaforo->nombre_semaforo, semaforo->valor);// usa lo que necesita
    
                enviar_int(cliente, resultado);// responde peticion con ok 
@@ -202,39 +202,46 @@ void receptor(void *arg)
 
       case SEM_WAIT: 
                recibido = recibir_mensaje(cliente);
-               sem = buscar_semaforo(carpincho->semaforo_a_modificar);
-               if( sem != NULL){
-                  strcpy(carpincho->semaforo_a_modificar ,recibido);
-                  sem_post(&carpincho->semaforo_evento);  
-                  log_info(logger, "Se recibió del carpincho %d un SEM WAIT para %s", carpincho->pid, sem->id);
+               carpincho->semaforo_a_modificar = string_duplicate(recibido);
+               printf("RECEPTOR: semaforo recibido %s\n", recibido);
+               int *pos;
+               sem = buscar_semaforo2(carpincho->semaforo_a_modificar, pos );
+                printf("RECEPTOR: ---------------------------------------\n");
+               
+               if( sem == NULL){
+                  printf("RECEPTOR: el semaforo no se encuentra\n");
+                  log_info(logger, "Se recibió del carpincho %d un SEM WAIT para un semáforo que no existe", carpincho->pid);
+                  enviar_int(cliente, -1); 
                }
                else
-               {
-                  log_info(logger, "Se recibió del carpincho %d un SEM WAIT para un semáforo que no existe", carpincho->pid);
-                  enviar_mensaje(cliente, "FAIL ");
+               {printf("RECEPTOR: el semaforo encontradoe es %s\n", sem->id);
+                  if(sem_kernel_wait2(carpincho)){
+                  sem_post(&carpincho->semaforo_evento);  
+                  enviar_int(cliente, 0); 
+                  log_info(logger, "Se recibió del carpincho %d un SEM WAIT para %s y se bloqueara", carpincho->pid, sem->id);
+                  }else{
+                     enviar_int(cliente, 1);
+                  log_info(logger, "Se recibió del carpincho %d un SEM WAIT para %s pero NO se bloqueara", carpincho->pid, sem->id);
+                  }
                }
                 free(recibido);
                break;
 
       case SEM_POST: recibido = recibir_mensaje(cliente);
-               sem = buscar_semaforo(carpincho->semaforo_a_modificar);
-               if( sem != NULL){
-                  sem_kernel_post(recibido);
-                  log_info(logger, "Se recibió del carpincho %d un SEM POST para %s", carpincho->pid, sem->id);
-                  enviar_mensaje(cliente, "OK");
-               }
-               else
-               {
-                  log_info(logger, "Se recibió del carpincho %d un SEM POST para un semáforo que no existe", carpincho->pid);
-                  enviar_mensaje(cliente, "FAIL");
-               }
+               log_info(logger, "Se recibió del carpincho %d un SEM POST para %s", carpincho->pid, recibido);
+               printf("MAIN:recibi un post semaforo para %s\n", recibido);
+               resultado = sem_kernel_post(recibido);
+               printf ("el resultado del post en el main kernel es %d \n", resultado);
+               enviar_int(cliente, resultado);
+               printf("mande resultado kernel post\n");               
                free(recibido);
                break;
       
       case SEM_DESTROY: recibido = recibir_mensaje(cliente);
                log_info(logger, "Se recibió del carpincho %d un SEM DESTROY para %s", carpincho->pid, recibido);
+               printf("sem del destroy %s\n", recibido);
                aux_int = sem_kernel_destroy(recibido);
-               printf("RECEPTOR: SEM DESTROY auxint%d\n", aux_int);
+               printf("RECEPTOR: SEM DESTROY auxint %d\n", aux_int);
                enviar_int(cliente, aux_int);
                free(recibido);
                break;

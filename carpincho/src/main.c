@@ -30,13 +30,19 @@ void carpincho_comportamiento(void* arg)
    
    sleep(1);
    printf("VOY A MANADAR UN SEM INIT\n");
-  // devolvio = mate_sem_init(ref, "SEM_HELLO", 0);
-   // printf("devolvio el sem_init: %d\n", devolvio);
+  devolvio = mate_sem_init(ref, "SEM_HELLO", 0);
+  printf("devolvio el sem_init: %d\n", devolvio);
    sleep(1);
 
- devolvio = mate_call_io(ref, "hierbitas","nada");
-  printf("devolvio call io: %d\n", devolvio);
+  printf("VOY A MANADAR UN SEM POST\n");
+  devolvio = mate_sem_post(ref, "SEM_HELLO");
+  printf("devolvio el post: %d\n", devolvio);
+   sleep(1);
+
+ //devolvio = mate_call_io(ref, "hierbitas","nada");
+  //printf("devolvio call io: %d\n", devolvio);
   devolvio = mate_sem_destroy(ref, "SEM_HELLO");
+  
   printf("devolvio el sem_destroy: %d\n", devolvio);
       printf("VOY A cerrar instancia\n");
    mate_close(ref);

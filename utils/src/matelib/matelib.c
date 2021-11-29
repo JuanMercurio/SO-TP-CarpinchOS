@@ -102,10 +102,12 @@ int mate_sem_wait(mate_instance *lib_ref, mate_sem_name sem)
   }
 
   enviar_mensaje_y_cod_op(sem, ((mate_inner_structure *)lib_ref->group_info)->conexion, SEM_WAIT);
-  char *respuesta = recibir_mensaje(((mate_inner_structure *)lib_ref->group_info)->conexion);
+  int respuesta = recibir_int(((mate_inner_structure *)lib_ref->group_info)->conexion);
 
-  if (strcmp(respuesta, "OK") == 0)
+  if (respuesta != -1)
   {
+    if(respuesta ==0)
+    recibir_mensaje(((mate_inner_structure *)lib_ref->group_info)->conexion);
     log_info(logger, "Se realizó el WAIT correctamente");
     return 0;
   }
@@ -127,18 +129,16 @@ int mate_sem_post(mate_instance *lib_ref, mate_sem_name sem)
   }
 
   enviar_mensaje_y_cod_op(sem, ((mate_inner_structure *)lib_ref->group_info)->conexion, SEM_POST);
-  char *respuesta = recibir_mensaje(((mate_inner_structure *)lib_ref->group_info)->conexion);
-
-  if (strcmp(respuesta, "OK") == 0)
+  int respuesta = recibir_int(((mate_inner_structure *)lib_ref->group_info)->conexion);
+  if (respuesta)
   {
     log_info(logger, "Se realizó el POST correctamente");
-    return 0;
   }
   else
   {
     log_info(logger, "Error al realizar el POST");
-    return -1;
   }
+  return respuesta;
 }
 
 int mate_sem_destroy(mate_instance *lib_ref, mate_sem_name sem)

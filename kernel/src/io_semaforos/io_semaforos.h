@@ -6,7 +6,7 @@ sem_kernel * buscar_semaforo2(char* nombre, int* pos);
 sem_kernel *buscar_semaforo(char *nombre);
 //void sem_kernel_wait(char *nombre, t_pcb *carpincho);
 bool sem_kernel_wait2(t_pcb *carpincho);
-void sem_kernel_post(char *nombre);
+int sem_kernel_post(char *nombre);
 int sem_kernel_init(char* nombre, int value);
 int sem_kernel_destroy(char* nombre);
 void bloquear_por_semaforo(t_pcb *carpincho);
