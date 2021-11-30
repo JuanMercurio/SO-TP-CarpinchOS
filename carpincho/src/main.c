@@ -11,17 +11,16 @@ int main(int argc, char* argv[]) {
    pthread_t hilos[CANT_CARPINCHOS];
    printf("entro al main carpincho\n");
    for (int i=0; i < CANT_CARPINCHOS; i++) {
-      pthread_create(&hilos[i], NULL, (void*)carpincho_comportamiento, NULL);
+      pthread_create(&hilos[i], NULL, (void*)carpincho_comportamiento3, NULL);
    }
    sleep(2);
-   pthread_t hilo;
-
- pthread_create(&hilo, NULL, (void*)carpincho_comportamiento2, NULL);
+   //pthread_t hilo;
+   //pthread_create(&hilo, NULL, (void*)carpincho_comportamiento2, NULL);
 
    for (int i=0; i < CANT_CARPINCHOS; i++) {
       pthread_join(hilos[i], NULL);
    }
- pthread_join(hilo, NULL);
+ //pthread_join(hilo, NULL);
    return 0;
 }
 
@@ -82,6 +81,19 @@ void carpincho_comportamiento2(void* arg){
    mate_close(ref);
 
    printf("=======================================0Termine\n");
+}
+void carpincho_comportamiento3(void *arg)
+{
+   mate_instance* ref = malloc(sizeof(mate_instance));
+    printf("creo instancia\n");
+   int devolvio = mate_init(ref, "cfg/carpincho.config");
+   printf("devolvio -2 %d\n", devolvio);
+   sleep(1);
+   char * mensaje = "hola";
+   devolvio = mate_memwrite(ref,mensaje, 1234, strlen(mensaje));
+  printf("devolvio memwrite -2 %d\n", devolvio);
+   mate_close(ref);
+
 }
 
 void carpincho_comportamiento_memoria(void* arg)

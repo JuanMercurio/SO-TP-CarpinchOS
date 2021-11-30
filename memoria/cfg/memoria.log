@@ -702,3 +702,32 @@
 [INFO] 21:18:01:929 Memoria/(23546:23546): Tlb Inicializada
 [INFO] 21:18:04:257 Memoria/(23546:23550): Se conecto un cliente - Socket: 15
 [INFO] 21:18:04:299 Memoria/(23546:23550): Se desconecto un cliente - Socket: 15 - PID: 1
+[INFO] 20:48:53:346 Memoria/(20519:20519): Tlb Inicializada
+[INFO] 20:49:00:609 Memoria/(20519:20744): Se conecto un cliente - Socket: 5
+[INFO] 20:51:01:253 Memoria/(20519:20985): Se conecto un cliente - Socket: 7
+[INFO] 20:58:08:431 Memoria/(21535:21535): Tlb Inicializada
+[INFO] 20:58:20:226 Memoria/(21535:21717): Se conecto un cliente - Socket: 5
+[INFO] 20:58:21:301 Memoria/(21535:21717): Se recibió del carpincho 5 un MEM write desde la posición 1234 con el mensjaje hola
+[INFO] 20:59:57:530 Memoria/(21535:21819): Se conecto un cliente - Socket: 7
+[INFO] 20:59:58:601 Memoria/(21535:21819): Se recibió del carpincho 7 un MEM write desde la posición 1234 con el mensjaje hola
+[INFO] 21:00:22:810 Memoria/(22039:22039): Tlb Inicializada
+[INFO] 21:00:25:224 Memoria/(22039:22102): Se conecto un cliente - Socket: 5
+[INFO] 21:00:26:294 Memoria/(22039:22102): Se recibió del carpincho 5 un MEM write desde la posición 1234 con el mensjaje hola
+[INFO] 21:01:06:637 Memoria/(22337:22337): Tlb Inicializada
+[INFO] 21:01:09:629 Memoria/(22337:22400): Se conecto un cliente - Socket: 5
+[INFO] 21:01:10:701 Memoria/(22337:22400): Se recibió del carpincho 5 un MEM write desde la posición 1234 con el mensjaje hola
+[INFO] 21:03:52:532 Memoria/(22337:22634): Se conecto un cliente - Socket: 7
+[INFO] 21:03:53:606 Memoria/(22337:22634): Se recibió del carpincho 7 un MEM write desde la posición 1234 con el mensjaje hola
+[INFO] 21:04:25:204 Memoria/(22337:22723): Se conecto un cliente - Socket: 5
+[INFO] 21:04:26:273 Memoria/(22337:22723): Se recibió del carpincho 5 un MEM write desde la posición 1234 con el mensjaje hola
+[INFO] 21:04:47:138 Memoria/(22337:22986): Se conecto un cliente - Socket: 7
+[INFO] 21:04:48:214 Memoria/(22337:22986): Se recibió del carpincho 7 un MEM write desde la posición 1234 con el mensjaje hola
+[INFO] 21:05:50:712 Memoria/(22337:23194): Se conecto un cliente - Socket: 5
+[INFO] 21:05:51:785 Memoria/(22337:23194): Se recibió del carpincho 5 un MEM write desde la posición 1234 con el mensjaje hola
+[INFO] 21:11:27:694 Memoria/(22337:23449): Se conecto un cliente - Socket: 7
+[INFO] 21:11:28:765 Memoria/(22337:23449): Se recibió del carpincho 7 un MEM write desde la posición 1234 con el mensjaje hola
+[INFO] 21:18:42:276 Memoria/(24274:24274): Tlb Inicializada
+[INFO] 21:18:45:506 Memoria/(24274:24337): Se conecto un cliente - Socket: 5
+[INFO] 21:18:46:577 Memoria/(24274:24337): Se recibió del carpincho 5 un MEM write desde la posición 1234 con el mensjaje hola
+[INFO] 21:19:41:410 Memoria/(24274:24551): Se conecto un cliente - Socket: 7
+[INFO] 21:19:42:482 Memoria/(24274:24551): Se recibió del carpincho 7 un MEM write desde la posición 1234 con el mensjaje hola

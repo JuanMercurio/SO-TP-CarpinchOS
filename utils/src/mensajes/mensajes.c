@@ -262,7 +262,6 @@ void enviar_mem_read(int conexion, int cod_op, int origin, int size){// probar q
 	paquete->cod_op = cod_op;
 	paquete->origin = origin;
 	paquete->size = size;
-
 	int bytes = 3* sizeof(int);
 	void* a_enviar = serializar_paquete_mem_read(paquete, bytes);
 
@@ -337,10 +336,13 @@ t_paquete_mem_read recibir_mem_read(int conexion){
 } 
 t_paquete_mem_write recibir_mem_write(int cliente){
 	t_paquete_mem_write recibido;
-	recibido.size = recibir_operacion(cliente);
-	char* buffer = recibir_buffer(recibido.size, cliente);
+	printf("-----------1\n");
+	char* buffer = recibir_mensaje(cliente);
+		printf("-----------1\n");
 	strcpy(recibido.stream, buffer);
+		printf("-----------1\n");
 	recibido.dest = recibir_operacion(cliente);
+		printf("-----------1\n");
 	free(buffer);
 	return recibido;
 }

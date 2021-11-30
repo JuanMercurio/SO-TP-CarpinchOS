@@ -222,21 +222,16 @@ mate_pointer mate_memalloc(mate_instance *lib_ref, int size)
 int mate_memfree(mate_instance *lib_ref, mate_pointer addr)
 {
   log_info(logger, "MEM_FREE a la dirección %d", addr);
-
   enviar_cod_op_e_int(((mate_inner_structure *)lib_ref->group_info)->conexion, MEMFREE, addr);
-
-  int respuesta = recibir_operacion(((mate_inner_structure *)lib_ref->group_info)->conexion);
-
+  int respuesta = recibir_int(((mate_inner_structure *)lib_ref->group_info)->conexion);
   if (respuesta == -5)
   {
     log_info(logger, "Error al realizar el MEM_FREE");
-
     return MATE_FREE_FAULT;
   }
   else
   {
     log_info(logger, "Se realizó el MEM_FREE correctamente");
-
     return respuesta;
   }
 }
@@ -244,11 +239,8 @@ int mate_memfree(mate_instance *lib_ref, mate_pointer addr)
 int mate_memread(mate_instance *lib_ref, mate_pointer origin, void *dest, int size) // revisar que retorna
 {
   mate_inner_structure* info = (mate_inner_structure*)lib_ref->group_info;
-
   log_info(logger, "MEM_READ desde %d el size %d", origin, size);
-
   enviar_mem_read(info->conexion, MEMREAD, (int)origin, size);
-
   int estado = recibir_int(info->conexion);
   if (estado == -1){
     dest = NULL;
@@ -266,7 +258,9 @@ int mate_memwrite(mate_instance *lib_ref, void *origin, mate_pointer dest, int s
 {
   log_info(logger, "MEM_WRITE el mensaje %s en %d", (char *)origin, dest);
 
-  enviar_mem_write(((mate_inner_structure *)lib_ref->group_info)->conexion, MEMWRITE, origin, (int)dest, size);
+  enviar_mensaje_y_cod_op((char*)origin,((mate_inner_structure *)lib_ref->group_info)->conexion, MEMWRITE);
+  enviar_int(((mate_inner_structure *)lib_ref->group_info)->conexion, dest);
+  enviar_int(((mate_inner_structure *)lib_ref->group_info)->conexion, size);
   int recibido = recibir_operacion(((mate_inner_structure *)lib_ref->group_info)->conexion);
 
   if (recibido == -7)

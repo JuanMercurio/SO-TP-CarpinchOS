@@ -54,14 +54,22 @@ void ejecutar_proceso(int cliente)
                 break;
 
             case MEMWRITE:
-                memwrite_comportamiento(tabla, cliente);
+            printf(" llego un mem write\n");
+            char *recibido = recibir_mensaje(cliente);
+            int dest = recibir_operacion(cliente);
+            int size = recibir_operacion(cliente);
+             log_info(logger, "Se recibió del carpincho %d un MEM write desde la posición %d con el mensjaje %s", cliente, dest, recibido);
+             sleep(6);
+             printf("enviando ok\n");
+             enviar_int(cliente, 0);
+                //memwrite_comportamiento(tabla, cliente);
                 break;
 
             case NEW_INSTANCE_KERNEL:
                 new_instance_kernel_comportamiento(tabla, cliente, &conectado);
                 break;
 
-            case MATE_CLOSE: 
+            case MATE_CLOSE: printf("mate close\n");
                 mate_close_comportamiento(tabla, cliente, &conectado);
                 break;
 

@@ -130,7 +130,7 @@ void receptor(void *arg)
    t_pcb *carpincho;
    t_paquete_semaforo *semaforo ;
    t_paquete_mem_read mem_read;
-   t_paquete_mem_write mem_write;
+   t_paquete_mem_write *mem_write;
    char* recibido;
    sem_kernel *sem ;
 
@@ -281,26 +281,36 @@ void receptor(void *arg)
                free(recibido);
                break;
 
-      case MEMWRITE:carpincho->proxima_instruccion = MEMWRITE;
-               mem_write = recibir_mem_write(cliente);
-               log_info(logger, "Se recibió del carpincho %d un MEM write desde la posición %d con el mensjaje %s", carpincho->pid, mem_write.dest, mem_write.buffer->stream);
-               enviar_mem_write(carpincho->fd_memoria, MEMWRITE, mem_write.buffer->stream,mem_write.dest, mem_write.buffer->size);
-               aux_int = recibir_int(carpincho->fd_memoria);
-               if (aux_int != -7){
-                   enviar_cod_op_e_int(cliente, 0, aux_int);
-               }else{
-                   enviar_cod_op_e_int(cliente, 0, -7);
-               }
-                 
-               break;
+      case MEMWRITE:
+         carpincho->proxima_instruccion = MEMWRITE;
+         recibido = recibir_mensaje(cliente);
+         aux_int = recibir_int(cliente);
+         int size = recibir_int(cliente);
+         enviar_mensaje_y_cod_op(recibido, carpincho->fd_memoria, MEMWRITE);
+         enviar_int(carpincho->fd_memoria, aux_int);
+         enviar_int(carpincho->fd_memoria, size);
+
+         log_info(logger, "Se recibió del carpincho %d un MEM write desde la posición %d con el mensjaje %s", carpincho->pid, aux_int, recibido);
+          printf("-----------------------------esperando respuesta ememoria\n" );
+         aux_int = recibir_int(carpincho->fd_memoria);
+         printf("aux int %d\n", aux_int );
+             if (aux_int == -7)
+         {
+            enviar_int(cliente, -7);
+         }
+         else
+         {
+            enviar_int(cliente, 0);
+         }
+         free(recibido);
+         break;
 
       case MATE_CLOSE:
-              log_info(logger, "Se recibió del carpincho %d un MATE CLOSE", carpincho->pid);
-              printf("RECEPTOR: recibi mate close\n");
+               log_info(logger, "Se recibió del carpincho %d un MATE CLOSE", carpincho->pid);
                carpincho->proxima_instruccion = MATE_CLOSE;
                sem_post(&carpincho->semaforo_evento);
                enviar_mensaje( cliente, "OK");
-               // enviar_int(carpincho->fd_memoria, MATE_CLOSE)
+               enviar_int(carpincho->fd_memoria, MATE_CLOSE);
                conectado = false;
               printf("RECEPTOR: terminando conexion... carpincho fue asado\n");
       break;

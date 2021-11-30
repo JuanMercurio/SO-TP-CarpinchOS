@@ -1,0 +1,254 @@
+[INFO] 20:32:05:812 Matelib/(15770:15771): Log Matelib creado
+[INFO] 20:32:05:812 Matelib/(15770:15771): Esperando respuesta de servidor
+[INFO] 20:32:05:813 Matelib/(15770:15771): NUEVO CARPINCHO
+[INFO] 20:32:05:857 Matelib/(15770:15771): Carpincho creado correctamente con el pid: 0
+[INFO] 20:32:06:858 Matelib/(15770:15771): MEM_WRITE el mensaje hola en 123
+[INFO] 20:32:07:173 Matelib/(15770:15771): Se realizó el MEM_WRITE correctamente
+[INFO] 20:32:07:173 Matelib/(15770:15771): MATE_CLOSE
+[INFO] 20:33:27:025 Matelib/(16155:16156): Log Matelib creado
+[INFO] 20:33:27:025 Matelib/(16155:16156): Esperando respuesta de servidor
+[INFO] 20:33:27:026 Matelib/(16155:16156): NUEVO CARPINCHO
+[INFO] 20:33:27:069 Matelib/(16155:16156): Carpincho creado correctamente con el pid: 0
+[INFO] 20:33:28:069 Matelib/(16155:16156): MEM_WRITE el mensaje hola en 123
+[INFO] 20:33:28:371 Matelib/(16155:16156): Se realizó el MEM_WRITE correctamente
+[INFO] 20:33:28:371 Matelib/(16155:16156): MATE_CLOSE
+[INFO] 20:34:05:309 Matelib/(16485:16486): Log Matelib creado
+[INFO] 20:34:05:309 Matelib/(16485:16486): Esperando respuesta de servidor
+[INFO] 20:34:05:310 Matelib/(16485:16486): NUEVO CARPINCHO
+[INFO] 20:34:05:354 Matelib/(16485:16486): Carpincho creado correctamente con el pid: 0
+[INFO] 20:34:06:354 Matelib/(16485:16486): MEM_WRITE el mensaje hola en 123
+[INFO] 20:34:06:640 Matelib/(16485:16486): Se realizó el MEM_WRITE correctamente
+[INFO] 20:34:06:640 Matelib/(16485:16486): MATE_CLOSE
+[INFO] 20:34:25:038 Matelib/(16675:16676): Log Matelib creado
+[INFO] 20:34:25:038 Matelib/(16675:16676): Esperando respuesta de servidor
+[INFO] 20:34:25:039 Matelib/(16675:16676): NUEVO CARPINCHO
+[INFO] 20:34:25:081 Matelib/(16675:16676): Carpincho creado correctamente con el pid: 0
+[INFO] 20:34:26:081 Matelib/(16675:16676): MEM_WRITE el mensaje hola en 123
+[INFO] 20:34:26:390 Matelib/(16675:16676): Se realizó el MEM_WRITE correctamente
+[INFO] 20:34:26:390 Matelib/(16675:16676): MATE_CLOSE
+[INFO] 20:37:52:388 Matelib/(17157:17158): Log Matelib creado
+[INFO] 20:37:52:388 Matelib/(17157:17158): Esperando respuesta de servidor
+[INFO] 20:37:52:389 Matelib/(17157:17158): NUEVO CARPINCHO
+[INFO] 20:37:52:433 Matelib/(17157:17158): Carpincho creado correctamente con el pid: 0
+[INFO] 20:37:53:434 Matelib/(17157:17158): MEM_WRITE el mensaje hola en 123
+[INFO] 20:37:53:434 Matelib/(17157:17158): Se realizó el MEM_WRITE correctamente
+[INFO] 20:37:53:434 Matelib/(17157:17158): MATE_CLOSE
+[INFO] 20:37:53:434 Matelib/(17157:17158): MATE_CLOSE: mensaje enviado a kernel
+[INFO] 20:37:53:434 Matelib/(17157:17158): respuesta de kernel: (null)
+[INFO] 20:37:53:434 Matelib/(17157:17158): libero memoria
+[INFO] 20:37:53:434 Matelib/(17157:17158): libero memoria
+[INFO] 20:37:53:434 Matelib/(17157:17158): Carpincho eliminado
+[INFO] 20:42:32:705 Matelib/(17560:17561): Log Matelib creado
+[INFO] 20:42:32:705 Matelib/(17560:17561): Esperando respuesta de servidor
+[INFO] 20:42:32:706 Matelib/(17560:17561): NUEVO CARPINCHO
+[INFO] 20:42:32:749 Matelib/(17560:17561): Carpincho creado correctamente con el pid: 0
+[INFO] 20:42:33:750 Matelib/(17560:17561): MEM_WRITE el mensaje hola en 123
+[INFO] 20:43:17:335 Matelib/(18835:18836): Log Matelib creado
+[INFO] 20:43:17:335 Matelib/(18835:18836): Esperando respuesta de servidor
+[INFO] 20:43:17:336 Matelib/(18835:18836): NUEVO CARPINCHO
+[INFO] 20:43:17:377 Matelib/(18835:18836): Carpincho creado correctamente con el pid: 0
+[INFO] 20:43:18:377 Matelib/(18835:18836): MEM_WRITE el mensaje hola en 123
+[INFO] 20:43:18:417 Matelib/(18835:18836): Se realizó el MEM_WRITE correctamente
+[INFO] 20:43:18:417 Matelib/(18835:18836): MATE_CLOSE
+[INFO] 20:43:18:417 Matelib/(18835:18836): MATE_CLOSE: mensaje enviado a kernel
+[INFO] 20:43:18:417 Matelib/(18835:18836): respuesta de kernel: 
+[INFO] 20:43:18:417 Matelib/(18835:18836): libero memoria
+[INFO] 20:43:18:417 Matelib/(18835:18836): libero memoria
+[INFO] 20:43:18:417 Matelib/(18835:18836): Carpincho eliminado
+[INFO] 20:44:20:034 Matelib/(19052:19053): Log Matelib creado
+[INFO] 20:44:20:034 Matelib/(19052:19053): Esperando respuesta de servidor
+[INFO] 20:44:20:035 Matelib/(19052:19053): NUEVO CARPINCHO
+[INFO] 20:44:20:081 Matelib/(19052:19053): Carpincho creado correctamente con el pid: 0
+[INFO] 20:44:21:082 Matelib/(19052:19053): MEM_WRITE el mensaje hola en 1234
+[INFO] 20:44:21:121 Matelib/(19052:19053): Se realizó el MEM_WRITE correctamente
+[INFO] 20:44:21:121 Matelib/(19052:19053): MATE_CLOSE
+[INFO] 20:44:21:121 Matelib/(19052:19053): MATE_CLOSE: mensaje enviado a kernel
+[INFO] 20:44:21:121 Matelib/(19052:19053): respuesta de kernel: 
+[INFO] 20:44:21:121 Matelib/(19052:19053): libero memoria
+[INFO] 20:44:21:121 Matelib/(19052:19053): libero memoria
+[INFO] 20:44:21:121 Matelib/(19052:19053): Carpincho eliminado
+[INFO] 20:45:08:450 Matelib/(19270:19271): Log Matelib creado
+[INFO] 20:45:08:450 Matelib/(19270:19271): Esperando respuesta de servidor
+[INFO] 20:45:08:451 Matelib/(19270:19271): NUEVO CARPINCHO
+[INFO] 20:45:08:497 Matelib/(19270:19271): Carpincho creado correctamente con el pid: 0
+[INFO] 20:45:09:499 Matelib/(19270:19271): MEM_WRITE el mensaje hola en 1234
+[INFO] 20:45:09:537 Matelib/(19270:19271): Se realizó el MEM_WRITE correctamente
+[INFO] 20:45:09:537 Matelib/(19270:19271): MATE_CLOSE
+[INFO] 20:45:09:537 Matelib/(19270:19271): MATE_CLOSE: mensaje enviado a kernel
+[INFO] 20:45:09:537 Matelib/(19270:19271): respuesta de kernel: 
+[INFO] 20:45:09:537 Matelib/(19270:19271): libero memoria
+[INFO] 20:45:09:537 Matelib/(19270:19271): libero memoria
+[INFO] 20:45:09:537 Matelib/(19270:19271): Carpincho eliminado
+[INFO] 20:49:00:597 Matelib/(20741:20742): Log Matelib creado
+[INFO] 20:49:00:597 Matelib/(20741:20742): Esperando respuesta de servidor
+[INFO] 20:49:00:599 Matelib/(20741:20742): NUEVO CARPINCHO
+[INFO] 20:49:00:641 Matelib/(20741:20742): Carpincho creado correctamente con el pid: 0
+[INFO] 20:49:01:641 Matelib/(20741:20742): MEM_WRITE el mensaje hola en 1234
+[INFO] 20:49:01:682 Matelib/(20741:20742): Se realizó el MEM_WRITE correctamente
+[INFO] 20:49:01:682 Matelib/(20741:20742): MATE_CLOSE
+[INFO] 20:49:01:682 Matelib/(20741:20742): MATE_CLOSE: mensaje enviado a kernel
+[INFO] 20:49:01:682 Matelib/(20741:20742): respuesta de kernel: 
+[INFO] 20:49:01:682 Matelib/(20741:20742): libero memoria
+[INFO] 20:49:01:682 Matelib/(20741:20742): libero memoria
+[INFO] 20:49:01:682 Matelib/(20741:20742): Carpincho eliminado
+[INFO] 20:51:01:241 Matelib/(20982:20983): Log Matelib creado
+[INFO] 20:51:01:241 Matelib/(20982:20983): Esperando respuesta de servidor
+[INFO] 20:51:01:242 Matelib/(20982:20983): NUEVO CARPINCHO
+[INFO] 20:51:01:285 Matelib/(20982:20983): Carpincho creado correctamente con el pid: 0
+[INFO] 20:51:02:286 Matelib/(20982:20983): MEM_WRITE el mensaje hola en 1234
+[INFO] 20:51:02:326 Matelib/(20982:20983): Se realizó el MEM_WRITE correctamente
+[INFO] 20:51:02:326 Matelib/(20982:20983): MATE_CLOSE
+[INFO] 20:51:02:326 Matelib/(20982:20983): MATE_CLOSE: mensaje enviado a kernel
+[INFO] 20:51:02:326 Matelib/(20982:20983): respuesta de kernel: OK
+[INFO] 20:51:02:326 Matelib/(20982:20983): libero memoria
+[INFO] 20:51:02:326 Matelib/(20982:20983): libero memoria
+[INFO] 20:51:02:326 Matelib/(20982:20983): Carpincho eliminado
+[INFO] 20:58:20:215 Matelib/(21714:21715): Log Matelib creado
+[INFO] 20:58:20:215 Matelib/(21714:21715): Esperando respuesta de servidor
+[INFO] 20:58:20:217 Matelib/(21714:21715): NUEVO CARPINCHO
+[INFO] 20:58:20:262 Matelib/(21714:21715): Carpincho creado correctamente con el pid: 0
+[INFO] 20:58:21:262 Matelib/(21714:21715): MEM_WRITE el mensaje hola en 1234
+[INFO] 20:58:21:301 Matelib/(21714:21715): Se realizó el MEM_WRITE correctamente
+[INFO] 20:58:21:301 Matelib/(21714:21715): MATE_CLOSE
+[INFO] 20:58:21:301 Matelib/(21714:21715): MATE_CLOSE: mensaje enviado a kernel
+[INFO] 20:58:21:301 Matelib/(21714:21715): respuesta de kernel: OK
+[INFO] 20:58:21:301 Matelib/(21714:21715): libero memoria
+[INFO] 20:58:21:301 Matelib/(21714:21715): libero memoria
+[INFO] 20:58:21:301 Matelib/(21714:21715): Carpincho eliminado
+[INFO] 20:59:57:514 Matelib/(21816:21817): Log Matelib creado
+[INFO] 20:59:57:514 Matelib/(21816:21817): Esperando respuesta de servidor
+[INFO] 20:59:57:515 Matelib/(21816:21817): NUEVO CARPINCHO
+[INFO] 20:59:57:561 Matelib/(21816:21817): Carpincho creado correctamente con el pid: 1
+[INFO] 20:59:58:562 Matelib/(21816:21817): MEM_WRITE el mensaje hola en 1234
+[INFO] 20:59:58:601 Matelib/(21816:21817): Se realizó el MEM_WRITE correctamente
+[INFO] 20:59:58:601 Matelib/(21816:21817): MATE_CLOSE
+[INFO] 20:59:58:601 Matelib/(21816:21817): MATE_CLOSE: mensaje enviado a kernel
+[INFO] 20:59:58:602 Matelib/(21816:21817): respuesta de kernel: OK
+[INFO] 20:59:58:602 Matelib/(21816:21817): libero memoria
+[INFO] 20:59:58:602 Matelib/(21816:21817): libero memoria
+[INFO] 20:59:58:602 Matelib/(21816:21817): Carpincho eliminado
+[INFO] 21:00:25:209 Matelib/(22099:22100): Log Matelib creado
+[INFO] 21:00:25:209 Matelib/(22099:22100): Esperando respuesta de servidor
+[INFO] 21:00:25:216 Matelib/(22099:22100): NUEVO CARPINCHO
+[INFO] 21:00:25:253 Matelib/(22099:22100): Carpincho creado correctamente con el pid: 2
+[INFO] 21:00:26:254 Matelib/(22099:22100): MEM_WRITE el mensaje hola en 1234
+[INFO] 21:00:26:294 Matelib/(22099:22100): Se realizó el MEM_WRITE correctamente
+[INFO] 21:00:26:294 Matelib/(22099:22100): MATE_CLOSE
+[INFO] 21:00:26:294 Matelib/(22099:22100): MATE_CLOSE: mensaje enviado a kernel
+[INFO] 21:00:26:294 Matelib/(22099:22100): respuesta de kernel: OK
+[INFO] 21:00:26:294 Matelib/(22099:22100): libero memoria
+[INFO] 21:00:26:294 Matelib/(22099:22100): libero memoria
+[INFO] 21:00:26:294 Matelib/(22099:22100): Carpincho eliminado
+[INFO] 21:01:09:613 Matelib/(22397:22398): Log Matelib creado
+[INFO] 21:01:09:613 Matelib/(22397:22398): Esperando respuesta de servidor
+[INFO] 21:01:09:624 Matelib/(22397:22398): NUEVO CARPINCHO
+[INFO] 21:01:09:661 Matelib/(22397:22398): Carpincho creado correctamente con el pid: 3
+[INFO] 21:01:10:661 Matelib/(22397:22398): MEM_WRITE el mensaje hola en 1234
+[INFO] 21:01:10:701 Matelib/(22397:22398): Se realizó el MEM_WRITE correctamente
+[INFO] 21:01:10:701 Matelib/(22397:22398): MATE_CLOSE
+[INFO] 21:01:10:701 Matelib/(22397:22398): MATE_CLOSE: mensaje enviado a kernel
+[INFO] 21:01:10:701 Matelib/(22397:22398): respuesta de kernel: OK
+[INFO] 21:01:10:701 Matelib/(22397:22398): libero memoria
+[INFO] 21:01:10:701 Matelib/(22397:22398): libero memoria
+[INFO] 21:01:10:701 Matelib/(22397:22398): Carpincho eliminado
+[INFO] 21:03:52:520 Matelib/(22631:22632): Log Matelib creado
+[INFO] 21:03:52:520 Matelib/(22631:22632): Esperando respuesta de servidor
+[INFO] 21:03:52:521 Matelib/(22631:22632): NUEVO CARPINCHO
+[INFO] 21:03:52:567 Matelib/(22631:22632): Carpincho creado correctamente con el pid: 0
+[INFO] 21:03:53:568 Matelib/(22631:22632): MEM_WRITE el mensaje hola en 1234
+[INFO] 21:03:53:606 Matelib/(22631:22632): Se realizó el MEM_WRITE correctamente
+[INFO] 21:03:53:606 Matelib/(22631:22632): MATE_CLOSE
+[INFO] 21:03:53:606 Matelib/(22631:22632): MATE_CLOSE: mensaje enviado a kernel
+[INFO] 21:03:53:606 Matelib/(22631:22632): respuesta de kernel: OK
+[INFO] 21:03:53:606 Matelib/(22631:22632): libero memoria
+[INFO] 21:03:53:606 Matelib/(22631:22632): libero memoria
+[INFO] 21:03:53:606 Matelib/(22631:22632): Carpincho eliminado
+[INFO] 21:04:25:189 Matelib/(22720:22721): Log Matelib creado
+[INFO] 21:04:25:190 Matelib/(22720:22721): Esperando respuesta de servidor
+[INFO] 21:04:25:191 Matelib/(22720:22721): NUEVO CARPINCHO
+[INFO] 21:04:25:233 Matelib/(22720:22721): Carpincho creado correctamente con el pid: 1
+[INFO] 21:04:26:234 Matelib/(22720:22721): MEM_WRITE el mensaje hola en 1234
+[INFO] 21:04:26:273 Matelib/(22720:22721): Se realizó el MEM_WRITE correctamente
+[INFO] 21:04:26:273 Matelib/(22720:22721): MATE_CLOSE
+[INFO] 21:04:26:273 Matelib/(22720:22721): MATE_CLOSE: mensaje enviado a kernel
+[INFO] 21:04:26:273 Matelib/(22720:22721): respuesta de kernel: OK
+[INFO] 21:04:26:273 Matelib/(22720:22721): libero memoria
+[INFO] 21:04:26:273 Matelib/(22720:22721): libero memoria
+[INFO] 21:04:26:273 Matelib/(22720:22721): Carpincho eliminado
+[INFO] 21:04:47:128 Matelib/(22983:22984): Log Matelib creado
+[INFO] 21:04:47:129 Matelib/(22983:22984): Esperando respuesta de servidor
+[INFO] 21:04:47:135 Matelib/(22983:22984): NUEVO CARPINCHO
+[INFO] 21:04:47:173 Matelib/(22983:22984): Carpincho creado correctamente con el pid: 0
+[INFO] 21:04:48:174 Matelib/(22983:22984): MEM_WRITE el mensaje hola en 1234
+[INFO] 21:05:47:459 Matelib/(22983:22984): Se realizó el MEM_WRITE correctamente
+[INFO] 21:05:47:459 Matelib/(22983:22984): MATE_CLOSE
+[INFO] 21:05:47:459 Matelib/(22983:22984): MATE_CLOSE: mensaje enviado a kernel
+[INFO] 21:05:47:459 Matelib/(22983:22984): respuesta de kernel: (null)
+[INFO] 21:05:47:459 Matelib/(22983:22984): libero memoria
+[INFO] 21:05:47:459 Matelib/(22983:22984): libero memoria
+[INFO] 21:05:47:459 Matelib/(22983:22984): Carpincho eliminado
+[INFO] 21:05:50:700 Matelib/(23191:23192): Log Matelib creado
+[INFO] 21:05:50:700 Matelib/(23191:23192): Esperando respuesta de servidor
+[INFO] 21:05:50:701 Matelib/(23191:23192): NUEVO CARPINCHO
+[INFO] 21:05:50:747 Matelib/(23191:23192): Carpincho creado correctamente con el pid: 0
+[INFO] 21:05:51:748 Matelib/(23191:23192): MEM_WRITE el mensaje hola en 1234
+[INFO] 21:05:51:785 Matelib/(23191:23192): Se realizó el MEM_WRITE correctamente
+[INFO] 21:05:51:785 Matelib/(23191:23192): MATE_CLOSE
+[INFO] 21:05:51:785 Matelib/(23191:23192): MATE_CLOSE: mensaje enviado a kernel
+[INFO] 21:05:51:786 Matelib/(23191:23192): respuesta de kernel: OK
+[INFO] 21:05:51:786 Matelib/(23191:23192): libero memoria
+[INFO] 21:05:51:786 Matelib/(23191:23192): libero memoria
+[INFO] 21:05:51:786 Matelib/(23191:23192): Carpincho eliminado
+[INFO] 21:11:27:681 Matelib/(23446:23447): Log Matelib creado
+[INFO] 21:11:27:681 Matelib/(23446:23447): Esperando respuesta de servidor
+[INFO] 21:11:27:682 Matelib/(23446:23447): NUEVO CARPINCHO
+[INFO] 21:11:27:725 Matelib/(23446:23447): Carpincho creado correctamente con el pid: 0
+[INFO] 21:11:28:725 Matelib/(23446:23447): MEM_WRITE el mensaje hola en 1234
+[INFO] 21:12:59:498 Matelib/(23625:23626): Log Matelib creado
+[INFO] 21:12:59:498 Matelib/(23625:23626): Esperando respuesta de servidor
+[INFO] 21:12:59:499 Matelib/(23625:23626): NUEVO CARPINCHO
+[INFO] 21:12:59:541 Matelib/(23625:23626): Carpincho creado correctamente con el pid: 0
+[INFO] 21:13:00:542 Matelib/(23625:23626): MEM_WRITE el mensaje hola en 1234
+[INFO] 21:13:35:671 Matelib/(23625:23626): Se realizó el MEM_WRITE correctamente
+[INFO] 21:13:35:671 Matelib/(23625:23626): MATE_CLOSE
+[INFO] 21:13:35:671 Matelib/(23625:23626): MATE_CLOSE: mensaje enviado a kernel
+[INFO] 21:13:35:671 Matelib/(23625:23626): respuesta de kernel: (null)
+[INFO] 21:13:35:671 Matelib/(23625:23626): libero memoria
+[INFO] 21:13:35:671 Matelib/(23625:23626): libero memoria
+[INFO] 21:13:35:671 Matelib/(23625:23626): Carpincho eliminado
+[INFO] 21:13:43:365 Matelib/(23825:23826): Log Matelib creado
+[INFO] 21:13:43:365 Matelib/(23825:23826): Esperando respuesta de servidor
+[INFO] 21:13:43:366 Matelib/(23825:23826): NUEVO CARPINCHO
+[INFO] 21:13:43:410 Matelib/(23825:23826): Carpincho creado correctamente con el pid: 0
+[INFO] 21:13:44:410 Matelib/(23825:23826): MEM_WRITE el mensaje hola en 1234
+[INFO] 21:18:20:337 Matelib/(23825:23826): Se realizó el MEM_WRITE correctamente
+[INFO] 21:18:20:337 Matelib/(23825:23826): MATE_CLOSE
+[INFO] 21:18:20:337 Matelib/(23825:23826): MATE_CLOSE: mensaje enviado a kernel
+[INFO] 21:18:20:337 Matelib/(23825:23826): respuesta de kernel: (null)
+[INFO] 21:18:20:337 Matelib/(23825:23826): libero memoria
+[INFO] 21:18:20:337 Matelib/(23825:23826): libero memoria
+[INFO] 21:18:20:337 Matelib/(23825:23826): Carpincho eliminado
+[INFO] 21:18:45:494 Matelib/(24334:24335): Log Matelib creado
+[INFO] 21:18:45:494 Matelib/(24334:24335): Esperando respuesta de servidor
+[INFO] 21:18:45:495 Matelib/(24334:24335): NUEVO CARPINCHO
+[INFO] 21:18:45:538 Matelib/(24334:24335): Carpincho creado correctamente con el pid: 0
+[INFO] 21:18:46:538 Matelib/(24334:24335): MEM_WRITE el mensaje hola en 1234
+[INFO] 21:19:27:106 Matelib/(24334:24335): Se realizó el MEM_WRITE correctamente
+[INFO] 21:19:27:106 Matelib/(24334:24335): MATE_CLOSE
+[INFO] 21:19:27:106 Matelib/(24334:24335): MATE_CLOSE: mensaje enviado a kernel
+[INFO] 21:19:27:106 Matelib/(24334:24335): respuesta de kernel: (null)
+[INFO] 21:19:27:106 Matelib/(24334:24335): libero memoria
+[INFO] 21:19:27:106 Matelib/(24334:24335): libero memoria
+[INFO] 21:19:27:106 Matelib/(24334:24335): Carpincho eliminado
+[INFO] 21:19:41:397 Matelib/(24548:24549): Log Matelib creado
+[INFO] 21:19:41:397 Matelib/(24548:24549): Esperando respuesta de servidor
+[INFO] 21:19:41:398 Matelib/(24548:24549): NUEVO CARPINCHO
+[INFO] 21:19:41:441 Matelib/(24548:24549): Carpincho creado correctamente con el pid: 0
+[INFO] 21:19:42:441 Matelib/(24548:24549): MEM_WRITE el mensaje hola en 1234
+[INFO] 21:19:42:482 Matelib/(24548:24549): Se realizó el MEM_WRITE correctamente
+[INFO] 21:19:42:482 Matelib/(24548:24549): MATE_CLOSE
+[INFO] 21:19:42:482 Matelib/(24548:24549): MATE_CLOSE: mensaje enviado a kernel
+[INFO] 21:19:42:482 Matelib/(24548:24549): respuesta de kernel: OK
+[INFO] 21:19:42:482 Matelib/(24548:24549): libero memoria
+[INFO] 21:19:42:482 Matelib/(24548:24549): libero memoria
+[INFO] 21:19:42:482 Matelib/(24548:24549): Carpincho eliminado
