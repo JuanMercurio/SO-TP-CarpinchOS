@@ -106,7 +106,7 @@ int sem_kernel_init(char* nombre, int value){
  int *pos = malloc(sizeof(int));
    sem_kernel * comparador = buscar_semaforo2(nombre, pos);
    if(comparador != NULL){
-      log_info(logger, "SEMAFORO YA INICIALIZADO\n");
+      log_info(logger, "SEMAFORO YA INICIALIZADO");
       return -1;
    }else{
    sem_kernel *nuevo_sem = malloc(sizeof(sem_kernel));
@@ -120,7 +120,7 @@ int sem_kernel_init(char* nombre, int value){
    list_add(lista_sem_kernel,(void*) nuevo_sem);
    sem_kernel *aaa = (sem_kernel*)list_get(lista_sem_kernel,0);
    sem_post(&mutex_lista_sem_kernel);
-   log_info(logger, "SEMAFORO %s inicializado con %d\n",(char*) nombre, value);
+   log_info(logger, "SEMAFORO %s inicializado con %d",(char*) nombre, value);
     
     free(pos);
    return 0;
@@ -131,7 +131,7 @@ int sem_kernel_destroy(char* nombre){// ARREGLAR
 int pos;
    sem_kernel *sem = buscar_semaforo2(nombre, &pos);
    if(sem == NULL){
-      log_info(logger, "SEMAFORO YA destruido\n");
+      log_info(logger, "SEMAFORO YA destruido");
       return -1;
    }else{
 

@@ -23,6 +23,7 @@ void procesador()
        printf("PROCESADOR: paso wait de lista\n");
       t_pcb *carpincho = (t_pcb *)list_remove(lista_ordenada_por_algoritmo, 0);
       sem_post(&mutex_lista_oredenada_por_algoritmo);
+      log_info(logger, "Carpincho %d - Comienza a ejecutar", carpincho->pid);
       printf("PROCESADOR: saco de lista ejecutando ordenada a carpincho %d\n", carpincho->pid);
       carpincho->tiempo.time_stamp_fin = temporal_get_string_time("%H:%M:%S:%MS"); // al comenzar a ejecutar corta el eltiempo de espera
       carpincho->tiempo.tiempo_de_espera = obtener_tiempo(carpincho->tiempo.time_stamp_inicio, carpincho->tiempo.time_stamp_fin);
@@ -79,6 +80,7 @@ bool verificar_suspension()
 void iniciar_planificador_corto_plazo()
 {
    log_info(logger, "hola soy EL plani corto");
+   log_info(logger, "El planificador utiliza el algoritmo %s",configuracion.ALGORITMO_PLANIFICACION);
    while (!terminar)
    {
        printf("PCP: =======================0000 esperando carpincho\n");
@@ -121,18 +123,23 @@ void estimador(t_pcb *carpincho)
       carpincho->tiempo.tiempo_ejecutado = obtener_tiempo(carpincho->tiempo.time_stamp_inicio, carpincho->tiempo.time_stamp_fin);
       printf("ESTIMADOR: carpincho que volvio de ejecutar\n ");
    }
+      log_info(logger, "Carpincho %d - Estimación anterior: %d", carpincho->pid, carpincho->tiempo.estimacion);
+
     printf("ESTIMADOR: carpincho nuevo\n");
       printf("ESTIMADOR: ALPHA %f\n",  configuracion.ALPHA);
       printf("ESTIMADOR: estimacion antes %f\n",  carpincho->tiempo.estimacion);
+      
       int aux = (carpincho->tiempo.estimacion * configuracion.ALPHA);
    carpincho->tiempo.estimacion = aux + (carpincho->tiempo.tiempo_ejecutado * (1 - configuracion.ALPHA));
     printf("ESTIMADOR: estimacion despues %f\n",  carpincho->tiempo.estimacion);
+    log_info(logger, "Carpincho %d - Estimación actual: %d", carpincho->pid, carpincho->tiempo.estimacion);
 }
 
 void estimador_HRRN(t_pcb *carpincho)
 { // esto la complica bastante
-   estimador(carpincho);
+   estimador(carpincho); // está bien que llame a estimador()? la función esa no usa la fórmula de SJF?
    carpincho->tiempo.estimacion = (carpincho->tiempo.tiempo_de_espera + carpincho->tiempo.estimacion) / carpincho->tiempo.estimacion;
+   log_info(logger, "Carpincho %d - Estimación actual: %d", carpincho->pid, carpincho->tiempo.estimacion);
 }
 double obtener_tiempo(char *inicio, char *fin)
 { // planteo asi esta funcion para poder usarla con el teimpo de espera tambien
@@ -222,12 +229,14 @@ void iniciar_planificador_largo_plazo()
    {
       sem_wait(&controlador_multiprogramacion);
       sem_wait(&cola_new_con_elementos);
+      log_info(logger, "Llegó un carpincho al planificador de largo plazo");
   printf("PLANIFICADOR LARGO PLAZO: llego un carpincho a largo plazo\n");
       if (queue_is_empty(suspendido_listo))
       { //si el mediano plazo suspendio algo tiene prioridad ese
          sem_wait(&mutex_cola_new);
          carpincho = queue_pop(cola_new);
          sem_post(&mutex_cola_new);
+         log_info(logger, "Carpincho %d - Se saca de la cola new", carpincho->pid);
          printf("PLANIFICADOR LARGO PLAZO: saco de cola new\n");
          inicializar_proceso_carpincho(carpincho);
       }
@@ -235,6 +244,7 @@ void iniciar_planificador_largo_plazo()
       {
          sem_wait(&mutex_cola_listo_suspendido);
          carpincho = queue_pop(suspendido_listo);
+         log_info(logger, "Carpincho %d - Se saca de la cola suspendido", carpincho->pid);
          enviar_mensaje_y_cod_op("sali de suspension", carpincho->fd_memoria, VUELTA_A_READY);// traer de swamp las paginasssssss
          sem_post(&mutex_cola_listo_suspendido);
       }
@@ -301,6 +311,7 @@ printf("ELIMINAR CARPINCHO: entro a eliminar\n");
    close(carpincho->fd_cliente);
    close(carpincho->fd_memoria);
    printf("ELIMINAR CARPINCHO: cerro conexiones\n");
+   log_info(logger, "Carpincho %d - Eliminado", carpincho->pid);
    free(carpincho);
 printf("ELIMINAR CARPINCHO: elimino carpincho\n");
 }
@@ -325,6 +336,7 @@ void bloqueado_a_listo(t_queue *cola, sem_t *mutex)
    sem_wait(&mutex_cola_ready);
    queue_push(cola_ready, (void *)carpincho);
    sem_post(&mutex_cola_ready);
+   log_info(logger, "Carpincho %d - Se saca de bloqueado", carpincho->pid);
    printf("BLOQUEADO_A_LISTO: desbloqueado\n");
    //sem_post(&carpincho->semaforo_fin_evento);
    sem_post(&cola_ready_con_elementos);
