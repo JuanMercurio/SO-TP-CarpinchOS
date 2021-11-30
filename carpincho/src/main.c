@@ -5,7 +5,8 @@
 
 #define CANT_CARPINCHOS 1
 int main(int argc, char* argv[]) {
-  //if ( argc>=1 && (strcmp(argv[1], "memoria")== 0)) memoria_carpincho();
+  if ( argc>=1 && (strcmp(argv[1], "memoria")== 0)) memoria_carpincho();
+
 
    pthread_t hilos[CANT_CARPINCHOS];
    printf("entro al main carpincho\n");
@@ -104,55 +105,54 @@ void carpincho_comportamiento_memoria(void* arg)
    if (init == -1){
       fprintf(stderr, "No se puedo iniciar el carpincho \n");
    }
-   printf("----------- \n\n");
 
    printf("-- Mate MALLOC -- \n");
-   int dl = mate_memalloc(c, 10);
+   int dl = mate_memalloc(c, 64);
    if (dl == -1){
       fprintf(stderr, "No pude reservar memoria \n");
+      abort();
    }
    else{
 	   printf("\n La direccion logica es: %d \n", dl);
    }
-   printf("----------- \n\n");
 
    printf("-- Mate WRITE -- \n");
-   void* buffer = malloc(sizeof(int));
    char* saturno = "jejeje";
    int size = strlen(saturno) + 1;
+   void* buffer = malloc(size);
    memcpy(buffer, saturno, size);
 
    int escritos = mate_memwrite(c, buffer, dl , size);
    if (escritos == MATE_WRITE_FAULT){
       fprintf(stderr, "Error de MATE_WRITE_FAULT \n");
+      abort();
    }
-   printf("----------- \n\n");
 
    printf("-- Mate READ -- \n");
-   void* leer;
-   int leidos = mate_memread(c, dl, leer,  size);
-   if (leidos == MATE_READ_FAULT){
-      fprintf(stderr, "Error de MATE_READ_FAULT \n");
+   void* leer = malloc(size);
+   int leido = mate_memread(c, dl, leer,  size);
+   if (leido == MATE_READ_FAULT) {
+      fprintf(stderr, "Error de MATE_READ_FAULT");
+      abort();
    }
-   printf("Me llego: %s\n", (char*)leer);
-   printf("----------- \n\n"); 
+	printf("MemRead leyo: %s\n", (char*)leer);
 
-sleep(3);
+sleep(1);
 
    printf("-- Mate FREE -- \n");
    int free_valido = mate_memfree(c, dl);
    if (free_valido == MATE_FREE_FAULT){
      fprintf(stderr, "Error de MATE_FREE_FAULT \n");
+     abort();
    }
-   printf("----------- \n\n");
 
    printf("-- Mate CLOSE -- \n");
    int fin = mate_close(c);
    if (fin != 0){
       fprintf(stderr, "El programa termino con errores");
+      abort();
    }
-  // free(buffer);
-   printf("----------- \n\n");
+   free(buffer);
 }
 
 void memoria_carpincho() 

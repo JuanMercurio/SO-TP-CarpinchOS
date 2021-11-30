@@ -255,6 +255,9 @@ void page_use(int pid, int marco, pag_t* p, int n_pagina, int codigo)
     p->algoritmo = alg_comportamiento();
     p->marco = marco;
 
+  
+
+
 }
 
 int alg_comportamiento_lru()

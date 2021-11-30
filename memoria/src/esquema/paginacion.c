@@ -54,6 +54,7 @@ void init_bitmap_frames()
 }
 
 /* --------------- Paginas ---------------------- */
+
 // insertar pagina asignacion fija
 int insertar_pagina_af(void *contenido, tab_pags *tabla)
 {
@@ -105,7 +106,6 @@ int paginas_presentes(tab_pags *t)
 
 int nro_marco(int pagina, tab_pags *tabla)
 {
-
     if (!pagina_valida(tabla, pagina))
         return PAGINA_INVALIDA;
 
@@ -113,8 +113,7 @@ int nro_marco(int pagina, tab_pags *tabla)
 
     // Busco en TLB
     marco = buscar_en_tlb(tabla, pagina);
-    if (marco != TLB_MISS)
-        return marco;
+    if (marco != TLB_MISS) return marco; 
 
     // Busco en tabla de paginas
     marco = buscar_en_tabPags(tabla, pagina);
@@ -204,9 +203,7 @@ void *serializar_pedido_pagina(int pid, int pagina)
 
 bool pagina_valida(tab_pags *tabla, int pagina)
 {
-
     int n_paginas = list_size(tabla->tabla_pag);
-
     return n_paginas > pagina;
 }
 
@@ -242,7 +239,10 @@ int marco_libre()
     {
         int *marco = list_get(marcos, i);
         if (*marco == VACIO)
-            return i;
+            {
+                *marco = NO_VACIO;
+                return i;
+            }
     }
     return NOT_ASIGNED;
 }
@@ -263,10 +263,11 @@ void pagina_iniciar(tab_pags *tabla)
 
     else
     {
-        int* victima = list_get(marcos, marco);
-        *victima = 1;
+        // int* victima = list_get(marcos, marco);
+        // *victima = 1;
         memoria_asignar_pagina_vacia(tabla, pagina, marco);
     }
+
     
 }
 

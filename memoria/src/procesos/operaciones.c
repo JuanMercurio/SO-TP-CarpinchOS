@@ -191,6 +191,10 @@ int memalloc(tab_pags* tabla, int tamanio){ //quizas al igual que antes, el carp
 //					//: la cargo en memoria
 //
 //					memcpy(ubicacion_nuevo_segmento(pagina->marco, ptr_potencial_segmento->nextAlloc), &new, SIZE_METADATA);
+					int new_pags = paginas_a_agregar(ptr_potencial_segmento->nextAlloc, tabla);
+					if (new_pags == -1) return -1;
+					new_pags = paginas_agregar(new_pags, tabla);
+					printf("voy a escribir el nuevo metadata en la posicion %d\n", ptr_potencial_segmento->nextAlloc);
 					memoria_escribir_por_dirlog(tabla_paginas, ptr_potencial_segmento->nextAlloc, &new, SIZE_METADATA);
 //					printf("- Memalloc->Pedir->Free: cargue el nuevo segmento en la direccion logica %i, puntero %p.\n", ptr_potencial_segmento->nextAlloc, ubicacion_nuevo_segmento(pagina->marco, ptr_potencial_segmento->nextAlloc));
 
@@ -588,7 +592,6 @@ int memoria_escribir(tab_pags* tabla, dir_t dl, void* contenido, int tamanio){
         dl.offset = 0;
         dl.PAGINA++;
     }
-
     return 0;
 }
 
@@ -635,6 +638,7 @@ int read_get_readable_bytes(dir_t dl, int count){
 
 
 void* memoria_leer_por_dirlog(tab_pags* tabla, int dl, int tamanio){
+	// dir_t dir;
 	// dir.PAGINA = dl/configuracion.TAMANIO_PAGINAS;
 	// dir.offset = dl%configuracion.TAMANIO_PAGINAS;
 	int bin_dl = decimal_a_binario(dl);
@@ -664,4 +668,25 @@ void heap_init(tab_pags* tabla)
 	pagina_iniciar(tabla);
     memoria_escribir(tabla, dl, data, SIZE_METADATA);
     
+}
+
+
+int paginas_a_agregar(int dl, tab_pags* tabla)
+{
+	int paginas = list_size(tabla->tabla_pag);
+	int victima = dl / configuracion.TAMANIO_PAGINAS;
+
+	int nuevas = victima - paginas + 1;
+	//verficiar con swamp y asignacion 
+	return nuevas;
+
+	}
+
+int paginas_agregar(int new_pags, tab_pags* tabla)
+{
+	for (int i=0; i < new_pags; i++) {
+		pagina_iniciar(tabla);
+	}
+
+	return 0;
 }

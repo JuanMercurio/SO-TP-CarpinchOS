@@ -10,6 +10,7 @@
 
 #define PAGINA        segmento
 #define MARCO         segmento
+#define NO_VACIO             1
 #define VACIO                0
 #define NOT_ASIGNED         -1
 

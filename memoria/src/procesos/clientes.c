@@ -154,6 +154,7 @@ void memread_comportamiento(tab_pags* tabla, int cliente)
         enviar_int(cliente, -1);
     }
     enviar_int(cliente, 0);
+    enviar_int(cliente, tamanio);
     enviar_buffer(cliente, buffer, tamanio);
 }
 
@@ -176,6 +177,14 @@ void mate_close_comportamiento(tab_pags *tabla, int cliente, bool *conectado)
 }
 
 
+void iniciar_paginas(tab_pags* tabla)
+{
+    tabla->TLB_HITS   = 0;
+    tabla->TLB_MISSES = 0;
+    tabla->tabla_pag  = list_create();
+
+    add_new_page_table(tabla);
+}
 
 void inicio_comprobar(tab_pags* tabla, int cliente, bool* conectado){
     
@@ -218,15 +227,6 @@ tab_pags* tabla_init()
 
 
 
-void iniciar_paginas(tab_pags* tabla)
-{
-
-    tabla->TLB_HITS   = 0;
-    tabla->TLB_MISSES = 0;
-    tabla->tabla_pag  = list_create();
-
-    add_new_page_table(tabla);
-}
 
 void enviar_PID(int *pid, int cliente){ 
     *pid = crearID(&ids_memoria);

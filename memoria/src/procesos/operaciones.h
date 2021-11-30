@@ -108,4 +108,8 @@ bool heap_lectura_valida(HeapMetadata* data, dir_t dl, int tamanio);
 
 void heap_init(tab_pags* tabla);
     
+int paginas_a_agregar(int dl, tab_pags* tabla);
+
+int paginas_agregar(int new_pags, tab_pags* tabla);
+
 #endif
