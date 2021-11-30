@@ -54,18 +54,12 @@ int mate_close(mate_instance *lib_ref)
 
   enviar_int(((mate_inner_structure*)lib_ref->group_info)->conexion, MATE_CLOSE);
   log_info(logger, "MATE_CLOSE: mensaje enviado a kernel");
-  char *respuesta = recibir_mensaje(((mate_inner_structure *)lib_ref->group_info)->conexion);
-  //enviar_mensaje_y_cod_op("ELIMINAME",((mate_inner_structure*)lib_ref->group_info)->conexion, MATE_CLOSE);
-  log_info(logger, "respuesta de kernel: %s", respuesta);
   free(lib_ref->group_info);
-log_info(logger, "libero memoria");
+  log_info(logger, "libero memoria");
   free(lib_ref);
   log_info(logger, "libero memoria");
- 
-
-
-    log_info(logger, "Carpincho eliminado");
-    //log_destroy(logger);
+  log_info(logger, "Carpincho eliminado");
+    //log_destroy(logger);  // ARREGLAR PARA QUE CADA CARPINCHO GENERE SU LOGGER
     return 0;
  }
 
@@ -240,21 +234,23 @@ int mate_memread(mate_instance *lib_ref, mate_pointer origin, void *dest, int si
 {
   mate_inner_structure* info = (mate_inner_structure*)lib_ref->group_info;
   log_info(logger, "MEM_READ desde %d el size %d", origin, size);
-  enviar_mem_read(info->conexion, MEMREAD, (int)origin, size);
-  int estado = recibir_int(info->conexion);
+  enviar_int(((mate_inner_structure *)lib_ref->group_info)->conexion, MEMREAD);
+  enviar_int(((mate_inner_structure *)lib_ref->group_info)->conexion, origin);
+  enviar_int(((mate_inner_structure *)lib_ref->group_info)->conexion, size);
+
+  int estado = recibir_int(((mate_inner_structure *)lib_ref->group_info)->conexion);
   if (estado == -1){
     dest = NULL;
     log_info(logger, "Error al realizar el MEM_READ");
     return MATE_READ_FAULT;
   }
-
-  void* new = recibir_buffer(size, info->conexion);
-  memcpy(dest, new, size);
-  free(new);
+   int *tam = malloc(sizeof(int));
+  void* buffer = recibir_buffer_t(tam,((mate_inner_structure *)lib_ref->group_info)->conexion);
+  memcpy(dest, buffer, *tam);
   printf("El valor de dest es %s\n", (char*)dest);
-
   log_info(logger, "Se realizó el MEM_READ correctamente. El contenido es: %s", (char *)dest);
-
+  free(buffer);
+  free(tam);
   return 0;
 }
 
@@ -264,7 +260,6 @@ int mate_memwrite(mate_instance *lib_ref, void *origin, mate_pointer dest, int s
 
   enviar_mensaje_y_cod_op((char*)origin,((mate_inner_structure *)lib_ref->group_info)->conexion, MEMWRITE);
   enviar_int(((mate_inner_structure *)lib_ref->group_info)->conexion, dest);
-  enviar_int(((mate_inner_structure *)lib_ref->group_info)->conexion, size);
   int recibido = recibir_operacion(((mate_inner_structure *)lib_ref->group_info)->conexion);
 
   if (recibido == -7)

@@ -1,0 +1,193 @@
+[INFO] 00:56:54:398 Carpincho/(22838:22839): Se realizó el MEM_READ correctamente. El contenido es: 
+[INFO] 00:56:54:399 Carpincho/(22838:22839): MEM_FREE a la dirección 0
+[INFO] 00:56:54:399 Carpincho/(22838:22839): Se realizó el MEM_FREE correctamente
+[INFO] 00:56:54:401 Carpincho/(22838:22839): MATE_CLOSE
+[INFO] 01:10:30:661 Carpincho/(26046:26047): Log creado
+[INFO] 01:10:30:661 Carpincho/(26046:26047): Esperando respuesta de servidor
+[INFO] 01:10:30:663 Carpincho/(26046:26047): NUEVO CARPINCHO
+[INFO] 01:10:30:709 Carpincho/(26046:26047): Carpincho creado correctamente con el pid: 0
+[INFO] 01:10:30:709 Carpincho/(26046:26047): MEM_ALLOC de 10
+[INFO] 01:10:30:713 Carpincho/(26046:26047): Se realizó el MEM_ALLOC correctamente. La dirección lógica es 0
+[INFO] 01:10:30:713 Carpincho/(26046:26047): MEM_WRITE el mensaje jejeje en 0
+[INFO] 01:10:30:713 Carpincho/(26046:26047): Se realizó el MEM_WRITE correctamente
+[INFO] 01:10:30:713 Carpincho/(26046:26047): MEM_READ desde 0 el size 7
+[INFO] 01:11:10:216 Carpincho/(27282:27283): Log creado
+[INFO] 01:11:10:216 Carpincho/(27282:27283): Esperando respuesta de servidor
+[INFO] 01:11:10:225 Carpincho/(27282:27283): NUEVO CARPINCHO
+[INFO] 01:11:10:269 Carpincho/(27282:27283): Carpincho creado correctamente con el pid: 0
+[INFO] 01:11:10:270 Carpincho/(27282:27283): MEM_ALLOC de 10
+[INFO] 01:11:10:272 Carpincho/(27282:27283): Se realizó el MEM_ALLOC correctamente. La dirección lógica es 0
+[INFO] 01:11:10:272 Carpincho/(27282:27283): MEM_WRITE el mensaje jejeje en 0
+[INFO] 01:11:10:273 Carpincho/(27282:27283): Se realizó el MEM_WRITE correctamente
+[INFO] 01:11:10:274 Carpincho/(27282:27283): MEM_READ desde 0 el size 7
+[INFO] 01:11:10:390 Carpincho/(27282:27283): Se realizó el MEM_READ correctamente. El contenido es: 
+[INFO] 01:11:10:390 Carpincho/(27282:27283): MEM_FREE a la dirección 0
+[INFO] 01:11:10:390 Carpincho/(27282:27283): Se realizó el MEM_FREE correctamente
+[INFO] 01:11:10:392 Carpincho/(27282:27283): MATE_CLOSE
+[INFO] 01:11:10:392 Carpincho/(27282:27283): MATE_CLOSE: mensaje enviado a kernel
+[INFO] 01:15:42:744 Carpincho/(27282:27283): respuesta de kernel: 
+[INFO] 01:15:42:744 Carpincho/(27282:27283): libero memoria
+[INFO] 01:15:42:744 Carpincho/(27282:27283): libero memoria
+[INFO] 01:15:42:744 Carpincho/(27282:27283): Carpincho eliminado
+[INFO] 01:16:31:362 Carpincho/(28635:28636): Log creado
+[INFO] 01:16:31:363 Carpincho/(28635:28636): Esperando respuesta de servidor
+[INFO] 01:16:31:364 Carpincho/(28635:28636): NUEVO CARPINCHO
+[INFO] 01:16:31:417 Carpincho/(28635:28636): Carpincho creado correctamente con el pid: 0
+[INFO] 01:16:31:417 Carpincho/(28635:28636): MEM_ALLOC de 10
+[INFO] 01:16:31:421 Carpincho/(28635:28636): Se realizó el MEM_ALLOC correctamente. La dirección lógica es 0
+[INFO] 01:16:31:421 Carpincho/(28635:28636): MEM_WRITE el mensaje jejeje en 0
+[INFO] 01:16:31:421 Carpincho/(28635:28636): Se realizó el MEM_WRITE correctamente
+[INFO] 01:16:31:421 Carpincho/(28635:28636): MEM_FREE a la dirección 0
+[INFO] 01:16:31:502 Carpincho/(28635:28636): Se realizó el MEM_FREE correctamente
+[INFO] 01:16:31:503 Carpincho/(28635:28636): MATE_CLOSE
+[INFO] 01:16:31:503 Carpincho/(28635:28636): MATE_CLOSE: mensaje enviado a kernel
+[INFO] 01:16:32:143 Carpincho/(28635:28636): respuesta de kernel: �
+�����SE
+[INFO] 01:16:32:143 Carpincho/(28635:28636): libero memoria
+[INFO] 01:16:32:143 Carpincho/(28635:28636): libero memoria
+[INFO] 01:16:32:143 Carpincho/(28635:28636): Carpincho eliminado
+[INFO] 01:20:50:173 Carpincho/(30036:30037): Log creado
+[INFO] 01:20:50:173 Carpincho/(30036:30037): Esperando respuesta de servidor
+[INFO] 01:20:50:178 Carpincho/(30036:30037): NUEVO CARPINCHO
+[INFO] 01:20:50:225 Carpincho/(30036:30037): Carpincho creado correctamente con el pid: 0
+[INFO] 01:20:50:225 Carpincho/(30036:30037): MEM_ALLOC de 10
+[INFO] 01:20:50:229 Carpincho/(30036:30037): Se realizó el MEM_ALLOC correctamente. La dirección lógica es 0
+[INFO] 01:20:50:229 Carpincho/(30036:30037): MEM_FREE a la dirección 0
+[INFO] 01:20:50:229 Carpincho/(30036:30037): Se realizó el MEM_FREE correctamente
+[INFO] 01:20:50:230 Carpincho/(30036:30037): MATE_CLOSE
+[INFO] 01:20:50:230 Carpincho/(30036:30037): MATE_CLOSE: mensaje enviado a kernel
+[INFO] 01:20:50:230 Carpincho/(30036:30037): respuesta de kernel: h
+����SE
+[INFO] 01:20:50:230 Carpincho/(30036:30037): libero memoria
+[INFO] 01:20:50:230 Carpincho/(30036:30037): libero memoria
+[INFO] 01:20:50:230 Carpincho/(30036:30037): Carpincho eliminado
+[INFO] 01:26:11:017 Carpincho/(30255:30256): Log creado
+[INFO] 01:26:11:017 Carpincho/(30255:30256): Esperando respuesta de servidor
+[INFO] 01:26:11:018 Carpincho/(30255:30256): NUEVO CARPINCHO
+[INFO] 01:26:11:065 Carpincho/(30255:30256): Carpincho creado correctamente con el pid: 1
+[INFO] 01:26:11:065 Carpincho/(30255:30256): MEM_ALLOC de 10
+[INFO] 01:26:11:069 Carpincho/(30255:30256): Se realizó el MEM_ALLOC correctamente. La dirección lógica es 0
+[INFO] 01:26:14:069 Carpincho/(30255:30256): MEM_FREE a la dirección 0
+[INFO] 01:26:14:069 Carpincho/(30255:30256): Se realizó el MEM_FREE correctamente
+[INFO] 01:26:14:071 Carpincho/(30255:30256): MATE_CLOSE
+[INFO] 01:26:14:071 Carpincho/(30255:30256): MATE_CLOSE: mensaje enviado a kernel
+[INFO] 01:26:14:072 Carpincho/(30255:30256): respuesta de kernel: h
+����CSE
+[INFO] 01:26:14:072 Carpincho/(30255:30256): libero memoria
+[INFO] 01:26:14:072 Carpincho/(30255:30256): libero memoria
+[INFO] 01:26:14:072 Carpincho/(30255:30256): Carpincho eliminado
+[INFO] 01:26:18:938 Carpincho/(30319:30320): Log creado
+[INFO] 01:26:18:938 Carpincho/(30319:30320): Esperando respuesta de servidor
+[INFO] 01:26:18:939 Carpincho/(30319:30320): NUEVO CARPINCHO
+[INFO] 01:26:18:989 Carpincho/(30319:30320): Carpincho creado correctamente con el pid: 2
+[INFO] 01:26:18:990 Carpincho/(30319:30320): MEM_ALLOC de 10
+[INFO] 01:26:18:993 Carpincho/(30319:30320): Se realizó el MEM_ALLOC correctamente. La dirección lógica es 0
+[INFO] 01:26:21:994 Carpincho/(30319:30320): MEM_FREE a la dirección 0
+[INFO] 01:26:21:994 Carpincho/(30319:30320): Se realizó el MEM_FREE correctamente
+[INFO] 01:26:21:995 Carpincho/(30319:30320): MATE_CLOSE
+[INFO] 01:26:21:996 Carpincho/(30319:30320): MATE_CLOSE: mensaje enviado a kernel
+[INFO] 01:26:21:996 Carpincho/(30319:30320): respuesta de kernel: h
+���6];SE
+[INFO] 01:26:21:996 Carpincho/(30319:30320): libero memoria
+[INFO] 01:26:21:996 Carpincho/(30319:30320): libero memoria
+[INFO] 01:26:21:996 Carpincho/(30319:30320): Carpincho eliminado
+[INFO] 01:27:01:061 Carpincho/(30543:30544): Log creado
+[INFO] 01:27:01:062 Carpincho/(30543:30544): Esperando respuesta de servidor
+[INFO] 01:27:01:063 Carpincho/(30543:30544): NUEVO CARPINCHO
+[INFO] 01:27:01:113 Carpincho/(30543:30544): Carpincho creado correctamente con el pid: 0
+[INFO] 01:27:01:113 Carpincho/(30543:30544): MEM_ALLOC de 10
+[INFO] 01:27:01:122 Carpincho/(30543:30544): Se realizó el MEM_ALLOC correctamente. La dirección lógica es 0
+[INFO] 01:27:04:123 Carpincho/(30543:30544): MEM_FREE a la dirección 0
+[INFO] 01:27:04:123 Carpincho/(30543:30544): Se realizó el MEM_FREE correctamente
+[INFO] 01:27:04:128 Carpincho/(30543:30544): MATE_CLOSE
+[INFO] 01:27:04:128 Carpincho/(30543:30544): MATE_CLOSE: mensaje enviado a kernel
+[INFO] 01:27:04:128 Carpincho/(30543:30544): respuesta de kernel: h
+����SE
+[INFO] 01:27:04:128 Carpincho/(30543:30544): libero memoria
+[INFO] 01:27:04:128 Carpincho/(30543:30544): libero memoria
+[INFO] 01:27:04:128 Carpincho/(30543:30544): Carpincho eliminado
+[INFO] 01:46:44:180 Carpincho/(32101:32102): Log creado
+[INFO] 01:46:44:181 Carpincho/(32101:32102): Esperando respuesta de servidor
+[INFO] 01:46:44:190 Carpincho/(32101:32102): NUEVO CARPINCHO
+[INFO] 01:46:44:233 Carpincho/(32101:32102): Carpincho creado correctamente con el pid: 0
+[INFO] 01:46:44:233 Carpincho/(32101:32102): MEM_ALLOC de 10
+[INFO] 01:46:44:236 Carpincho/(32101:32102): Se realizó el MEM_ALLOC correctamente. La dirección lógica es 0
+[INFO] 01:46:44:236 Carpincho/(32101:32102): MEM_WRITE el mensaje jejeje en 0
+[INFO] 01:46:44:236 Carpincho/(32101:32102): Se realizó el MEM_WRITE correctamente
+[INFO] 01:46:44:236 Carpincho/(32101:32102): MEM_READ desde 0 el size 7
+[INFO] 01:46:44:354 Carpincho/(32101:32102): Se realizó el MEM_READ correctamente. El contenido es: 
+[INFO] 01:46:47:358 Carpincho/(32101:32102): MEM_FREE a la dirección 0
+[INFO] 01:46:47:359 Carpincho/(32101:32102): Se realizó el MEM_FREE correctamente
+[INFO] 01:46:47:369 Carpincho/(32101:32102): MATE_CLOSE
+[INFO] 01:46:47:370 Carpincho/(32101:32102): MATE_CLOSE: mensaje enviado a kernel
+[INFO] 01:49:23:144 Carpincho/(32101:32102): respuesta de kernel: 
+[INFO] 01:49:23:144 Carpincho/(32101:32102): libero memoria
+[INFO] 01:49:23:144 Carpincho/(32101:32102): libero memoria
+[INFO] 01:49:23:144 Carpincho/(32101:32102): Carpincho eliminado
+[INFO] 01:49:35:371 Carpincho/(908:909): Log creado
+[INFO] 01:49:35:371 Carpincho/(908:909): Esperando respuesta de servidor
+[INFO] 01:49:35:375 Carpincho/(908:909): NUEVO CARPINCHO
+[INFO] 01:49:35:421 Carpincho/(908:909): Carpincho creado correctamente con el pid: 0
+[INFO] 01:49:35:421 Carpincho/(908:909): MEM_ALLOC de 10
+[INFO] 01:49:35:425 Carpincho/(908:909): Se realizó el MEM_ALLOC correctamente. La dirección lógica es 0
+[INFO] 01:49:35:425 Carpincho/(908:909): MEM_WRITE el mensaje jejeje en 0
+[INFO] 01:49:35:425 Carpincho/(908:909): Se realizó el MEM_WRITE correctamente
+[INFO] 01:49:38:426 Carpincho/(908:909): MEM_FREE a la dirección 0
+[INFO] 01:49:38:426 Carpincho/(908:909): Se realizó el MEM_FREE correctamente
+[INFO] 01:49:38:426 Carpincho/(908:909): MATE_CLOSE
+[INFO] 01:49:38:426 Carpincho/(908:909): MATE_CLOSE: mensaje enviado a kernel
+[INFO] 01:49:38:952 Carpincho/(908:909): respuesta de kernel: �
+���cqSE
+[INFO] 01:49:38:952 Carpincho/(908:909): libero memoria
+[INFO] 01:49:38:952 Carpincho/(908:909): libero memoria
+[INFO] 01:49:38:952 Carpincho/(908:909): Carpincho eliminado
+[INFO] 01:56:13:589 Carpincho/(2375:2376): Log creado
+[INFO] 01:56:13:589 Carpincho/(2375:2376): Esperando respuesta de servidor
+[INFO] 01:56:13:590 Carpincho/(2375:2376): NUEVO CARPINCHO
+[INFO] 01:56:13:641 Carpincho/(2375:2376): Carpincho creado correctamente con el pid: 0
+[INFO] 01:56:13:641 Carpincho/(2375:2376): MEM_ALLOC de 10
+[INFO] 01:56:13:645 Carpincho/(2375:2376): Se realizó el MEM_ALLOC correctamente. La dirección lógica es 0
+[INFO] 01:56:13:645 Carpincho/(2375:2376): MEM_WRITE el mensaje jejeje en 0
+[INFO] 01:56:13:646 Carpincho/(2375:2376): Se realizó el MEM_WRITE correctamente
+[INFO] 01:56:16:646 Carpincho/(2375:2376): MEM_FREE a la dirección 0
+[INFO] 01:56:16:647 Carpincho/(2375:2376): Se realizó el MEM_FREE correctamente
+[INFO] 01:56:16:647 Carpincho/(2375:2376): MATE_CLOSE
+[INFO] 01:56:16:648 Carpincho/(2375:2376): MATE_CLOSE: mensaje enviado a kernel
+[INFO] 01:56:16:648 Carpincho/(2375:2376): libero memoria
+[INFO] 01:56:16:648 Carpincho/(2375:2376): libero memoria
+[INFO] 01:56:16:648 Carpincho/(2375:2376): Carpincho eliminado
+[INFO] 01:58:14:922 Carpincho/(2758:2759): Log creado
+[INFO] 01:58:14:923 Carpincho/(2758:2759): Esperando respuesta de servidor
+[INFO] 01:58:14:923 Carpincho/(2758:2759): NUEVO CARPINCHO
+[INFO] 01:58:14:977 Carpincho/(2758:2759): Carpincho creado correctamente con el pid: 0
+[INFO] 01:58:14:977 Carpincho/(2758:2759): MEM_ALLOC de 10
+[INFO] 01:58:14:979 Carpincho/(2758:2759): Se realizó el MEM_ALLOC correctamente. La dirección lógica es 0
+[INFO] 01:58:14:980 Carpincho/(2758:2759): MEM_WRITE el mensaje jejeje en 0
+[INFO] 01:58:14:980 Carpincho/(2758:2759): Se realizó el MEM_WRITE correctamente
+[INFO] 01:58:14:980 Carpincho/(2758:2759): MEM_READ desde 0 el size 7
+[INFO] 02:01:03:861 Carpincho/(3107:3108): Log creado
+[INFO] 02:01:03:861 Carpincho/(3107:3108): Esperando respuesta de servidor
+[INFO] 02:01:03:862 Carpincho/(3107:3108): NUEVO CARPINCHO
+[INFO] 02:01:03:913 Carpincho/(3107:3108): Carpincho creado correctamente con el pid: 0
+[INFO] 02:01:03:914 Carpincho/(3107:3108): MEM_ALLOC de 10
+[INFO] 02:01:03:918 Carpincho/(3107:3108): Se realizó el MEM_ALLOC correctamente. La dirección lógica es 0
+[INFO] 02:01:03:919 Carpincho/(3107:3108): MEM_WRITE el mensaje jejeje en 0
+[INFO] 02:01:03:919 Carpincho/(3107:3108): Se realizó el MEM_WRITE correctamente
+[INFO] 02:01:03:920 Carpincho/(3107:3108): MEM_READ desde 0 el size 7
+[INFO] 02:03:05:385 Carpincho/(3731:3733): Log creado
+[INFO] 02:03:05:385 Carpincho/(3731:3733): Esperando respuesta de servidor
+[INFO] 02:03:05:386 Carpincho/(3731:3733): NUEVO CARPINCHO
+[INFO] 02:03:05:438 Carpincho/(3731:3733): Carpincho creado correctamente con el pid: 0
+[INFO] 02:03:05:438 Carpincho/(3731:3733): MEM_ALLOC de 10
+[INFO] 02:03:05:444 Carpincho/(3731:3733): Se realizó el MEM_ALLOC correctamente. La dirección lógica es 0
+[INFO] 02:03:05:445 Carpincho/(3731:3733): MEM_WRITE el mensaje jejeje en 0
+[INFO] 02:03:05:445 Carpincho/(3731:3733): Se realizó el MEM_WRITE correctamente
+[INFO] 02:03:05:446 Carpincho/(3731:3733): MEM_READ desde 0 el size 7
+[INFO] 02:03:05:605 Carpincho/(3731:3733): Se realizó el MEM_READ correctamente. El contenido es: 
+[INFO] 02:03:08:606 Carpincho/(3731:3733): MEM_FREE a la dirección 0
+[INFO] 02:03:08:606 Carpincho/(3731:3733): Se realizó el MEM_FREE correctamente
+[INFO] 02:03:08:607 Carpincho/(3731:3733): MATE_CLOSE
+[INFO] 02:03:08:607 Carpincho/(3731:3733): MATE_CLOSE: mensaje enviado a kernel
+[INFO] 02:03:08:607 Carpincho/(3731:3733): libero memoria
+[INFO] 02:03:08:607 Carpincho/(3731:3733): libero memoria
+[INFO] 02:03:08:607 Carpincho/(3731:3733): Carpincho eliminado

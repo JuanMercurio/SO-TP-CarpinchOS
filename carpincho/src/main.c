@@ -5,12 +5,12 @@
 
 #define CANT_CARPINCHOS 1
 int main(int argc, char* argv[]) {
-  if ( argc>=1 && (strcmp(argv[1], "memoria")== 0)) memoria_carpincho();
+  //if ( argc>=1 && (strcmp(argv[1], "memoria")== 0)) memoria_carpincho();
 
    pthread_t hilos[CANT_CARPINCHOS];
    printf("entro al main carpincho\n");
    for (int i=0; i < CANT_CARPINCHOS; i++) {
-      pthread_create(&hilos[i], NULL, (void*)carpincho_comportamiento3, NULL);
+      pthread_create(&hilos[i], NULL, (void*)carpincho_comportamiento_memoria, NULL);
    }
    sleep(2);
    //pthread_t hilo;
@@ -116,40 +116,42 @@ void carpincho_comportamiento_memoria(void* arg)
    }
    printf("----------- \n\n");
 
-//   printf("-- Mate WRITE -- \n");
-//   void* buffer = malloc(sizeof(int));
-//   char* saturno = "jejeje";
-//   int size = strlen(saturno) + 1;
-//   memcpy(buffer, saturno, size);
-//
-//   int escritos = mate_memwrite(c, buffer, dl , size);
-//   if (escritos == MATE_WRITE_FAULT){
-//      fprintf(stderr, "Error de MATE_WRITE_FAULT \n");
-//   }
-//   printf("----------- \n\n");
-//
-//   printf("-- Mate READ -- \n");
-//   void* leer;
-//   int leidos = mate_memread(c, dl, leer,  size);
-//   if (leidos == MATE_READ_FAULT){
-//      fprintf(stderr, "Error de MATE_READ_FAULT \n");
-//   }
-//   printf("Me llego: %s\n", (char*)leer);
-//   printf("----------- \n\n");
-//
-//   printf("-- Mate FREE -- \n");
-//   int free_valido = mate_memfree(c, dl);
-//   if (free_valido == MATE_FREE_FAULT){
-//     fprintf(stderr, "Error de MATE_FREE_FAULT \n");
-//   }
-//   printf("----------- \n\n");
+   printf("-- Mate WRITE -- \n");
+   void* buffer = malloc(sizeof(int));
+   char* saturno = "jejeje";
+   int size = strlen(saturno) + 1;
+   memcpy(buffer, saturno, size);
+
+   int escritos = mate_memwrite(c, buffer, dl , size);
+   if (escritos == MATE_WRITE_FAULT){
+      fprintf(stderr, "Error de MATE_WRITE_FAULT \n");
+   }
+   printf("----------- \n\n");
+
+   printf("-- Mate READ -- \n");
+   void* leer;
+   int leidos = mate_memread(c, dl, leer,  size);
+   if (leidos == MATE_READ_FAULT){
+      fprintf(stderr, "Error de MATE_READ_FAULT \n");
+   }
+   printf("Me llego: %s\n", (char*)leer);
+   printf("----------- \n\n"); 
+
+sleep(3);
+
+   printf("-- Mate FREE -- \n");
+   int free_valido = mate_memfree(c, dl);
+   if (free_valido == MATE_FREE_FAULT){
+     fprintf(stderr, "Error de MATE_FREE_FAULT \n");
+   }
+   printf("----------- \n\n");
 
    printf("-- Mate CLOSE -- \n");
    int fin = mate_close(c);
    if (fin != 0){
       fprintf(stderr, "El programa termino con errores");
    }
-   //free(buffer);
+  // free(buffer);
    printf("----------- \n\n");
 }
 

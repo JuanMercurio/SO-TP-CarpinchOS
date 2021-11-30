@@ -16,7 +16,7 @@ void procesador()
 { // resolver la cuestion de administacion de los semaforos de los procesos
   
    while (!terminar)
-   {   printf("PROCESADOR: =================================00esperando carpinchos\n");
+   {
       sem_wait(&lista_ejecutando_con_elementos);
        printf("PROCESADOR: paso wait de lista con elementos\n");
       sem_wait(&mutex_lista_oredenada_por_algoritmo);

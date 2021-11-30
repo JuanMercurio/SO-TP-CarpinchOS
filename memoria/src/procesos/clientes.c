@@ -54,23 +54,15 @@ void ejecutar_proceso(int cliente)
                 memread_comportamiento(tabla, cliente);
                 break;
 
-            case MEMWRITE:
-            printf(" llego un mem write\n");
-            char *recibido = recibir_mensaje(cliente);
-            int dest = recibir_operacion(cliente);
-            int size = recibir_operacion(cliente);
-             log_info(logger, "Se recibió del carpincho %d un MEM write desde la posición %d con el mensjaje %s", cliente, dest, recibido);
-             sleep(6);
-             printf("enviando ok\n");
-             enviar_int(cliente, 0);
-                //memwrite_comportamiento(tabla, cliente);
+            case MEMWRITE:;
+                memwrite_comportamiento(tabla, cliente);
                 break;
 
-            case NEW_INSTANCE_KERNEL:
+            case NEW_INSTANCE_KERNEL:printf("llego desde KERNEL\n");
                 new_instance_kernel_comportamiento(tabla, cliente, &conectado);
                 break;
 
-            case MATE_CLOSE: printf("mate close\n");
+            case MATE_CLOSE:
                 mate_close_comportamiento(tabla, cliente, &conectado);
                 break;
 
@@ -111,8 +103,20 @@ void new_instance_comportamiento(tab_pags* tabla, int cliente, bool *conectado)
 
 void new_instance_kernel_comportamiento(tab_pags* tabla, int cliente, bool *conectado){ 
     tabla->pid = recibir_operacion(cliente); 
-    //falta preguntarle a swap si puede iniciar y mandarle 0 o -1 al kernel
-    inicio_comprobar(tabla, cliente, conectado);
+
+    int respuesta = swap_solicitud_iniciar(tabla->pid);
+
+    if(respuesta == -1) 
+    {
+        enviar_int(cliente, -1);
+        //enviar_mensaje(cliente, "No es posible iniciar");
+        free(tabla->tabla_pag);
+        free(tabla);
+        *conectado = false;
+        return;
+    }
+    enviar_int(cliente, 0);
+    iniciar_paginas(tabla);
 }
 
 
@@ -158,7 +162,7 @@ void memwrite_comportamiento(tab_pags* tabla, int cliente)
     int *size = malloc(sizeof(int));
     void* buffer = recibir_buffer_t(size, cliente);
     int dl = recibir_int(cliente);
-
+    printf("MEMWRITE: recibio %s\n", (char*)buffer);
     int result_memwrite = memwrite(tabla, dl, buffer, *size);
     enviar_int(cliente, result_memwrite);
     free(size);
