@@ -1,4 +1,5 @@
 #include "algoritmos.h"
+#include "tlb.h"
 
 #include <stdlib.h>
 #include <utils/utils.h>
@@ -247,6 +248,9 @@ void page_use(int pid, int marco, pag_t* p, int n_pagina, int codigo)
         p->tlb = 1;
     }
 
+    if (p->tlb == 1) {
+    }
+
     p->presente = 1;
     p->algoritmo = alg_comportamiento();
     p->marco = marco;
@@ -267,12 +271,17 @@ int alg_comportamiento_clock_modificado()
 
 void tlb_insert_page(int pid, int n_pagina, int marco, int codigo)
 {
-    tlb_t* reg = malloc(sizeof(tlb_t));
+    int victima = tlb_obtener_victima();
+    
+    tlb_t* reg = list_get(tlb, victima);
 
     reg->pid = pid;
     reg->pagina = n_pagina;
+    reg->marco = marco;
     reg->modificado = codigo == WRITE ? 1 : 0;
     reg->alg_tlb = alg_comportamiento_tlb();
+
+
 }
 
 int alg_comportamiento_tlb_fifo()

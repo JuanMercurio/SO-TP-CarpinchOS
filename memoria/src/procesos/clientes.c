@@ -185,10 +185,8 @@ void inicio_comprobar(tab_pags* tabla, int cliente, bool* conectado){
 
 void cliente_terminar(tab_pags* tabla, int cliente)
 { 
-    pthread_mutex_lock(&tablas.mutex);
     tablas_eliminar_proceso(tabla->pid);
     tlb_eliminar_proceso(tabla->pid);
-    pthread_mutex_unlock(&tablas.mutex);
 
     //avisar a swamp
 

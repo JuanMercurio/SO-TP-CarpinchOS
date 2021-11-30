@@ -231,6 +231,7 @@ int crear_pagina(t_list *paginas)
     pagina->marco = NOT_ASIGNED;
     pagina->modificado = 0;
     pagina->algoritmo = NOT_ASIGNED;
+    pagina->tlb = 0;
     return list_add(paginas, pagina);
 }
 
