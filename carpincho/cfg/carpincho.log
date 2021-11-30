@@ -1,36 +1,153 @@
-[INFO] 20:49:58:770 Matelib/(20118:20119): Se realizó el MEM_READ correctamente. El contenido es: ��
-[INFO] 20:49:58:770 Matelib/(20118:20119): LA CONCHA DE TU MADRE
-[INFO] 20:49:58:770 Matelib/(20118:20119): MATE_CLOSE: mensaje enviado a kernel
-[INFO] 20:49:58:770 Matelib/(20118:20119): respuesta de kernel: (null)
-[INFO] 20:49:58:770 Matelib/(20118:20119): libero memoria
-[INFO] 20:49:58:770 Matelib/(20118:20119): libero memoria
-[INFO] 20:49:58:770 Matelib/(20118:20119): Carpincho eliminado
-[INFO] 20:50:32:846 Matelib/(20815:20816): Log Matelib creado
-[INFO] 20:50:32:846 Matelib/(20815:20816): Esperando respuesta de servidor
-[INFO] 20:50:32:846 Matelib/(20815:20816): NUEVO CARPINCHO
-[INFO] 20:50:32:885 Matelib/(20815:20816): Carpincho creado correctamente con el pid: 1
-[INFO] 20:50:32:885 Matelib/(20815:20816): MEM_ALLOC de 100
-[INFO] 20:50:32:885 Matelib/(20815:20816): Error al realizar el MEM_ALLOC
-[INFO] 20:50:32:885 Matelib/(20815:20816): MEM_FREE a la dirección 10101010
-[INFO] 20:50:32:885 Matelib/(20815:20816): Error al realizar el MEM_FREE
-[INFO] 20:50:32:885 Matelib/(20815:20816): MEM_WRITE el mensaje � en 100
-[INFO] 20:50:32:885 Matelib/(20815:20816): Error al realizar MEM_WRITE
-[INFO] 20:50:32:885 Matelib/(20815:20816): MEM_READ desde 1010 el size 100
-[INFO] 21:18:04:256 Matelib/(23548:23549): Log Matelib creado
-[INFO] 21:18:04:257 Matelib/(23548:23549): Esperando respuesta de servidor
-[INFO] 21:18:04:257 Matelib/(23548:23549): NUEVO CARPINCHO
-[INFO] 21:18:04:297 Matelib/(23548:23549): Carpincho creado correctamente con el pid: 1
-[INFO] 21:18:04:297 Matelib/(23548:23549): MEM_ALLOC de 100
-[INFO] 21:18:04:298 Matelib/(23548:23549): Error al realizar el MEM_ALLOC
-[INFO] 21:18:04:298 Matelib/(23548:23549): MEM_FREE a la dirección 10101010
-[INFO] 21:18:04:298 Matelib/(23548:23549): Error al realizar el MEM_FREE
-[INFO] 21:18:04:298 Matelib/(23548:23549): MEM_WRITE el mensaje � en 100
-[INFO] 21:18:04:298 Matelib/(23548:23549): Error al realizar MEM_WRITE
-[INFO] 21:18:04:298 Matelib/(23548:23549): MEM_READ desde 1010 el size 100
-[INFO] 21:18:04:299 Matelib/(23548:23549): Error al realizar el MEM_READ
-[INFO] 21:18:04:299 Matelib/(23548:23549): LA CONCHA DE TU MADRE
-[INFO] 21:18:04:299 Matelib/(23548:23549): MATE_CLOSE: mensaje enviado a kernel
-[INFO] 21:18:04:299 Matelib/(23548:23549): respuesta de kernel: (null)
-[INFO] 21:18:04:299 Matelib/(23548:23549): libero memoria
-[INFO] 21:18:04:299 Matelib/(23548:23549): libero memoria
-[INFO] 21:18:04:299 Matelib/(23548:23549): Carpincho eliminado
+[INFO] 18:50:59:645 Matelib/(6046:6050): Log Matelib creado
+[INFO] 18:50:59:645 Matelib/(6046:6050): Esperando respuesta de servidor
+[INFO] 18:50:59:645 Matelib/(6046:6049): Log Matelib creado
+[INFO] 18:50:59:645 Matelib/(6046:6049): Esperando respuesta de servidor
+[INFO] 18:50:59:645 Matelib/(6046:6048): Log Matelib creado
+[INFO] 18:50:59:645 Matelib/(6046:6048): Esperando respuesta de servidor
+[INFO] 18:50:59:645 Matelib/(6046:6050): NUEVO CARPINCHO
+[INFO] 18:50:59:645 Matelib/(6046:6049): NUEVO CARPINCHO
+[INFO] 18:50:59:646 Matelib/(6046:6047): Log Matelib creado
+[INFO] 18:50:59:646 Matelib/(6046:6047): Esperando respuesta de servidor
+[INFO] 18:50:59:646 Matelib/(6046:6048): NUEVO CARPINCHO
+[INFO] 18:50:59:646 Matelib/(6046:6047): NUEVO CARPINCHO
+[INFO] 18:50:59:684 Matelib/(6046:6050): Carpincho creado correctamente con el pid: 1
+[INFO] 18:50:59:684 Matelib/(6046:6049): Carpincho creado correctamente con el pid: 2
+[INFO] 18:50:59:684 Matelib/(6046:6050): MEM_ALLOC de 10
+[INFO] 18:50:59:684 Matelib/(6046:6049): MEM_ALLOC de 10
+[INFO] 18:50:59:684 Matelib/(6046:6048): Carpincho creado correctamente con el pid: 3
+[INFO] 18:50:59:684 Matelib/(6046:6048): MEM_ALLOC de 10
+[INFO] 18:50:59:685 Matelib/(6046:6047): Carpincho creado correctamente con el pid: 4
+[INFO] 18:50:59:686 Matelib/(6046:6047): MEM_ALLOC de 10
+[INFO] 18:50:59:690 Matelib/(6046:6050): Se realizó el MEM_ALLOC correctamente. La dirección lógica es 9
+[INFO] 18:50:59:690 Matelib/(6046:6050): MEM_WRITE el mensaje jejeje en 9
+[INFO] 18:50:59:695 Matelib/(6046:6049): Se realizó el MEM_ALLOC correctamente. La dirección lógica es 9
+[INFO] 18:50:59:695 Matelib/(6046:6049): MEM_WRITE el mensaje jejeje en 9
+[INFO] 18:50:59:700 Matelib/(6046:6048): Se realizó el MEM_ALLOC correctamente. La dirección lógica es 9
+[INFO] 18:50:59:700 Matelib/(6046:6048): MEM_WRITE el mensaje jejeje en 9
+[INFO] 18:50:59:710 Matelib/(6046:6047): Se realizó el MEM_ALLOC correctamente. La dirección lógica es 9
+[INFO] 18:50:59:710 Matelib/(6046:6047): MEM_WRITE el mensaje jejeje en 9
+[INFO] 18:50:59:712 Matelib/(6046:6050): Se realizó el MEM_WRITE correctamente
+[INFO] 18:50:59:713 Matelib/(6046:6050): MEM_READ desde 9 el size 7
+[INFO] 18:50:59:716 Matelib/(6046:6049): Se realizó el MEM_WRITE correctamente
+[INFO] 18:50:59:716 Matelib/(6046:6049): MEM_READ desde 9 el size 7
+[INFO] 18:50:59:717 Matelib/(6046:6048): Se realizó el MEM_WRITE correctamente
+[INFO] 18:50:59:718 Matelib/(6046:6048): MEM_READ desde 9 el size 7
+[INFO] 18:50:59:719 Matelib/(6046:6047): Se realizó el MEM_WRITE correctamente
+[INFO] 18:50:59:720 Matelib/(6046:6047): MEM_READ desde 9 el size 7
+[INFO] 18:56:52:216 Matelib/(6857:6861): Log Matelib creado
+[INFO] 18:56:52:216 Matelib/(6857:6861): Esperando respuesta de servidor
+[INFO] 18:56:52:216 Matelib/(6857:6860): Log Matelib creado
+[INFO] 18:56:52:216 Matelib/(6857:6860): Esperando respuesta de servidor
+[INFO] 18:56:52:216 Matelib/(6857:6859): Log Matelib creado
+[INFO] 18:56:52:216 Matelib/(6857:6859): Esperando respuesta de servidor
+[INFO] 18:56:52:216 Matelib/(6857:6861): NUEVO CARPINCHO
+[INFO] 18:56:52:216 Matelib/(6857:6860): NUEVO CARPINCHO
+[INFO] 18:56:52:217 Matelib/(6857:6858): Log Matelib creado
+[INFO] 18:56:52:217 Matelib/(6857:6858): Esperando respuesta de servidor
+[INFO] 18:56:52:217 Matelib/(6857:6859): NUEVO CARPINCHO
+[INFO] 18:56:52:217 Matelib/(6857:6858): NUEVO CARPINCHO
+[INFO] 18:56:52:256 Matelib/(6857:6861): Carpincho creado correctamente con el pid: 1
+[INFO] 18:56:52:256 Matelib/(6857:6860): Carpincho creado correctamente con el pid: 2
+[INFO] 18:56:52:256 Matelib/(6857:6861): MEM_ALLOC de 10
+[INFO] 18:56:52:256 Matelib/(6857:6860): MEM_ALLOC de 10
+[INFO] 18:56:52:256 Matelib/(6857:6859): Carpincho creado correctamente con el pid: 3
+[INFO] 18:56:52:256 Matelib/(6857:6859): MEM_ALLOC de 10
+[INFO] 18:56:52:258 Matelib/(6857:6858): Carpincho creado correctamente con el pid: 4
+[INFO] 18:56:52:258 Matelib/(6857:6858): MEM_ALLOC de 10
+[INFO] 18:56:52:262 Matelib/(6857:6861): Se realizó el MEM_ALLOC correctamente. La dirección lógica es 9
+[INFO] 18:56:52:262 Matelib/(6857:6861): MEM_WRITE el mensaje jejeje en 9
+[INFO] 18:56:52:267 Matelib/(6857:6860): Se realizó el MEM_ALLOC correctamente. La dirección lógica es 9
+[INFO] 18:56:52:267 Matelib/(6857:6860): MEM_WRITE el mensaje jejeje en 9
+[INFO] 18:56:52:272 Matelib/(6857:6859): Se realizó el MEM_ALLOC correctamente. La dirección lógica es 9
+[INFO] 18:56:52:272 Matelib/(6857:6859): MEM_WRITE el mensaje jejeje en 9
+[INFO] 18:56:52:277 Matelib/(6857:6858): Se realizó el MEM_ALLOC correctamente. La dirección lógica es 9
+[INFO] 18:56:52:280 Matelib/(6857:6861): Se realizó el MEM_WRITE correctamente
+[INFO] 18:56:52:281 Matelib/(6857:6858): MEM_WRITE el mensaje jejeje en 9
+[INFO] 18:56:52:281 Matelib/(6857:6861): MEM_READ desde 9 el size 7
+[INFO] 18:56:52:284 Matelib/(6857:6860): Se realizó el MEM_WRITE correctamente
+[INFO] 18:56:52:284 Matelib/(6857:6860): MEM_READ desde 9 el size 7
+[INFO] 18:56:52:287 Matelib/(6857:6859): Se realizó el MEM_WRITE correctamente
+[INFO] 18:56:52:287 Matelib/(6857:6859): MEM_READ desde 9 el size 7
+[INFO] 18:56:52:289 Matelib/(6857:6858): Se realizó el MEM_WRITE correctamente
+[INFO] 18:56:52:289 Matelib/(6857:6858): MEM_READ desde 9 el size 7
+[INFO] 18:56:52:329 Matelib/(6857:6861): Se realizó el MEM_READ correctamente. El contenido es: jejeje
+[INFO] 18:56:52:329 Matelib/(6857:6861): MEM_FREE a la dirección 9
+[INFO] 18:56:52:332 Matelib/(6857:6861): Se realizó el MEM_FREE correctamente
+[INFO] 18:56:52:332 Matelib/(6857:6861): LA CONCHA DE TU MADRE
+[INFO] 18:56:52:332 Matelib/(6857:6861): MATE_CLOSE: mensaje enviado a kernel
+[INFO] 18:56:52:332 Matelib/(6857:6861): respuesta de kernel: (null)
+[INFO] 18:56:52:332 Matelib/(6857:6861): libero memoria
+[INFO] 18:56:52:332 Matelib/(6857:6861): libero memoria
+[INFO] 18:56:52:332 Matelib/(6857:6861): Carpincho eliminado
+[INFO] 21:01:45:069 Matelib/(14682:14686): Log Matelib creado
+[INFO] 21:01:45:069 Matelib/(14682:14685): Log Matelib creado
+[INFO] 21:01:45:069 Matelib/(14682:14686): Esperando respuesta de servidor
+[INFO] 21:01:45:069 Matelib/(14682:14685): Esperando respuesta de servidor
+[INFO] 21:01:45:069 Matelib/(14682:14684): Log Matelib creado
+[INFO] 21:01:45:069 Matelib/(14682:14684): Esperando respuesta de servidor
+[INFO] 21:01:45:069 Matelib/(14682:14685): NUEVO CARPINCHO
+[INFO] 21:01:45:069 Matelib/(14682:14686): NUEVO CARPINCHO
+[INFO] 21:01:45:070 Matelib/(14682:14683): Log Matelib creado
+[INFO] 21:01:45:070 Matelib/(14682:14683): Esperando respuesta de servidor
+[INFO] 21:01:45:070 Matelib/(14682:14684): NUEVO CARPINCHO
+[INFO] 21:01:45:070 Matelib/(14682:14683): NUEVO CARPINCHO
+[INFO] 21:01:45:108 Matelib/(14682:14686): Carpincho creado correctamente con el pid: 2
+[INFO] 21:01:45:108 Matelib/(14682:14685): Carpincho creado correctamente con el pid: 1
+[INFO] 21:01:45:108 Matelib/(14682:14686): MEM_ALLOC de 10
+[INFO] 21:01:45:108 Matelib/(14682:14685): MEM_ALLOC de 10
+[INFO] 21:01:45:108 Matelib/(14682:14684): Carpincho creado correctamente con el pid: 3
+[INFO] 21:01:45:108 Matelib/(14682:14684): MEM_ALLOC de 10
+[INFO] 21:01:45:110 Matelib/(14682:14683): Carpincho creado correctamente con el pid: 4
+[INFO] 21:01:45:110 Matelib/(14682:14683): MEM_ALLOC de 10
+[INFO] 21:01:45:114 Matelib/(14682:14685): Se realizó el MEM_ALLOC correctamente. La dirección lógica es 9
+[INFO] 21:01:45:114 Matelib/(14682:14685): MEM_WRITE el mensaje jejeje en 9
+[INFO] 21:01:45:119 Matelib/(14682:14686): Se realizó el MEM_ALLOC correctamente. La dirección lógica es 9
+[INFO] 21:01:45:119 Matelib/(14682:14686): MEM_WRITE el mensaje jejeje en 9
+[INFO] 21:01:45:124 Matelib/(14682:14684): Se realizó el MEM_ALLOC correctamente. La dirección lógica es 9
+[INFO] 21:01:45:124 Matelib/(14682:14684): MEM_WRITE el mensaje jejeje en 9
+[INFO] 21:01:45:134 Matelib/(14682:14683): Se realizó el MEM_ALLOC correctamente. La dirección lógica es 9
+[INFO] 21:01:45:134 Matelib/(14682:14683): MEM_WRITE el mensaje jejeje en 9
+[INFO] 21:01:45:135 Matelib/(14682:14685): Se realizó el MEM_WRITE correctamente
+[INFO] 21:01:45:135 Matelib/(14682:14685): MEM_READ desde 9 el size 7
+[INFO] 21:01:45:137 Matelib/(14682:14686): Se realizó el MEM_WRITE correctamente
+[INFO] 21:01:45:137 Matelib/(14682:14686): MEM_READ desde 9 el size 7
+[INFO] 21:01:45:139 Matelib/(14682:14684): Se realizó el MEM_WRITE correctamente
+[INFO] 21:01:45:140 Matelib/(14682:14684): MEM_READ desde 9 el size 7
+[INFO] 21:01:45:141 Matelib/(14682:14683): Se realizó el MEM_WRITE correctamente
+[INFO] 21:01:45:141 Matelib/(14682:14683): MEM_READ desde 9 el size 7
+[INFO] 21:47:14:687 Matelib/(16309:16313): Log Matelib creado
+[INFO] 21:47:14:687 Matelib/(16309:16313): Esperando respuesta de servidor
+[INFO] 21:47:14:687 Matelib/(16309:16312): Log Matelib creado
+[INFO] 21:47:14:687 Matelib/(16309:16312): Esperando respuesta de servidor
+[INFO] 21:47:14:687 Matelib/(16309:16311): Log Matelib creado
+[INFO] 21:47:14:688 Matelib/(16309:16311): Esperando respuesta de servidor
+[INFO] 21:47:14:688 Matelib/(16309:16313): NUEVO CARPINCHO
+[INFO] 21:47:14:688 Matelib/(16309:16312): NUEVO CARPINCHO
+[INFO] 21:47:14:688 Matelib/(16309:16310): Log Matelib creado
+[INFO] 21:47:14:688 Matelib/(16309:16310): Esperando respuesta de servidor
+[INFO] 21:47:14:688 Matelib/(16309:16311): NUEVO CARPINCHO
+[INFO] 21:47:14:688 Matelib/(16309:16310): NUEVO CARPINCHO
+[INFO] 21:47:14:726 Matelib/(16309:16313): Carpincho creado correctamente con el pid: 1
+[INFO] 21:47:14:726 Matelib/(16309:16312): Carpincho creado correctamente con el pid: 2
+[INFO] 21:47:14:726 Matelib/(16309:16313): MEM_ALLOC de 10
+[INFO] 21:47:14:726 Matelib/(16309:16312): MEM_ALLOC de 10
+[INFO] 21:47:14:726 Matelib/(16309:16311): Carpincho creado correctamente con el pid: 3
+[INFO] 21:47:14:726 Matelib/(16309:16311): MEM_ALLOC de 10
+[INFO] 21:47:14:729 Matelib/(16309:16310): Carpincho creado correctamente con el pid: 4
+[INFO] 21:47:14:730 Matelib/(16309:16310): MEM_ALLOC de 10
+[INFO] 21:47:14:735 Matelib/(16309:16313): Se realizó el MEM_ALLOC correctamente. La dirección lógica es 9
+[INFO] 21:47:14:735 Matelib/(16309:16313): MEM_WRITE el mensaje jejeje en 9
+[INFO] 21:47:14:740 Matelib/(16309:16312): Se realizó el MEM_ALLOC correctamente. La dirección lógica es 9
+[INFO] 21:47:14:740 Matelib/(16309:16312): MEM_WRITE el mensaje jejeje en 9
+[INFO] 21:47:14:745 Matelib/(16309:16311): Se realizó el MEM_ALLOC correctamente. La dirección lógica es 9
+[INFO] 21:47:14:745 Matelib/(16309:16311): MEM_WRITE el mensaje jejeje en 9
+[INFO] 21:47:14:755 Matelib/(16309:16310): Se realizó el MEM_ALLOC correctamente. La dirección lógica es 9
+[INFO] 21:47:14:755 Matelib/(16309:16310): MEM_WRITE el mensaje jejeje en 9
+[INFO] 21:47:14:757 Matelib/(16309:16313): Se realizó el MEM_WRITE correctamente
+[INFO] 21:47:14:757 Matelib/(16309:16313): MEM_READ desde 9 el size 7
+[INFO] 21:47:14:758 Matelib/(16309:16312): Se realizó el MEM_WRITE correctamente
+[INFO] 21:47:14:759 Matelib/(16309:16312): MEM_READ desde 9 el size 7
+[INFO] 21:47:14:760 Matelib/(16309:16311): Se realizó el MEM_WRITE correctamente
+[INFO] 21:47:14:761 Matelib/(16309:16311): MEM_READ desde 9 el size 7
+[INFO] 21:47:14:762 Matelib/(16309:16310): Se realizó el MEM_WRITE correctamente
+[INFO] 21:47:14:762 Matelib/(16309:16310): MEM_READ desde 9 el size 7

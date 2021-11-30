@@ -5,6 +5,9 @@
 #include "algoritmos.h"
 #include "estructuras.h"
 
+#define READ  1
+#define WRITE 2
+
 extern int swap;
 
 void set_algoritmos();

@@ -40,6 +40,7 @@ typedef struct pag_t{
     int presente;
     int modificado;
     int algoritmo;
+    int tlb;
 }pag_t;
 
 

@@ -197,4 +197,12 @@ bool marcos_maximos_asignados(tab_pags* tabla);
 
 int paginas_presentes(tab_pags* t);
 
+void memoria_asignar_pagina_vacia(tab_pags* tabla, int pagina, int marco);
+
+void pagina_iniciar(tab_pags *tabla);
+
+dir_t decimal_a_dl(int dir_log);
+
+int dl_a_decimal(dir_t dl);
+
 #endif

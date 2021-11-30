@@ -242,7 +242,6 @@ int mate_memread(mate_instance *lib_ref, mate_pointer origin, void *dest, int si
   mate_inner_structure* info = (mate_inner_structure*)lib_ref->group_info;
 
   log_info(logger, "MEM_READ desde %d el size %d", origin, size);
-
   enviar_mem_read(info->conexion, MEMREAD, (int)origin, size);
 
   int estado = recibir_int(info->conexion);
@@ -252,7 +251,11 @@ int mate_memread(mate_instance *lib_ref, mate_pointer origin, void *dest, int si
     return MATE_READ_FAULT;
   }
 
-  dest = recibir_mensaje(info->conexion);
+  void* new = recibir_buffer(size, info->conexion);
+  memcpy(dest, new, size);
+  free(new);
+  printf("El valor de dest es %s\n", (char*)dest);
+
   log_info(logger, "Se realizó el MEM_READ correctamente. El contenido es: %s", (char *)dest);
 
   return 0;

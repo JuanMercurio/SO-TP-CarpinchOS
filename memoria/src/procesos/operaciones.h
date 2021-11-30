@@ -8,6 +8,9 @@
 #include <stdint.h>
 
 #define PID_EMPTY 0 
+#define LAST_METADATA -1
+#define FIRST_METADATA -2
+
 
 /* Estrucutra de los alloc */
 typedef struct HeapMetadata{
@@ -22,17 +25,29 @@ int num_pagina_a_traer(uint32_t inicio);
 bool hay_cambio_de_pagina(int direc_actual, uint32_t next_alloc);
 int cant_cambios_de_pagina(int direc_actual, uint32_t next_alloc);
 
-HeapMetadata* hallar_metadata(uint32_t dir_log, tab_pags* tabla, int* num_pag);
+//CAMBIADO
+HeapMetadata* hallar_metadata(uint32_t dir_log, tab_pags* tabla);//, int* num_pag);
 
 bool pedir_memoria_a_swap(int tamanio);
 
-int memalloc(tab_pags *tabla, int tamanio);
-int memfree(tab_pags *tabla, int dl);
-int memwrite(tab_pags* tabla, int dir_log, void* contenido, int tamanio);
-void* memread(tab_pags* tabla, int dir_log, int tamanio);
+int memalloc(tab_pags* tabla, int tamanio);
+int memfree(tab_pags* tabla, int dir_log);
 
 void TEST_agregar_nueva_pagina(tab_pags* tabla, int marco);
 void TEST_report_metadatas(int pid);
+
+bool read_verify_size(tab_pags* t, dir_t dl, int tamanio);
+int read_get_readable_bytes(dir_t dl, int count);
+int memoria_escribir(tab_pags* tabla, dir_t dl, void* contenido, int tamanio);
+void* memoria_leer(tab_pags* tabla, dir_t dl, int tamanio);
+int memoria_escribir_por_dirlog(tab_pags* tabla, int dl, void* contenido, int tamanio);
+void* memoria_leer_por_dirlog(tab_pags* tabla, int dl, int tamanio);
+
+void TEST_agregar_nueva_pagina(tab_pags* tabla, int marco);
+void TEST_report_metadatas(int pid);
+
+int memwrite(tab_pags* tabla, int dir_log, void* contenido, int tamanio);
+void* memread(tab_pags* tabla, int dir_log, int tamanio);
 
 /*
     @NAME:  idesginar_PID
@@ -91,4 +106,6 @@ bool alloc_valido(dir_t dl, tab_pags* t, int tamanio);
 
 bool heap_lectura_valida(HeapMetadata* data, dir_t dl, int tamanio);
 
+void heap_init(tab_pags* tabla);
+    
 #endif

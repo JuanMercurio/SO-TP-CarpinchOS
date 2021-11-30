@@ -702,3 +702,1112 @@
 [INFO] 21:18:01:929 Memoria/(23546:23546): Tlb Inicializada
 [INFO] 21:18:04:257 Memoria/(23546:23550): Se conecto un cliente - Socket: 15
 [INFO] 21:18:04:299 Memoria/(23546:23550): Se desconecto un cliente - Socket: 15 - PID: 1
+[INFO] 23:19:02:842 Memoria/(10566:10566): Tlb Inicializada
+[INFO] 23:28:24:498 Memoria/(12464:12464): Tlb Inicializada
+[INFO] 23:28:40:084 Memoria/(12464:12592): Se conecto un cliente - Socket: 15
+[INFO] 23:45:14:550 Memoria/(14489:14489): Tlb Inicializada
+[INFO] 23:47:17:900 Memoria/(14489:14948): Se conecto un cliente - Socket: 15
+[INFO] 23:48:17:611 Memoria/(15197:15197): Tlb Inicializada
+[INFO] 23:48:20:703 Memoria/(15197:15260): Se conecto un cliente - Socket: 15
+[INFO] 23:49:11:338 Memoria/(15597:15597): Tlb Inicializada
+[INFO] 23:49:12:999 Memoria/(15597:15601): Se conecto un cliente - Socket: 15
+[INFO] 23:50:29:195 Memoria/(15881:15881): Tlb Inicializada
+[INFO] 23:50:31:057 Memoria/(15881:15885): Se conecto un cliente - Socket: 15
+[INFO] 23:50:43:972 Memoria/(16095:16095): Tlb Inicializada
+[INFO] 23:54:47:560 Memoria/(16717:16717): Tlb Inicializada
+[INFO] 23:54:48:619 Memoria/(16717:16721): Se conecto un cliente - Socket: 15
+[INFO] 23:57:13:646 Memoria/(16917:16917): Tlb Inicializada
+[INFO] 23:58:07:867 Memoria/(16966:16966): Tlb Inicializada
+[INFO] 23:58:31:950 Memoria/(16966:17004): Se conecto un cliente - Socket: 5
+[INFO] 23:59:25:333 Memoria/(17049:17049): Tlb Inicializada
+[INFO] 00:00:44:952 Memoria/(17315:17315): Tlb Inicializada
+[INFO] 00:02:34:204 Memoria/(17441:17441): Tlb Inicializada
+[INFO] 00:02:36:851 Memoria/(17441:17445): Se conecto un cliente - Socket: 5
+[INFO] 00:03:09:710 Memoria/(17511:17511): Tlb Inicializada
+[INFO] 00:03:37:438 Memoria/(17511:17547): Se conecto un cliente - Socket: 5
+[INFO] 00:06:21:462 Memoria/(18214:18214): Tlb Inicializada
+[INFO] 00:06:29:831 Memoria/(18214:18280): Se conecto un cliente - Socket: 15
+[INFO] 00:07:17:978 Memoria/(18536:18536): Tlb Inicializada
+[INFO] 00:07:18:949 Memoria/(18536:18540): Se conecto un cliente - Socket: 15
+[INFO] 00:07:18:988 Memoria/(18536:18540): TLB MISS - PID: 1 - Pagina: 0
+[INFO] 00:07:59:209 Memoria/(18768:18768): Tlb Inicializada
+[INFO] 00:08:00:473 Memoria/(18768:18775): Se conecto un cliente - Socket: 15
+[INFO] 00:08:00:513 Memoria/(18768:18775): TLB MISS - PID: 1 - Pagina: 0
+[INFO] 00:08:13:690 Memoria/(18978:18978): Tlb Inicializada
+[INFO] 00:08:14:405 Memoria/(18978:18983): Se conecto un cliente - Socket: 15
+[INFO] 00:08:14:450 Memoria/(18978:18983): TLB MISS - PID: 1 - Pagina: 0
+[INFO] 00:08:20:366 Memoria/(19174:19174): Tlb Inicializada
+[INFO] 00:08:21:240 Memoria/(19174:19178): Se conecto un cliente - Socket: 15
+[INFO] 00:08:21:280 Memoria/(19174:19178): TLB MISS - PID: 1 - Pagina: 0
+[INFO] 00:08:37:386 Memoria/(19385:19385): Tlb Inicializada
+[INFO] 00:08:42:807 Memoria/(19385:19394): Se conecto un cliente - Socket: 15
+[INFO] 00:08:42:845 Memoria/(19385:19394): TLB MISS - PID: 1 - Pagina: 0
+[INFO] 00:09:06:687 Memoria/(19609:19609): Tlb Inicializada
+[INFO] 00:09:07:485 Memoria/(19609:19613): Se conecto un cliente - Socket: 15
+[INFO] 00:09:07:525 Memoria/(19609:19613): TLB MISS - PID: 1 - Pagina: 0
+[INFO] 00:09:13:659 Memoria/(19808:19808): Tlb Inicializada
+[INFO] 00:09:14:265 Memoria/(19808:19812): Se conecto un cliente - Socket: 15
+[INFO] 00:09:14:304 Memoria/(19808:19812): TLB MISS - PID: 1 - Pagina: 0
+[INFO] 00:09:33:659 Memoria/(20131:20131): Tlb Inicializada
+[INFO] 00:09:36:035 Memoria/(20131:20146): Se conecto un cliente - Socket: 15
+[INFO] 00:09:36:072 Memoria/(20131:20146): TLB MISS - PID: 1 - Pagina: 0
+[INFO] 00:10:25:574 Memoria/(20387:20387): Tlb Inicializada
+[INFO] 00:10:26:886 Memoria/(20387:20391): Se conecto un cliente - Socket: 15
+[INFO] 00:10:26:925 Memoria/(20387:20391): TLB MISS - PID: 1 - Pagina: 0
+[INFO] 00:10:34:264 Memoria/(20580:20580): Tlb Inicializada
+[INFO] 00:10:35:028 Memoria/(20580:20584): Se conecto un cliente - Socket: 15
+[INFO] 00:10:35:070 Memoria/(20580:20584): TLB MISS - PID: 1 - Pagina: 0
+[INFO] 00:10:44:266 Memoria/(20785:20785): Tlb Inicializada
+[INFO] 00:10:45:072 Memoria/(20785:20789): Se conecto un cliente - Socket: 15
+[INFO] 00:10:45:113 Memoria/(20785:20789): TLB MISS - PID: 1 - Pagina: 0
+[INFO] 00:11:44:843 Memoria/(21040:21040): Tlb Inicializada
+[INFO] 00:11:47:890 Memoria/(21040:21047): Se conecto un cliente - Socket: 15
+[INFO] 00:11:47:931 Memoria/(21040:21047): TLB MISS - PID: 1 - Pagina: 0
+[INFO] 00:11:47:932 Memoria/(21040:21047): TLB MISS - PID: 1 - Pagina: 0
+[INFO] 00:11:47:935 Memoria/(21040:21047): TLB HIT - PID: 1 - Pagina: 0 - Marco: -1
+[INFO] 00:11:47:936 Memoria/(21040:21047): TLB HIT - PID: 1 - Pagina: 0 - Marco: -1
+[INFO] 00:11:47:938 Memoria/(21040:21047): TLB HIT - PID: 1 - Pagina: 0 - Marco: -1
+[INFO] 00:11:47:939 Memoria/(21040:21047): TLB HIT - PID: 1 - Pagina: 0 - Marco: -1
+[INFO] 11:49:48:607 Memoria/(12204:12204): Tlb Inicializada
+[INFO] 11:49:57:640 Memoria/(12204:12322): Se conecto un cliente - Socket: 15
+[INFO] 11:49:57:677 Memoria/(12204:12322): TLB MISS - PID: 1 - Pagina: 0
+[INFO] 11:49:57:682 Memoria/(12204:12322): TLB HIT - PID: 1 - Pagina: 0 - Marco: 0
+[INFO] 11:49:57:683 Memoria/(12204:12322): TLB HIT - PID: 1 - Pagina: 0 - Marco: 0
+[INFO] 11:49:57:684 Memoria/(12204:12322): TLB HIT - PID: 1 - Pagina: 0 - Marco: 0
+[INFO] 11:49:57:685 Memoria/(12204:12322): TLB HIT - PID: 1 - Pagina: 0 - Marco: 0
+[INFO] 11:49:57:686 Memoria/(12204:12322): TLB HIT - PID: 1 - Pagina: 0 - Marco: 0
+[INFO] 11:49:57:687 Memoria/(12204:12322): Se desconecto un cliente - Socket: 15 - PID: 1
+[INFO] 11:55:03:316 Memoria/(13364:13364): Tlb Inicializada
+[INFO] 11:55:15:857 Memoria/(13364:13389): Se conecto un cliente - Socket: 15
+[INFO] 11:55:15:897 Memoria/(13364:13389): TLB MISS - PID: 1 - Pagina: 0
+[INFO] 11:55:15:899 Memoria/(13364:13389): TLB HIT - PID: 1 - Pagina: 0 - Marco: 0
+[INFO] 11:55:15:900 Memoria/(13364:13389): TLB HIT - PID: 1 - Pagina: 0 - Marco: 0
+[INFO] 11:55:15:901 Memoria/(13364:13389): TLB HIT - PID: 1 - Pagina: 0 - Marco: 0
+[INFO] 11:55:15:902 Memoria/(13364:13389): TLB HIT - PID: 1 - Pagina: 0 - Marco: 0
+[INFO] 11:55:15:903 Memoria/(13364:13389): TLB HIT - PID: 1 - Pagina: 0 - Marco: 0
+[INFO] 11:55:15:904 Memoria/(13364:13389): Se desconecto un cliente - Socket: 15 - PID: 1
+[INFO] 12:01:48:424 Memoria/(14266:14266): Tlb Inicializada
+[INFO] 12:01:53:033 Memoria/(14266:14276): Se conecto un cliente - Socket: 15
+[INFO] 12:01:53:073 Memoria/(14266:14276): TLB MISS - PID: 1 - Pagina: 0
+[INFO] 12:01:53:075 Memoria/(14266:14276): TLB HIT - PID: 1 - Pagina: 0 - Marco: 0
+[INFO] 12:01:53:076 Memoria/(14266:14276): TLB HIT - PID: 1 - Pagina: 0 - Marco: 0
+[INFO] 12:01:53:077 Memoria/(14266:14276): TLB HIT - PID: 1 - Pagina: 0 - Marco: 0
+[INFO] 12:01:53:078 Memoria/(14266:14276): TLB HIT - PID: 1 - Pagina: 0 - Marco: 0
+[INFO] 12:01:53:079 Memoria/(14266:14276): TLB HIT - PID: 1 - Pagina: 0 - Marco: 0
+[INFO] 12:01:53:080 Memoria/(14266:14276): Se desconecto un cliente - Socket: 15 - PID: 1
+[INFO] 12:03:24:033 Memoria/(14807:14807): Tlb Inicializada
+[INFO] 12:05:43:642 Memoria/(14807:15225): Se conecto un cliente - Socket: 15
+[INFO] 12:05:43:681 Memoria/(14807:15225): TLB MISS - PID: 1 - Pagina: 0
+[INFO] 12:05:43:682 Memoria/(14807:15225): TLB HIT - PID: 1 - Pagina: 0 - Marco: 0
+[INFO] 12:05:43:683 Memoria/(14807:15225): TLB HIT - PID: 1 - Pagina: 0 - Marco: 0
+[INFO] 12:05:43:684 Memoria/(14807:15225): TLB HIT - PID: 1 - Pagina: 0 - Marco: 0
+[INFO] 12:05:43:685 Memoria/(14807:15225): TLB HIT - PID: 1 - Pagina: 0 - Marco: 0
+[INFO] 12:05:43:686 Memoria/(14807:15225): TLB HIT - PID: 1 - Pagina: 0 - Marco: 0
+[INFO] 12:05:43:687 Memoria/(14807:15225): Se desconecto un cliente - Socket: 15 - PID: 1
+[INFO] 12:16:07:216 Memoria/(16847:16847): Tlb Inicializada
+[INFO] 12:16:10:636 Memoria/(16847:16907): Se conecto un cliente - Socket: 15
+[INFO] 12:16:10:673 Memoria/(16847:16907): TLB MISS - PID: 1 - Pagina: 0
+[INFO] 12:16:10:675 Memoria/(16847:16907): TLB HIT - PID: 1 - Pagina: 0 - Marco: 0
+[INFO] 12:31:28:973 Memoria/(18612:18612): Tlb Inicializada
+[INFO] 12:31:30:786 Memoria/(18612:18616): Se conecto un cliente - Socket: 15
+[INFO] 12:31:30:825 Memoria/(18612:18616): TLB MISS - PID: 1 - Pagina: 0
+[INFO] 12:31:30:827 Memoria/(18612:18616): TLB HIT - PID: 1 - Pagina: 0 - Marco: 0
+[INFO] 12:33:00:513 Memoria/(18929:18929): Tlb Inicializada
+[INFO] 12:33:03:190 Memoria/(18929:18940): Se conecto un cliente - Socket: 15
+[INFO] 12:33:03:229 Memoria/(18929:18940): TLB MISS - PID: 1 - Pagina: 0
+[INFO] 12:33:03:231 Memoria/(18929:18940): TLB HIT - PID: 1 - Pagina: 0 - Marco: 0
+[INFO] 12:33:03:232 Memoria/(18929:18940): TLB HIT - PID: 1 - Pagina: 0 - Marco: 0
+[INFO] 12:33:03:233 Memoria/(18929:18940): TLB HIT - PID: 1 - Pagina: 0 - Marco: 0
+[INFO] 12:33:03:234 Memoria/(18929:18940): TLB HIT - PID: 1 - Pagina: 0 - Marco: 0
+[INFO] 12:33:03:235 Memoria/(18929:18940): TLB HIT - PID: 1 - Pagina: 0 - Marco: 0
+[INFO] 12:33:03:236 Memoria/(18929:18940): Se desconecto un cliente - Socket: 15 - PID: 1
+[INFO] 12:33:51:517 Memoria/(19213:19213): Tlb Inicializada
+[INFO] 12:33:52:502 Memoria/(19213:19221): Se conecto un cliente - Socket: 15
+[INFO] 12:33:52:541 Memoria/(19213:19221): TLB MISS - PID: 1 - Pagina: 0
+[INFO] 12:33:52:543 Memoria/(19213:19221): TLB HIT - PID: 1 - Pagina: 0 - Marco: 0
+[INFO] 12:33:52:544 Memoria/(19213:19221): TLB HIT - PID: 1 - Pagina: 0 - Marco: 0
+[INFO] 12:33:52:545 Memoria/(19213:19221): TLB HIT - PID: 1 - Pagina: 0 - Marco: 0
+[INFO] 12:33:52:546 Memoria/(19213:19221): TLB HIT - PID: 1 - Pagina: 0 - Marco: 0
+[INFO] 12:33:52:547 Memoria/(19213:19221): TLB HIT - PID: 1 - Pagina: 0 - Marco: 0
+[INFO] 12:33:52:548 Memoria/(19213:19221): Se desconecto un cliente - Socket: 15 - PID: 1
+[INFO] 12:36:00:903 Memoria/(19633:19633): Tlb Inicializada
+[INFO] 12:36:01:817 Memoria/(19633:19637): Se conecto un cliente - Socket: 15
+[INFO] 12:40:02:765 Memoria/(20193:20193): Tlb Inicializada
+[INFO] 12:40:03:626 Memoria/(20193:20203): Se conecto un cliente - Socket: 15
+[INFO] 12:40:03:665 Memoria/(20193:20203): TLB MISS - PID: 1 - Pagina: 0
+[INFO] 12:40:03:668 Memoria/(20193:20203): TLB HIT - PID: 1 - Pagina: 0 - Marco: 0
+[INFO] 12:40:03:669 Memoria/(20193:20203): TLB HIT - PID: 1 - Pagina: 0 - Marco: 0
+[INFO] 12:40:03:669 Memoria/(20193:20203): TLB HIT - PID: 1 - Pagina: 0 - Marco: 0
+[INFO] 12:40:03:670 Memoria/(20193:20203): TLB HIT - PID: 1 - Pagina: 0 - Marco: 0
+[INFO] 12:40:03:671 Memoria/(20193:20203): TLB HIT - PID: 1 - Pagina: 0 - Marco: 0
+[INFO] 12:40:03:672 Memoria/(20193:20203): Se desconecto un cliente - Socket: 15 - PID: 1
+[INFO] 12:41:42:994 Memoria/(20568:20568): Tlb Inicializada
+[INFO] 12:41:44:804 Memoria/(20568:20578): Se conecto un cliente - Socket: 15
+[INFO] 12:41:44:841 Memoria/(20568:20578): TLB MISS - PID: 1 - Pagina: 0
+[INFO] 12:41:44:842 Memoria/(20568:20578): TLB HIT - PID: 1 - Pagina: 0 - Marco: 0
+[INFO] 12:41:44:844 Memoria/(20568:20578): TLB HIT - PID: 1 - Pagina: 0 - Marco: 0
+[INFO] 12:41:44:845 Memoria/(20568:20578): TLB HIT - PID: 1 - Pagina: 0 - Marco: 0
+[INFO] 12:41:44:846 Memoria/(20568:20578): TLB HIT - PID: 1 - Pagina: 0 - Marco: 0
+[INFO] 12:41:44:847 Memoria/(20568:20578): TLB HIT - PID: 1 - Pagina: 0 - Marco: 0
+[INFO] 12:41:44:848 Memoria/(20568:20578): Se desconecto un cliente - Socket: 15 - PID: 1
+[INFO] 12:44:03:927 Memoria/(20974:20974): Tlb Inicializada
+[INFO] 12:44:05:677 Memoria/(20974:20982): Se conecto un cliente - Socket: 15
+[INFO] 12:44:05:717 Memoria/(20974:20982): TLB MISS - PID: 1 - Pagina: 0
+[INFO] 12:44:05:718 Memoria/(20974:20982): TLB HIT - PID: 1 - Pagina: 0 - Marco: 0
+[INFO] 12:44:05:719 Memoria/(20974:20982): TLB HIT - PID: 1 - Pagina: 0 - Marco: 0
+[INFO] 12:44:05:720 Memoria/(20974:20982): TLB HIT - PID: 1 - Pagina: 0 - Marco: 0
+[INFO] 12:44:05:721 Memoria/(20974:20982): TLB HIT - PID: 1 - Pagina: 0 - Marco: 0
+[INFO] 12:44:05:722 Memoria/(20974:20982): TLB HIT - PID: 1 - Pagina: 0 - Marco: 0
+[INFO] 12:44:05:723 Memoria/(20974:20982): Se desconecto un cliente - Socket: 15 - PID: 1
+[INFO] 12:44:31:887 Memoria/(21230:21230): Tlb Inicializada
+[INFO] 12:44:33:222 Memoria/(21230:21235): Se conecto un cliente - Socket: 15
+[INFO] 12:44:33:260 Memoria/(21230:21235): TLB MISS - PID: 1 - Pagina: 0
+[INFO] 12:44:33:261 Memoria/(21230:21235): TLB HIT - PID: 1 - Pagina: 0 - Marco: 0
+[INFO] 12:44:33:262 Memoria/(21230:21235): TLB HIT - PID: 1 - Pagina: 0 - Marco: 0
+[INFO] 12:44:33:263 Memoria/(21230:21235): TLB HIT - PID: 1 - Pagina: 0 - Marco: 0
+[INFO] 12:44:33:264 Memoria/(21230:21235): TLB HIT - PID: 1 - Pagina: 0 - Marco: 0
+[INFO] 12:44:33:265 Memoria/(21230:21235): TLB HIT - PID: 1 - Pagina: 0 - Marco: 0
+[INFO] 12:44:33:266 Memoria/(21230:21235): Se desconecto un cliente - Socket: 15 - PID: 1
+[INFO] 12:45:21:331 Memoria/(21496:21496): Tlb Inicializada
+[INFO] 12:45:22:531 Memoria/(21496:21500): Se conecto un cliente - Socket: 15
+[INFO] 12:45:22:569 Memoria/(21496:21500): TLB MISS - PID: 1 - Pagina: 0
+[INFO] 12:45:22:571 Memoria/(21496:21500): TLB HIT - PID: 1 - Pagina: 0 - Marco: 0
+[INFO] 12:45:41:954 Memoria/(21721:21721): Tlb Inicializada
+[INFO] 12:45:43:410 Memoria/(21721:21728): Se conecto un cliente - Socket: 15
+[INFO] 12:45:43:449 Memoria/(21721:21728): TLB MISS - PID: 1 - Pagina: 0
+[INFO] 12:45:43:450 Memoria/(21721:21728): TLB HIT - PID: 1 - Pagina: 0 - Marco: 0
+[INFO] 12:45:43:451 Memoria/(21721:21728): TLB HIT - PID: 1 - Pagina: 0 - Marco: 0
+[INFO] 12:45:43:452 Memoria/(21721:21728): TLB HIT - PID: 1 - Pagina: 0 - Marco: 0
+[INFO] 12:45:43:453 Memoria/(21721:21728): TLB HIT - PID: 1 - Pagina: 0 - Marco: 0
+[INFO] 12:45:43:454 Memoria/(21721:21728): TLB HIT - PID: 1 - Pagina: 0 - Marco: 0
+[INFO] 12:45:43:455 Memoria/(21721:21728): Se desconecto un cliente - Socket: 15 - PID: 1
+[INFO] 12:47:45:404 Memoria/(22125:22125): Tlb Inicializada
+[INFO] 12:47:46:583 Memoria/(22125:22129): Se conecto un cliente - Socket: 15
+[INFO] 12:47:46:621 Memoria/(22125:22129): TLB MISS - PID: 1 - Pagina: 0
+[INFO] 12:47:46:622 Memoria/(22125:22129): TLB HIT - PID: 1 - Pagina: 0 - Marco: 0
+[INFO] 12:47:46:625 Memoria/(22125:22129): TLB HIT - PID: 1 - Pagina: 0 - Marco: 0
+[INFO] 12:47:46:625 Memoria/(22125:22129): TLB HIT - PID: 1 - Pagina: 0 - Marco: 0
+[INFO] 12:47:46:626 Memoria/(22125:22129): TLB HIT - PID: 1 - Pagina: 0 - Marco: 0
+[INFO] 12:47:46:627 Memoria/(22125:22129): TLB HIT - PID: 1 - Pagina: 0 - Marco: 0
+[INFO] 12:47:46:628 Memoria/(22125:22129): Se desconecto un cliente - Socket: 15 - PID: 1
+[INFO] 12:49:19:990 Memoria/(22473:22473): Tlb Inicializada
+[INFO] 12:49:20:531 Memoria/(22473:22477): Se conecto un cliente - Socket: 15
+[INFO] 12:49:20:569 Memoria/(22473:22477): TLB MISS - PID: 1 - Pagina: 0
+[INFO] 12:49:20:570 Memoria/(22473:22477): TLB HIT - PID: 1 - Pagina: 0 - Marco: 0
+[INFO] 12:49:20:572 Memoria/(22473:22477): TLB HIT - PID: 1 - Pagina: 0 - Marco: 0
+[INFO] 12:49:20:572 Memoria/(22473:22477): TLB HIT - PID: 1 - Pagina: 0 - Marco: 0
+[INFO] 12:49:20:573 Memoria/(22473:22477): TLB HIT - PID: 1 - Pagina: 0 - Marco: 0
+[INFO] 12:49:20:574 Memoria/(22473:22477): TLB HIT - PID: 1 - Pagina: 0 - Marco: 0
+[INFO] 12:49:20:575 Memoria/(22473:22477): Se desconecto un cliente - Socket: 15 - PID: 1
+[INFO] 12:51:06:376 Memoria/(22473:22765): Se conecto un cliente - Socket: 16
+[INFO] 12:51:06:413 Memoria/(22473:22765): TLB MISS - PID: 2 - Pagina: 0
+[INFO] 12:51:06:415 Memoria/(22473:22765): TLB HIT - PID: 2 - Pagina: 0 - Marco: 0
+[INFO] 12:51:06:417 Memoria/(22473:22765): TLB HIT - PID: 2 - Pagina: 0 - Marco: 0
+[INFO] 12:51:06:417 Memoria/(22473:22765): TLB HIT - PID: 2 - Pagina: 0 - Marco: 0
+[INFO] 12:51:06:419 Memoria/(22473:22765): TLB HIT - PID: 2 - Pagina: 0 - Marco: 0
+[INFO] 12:51:06:419 Memoria/(22473:22765): TLB HIT - PID: 2 - Pagina: 0 - Marco: 0
+[INFO] 12:51:06:420 Memoria/(22473:22765): Se desconecto un cliente - Socket: 16 - PID: 2
+[INFO] 12:52:34:945 Memoria/(23066:23066): Tlb Inicializada
+[INFO] 12:52:36:554 Memoria/(23066:23070): Se conecto un cliente - Socket: 15
+[INFO] 12:52:36:593 Memoria/(23066:23070): TLB MISS - PID: 1 - Pagina: 0
+[INFO] 12:52:36:594 Memoria/(23066:23070): TLB HIT - PID: 1 - Pagina: 0 - Marco: 0
+[INFO] 12:54:38:992 Memoria/(23433:23433): Tlb Inicializada
+[INFO] 12:54:40:545 Memoria/(23433:23443): Se conecto un cliente - Socket: 15
+[INFO] 12:54:40:585 Memoria/(23433:23443): TLB MISS - PID: 1 - Pagina: 0
+[INFO] 12:54:40:586 Memoria/(23433:23443): TLB HIT - PID: 1 - Pagina: 0 - Marco: 0
+[INFO] 12:54:40:588 Memoria/(23433:23443): TLB HIT - PID: 1 - Pagina: 0 - Marco: 0
+[INFO] 12:54:40:589 Memoria/(23433:23443): TLB HIT - PID: 1 - Pagina: 0 - Marco: 0
+[INFO] 12:54:40:590 Memoria/(23433:23443): TLB HIT - PID: 1 - Pagina: 0 - Marco: 0
+[INFO] 12:54:40:591 Memoria/(23433:23443): TLB HIT - PID: 1 - Pagina: 0 - Marco: 0
+[INFO] 12:54:40:592 Memoria/(23433:23443): Se desconecto un cliente - Socket: 15 - PID: 1
+[INFO] 12:59:46:167 Memoria/(24070:24070): Tlb Inicializada
+[INFO] 12:59:47:319 Memoria/(24070:24074): Se conecto un cliente - Socket: 15
+[INFO] 12:59:47:357 Memoria/(24070:24074): TLB MISS - PID: 1 - Pagina: 0
+[INFO] 12:59:47:358 Memoria/(24070:24074): TLB HIT - PID: 1 - Pagina: 0 - Marco: 0
+[INFO] 12:59:47:359 Memoria/(24070:24074): TLB HIT - PID: 1 - Pagina: 0 - Marco: 0
+[INFO] 12:59:47:361 Memoria/(24070:24074): TLB HIT - PID: 1 - Pagina: 0 - Marco: 0
+[INFO] 12:59:47:361 Memoria/(24070:24074): TLB HIT - PID: 1 - Pagina: 0 - Marco: 0
+[INFO] 12:59:47:363 Memoria/(24070:24074): TLB HIT - PID: 1 - Pagina: 0 - Marco: 0
+[INFO] 12:59:47:363 Memoria/(24070:24074): Se desconecto un cliente - Socket: 15 - PID: 1
+[INFO] 13:03:05:469 Memoria/(24569:24569): Tlb Inicializada
+[INFO] 13:03:06:595 Memoria/(24569:24576): Se conecto un cliente - Socket: 15
+[INFO] 13:03:06:633 Memoria/(24569:24576): TLB MISS - PID: 1 - Pagina: 0
+[INFO] 13:03:06:635 Memoria/(24569:24576): TLB HIT - PID: 1 - Pagina: 0 - Marco: 0
+[INFO] 13:03:06:636 Memoria/(24569:24576): TLB HIT - PID: 1 - Pagina: 0 - Marco: 0
+[INFO] 13:03:06:637 Memoria/(24569:24576): TLB HIT - PID: 1 - Pagina: 0 - Marco: 0
+[INFO] 13:03:06:638 Memoria/(24569:24576): TLB HIT - PID: 1 - Pagina: 0 - Marco: 0
+[INFO] 13:03:06:639 Memoria/(24569:24576): TLB HIT - PID: 1 - Pagina: 0 - Marco: 0
+[INFO] 13:03:06:640 Memoria/(24569:24576): Se desconecto un cliente - Socket: 15 - PID: 1
+[INFO] 13:11:32:982 Memoria/(25501:25501): Tlb Inicializada
+[INFO] 13:11:33:961 Memoria/(25501:25505): Se conecto un cliente - Socket: 15
+[INFO] 13:11:34:002 Memoria/(25501:25505): TLB MISS - PID: 1 - Pagina: 0
+[INFO] 13:11:34:004 Memoria/(25501:25505): TLB HIT - PID: 1 - Pagina: 0 - Marco: 0
+[INFO] 13:11:34:005 Memoria/(25501:25505): TLB HIT - PID: 1 - Pagina: 0 - Marco: 0
+[INFO] 13:11:34:006 Memoria/(25501:25505): TLB HIT - PID: 1 - Pagina: 0 - Marco: 0
+[INFO] 13:11:34:007 Memoria/(25501:25505): TLB HIT - PID: 1 - Pagina: 0 - Marco: 0
+[INFO] 13:11:34:008 Memoria/(25501:25505): TLB HIT - PID: 1 - Pagina: 0 - Marco: 0
+[INFO] 13:11:34:010 Memoria/(25501:25505): Se desconecto un cliente - Socket: 15 - PID: 1
+[INFO] 13:12:14:282 Memoria/(25760:25760): Tlb Inicializada
+[INFO] 13:12:16:236 Memoria/(25760:25767): Se conecto un cliente - Socket: 15
+[INFO] 13:12:16:273 Memoria/(25760:25767): TLB MISS - PID: 1 - Pagina: 0
+[INFO] 13:12:16:275 Memoria/(25760:25767): TLB HIT - PID: 1 - Pagina: 0 - Marco: 0
+[INFO] 13:12:16:276 Memoria/(25760:25767): TLB HIT - PID: 1 - Pagina: 0 - Marco: 0
+[INFO] 13:12:16:278 Memoria/(25760:25767): TLB HIT - PID: 1 - Pagina: 0 - Marco: 0
+[INFO] 13:12:16:278 Memoria/(25760:25767): TLB HIT - PID: 1 - Pagina: 0 - Marco: 0
+[INFO] 13:12:16:279 Memoria/(25760:25767): TLB HIT - PID: 1 - Pagina: 0 - Marco: 0
+[INFO] 13:12:16:280 Memoria/(25760:25767): Se desconecto un cliente - Socket: 15 - PID: 1
+[INFO] 13:13:20:415 Memoria/(26119:26119): Tlb Inicializada
+[INFO] 13:13:21:500 Memoria/(26119:26129): Se conecto un cliente - Socket: 15
+[INFO] 13:13:21:538 Memoria/(26119:26129): TLB MISS - PID: 1 - Pagina: 0
+[INFO] 13:13:21:539 Memoria/(26119:26129): TLB HIT - PID: 1 - Pagina: 0 - Marco: 0
+[INFO] 13:13:21:540 Memoria/(26119:26129): TLB HIT - PID: 1 - Pagina: 0 - Marco: 0
+[INFO] 13:13:21:541 Memoria/(26119:26129): TLB HIT - PID: 1 - Pagina: 0 - Marco: 0
+[INFO] 13:13:21:542 Memoria/(26119:26129): TLB HIT - PID: 1 - Pagina: 0 - Marco: 0
+[INFO] 13:13:21:543 Memoria/(26119:26129): TLB HIT - PID: 1 - Pagina: 0 - Marco: 0
+[INFO] 13:13:21:544 Memoria/(26119:26129): Se desconecto un cliente - Socket: 15 - PID: 1
+[INFO] 13:13:41:048 Memoria/(26365:26365): Tlb Inicializada
+[INFO] 13:13:42:386 Memoria/(26365:26372): Se conecto un cliente - Socket: 15
+[INFO] 13:13:42:424 Memoria/(26365:26372): TLB MISS - PID: 1 - Pagina: 0
+[INFO] 13:13:42:427 Memoria/(26365:26372): TLB HIT - PID: 1 - Pagina: 0 - Marco: 0
+[INFO] 13:13:42:428 Memoria/(26365:26372): TLB HIT - PID: 1 - Pagina: 0 - Marco: 0
+[INFO] 13:13:42:429 Memoria/(26365:26372): TLB HIT - PID: 1 - Pagina: 0 - Marco: 0
+[INFO] 13:13:42:430 Memoria/(26365:26372): TLB HIT - PID: 1 - Pagina: 0 - Marco: 0
+[INFO] 13:13:42:431 Memoria/(26365:26372): TLB HIT - PID: 1 - Pagina: 0 - Marco: 0
+[INFO] 13:13:42:432 Memoria/(26365:26372): Se desconecto un cliente - Socket: 15 - PID: 1
+[INFO] 13:15:35:454 Memoria/(26747:26747): Tlb Inicializada
+[INFO] 13:15:36:366 Memoria/(26747:26754): Se conecto un cliente - Socket: 15
+[INFO] 13:15:36:404 Memoria/(26747:26754): TLB MISS - PID: 1 - Pagina: 0
+[INFO] 13:15:36:406 Memoria/(26747:26754): TLB HIT - PID: 1 - Pagina: 0 - Marco: 0
+[INFO] 13:15:36:408 Memoria/(26747:26754): TLB HIT - PID: 1 - Pagina: 0 - Marco: 0
+[INFO] 13:15:36:408 Memoria/(26747:26754): TLB HIT - PID: 1 - Pagina: 0 - Marco: 0
+[INFO] 13:15:36:409 Memoria/(26747:26754): TLB HIT - PID: 1 - Pagina: 0 - Marco: 0
+[INFO] 13:15:36:410 Memoria/(26747:26754): TLB HIT - PID: 1 - Pagina: 0 - Marco: 0
+[INFO] 13:15:36:412 Memoria/(26747:26754): Se desconecto un cliente - Socket: 15 - PID: 1
+[INFO] 13:17:23:072 Memoria/(27131:27131): Tlb Inicializada
+[INFO] 13:17:24:308 Memoria/(27131:27135): Se conecto un cliente - Socket: 15
+[INFO] 13:17:24:345 Memoria/(27131:27135): TLB MISS - PID: 1 - Pagina: 0
+[INFO] 13:17:24:346 Memoria/(27131:27135): TLB HIT - PID: 1 - Pagina: 0 - Marco: 0
+[INFO] 13:17:24:347 Memoria/(27131:27135): TLB HIT - PID: 1 - Pagina: 0 - Marco: 0
+[INFO] 13:17:24:349 Memoria/(27131:27135): TLB HIT - PID: 1 - Pagina: 0 - Marco: 0
+[INFO] 13:17:24:350 Memoria/(27131:27135): TLB HIT - PID: 1 - Pagina: 0 - Marco: 0
+[INFO] 13:17:24:350 Memoria/(27131:27135): TLB HIT - PID: 1 - Pagina: 0 - Marco: 0
+[INFO] 13:17:24:351 Memoria/(27131:27135): Se desconecto un cliente - Socket: 15 - PID: 1
+[INFO] 14:45:22:708 Memoria/(2158:2158): Tlb Inicializada
+[INFO] 14:45:24:667 Memoria/(2158:2168): Se conecto un cliente - Socket: 15
+[INFO] 14:45:24:705 Memoria/(2158:2168): TLB MISS - PID: 1 - Pagina: 0
+[INFO] 14:45:24:706 Memoria/(2158:2168): TLB HIT - PID: 1 - Pagina: 0 - Marco: 0
+[INFO] 14:45:24:707 Memoria/(2158:2168): TLB HIT - PID: 1 - Pagina: 0 - Marco: 0
+[INFO] 14:45:24:708 Memoria/(2158:2168): TLB HIT - PID: 1 - Pagina: 0 - Marco: 0
+[INFO] 14:45:24:709 Memoria/(2158:2168): TLB HIT - PID: 1 - Pagina: 0 - Marco: 0
+[INFO] 14:45:24:710 Memoria/(2158:2168): TLB HIT - PID: 1 - Pagina: 0 - Marco: 0
+[INFO] 14:45:24:711 Memoria/(2158:2168): Se desconecto un cliente - Socket: 15 - PID: 1
+[INFO] 14:46:53:832 Memoria/(2518:2518): Tlb Inicializada
+[INFO] 14:46:55:327 Memoria/(2518:2525): Se conecto un cliente - Socket: 15
+[INFO] 14:46:55:365 Memoria/(2518:2525): TLB MISS - PID: 1 - Pagina: 0
+[INFO] 14:46:55:366 Memoria/(2518:2525): TLB HIT - PID: 1 - Pagina: 0 - Marco: 0
+[INFO] 14:46:55:367 Memoria/(2518:2525): TLB HIT - PID: 1 - Pagina: 0 - Marco: 0
+[INFO] 14:46:55:368 Memoria/(2518:2525): TLB HIT - PID: 1 - Pagina: 0 - Marco: 0
+[INFO] 14:46:55:369 Memoria/(2518:2525): TLB HIT - PID: 1 - Pagina: 0 - Marco: 0
+[INFO] 14:46:55:370 Memoria/(2518:2525): TLB HIT - PID: 1 - Pagina: 0 - Marco: 0
+[INFO] 14:46:55:371 Memoria/(2518:2525): Se desconecto un cliente - Socket: 15 - PID: 1
+[INFO] 14:47:40:746 Memoria/(2838:2838): Tlb Inicializada
+[INFO] 14:47:42:243 Memoria/(2838:2842): Se conecto un cliente - Socket: 15
+[INFO] 14:47:42:281 Memoria/(2838:2842): TLB MISS - PID: 1 - Pagina: 0
+[INFO] 14:47:42:283 Memoria/(2838:2842): TLB HIT - PID: 1 - Pagina: 0 - Marco: 0
+[INFO] 14:47:42:283 Memoria/(2838:2842): TLB HIT - PID: 1 - Pagina: 0 - Marco: 0
+[INFO] 14:47:42:285 Memoria/(2838:2842): TLB HIT - PID: 1 - Pagina: 0 - Marco: 0
+[INFO] 14:47:42:286 Memoria/(2838:2842): TLB HIT - PID: 1 - Pagina: 0 - Marco: 0
+[INFO] 14:47:42:286 Memoria/(2838:2842): TLB HIT - PID: 1 - Pagina: 0 - Marco: 0
+[INFO] 14:47:42:287 Memoria/(2838:2842): Se desconecto un cliente - Socket: 15 - PID: 1
+[INFO] 14:49:37:313 Memoria/(3328:3328): Tlb Inicializada
+[INFO] 14:49:38:858 Memoria/(3328:3332): Se conecto un cliente - Socket: 15
+[INFO] 14:49:38:898 Memoria/(3328:3332): TLB MISS - PID: 1 - Pagina: 0
+[INFO] 14:49:38:904 Memoria/(3328:3332): TLB HIT - PID: 1 - Pagina: 0 - Marco: 0
+[INFO] 14:49:38:905 Memoria/(3328:3332): TLB HIT - PID: 1 - Pagina: 0 - Marco: 0
+[INFO] 14:49:38:907 Memoria/(3328:3332): TLB HIT - PID: 1 - Pagina: 0 - Marco: 0
+[INFO] 14:49:38:907 Memoria/(3328:3332): TLB HIT - PID: 1 - Pagina: 0 - Marco: 0
+[INFO] 14:49:38:908 Memoria/(3328:3332): TLB HIT - PID: 1 - Pagina: 0 - Marco: 0
+[INFO] 14:49:38:908 Memoria/(3328:3332): Se desconecto un cliente - Socket: 15 - PID: 1
+[INFO] 14:54:33:675 Memoria/(3952:3952): Tlb Inicializada
+[INFO] 14:54:34:835 Memoria/(3952:3959): Se conecto un cliente - Socket: 15
+[INFO] 14:54:34:873 Memoria/(3952:3959): TLB MISS - PID: 1 - Pagina: 0
+[INFO] 14:54:34:875 Memoria/(3952:3959): TLB HIT - PID: 1 - Pagina: 0 - Marco: 0
+[INFO] 14:54:34:876 Memoria/(3952:3959): TLB HIT - PID: 1 - Pagina: 0 - Marco: 0
+[INFO] 14:54:34:877 Memoria/(3952:3959): TLB HIT - PID: 1 - Pagina: 0 - Marco: 0
+[INFO] 14:54:34:878 Memoria/(3952:3959): TLB HIT - PID: 1 - Pagina: 0 - Marco: 0
+[INFO] 14:54:34:879 Memoria/(3952:3959): TLB HIT - PID: 1 - Pagina: 0 - Marco: 0
+[INFO] 14:54:34:880 Memoria/(3952:3959): Se desconecto un cliente - Socket: 15 - PID: 1
+[INFO] 14:56:31:367 Memoria/(4346:4346): Tlb Inicializada
+[INFO] 14:56:32:400 Memoria/(4346:4350): Se conecto un cliente - Socket: 15
+[INFO] 14:56:32:441 Memoria/(4346:4350): TLB MISS - PID: 1 - Pagina: 0
+[INFO] 14:56:32:443 Memoria/(4346:4350): TLB HIT - PID: 1 - Pagina: 0 - Marco: 0
+[INFO] 14:56:32:444 Memoria/(4346:4350): TLB HIT - PID: 1 - Pagina: 0 - Marco: 0
+[INFO] 14:56:32:445 Memoria/(4346:4350): TLB HIT - PID: 1 - Pagina: 0 - Marco: 0
+[INFO] 14:56:32:445 Memoria/(4346:4350): TLB HIT - PID: 1 - Pagina: 0 - Marco: 0
+[INFO] 14:56:32:446 Memoria/(4346:4350): TLB HIT - PID: 1 - Pagina: 0 - Marco: 0
+[INFO] 14:56:32:447 Memoria/(4346:4350): Se desconecto un cliente - Socket: 15 - PID: 1
+[INFO] 15:03:36:384 Memoria/(5419:5419): Tlb Inicializada
+[INFO] 15:03:37:232 Memoria/(5419:5423): Se conecto un cliente - Socket: 15
+[INFO] 15:03:37:269 Memoria/(5419:5423): TLB MISS - PID: 1 - Pagina: 0
+[INFO] 15:03:37:271 Memoria/(5419:5423): TLB HIT - PID: 1 - Pagina: 0 - Marco: 0
+[INFO] 15:03:37:272 Memoria/(5419:5423): TLB HIT - PID: 1 - Pagina: 0 - Marco: 0
+[INFO] 15:03:37:273 Memoria/(5419:5423): TLB HIT - PID: 1 - Pagina: 0 - Marco: 0
+[INFO] 15:03:37:274 Memoria/(5419:5423): TLB HIT - PID: 1 - Pagina: 0 - Marco: 0
+[INFO] 15:03:37:274 Memoria/(5419:5423): TLB HIT - PID: 1 - Pagina: 0 - Marco: 0
+[INFO] 15:03:37:276 Memoria/(5419:5423): Se desconecto un cliente - Socket: 15 - PID: 1
+[INFO] 15:03:58:910 Memoria/(5678:5678): Tlb Inicializada
+[INFO] 15:04:00:167 Memoria/(5678:5682): Se conecto un cliente - Socket: 15
+[INFO] 15:04:00:205 Memoria/(5678:5682): TLB MISS - PID: 1 - Pagina: 0
+[INFO] 15:04:00:207 Memoria/(5678:5682): TLB HIT - PID: 1 - Pagina: 0 - Marco: 0
+[INFO] 15:04:00:211 Memoria/(5678:5682): TLB HIT - PID: 1 - Pagina: 0 - Marco: 0
+[INFO] 15:04:00:213 Memoria/(5678:5682): TLB HIT - PID: 1 - Pagina: 0 - Marco: 0
+[INFO] 15:04:00:214 Memoria/(5678:5682): TLB HIT - PID: 1 - Pagina: 0 - Marco: 0
+[INFO] 15:04:00:214 Memoria/(5678:5682): TLB HIT - PID: 1 - Pagina: 0 - Marco: 0
+[INFO] 15:04:00:214 Memoria/(5678:5682): Se desconecto un cliente - Socket: 15 - PID: 1
+[INFO] 15:04:34:063 Memoria/(5932:5932): Tlb Inicializada
+[INFO] 15:04:36:354 Memoria/(5932:5950): Se conecto un cliente - Socket: 15
+[INFO] 15:04:36:392 Memoria/(5932:5950): TLB MISS - PID: 1 - Pagina: 0
+[INFO] 15:04:36:395 Memoria/(5932:5950): TLB HIT - PID: 1 - Pagina: 0 - Marco: 0
+[INFO] 15:04:36:396 Memoria/(5932:5950): TLB HIT - PID: 1 - Pagina: 0 - Marco: 0
+[INFO] 15:04:36:397 Memoria/(5932:5950): TLB HIT - PID: 1 - Pagina: 0 - Marco: 0
+[INFO] 15:04:36:398 Memoria/(5932:5950): TLB HIT - PID: 1 - Pagina: 0 - Marco: 0
+[INFO] 15:05:01:035 Memoria/(6185:6185): Tlb Inicializada
+[INFO] 15:05:01:944 Memoria/(6185:6189): Se conecto un cliente - Socket: 15
+[INFO] 15:05:01:985 Memoria/(6185:6189): TLB MISS - PID: 1 - Pagina: 0
+[INFO] 15:05:01:986 Memoria/(6185:6189): TLB HIT - PID: 1 - Pagina: 0 - Marco: 0
+[INFO] 15:05:01:987 Memoria/(6185:6189): TLB HIT - PID: 1 - Pagina: 0 - Marco: 0
+[INFO] 15:05:01:988 Memoria/(6185:6189): TLB HIT - PID: 1 - Pagina: 0 - Marco: 0
+[INFO] 15:05:01:989 Memoria/(6185:6189): TLB HIT - PID: 1 - Pagina: 0 - Marco: 0
+[INFO] 15:07:23:526 Memoria/(6810:6810): Tlb Inicializada
+[INFO] 15:07:24:861 Memoria/(6810:6816): Se conecto un cliente - Socket: 15
+[INFO] 15:07:24:901 Memoria/(6810:6816): TLB MISS - PID: 1 - Pagina: 0
+[INFO] 15:07:24:902 Memoria/(6810:6816): TLB HIT - PID: 1 - Pagina: 0 - Marco: 0
+[INFO] 15:07:24:903 Memoria/(6810:6816): TLB HIT - PID: 1 - Pagina: 0 - Marco: 0
+[INFO] 15:07:24:904 Memoria/(6810:6816): TLB HIT - PID: 1 - Pagina: 0 - Marco: 0
+[INFO] 15:07:24:905 Memoria/(6810:6816): TLB HIT - PID: 1 - Pagina: 0 - Marco: 0
+[INFO] 15:08:35:767 Memoria/(7150:7150): Tlb Inicializada
+[INFO] 15:08:37:195 Memoria/(7150:7160): Se conecto un cliente - Socket: 15
+[INFO] 15:08:37:233 Memoria/(7150:7160): TLB MISS - PID: 1 - Pagina: 0
+[INFO] 15:08:37:234 Memoria/(7150:7160): TLB HIT - PID: 1 - Pagina: 0 - Marco: 0
+[INFO] 15:08:37:235 Memoria/(7150:7160): TLB HIT - PID: 1 - Pagina: 0 - Marco: 0
+[INFO] 15:08:37:236 Memoria/(7150:7160): TLB HIT - PID: 1 - Pagina: 0 - Marco: 0
+[INFO] 15:08:37:237 Memoria/(7150:7160): TLB HIT - PID: 1 - Pagina: 0 - Marco: 0
+[INFO] 15:08:37:277 Memoria/(7150:7160): TLB HIT - PID: 1 - Pagina: 0 - Marco: 0
+[INFO] 15:08:37:278 Memoria/(7150:7160): Se desconecto un cliente - Socket: 15 - PID: 1
+[INFO] 15:12:22:461 Memoria/(7704:7704): Tlb Inicializada
+[INFO] 15:12:23:806 Memoria/(7704:7707): Se conecto un cliente - Socket: 15
+[INFO] 15:12:23:845 Memoria/(7704:7707): TLB MISS - PID: 1 - Pagina: 0
+[INFO] 15:12:23:852 Memoria/(7704:7707): TLB HIT - PID: 1 - Pagina: 0 - Marco: 0
+[INFO] 15:12:23:853 Memoria/(7704:7707): TLB HIT - PID: 1 - Pagina: 0 - Marco: 0
+[INFO] 15:12:23:854 Memoria/(7704:7707): TLB HIT - PID: 1 - Pagina: 0 - Marco: 0
+[INFO] 15:12:23:855 Memoria/(7704:7707): TLB HIT - PID: 1 - Pagina: 0 - Marco: 0
+[INFO] 15:12:23:893 Memoria/(7704:7707): TLB HIT - PID: 1 - Pagina: 0 - Marco: 0
+[INFO] 15:12:23:894 Memoria/(7704:7707): Se desconecto un cliente - Socket: 15 - PID: 1
+[INFO] 15:13:12:490 Memoria/(7966:7966): Tlb Inicializada
+[INFO] 15:13:13:368 Memoria/(7966:7969): Se conecto un cliente - Socket: 15
+[INFO] 15:13:13:409 Memoria/(7966:7969): TLB MISS - PID: 1 - Pagina: 0
+[INFO] 15:13:13:412 Memoria/(7966:7969): TLB HIT - PID: 1 - Pagina: 0 - Marco: 0
+[INFO] 15:13:13:414 Memoria/(7966:7969): TLB HIT - PID: 1 - Pagina: 0 - Marco: 0
+[INFO] 15:13:13:418 Memoria/(7966:7969): TLB HIT - PID: 1 - Pagina: 0 - Marco: 0
+[INFO] 15:13:13:419 Memoria/(7966:7969): TLB HIT - PID: 1 - Pagina: 0 - Marco: 0
+[INFO] 15:13:13:457 Memoria/(7966:7969): TLB HIT - PID: 1 - Pagina: 0 - Marco: 0
+[INFO] 15:13:13:458 Memoria/(7966:7969): Se desconecto un cliente - Socket: 15 - PID: 1
+[INFO] 15:14:41:561 Memoria/(8537:8537): Tlb Inicializada
+[INFO] 15:14:42:146 Memoria/(8537:8543): Se conecto un cliente - Socket: 15
+[INFO] 15:14:42:186 Memoria/(8537:8543): TLB MISS - PID: 1 - Pagina: 0
+[INFO] 15:14:42:193 Memoria/(8537:8543): TLB HIT - PID: 1 - Pagina: 0 - Marco: 0
+[INFO] 15:14:42:194 Memoria/(8537:8543): TLB HIT - PID: 1 - Pagina: 0 - Marco: 0
+[INFO] 15:14:42:195 Memoria/(8537:8543): TLB HIT - PID: 1 - Pagina: 0 - Marco: 0
+[INFO] 15:14:42:195 Memoria/(8537:8543): TLB HIT - PID: 1 - Pagina: 0 - Marco: 0
+[INFO] 15:14:42:237 Memoria/(8537:8543): TLB HIT - PID: 1 - Pagina: 0 - Marco: 0
+[INFO] 15:14:42:237 Memoria/(8537:8543): Se desconecto un cliente - Socket: 15 - PID: 1
+[INFO] 15:16:08:681 Memoria/(9080:9080): Tlb Inicializada
+[INFO] 15:16:09:254 Memoria/(9080:9083): Se conecto un cliente - Socket: 15
+[INFO] 15:16:09:293 Memoria/(9080:9083): TLB MISS - PID: 1 - Pagina: 0
+[INFO] 15:16:09:299 Memoria/(9080:9083): TLB HIT - PID: 1 - Pagina: 0 - Marco: 0
+[INFO] 15:16:09:300 Memoria/(9080:9083): TLB HIT - PID: 1 - Pagina: 0 - Marco: 0
+[INFO] 15:16:09:302 Memoria/(9080:9083): TLB HIT - PID: 1 - Pagina: 0 - Marco: 0
+[INFO] 15:16:09:302 Memoria/(9080:9083): TLB HIT - PID: 1 - Pagina: 0 - Marco: 0
+[INFO] 15:16:09:343 Memoria/(9080:9083): TLB HIT - PID: 1 - Pagina: 0 - Marco: 0
+[INFO] 15:16:09:343 Memoria/(9080:9083): Se desconecto un cliente - Socket: 15 - PID: 1
+[INFO] 15:17:49:217 Memoria/(9654:9654): Tlb Inicializada
+[INFO] 15:17:50:073 Memoria/(9654:9657): Se conecto un cliente - Socket: 15
+[INFO] 15:17:50:113 Memoria/(9654:9657): TLB MISS - PID: 1 - Pagina: 0
+[INFO] 15:17:50:120 Memoria/(9654:9657): TLB HIT - PID: 1 - Pagina: 0 - Marco: 0
+[INFO] 15:17:50:121 Memoria/(9654:9657): TLB HIT - PID: 1 - Pagina: 0 - Marco: 0
+[INFO] 15:17:50:122 Memoria/(9654:9657): TLB HIT - PID: 1 - Pagina: 0 - Marco: 0
+[INFO] 15:17:50:123 Memoria/(9654:9657): TLB HIT - PID: 1 - Pagina: 0 - Marco: 0
+[INFO] 15:17:50:161 Memoria/(9654:9657): TLB HIT - PID: 1 - Pagina: 0 - Marco: 0
+[INFO] 15:17:50:162 Memoria/(9654:9657): Se desconecto un cliente - Socket: 15 - PID: 1
+[INFO] 15:18:38:319 Memoria/(10116:10116): Tlb Inicializada
+[INFO] 15:18:46:465 Memoria/(10116:10231): Se conecto un cliente - Socket: 15
+[INFO] 15:18:46:506 Memoria/(10116:10231): TLB MISS - PID: 1 - Pagina: 0
+[INFO] 15:18:46:513 Memoria/(10116:10231): TLB HIT - PID: 1 - Pagina: 0 - Marco: 0
+[INFO] 15:18:46:514 Memoria/(10116:10231): TLB HIT - PID: 1 - Pagina: 0 - Marco: 0
+[INFO] 15:18:46:515 Memoria/(10116:10231): TLB HIT - PID: 1 - Pagina: 0 - Marco: 0
+[INFO] 15:18:46:516 Memoria/(10116:10231): TLB HIT - PID: 1 - Pagina: 0 - Marco: 0
+[INFO] 15:18:46:557 Memoria/(10116:10231): TLB HIT - PID: 1 - Pagina: 0 - Marco: 0
+[INFO] 15:18:46:558 Memoria/(10116:10231): Se desconecto un cliente - Socket: 15 - PID: 1
+[INFO] 15:20:54:522 Memoria/(10794:10794): Tlb Inicializada
+[INFO] 15:20:58:643 Memoria/(10794:10815): Se conecto un cliente - Socket: 15
+[INFO] 15:20:58:682 Memoria/(10794:10815): TLB MISS - PID: 1 - Pagina: 0
+[INFO] 15:20:58:688 Memoria/(10794:10815): TLB HIT - PID: 1 - Pagina: 0 - Marco: 0
+[INFO] 15:20:58:688 Memoria/(10794:10815): TLB HIT - PID: 1 - Pagina: 0 - Marco: 0
+[INFO] 15:20:58:690 Memoria/(10794:10815): TLB HIT - PID: 1 - Pagina: 0 - Marco: 0
+[INFO] 15:20:58:690 Memoria/(10794:10815): TLB HIT - PID: 1 - Pagina: 0 - Marco: 0
+[INFO] 15:20:58:729 Memoria/(10794:10815): TLB HIT - PID: 1 - Pagina: 0 - Marco: 0
+[INFO] 15:20:58:729 Memoria/(10794:10815): Se desconecto un cliente - Socket: 15 - PID: 1
+[INFO] 15:24:17:573 Memoria/(10794:11208): Se conecto un cliente - Socket: 16
+[INFO] 15:24:17:614 Memoria/(10794:11208): TLB MISS - PID: 2 - Pagina: 0
+[INFO] 15:24:17:619 Memoria/(10794:11208): TLB HIT - PID: 2 - Pagina: 0 - Marco: 0
+[INFO] 15:24:17:620 Memoria/(10794:11208): TLB HIT - PID: 2 - Pagina: 0 - Marco: 0
+[INFO] 15:24:17:621 Memoria/(10794:11208): TLB HIT - PID: 2 - Pagina: 0 - Marco: 0
+[INFO] 15:24:17:622 Memoria/(10794:11208): TLB HIT - PID: 2 - Pagina: 0 - Marco: 0
+[INFO] 15:24:17:661 Memoria/(10794:11208): TLB HIT - PID: 2 - Pagina: 0 - Marco: 0
+[INFO] 15:24:17:662 Memoria/(10794:11208): Se desconecto un cliente - Socket: 16 - PID: 2
+[INFO] 15:25:20:300 Memoria/(10794:11407): Se conecto un cliente - Socket: 15
+[INFO] 15:25:20:342 Memoria/(10794:11407): TLB MISS - PID: 3 - Pagina: 0
+[INFO] 15:25:20:347 Memoria/(10794:11407): TLB HIT - PID: 3 - Pagina: 0 - Marco: 0
+[INFO] 15:25:20:348 Memoria/(10794:11407): TLB HIT - PID: 3 - Pagina: 0 - Marco: 0
+[INFO] 15:25:20:349 Memoria/(10794:11407): TLB HIT - PID: 3 - Pagina: 0 - Marco: 0
+[INFO] 15:25:20:350 Memoria/(10794:11407): TLB HIT - PID: 3 - Pagina: 0 - Marco: 0
+[INFO] 15:25:20:389 Memoria/(10794:11407): TLB HIT - PID: 3 - Pagina: 0 - Marco: 0
+[INFO] 15:25:20:389 Memoria/(10794:11407): Se desconecto un cliente - Socket: 15 - PID: 3
+[INFO] 15:27:49:084 Memoria/(11834:11834): Tlb Inicializada
+[INFO] 15:27:49:983 Memoria/(11834:11837): Se conecto un cliente - Socket: 15
+[INFO] 15:27:50:021 Memoria/(11834:11837): TLB MISS - PID: 1 - Pagina: 0
+[INFO] 15:27:50:027 Memoria/(11834:11837): TLB HIT - PID: 1 - Pagina: 0 - Marco: 0
+[INFO] 15:27:50:028 Memoria/(11834:11837): TLB HIT - PID: 1 - Pagina: 0 - Marco: 0
+[INFO] 15:27:50:029 Memoria/(11834:11837): TLB HIT - PID: 1 - Pagina: 0 - Marco: 0
+[INFO] 15:27:50:030 Memoria/(11834:11837): TLB HIT - PID: 1 - Pagina: 0 - Marco: 0
+[INFO] 15:27:50:031 Memoria/(11834:11837): TLB HIT - PID: 1 - Pagina: 0 - Marco: 0
+[INFO] 15:27:50:032 Memoria/(11834:11837): Se desconecto un cliente - Socket: 15 - PID: 1
+[INFO] 15:29:46:384 Memoria/(12412:12412): Tlb Inicializada
+[INFO] 15:29:58:458 Memoria/(12412:12556): Se conecto un cliente - Socket: 15
+[INFO] 15:29:58:498 Memoria/(12412:12556): TLB MISS - PID: 1 - Pagina: 0
+[INFO] 15:29:58:503 Memoria/(12412:12556): TLB HIT - PID: 1 - Pagina: 0 - Marco: 0
+[INFO] 15:29:58:504 Memoria/(12412:12556): TLB HIT - PID: 1 - Pagina: 0 - Marco: 0
+[INFO] 15:29:58:505 Memoria/(12412:12556): TLB HIT - PID: 1 - Pagina: 0 - Marco: 0
+[INFO] 15:29:58:506 Memoria/(12412:12556): TLB HIT - PID: 1 - Pagina: 0 - Marco: 0
+[INFO] 15:29:58:545 Memoria/(12412:12556): TLB HIT - PID: 1 - Pagina: 0 - Marco: 0
+[INFO] 15:29:58:546 Memoria/(12412:12556): Se desconecto un cliente - Socket: 15 - PID: 1
+[INFO] 15:35:27:124 Memoria/(13323:13323): Tlb Inicializada
+[INFO] 15:35:28:587 Memoria/(13323:13333): Se conecto un cliente - Socket: 15
+[INFO] 15:35:28:626 Memoria/(13323:13333): TLB MISS - PID: 1 - Pagina: 0
+[INFO] 15:35:28:631 Memoria/(13323:13333): TLB HIT - PID: 1 - Pagina: 0 - Marco: 0
+[INFO] 15:35:28:631 Memoria/(13323:13333): TLB HIT - PID: 1 - Pagina: 0 - Marco: 0
+[INFO] 15:35:28:633 Memoria/(13323:13333): TLB HIT - PID: 1 - Pagina: 0 - Marco: 0
+[INFO] 15:35:28:634 Memoria/(13323:13333): TLB HIT - PID: 1 - Pagina: 0 - Marco: 0
+[INFO] 15:35:28:673 Memoria/(13323:13333): TLB HIT - PID: 1 - Pagina: 0 - Marco: 0
+[INFO] 15:35:28:674 Memoria/(13323:13333): Se desconecto un cliente - Socket: 15 - PID: 1
+[INFO] 15:38:28:751 Memoria/(13772:13772): Tlb Inicializada
+[INFO] 15:38:29:930 Memoria/(13772:13775): Se conecto un cliente - Socket: 15
+[INFO] 15:38:29:970 Memoria/(13772:13775): TLB MISS - PID: 1 - Pagina: 0
+[INFO] 15:38:29:977 Memoria/(13772:13775): TLB HIT - PID: 1 - Pagina: 0 - Marco: 0
+[INFO] 15:38:29:981 Memoria/(13772:13775): TLB HIT - PID: 1 - Pagina: 0 - Marco: 0
+[INFO] 15:38:29:982 Memoria/(13772:13775): TLB HIT - PID: 1 - Pagina: 0 - Marco: 0
+[INFO] 15:38:29:983 Memoria/(13772:13775): TLB HIT - PID: 1 - Pagina: 0 - Marco: 0
+[INFO] 15:38:30:021 Memoria/(13772:13775): TLB HIT - PID: 1 - Pagina: 0 - Marco: 0
+[INFO] 15:38:30:022 Memoria/(13772:13775): Se desconecto un cliente - Socket: 15 - PID: 1
+[INFO] 15:41:56:401 Memoria/(13772:14084): Se conecto un cliente - Socket: 16
+[INFO] 15:41:56:442 Memoria/(13772:14084): TLB MISS - PID: 2 - Pagina: 0
+[INFO] 15:41:56:445 Memoria/(13772:14084): TLB HIT - PID: 2 - Pagina: 0 - Marco: 0
+[INFO] 15:41:56:446 Memoria/(13772:14084): TLB HIT - PID: 2 - Pagina: 0 - Marco: 0
+[INFO] 15:41:56:448 Memoria/(13772:14084): TLB HIT - PID: 2 - Pagina: 0 - Marco: 0
+[INFO] 15:41:56:449 Memoria/(13772:14084): TLB HIT - PID: 2 - Pagina: 0 - Marco: 0
+[INFO] 15:41:56:488 Memoria/(13772:14084): TLB HIT - PID: 2 - Pagina: 0 - Marco: 0
+[INFO] 15:41:56:489 Memoria/(13772:14084): Se desconecto un cliente - Socket: 16 - PID: 2
+[INFO] 16:41:50:158 Memoria/(17456:17456): Tlb Inicializada
+[INFO] 16:41:53:574 Memoria/(17456:17462): Se conecto un cliente - Socket: 15
+[INFO] 16:41:53:614 Memoria/(17456:17462): TLB MISS - PID: 1 - Pagina: 0
+[INFO] 16:41:53:620 Memoria/(17456:17462): TLB HIT - PID: 1 - Pagina: 0 - Marco: 0
+[INFO] 16:41:53:621 Memoria/(17456:17462): TLB HIT - PID: 1 - Pagina: 0 - Marco: 0
+[INFO] 16:41:53:622 Memoria/(17456:17462): TLB HIT - PID: 1 - Pagina: 0 - Marco: 0
+[INFO] 16:41:53:622 Memoria/(17456:17462): TLB HIT - PID: 1 - Pagina: 0 - Marco: 0
+[INFO] 16:41:53:661 Memoria/(17456:17462): TLB HIT - PID: 1 - Pagina: 0 - Marco: 0
+[INFO] 16:41:53:662 Memoria/(17456:17462): Se desconecto un cliente - Socket: 15 - PID: 1
+[INFO] 16:42:23:065 Memoria/(17671:17671): Tlb Inicializada
+[INFO] 16:42:23:978 Memoria/(17671:17674): Se conecto un cliente - Socket: 15
+[INFO] 16:42:24:018 Memoria/(17671:17674): TLB MISS - PID: 1 - Pagina: 0
+[INFO] 16:42:24:024 Memoria/(17671:17674): TLB HIT - PID: 1 - Pagina: 0 - Marco: 0
+[INFO] 16:42:24:025 Memoria/(17671:17674): TLB HIT - PID: 1 - Pagina: 0 - Marco: 0
+[INFO] 16:42:24:026 Memoria/(17671:17674): TLB HIT - PID: 1 - Pagina: 0 - Marco: 0
+[INFO] 16:42:24:027 Memoria/(17671:17674): TLB HIT - PID: 1 - Pagina: 0 - Marco: 0
+[INFO] 16:42:24:065 Memoria/(17671:17674): TLB HIT - PID: 1 - Pagina: 0 - Marco: 0
+[INFO] 16:42:24:066 Memoria/(17671:17674): Se desconecto un cliente - Socket: 15 - PID: 1
+[INFO] 16:44:21:504 Memoria/(17956:17956): Tlb Inicializada
+[INFO] 16:44:22:421 Memoria/(17956:17962): Se conecto un cliente - Socket: 15
+[INFO] 16:44:22:462 Memoria/(17956:17962): TLB MISS - PID: 1 - Pagina: 0
+[INFO] 16:44:22:469 Memoria/(17956:17962): TLB HIT - PID: 1 - Pagina: 0 - Marco: 0
+[INFO] 16:44:22:470 Memoria/(17956:17962): TLB HIT - PID: 1 - Pagina: 0 - Marco: 0
+[INFO] 16:44:22:471 Memoria/(17956:17962): TLB HIT - PID: 1 - Pagina: 0 - Marco: 0
+[INFO] 16:44:22:472 Memoria/(17956:17962): TLB HIT - PID: 1 - Pagina: 0 - Marco: 0
+[INFO] 16:44:22:473 Memoria/(17956:17962): TLB HIT - PID: 1 - Pagina: 0 - Marco: 0
+[INFO] 16:44:22:513 Memoria/(17956:17962): TLB HIT - PID: 1 - Pagina: 0 - Marco: 0
+[INFO] 16:44:22:514 Memoria/(17956:17962): Se desconecto un cliente - Socket: 15 - PID: 1
+[INFO] 16:58:32:630 Memoria/(18796:18796): Tlb Inicializada
+[INFO] 16:58:33:525 Memoria/(18796:18799): Se conecto un cliente - Socket: 15
+[INFO] 16:58:33:566 Memoria/(18796:18799): TLB MISS - PID: 1 - Pagina: 0
+[INFO] 16:58:33:570 Memoria/(18796:18799): TLB HIT - PID: 1 - Pagina: 0 - Marco: 0
+[INFO] 16:58:33:571 Memoria/(18796:18799): TLB HIT - PID: 1 - Pagina: 0 - Marco: 0
+[INFO] 16:58:33:572 Memoria/(18796:18799): TLB HIT - PID: 1 - Pagina: 0 - Marco: 0
+[INFO] 16:58:33:573 Memoria/(18796:18799): TLB HIT - PID: 1 - Pagina: 0 - Marco: 0
+[INFO] 16:58:33:574 Memoria/(18796:18799): TLB HIT - PID: 1 - Pagina: 0 - Marco: 0
+[INFO] 16:58:33:613 Memoria/(18796:18799): TLB HIT - PID: 1 - Pagina: 0 - Marco: 0
+[INFO] 16:58:33:614 Memoria/(18796:18799): Se desconecto un cliente - Socket: 15 - PID: 1
+[INFO] 17:00:36:364 Memoria/(19195:19195): Tlb Inicializada
+[INFO] 17:00:38:604 Memoria/(19195:19209): Se conecto un cliente - Socket: 15
+[INFO] 17:00:38:642 Memoria/(19195:19209): TLB MISS - PID: 1 - Pagina: 0
+[INFO] 17:00:38:649 Memoria/(19195:19209): TLB HIT - PID: 1 - Pagina: 0 - Marco: 0
+[INFO] 17:00:38:650 Memoria/(19195:19209): TLB HIT - PID: 1 - Pagina: 0 - Marco: 0
+[INFO] 17:00:38:651 Memoria/(19195:19209): TLB HIT - PID: 1 - Pagina: 0 - Marco: 0
+[INFO] 17:00:38:652 Memoria/(19195:19209): TLB HIT - PID: 1 - Pagina: 0 - Marco: 0
+[INFO] 17:00:38:653 Memoria/(19195:19209): TLB HIT - PID: 1 - Pagina: 0 - Marco: 0
+[INFO] 17:00:38:693 Memoria/(19195:19209): TLB HIT - PID: 1 - Pagina: 0 - Marco: 0
+[INFO] 17:00:38:694 Memoria/(19195:19209): Se desconecto un cliente - Socket: 15 - PID: 1
+[INFO] 17:01:01:164 Memoria/(19420:19420): Tlb Inicializada
+[INFO] 17:01:02:376 Memoria/(19420:19423): Se conecto un cliente - Socket: 15
+[INFO] 17:01:02:417 Memoria/(19420:19423): TLB MISS - PID: 1 - Pagina: 0
+[INFO] 17:01:02:425 Memoria/(19420:19423): TLB HIT - PID: 1 - Pagina: 0 - Marco: 0
+[INFO] 17:01:02:426 Memoria/(19420:19423): TLB HIT - PID: 1 - Pagina: 0 - Marco: 0
+[INFO] 17:01:02:427 Memoria/(19420:19423): TLB HIT - PID: 1 - Pagina: 0 - Marco: 0
+[INFO] 17:01:02:428 Memoria/(19420:19423): TLB HIT - PID: 1 - Pagina: 0 - Marco: 0
+[INFO] 17:01:02:429 Memoria/(19420:19423): TLB HIT - PID: 1 - Pagina: 0 - Marco: 0
+[INFO] 17:01:02:469 Memoria/(19420:19423): TLB HIT - PID: 1 - Pagina: 0 - Marco: 0
+[INFO] 17:01:02:470 Memoria/(19420:19423): Se desconecto un cliente - Socket: 15 - PID: 1
+[INFO] 17:12:33:483 Memoria/(20150:20150): Tlb Inicializada
+[INFO] 17:12:38:107 Memoria/(20150:20156): Se conecto un cliente - Socket: 15
+[INFO] 17:12:38:146 Memoria/(20150:20156): TLB MISS - PID: 1 - Pagina: 0
+[INFO] 17:12:38:153 Memoria/(20150:20156): TLB HIT - PID: 1 - Pagina: 0 - Marco: 0
+[INFO] 17:12:38:154 Memoria/(20150:20156): TLB HIT - PID: 1 - Pagina: 0 - Marco: 0
+[INFO] 17:12:38:154 Memoria/(20150:20156): TLB HIT - PID: 1 - Pagina: 0 - Marco: 0
+[INFO] 17:12:38:156 Memoria/(20150:20156): TLB HIT - PID: 1 - Pagina: 0 - Marco: 0
+[INFO] 17:12:38:156 Memoria/(20150:20156): TLB HIT - PID: 1 - Pagina: 0 - Marco: 0
+[INFO] 17:12:38:157 Memoria/(20150:20156): TLB HIT - PID: 1 - Pagina: 0 - Marco: 0
+[INFO] 17:12:38:197 Memoria/(20150:20156): TLB HIT - PID: 1 - Pagina: 0 - Marco: 0
+[INFO] 17:12:38:198 Memoria/(20150:20156): TLB HIT - PID: 1 - Pagina: 0 - Marco: 0
+[INFO] 17:12:38:199 Memoria/(20150:20156): Se desconecto un cliente - Socket: 15 - PID: 1
+[INFO] 17:16:43:514 Memoria/(20736:20736): Tlb Inicializada
+[INFO] 17:16:47:378 Memoria/(20736:20743): Se conecto un cliente - Socket: 15
+[INFO] 17:16:47:417 Memoria/(20736:20743): TLB MISS - PID: 1 - Pagina: 0
+[INFO] 17:16:47:421 Memoria/(20736:20743): TLB HIT - PID: 1 - Pagina: 0 - Marco: 0
+[INFO] 17:16:47:422 Memoria/(20736:20743): TLB HIT - PID: 1 - Pagina: 0 - Marco: 0
+[INFO] 17:16:47:423 Memoria/(20736:20743): TLB HIT - PID: 1 - Pagina: 0 - Marco: 0
+[INFO] 17:16:47:424 Memoria/(20736:20743): TLB HIT - PID: 1 - Pagina: 0 - Marco: 0
+[INFO] 17:16:47:425 Memoria/(20736:20743): TLB HIT - PID: 1 - Pagina: 0 - Marco: 0
+[INFO] 17:16:47:426 Memoria/(20736:20743): TLB HIT - PID: 1 - Pagina: 0 - Marco: 0
+[INFO] 17:16:47:465 Memoria/(20736:20743): TLB HIT - PID: 1 - Pagina: 0 - Marco: 0
+[INFO] 17:16:47:465 Memoria/(20736:20743): TLB HIT - PID: 1 - Pagina: 0 - Marco: 0
+[INFO] 17:16:47:466 Memoria/(20736:20743): Se desconecto un cliente - Socket: 15 - PID: 1
+[INFO] 17:17:18:182 Memoria/(20736:20867): Se conecto un cliente - Socket: 16
+[INFO] 17:17:18:222 Memoria/(20736:20867): TLB MISS - PID: 2 - Pagina: 0
+[INFO] 17:17:18:226 Memoria/(20736:20867): TLB HIT - PID: 2 - Pagina: 0 - Marco: 0
+[INFO] 17:17:18:227 Memoria/(20736:20867): TLB HIT - PID: 2 - Pagina: 0 - Marco: 0
+[INFO] 17:17:18:228 Memoria/(20736:20867): TLB HIT - PID: 2 - Pagina: 0 - Marco: 0
+[INFO] 17:17:18:229 Memoria/(20736:20867): TLB HIT - PID: 2 - Pagina: 0 - Marco: 0
+[INFO] 17:17:18:230 Memoria/(20736:20867): TLB HIT - PID: 2 - Pagina: 0 - Marco: 0
+[INFO] 17:17:18:231 Memoria/(20736:20867): TLB HIT - PID: 2 - Pagina: 0 - Marco: 0
+[INFO] 17:17:18:269 Memoria/(20736:20867): TLB HIT - PID: 2 - Pagina: 0 - Marco: 0
+[INFO] 17:17:18:270 Memoria/(20736:20867): TLB HIT - PID: 2 - Pagina: 0 - Marco: 0
+[INFO] 17:17:18:273 Memoria/(20736:20867): Se desconecto un cliente - Socket: 16 - PID: 2
+[INFO] 17:18:21:785 Memoria/(21193:21193): Tlb Inicializada
+[INFO] 17:18:23:297 Memoria/(21193:21196): Se conecto un cliente - Socket: 15
+[INFO] 17:18:23:337 Memoria/(21193:21196): TLB MISS - PID: 1 - Pagina: 0
+[INFO] 17:18:23:342 Memoria/(21193:21196): TLB HIT - PID: 1 - Pagina: 0 - Marco: 0
+[INFO] 17:18:23:343 Memoria/(21193:21196): TLB HIT - PID: 1 - Pagina: 0 - Marco: 0
+[INFO] 17:18:23:344 Memoria/(21193:21196): TLB HIT - PID: 1 - Pagina: 0 - Marco: 0
+[INFO] 17:18:23:345 Memoria/(21193:21196): TLB HIT - PID: 1 - Pagina: 0 - Marco: 0
+[INFO] 17:18:23:346 Memoria/(21193:21196): TLB HIT - PID: 1 - Pagina: 0 - Marco: 0
+[INFO] 17:18:23:347 Memoria/(21193:21196): TLB HIT - PID: 1 - Pagina: 0 - Marco: 0
+[INFO] 17:18:23:385 Memoria/(21193:21196): TLB HIT - PID: 1 - Pagina: 0 - Marco: 0
+[INFO] 17:18:23:386 Memoria/(21193:21196): TLB HIT - PID: 1 - Pagina: 0 - Marco: 0
+[INFO] 17:18:23:387 Memoria/(21193:21196): Se desconecto un cliente - Socket: 15 - PID: 1
+[INFO] 17:18:49:905 Memoria/(21193:21382): Se conecto un cliente - Socket: 16
+[INFO] 17:18:49:945 Memoria/(21193:21382): TLB MISS - PID: 2 - Pagina: 0
+[INFO] 17:18:49:951 Memoria/(21193:21382): TLB HIT - PID: 2 - Pagina: 0 - Marco: 0
+[INFO] 17:18:49:952 Memoria/(21193:21382): TLB HIT - PID: 2 - Pagina: 0 - Marco: 0
+[INFO] 17:18:49:953 Memoria/(21193:21382): TLB HIT - PID: 2 - Pagina: 0 - Marco: 0
+[INFO] 17:18:49:954 Memoria/(21193:21382): TLB HIT - PID: 2 - Pagina: 0 - Marco: 0
+[INFO] 17:18:49:955 Memoria/(21193:21382): TLB HIT - PID: 2 - Pagina: 0 - Marco: 0
+[INFO] 17:18:49:956 Memoria/(21193:21382): TLB HIT - PID: 2 - Pagina: 0 - Marco: 0
+[INFO] 17:18:49:996 Memoria/(21193:21382): TLB HIT - PID: 2 - Pagina: 0 - Marco: 0
+[INFO] 17:18:49:997 Memoria/(21193:21382): TLB HIT - PID: 2 - Pagina: 0 - Marco: 0
+[INFO] 17:18:49:998 Memoria/(21193:21382): Se desconecto un cliente - Socket: 16 - PID: 2
+[INFO] 17:21:57:717 Memoria/(21735:21735): Tlb Inicializada
+[INFO] 17:22:01:479 Memoria/(21735:21838): Se conecto un cliente - Socket: 15
+[INFO] 17:22:01:518 Memoria/(21735:21838): TLB MISS - PID: 1 - Pagina: 0
+[INFO] 17:22:01:524 Memoria/(21735:21838): TLB HIT - PID: 1 - Pagina: 0 - Marco: 0
+[INFO] 17:22:01:525 Memoria/(21735:21838): TLB HIT - PID: 1 - Pagina: 0 - Marco: 0
+[INFO] 17:22:01:526 Memoria/(21735:21838): TLB HIT - PID: 1 - Pagina: 0 - Marco: 0
+[INFO] 17:22:01:527 Memoria/(21735:21838): TLB HIT - PID: 1 - Pagina: 0 - Marco: 0
+[INFO] 17:22:01:528 Memoria/(21735:21838): TLB HIT - PID: 1 - Pagina: 0 - Marco: 0
+[INFO] 17:22:01:529 Memoria/(21735:21838): TLB HIT - PID: 1 - Pagina: 0 - Marco: 0
+[INFO] 17:22:01:569 Memoria/(21735:21838): TLB HIT - PID: 1 - Pagina: 0 - Marco: 0
+[INFO] 17:22:01:569 Memoria/(21735:21838): TLB HIT - PID: 1 - Pagina: 0 - Marco: 0
+[INFO] 17:22:01:571 Memoria/(21735:21838): Se desconecto un cliente - Socket: 15 - PID: 1
+[INFO] 17:24:49:466 Memoria/(21735:22033): Se conecto un cliente - Socket: 16
+[INFO] 17:24:49:505 Memoria/(21735:22033): TLB MISS - PID: 2 - Pagina: 0
+[INFO] 17:24:49:511 Memoria/(21735:22033): TLB HIT - PID: 2 - Pagina: 0 - Marco: 0
+[INFO] 17:24:49:512 Memoria/(21735:22033): TLB HIT - PID: 2 - Pagina: 0 - Marco: 0
+[INFO] 17:24:49:513 Memoria/(21735:22033): TLB HIT - PID: 2 - Pagina: 0 - Marco: 0
+[INFO] 17:24:49:514 Memoria/(21735:22033): TLB HIT - PID: 2 - Pagina: 0 - Marco: 0
+[INFO] 17:24:49:515 Memoria/(21735:22033): TLB HIT - PID: 2 - Pagina: 0 - Marco: 0
+[INFO] 17:24:49:516 Memoria/(21735:22033): TLB HIT - PID: 2 - Pagina: 0 - Marco: 0
+[INFO] 17:24:49:557 Memoria/(21735:22033): TLB HIT - PID: 2 - Pagina: 0 - Marco: 0
+[INFO] 17:24:49:557 Memoria/(21735:22033): TLB HIT - PID: 2 - Pagina: 0 - Marco: 0
+[INFO] 17:24:49:559 Memoria/(21735:22033): Se desconecto un cliente - Socket: 16 - PID: 2
+[INFO] 17:24:54:624 Memoria/(22399:22399): Tlb Inicializada
+[INFO] 17:24:56:110 Memoria/(22399:22405): Se conecto un cliente - Socket: 15
+[INFO] 17:24:56:149 Memoria/(22399:22405): TLB MISS - PID: 1 - Pagina: 0
+[INFO] 17:24:56:156 Memoria/(22399:22405): TLB HIT - PID: 1 - Pagina: 0 - Marco: 0
+[INFO] 17:24:56:157 Memoria/(22399:22405): TLB HIT - PID: 1 - Pagina: 0 - Marco: 0
+[INFO] 17:24:56:158 Memoria/(22399:22405): TLB HIT - PID: 1 - Pagina: 0 - Marco: 0
+[INFO] 17:24:56:159 Memoria/(22399:22405): TLB HIT - PID: 1 - Pagina: 0 - Marco: 0
+[INFO] 17:24:56:159 Memoria/(22399:22405): TLB HIT - PID: 1 - Pagina: 0 - Marco: 0
+[INFO] 17:24:56:161 Memoria/(22399:22405): TLB HIT - PID: 1 - Pagina: 0 - Marco: 0
+[INFO] 17:24:56:201 Memoria/(22399:22405): TLB HIT - PID: 1 - Pagina: 0 - Marco: 0
+[INFO] 17:24:56:202 Memoria/(22399:22405): TLB HIT - PID: 1 - Pagina: 0 - Marco: 0
+[INFO] 17:24:56:203 Memoria/(22399:22405): Se desconecto un cliente - Socket: 15 - PID: 1
+[INFO] 17:25:16:047 Memoria/(22399:22582): Se conecto un cliente - Socket: 16
+[INFO] 17:25:16:085 Memoria/(22399:22582): TLB MISS - PID: 2 - Pagina: 0
+[INFO] 17:25:16:092 Memoria/(22399:22582): TLB HIT - PID: 2 - Pagina: 0 - Marco: 0
+[INFO] 17:25:16:093 Memoria/(22399:22582): TLB HIT - PID: 2 - Pagina: 0 - Marco: 0
+[INFO] 17:25:16:094 Memoria/(22399:22582): TLB HIT - PID: 2 - Pagina: 0 - Marco: 0
+[INFO] 17:25:16:095 Memoria/(22399:22582): TLB HIT - PID: 2 - Pagina: 0 - Marco: 0
+[INFO] 17:25:16:096 Memoria/(22399:22582): TLB HIT - PID: 2 - Pagina: 0 - Marco: 0
+[INFO] 17:25:16:097 Memoria/(22399:22582): TLB HIT - PID: 2 - Pagina: 0 - Marco: 0
+[INFO] 17:25:16:140 Memoria/(22399:22582): TLB HIT - PID: 2 - Pagina: 0 - Marco: 0
+[INFO] 17:25:16:140 Memoria/(22399:22582): TLB HIT - PID: 2 - Pagina: 0 - Marco: 0
+[INFO] 17:25:16:145 Memoria/(22399:22582): Se desconecto un cliente - Socket: 16 - PID: 2
+[INFO] 17:27:07:764 Memoria/(23219:23219): Tlb Inicializada
+[INFO] 17:27:09:214 Memoria/(23219:23278): Se conecto un cliente - Socket: 15
+[INFO] 17:27:09:253 Memoria/(23219:23278): TLB MISS - PID: 1 - Pagina: 0
+[INFO] 17:27:09:261 Memoria/(23219:23278): TLB HIT - PID: 1 - Pagina: 0 - Marco: 0
+[INFO] 17:27:09:262 Memoria/(23219:23278): TLB HIT - PID: 1 - Pagina: 0 - Marco: 0
+[INFO] 17:27:09:263 Memoria/(23219:23278): TLB HIT - PID: 1 - Pagina: 0 - Marco: 0
+[INFO] 17:27:09:263 Memoria/(23219:23278): TLB HIT - PID: 1 - Pagina: 0 - Marco: 0
+[INFO] 17:27:09:264 Memoria/(23219:23278): TLB HIT - PID: 1 - Pagina: 0 - Marco: 0
+[INFO] 17:27:09:265 Memoria/(23219:23278): TLB HIT - PID: 1 - Pagina: 0 - Marco: 0
+[INFO] 17:27:09:305 Memoria/(23219:23278): TLB HIT - PID: 1 - Pagina: 0 - Marco: 0
+[INFO] 17:27:09:305 Memoria/(23219:23278): TLB HIT - PID: 1 - Pagina: 0 - Marco: 0
+[INFO] 17:27:09:307 Memoria/(23219:23278): Se desconecto un cliente - Socket: 15 - PID: 1
+[INFO] 17:30:59:140 Memoria/(23636:23636): Tlb Inicializada
+[INFO] 17:31:10:521 Memoria/(23636:23649): Se conecto un cliente - Socket: 15
+[INFO] 17:31:10:562 Memoria/(23636:23649): TLB MISS - PID: 1 - Pagina: 0
+[INFO] 17:31:10:567 Memoria/(23636:23649): TLB HIT - PID: 1 - Pagina: 0 - Marco: 0
+[INFO] 17:31:10:567 Memoria/(23636:23649): TLB HIT - PID: 1 - Pagina: 0 - Marco: 0
+[INFO] 17:31:10:568 Memoria/(23636:23649): TLB HIT - PID: 1 - Pagina: 0 - Marco: 0
+[INFO] 17:31:10:569 Memoria/(23636:23649): TLB HIT - PID: 1 - Pagina: 0 - Marco: 0
+[INFO] 17:31:10:570 Memoria/(23636:23649): TLB HIT - PID: 1 - Pagina: 0 - Marco: 0
+[INFO] 17:31:10:570 Memoria/(23636:23649): TLB HIT - PID: 1 - Pagina: 0 - Marco: 0
+[INFO] 17:31:10:609 Memoria/(23636:23649): TLB HIT - PID: 1 - Pagina: 0 - Marco: 0
+[INFO] 17:31:10:609 Memoria/(23636:23649): TLB HIT - PID: 1 - Pagina: 0 - Marco: 0
+[INFO] 17:31:10:610 Memoria/(23636:23649): Se desconecto un cliente - Socket: 15 - PID: 1
+[INFO] 17:32:47:101 Memoria/(23884:23884): Tlb Inicializada
+[INFO] 17:32:53:637 Memoria/(23884:23987): Se conecto un cliente - Socket: 15
+[INFO] 17:32:53:678 Memoria/(23884:23987): TLB MISS - PID: 1 - Pagina: 0
+[INFO] 17:32:53:683 Memoria/(23884:23987): TLB HIT - PID: 1 - Pagina: 0 - Marco: 0
+[INFO] 17:32:53:683 Memoria/(23884:23987): TLB HIT - PID: 1 - Pagina: 0 - Marco: 0
+[INFO] 17:32:53:684 Memoria/(23884:23987): TLB HIT - PID: 1 - Pagina: 0 - Marco: 0
+[INFO] 17:32:53:685 Memoria/(23884:23987): TLB HIT - PID: 1 - Pagina: 0 - Marco: 0
+[INFO] 17:32:53:686 Memoria/(23884:23987): TLB HIT - PID: 1 - Pagina: 0 - Marco: 0
+[INFO] 17:32:53:687 Memoria/(23884:23987): TLB HIT - PID: 1 - Pagina: 0 - Marco: 0
+[INFO] 17:32:53:728 Memoria/(23884:23987): TLB HIT - PID: 1 - Pagina: 0 - Marco: 0
+[INFO] 17:32:53:729 Memoria/(23884:23987): TLB HIT - PID: 1 - Pagina: 0 - Marco: 0
+[INFO] 17:32:53:730 Memoria/(23884:23987): Se desconecto un cliente - Socket: 15 - PID: 1
+[INFO] 17:33:29:491 Memoria/(24167:24167): Tlb Inicializada
+[INFO] 17:33:31:768 Memoria/(24167:24180): Se conecto un cliente - Socket: 15
+[INFO] 17:33:31:805 Memoria/(24167:24180): TLB MISS - PID: 1 - Pagina: 0
+[INFO] 17:33:31:811 Memoria/(24167:24180): TLB HIT - PID: 1 - Pagina: 0 - Marco: 0
+[INFO] 17:33:31:812 Memoria/(24167:24180): TLB HIT - PID: 1 - Pagina: 0 - Marco: 0
+[INFO] 17:33:31:813 Memoria/(24167:24180): TLB HIT - PID: 1 - Pagina: 0 - Marco: 0
+[INFO] 17:33:31:814 Memoria/(24167:24180): TLB HIT - PID: 1 - Pagina: 0 - Marco: 0
+[INFO] 17:33:31:815 Memoria/(24167:24180): TLB HIT - PID: 1 - Pagina: 0 - Marco: 0
+[INFO] 17:33:31:816 Memoria/(24167:24180): TLB HIT - PID: 1 - Pagina: 0 - Marco: 0
+[INFO] 17:33:31:857 Memoria/(24167:24180): TLB HIT - PID: 1 - Pagina: 0 - Marco: 0
+[INFO] 17:33:31:858 Memoria/(24167:24180): TLB HIT - PID: 1 - Pagina: 0 - Marco: 0
+[INFO] 17:33:31:859 Memoria/(24167:24180): Se desconecto un cliente - Socket: 15 - PID: 1
+[INFO] 17:35:25:900 Memoria/(24426:24426): Tlb Inicializada
+[INFO] 17:35:28:761 Memoria/(24426:24526): Se conecto un cliente - Socket: 15
+[INFO] 17:35:28:801 Memoria/(24426:24526): TLB MISS - PID: 1 - Pagina: 0
+[INFO] 17:35:28:806 Memoria/(24426:24526): TLB HIT - PID: 1 - Pagina: 0 - Marco: 0
+[INFO] 17:35:28:807 Memoria/(24426:24526): TLB HIT - PID: 1 - Pagina: 0 - Marco: 0
+[INFO] 17:35:28:808 Memoria/(24426:24526): TLB HIT - PID: 1 - Pagina: 0 - Marco: 0
+[INFO] 17:35:28:810 Memoria/(24426:24526): TLB HIT - PID: 1 - Pagina: 0 - Marco: 0
+[INFO] 17:35:28:810 Memoria/(24426:24526): TLB HIT - PID: 1 - Pagina: 0 - Marco: 0
+[INFO] 17:35:28:811 Memoria/(24426:24526): TLB HIT - PID: 1 - Pagina: 0 - Marco: 0
+[INFO] 17:35:28:812 Memoria/(24426:24526): TLB HIT - PID: 1 - Pagina: 0 - Marco: 0
+[INFO] 17:35:28:813 Memoria/(24426:24526): Se desconecto un cliente - Socket: 15 - PID: 1
+[INFO] 17:37:06:304 Memoria/(24426:24685): Se conecto un cliente - Socket: 16
+[INFO] 17:37:06:342 Memoria/(24426:24685): TLB MISS - PID: 2 - Pagina: 0
+[INFO] 17:37:06:347 Memoria/(24426:24685): TLB HIT - PID: 2 - Pagina: 0 - Marco: 0
+[INFO] 17:37:06:348 Memoria/(24426:24685): TLB HIT - PID: 2 - Pagina: 0 - Marco: 0
+[INFO] 17:37:06:349 Memoria/(24426:24685): TLB HIT - PID: 2 - Pagina: 0 - Marco: 0
+[INFO] 17:37:06:350 Memoria/(24426:24685): TLB HIT - PID: 2 - Pagina: 0 - Marco: 0
+[INFO] 17:37:06:351 Memoria/(24426:24685): TLB HIT - PID: 2 - Pagina: 0 - Marco: 0
+[INFO] 17:37:06:352 Memoria/(24426:24685): TLB HIT - PID: 2 - Pagina: 0 - Marco: 0
+[INFO] 17:37:06:353 Memoria/(24426:24685): TLB HIT - PID: 2 - Pagina: 0 - Marco: 0
+[INFO] 17:37:06:354 Memoria/(24426:24685): Se desconecto un cliente - Socket: 16 - PID: 2
+[INFO] 17:37:31:027 Memoria/(24426:24810): Se conecto un cliente - Socket: 15
+[INFO] 17:37:31:074 Memoria/(24426:24810): TLB MISS - PID: 3 - Pagina: 0
+[INFO] 17:37:31:076 Memoria/(24426:24810): TLB HIT - PID: 3 - Pagina: 0 - Marco: 0
+[INFO] 17:37:31:077 Memoria/(24426:24810): TLB HIT - PID: 3 - Pagina: 0 - Marco: 0
+[INFO] 17:37:31:078 Memoria/(24426:24810): TLB HIT - PID: 3 - Pagina: 0 - Marco: 0
+[INFO] 17:37:31:079 Memoria/(24426:24810): TLB HIT - PID: 3 - Pagina: 0 - Marco: 0
+[INFO] 17:37:31:080 Memoria/(24426:24810): TLB HIT - PID: 3 - Pagina: 0 - Marco: 0
+[INFO] 17:37:31:081 Memoria/(24426:24810): TLB HIT - PID: 3 - Pagina: 0 - Marco: 0
+[INFO] 17:37:31:121 Memoria/(24426:24810): TLB HIT - PID: 3 - Pagina: 0 - Marco: 0
+[INFO] 17:37:31:121 Memoria/(24426:24810): TLB HIT - PID: 3 - Pagina: 0 - Marco: 0
+[INFO] 17:37:31:125 Memoria/(24426:24810): Se desconecto un cliente - Socket: 15 - PID: 3
+[INFO] 17:48:14:533 Memoria/(25705:25705): Tlb Inicializada
+[INFO] 17:48:18:066 Memoria/(25705:25719): Se conecto un cliente - Socket: 15
+[INFO] 17:48:18:105 Memoria/(25705:25719): TLB MISS - PID: 1 - Pagina: 0
+[INFO] 17:48:18:111 Memoria/(25705:25719): TLB HIT - PID: 1 - Pagina: 0 - Marco: 0
+[INFO] 17:48:18:112 Memoria/(25705:25719): TLB HIT - PID: 1 - Pagina: 0 - Marco: 0
+[INFO] 17:48:18:113 Memoria/(25705:25719): TLB HIT - PID: 1 - Pagina: 0 - Marco: 0
+[INFO] 17:48:18:114 Memoria/(25705:25719): TLB HIT - PID: 1 - Pagina: 0 - Marco: 0
+[INFO] 17:48:18:115 Memoria/(25705:25719): TLB HIT - PID: 1 - Pagina: 0 - Marco: 0
+[INFO] 17:48:18:116 Memoria/(25705:25719): TLB HIT - PID: 1 - Pagina: 0 - Marco: 0
+[INFO] 17:48:18:157 Memoria/(25705:25719): TLB HIT - PID: 1 - Pagina: 0 - Marco: 0
+[INFO] 17:48:18:158 Memoria/(25705:25719): TLB HIT - PID: 1 - Pagina: 0 - Marco: 0
+[INFO] 17:48:18:159 Memoria/(25705:25719): Se desconecto un cliente - Socket: 15 - PID: 1
+[INFO] 17:49:15:960 Memoria/(26215:26215): Tlb Inicializada
+[INFO] 17:49:16:711 Memoria/(26215:26221): Se conecto un cliente - Socket: 15
+[INFO] 17:49:16:750 Memoria/(26215:26221): TLB MISS - PID: 1 - Pagina: 0
+[INFO] 17:49:16:756 Memoria/(26215:26221): TLB HIT - PID: 1 - Pagina: 0 - Marco: 0
+[INFO] 17:49:16:757 Memoria/(26215:26221): TLB HIT - PID: 1 - Pagina: 0 - Marco: 0
+[INFO] 17:49:16:758 Memoria/(26215:26221): TLB HIT - PID: 1 - Pagina: 0 - Marco: 0
+[INFO] 17:49:16:759 Memoria/(26215:26221): TLB HIT - PID: 1 - Pagina: 0 - Marco: 0
+[INFO] 17:49:16:760 Memoria/(26215:26221): TLB HIT - PID: 1 - Pagina: 0 - Marco: 0
+[INFO] 17:49:16:761 Memoria/(26215:26221): TLB HIT - PID: 1 - Pagina: 0 - Marco: 0
+[INFO] 17:49:16:801 Memoria/(26215:26221): TLB HIT - PID: 1 - Pagina: 0 - Marco: 0
+[INFO] 17:49:16:802 Memoria/(26215:26221): TLB HIT - PID: 1 - Pagina: 0 - Marco: 0
+[INFO] 17:49:16:803 Memoria/(26215:26221): Se desconecto un cliente - Socket: 15 - PID: 1
+[INFO] 17:49:26:451 Memoria/(26215:26328): Se conecto un cliente - Socket: 16
+[INFO] 17:49:26:489 Memoria/(26215:26328): TLB MISS - PID: 2 - Pagina: 0
+[INFO] 17:49:26:496 Memoria/(26215:26328): TLB HIT - PID: 2 - Pagina: 0 - Marco: 0
+[INFO] 17:49:26:496 Memoria/(26215:26328): TLB HIT - PID: 2 - Pagina: 0 - Marco: 0
+[INFO] 17:49:26:497 Memoria/(26215:26328): TLB HIT - PID: 2 - Pagina: 0 - Marco: 0
+[INFO] 17:49:26:498 Memoria/(26215:26328): TLB HIT - PID: 2 - Pagina: 0 - Marco: 0
+[INFO] 17:49:26:499 Memoria/(26215:26328): TLB HIT - PID: 2 - Pagina: 0 - Marco: 0
+[INFO] 17:49:26:500 Memoria/(26215:26328): TLB HIT - PID: 2 - Pagina: 0 - Marco: 0
+[INFO] 17:49:26:541 Memoria/(26215:26328): TLB HIT - PID: 2 - Pagina: 0 - Marco: 0
+[INFO] 17:49:26:541 Memoria/(26215:26328): TLB HIT - PID: 2 - Pagina: 0 - Marco: 0
+[INFO] 17:49:26:542 Memoria/(26215:26328): Se desconecto un cliente - Socket: 16 - PID: 2
+[INFO] 17:51:56:391 Memoria/(26926:26926): Tlb Inicializada
+[INFO] 17:52:02:748 Memoria/(26926:26940): Se conecto un cliente - Socket: 15
+[INFO] 17:52:02:789 Memoria/(26926:26940): TLB MISS - PID: 1 - Pagina: 0
+[INFO] 17:52:02:797 Memoria/(26926:26940): TLB HIT - PID: 1 - Pagina: 0 - Marco: 0
+[INFO] 17:52:02:798 Memoria/(26926:26940): TLB HIT - PID: 1 - Pagina: 0 - Marco: 0
+[INFO] 17:52:02:799 Memoria/(26926:26940): TLB HIT - PID: 1 - Pagina: 0 - Marco: 0
+[INFO] 17:52:02:800 Memoria/(26926:26940): TLB HIT - PID: 1 - Pagina: 0 - Marco: 0
+[INFO] 17:52:02:801 Memoria/(26926:26940): TLB HIT - PID: 1 - Pagina: 0 - Marco: 0
+[INFO] 17:52:02:802 Memoria/(26926:26940): TLB HIT - PID: 1 - Pagina: 0 - Marco: 0
+[INFO] 17:52:02:841 Memoria/(26926:26940): TLB HIT - PID: 1 - Pagina: 0 - Marco: 0
+[INFO] 17:52:02:842 Memoria/(26926:26940): TLB HIT - PID: 1 - Pagina: 0 - Marco: 0
+[INFO] 17:52:02:843 Memoria/(26926:26940): Se desconecto un cliente - Socket: 15 - PID: 1
+[INFO] 17:52:12:579 Memoria/(26926:27050): Se conecto un cliente - Socket: 16
+[INFO] 17:52:12:617 Memoria/(26926:27050): TLB MISS - PID: 2 - Pagina: 0
+[INFO] 17:52:12:624 Memoria/(26926:27050): TLB HIT - PID: 2 - Pagina: 0 - Marco: 0
+[INFO] 17:52:12:626 Memoria/(26926:27050): TLB HIT - PID: 2 - Pagina: 0 - Marco: 0
+[INFO] 17:52:12:626 Memoria/(26926:27050): TLB HIT - PID: 2 - Pagina: 0 - Marco: 0
+[INFO] 17:52:12:627 Memoria/(26926:27050): TLB HIT - PID: 2 - Pagina: 0 - Marco: 0
+[INFO] 17:52:12:628 Memoria/(26926:27050): TLB HIT - PID: 2 - Pagina: 0 - Marco: 0
+[INFO] 17:52:12:629 Memoria/(26926:27050): TLB HIT - PID: 2 - Pagina: 0 - Marco: 0
+[INFO] 17:52:12:668 Memoria/(26926:27050): TLB HIT - PID: 2 - Pagina: 0 - Marco: 0
+[INFO] 17:52:12:669 Memoria/(26926:27050): TLB HIT - PID: 2 - Pagina: 0 - Marco: 0
+[INFO] 17:52:12:670 Memoria/(26926:27050): Se desconecto un cliente - Socket: 16 - PID: 2
+[INFO] 17:54:14:143 Memoria/(28478:28478): Tlb Inicializada
+[INFO] 17:54:19:830 Memoria/(28478:28581): Se conecto un cliente - Socket: 15
+[INFO] 17:54:19:874 Memoria/(28478:28581): TLB MISS - PID: 1 - Pagina: 0
+[INFO] 17:54:19:876 Memoria/(28478:28581): TLB HIT - PID: 1 - Pagina: 0 - Marco: 0
+[INFO] 17:54:19:877 Memoria/(28478:28581): TLB HIT - PID: 1 - Pagina: 0 - Marco: 0
+[INFO] 17:54:19:878 Memoria/(28478:28581): TLB HIT - PID: 1 - Pagina: 0 - Marco: 0
+[INFO] 17:54:19:879 Memoria/(28478:28581): TLB HIT - PID: 1 - Pagina: 0 - Marco: 0
+[INFO] 17:54:19:880 Memoria/(28478:28581): TLB HIT - PID: 1 - Pagina: 0 - Marco: 0
+[INFO] 17:54:19:881 Memoria/(28478:28581): TLB HIT - PID: 1 - Pagina: 0 - Marco: 0
+[INFO] 17:54:19:921 Memoria/(28478:28581): TLB HIT - PID: 1 - Pagina: 0 - Marco: 0
+[INFO] 17:54:19:922 Memoria/(28478:28581): TLB HIT - PID: 1 - Pagina: 0 - Marco: 0
+[INFO] 17:54:19:923 Memoria/(28478:28581): Se desconecto un cliente - Socket: 15 - PID: 1
+[INFO] 18:06:39:525 Memoria/(30380:30380): Tlb Inicializada
+[INFO] 18:06:59:483 Memoria/(30380:30500): Se conecto un cliente - Socket: 15
+[INFO] 18:06:59:522 Memoria/(30380:30500): TLB MISS - PID: 1 - Pagina: 0
+[INFO] 18:06:59:528 Memoria/(30380:30500): TLB HIT - PID: 1 - Pagina: 0 - Marco: 0
+[INFO] 18:06:59:529 Memoria/(30380:30500): TLB HIT - PID: 1 - Pagina: 0 - Marco: 0
+[INFO] 18:06:59:530 Memoria/(30380:30500): TLB HIT - PID: 1 - Pagina: 0 - Marco: 0
+[INFO] 18:06:59:531 Memoria/(30380:30500): TLB HIT - PID: 1 - Pagina: 0 - Marco: 0
+[INFO] 18:06:59:532 Memoria/(30380:30500): TLB HIT - PID: 1 - Pagina: 0 - Marco: 0
+[INFO] 18:06:59:533 Memoria/(30380:30500): TLB HIT - PID: 1 - Pagina: 0 - Marco: 0
+[INFO] 18:06:59:573 Memoria/(30380:30500): TLB HIT - PID: 1 - Pagina: 0 - Marco: 0
+[INFO] 18:06:59:574 Memoria/(30380:30500): TLB HIT - PID: 1 - Pagina: 0 - Marco: 0
+[INFO] 18:06:59:575 Memoria/(30380:30500): Se desconecto un cliente - Socket: 15 - PID: 1
+[INFO] 18:11:56:380 Memoria/(31002:31002): Tlb Inicializada
+[INFO] 18:12:04:356 Memoria/(31002:31100): Se conecto un cliente - Socket: 15
+[INFO] 18:12:04:394 Memoria/(31002:31100): TLB MISS - PID: 1 - Pagina: 0
+[INFO] 18:12:04:395 Memoria/(31002:31100): TLB HIT - PID: 1 - Pagina: 0 - Marco: 0
+[INFO] 18:12:04:397 Memoria/(31002:31100): TLB HIT - PID: 1 - Pagina: 0 - Marco: 0
+[INFO] 18:12:04:398 Memoria/(31002:31100): TLB HIT - PID: 1 - Pagina: 0 - Marco: 0
+[INFO] 18:12:04:398 Memoria/(31002:31100): TLB HIT - PID: 1 - Pagina: 0 - Marco: 0
+[INFO] 18:12:04:398 Memoria/(31002:31100): TLB HIT - PID: 1 - Pagina: 0 - Marco: 0
+[INFO] 18:12:04:399 Memoria/(31002:31100): TLB HIT - PID: 1 - Pagina: 0 - Marco: 0
+[INFO] 18:12:04:436 Memoria/(31002:31100): TLB HIT - PID: 1 - Pagina: 0 - Marco: 0
+[INFO] 18:12:04:437 Memoria/(31002:31100): TLB HIT - PID: 1 - Pagina: 0 - Marco: 0
+[INFO] 18:12:04:438 Memoria/(31002:31100): Se desconecto un cliente - Socket: 15 - PID: 1
+[INFO] 18:30:27:536 Memoria/(32495:32495): Tlb Inicializada
+[INFO] 18:30:28:298 Memoria/(32495:32498): Se conecto un cliente - Socket: 15
+[INFO] 18:30:28:337 Memoria/(32495:32498): TLB MISS - PID: 1 - Pagina: 0
+[INFO] 18:30:28:339 Memoria/(32495:32498): TLB HIT - PID: 1 - Pagina: 0 - Marco: 0
+[INFO] 18:30:28:340 Memoria/(32495:32498): TLB HIT - PID: 1 - Pagina: 0 - Marco: 0
+[INFO] 18:30:28:340 Memoria/(32495:32498): TLB HIT - PID: 1 - Pagina: 0 - Marco: 0
+[INFO] 18:30:28:341 Memoria/(32495:32498): TLB HIT - PID: 1 - Pagina: 0 - Marco: 0
+[INFO] 18:30:28:342 Memoria/(32495:32498): TLB HIT - PID: 1 - Pagina: 0 - Marco: 0
+[INFO] 18:30:28:343 Memoria/(32495:32498): TLB HIT - PID: 1 - Pagina: 0 - Marco: 0
+[INFO] 18:30:28:385 Memoria/(32495:32498): TLB HIT - PID: 1 - Pagina: 0 - Marco: 0
+[INFO] 18:30:28:385 Memoria/(32495:32498): TLB HIT - PID: 1 - Pagina: 0 - Marco: 0
+[INFO] 18:30:28:387 Memoria/(32495:32498): Se desconecto un cliente - Socket: 15 - PID: 1
+[INFO] 18:33:08:836 Memoria/(541:541): Tlb Inicializada
+[INFO] 18:33:20:273 Memoria/(541:647): Se conecto un cliente - Socket: 15
+[INFO] 18:33:20:314 Memoria/(541:647): TLB MISS - PID: 1 - Pagina: 0
+[INFO] 18:33:20:319 Memoria/(541:647): TLB HIT - PID: 1 - Pagina: 0 - Marco: 0
+[INFO] 18:33:20:320 Memoria/(541:647): TLB HIT - PID: 1 - Pagina: 0 - Marco: 0
+[INFO] 18:33:20:321 Memoria/(541:647): TLB HIT - PID: 1 - Pagina: 0 - Marco: 0
+[INFO] 18:33:20:322 Memoria/(541:647): TLB HIT - PID: 1 - Pagina: 0 - Marco: 0
+[INFO] 18:33:20:322 Memoria/(541:647): TLB HIT - PID: 1 - Pagina: 0 - Marco: 0
+[INFO] 18:33:20:324 Memoria/(541:647): TLB HIT - PID: 1 - Pagina: 0 - Marco: 0
+[INFO] 18:33:20:365 Memoria/(541:647): TLB HIT - PID: 1 - Pagina: 0 - Marco: 0
+[INFO] 18:33:20:365 Memoria/(541:647): TLB HIT - PID: 1 - Pagina: 0 - Marco: 0
+[INFO] 18:33:20:367 Memoria/(541:647): Se desconecto un cliente - Socket: 15 - PID: 1
+[INFO] 18:35:04:581 Memoria/(1398:1398): Tlb Inicializada
+[INFO] 18:35:05:334 Memoria/(1398:1401): Se conecto un cliente - Socket: 15
+[INFO] 18:35:05:373 Memoria/(1398:1401): TLB MISS - PID: 1 - Pagina: 0
+[INFO] 18:35:05:378 Memoria/(1398:1401): TLB HIT - PID: 1 - Pagina: 0 - Marco: 0
+[INFO] 18:35:05:379 Memoria/(1398:1401): TLB HIT - PID: 1 - Pagina: 0 - Marco: 0
+[INFO] 18:35:05:380 Memoria/(1398:1401): TLB HIT - PID: 1 - Pagina: 0 - Marco: 0
+[INFO] 18:35:05:381 Memoria/(1398:1401): TLB HIT - PID: 1 - Pagina: 0 - Marco: 0
+[INFO] 18:35:05:382 Memoria/(1398:1401): TLB HIT - PID: 1 - Pagina: 0 - Marco: 0
+[INFO] 18:35:05:383 Memoria/(1398:1401): TLB HIT - PID: 1 - Pagina: 0 - Marco: 0
+[INFO] 18:35:05:421 Memoria/(1398:1401): TLB HIT - PID: 1 - Pagina: 0 - Marco: 0
+[INFO] 18:35:05:422 Memoria/(1398:1401): TLB HIT - PID: 1 - Pagina: 0 - Marco: 0
+[INFO] 18:35:05:423 Memoria/(1398:1401): Se desconecto un cliente - Socket: 15 - PID: 1
+[INFO] 18:36:11:600 Memoria/(1865:1865): Tlb Inicializada
+[INFO] 18:36:34:029 Memoria/(2692:2692): Tlb Inicializada
+[INFO] 18:36:40:129 Memoria/(2692:2808): Se conecto un cliente - Socket: 15
+[INFO] 18:36:40:169 Memoria/(2692:2808): TLB MISS - PID: 1 - Pagina: 0
+[INFO] 18:36:40:173 Memoria/(2692:2808): TLB HIT - PID: 1 - Pagina: 0 - Marco: 0
+[INFO] 18:36:40:177 Memoria/(2692:2808): TLB HIT - PID: 1 - Pagina: 0 - Marco: 0
+[INFO] 18:36:40:178 Memoria/(2692:2808): TLB HIT - PID: 1 - Pagina: 0 - Marco: 0
+[INFO] 18:36:40:179 Memoria/(2692:2808): TLB HIT - PID: 1 - Pagina: 0 - Marco: 0
+[INFO] 18:36:40:180 Memoria/(2692:2808): TLB HIT - PID: 1 - Pagina: 0 - Marco: 0
+[INFO] 18:36:40:181 Memoria/(2692:2808): TLB HIT - PID: 1 - Pagina: 0 - Marco: 0
+[INFO] 18:36:40:220 Memoria/(2692:2808): TLB HIT - PID: 1 - Pagina: 0 - Marco: 0
+[INFO] 18:36:40:221 Memoria/(2692:2808): TLB HIT - PID: 1 - Pagina: 0 - Marco: 0
+[INFO] 18:36:40:222 Memoria/(2692:2808): Se desconecto un cliente - Socket: 15 - PID: 1
+[INFO] 18:37:12:631 Memoria/(3363:3363): Tlb Inicializada
+[INFO] 18:37:16:299 Memoria/(3363:3370): Se conecto un cliente - Socket: 15
+[INFO] 18:37:16:337 Memoria/(3363:3370): TLB MISS - PID: 1 - Pagina: 0
+[INFO] 18:37:16:339 Memoria/(3363:3370): TLB HIT - PID: 1 - Pagina: 0 - Marco: 0
+[INFO] 18:37:16:341 Memoria/(3363:3370): TLB HIT - PID: 1 - Pagina: 0 - Marco: 0
+[INFO] 18:37:16:341 Memoria/(3363:3370): TLB HIT - PID: 1 - Pagina: 0 - Marco: 0
+[INFO] 18:37:16:342 Memoria/(3363:3370): TLB HIT - PID: 1 - Pagina: 0 - Marco: 0
+[INFO] 18:37:16:342 Memoria/(3363:3370): TLB HIT - PID: 1 - Pagina: 0 - Marco: 0
+[INFO] 18:37:16:342 Memoria/(3363:3370): TLB HIT - PID: 1 - Pagina: 0 - Marco: 0
+[INFO] 18:37:16:382 Memoria/(3363:3370): TLB HIT - PID: 1 - Pagina: 0 - Marco: 0
+[INFO] 18:37:16:383 Memoria/(3363:3370): TLB HIT - PID: 1 - Pagina: 0 - Marco: 0
+[INFO] 18:37:16:384 Memoria/(3363:3370): Se desconecto un cliente - Socket: 15 - PID: 1
+[INFO] 18:37:20:848 Memoria/(3363:3474): Se conecto un cliente - Socket: 16
+[INFO] 18:37:20:887 Memoria/(3363:3474): TLB MISS - PID: 2 - Pagina: 0
+[INFO] 18:37:20:889 Memoria/(3363:3474): TLB HIT - PID: 2 - Pagina: 0 - Marco: 0
+[INFO] 18:37:20:891 Memoria/(3363:3474): TLB HIT - PID: 2 - Pagina: 0 - Marco: 0
+[INFO] 18:37:20:891 Memoria/(3363:3474): TLB HIT - PID: 2 - Pagina: 0 - Marco: 0
+[INFO] 18:37:20:891 Memoria/(3363:3474): TLB HIT - PID: 2 - Pagina: 0 - Marco: 0
+[INFO] 18:37:20:892 Memoria/(3363:3474): TLB HIT - PID: 2 - Pagina: 0 - Marco: 0
+[INFO] 18:37:20:892 Memoria/(3363:3474): TLB HIT - PID: 2 - Pagina: 0 - Marco: 0
+[INFO] 18:37:20:933 Memoria/(3363:3474): TLB HIT - PID: 2 - Pagina: 0 - Marco: 0
+[INFO] 18:37:20:933 Memoria/(3363:3474): TLB HIT - PID: 2 - Pagina: 0 - Marco: 0
+[INFO] 18:37:20:934 Memoria/(3363:3474): Se desconecto un cliente - Socket: 16 - PID: 2
+[INFO] 18:37:43:232 Memoria/(3914:3914): Tlb Inicializada
+[INFO] 18:37:45:291 Memoria/(3914:3920): Se conecto un cliente - Socket: 15
+[INFO] 18:37:45:329 Memoria/(3914:3920): TLB MISS - PID: 1 - Pagina: 0
+[INFO] 18:37:45:334 Memoria/(3914:3920): TLB HIT - PID: 1 - Pagina: 0 - Marco: 0
+[INFO] 18:37:45:335 Memoria/(3914:3920): TLB HIT - PID: 1 - Pagina: 0 - Marco: 0
+[INFO] 18:37:45:337 Memoria/(3914:3920): TLB HIT - PID: 1 - Pagina: 0 - Marco: 0
+[INFO] 18:37:45:337 Memoria/(3914:3920): TLB HIT - PID: 1 - Pagina: 0 - Marco: 0
+[INFO] 18:37:45:338 Memoria/(3914:3920): TLB HIT - PID: 1 - Pagina: 0 - Marco: 0
+[INFO] 18:37:45:339 Memoria/(3914:3920): TLB HIT - PID: 1 - Pagina: 0 - Marco: 0
+[INFO] 18:37:45:381 Memoria/(3914:3920): TLB HIT - PID: 1 - Pagina: 0 - Marco: 0
+[INFO] 18:37:45:381 Memoria/(3914:3920): TLB HIT - PID: 1 - Pagina: 0 - Marco: 0
+[INFO] 18:37:45:382 Memoria/(3914:3920): Se desconecto un cliente - Socket: 15 - PID: 1
+[INFO] 18:38:05:138 Memoria/(3914:4035): Se conecto un cliente - Socket: 16
+[INFO] 18:38:05:177 Memoria/(3914:4035): TLB MISS - PID: 2 - Pagina: 0
+[INFO] 18:38:05:182 Memoria/(3914:4035): TLB HIT - PID: 2 - Pagina: 0 - Marco: 0
+[INFO] 18:38:05:183 Memoria/(3914:4035): TLB HIT - PID: 2 - Pagina: 0 - Marco: 0
+[INFO] 18:38:05:184 Memoria/(3914:4035): TLB HIT - PID: 2 - Pagina: 0 - Marco: 0
+[INFO] 18:38:05:185 Memoria/(3914:4035): TLB HIT - PID: 2 - Pagina: 0 - Marco: 0
+[INFO] 18:38:05:186 Memoria/(3914:4035): TLB HIT - PID: 2 - Pagina: 0 - Marco: 0
+[INFO] 18:38:05:187 Memoria/(3914:4035): TLB HIT - PID: 2 - Pagina: 0 - Marco: 0
+[INFO] 18:38:05:225 Memoria/(3914:4035): TLB HIT - PID: 2 - Pagina: 0 - Marco: 0
+[INFO] 18:38:05:226 Memoria/(3914:4035): TLB HIT - PID: 2 - Pagina: 0 - Marco: 0
+[INFO] 18:38:05:227 Memoria/(3914:4035): Se desconecto un cliente - Socket: 16 - PID: 2
+[INFO] 18:44:08:065 Memoria/(4977:4977): Tlb Inicializada
+[INFO] 18:44:19:203 Memoria/(4977:5085): Se conecto un cliente - Socket: 15
+[INFO] 18:45:16:403 Memoria/(5358:5358): Tlb Inicializada
+[INFO] 18:45:17:587 Memoria/(5358:5361): Se conecto un cliente - Socket: 15
+[INFO] 18:45:17:625 Memoria/(5358:5361): TLB MISS - PID: 1 - Pagina: 0
+[INFO] 18:45:17:632 Memoria/(5358:5361): TLB HIT - PID: 1 - Pagina: 0 - Marco: 0
+[INFO] 18:45:17:633 Memoria/(5358:5361): TLB HIT - PID: 1 - Pagina: 0 - Marco: 0
+[INFO] 18:45:17:633 Memoria/(5358:5361): TLB HIT - PID: 1 - Pagina: 0 - Marco: 0
+[INFO] 18:45:17:635 Memoria/(5358:5361): TLB HIT - PID: 1 - Pagina: 0 - Marco: 0
+[INFO] 18:45:17:635 Memoria/(5358:5361): TLB HIT - PID: 1 - Pagina: 0 - Marco: 0
+[INFO] 18:45:17:681 Memoria/(5358:5361): TLB HIT - PID: 1 - Pagina: 0 - Marco: 0
+[INFO] 18:45:17:682 Memoria/(5358:5361): TLB HIT - PID: 1 - Pagina: 0 - Marco: 0
+[INFO] 18:45:17:683 Memoria/(5358:5361): Se desconecto un cliente - Socket: 15 - PID: 1
+[INFO] 18:46:00:468 Memoria/(5358:5529): Se conecto un cliente - Socket: 16
+[INFO] 18:46:00:468 Memoria/(5358:5530): Se conecto un cliente - Socket: 15
+[INFO] 18:46:00:468 Memoria/(5358:5531): Se conecto un cliente - Socket: 20
+[INFO] 18:46:00:468 Memoria/(5358:5532): Se conecto un cliente - Socket: 21
+[INFO] 18:46:00:506 Memoria/(5358:5529): TLB MISS - PID: 2 - Pagina: 0
+[INFO] 18:46:00:508 Memoria/(5358:5529): TLB HIT - PID: 2 - Pagina: 0 - Marco: 0
+[INFO] 18:46:00:509 Memoria/(5358:5529): TLB HIT - PID: 2 - Pagina: 0 - Marco: 0
+[INFO] 18:46:00:510 Memoria/(5358:5529): TLB HIT - PID: 2 - Pagina: 0 - Marco: 0
+[INFO] 18:46:00:511 Memoria/(5358:5529): TLB HIT - PID: 2 - Pagina: 0 - Marco: 0
+[INFO] 18:46:00:512 Memoria/(5358:5529): TLB HIT - PID: 2 - Pagina: 0 - Marco: 0
+[INFO] 18:46:00:513 Memoria/(5358:5532): TLB MISS - PID: 5 - Pagina: 0
+[INFO] 18:46:00:515 Memoria/(5358:5532): TLB HIT - PID: 5 - Pagina: 0 - Marco: 0
+[INFO] 18:46:00:516 Memoria/(5358:5532): TLB HIT - PID: 5 - Pagina: 0 - Marco: 0
+[INFO] 18:46:00:517 Memoria/(5358:5532): TLB HIT - PID: 5 - Pagina: 0 - Marco: 0
+[INFO] 18:46:00:518 Memoria/(5358:5530): TLB MISS - PID: 3 - Pagina: 0
+[INFO] 18:46:00:519 Memoria/(5358:5530): TLB HIT - PID: 3 - Pagina: 0 - Marco: 0
+[INFO] 18:46:00:521 Memoria/(5358:5530): TLB HIT - PID: 3 - Pagina: 0 - Marco: 0
+[INFO] 18:46:00:521 Memoria/(5358:5530): TLB HIT - PID: 3 - Pagina: 0 - Marco: 0
+[INFO] 18:46:00:523 Memoria/(5358:5531): TLB MISS - PID: 4 - Pagina: 0
+[INFO] 18:46:00:524 Memoria/(5358:5531): TLB HIT - PID: 4 - Pagina: 0 - Marco: 0
+[INFO] 18:46:00:525 Memoria/(5358:5531): TLB HIT - PID: 4 - Pagina: 0 - Marco: 0
+[INFO] 18:46:00:526 Memoria/(5358:5531): TLB HIT - PID: 4 - Pagina: 0 - Marco: 0
+[INFO] 18:46:00:531 Memoria/(5358:5532): TLB MISS - PID: 5 - Pagina: 0
+[INFO] 18:46:00:533 Memoria/(5358:5530): TLB MISS - PID: 3 - Pagina: 0
+[INFO] 18:46:00:535 Memoria/(5358:5531): TLB MISS - PID: 4 - Pagina: 0
+[INFO] 18:46:00:537 Memoria/(5358:5532): TLB MISS - PID: 5 - Pagina: 0
+[INFO] 18:46:00:539 Memoria/(5358:5530): TLB MISS - PID: 3 - Pagina: 0
+[INFO] 18:46:00:541 Memoria/(5358:5531): TLB MISS - PID: 4 - Pagina: 0
+[INFO] 18:46:00:553 Memoria/(5358:5529): TLB MISS - PID: 2 - Pagina: 0
+[INFO] 18:46:00:555 Memoria/(5358:5529): TLB HIT - PID: 2 - Pagina: 0 - Marco: 0
+[INFO] 18:46:00:556 Memoria/(5358:5529): Se desconecto un cliente - Socket: 16 - PID: 2
+[INFO] 18:50:53:902 Memoria/(6042:6042): Tlb Inicializada
+[INFO] 18:50:59:645 Memoria/(6042:6051): Se conecto un cliente - Socket: 15
+[INFO] 18:50:59:645 Memoria/(6042:6052): Se conecto un cliente - Socket: 16
+[INFO] 18:50:59:646 Memoria/(6042:6053): Se conecto un cliente - Socket: 20
+[INFO] 18:50:59:646 Memoria/(6042:6054): Se conecto un cliente - Socket: 21
+[INFO] 18:50:59:685 Memoria/(6042:6051): TLB MISS - PID: 1 - Pagina: 0
+[INFO] 18:50:59:687 Memoria/(6042:6051): TLB HIT - PID: 1 - Pagina: 0 - Marco: 0
+[INFO] 18:50:59:688 Memoria/(6042:6051): TLB HIT - PID: 1 - Pagina: 0 - Marco: 0
+[INFO] 18:50:59:689 Memoria/(6042:6051): TLB HIT - PID: 1 - Pagina: 0 - Marco: 0
+[INFO] 18:50:59:690 Memoria/(6042:6052): TLB MISS - PID: 2 - Pagina: 0
+[INFO] 18:50:59:692 Memoria/(6042:6052): TLB HIT - PID: 2 - Pagina: 0 - Marco: 1
+[INFO] 18:50:59:693 Memoria/(6042:6052): TLB HIT - PID: 2 - Pagina: 0 - Marco: 1
+[INFO] 18:50:59:694 Memoria/(6042:6052): TLB HIT - PID: 2 - Pagina: 0 - Marco: 1
+[INFO] 18:50:59:695 Memoria/(6042:6053): TLB MISS - PID: 3 - Pagina: 0
+[INFO] 18:50:59:697 Memoria/(6042:6053): TLB HIT - PID: 3 - Pagina: 0 - Marco: 2
+[INFO] 18:50:59:698 Memoria/(6042:6053): TLB HIT - PID: 3 - Pagina: 0 - Marco: 2
+[INFO] 18:50:59:699 Memoria/(6042:6053): TLB HIT - PID: 3 - Pagina: 0 - Marco: 2
+[INFO] 18:50:59:700 Memoria/(6042:6054): TLB MISS - PID: 4 - Pagina: 0
+[INFO] 18:50:59:702 Memoria/(6042:6054): TLB HIT - PID: 4 - Pagina: 0 - Marco: 3
+[INFO] 18:50:59:705 Memoria/(6042:6054): TLB HIT - PID: 4 - Pagina: 0 - Marco: 3
+[INFO] 18:50:59:709 Memoria/(6042:6054): TLB HIT - PID: 4 - Pagina: 0 - Marco: 3
+[INFO] 18:50:59:710 Memoria/(6042:6051): TLB MISS - PID: 1 - Pagina: 0
+[INFO] 18:50:59:712 Memoria/(6042:6052): TLB MISS - PID: 2 - Pagina: 0
+[INFO] 18:50:59:716 Memoria/(6042:6053): TLB MISS - PID: 3 - Pagina: 0
+[INFO] 18:50:59:718 Memoria/(6042:6054): TLB MISS - PID: 4 - Pagina: 0
+[INFO] 18:50:59:720 Memoria/(6042:6051): TLB MISS - PID: 1 - Pagina: 0
+[INFO] 18:50:59:721 Memoria/(6042:6052): TLB MISS - PID: 2 - Pagina: 0
+[INFO] 18:50:59:723 Memoria/(6042:6053): TLB MISS - PID: 3 - Pagina: 0
+[INFO] 18:50:59:725 Memoria/(6042:6054): TLB MISS - PID: 4 - Pagina: 0
+[INFO] 18:56:41:232 Memoria/(6711:6711): Tlb Inicializada
+[INFO] 18:56:52:216 Memoria/(6711:6862): Se conecto un cliente - Socket: 15
+[INFO] 18:56:52:216 Memoria/(6711:6863): Se conecto un cliente - Socket: 16
+[INFO] 18:56:52:217 Memoria/(6711:6864): Se conecto un cliente - Socket: 20
+[INFO] 18:56:52:217 Memoria/(6711:6865): Se conecto un cliente - Socket: 21
+[INFO] 18:56:52:257 Memoria/(6711:6862): TLB MISS - PID: 1 - Pagina: 0
+[INFO] 18:56:52:260 Memoria/(6711:6862): TLB HIT - PID: 1 - Pagina: 0 - Marco: 0
+[INFO] 18:56:52:260 Memoria/(6711:6862): TLB HIT - PID: 1 - Pagina: 0 - Marco: 0
+[INFO] 18:56:52:261 Memoria/(6711:6862): TLB HIT - PID: 1 - Pagina: 0 - Marco: 0
+[INFO] 18:56:52:263 Memoria/(6711:6863): TLB MISS - PID: 2 - Pagina: 0
+[INFO] 18:56:52:264 Memoria/(6711:6863): TLB HIT - PID: 2 - Pagina: 0 - Marco: 1
+[INFO] 18:56:52:265 Memoria/(6711:6863): TLB HIT - PID: 2 - Pagina: 0 - Marco: 1
+[INFO] 18:56:52:266 Memoria/(6711:6863): TLB HIT - PID: 2 - Pagina: 0 - Marco: 1
+[INFO] 18:56:52:267 Memoria/(6711:6864): TLB MISS - PID: 3 - Pagina: 0
+[INFO] 18:56:52:269 Memoria/(6711:6864): TLB HIT - PID: 3 - Pagina: 0 - Marco: 2
+[INFO] 18:56:52:270 Memoria/(6711:6864): TLB HIT - PID: 3 - Pagina: 0 - Marco: 2
+[INFO] 18:56:52:271 Memoria/(6711:6864): TLB HIT - PID: 3 - Pagina: 0 - Marco: 2
+[INFO] 18:56:52:272 Memoria/(6711:6865): TLB MISS - PID: 4 - Pagina: 0
+[INFO] 18:56:52:274 Memoria/(6711:6865): TLB HIT - PID: 4 - Pagina: 0 - Marco: 3
+[INFO] 18:56:52:275 Memoria/(6711:6865): TLB HIT - PID: 4 - Pagina: 0 - Marco: 3
+[INFO] 18:56:52:276 Memoria/(6711:6865): TLB HIT - PID: 4 - Pagina: 0 - Marco: 3
+[INFO] 18:56:52:277 Memoria/(6711:6862): TLB MISS - PID: 1 - Pagina: 0
+[INFO] 18:56:52:280 Memoria/(6711:6863): TLB MISS - PID: 2 - Pagina: 0
+[INFO] 18:56:52:284 Memoria/(6711:6864): TLB MISS - PID: 3 - Pagina: 0
+[INFO] 18:56:52:287 Memoria/(6711:6865): TLB MISS - PID: 4 - Pagina: 0
+[INFO] 18:56:52:289 Memoria/(6711:6862): TLB MISS - PID: 1 - Pagina: 0
+[INFO] 18:56:52:291 Memoria/(6711:6863): TLB MISS - PID: 2 - Pagina: 0
+[INFO] 18:56:52:293 Memoria/(6711:6864): TLB MISS - PID: 3 - Pagina: 0
+[INFO] 18:56:52:294 Memoria/(6711:6865): TLB MISS - PID: 4 - Pagina: 0
+[INFO] 18:56:52:329 Memoria/(6711:6862): TLB MISS - PID: 1 - Pagina: 0
+[INFO] 18:56:52:331 Memoria/(6711:6862): TLB HIT - PID: 1 - Pagina: 0 - Marco: 0
+[INFO] 18:56:52:332 Memoria/(6711:6862): Se desconecto un cliente - Socket: 15 - PID: 1
+[INFO] 21:01:36:069 Memoria/(14617:14617): Tlb Inicializada
+[INFO] 21:01:45:069 Memoria/(14617:14688): Se conecto un cliente - Socket: 16
+[INFO] 21:01:45:069 Memoria/(14617:14687): Se conecto un cliente - Socket: 15
+[INFO] 21:01:45:070 Memoria/(14617:14689): Se conecto un cliente - Socket: 20
+[INFO] 21:01:45:070 Memoria/(14617:14690): Se conecto un cliente - Socket: 21
+[INFO] 21:01:45:109 Memoria/(14617:14688): TLB MISS - PID: 1 - Pagina: 0
+[INFO] 21:01:45:111 Memoria/(14617:14688): TLB HIT - PID: 1 - Pagina: 0 - Marco: 0
+[INFO] 21:01:45:112 Memoria/(14617:14688): TLB HIT - PID: 1 - Pagina: 0 - Marco: 0
+[INFO] 21:01:45:113 Memoria/(14617:14688): TLB HIT - PID: 1 - Pagina: 0 - Marco: 0
+[INFO] 21:01:45:115 Memoria/(14617:14687): TLB MISS - PID: 2 - Pagina: 0
+[INFO] 21:01:45:116 Memoria/(14617:14687): TLB HIT - PID: 2 - Pagina: 0 - Marco: 1
+[INFO] 21:01:45:117 Memoria/(14617:14687): TLB HIT - PID: 2 - Pagina: 0 - Marco: 1
+[INFO] 21:01:45:118 Memoria/(14617:14687): TLB HIT - PID: 2 - Pagina: 0 - Marco: 1
+[INFO] 21:01:45:119 Memoria/(14617:14689): TLB MISS - PID: 3 - Pagina: 0
+[INFO] 21:01:45:121 Memoria/(14617:14689): TLB HIT - PID: 3 - Pagina: 0 - Marco: 2
+[INFO] 21:01:45:122 Memoria/(14617:14689): TLB HIT - PID: 3 - Pagina: 0 - Marco: 2
+[INFO] 21:01:45:123 Memoria/(14617:14689): TLB HIT - PID: 3 - Pagina: 0 - Marco: 2
+[INFO] 21:01:45:124 Memoria/(14617:14690): TLB MISS - PID: 4 - Pagina: 0
+[INFO] 21:01:45:125 Memoria/(14617:14690): TLB HIT - PID: 4 - Pagina: 0 - Marco: 3
+[INFO] 21:01:45:127 Memoria/(14617:14690): TLB HIT - PID: 4 - Pagina: 0 - Marco: 3
+[INFO] 21:01:45:127 Memoria/(14617:14690): TLB HIT - PID: 4 - Pagina: 0 - Marco: 3
+[INFO] 21:01:45:134 Memoria/(14617:14688): TLB MISS - PID: 1 - Pagina: 0
+[INFO] 21:01:45:135 Memoria/(14617:14687): TLB MISS - PID: 2 - Pagina: 0
+[INFO] 21:01:45:137 Memoria/(14617:14689): TLB MISS - PID: 3 - Pagina: 0
+[INFO] 21:01:45:139 Memoria/(14617:14690): TLB MISS - PID: 4 - Pagina: 0
+[INFO] 21:01:45:141 Memoria/(14617:14688): TLB MISS - PID: 1 - Pagina: 0
+[INFO] 21:01:45:143 Memoria/(14617:14687): TLB MISS - PID: 2 - Pagina: 0
+[INFO] 21:01:45:146 Memoria/(14617:14689): TLB MISS - PID: 3 - Pagina: 0
+[INFO] 21:01:45:148 Memoria/(14617:14690): TLB MISS - PID: 4 - Pagina: 0
+[INFO] 21:47:12:301 Memoria/(16304:16304): Tlb Inicializada
+[INFO] 21:47:14:688 Memoria/(16304:16314): Se conecto un cliente - Socket: 15
+[INFO] 21:47:14:688 Memoria/(16304:16315): Se conecto un cliente - Socket: 16
+[INFO] 21:47:14:688 Memoria/(16304:16316): Se conecto un cliente - Socket: 20
+[INFO] 21:47:14:688 Memoria/(16304:16317): Se conecto un cliente - Socket: 21
+[INFO] 21:47:14:728 Memoria/(16304:16314): TLB MISS - PID: 1 - Pagina: 0
+[INFO] 21:47:14:731 Memoria/(16304:16314): TLB HIT - PID: 1 - Pagina: 0 - Marco: 0
+[INFO] 21:47:14:733 Memoria/(16304:16314): TLB HIT - PID: 1 - Pagina: 0 - Marco: 0
+[INFO] 21:47:14:734 Memoria/(16304:16314): TLB HIT - PID: 1 - Pagina: 0 - Marco: 0
+[INFO] 21:47:14:735 Memoria/(16304:16315): TLB MISS - PID: 2 - Pagina: 0
+[INFO] 21:47:14:737 Memoria/(16304:16315): TLB HIT - PID: 2 - Pagina: 0 - Marco: 1
+[INFO] 21:47:14:738 Memoria/(16304:16315): TLB HIT - PID: 2 - Pagina: 0 - Marco: 1
+[INFO] 21:47:14:739 Memoria/(16304:16315): TLB HIT - PID: 2 - Pagina: 0 - Marco: 1
+[INFO] 21:47:14:740 Memoria/(16304:16316): TLB MISS - PID: 3 - Pagina: 0
+[INFO] 21:47:14:742 Memoria/(16304:16316): TLB HIT - PID: 3 - Pagina: 0 - Marco: 2
+[INFO] 21:47:14:743 Memoria/(16304:16316): TLB HIT - PID: 3 - Pagina: 0 - Marco: 2
+[INFO] 21:47:14:744 Memoria/(16304:16316): TLB HIT - PID: 3 - Pagina: 0 - Marco: 2
+[INFO] 21:47:14:745 Memoria/(16304:16317): TLB MISS - PID: 4 - Pagina: 0
+[INFO] 21:47:14:750 Memoria/(16304:16317): TLB HIT - PID: 4 - Pagina: 0 - Marco: 3
+[INFO] 21:47:14:751 Memoria/(16304:16317): TLB HIT - PID: 4 - Pagina: 0 - Marco: 3
+[INFO] 21:47:14:751 Memoria/(16304:16317): TLB HIT - PID: 4 - Pagina: 0 - Marco: 3
+[INFO] 21:47:14:755 Memoria/(16304:16314): TLB MISS - PID: 1 - Pagina: 0
+[INFO] 21:47:14:757 Memoria/(16304:16315): TLB MISS - PID: 2 - Pagina: 0
+[INFO] 21:47:14:759 Memoria/(16304:16316): TLB MISS - PID: 3 - Pagina: 0
+[INFO] 21:47:14:761 Memoria/(16304:16317): TLB MISS - PID: 4 - Pagina: 0
+[INFO] 21:47:14:762 Memoria/(16304:16315): TLB MISS - PID: 2 - Pagina: 0
+[INFO] 21:47:14:764 Memoria/(16304:16314): TLB MISS - PID: 1 - Pagina: 0
+[INFO] 21:47:14:766 Memoria/(16304:16316): TLB MISS - PID: 3 - Pagina: 0
+[INFO] 21:47:14:767 Memoria/(16304:16317): TLB MISS - PID: 4 - Pagina: 0

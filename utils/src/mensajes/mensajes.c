@@ -98,6 +98,10 @@ void* recibir_buffer(int size, int socket_cliente) {
 	return buffer;
 }
 
+void recibir_buffer_v(void* buffer, int size, int socket){
+	recv(socket, buffer, size, MSG_WAITALL);
+}
+
 char* recibir_mensaje(int socket){
     int size = recibir_tamanio(socket);
     void* buffer = malloc(size);
@@ -268,7 +272,6 @@ void enviar_mem_read(int conexion, int cod_op, int origin, int size){// probar q
 	void* a_enviar = serializar_paquete_mem_read(paquete, bytes);
 
 	send(conexion, a_enviar, bytes, 0);
-	printf("mensaje enviado\n");
 	free(a_enviar);
 }
 

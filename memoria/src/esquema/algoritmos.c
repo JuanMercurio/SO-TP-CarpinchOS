@@ -234,16 +234,53 @@ int clock_buscar_puntero()
     return -1;
 }
 
-void page_use_lru(int pagina, tab_pags* tabla)
+void page_use(int pid, int marco, pag_t* p, int n_pagina, int codigo)
 {
-   pag_t* p = list_get(tabla->tabla_pag, pagina);
-   p->presente = 1;
-   p->algoritmo = suma_atomica(&LRU_C);
+    if (codigo == WRITE) {
+        p->modificado = 1;
+    } else {
+        p->modificado = 0;
+    }
+
+    if (p->tlb == 0) {
+        tlb_insert_page(pid, n_pagina, marco, codigo);
+        p->tlb = 1;
+    }
+
+    p->presente = 1;
+    p->algoritmo = alg_comportamiento();
+    p->marco = marco;
+
 }
 
-void page_use_clock_modificado(int pagina, tab_pags* tabla)
+int alg_comportamiento_lru()
 {
-   pag_t* p = list_get(tabla->tabla_pag, pagina);
-   p->presente = 1;
-   p->algoritmo = 1;
+    return suma_atomica(&LRU_C);
+}
+
+int alg_comportamiento_clock_modificado()
+{
+    return 1;
+}
+
+
+
+void tlb_insert_page(int pid, int n_pagina, int marco, int codigo)
+{
+    tlb_t* reg = malloc(sizeof(tlb_t));
+
+    reg->pid = pid;
+    reg->pagina = n_pagina;
+    reg->modificado = codigo == WRITE ? 1 : 0;
+    reg->alg_tlb = alg_comportamiento_tlb();
+}
+
+int alg_comportamiento_tlb_fifo()
+{
+    return suma_atomica(&FIFO_TLB);
+}
+
+int alg_comportamiento_tlb_lru()
+{
+    return suma_atomica(&FIFO_TLB);
 }
