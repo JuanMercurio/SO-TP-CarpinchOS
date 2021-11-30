@@ -10,15 +10,10 @@ int main(int argc, char *argv[])
 {
    //solo corre si corremos el binario asi: binario test
    //tests(argc, argv[1]);
- printf("arranca o no arranca?\n");
    iniciar_logger();
-   printf("paso logger\n");
-   obtener_config();
-   printf("paso config\n");
+   obtener_config(); 
    inicializar_semaforos();
-   printf("incializo semaforos\n");
    inicializar_listas_sem_io();
-   printf("inicio listas io\n");
    init_dispositivos_io();
    printf("inicio dispositivos io\n");
    inicializar_planificacion();
@@ -128,7 +123,7 @@ void receptor(void *arg)
    printf("RECEPTOR DE CLIENTE %d\n", *(int*)arg );
    int cliente = *(int *)arg;
    free(arg);
-   int cod_op , mem_int, aux_int;
+   int mem_int, aux_int;
    bool conectado = true;
    printf("por ahcer handshake\n");
    handshake(cliente, "KERNEL");
@@ -175,7 +170,7 @@ void receptor(void *arg)
       case INIT_SEMAFORO:// SE PUEDE MODIFICAR PARA CONFIRMAR  MAL
                printf("MAIN:recibi un init semaforo\n");
                semaforo = recibir_semaforo(cliente);// recibe el puntero
-               log_info(logger, "Se recibió del carpincho %d un SEM INIT para el semáforo %s con valor &d\n ", carpincho->pid, semaforo->nombre_semaforo, semaforo->valor);
+               log_info(logger, "Se recibió del carpincho %d un SEM INIT para el semáforo %s con valor %d\n ", carpincho->pid, semaforo->nombre_semaforo, semaforo->valor);
                int resultado = sem_kernel_init(semaforo->nombre_semaforo, semaforo->valor);// usa lo que necesita
    
                enviar_int(cliente, resultado);// responde peticion con ok 
@@ -189,46 +184,60 @@ void receptor(void *arg)
                //io_kernel io_to_be_served = *(buscar_io(io, lista_io_kernel));// DIRECTAMENT, AL SER UNA LISTA GLOBAL SE PUEDE ACCEDER DESDE LA FUNJCION Y NO PASARLA TODO EL TIEMPO COMO PARAMEETRO
                carpincho->io_solicitada = string_duplicate(recibido);              
                carpincho->proxima_instruccion = IO;
-               sem_post(&carpincho->semaforo_evento);
+               aux_int = bloquear_por_io(carpincho);
+               printf("RECEPTOR: io: recibido de bloquear por io\n");
+               if(aux_int == -1){
+                  enviar_int(cliente, -1);
+               }else
+               {sem_post(&carpincho->semaforo_evento);
                log_info(logger, "Se recibió del carpincho %d un CALL IO para %s", carpincho->pid, recibido);
-               free(recibido);
+               
+               }free(recibido);
                break;
 
       case SEM_WAIT: 
                recibido = recibir_mensaje(cliente);
-               sem = buscar_semaforo(carpincho->semaforo_a_modificar);
-               if( sem != NULL){
-                  strcpy(carpincho->semaforo_a_modificar ,recibido);
-                  sem_post(&carpincho->semaforo_evento);  
-                  log_info(logger, "Se recibió del carpincho %d un SEM WAIT para %s", carpincho->pid, sem->id);
+               carpincho->semaforo_a_modificar = string_duplicate(recibido);
+               printf("RECEPTOR: semaforo recibido %s\n", recibido);
+               int pos;
+               sem = buscar_semaforo2(carpincho->semaforo_a_modificar, &pos );
+                printf("RECEPTOR: ---------------------------------------\n");
+               
+               if( sem == NULL){
+                  printf("RECEPTOR: el semaforo no se encuentra\n");
+                  log_info(logger, "Se recibió del carpincho %d un SEM WAIT para un semáforo que no existe", carpincho->pid);
+                  enviar_int(cliente, -1); 
                }
                else
-               {
-                  log_info(logger, "Se recibió del carpincho %d un SEM WAIT para un semáforo que no existe", carpincho->pid);
-                  enviar_mensaje(cliente, "FAIL ");
+               {printf("RECEPTOR: el semaforo encontradoe es %s\n", sem->id);
+                  if(sem_kernel_wait2(carpincho)){
+                  sem_post(&carpincho->semaforo_evento);  
+                  enviar_int(cliente, 0); 
+                  log_info(logger, "Se recibió del carpincho %d un SEM WAIT para %s y se bloqueara", carpincho->pid, sem->id);
+                  }else{
+                     enviar_int(cliente, 1);
+                  log_info(logger, "Se recibió del carpincho %d un SEM WAIT para %s pero NO se bloqueara", carpincho->pid, sem->id);
+                  }
                }
                 free(recibido);
                break;
 
       case SEM_POST: recibido = recibir_mensaje(cliente);
-               sem = buscar_semaforo(carpincho->semaforo_a_modificar);
-               if( sem != NULL){
-                  sem_kernel_post(recibido);
-                  log_info(logger, "Se recibió del carpincho %d un SEM POST para %s", carpincho->pid, sem->id);
-                  enviar_mensaje(cliente, "OK");
-               }
-               else
-               {
-                  log_info(logger, "Se recibió del carpincho %d un SEM POST para un semáforo que no existe", carpincho->pid);
-                  enviar_mensaje(cliente, "FAIL");
-               }
+               log_info(logger, "Se recibió del carpincho %d un SEM POST para %s", carpincho->pid, recibido);
+               printf("MAIN:recibi un post semaforo para %s\n", recibido);
+               resultado = sem_kernel_post(recibido);
+               printf ("el resultado del post en el main kernel es %d \n", resultado);
+               enviar_int(cliente, resultado);
+               printf("mande resultado kernel post\n");               
                free(recibido);
                break;
       
       case SEM_DESTROY: recibido = recibir_mensaje(cliente);
                log_info(logger, "Se recibió del carpincho %d un SEM DESTROY para %s", carpincho->pid, recibido);
+               printf("sem del destroy %s\n", recibido);
                aux_int = sem_kernel_destroy(recibido);
-               enviar_int( cliente, "OK");
+               printf("RECEPTOR: SEM DESTROY auxint %d\n", aux_int);
+               enviar_int(cliente, aux_int);
                free(recibido);
                break;
       
@@ -328,7 +337,7 @@ void inicializar_planificacion()
    if(pthread_create(&hilos_planificadores, &detached3, (void *) iniciar_gestor_finalizados, NULL)!= 0){
       log_info(logger,"No se pudo crear el hilo Gestor Finalizados");
    }else{
-      log_info(logger, "Hilo Planificador Gestro Finalizados creado");
+      log_info(logger, "Hilo Planificador Gestor Finalizados creado");
    }
 
    if(pthread_create(&hilos_planificadores, &detached3, (void *)&deteccion_deadlock, NULL)!= 0){

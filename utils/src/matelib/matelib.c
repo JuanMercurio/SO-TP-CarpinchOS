@@ -18,8 +18,8 @@ int mate_init(mate_instance *lib_ref, char *config) //AGREGAR LOG
   char *PUERTO = config_get_string_value(configuracion, "PUERTO");
   char *ARCHIVO_LOG = config_get_string_value(configuracion, "ARCHIVO_LOG");
 
-  logger = log_create(ARCHIVO_LOG, "Matelib", 0, LOG_LEVEL_INFO);
-  log_info(logger, "Log Matelib creado");
+  logger = log_create(ARCHIVO_LOG, "Carpincho", 0, LOG_LEVEL_INFO);
+  log_info(logger, "Log creado");
 
   mate_inner_structure *mate_ref = malloc(sizeof(mate_inner_structure));
   lib_ref->group_info = mate_ref;
@@ -50,8 +50,8 @@ int mate_init(mate_instance *lib_ref, char *config) //AGREGAR LOG
 
 int mate_close(mate_instance *lib_ref)
 {
-  //log_info(logger, "MATE_CLOSE");
-  log_info(logger, "LA CONCHA DE TU MADRE");
+  log_info(logger, "MATE_CLOSE");
+
   enviar_int(((mate_inner_structure*)lib_ref->group_info)->conexion, MATE_CLOSE);
   log_info(logger, "MATE_CLOSE: mensaje enviado a kernel");
   char *respuesta = recibir_mensaje(((mate_inner_structure *)lib_ref->group_info)->conexion);
@@ -102,10 +102,12 @@ int mate_sem_wait(mate_instance *lib_ref, mate_sem_name sem)
   }
 
   enviar_mensaje_y_cod_op(sem, ((mate_inner_structure *)lib_ref->group_info)->conexion, SEM_WAIT);
-  char *respuesta = recibir_mensaje(((mate_inner_structure *)lib_ref->group_info)->conexion);
+  int respuesta = recibir_int(((mate_inner_structure *)lib_ref->group_info)->conexion);
 
-  if (strcmp(respuesta, "OK") == 0)
+  if (respuesta != -1)
   {
+    if(respuesta ==0)
+    recibir_mensaje(((mate_inner_structure *)lib_ref->group_info)->conexion);
     log_info(logger, "Se realizó el WAIT correctamente");
     return 0;
   }
@@ -127,18 +129,16 @@ int mate_sem_post(mate_instance *lib_ref, mate_sem_name sem)
   }
 
   enviar_mensaje_y_cod_op(sem, ((mate_inner_structure *)lib_ref->group_info)->conexion, SEM_POST);
-  char *respuesta = recibir_mensaje(((mate_inner_structure *)lib_ref->group_info)->conexion);
-
-  if (strcmp(respuesta, "OK") == 0)
+  int respuesta = recibir_int(((mate_inner_structure *)lib_ref->group_info)->conexion);
+  if (respuesta)
   {
     log_info(logger, "Se realizó el POST correctamente");
-    return 0;
   }
   else
   {
     log_info(logger, "Error al realizar el POST");
-    return -1;
   }
+  return respuesta;
 }
 
 int mate_sem_destroy(mate_instance *lib_ref, mate_sem_name sem)
@@ -152,7 +152,8 @@ int mate_sem_destroy(mate_instance *lib_ref, mate_sem_name sem)
   }
 
   enviar_mensaje_y_cod_op(sem, ((mate_inner_structure *)lib_ref->group_info)->conexion, SEM_DESTROY);
-  int respuesta = recibir_int(((mate_inner_structure *)lib_ref->group_info)->conexion);
+  int respuesta = recibir_operacion(((mate_inner_structure *)lib_ref->group_info)->conexion);
+ log_info(logger, "respuesta SEM DDESTROY %d\n", respuesta);
 
   if (respuesta == 0)
   {
@@ -178,10 +179,13 @@ int mate_call_io(mate_instance *lib_ref, mate_io_resource io, void *msg)
   }
 
   enviar_mensaje_y_cod_op(io, ((mate_inner_structure *)lib_ref->group_info)->conexion, IO);
- int respuesta = recibir_int(((mate_inner_structure *)lib_ref->group_info)->conexion);
+ int respuesta = recibir_operacion(((mate_inner_structure *)lib_ref->group_info)->conexion);
+log_info(logger, "RESPUESA DE IO RECIBIDA %d ", respuesta);
+
 
   if (respuesta == 0)
   {
+     recibir_mensaje(((mate_inner_structure *)lib_ref->group_info)->conexion);
     log_info(logger, "Se realizó el CALL IO correctamente");
   }
   else

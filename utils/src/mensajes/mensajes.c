@@ -43,7 +43,6 @@ void handshake(int cliente, char* modulo){
 }
 
 void enviar_int(int socket, int codigo){
-
 	void* buffer = malloc(sizeof(int));
 	memcpy(buffer, &codigo, sizeof(int));
 	send(socket, buffer, sizeof(int), 0);
