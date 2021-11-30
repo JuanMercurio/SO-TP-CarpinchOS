@@ -18,8 +18,8 @@ int mate_init(mate_instance *lib_ref, char *config) //AGREGAR LOG
   char *PUERTO = config_get_string_value(configuracion, "PUERTO");
   char *ARCHIVO_LOG = config_get_string_value(configuracion, "ARCHIVO_LOG");
 
-  logger = log_create(ARCHIVO_LOG, "Matelib", 0, LOG_LEVEL_INFO);
-  log_info(logger, "Log Matelib creado");
+  logger = log_create(ARCHIVO_LOG, "Carpincho", 0, LOG_LEVEL_INFO);
+  log_info(logger, "Log creado");
 
   mate_inner_structure *mate_ref = malloc(sizeof(mate_inner_structure));
   lib_ref->group_info = mate_ref;
@@ -248,7 +248,11 @@ int mate_memread(mate_instance *lib_ref, mate_pointer origin, void *dest, int si
     return MATE_READ_FAULT;
   }
 
-  dest = recibir_mensaje(info->conexion);
+  void* new = recibir_buffer(size, info->conexion);
+  memcpy(dest, new, size);
+  free(new);
+  printf("El valor de dest es %s\n", (char*)dest);
+
   log_info(logger, "Se realizó el MEM_READ correctamente. El contenido es: %s", (char *)dest);
 
   return 0;

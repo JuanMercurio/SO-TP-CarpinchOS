@@ -89,7 +89,17 @@ int tlb_obtener_victima(){
 }
 
 int tlb_lugar_libre(){
-    return 0;
+
+    int tamanio = list_size(tlb);
+
+    for (int i=0; i < tamanio; i++)
+    {
+        tlb_t * reg = list_get(tlb, i);
+
+        if (reg->pid == TLB_EMPTY) return i;
+    }
+
+    return -1;
 }
 
 void paginas_actualizar_modificado(int pid, int pagina){

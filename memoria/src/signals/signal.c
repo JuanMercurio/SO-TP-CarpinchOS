@@ -23,7 +23,8 @@ void iniciar_signals(){
 /* Las siguientes funciones pueden ser transferidas a otro lugar para mas comodidad */
 
 void imprimir_TLB(){
-
+    
+    printf("\n");
     printf("Total TLB Hits: %d\n", TLB_HIT_COUNT);
     printf("Total TLB Misses: %d\n", TLB_MISS_COUNT);
     printf("\n");
@@ -138,7 +139,7 @@ void limpiar_TLB(){
 
 void tlb_imprimir_reg(tab_pags* reg)
 {
-    printf( "PID: %d  |  TLB Hits: %d  |  TLB Misses: %d", reg->pid, reg->TLB_HITS, reg->TLB_MISSES);
+    printf( "PID: %d  |  TLB Hits: %d  |  TLB Misses: %d \n", reg->pid, reg->TLB_HITS, reg->TLB_MISSES);
 }
 
 

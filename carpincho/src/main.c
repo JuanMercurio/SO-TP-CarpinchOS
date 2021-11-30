@@ -4,9 +4,8 @@
 #include <pthread.h>
 
 #define CANT_CARPINCHOS 1
-
 int main(int argc, char* argv[]) {
-  // if ( argc>=1 && (strcmp(argv[1], "memoria")== 0)) memoria_carpincho();
+  if ( argc>=1 && (strcmp(argv[1], "memoria")== 0)) memoria_carpincho();
 
    pthread_t hilos[CANT_CARPINCHOS];
    printf("entro al main carpincho\n");
@@ -100,40 +99,58 @@ void carpincho_comportamiento_memoria(void* arg)
 {
    mate_instance* c = malloc(sizeof(mate_instance));
 
+   printf("-- Mate INIT -- \n");
    int init = mate_init(c, "cfg/carpincho.config");
    if (init == -1){
       fprintf(stderr, "No se puedo iniciar el carpincho \n");
    }
+   printf("----------- \n\n");
 
-   int dl = mate_memalloc(c, 100);
+   printf("-- Mate MALLOC -- \n");
+   int dl = mate_memalloc(c, 10);
    if (dl == -1){
       fprintf(stderr, "No pude reservar memoria \n");
    }
-
-   dl = mate_memfree(c, 10101010);
-   if (dl == MATE_FREE_FAULT){
-     fprintf(stderr, "Error de MATE_FREE_FAULT \n");
+   else{
+	   printf("\n La direccion logica es: %d \n", dl);
    }
+   printf("----------- \n\n");
 
-   int i = 400;
-   void* buffer = malloc(sizeof(int));
-   memcpy(buffer, &i, sizeof(int));
+//   printf("-- Mate WRITE -- \n");
+//   void* buffer = malloc(sizeof(int));
+//   char* saturno = "jejeje";
+//   int size = strlen(saturno) + 1;
+//   memcpy(buffer, saturno, size);
+//
+//   int escritos = mate_memwrite(c, buffer, dl , size);
+//   if (escritos == MATE_WRITE_FAULT){
+//      fprintf(stderr, "Error de MATE_WRITE_FAULT \n");
+//   }
+//   printf("----------- \n\n");
+//
+//   printf("-- Mate READ -- \n");
+//   void* leer;
+//   int leidos = mate_memread(c, dl, leer,  size);
+//   if (leidos == MATE_READ_FAULT){
+//      fprintf(stderr, "Error de MATE_READ_FAULT \n");
+//   }
+//   printf("Me llego: %s\n", (char*)leer);
+//   printf("----------- \n\n");
+//
+//   printf("-- Mate FREE -- \n");
+//   int free_valido = mate_memfree(c, dl);
+//   if (free_valido == MATE_FREE_FAULT){
+//     fprintf(stderr, "Error de MATE_FREE_FAULT \n");
+//   }
+//   printf("----------- \n\n");
 
-   dl = mate_memwrite(c, buffer, 100,sizeof(int));
-   if (dl == MATE_WRITE_FAULT){
-      fprintf(stderr, "Error de MATE_WRITE_FAULT \n");
-   }
-
-   dl = mate_memread(c, 1010, buffer, 100);
-   if (dl == MATE_READ_FAULT){
-      fprintf(stderr, "Error de MATE_READ_FAULT \n");
-   }
-
+   printf("-- Mate CLOSE -- \n");
    int fin = mate_close(c);
    if (fin != 0){
       fprintf(stderr, "El programa termino con errores");
    }
-   free(buffer);
+   //free(buffer);
+   printf("----------- \n\n");
 }
 
 void memoria_carpincho() 

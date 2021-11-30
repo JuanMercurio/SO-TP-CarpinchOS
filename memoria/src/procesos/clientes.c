@@ -34,7 +34,8 @@ void ejecutar_proceso(int cliente)
     while(conectado)
     {
         int operacion = recibir_operacion(cliente);
-        
+
+        pthread_mutex_lock(&ram.mutex);
         switch (operacion)
         {
             case NEW_INSTANCE:
@@ -77,6 +78,7 @@ void ejecutar_proceso(int cliente)
                 conectado = false;
                 break;
         }
+        pthread_mutex_unlock(&ram.mutex);
     }
 
 }
@@ -123,45 +125,44 @@ int swap_solicitud_iniciar(){
 
 void memalloc_comportamiento(tab_pags* tabla, int cliente)
 {
-    printf("me llego un malloc\n");
     int tamanio = recibir_int(cliente);
-    // int dl = memalloc(tabla, tamanio);
-    int a = -1;
-    // enviar_int(cliente, dl);
-    enviar_int(cliente, a);
+    int dl = memalloc(tabla, tamanio);
+
+    enviar_int(cliente, dl);
 }
 
 
 void memfree_comportamiento(tab_pags* tabla, int cliente)
 {
-    printf("me llego un free\n");
     int dl = recibir_int(cliente);
-    // int result_memfree = memfree(tabla, dl);
+    int result_memfree = memfree(tabla, dl);
 
-    // enviar_int(cliente, result_memfree);
-    enviar_int(cliente, -5);
+    enviar_int(cliente, result_memfree);
 }
 
 void memread_comportamiento(tab_pags* tabla, int cliente)
 {
-    int tamanio = recibir_int(cliente);
     int dl = recibir_int(cliente);
+    int tamanio = recibir_int(cliente);
 
-    // void* buffer = memread(tabla, dl, tamanio);
-
-    // enviar_buffer(cliente, buffer, tamanio);
-    enviar_int(cliente, -1);
+    void* buffer = memread(tabla, dl, tamanio);
+    if (buffer == NULL) {
+        enviar_int(cliente, -1);
+    }
+    enviar_int(cliente, 0);
+    enviar_buffer(cliente, buffer, tamanio);
 }
 
 void memwrite_comportamiento(tab_pags* tabla, int cliente)
 {
-    void* buffer = recibir_mensaje(cliente);
+    int *size = malloc(sizeof(int));
+    void* buffer = recibir_buffer_t(size, cliente);
     int dl = recibir_int(cliente);
 
-    // int result_memwrite = memwrite(tabla, dl, buffer, tamanio);
-    // enviar_int(cliente, result_memwrite);
-    int a = -7;
-    enviar_int(cliente, a);
+    int result_memwrite = memwrite(tabla, dl, buffer, *size);
+    enviar_int(cliente, result_memwrite);
+    free(size);
+
 }
 
 void mate_close_comportamiento(tab_pags *tabla, int cliente, bool *conectado)
@@ -192,10 +193,8 @@ void inicio_comprobar(tab_pags* tabla, int cliente, bool* conectado){
 
 void cliente_terminar(tab_pags* tabla, int cliente)
 { 
-    pthread_mutex_lock(&tablas.mutex);
     tablas_eliminar_proceso(tabla->pid);
     tlb_eliminar_proceso(tabla->pid);
-    pthread_mutex_unlock(&tablas.mutex);
 
     //avisar a swamp
 

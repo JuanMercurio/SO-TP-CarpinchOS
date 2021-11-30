@@ -39,6 +39,7 @@
       "mensajes.h": "c",
       "config_pag.h": "c",
       "tests_memoria_sola.h": "c",
+      "algoritmos.h": "c"
     }
   }
 }

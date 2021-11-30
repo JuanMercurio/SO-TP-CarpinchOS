@@ -130,7 +130,7 @@ void receptor(void *arg)
    t_pcb *carpincho;
    t_paquete_semaforo *semaforo ;
    t_paquete_mem_read mem_read;
-   t_paquete_mem_write *mem_write;
+   //t_paquete_mem_write *mem_write;
    char* recibido;
    sem_kernel *sem ;
 
@@ -185,7 +185,7 @@ void receptor(void *arg)
                carpincho->io_solicitada = string_duplicate(recibido);              
                carpincho->proxima_instruccion = IO;
                aux_int = bloquear_por_io(carpincho);
-               printf("RECEPTOR: io: recibido de bloquear por io %d\n");
+               printf("RECEPTOR: io: recibido de bloquear por io\n");
                if(aux_int == -1){
                   enviar_int(cliente, -1);
                }else
@@ -347,7 +347,7 @@ void inicializar_planificacion()
    if(pthread_create(&hilos_planificadores, &detached3, (void *) iniciar_gestor_finalizados, NULL)!= 0){
       log_info(logger,"No se pudo crear el hilo Gestor Finalizados");
    }else{
-      log_info(logger, "Hilo Planificador Gestro Finalizados creado");
+      log_info(logger, "Hilo Planificador Gestor Finalizados creado");
    }
 
    if(pthread_create(&hilos_planificadores, &detached3, (void *)&deteccion_deadlock, NULL)!= 0){
