@@ -584,6 +584,10 @@ int memoria_escribir(tab_pags* tabla, dir_t dl, void* contenido, int tamanio){
     while(bytes_remaining > 0)
     {
         int marco = nro_marco(dl.PAGINA, tabla);
+		if (marco < 0) {
+			fprintf(stderr, "\n Error con el nro de marco obtenido \n");
+		}
+
         dir_t df = { marco, dl.offset };
         int bytes_to_write = min_get(bytes_remaining, bytes_remaining_space);
 

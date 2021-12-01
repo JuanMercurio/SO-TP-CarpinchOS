@@ -117,12 +117,10 @@ int nro_marco(int pagina, tab_pags *tabla)
 
     // Busco en tabla de paginas
     marco = buscar_en_tabPags(tabla, pagina);
-    if (marco != MEMP_MISS)
-        return marco;
+    if (marco != MEMP_MISS) return marco; 
 
     marco = buscar_en_swap(tabla, pagina);
-    if (marco != -1)
-        return marco;
+    if (marco != -1) return marco;
 
     return -1;
 }

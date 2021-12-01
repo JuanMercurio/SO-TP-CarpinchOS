@@ -218,6 +218,7 @@ int mate_memfree(mate_instance *lib_ref, mate_pointer addr)
   log_info(logger, "MEM_FREE a la dirección %d", addr);
   enviar_cod_op_e_int(((mate_inner_structure *)lib_ref->group_info)->conexion, MEMFREE, addr);
   int respuesta = recibir_int(((mate_inner_structure *)lib_ref->group_info)->conexion);
+  printf("Esperando respuesta\n");
   if (respuesta == -5)
   {
     log_info(logger, "Error al realizar el MEM_FREE");
@@ -233,24 +234,30 @@ int mate_memfree(mate_instance *lib_ref, mate_pointer addr)
 int mate_memread(mate_instance *lib_ref, mate_pointer origin, void *dest, int size) // revisar que retorna
 {
   mate_inner_structure* info = (mate_inner_structure*)lib_ref->group_info;
-  log_info(logger, "MEM_READ desde %d el size %d", origin, size);
-  enviar_int(((mate_inner_structure *)lib_ref->group_info)->conexion, MEMREAD);
-  enviar_int(((mate_inner_structure *)lib_ref->group_info)->conexion, origin);
-  enviar_int(((mate_inner_structure *)lib_ref->group_info)->conexion, size);
 
-  int estado = recibir_int(((mate_inner_structure *)lib_ref->group_info)->conexion);
+  log_info(logger, "MEM_READ desde %d el size %d", origin, size);
+
+  enviar_int(info->conexion, MEMREAD);
+  enviar_int(info->conexion, origin);
+  enviar_int(info->conexion, size);
+
+  int estado = recibir_int(info->conexion);
   if (estado == -1){
     dest = NULL;
     log_info(logger, "Error al realizar el MEM_READ");
     return MATE_READ_FAULT;
   }
-   int *tam = malloc(sizeof(int));
-  void* buffer = recibir_buffer_t(tam,((mate_inner_structure *)lib_ref->group_info)->conexion);
+
+  int *tam = malloc(sizeof(int));
+  void* buffer = recibir_buffer_t(tam, info->conexion);
   memcpy(dest, buffer, *tam);
+
   printf("El valor de dest es %s\n", (char*)dest);
+
   log_info(logger, "Se realizó el MEM_READ correctamente. El contenido es: %s", (char *)dest);
   free(buffer);
   free(tam);
+
   return 0;
 }
 

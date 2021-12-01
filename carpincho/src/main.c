@@ -3,7 +3,7 @@
 #include <matelib/matelib.h>
 #include <pthread.h>
 
-#define CANT_CARPINCHOS 1
+#define CANT_CARPINCHOS 4
 int main(int argc, char* argv[]) {
 
    if ( argc>1 && (strcmp(argv[1], "memoria")== 0)) memoria_carpincho();
