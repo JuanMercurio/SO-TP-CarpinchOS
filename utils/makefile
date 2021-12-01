@@ -22,7 +22,7 @@ SOURCES=$(filter ./$(SRCDIR)/%,$(shell find . -iname "*.c" | tr '\n' ' '))
 INCLUDES=$(foreach LIBPATH,$(LIBRARY_PATHS),-I$(LIBPATH)/$(shell make --no-print-directory -C $(LIBPATH) idir))
 
 # Objects
-BINARY=$(BINDIR)/lib$(PROJECT).a
+BINARY=$(BINDIR)/lib$(PROJECT).so
 OBJECTS=$(SOURCES:./$(SRCDIR)/%.c=$(OBJDIR)/%.o)
 
 # Dependencies
@@ -52,7 +52,10 @@ help:
 
 # Build project
 $(BINARY): $(DIRECTORIES) $(OBJECTS)
-	ar rcs -o "$@" $(OBJECTS)
+	# ar rcs -o "$@" $(OBJECTS)
+	$(CC) -shared -o "$@" $(OBJECTS)
+	sudo cp -u $(BINARY) /usr/lib
+
 
 # Create directories for objects
 $(DIRECTORIES):
