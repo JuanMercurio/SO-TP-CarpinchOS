@@ -5,8 +5,8 @@
 
 #define CANT_CARPINCHOS 1
 int main(int argc, char* argv[]) {
-  if ( argc>=1 && (strcmp(argv[1], "memoria")== 0)) memoria_carpincho();
 
+   if ( argc>1 && (strcmp(argv[1], "memoria")== 0)) memoria_carpincho();
 
    pthread_t hilos[CANT_CARPINCHOS];
    printf("entro al main carpincho\n");
