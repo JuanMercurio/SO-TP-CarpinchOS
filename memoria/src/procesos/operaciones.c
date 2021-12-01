@@ -127,7 +127,6 @@ int memalloc(tab_pags* tabla, int tamanio){ //quizas al igual que antes, el carp
 				//QUIZAS ACA TENDRIA QUE EVALUAR POR METADATA DIVIDIDO (ya no jaja!)
 				//CAMBIADO
 //				memcpy(ubicacion_nuevo_segmento(pagina->marco, ptr_potencial_segmento->nextAlloc), &new, SIZE_METADATA);
-				printf("- Memalloc->While: Voy a meter un nuevo heapmetadata en %d\n", ptr_potencial_segmento->nextAlloc);
 				memoria_escribir_por_dirlog(tabla_paginas, ptr_potencial_segmento->nextAlloc, &new, SIZE_METADATA);
 //				printf("- Memalloc->While: cargue el nuevo segmento en la direccion logica %i, puntero %p.\n", ptr_potencial_segmento->nextAlloc, ubicacion_nuevo_segmento(pagina->marco, ptr_potencial_segmento->nextAlloc));
 
@@ -170,6 +169,8 @@ int memalloc(tab_pags* tabla, int tamanio){ //quizas al igual que antes, el carp
 					ptr_potencial_segmento->isFree = false;
 					ptr_potencial_segmento->nextAlloc = inicio_actual + SIZE_METADATA + tamanio;
 
+					memoria_escribir_por_dirlog(tabla, inicio_actual, ptr_potencial_segmento, sizeof(HeapMetadata));
+
 					HeapMetadata new;
 					new.prevAlloc = inicio_actual;
 					new.nextAlloc = LAST_METADATA;
@@ -194,7 +195,6 @@ int memalloc(tab_pags* tabla, int tamanio){ //quizas al igual que antes, el carp
 					int new_pags = paginas_a_agregar(ptr_potencial_segmento->nextAlloc, tabla);
 					if (new_pags == -1) return -1;
 					new_pags = paginas_agregar(new_pags, tabla);
-					printf("voy a escribir el nuevo metadata en la posicion %d\n", ptr_potencial_segmento->nextAlloc);
 					memoria_escribir_por_dirlog(tabla_paginas, ptr_potencial_segmento->nextAlloc, &new, SIZE_METADATA);
 //					printf("- Memalloc->Pedir->Free: cargue el nuevo segmento en la direccion logica %i, puntero %p.\n", ptr_potencial_segmento->nextAlloc, ubicacion_nuevo_segmento(pagina->marco, ptr_potencial_segmento->nextAlloc));
 
@@ -360,7 +360,9 @@ int memfree(tab_pags* tabla, int dir_log){
 	//CAMBIADO
 //	int num_pag;
 //	HeapMetadata* ptr_segmento = hallar_metadata(dir_log, tabla_paginas, &num_pag);
-	HeapMetadata* ptr_segmento = hallar_metadata(dir_log, tabla_paginas);
+	// HeapMetadata* ptr_segmento = hallar_metadata(dir_log, tabla_paginas);
+	HeapMetadata* ptr_segmento = memoria_leer_por_dirlog(tabla, dir_log - sizeof(HeapMetadata), sizeof(HeapMetadata));
+	printf("El selecionado tiene ->isFree %d\n", ptr_segmento->isFree);
 
 	if(ptr_segmento == NULL){
 		puts("- Memfree->ERROR: direccion logica invalida");
@@ -449,11 +451,15 @@ bool pedir_memoria_a_swap(int tamanio){
 
 //CAMBIADO
 HeapMetadata* hallar_metadata(uint32_t dir_log, tab_pags* tabla){//, int* num_pag){
-	//agrego -9 para testear
-	dir_log -= 9;
+	dir_log -= sizeof(HeapMetadata);
 	HeapMetadata* potencial_segmento = primer_segmento(tabla);
 	uint32_t inicio_actual = 0;
 	int num_pagina_actual = 0;
+	
+	// HeapMetadata* potencial_segmento = memoria_leer_por_dirlog(tabla, dir_log, sizeof(HeapMetadata));
+	// uint32_t inicio_actual = 0;
+	// int num_pagina_actual = 0;
+
 	pag_t* pagina = list_get(tabla->tabla_pag, num_pagina_actual);
 	while(inicio_actual != dir_log){
 		printf("Memfree->Hallar Metadata: el inicio actual %i es distinto al que busco %i.\n", inicio_actual, dir_log);
@@ -674,12 +680,11 @@ void heap_init(tab_pags* tabla)
 int paginas_a_agregar(int dl, tab_pags* tabla)
 {
 	int paginas = list_size(tabla->tabla_pag);
-	int victima = dl / configuracion.TAMANIO_PAGINAS;
+	int victima = (dl+sizeof(HeapMetadata)) / configuracion.TAMANIO_PAGINAS;
 
 	int nuevas = victima - paginas + 1;
 	//verficiar con swamp y asignacion 
 	return nuevas;
-
 	}
 
 int paginas_agregar(int new_pags, tab_pags* tabla)

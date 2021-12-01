@@ -107,7 +107,7 @@ void carpincho_comportamiento_memoria(void* arg)
    }
 
    printf("-- Mate MALLOC -- \n");
-   int dl = mate_memalloc(c, 64);
+   int dl = mate_memalloc(c, 117);
    if (dl == -1){
       fprintf(stderr, "No pude reservar memoria \n");
       abort();

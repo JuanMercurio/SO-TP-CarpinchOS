@@ -46,7 +46,7 @@ void ejecutar_proceso(int cliente)
                 memalloc_comportamiento(tabla, cliente);
                 break;
 
-            case MEMFREE:
+            case MEMFREE:;
                 memfree_comportamiento(tabla, cliente);
                 break;
 
