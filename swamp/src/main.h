@@ -75,7 +75,7 @@ char* buscarPaginaDinamico(int pid, int pagina);
 void marcosLibes();
 bool quedaPaginasEnArchivo(int pid);
 int solicitudPagina(int pid, int pagina);
-void borrarPagina(int pid, int pagina);
+int borrarPagina(int pid, int pagina);
 
 //ASIGNACION FIJA
 
@@ -92,6 +92,10 @@ void mostrarCarpinchos();
 void marcosLIbresFija();
 void sacarCarpinchoDeLista( int pid);
 Marcos_x_pagina* buscarMarcoXPagina( Carpincho_Swamp* car, int pagina);
+int BorrarPaginaFija(int pid, int pagina);
+bool puedeAgregarPagina( int pid);
+int solicitarPaginaFija(int pid, int pagina);
+int crearCarpinchoFijaDOS(int pidd);
 //CONEXIONES
 void terminar_programa();
 void iniciar_swamp();
