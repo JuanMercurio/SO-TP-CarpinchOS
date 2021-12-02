@@ -10,8 +10,11 @@ int main(int argc, char *argv[])
 {
    //solo corre si corremos el binario asi: binario test
    //tests(argc, argv[1]);
+
    iniciar_logger();
+   printf("inicio\n");
    obtener_config(); 
+    printf("inicio2\n");
    inicializar_semaforos();
    inicializar_listas_sem_io();
    init_dispositivos_io();

@@ -3,7 +3,7 @@
 #include "../main.h"
 
 t_pcb *ultimo_bloqueado;
-
+void listar_por_sjf(t_pcb* carpincho);
 
 /* 
     @NAME: inciar_cpu

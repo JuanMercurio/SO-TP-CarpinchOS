@@ -30,7 +30,7 @@ void procesador()
       carpincho->estado = 'E';
       printf("PROCESADORRR: estado carpincho %c", carpincho->estado);
       enviar_mensaje(carpincho->fd_cliente, "OK");
-      printf("PROCESADOR: ESPERANDO EVENTO BLOQUEANTE\n\n");
+      printf("PROCESADOR: ESPERANDO EVENTO BLOQUEANTE de carpinchooooooo %d\n\n", carpincho->pid);
       sem_wait(&carpincho->semaforo_evento);
 
       switch (carpincho->proxima_instruccion)
@@ -65,8 +65,8 @@ void procesador()
 
       }
         carpincho->tiempo.time_stamp_fin = temporal_get_string_time("%H:%M:%S:%MS");
-   carpincho->tiempo.tiempo_ejecutado = obtener_tiempo(carpincho->tiempo.time_stamp_inicio, carpincho->tiempo.time_stamp_fin);
-   printf("PROCESADOR: TIEMPO EJECUTADO carpincho %d = %f\n\n ",carpincho->pid,  carpincho->tiempo.tiempo_ejecutado );
+       carpincho->tiempo.tiempo_ejecutado = obtener_tiempo(carpincho->tiempo.time_stamp_inicio, carpincho->tiempo.time_stamp_fin);
+  
    }
 }
 bool verificar_suspension()
@@ -93,7 +93,12 @@ void iniciar_planificador_corto_plazo()
       
          estimador(carpincho);
          sem_wait(&mutex_lista_oredenada_por_algoritmo);
-         list_add_sorted(lista_ordenada_por_algoritmo, (void *)carpincho, (void *)comparador_SFJ); //falta, una vez enlistado se le cambia el estado
+        // list_add_sorted(lista_ordenada_por_algoritmo, (void *)carpincho, (void *)comparador_SFJ);
+        listar_por_sjf(carpincho);
+         for(int i= 0; i< list_size(lista_ordenada_por_algoritmo); i++){
+            t_pcb *carpincho2= (t_pcb*) list_get(lista_ordenada_por_algoritmo, i);
+            printf("\nlista ordenada : carpincho %d, estimacion %f\n", carpincho2->pid, carpincho2->tiempo.estimacion);
+         }
          sem_post(&mutex_lista_oredenada_por_algoritmo);
          sem_post(&lista_ejecutando_con_elementos);
          printf("PCP: enlisto en ordenada por algoritmo OK\n");
@@ -113,27 +118,51 @@ void iniciar_planificador_corto_plazo()
       }
    }
 }
+void listar_por_sjf(t_pcb *carpincho){
+   if(!list_is_empty(lista_ordenada_por_algoritmo)){
+   t_pcb* comparado = (t_pcb*) list_get(lista_ordenada_por_algoritmo, 0);
+   int i = 0;
+   bool ok = false;
+   while(i < list_size(lista_ordenada_por_algoritmo) && !ok){
+      if(carpincho->tiempo.estimacion <= comparado->tiempo.estimacion){
+         list_add_in_index(lista_ordenada_por_algoritmo, i, (void*)carpincho);
+         ok = true;
+      }
+      i++;
+   }
+   if(!ok){
+      list_add(lista_ordenada_por_algoritmo, (void*)carpincho);
+   }
+   
+   }else
+   {
+      list_add(lista_ordenada_por_algoritmo, (void*)carpincho);
+   }
+   }
+
 void estimador(t_pcb *carpincho)
 
 { // de donde se saca el valor de la rafaga de cpu
-   if (carpincho->tiempo.time_stamp_fin != NULL)
-   { // si es null ES UN PROCESO NUEVO por lo tanto solo hace la etimacion
-      //carpincho->tiempo.tiempo_ejecutado = obtener_tiempo(carpincho->tiempo.time_stamp_inicio, carpincho->tiempo.time_stamp_fin);
+  // if (carpincho->tiempo.time_stamp_fin != NULL)
+   //{ // si es null ES UN PROCESO NUEVO por lo tanto solo hace la etimacion
+     // carpincho->tiempo.tiempo_ejecutado = obtener_tiempo(carpincho->tiempo.time_stamp_inicio, carpincho->tiempo.time_stamp_fin);
 
-      printf("ESTIMADOR:!!!!!!!!!!!! carpincho %d que volvio de ejecutar y su tiempo es: %f\n ", carpincho->pid, carpincho->tiempo.tiempo_ejecutado );
-      return;
-   }
-      log_info(logger, "Carpincho %d - Estimación anterior: %f", carpincho->pid, carpincho->tiempo.estimacion);
+      printf("\nESTIMADOR:!!!!!!!!!!!! carpincho %d  su tiempo ejecutado es: %f\n ", carpincho->pid, carpincho->tiempo.tiempo_ejecutado );
+       printf("ESTIMADOR:!!!!!!!!!!!! carpincho %d  su estimacion es: %f\n ", carpincho->pid, carpincho->tiempo.estimacion);
+   
+      log_info(logger, "Carpincho %d - Estimación anterior sjf: %f", carpincho->pid, carpincho->tiempo.estimacion);
       
    double aux = (carpincho->tiempo.estimacion * configuracion.ALPHA);
    carpincho->tiempo.estimacion = aux + (carpincho->tiempo.tiempo_ejecutado * (1 - configuracion.ALPHA));
     log_info(logger, "Carpincho %d - Estimación actual: %d", carpincho->pid, carpincho->tiempo.estimacion);
+     printf("ESTIMADOR:!!!!!!!!!!!! carpincho %d  su tiempo ejecutado es: %f\n ", carpincho->pid, carpincho->tiempo.tiempo_ejecutado );
+       printf("ESTIMADOR:!!!!!!!!!!!! carpincho %d  su estimacion es: %f\n \n", carpincho->pid, carpincho->tiempo.estimacion);
    
 }
 
 void estimador_HRRN(t_pcb *carpincho)
 { // esto la complica bastante
-   estimador(carpincho); // está bien que llame a estimador()? la función esa no usa la fórmula de SJF?
+   estimador(carpincho);
    carpincho->tiempo.estimacion = (carpincho->tiempo.tiempo_de_espera + carpincho->tiempo.estimacion) / carpincho->tiempo.estimacion;
    log_info(logger, "Carpincho %d - Estimación actual: %d", carpincho->pid, carpincho->tiempo.estimacion);
 }
@@ -274,7 +303,7 @@ void iniciar_gestor_finalizados()
       sem_wait(&mutex_cola_finalizados);
       t_pcb *carpincho = (t_pcb*)queue_pop(cola_finalizados);
       sem_post(&mutex_cola_finalizados);
-           printf("GESTOR DE FINALIZADOS: saco carpincho %d\n", carpincho->pid);
+      printf("GESTOR DE FINALIZADOS: saco carpincho %d\n", carpincho->pid);
       eliminar_carpincho((void *)carpincho);
       sem_post(&controlador_multiprogramacion);
        printf("GESTOR DE FINALIZADOS: ...estuvo rico\n");

@@ -8,4 +8,15 @@ void carpincho_comportamiento_memoria(void* arg);
 
 void memoria_carpincho();
 
+//-----------------------------------------------------
+void imprimir_carpincho_n_hace_algo(int numero_de_carpincho);
+void exec_carpincho_1(char *config);
+
+void exec_carpincho_2(char *config);
+
+void exec_carpincho_3(char *config);
+
+void free_all();
+
+void init_sems();
 #endif
