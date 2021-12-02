@@ -171,7 +171,8 @@ int main(int argc, char* argv[]) {
     
         }
         
-        sleep(2);
+        
+        sleep(configuracion.RETARDO_SWAP);
     }
 
     if ( asignacionFija){
