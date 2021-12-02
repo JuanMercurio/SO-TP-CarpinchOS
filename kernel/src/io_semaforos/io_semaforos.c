@@ -71,10 +71,8 @@ return sem->val;
 }
 
 void bloquear_por_semaforo(t_pcb *carpincho){
-    int pos;
+   int pos;
    sem_kernel *semaforo = buscar_semaforo2(carpincho->semaforo_a_modificar, &pos);
-   carpincho->tiempo.time_stamp_fin = temporal_get_string_time("%H:%M:%S:%MS");
-   carpincho->tiempo.tiempo_ejecutado = obtener_tiempo(carpincho->tiempo.time_stamp_inicio, carpincho->tiempo.time_stamp_fin);
    sem_wait(&semaforo->mutex_cola);
    queue_push(semaforo->bloqueados, (void*)carpincho);
    sem_post(&semaforo->mutex_cola);
@@ -244,13 +242,16 @@ void gestor_cola_io(void *datos){
    sem_wait(&io->cola_con_elementos);
    carpincho = queue_pop(io->bloqueados);
    sem_post(&io->mutex_io);
+   printf("GESTOR IO: carpincho PID %d en IO %s\n", carpincho->pid, io->id);
    usleep(io->retardo);
+   
+   enviar_int(carpincho->fd_cliente, 0);
    sem_wait(&mutex_cola_ready);
-   carpincho->tiempo.time_stamp_inicio = temporal_get_string_time("%H:%M:%S:%MS");
-    enviar_int(carpincho->fd_cliente, 0);
    queue_push(cola_ready, (void*) carpincho);
    sem_post(&mutex_cola_ready);
+   carpincho->tiempo.time_stamp_inicio = temporal_get_string_time("%H:%M:%S:%MS");
    sem_post(&cola_ready_con_elementos);
+    printf("GESTOR IO: carpincho PID %d TERMINO IO %s\n", carpincho->pid, io->id);
    log_info(logger,"GESTOR IO: desbloqueando carpincho PID %d", carpincho->pid);
 
 }
@@ -260,8 +261,6 @@ int bloquear_por_io(t_pcb *carpincho){
    if(io == NULL){
       return -1;
    }else{
-   carpincho->tiempo.time_stamp_fin = temporal_get_string_time("%H:%M:%S:%MS");
-   carpincho->tiempo.tiempo_ejecutado = obtener_tiempo(carpincho->tiempo.time_stamp_inicio, carpincho->tiempo.time_stamp_fin);
    sem_wait(&io->mutex_io);//time stamp
    queue_push(io->bloqueados, (void*)carpincho);
    sem_post(&io->mutex_io);

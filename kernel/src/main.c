@@ -129,8 +129,6 @@ void receptor(void *arg)
    handshake(cliente, "KERNEL");
    t_pcb *carpincho;
    t_paquete_semaforo *semaforo ;
-   t_paquete_mem_read mem_read;
-   //t_paquete_mem_write *mem_write;
    char* recibido;
    sem_kernel *sem ;
 
@@ -143,7 +141,7 @@ void receptor(void *arg)
       {
 
       case NEW_INSTANCE: 
-            log_info(logger, "Se recibió un NEW INSTANCE. Comienza creación del carpincho");
+            log_info(logger, "\n \n Se recibió un NEW INSTANCE. Comienza creación del carpincho");
 
             carpincho = malloc(sizeof(t_pcb)); // aca no recibe la pcb en si , recibe un paquete con datos que habra que guardar en un t_pcb luego de desserializar lo que viene
             carpincho->fd_cliente = cliente;
@@ -151,27 +149,23 @@ void receptor(void *arg)
             carpincho->pid = crearID(&id_procesos);
             carpincho->estado ='N';
 
-            enviar_cod_op_e_int(carpincho->fd_memoria, NEW_INSTANCE_KERNEL, carpincho->pid);
-            printf("carpincho ENVIADO A =====...\n");
+           // enviar_cod_op_e_int(carpincho->fd_memoria, NEW_INSTANCE_KERNEL, carpincho->pid);
+            //recibido = recibir_mensaje(carpincho->fd_memoria); //handshake
+          //  aux_int = recibir_int(carpincho->fd_memoria);
+       // printf("recibio de memoria un %d\n", aux_int);
 
-            recibido = recibir_mensaje(carpincho->fd_memoria); //handshake
-            printf("carpincho respueta deanfjasdnfasdfasdfklaskfndank.. %s..\n", recibido);
-            aux_int = recibir_int(carpincho->fd_memoria);
-            printf("recibio de memoria un %d\n", aux_int);
-
-            if (aux_int != -1) {
+          //  if (aux_int == 0) {
                printf("carpincho creado\n");
                enviar_int(cliente, carpincho->pid);
                sem_wait(&mutex_cola_new);
-               printf("paso wait de cola new\n");
                queue_push(cola_new, (void*) carpincho); // pensando que el proceso queda trabado en mate init hasta que sea planificado
                sem_post(&mutex_cola_new);
                sem_post(&cola_new_con_elementos);
                printf("encolo en new\n");
                log_info(logger, "Se agregó el carpincho ID: %d a la cola de new", carpincho->pid);
-            } else {
-               enviar_mensaje(cliente, "FAIL");
-            }
+          //  } else {
+            //   enviar_mensaje(cliente, "FAIL");
+           // }
 
             break;
 
@@ -268,8 +262,8 @@ void receptor(void *arg)
 
       case MEMFREE:
                aux_int = recibir_int(cliente);
-               log_info(logger, "Se recibió del carpincho %d un MEM FREE con el tamanio %d'n", carpincho->pid, aux_int);
-               printf("Se recibió del carpincho %d un MEM FREE con el tamanio", carpincho->pid, aux_int);
+               log_info(logger, "Se recibió del carpincho %d un MEM FREE con el tamanio %d", carpincho->pid, aux_int);
+               printf("Se recibió del carpincho %d un MEM FREE con el tamanio %d\n", carpincho->pid, aux_int);
                enviar_cod_op_e_int(carpincho->fd_memoria, MEMFREE,aux_int);
                aux_int = recibir_int(carpincho->fd_memoria);
                enviar_int(cliente, aux_int);

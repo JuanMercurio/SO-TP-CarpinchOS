@@ -14,4 +14,813 @@
 [INFO] 15:42:18:179 Carpincho/(6371:6372): MATE_CLOSE: mensaje enviado a kernel
 [INFO] 15:42:18:179 Carpincho/(6371:6372): libero memoria
 [INFO] 15:42:18:179 Carpincho/(6371:6372): libero memoria
-[INFO] 15:42:18:179 Carpincho/(6371:6372): Carpincho eliminado
+[INFO] 15:42:18:179 Carpincho/(6371:6372): Carpincho eliminado[INFO] 23:28:50:132 Carpincho/(5075:5077): Log creado
+[INFO] 23:28:50:132 Carpincho/(5075:5077): Esperando respuesta de servidor
+[INFO] 23:28:50:132 Carpincho/(5075:5076): Log creado
+[INFO] 23:28:50:132 Carpincho/(5075:5076): Esperando respuesta de servidor
+[INFO] 23:28:50:133 Carpincho/(5075:5077): NUEVO CARPINCHO
+[INFO] 23:28:50:139 Carpincho/(5075:5076): NUEVO CARPINCHO
+[INFO] 23:28:50:176 Carpincho/(5075:5077): Carpincho creado correctamente con el pid: 0
+[INFO] 23:28:50:176 Carpincho/(5075:5077): MEM_ALLOC de 117
+[INFO] 23:28:50:177 Carpincho/(5075:5077): Se realizó el MEM_ALLOC correctamente. La dirección lógica es 8
+[INFO] 23:28:50:177 Carpincho/(5075:5077): MEM_WRITE el mensaje jejeje en 8
+[INFO] 23:28:50:217 Carpincho/(5075:5077): Se realizó el MEM_WRITE correctamente
+[INFO] 23:28:50:217 Carpincho/(5075:5077): MEM_READ desde 8 el size 7
+[INFO] 23:28:50:301 Carpincho/(5075:5077): Se realizó el MEM_READ correctamente. El contenido es: 
+[INFO] 23:28:51:301 Carpincho/(5075:5077): MEM_FREE a la dirección 8
+[INFO] 23:28:51:302 Carpincho/(5075:5077): Se realizó el MEM_FREE correctamente
+[INFO] 23:28:51:302 Carpincho/(5075:5077): MATE_CLOSE
+[INFO] 23:28:51:302 Carpincho/(5075:5077): MATE_CLOSE: mensaje enviado a kernel
+[INFO] 23:28:51:302 Carpincho/(5075:5077): libero memoria
+[INFO] 23:28:51:302 Carpincho/(5075:5077): libero memoria
+[INFO] 23:28:51:302 Carpincho/(5075:5077): Carpincho eliminado
+[INFO] 23:28:51:302 Carpincho/(5075:5076): Carpincho creado correctamente con el pid: 1
+[INFO] 23:28:51:302 Carpincho/(5075:5076): MEM_ALLOC de 117
+[INFO] 23:28:51:303 Carpincho/(5075:5076): Se realizó el MEM_ALLOC correctamente. La dirección lógica es 8
+[INFO] 23:28:51:303 Carpincho/(5075:5076): MEM_WRITE el mensaje jejeje en 8
+[INFO] 23:28:51:342 Carpincho/(5075:5076): Se realizó el MEM_WRITE correctamente
+[INFO] 23:28:51:342 Carpincho/(5075:5076): MEM_READ desde 8 el size 7
+[INFO] 23:28:51:420 Carpincho/(5075:5076): Se realizó el MEM_READ correctamente. El contenido es: 
+[INFO] 23:28:52:420 Carpincho/(5075:5076): MEM_FREE a la dirección 8
+[INFO] 23:28:52:421 Carpincho/(5075:5076): Se realizó el MEM_FREE correctamente
+[INFO] 23:28:52:421 Carpincho/(5075:5076): MATE_CLOSE
+[INFO] 23:28:52:421 Carpincho/(5075:5076): MATE_CLOSE: mensaje enviado a kernel
+[INFO] 23:28:52:421 Carpincho/(5075:5076): libero memoria
+[INFO] 23:28:52:421 Carpincho/(5075:5076): libero memoria
+[INFO] 23:28:52:421 Carpincho/(5075:5076): Carpincho eliminado
+[INFO] 23:31:18:254 Carpincho/(5330:5332): Log creado
+[INFO] 23:31:18:254 Carpincho/(5330:5332): Esperando respuesta de servidor
+[INFO] 23:31:18:254 Carpincho/(5330:5331): Log creado
+[INFO] 23:31:18:255 Carpincho/(5330:5331): Esperando respuesta de servidor
+[INFO] 23:31:18:256 Carpincho/(5330:5332): NUEVO CARPINCHO
+[INFO] 23:31:18:264 Carpincho/(5330:5331): NUEVO CARPINCHO
+[INFO] 23:31:18:301 Carpincho/(5330:5332): Carpincho creado correctamente con el pid: 0
+[INFO] 23:31:20:301 Carpincho/(5330:5332): CALL_IO a hierbitas
+[INFO] 23:31:20:305 Carpincho/(5330:5332): RESPUESA DE IO RECIBIDA 0 
+[INFO] 23:31:20:305 Carpincho/(5330:5332): Se realizó el CALL IO correctamente
+[INFO] 23:31:22:305 Carpincho/(5330:5332): CALL_IO a laguna
+[INFO] 23:31:22:332 Carpincho/(5330:5332): RESPUESA DE IO RECIBIDA 0 
+[INFO] 23:31:22:332 Carpincho/(5330:5332): Se realizó el CALL IO correctamente
+[INFO] 23:31:24:332 Carpincho/(5330:5332): MATE_CLOSE
+[INFO] 23:31:24:332 Carpincho/(5330:5332): MATE_CLOSE: mensaje enviado a kernel
+[INFO] 23:31:24:333 Carpincho/(5330:5332): libero memoria
+[INFO] 23:31:24:333 Carpincho/(5330:5332): libero memoria
+[INFO] 23:31:24:333 Carpincho/(5330:5332): Carpincho eliminado
+[INFO] 23:31:24:334 Carpincho/(5330:5331): Carpincho creado correctamente con el pid: 1
+[INFO] 23:31:26:335 Carpincho/(5330:5331): CALL_IO a hierbitas
+[INFO] 23:31:26:337 Carpincho/(5330:5331): RESPUESA DE IO RECIBIDA 0 
+[INFO] 23:31:26:337 Carpincho/(5330:5331): Se realizó el CALL IO correctamente
+[INFO] 23:31:28:337 Carpincho/(5330:5331): CALL_IO a laguna
+[INFO] 23:31:28:364 Carpincho/(5330:5331): RESPUESA DE IO RECIBIDA 0 
+[INFO] 23:31:28:364 Carpincho/(5330:5331): Se realizó el CALL IO correctamente
+[INFO] 23:31:30:365 Carpincho/(5330:5331): MATE_CLOSE
+[INFO] 23:31:30:365 Carpincho/(5330:5331): MATE_CLOSE: mensaje enviado a kernel
+[INFO] 23:31:30:365 Carpincho/(5330:5331): libero memoria
+[INFO] 23:31:30:365 Carpincho/(5330:5331): libero memoria
+[INFO] 23:31:30:365 Carpincho/(5330:5331): Carpincho eliminado
+[INFO] 23:36:07:621 Carpincho/(5624:5626): Log creado
+[INFO] 23:36:07:621 Carpincho/(5624:5626): Esperando respuesta de servidor
+[INFO] 23:36:07:621 Carpincho/(5624:5625): Log creado
+[INFO] 23:36:07:622 Carpincho/(5624:5625): Esperando respuesta de servidor
+[INFO] 23:36:07:626 Carpincho/(5624:5626): NUEVO CARPINCHO
+[INFO] 23:36:07:628 Carpincho/(5624:5625): NUEVO CARPINCHO
+[INFO] 23:36:07:665 Carpincho/(5624:5626): Carpincho creado correctamente con el pid: 0
+[INFO] 23:36:09:665 Carpincho/(5624:5626): CALL_IO a hierbitas
+[INFO] 23:36:09:667 Carpincho/(5624:5626): RESPUESA DE IO RECIBIDA 0 
+[INFO] 23:36:09:667 Carpincho/(5624:5626): Se realizó el CALL IO correctamente
+[INFO] 23:36:11:667 Carpincho/(5624:5626): CALL_IO a laguna
+[INFO] 23:36:11:694 Carpincho/(5624:5626): RESPUESA DE IO RECIBIDA 0 
+[INFO] 23:36:11:694 Carpincho/(5624:5626): Se realizó el CALL IO correctamente
+[INFO] 23:36:13:695 Carpincho/(5624:5626): MATE_CLOSE
+[INFO] 23:36:13:695 Carpincho/(5624:5626): MATE_CLOSE: mensaje enviado a kernel
+[INFO] 23:36:13:695 Carpincho/(5624:5626): libero memoria
+[INFO] 23:36:13:695 Carpincho/(5624:5626): libero memoria
+[INFO] 23:36:13:695 Carpincho/(5624:5626): Carpincho eliminado
+[INFO] 23:36:13:695 Carpincho/(5624:5625): Carpincho creado correctamente con el pid: 1
+[INFO] 23:36:15:696 Carpincho/(5624:5625): CALL_IO a hierbitas
+[INFO] 23:36:15:698 Carpincho/(5624:5625): RESPUESA DE IO RECIBIDA 0 
+[INFO] 23:36:15:698 Carpincho/(5624:5625): Se realizó el CALL IO correctamente
+[INFO] 23:36:17:698 Carpincho/(5624:5625): CALL_IO a laguna
+[INFO] 23:36:17:727 Carpincho/(5624:5625): RESPUESA DE IO RECIBIDA 0 
+[INFO] 23:36:17:728 Carpincho/(5624:5625): Se realizó el CALL IO correctamente
+[INFO] 23:36:19:729 Carpincho/(5624:5625): MATE_CLOSE
+[INFO] 23:36:19:729 Carpincho/(5624:5625): MATE_CLOSE: mensaje enviado a kernel
+[INFO] 23:36:19:729 Carpincho/(5624:5625): libero memoria
+[INFO] 23:36:19:729 Carpincho/(5624:5625): libero memoria
+[INFO] 23:36:19:729 Carpincho/(5624:5625): Carpincho eliminado
+[INFO] 23:41:47:406 Carpincho/(5904:5906): Log creado
+[INFO] 23:41:47:406 Carpincho/(5904:5906): Esperando respuesta de servidor
+[INFO] 23:41:47:406 Carpincho/(5904:5905): Log creado
+[INFO] 23:41:47:406 Carpincho/(5904:5905): Esperando respuesta de servidor
+[INFO] 23:41:47:407 Carpincho/(5904:5906): NUEVO CARPINCHO
+[INFO] 23:41:47:419 Carpincho/(5904:5905): NUEVO CARPINCHO
+[INFO] 23:41:47:452 Carpincho/(5904:5906): Carpincho creado correctamente con el pid: 0
+[INFO] 23:41:49:452 Carpincho/(5904:5906): CALL_IO a hierbitas
+[INFO] 23:41:49:454 Carpincho/(5904:5906): RESPUESA DE IO RECIBIDA 0 
+[INFO] 23:41:49:455 Carpincho/(5904:5906): Se realizó el CALL IO correctamente
+[INFO] 23:41:51:456 Carpincho/(5904:5906): CALL_IO a laguna
+[INFO] 23:41:51:483 Carpincho/(5904:5906): RESPUESA DE IO RECIBIDA 0 
+[INFO] 23:41:51:483 Carpincho/(5904:5906): Se realizó el CALL IO correctamente
+[INFO] 23:41:53:483 Carpincho/(5904:5906): MATE_CLOSE
+[INFO] 23:41:53:483 Carpincho/(5904:5906): MATE_CLOSE: mensaje enviado a kernel
+[INFO] 23:41:53:483 Carpincho/(5904:5906): libero memoria
+[INFO] 23:41:53:483 Carpincho/(5904:5906): libero memoria
+[INFO] 23:41:53:483 Carpincho/(5904:5906): Carpincho eliminado
+[INFO] 23:41:53:485 Carpincho/(5904:5905): Carpincho creado correctamente con el pid: 1
+[INFO] 23:41:55:486 Carpincho/(5904:5905): CALL_IO a hierbitas
+[INFO] 23:41:55:487 Carpincho/(5904:5905): RESPUESA DE IO RECIBIDA 0 
+[INFO] 23:41:55:488 Carpincho/(5904:5905): Se realizó el CALL IO correctamente
+[INFO] 23:41:57:488 Carpincho/(5904:5905): CALL_IO a laguna
+[INFO] 23:41:57:515 Carpincho/(5904:5905): RESPUESA DE IO RECIBIDA 0 
+[INFO] 23:41:57:516 Carpincho/(5904:5905): Se realizó el CALL IO correctamente
+[INFO] 23:41:59:516 Carpincho/(5904:5905): MATE_CLOSE
+[INFO] 23:41:59:516 Carpincho/(5904:5905): MATE_CLOSE: mensaje enviado a kernel
+[INFO] 23:41:59:516 Carpincho/(5904:5905): libero memoria
+[INFO] 23:41:59:516 Carpincho/(5904:5905): libero memoria
+[INFO] 23:41:59:516 Carpincho/(5904:5905): Carpincho eliminado
+[INFO] 23:46:32:566 Carpincho/(6258:6260): Log creado
+[INFO] 23:46:32:566 Carpincho/(6258:6260): Esperando respuesta de servidor
+[INFO] 23:46:32:566 Carpincho/(6258:6259): Log creado
+[INFO] 23:46:32:567 Carpincho/(6258:6259): Esperando respuesta de servidor
+[INFO] 23:46:32:568 Carpincho/(6258:6260): NUEVO CARPINCHO
+[INFO] 23:46:32:578 Carpincho/(6258:6259): NUEVO CARPINCHO
+[INFO] 23:46:32:612 Carpincho/(6258:6260): Carpincho creado correctamente con el pid: 0
+[INFO] 23:46:34:612 Carpincho/(6258:6260): CALL_IO a hierbitas
+[INFO] 23:46:34:614 Carpincho/(6258:6260): RESPUESA DE IO RECIBIDA 0 
+[INFO] 23:46:34:614 Carpincho/(6258:6260): Se realizó el CALL IO correctamente
+[INFO] 23:46:36:614 Carpincho/(6258:6260): CALL_IO a laguna
+[INFO] 23:46:36:665 Carpincho/(6258:6260): RESPUESA DE IO RECIBIDA 0 
+[INFO] 23:46:36:665 Carpincho/(6258:6260): Se realizó el CALL IO correctamente
+[INFO] 23:46:38:666 Carpincho/(6258:6260): MATE_CLOSE
+[INFO] 23:46:38:666 Carpincho/(6258:6260): MATE_CLOSE: mensaje enviado a kernel
+[INFO] 23:46:38:666 Carpincho/(6258:6260): libero memoria
+[INFO] 23:46:38:666 Carpincho/(6258:6260): libero memoria
+[INFO] 23:46:38:666 Carpincho/(6258:6260): Carpincho eliminado
+[INFO] 23:46:38:668 Carpincho/(6258:6259): Carpincho creado correctamente con el pid: 1
+[INFO] 23:46:40:668 Carpincho/(6258:6259): CALL_IO a hierbitas
+[INFO] 23:46:40:671 Carpincho/(6258:6259): RESPUESA DE IO RECIBIDA 0 
+[INFO] 23:46:40:671 Carpincho/(6258:6259): Se realizó el CALL IO correctamente
+[INFO] 23:46:42:671 Carpincho/(6258:6259): CALL_IO a laguna
+[INFO] 23:46:42:698 Carpincho/(6258:6259): RESPUESA DE IO RECIBIDA 0 
+[INFO] 23:46:42:699 Carpincho/(6258:6259): Se realizó el CALL IO correctamente
+[INFO] 23:46:44:700 Carpincho/(6258:6259): MATE_CLOSE
+[INFO] 23:46:44:700 Carpincho/(6258:6259): MATE_CLOSE: mensaje enviado a kernel
+[INFO] 23:46:44:700 Carpincho/(6258:6259): libero memoria
+[INFO] 23:46:44:700 Carpincho/(6258:6259): libero memoria
+[INFO] 23:46:44:700 Carpincho/(6258:6259): Carpincho eliminado
+[INFO] 23:47:20:105 Carpincho/(6489:6491): Log creado
+[INFO] 23:47:20:105 Carpincho/(6489:6491): Esperando respuesta de servidor
+[INFO] 23:47:20:105 Carpincho/(6489:6490): Log creado
+[INFO] 23:47:20:120 Carpincho/(6489:6490): Esperando respuesta de servidor
+[INFO] 23:47:20:121 Carpincho/(6489:6491): NUEVO CARPINCHO
+[INFO] 23:47:20:151 Carpincho/(6489:6490): NUEVO CARPINCHO
+[INFO] 23:47:20:164 Carpincho/(6489:6491): Carpincho creado correctamente con el pid: 0
+[INFO] 23:47:22:164 Carpincho/(6489:6491): CALL_IO a hierbitas
+[INFO] 23:47:22:169 Carpincho/(6489:6491): RESPUESA DE IO RECIBIDA 0 
+[INFO] 23:48:35:834 Carpincho/(6706:6708): Log creado
+[INFO] 23:48:35:834 Carpincho/(6706:6708): Esperando respuesta de servidor
+[INFO] 23:48:35:834 Carpincho/(6706:6707): Log creado
+[INFO] 23:48:35:835 Carpincho/(6706:6707): Esperando respuesta de servidor
+[INFO] 23:48:35:836 Carpincho/(6706:6708): NUEVO CARPINCHO
+[INFO] 23:48:35:847 Carpincho/(6706:6707): NUEVO CARPINCHO
+[INFO] 23:48:35:884 Carpincho/(6706:6708): Carpincho creado correctamente con el pid: 0
+[INFO] 23:48:37:885 Carpincho/(6706:6708): CALL_IO a hierbitas
+[INFO] 23:48:37:888 Carpincho/(6706:6708): RESPUESA DE IO RECIBIDA 0 
+[INFO] 23:48:37:888 Carpincho/(6706:6708): Se realizó el CALL IO correctamente
+[INFO] 23:48:39:888 Carpincho/(6706:6708): CALL_IO a laguna
+[INFO] 23:48:39:915 Carpincho/(6706:6708): RESPUESA DE IO RECIBIDA 0 
+[INFO] 23:48:39:917 Carpincho/(6706:6708): Se realizó el CALL IO correctamente
+[INFO] 23:48:41:919 Carpincho/(6706:6708): MATE_CLOSE
+[INFO] 23:48:41:920 Carpincho/(6706:6708): MATE_CLOSE: mensaje enviado a kernel
+[INFO] 23:48:41:920 Carpincho/(6706:6708): libero memoria
+[INFO] 23:48:41:920 Carpincho/(6706:6708): libero memoria
+[INFO] 23:48:41:920 Carpincho/(6706:6708): Carpincho eliminado
+[INFO] 23:48:42:005 Carpincho/(6706:6707): Carpincho creado correctamente con el pid: 1
+[INFO] 23:48:44:006 Carpincho/(6706:6707): CALL_IO a hierbitas
+[INFO] 23:48:44:008 Carpincho/(6706:6707): RESPUESA DE IO RECIBIDA 0 
+[INFO] 23:48:44:008 Carpincho/(6706:6707): Se realizó el CALL IO correctamente
+[INFO] 23:48:46:008 Carpincho/(6706:6707): CALL_IO a laguna
+[INFO] 23:48:46:036 Carpincho/(6706:6707): RESPUESA DE IO RECIBIDA 0 
+[INFO] 23:48:46:037 Carpincho/(6706:6707): Se realizó el CALL IO correctamente
+[INFO] 23:48:48:037 Carpincho/(6706:6707): MATE_CLOSE
+[INFO] 23:48:48:037 Carpincho/(6706:6707): MATE_CLOSE: mensaje enviado a kernel
+[INFO] 23:48:48:037 Carpincho/(6706:6707): libero memoria
+[INFO] 23:48:48:037 Carpincho/(6706:6707): libero memoria
+[INFO] 23:48:48:037 Carpincho/(6706:6707): Carpincho eliminado
+[INFO] 23:53:00:157 Carpincho/(6976:6978): Log creado
+[INFO] 23:53:00:157 Carpincho/(6976:6978): Esperando respuesta de servidor
+[INFO] 23:53:00:157 Carpincho/(6976:6977): Log creado
+[INFO] 23:53:00:158 Carpincho/(6976:6977): Esperando respuesta de servidor
+[INFO] 23:53:00:168 Carpincho/(6976:6978): NUEVO CARPINCHO
+[INFO] 23:53:00:169 Carpincho/(6976:6977): NUEVO CARPINCHO
+[INFO] 23:53:00:208 Carpincho/(6976:6978): Carpincho creado correctamente con el pid: 0
+[INFO] 23:53:02:209 Carpincho/(6976:6978): CALL_IO a hierbitas
+[INFO] 23:53:02:212 Carpincho/(6976:6978): RESPUESA DE IO RECIBIDA 0 
+[INFO] 23:53:02:213 Carpincho/(6976:6978): Se realizó el CALL IO correctamente
+[INFO] 23:53:04:213 Carpincho/(6976:6978): CALL_IO a laguna
+[INFO] 23:53:04:239 Carpincho/(6976:6978): RESPUESA DE IO RECIBIDA 0 
+[INFO] 23:53:04:240 Carpincho/(6976:6978): Se realizó el CALL IO correctamente
+[INFO] 23:53:06:240 Carpincho/(6976:6978): MATE_CLOSE
+[INFO] 23:53:06:240 Carpincho/(6976:6978): MATE_CLOSE: mensaje enviado a kernel
+[INFO] 23:53:06:240 Carpincho/(6976:6978): libero memoria
+[INFO] 23:53:06:240 Carpincho/(6976:6978): libero memoria
+[INFO] 23:53:06:240 Carpincho/(6976:6978): Carpincho eliminado
+[INFO] 23:53:06:241 Carpincho/(6976:6977): Carpincho creado correctamente con el pid: 1
+[INFO] 23:53:08:242 Carpincho/(6976:6977): CALL_IO a hierbitas
+[INFO] 23:53:08:243 Carpincho/(6976:6977): RESPUESA DE IO RECIBIDA 0 
+[INFO] 23:53:08:243 Carpincho/(6976:6977): Se realizó el CALL IO correctamente
+[INFO] 23:53:10:244 Carpincho/(6976:6977): CALL_IO a laguna
+[INFO] 23:53:10:270 Carpincho/(6976:6977): RESPUESA DE IO RECIBIDA 0 
+[INFO] 23:53:10:271 Carpincho/(6976:6977): Se realizó el CALL IO correctamente
+[INFO] 23:53:12:271 Carpincho/(6976:6977): MATE_CLOSE
+[INFO] 23:53:12:271 Carpincho/(6976:6977): MATE_CLOSE: mensaje enviado a kernel
+[INFO] 23:53:12:271 Carpincho/(6976:6977): libero memoria
+[INFO] 23:53:12:271 Carpincho/(6976:6977): libero memoria
+[INFO] 23:53:12:271 Carpincho/(6976:6977): Carpincho eliminado
+[INFO] 00:04:08:695 Carpincho/(7451:7453): Log creado
+[INFO] 00:04:08:695 Carpincho/(7451:7453): Esperando respuesta de servidor
+[INFO] 00:04:08:696 Carpincho/(7451:7452): Log creado
+[INFO] 00:04:08:696 Carpincho/(7451:7452): Esperando respuesta de servidor
+[INFO] 00:04:08:697 Carpincho/(7451:7453): NUEVO CARPINCHO
+[INFO] 00:04:08:707 Carpincho/(7451:7452): NUEVO CARPINCHO
+[INFO] 00:04:08:745 Carpincho/(7451:7453): Carpincho creado correctamente con el pid: 0
+[INFO] 00:04:10:745 Carpincho/(7451:7453): CALL_IO a hierbitas
+[INFO] 00:04:11:746 Carpincho/(7451:7453): RESPUESA DE IO RECIBIDA 0 
+[INFO] 00:04:11:746 Carpincho/(7451:7453): Se realizó el CALL IO correctamente
+[INFO] 00:04:13:746 Carpincho/(7451:7453): CALL_IO a laguna
+[INFO] 00:04:13:773 Carpincho/(7451:7453): RESPUESA DE IO RECIBIDA 0 
+[INFO] 00:04:13:773 Carpincho/(7451:7453): Se realizó el CALL IO correctamente
+[INFO] 00:04:15:774 Carpincho/(7451:7453): MATE_CLOSE
+[INFO] 00:04:15:774 Carpincho/(7451:7453): MATE_CLOSE: mensaje enviado a kernel
+[INFO] 00:04:15:774 Carpincho/(7451:7453): libero memoria
+[INFO] 00:04:15:774 Carpincho/(7451:7453): libero memoria
+[INFO] 00:04:15:774 Carpincho/(7451:7453): Carpincho eliminado
+[INFO] 00:04:15:777 Carpincho/(7451:7452): Carpincho creado correctamente con el pid: 1
+[INFO] 00:04:17:777 Carpincho/(7451:7452): CALL_IO a hierbitas
+[INFO] 00:04:18:779 Carpincho/(7451:7452): RESPUESA DE IO RECIBIDA 0 
+[INFO] 00:04:18:780 Carpincho/(7451:7452): Se realizó el CALL IO correctamente
+[INFO] 00:04:20:780 Carpincho/(7451:7452): CALL_IO a laguna
+[INFO] 00:04:20:807 Carpincho/(7451:7452): RESPUESA DE IO RECIBIDA 0 
+[INFO] 00:04:20:809 Carpincho/(7451:7452): Se realizó el CALL IO correctamente
+[INFO] 00:04:22:809 Carpincho/(7451:7452): MATE_CLOSE
+[INFO] 00:04:22:809 Carpincho/(7451:7452): MATE_CLOSE: mensaje enviado a kernel
+[INFO] 00:04:22:809 Carpincho/(7451:7452): libero memoria
+[INFO] 00:04:22:809 Carpincho/(7451:7452): libero memoria
+[INFO] 00:04:22:809 Carpincho/(7451:7452): Carpincho eliminado
+[INFO] 00:06:37:889 Carpincho/(7749:7751): Log creado
+[INFO] 00:06:37:889 Carpincho/(7749:7751): Esperando respuesta de servidor
+[INFO] 00:06:37:889 Carpincho/(7749:7750): Log creado
+[INFO] 00:06:37:890 Carpincho/(7749:7750): Esperando respuesta de servidor
+[INFO] 00:06:37:891 Carpincho/(7749:7751): NUEVO CARPINCHO
+[INFO] 00:06:37:904 Carpincho/(7749:7750): NUEVO CARPINCHO
+[INFO] 00:06:37:943 Carpincho/(7749:7751): Carpincho creado correctamente con el pid: 0
+[INFO] 00:06:39:945 Carpincho/(7749:7751): CALL_IO a hierbitas
+[INFO] 00:06:40:947 Carpincho/(7749:7751): RESPUESA DE IO RECIBIDA 0 
+[INFO] 00:06:40:948 Carpincho/(7749:7751): Se realizó el CALL IO correctamente
+[INFO] 00:06:42:948 Carpincho/(7749:7751): CALL_IO a laguna
+[INFO] 00:06:42:978 Carpincho/(7749:7751): RESPUESA DE IO RECIBIDA 0 
+[INFO] 00:06:42:985 Carpincho/(7749:7751): Se realizó el CALL IO correctamente
+[INFO] 00:06:44:986 Carpincho/(7749:7751): MATE_CLOSE
+[INFO] 00:06:44:986 Carpincho/(7749:7751): MATE_CLOSE: mensaje enviado a kernel
+[INFO] 00:06:44:987 Carpincho/(7749:7751): libero memoria
+[INFO] 00:06:44:987 Carpincho/(7749:7751): libero memoria
+[INFO] 00:06:44:987 Carpincho/(7749:7751): Carpincho eliminado
+[INFO] 00:06:44:988 Carpincho/(7749:7750): Carpincho creado correctamente con el pid: 1
+[INFO] 00:06:46:989 Carpincho/(7749:7750): CALL_IO a hierbitas
+[INFO] 00:06:47:990 Carpincho/(7749:7750): RESPUESA DE IO RECIBIDA 0 
+[INFO] 00:06:47:991 Carpincho/(7749:7750): Se realizó el CALL IO correctamente
+[INFO] 00:06:49:991 Carpincho/(7749:7750): CALL_IO a laguna
+[INFO] 00:06:50:019 Carpincho/(7749:7750): RESPUESA DE IO RECIBIDA 0 
+[INFO] 00:06:50:019 Carpincho/(7749:7750): Se realizó el CALL IO correctamente
+[INFO] 00:06:52:020 Carpincho/(7749:7750): MATE_CLOSE
+[INFO] 00:06:52:021 Carpincho/(7749:7750): MATE_CLOSE: mensaje enviado a kernel
+[INFO] 00:06:52:021 Carpincho/(7749:7750): libero memoria
+[INFO] 00:06:52:021 Carpincho/(7749:7750): libero memoria
+[INFO] 00:06:52:021 Carpincho/(7749:7750): Carpincho eliminado
+[INFO] 00:09:12:082 Carpincho/(7992:7994): Log creado
+[INFO] 00:09:12:082 Carpincho/(7992:7994): Esperando respuesta de servidor
+[INFO] 00:09:12:082 Carpincho/(7992:7993): Log creado
+[INFO] 00:09:12:083 Carpincho/(7992:7993): Esperando respuesta de servidor
+[INFO] 00:09:12:084 Carpincho/(7992:7994): NUEVO CARPINCHO
+[INFO] 00:09:12:097 Carpincho/(7992:7993): NUEVO CARPINCHO
+[INFO] 00:09:12:137 Carpincho/(7992:7994): Carpincho creado correctamente con el pid: 0
+[INFO] 00:09:14:138 Carpincho/(7992:7994): CALL_IO a hierbitas
+[INFO] 00:09:15:140 Carpincho/(7992:7994): RESPUESA DE IO RECIBIDA 0 
+[INFO] 00:09:15:140 Carpincho/(7992:7994): Se realizó el CALL IO correctamente
+[INFO] 00:09:17:140 Carpincho/(7992:7994): CALL_IO a laguna
+[INFO] 00:09:17:166 Carpincho/(7992:7994): RESPUESA DE IO RECIBIDA 0 
+[INFO] 00:09:17:166 Carpincho/(7992:7994): Se realizó el CALL IO correctamente
+[INFO] 00:09:19:167 Carpincho/(7992:7994): MATE_CLOSE
+[INFO] 00:09:19:167 Carpincho/(7992:7994): MATE_CLOSE: mensaje enviado a kernel
+[INFO] 00:09:19:167 Carpincho/(7992:7994): libero memoria
+[INFO] 00:09:19:167 Carpincho/(7992:7994): libero memoria
+[INFO] 00:09:19:167 Carpincho/(7992:7994): Carpincho eliminado
+[INFO] 00:09:19:168 Carpincho/(7992:7993): Carpincho creado correctamente con el pid: 1
+[INFO] 00:09:21:169 Carpincho/(7992:7993): CALL_IO a hierbitas
+[INFO] 00:09:22:170 Carpincho/(7992:7993): RESPUESA DE IO RECIBIDA 0 
+[INFO] 00:09:22:172 Carpincho/(7992:7993): Se realizó el CALL IO correctamente
+[INFO] 00:09:24:172 Carpincho/(7992:7993): CALL_IO a laguna
+[INFO] 00:09:24:199 Carpincho/(7992:7993): RESPUESA DE IO RECIBIDA 0 
+[INFO] 00:09:24:199 Carpincho/(7992:7993): Se realizó el CALL IO correctamente
+[INFO] 00:09:26:199 Carpincho/(7992:7993): MATE_CLOSE
+[INFO] 00:09:26:199 Carpincho/(7992:7993): MATE_CLOSE: mensaje enviado a kernel
+[INFO] 00:09:26:199 Carpincho/(7992:7993): libero memoria
+[INFO] 00:09:26:199 Carpincho/(7992:7993): libero memoria
+[INFO] 00:09:26:199 Carpincho/(7992:7993): Carpincho eliminado
+[INFO] 00:09:59:963 Carpincho/(8236:8238): Log creado
+[INFO] 00:09:59:964 Carpincho/(8236:8238): Esperando respuesta de servidor
+[INFO] 00:09:59:964 Carpincho/(8236:8237): Log creado
+[INFO] 00:09:59:964 Carpincho/(8236:8237): Esperando respuesta de servidor
+[INFO] 00:09:59:966 Carpincho/(8236:8238): NUEVO CARPINCHO
+[INFO] 00:09:59:978 Carpincho/(8236:8237): NUEVO CARPINCHO
+[INFO] 00:10:00:016 Carpincho/(8236:8238): Carpincho creado correctamente con el pid: 0
+[INFO] 00:10:02:016 Carpincho/(8236:8238): CALL_IO a hierbitas
+[INFO] 00:10:03:017 Carpincho/(8236:8238): RESPUESA DE IO RECIBIDA 0 
+[INFO] 00:10:03:019 Carpincho/(8236:8238): Se realizó el CALL IO correctamente
+[INFO] 00:10:05:020 Carpincho/(8236:8238): CALL_IO a laguna
+[INFO] 00:10:05:046 Carpincho/(8236:8238): RESPUESA DE IO RECIBIDA 0 
+[INFO] 00:10:05:046 Carpincho/(8236:8238): Se realizó el CALL IO correctamente
+[INFO] 00:10:07:046 Carpincho/(8236:8238): MATE_CLOSE
+[INFO] 00:10:07:046 Carpincho/(8236:8238): MATE_CLOSE: mensaje enviado a kernel
+[INFO] 00:10:07:046 Carpincho/(8236:8238): libero memoria
+[INFO] 00:10:07:046 Carpincho/(8236:8238): libero memoria
+[INFO] 00:10:07:046 Carpincho/(8236:8238): Carpincho eliminado
+[INFO] 00:10:07:048 Carpincho/(8236:8237): Carpincho creado correctamente con el pid: 1
+[INFO] 00:10:09:049 Carpincho/(8236:8237): CALL_IO a hierbitas
+[INFO] 00:10:10:051 Carpincho/(8236:8237): RESPUESA DE IO RECIBIDA 0 
+[INFO] 00:10:10:052 Carpincho/(8236:8237): Se realizó el CALL IO correctamente
+[INFO] 00:10:12:052 Carpincho/(8236:8237): CALL_IO a laguna
+[INFO] 00:10:12:080 Carpincho/(8236:8237): RESPUESA DE IO RECIBIDA 0 
+[INFO] 00:10:12:082 Carpincho/(8236:8237): Se realizó el CALL IO correctamente
+[INFO] 00:10:14:082 Carpincho/(8236:8237): MATE_CLOSE
+[INFO] 00:10:14:082 Carpincho/(8236:8237): MATE_CLOSE: mensaje enviado a kernel
+[INFO] 00:10:14:082 Carpincho/(8236:8237): libero memoria
+[INFO] 00:10:14:082 Carpincho/(8236:8237): libero memoria
+[INFO] 00:10:14:082 Carpincho/(8236:8237): Carpincho eliminado
+[INFO] 00:18:10:248 Carpincho/(8718:8720): Log creado
+[INFO] 00:18:10:249 Carpincho/(8718:8720): Esperando respuesta de servidor
+[INFO] 00:18:10:249 Carpincho/(8718:8719): Log creado
+[INFO] 00:18:10:249 Carpincho/(8718:8719): Esperando respuesta de servidor
+[INFO] 00:18:10:251 Carpincho/(8718:8720): NUEVO CARPINCHO
+[INFO] 00:18:10:255 Carpincho/(8718:8719): NUEVO CARPINCHO
+[INFO] 00:18:10:292 Carpincho/(8718:8720): Carpincho creado correctamente con el pid: 0
+[INFO] 00:18:12:293 Carpincho/(8718:8720): CALL_IO a hierbitas
+[INFO] 00:18:13:293 Carpincho/(8718:8720): RESPUESA DE IO RECIBIDA 0 
+[INFO] 00:18:13:294 Carpincho/(8718:8720): Se realizó el CALL IO correctamente
+[INFO] 00:18:15:294 Carpincho/(8718:8720): CALL_IO a laguna
+[INFO] 00:18:15:320 Carpincho/(8718:8720): RESPUESA DE IO RECIBIDA 0 
+[INFO] 00:18:15:321 Carpincho/(8718:8720): Se realizó el CALL IO correctamente
+[INFO] 00:18:17:322 Carpincho/(8718:8720): MATE_CLOSE
+[INFO] 00:18:17:322 Carpincho/(8718:8720): MATE_CLOSE: mensaje enviado a kernel
+[INFO] 00:18:17:323 Carpincho/(8718:8720): libero memoria
+[INFO] 00:18:17:323 Carpincho/(8718:8720): libero memoria
+[INFO] 00:18:17:323 Carpincho/(8718:8720): Carpincho eliminado
+[INFO] 00:18:17:324 Carpincho/(8718:8719): Carpincho creado correctamente con el pid: 1
+[INFO] 00:18:19:324 Carpincho/(8718:8719): CALL_IO a hierbitas
+[INFO] 00:18:20:326 Carpincho/(8718:8719): RESPUESA DE IO RECIBIDA 0 
+[INFO] 00:18:20:326 Carpincho/(8718:8719): Se realizó el CALL IO correctamente
+[INFO] 00:18:22:326 Carpincho/(8718:8719): CALL_IO a laguna
+[INFO] 00:18:22:354 Carpincho/(8718:8719): RESPUESA DE IO RECIBIDA 0 
+[INFO] 00:18:22:356 Carpincho/(8718:8719): Se realizó el CALL IO correctamente
+[INFO] 00:18:24:357 Carpincho/(8718:8719): MATE_CLOSE
+[INFO] 00:18:24:357 Carpincho/(8718:8719): MATE_CLOSE: mensaje enviado a kernel
+[INFO] 00:18:24:357 Carpincho/(8718:8719): libero memoria
+[INFO] 00:18:24:357 Carpincho/(8718:8719): libero memoria
+[INFO] 00:18:24:357 Carpincho/(8718:8719): Carpincho eliminado
+[INFO] 00:26:44:818 Carpincho/(9104:9106): Log creado
+[INFO] 00:26:44:818 Carpincho/(9104:9106): Esperando respuesta de servidor
+[INFO] 00:26:44:818 Carpincho/(9104:9105): Log creado
+[INFO] 00:26:44:819 Carpincho/(9104:9105): Esperando respuesta de servidor
+[INFO] 00:26:44:820 Carpincho/(9104:9106): NUEVO CARPINCHO
+[INFO] 00:26:44:831 Carpincho/(9104:9105): NUEVO CARPINCHO
+[INFO] 00:26:44:869 Carpincho/(9104:9106): Carpincho creado correctamente con el pid: 0
+[INFO] 00:26:46:869 Carpincho/(9104:9106): CALL_IO a hierbitas
+[INFO] 00:26:47:870 Carpincho/(9104:9106): RESPUESA DE IO RECIBIDA 0 
+[INFO] 00:26:47:872 Carpincho/(9104:9106): Se realizó el CALL IO correctamente
+[INFO] 00:26:49:872 Carpincho/(9104:9106): CALL_IO a laguna
+[INFO] 00:26:49:900 Carpincho/(9104:9106): RESPUESA DE IO RECIBIDA 0 
+[INFO] 00:26:49:902 Carpincho/(9104:9106): Se realizó el CALL IO correctamente
+[INFO] 00:26:51:903 Carpincho/(9104:9106): MATE_CLOSE
+[INFO] 00:26:51:903 Carpincho/(9104:9106): MATE_CLOSE: mensaje enviado a kernel
+[INFO] 00:26:51:903 Carpincho/(9104:9106): libero memoria
+[INFO] 00:26:51:903 Carpincho/(9104:9106): libero memoria
+[INFO] 00:26:51:903 Carpincho/(9104:9106): Carpincho eliminado
+[INFO] 00:26:51:905 Carpincho/(9104:9105): Carpincho creado correctamente con el pid: 1
+[INFO] 00:26:53:906 Carpincho/(9104:9105): CALL_IO a hierbitas
+[INFO] 00:26:54:906 Carpincho/(9104:9105): RESPUESA DE IO RECIBIDA 0 
+[INFO] 00:26:54:908 Carpincho/(9104:9105): Se realizó el CALL IO correctamente
+[INFO] 00:26:56:908 Carpincho/(9104:9105): CALL_IO a laguna
+[INFO] 00:26:56:934 Carpincho/(9104:9105): RESPUESA DE IO RECIBIDA 0 
+[INFO] 00:26:56:935 Carpincho/(9104:9105): Se realizó el CALL IO correctamente
+[INFO] 00:26:58:935 Carpincho/(9104:9105): MATE_CLOSE
+[INFO] 00:26:58:936 Carpincho/(9104:9105): MATE_CLOSE: mensaje enviado a kernel
+[INFO] 00:26:58:936 Carpincho/(9104:9105): libero memoria
+[INFO] 00:26:58:936 Carpincho/(9104:9105): libero memoria
+[INFO] 00:26:58:936 Carpincho/(9104:9105): Carpincho eliminado
+[INFO] 00:35:17:891 Carpincho/(12805:12807): Log creado
+[INFO] 00:35:17:891 Carpincho/(12805:12807): Esperando respuesta de servidor
+[INFO] 00:35:17:891 Carpincho/(12805:12806): Log creado
+[INFO] 00:35:17:892 Carpincho/(12805:12806): Esperando respuesta de servidor
+[INFO] 00:35:17:893 Carpincho/(12805:12807): NUEVO CARPINCHO
+[INFO] 00:35:17:900 Carpincho/(12805:12806): NUEVO CARPINCHO
+[INFO] 00:35:17:936 Carpincho/(12805:12807): Carpincho creado correctamente con el pid: 0
+[INFO] 00:35:19:937 Carpincho/(12805:12807): CALL_IO a hierbitas
+[INFO] 00:35:20:938 Carpincho/(12805:12807): RESPUESA DE IO RECIBIDA 0 
+[INFO] 00:35:20:942 Carpincho/(12805:12807): Se realizó el CALL IO correctamente
+[INFO] 00:35:22:943 Carpincho/(12805:12807): CALL_IO a laguna
+[INFO] 00:35:22:972 Carpincho/(12805:12807): RESPUESA DE IO RECIBIDA 0 
+[INFO] 00:35:22:973 Carpincho/(12805:12807): Se realizó el CALL IO correctamente
+[INFO] 00:35:24:973 Carpincho/(12805:12807): MATE_CLOSE
+[INFO] 00:35:24:973 Carpincho/(12805:12807): MATE_CLOSE: mensaje enviado a kernel
+[INFO] 00:35:24:973 Carpincho/(12805:12807): libero memoria
+[INFO] 00:35:24:973 Carpincho/(12805:12807): libero memoria
+[INFO] 00:35:24:973 Carpincho/(12805:12807): Carpincho eliminado
+[INFO] 00:35:24:977 Carpincho/(12805:12806): Carpincho creado correctamente con el pid: 1
+[INFO] 00:35:26:977 Carpincho/(12805:12806): CALL_IO a hierbitas
+[INFO] 00:35:27:979 Carpincho/(12805:12806): RESPUESA DE IO RECIBIDA 0 
+[INFO] 00:35:27:982 Carpincho/(12805:12806): Se realizó el CALL IO correctamente
+[INFO] 00:35:29:982 Carpincho/(12805:12806): CALL_IO a laguna
+[INFO] 00:35:30:010 Carpincho/(12805:12806): RESPUESA DE IO RECIBIDA 0 
+[INFO] 00:35:30:011 Carpincho/(12805:12806): Se realizó el CALL IO correctamente
+[INFO] 00:35:32:011 Carpincho/(12805:12806): MATE_CLOSE
+[INFO] 00:35:32:012 Carpincho/(12805:12806): MATE_CLOSE: mensaje enviado a kernel
+[INFO] 00:35:32:012 Carpincho/(12805:12806): libero memoria
+[INFO] 00:35:32:012 Carpincho/(12805:12806): libero memoria
+[INFO] 00:35:32:012 Carpincho/(12805:12806): Carpincho eliminado
+[INFO] 00:36:11:304 Carpincho/(13049:13051): Log creado
+[INFO] 00:36:11:304 Carpincho/(13049:13051): Esperando respuesta de servidor
+[INFO] 00:36:11:304 Carpincho/(13049:13050): Log creado
+[INFO] 00:36:11:304 Carpincho/(13049:13050): Esperando respuesta de servidor
+[INFO] 00:36:11:306 Carpincho/(13049:13051): NUEVO CARPINCHO
+[INFO] 00:36:11:311 Carpincho/(13049:13050): NUEVO CARPINCHO
+[INFO] 00:36:11:349 Carpincho/(13049:13051): Carpincho creado correctamente con el pid: 0
+[INFO] 00:36:13:349 Carpincho/(13049:13051): CALL_IO a hierbitas
+[INFO] 00:36:14:350 Carpincho/(13049:13051): RESPUESA DE IO RECIBIDA 0 
+[INFO] 00:36:14:351 Carpincho/(13049:13051): Se realizó el CALL IO correctamente
+[INFO] 00:36:16:351 Carpincho/(13049:13051): CALL_IO a laguna
+[INFO] 00:36:16:379 Carpincho/(13049:13051): RESPUESA DE IO RECIBIDA 0 
+[INFO] 00:36:16:380 Carpincho/(13049:13051): Se realizó el CALL IO correctamente
+[INFO] 00:36:18:380 Carpincho/(13049:13051): MATE_CLOSE
+[INFO] 00:36:18:380 Carpincho/(13049:13051): MATE_CLOSE: mensaje enviado a kernel
+[INFO] 00:36:18:380 Carpincho/(13049:13051): libero memoria
+[INFO] 00:36:18:380 Carpincho/(13049:13051): libero memoria
+[INFO] 00:36:18:380 Carpincho/(13049:13051): Carpincho eliminado
+[INFO] 00:36:18:381 Carpincho/(13049:13050): Carpincho creado correctamente con el pid: 1
+[INFO] 00:36:20:381 Carpincho/(13049:13050): CALL_IO a hierbitas
+[INFO] 00:36:21:382 Carpincho/(13049:13050): RESPUESA DE IO RECIBIDA 0 
+[INFO] 00:36:21:382 Carpincho/(13049:13050): Se realizó el CALL IO correctamente
+[INFO] 00:36:23:382 Carpincho/(13049:13050): CALL_IO a laguna
+[INFO] 00:36:23:408 Carpincho/(13049:13050): RESPUESA DE IO RECIBIDA 0 
+[INFO] 00:36:23:408 Carpincho/(13049:13050): Se realizó el CALL IO correctamente
+[INFO] 00:36:25:409 Carpincho/(13049:13050): MATE_CLOSE
+[INFO] 00:36:25:409 Carpincho/(13049:13050): MATE_CLOSE: mensaje enviado a kernel
+[INFO] 00:36:25:409 Carpincho/(13049:13050): libero memoria
+[INFO] 00:36:25:409 Carpincho/(13049:13050): libero memoria
+[INFO] 00:36:25:409 Carpincho/(13049:13050): Carpincho eliminado
+[INFO] 00:39:01:635 Carpincho/(13303:13305): Log creado
+[INFO] 00:39:01:635 Carpincho/(13303:13305): Esperando respuesta de servidor
+[INFO] 00:39:01:636 Carpincho/(13303:13304): Log creado
+[INFO] 00:39:01:655 Carpincho/(13303:13304): Esperando respuesta de servidor
+[INFO] 00:39:01:659 Carpincho/(13303:13305): NUEVO CARPINCHO
+[INFO] 00:39:01:700 Carpincho/(13303:13305): Carpincho creado correctamente con el pid: 0
+[INFO] 00:39:01:704 Carpincho/(13303:13304): NUEVO CARPINCHO
+[INFO] 00:39:03:700 Carpincho/(13303:13305): CALL_IO a hierbitas
+[INFO] 00:39:04:721 Carpincho/(13303:13305): RESPUESA DE IO RECIBIDA 0 
+[INFO] 00:39:04:734 Carpincho/(13303:13305): Se realizó el CALL IO correctamente
+[INFO] 00:39:06:737 Carpincho/(13303:13305): CALL_IO a laguna
+[INFO] 00:39:06:764 Carpincho/(13303:13305): RESPUESA DE IO RECIBIDA 0 
+[INFO] 00:39:06:765 Carpincho/(13303:13305): Se realizó el CALL IO correctamente
+[INFO] 00:39:08:765 Carpincho/(13303:13305): MATE_CLOSE
+[INFO] 00:39:08:765 Carpincho/(13303:13305): MATE_CLOSE: mensaje enviado a kernel
+[INFO] 00:39:08:765 Carpincho/(13303:13305): libero memoria
+[INFO] 00:39:08:765 Carpincho/(13303:13305): libero memoria
+[INFO] 00:39:08:765 Carpincho/(13303:13305): Carpincho eliminado
+[INFO] 00:39:08:766 Carpincho/(13303:13304): Carpincho creado correctamente con el pid: 1
+[INFO] 00:39:10:767 Carpincho/(13303:13304): CALL_IO a hierbitas
+[INFO] 00:39:11:768 Carpincho/(13303:13304): RESPUESA DE IO RECIBIDA 0 
+[INFO] 00:39:11:773 Carpincho/(13303:13304): Se realizó el CALL IO correctamente
+[INFO] 00:39:13:774 Carpincho/(13303:13304): CALL_IO a laguna
+[INFO] 00:39:13:802 Carpincho/(13303:13304): RESPUESA DE IO RECIBIDA 0 
+[INFO] 00:39:13:802 Carpincho/(13303:13304): Se realizó el CALL IO correctamente
+[INFO] 00:39:15:803 Carpincho/(13303:13304): MATE_CLOSE
+[INFO] 00:39:15:803 Carpincho/(13303:13304): MATE_CLOSE: mensaje enviado a kernel
+[INFO] 00:39:15:803 Carpincho/(13303:13304): libero memoria
+[INFO] 00:39:15:803 Carpincho/(13303:13304): libero memoria
+[INFO] 00:39:15:803 Carpincho/(13303:13304): Carpincho eliminado
+[INFO] 00:41:17:248 Carpincho/(13555:13557): Log creado
+[INFO] 00:41:17:249 Carpincho/(13555:13557): Esperando respuesta de servidor
+[INFO] 00:41:17:249 Carpincho/(13555:13556): Log creado
+[INFO] 00:41:17:249 Carpincho/(13555:13556): Esperando respuesta de servidor
+[INFO] 00:41:17:253 Carpincho/(13555:13557): NUEVO CARPINCHO
+[INFO] 00:41:17:259 Carpincho/(13555:13556): NUEVO CARPINCHO
+[INFO] 00:41:17:293 Carpincho/(13555:13557): Carpincho creado correctamente con el pid: 0
+[INFO] 00:41:19:293 Carpincho/(13555:13557): CALL_IO a hierbitas
+[INFO] 00:41:20:296 Carpincho/(13555:13557): RESPUESA DE IO RECIBIDA 0 
+[INFO] 00:41:20:297 Carpincho/(13555:13557): Se realizó el CALL IO correctamente
+[INFO] 00:41:22:297 Carpincho/(13555:13557): CALL_IO a laguna
+[INFO] 00:41:22:324 Carpincho/(13555:13557): RESPUESA DE IO RECIBIDA 0 
+[INFO] 00:41:22:325 Carpincho/(13555:13557): Se realizó el CALL IO correctamente
+[INFO] 00:41:24:325 Carpincho/(13555:13557): MATE_CLOSE
+[INFO] 00:41:24:325 Carpincho/(13555:13557): MATE_CLOSE: mensaje enviado a kernel
+[INFO] 00:41:24:325 Carpincho/(13555:13557): libero memoria
+[INFO] 00:41:24:326 Carpincho/(13555:13557): libero memoria
+[INFO] 00:41:24:326 Carpincho/(13555:13557): Carpincho eliminado
+[INFO] 00:41:24:333 Carpincho/(13555:13556): Carpincho creado correctamente con el pid: 1
+[INFO] 00:41:26:333 Carpincho/(13555:13556): CALL_IO a hierbitas
+[INFO] 00:41:27:341 Carpincho/(13555:13556): RESPUESA DE IO RECIBIDA 0 
+[INFO] 00:41:27:342 Carpincho/(13555:13556): Se realizó el CALL IO correctamente
+[INFO] 00:41:29:349 Carpincho/(13555:13556): CALL_IO a laguna
+[INFO] 00:41:29:377 Carpincho/(13555:13556): RESPUESA DE IO RECIBIDA 0 
+[INFO] 00:41:29:383 Carpincho/(13555:13556): Se realizó el CALL IO correctamente
+[INFO] 00:41:31:384 Carpincho/(13555:13556): MATE_CLOSE
+[INFO] 00:41:31:384 Carpincho/(13555:13556): MATE_CLOSE: mensaje enviado a kernel
+[INFO] 00:41:31:384 Carpincho/(13555:13556): libero memoria
+[INFO] 00:41:31:384 Carpincho/(13555:13556): libero memoria
+[INFO] 00:41:31:384 Carpincho/(13555:13556): Carpincho eliminado
+[INFO] 00:43:10:382 Carpincho/(13836:13838): Log creado
+[INFO] 00:43:10:382 Carpincho/(13836:13838): Esperando respuesta de servidor
+[INFO] 00:43:10:382 Carpincho/(13836:13837): Log creado
+[INFO] 00:43:10:383 Carpincho/(13836:13837): Esperando respuesta de servidor
+[INFO] 00:43:10:386 Carpincho/(13836:13838): NUEVO CARPINCHO
+[INFO] 00:43:10:389 Carpincho/(13836:13837): NUEVO CARPINCHO
+[INFO] 00:43:10:424 Carpincho/(13836:13838): Carpincho creado correctamente con el pid: 0
+[INFO] 00:43:12:425 Carpincho/(13836:13838): CALL_IO a hierbitas
+[INFO] 00:43:13:426 Carpincho/(13836:13838): RESPUESA DE IO RECIBIDA 0 
+[INFO] 00:43:13:428 Carpincho/(13836:13838): Se realizó el CALL IO correctamente
+[INFO] 00:43:15:428 Carpincho/(13836:13838): CALL_IO a laguna
+[INFO] 00:43:15:456 Carpincho/(13836:13838): RESPUESA DE IO RECIBIDA 0 
+[INFO] 00:43:15:456 Carpincho/(13836:13838): Se realizó el CALL IO correctamente
+[INFO] 00:43:17:457 Carpincho/(13836:13838): MATE_CLOSE
+[INFO] 00:43:17:457 Carpincho/(13836:13838): MATE_CLOSE: mensaje enviado a kernel
+[INFO] 00:43:17:457 Carpincho/(13836:13838): libero memoria
+[INFO] 00:43:17:457 Carpincho/(13836:13838): libero memoria
+[INFO] 00:43:17:457 Carpincho/(13836:13838): Carpincho eliminado
+[INFO] 00:43:17:459 Carpincho/(13836:13837): Carpincho creado correctamente con el pid: 1
+[INFO] 00:43:19:459 Carpincho/(13836:13837): CALL_IO a hierbitas
+[INFO] 00:43:20:473 Carpincho/(13836:13837): RESPUESA DE IO RECIBIDA 0 
+[INFO] 00:43:20:509 Carpincho/(13836:13837): Se realizó el CALL IO correctamente
+[INFO] 00:43:22:510 Carpincho/(13836:13837): CALL_IO a laguna
+[INFO] 00:43:22:536 Carpincho/(13836:13837): RESPUESA DE IO RECIBIDA 0 
+[INFO] 00:43:22:537 Carpincho/(13836:13837): Se realizó el CALL IO correctamente
+[INFO] 00:43:24:537 Carpincho/(13836:13837): MATE_CLOSE
+[INFO] 00:43:24:537 Carpincho/(13836:13837): MATE_CLOSE: mensaje enviado a kernel
+[INFO] 00:43:24:537 Carpincho/(13836:13837): libero memoria
+[INFO] 00:43:24:537 Carpincho/(13836:13837): libero memoria
+[INFO] 00:43:24:537 Carpincho/(13836:13837): Carpincho eliminado
+[INFO] 00:53:53:090 Carpincho/(14229:14231): Log creado
+[INFO] 00:53:53:090 Carpincho/(14229:14231): Esperando respuesta de servidor
+[INFO] 00:53:53:091 Carpincho/(14229:14230): Log creado
+[INFO] 00:53:53:091 Carpincho/(14229:14230): Esperando respuesta de servidor
+[INFO] 00:53:53:095 Carpincho/(14229:14231): NUEVO CARPINCHO
+[INFO] 00:53:53:101 Carpincho/(14229:14230): NUEVO CARPINCHO
+[INFO] 00:53:53:136 Carpincho/(14229:14231): Carpincho creado correctamente con el pid: 0
+[INFO] 00:53:55:136 Carpincho/(14229:14231): CALL_IO a hierbitas
+[INFO] 00:53:56:137 Carpincho/(14229:14231): RESPUESA DE IO RECIBIDA 0 
+[INFO] 00:53:56:139 Carpincho/(14229:14231): Se realizó el CALL IO correctamente
+[INFO] 00:53:58:139 Carpincho/(14229:14231): CALL_IO a laguna
+[INFO] 00:53:58:166 Carpincho/(14229:14231): RESPUESA DE IO RECIBIDA 0 
+[INFO] 00:53:58:166 Carpincho/(14229:14231): Se realizó el CALL IO correctamente
+[INFO] 00:54:00:167 Carpincho/(14229:14231): MATE_CLOSE
+[INFO] 00:54:00:167 Carpincho/(14229:14231): MATE_CLOSE: mensaje enviado a kernel
+[INFO] 00:54:00:167 Carpincho/(14229:14231): libero memoria
+[INFO] 00:54:00:168 Carpincho/(14229:14231): libero memoria
+[INFO] 00:54:00:168 Carpincho/(14229:14231): Carpincho eliminado
+[INFO] 00:54:00:175 Carpincho/(14229:14230): Carpincho creado correctamente con el pid: 1
+[INFO] 00:54:02:176 Carpincho/(14229:14230): CALL_IO a hierbitas
+[INFO] 00:54:03:178 Carpincho/(14229:14230): RESPUESA DE IO RECIBIDA 0 
+[INFO] 00:54:03:190 Carpincho/(14229:14230): Se realizó el CALL IO correctamente
+[INFO] 00:54:05:191 Carpincho/(14229:14230): CALL_IO a laguna
+[INFO] 00:54:05:281 Carpincho/(14229:14230): RESPUESA DE IO RECIBIDA 0 
+[INFO] 00:54:05:284 Carpincho/(14229:14230): Se realizó el CALL IO correctamente
+[INFO] 00:54:07:284 Carpincho/(14229:14230): MATE_CLOSE
+[INFO] 00:54:07:284 Carpincho/(14229:14230): MATE_CLOSE: mensaje enviado a kernel
+[INFO] 00:54:07:284 Carpincho/(14229:14230): libero memoria
+[INFO] 00:54:07:284 Carpincho/(14229:14230): libero memoria
+[INFO] 00:54:07:284 Carpincho/(14229:14230): Carpincho eliminado
+[INFO] 00:55:18:009 Carpincho/(14459:14461): Log creado
+[INFO] 00:55:18:010 Carpincho/(14459:14461): Esperando respuesta de servidor
+[INFO] 00:55:18:010 Carpincho/(14459:14460): Log creado
+[INFO] 00:55:18:010 Carpincho/(14459:14460): Esperando respuesta de servidor
+[INFO] 00:55:18:014 Carpincho/(14459:14461): NUEVO CARPINCHO
+[INFO] 00:55:18:020 Carpincho/(14459:14460): NUEVO CARPINCHO
+[INFO] 00:55:18:052 Carpincho/(14459:14461): Carpincho creado correctamente con el pid: 0
+[INFO] 00:55:20:053 Carpincho/(14459:14461): CALL_IO a hierbitas
+[INFO] 00:55:21:054 Carpincho/(14459:14461): RESPUESA DE IO RECIBIDA 0 
+[INFO] 00:55:21:056 Carpincho/(14459:14461): Se realizó el CALL IO correctamente
+[INFO] 00:55:23:060 Carpincho/(14459:14461): CALL_IO a laguna
+[INFO] 00:55:23:088 Carpincho/(14459:14461): RESPUESA DE IO RECIBIDA 0 
+[INFO] 00:55:23:089 Carpincho/(14459:14461): Se realizó el CALL IO correctamente
+[INFO] 00:55:25:090 Carpincho/(14459:14461): MATE_CLOSE
+[INFO] 00:55:25:091 Carpincho/(14459:14461): MATE_CLOSE: mensaje enviado a kernel
+[INFO] 00:55:25:091 Carpincho/(14459:14461): libero memoria
+[INFO] 00:55:25:091 Carpincho/(14459:14461): libero memoria
+[INFO] 00:55:25:091 Carpincho/(14459:14461): Carpincho eliminado
+[INFO] 00:55:25:094 Carpincho/(14459:14460): Carpincho creado correctamente con el pid: 1
+[INFO] 00:55:27:095 Carpincho/(14459:14460): CALL_IO a hierbitas
+[INFO] 00:55:28:096 Carpincho/(14459:14460): RESPUESA DE IO RECIBIDA 0 
+[INFO] 00:55:28:096 Carpincho/(14459:14460): Se realizó el CALL IO correctamente
+[INFO] 00:55:30:096 Carpincho/(14459:14460): CALL_IO a laguna
+[INFO] 00:55:30:123 Carpincho/(14459:14460): RESPUESA DE IO RECIBIDA 0 
+[INFO] 00:55:30:124 Carpincho/(14459:14460): Se realizó el CALL IO correctamente
+[INFO] 00:55:32:124 Carpincho/(14459:14460): MATE_CLOSE
+[INFO] 00:55:32:124 Carpincho/(14459:14460): MATE_CLOSE: mensaje enviado a kernel
+[INFO] 00:55:32:124 Carpincho/(14459:14460): libero memoria
+[INFO] 00:55:32:124 Carpincho/(14459:14460): libero memoria
+[INFO] 00:55:32:124 Carpincho/(14459:14460): Carpincho eliminado
+[INFO] 00:57:57:691 Carpincho/(14796:14798): Log creado
+[INFO] 00:57:57:692 Carpincho/(14796:14798): Esperando respuesta de servidor
+[INFO] 00:57:57:693 Carpincho/(14796:14797): Log creado
+[INFO] 00:57:57:694 Carpincho/(14796:14797): Esperando respuesta de servidor
+[INFO] 00:57:57:710 Carpincho/(14796:14798): NUEVO CARPINCHO
+[INFO] 00:57:57:710 Carpincho/(14796:14797): NUEVO CARPINCHO
+[INFO] 00:57:57:748 Carpincho/(14796:14798): Carpincho creado correctamente con el pid: 0
+[INFO] 00:57:59:748 Carpincho/(14796:14798): CALL_IO a hierbitas
+[INFO] 00:58:00:753 Carpincho/(14796:14798): RESPUESA DE IO RECIBIDA 0 
+[INFO] 00:58:00:757 Carpincho/(14796:14798): Se realizó el CALL IO correctamente
+[INFO] 00:58:02:757 Carpincho/(14796:14798): CALL_IO a laguna
+[INFO] 00:58:02:789 Carpincho/(14796:14798): RESPUESA DE IO RECIBIDA 0 
+[INFO] 00:58:02:791 Carpincho/(14796:14798): Se realizó el CALL IO correctamente
+[INFO] 00:58:04:792 Carpincho/(14796:14798): MATE_CLOSE
+[INFO] 00:58:04:792 Carpincho/(14796:14798): MATE_CLOSE: mensaje enviado a kernel
+[INFO] 00:58:04:792 Carpincho/(14796:14798): libero memoria
+[INFO] 00:58:04:792 Carpincho/(14796:14798): libero memoria
+[INFO] 00:58:04:792 Carpincho/(14796:14798): Carpincho eliminado
+[INFO] 00:58:04:794 Carpincho/(14796:14797): Carpincho creado correctamente con el pid: 1
+[INFO] 00:58:06:795 Carpincho/(14796:14797): CALL_IO a hierbitas
+[INFO] 00:58:07:799 Carpincho/(14796:14797): RESPUESA DE IO RECIBIDA 0 
+[INFO] 00:58:07:801 Carpincho/(14796:14797): Se realizó el CALL IO correctamente
+[INFO] 00:58:09:801 Carpincho/(14796:14797): CALL_IO a laguna
+[INFO] 00:58:09:828 Carpincho/(14796:14797): RESPUESA DE IO RECIBIDA 0 
+[INFO] 00:58:09:829 Carpincho/(14796:14797): Se realizó el CALL IO correctamente
+[INFO] 00:58:11:829 Carpincho/(14796:14797): MATE_CLOSE
+[INFO] 00:58:11:829 Carpincho/(14796:14797): MATE_CLOSE: mensaje enviado a kernel
+[INFO] 00:58:11:829 Carpincho/(14796:14797): libero memoria
+[INFO] 00:58:11:829 Carpincho/(14796:14797): libero memoria
+[INFO] 00:58:11:829 Carpincho/(14796:14797): Carpincho eliminado
+[INFO] 00:59:55:826 Carpincho/(15038:15040): Log creado
+[INFO] 00:59:55:826 Carpincho/(15038:15040): Esperando respuesta de servidor
+[INFO] 00:59:55:826 Carpincho/(15038:15039): Log creado
+[INFO] 00:59:55:827 Carpincho/(15038:15039): Esperando respuesta de servidor
+[INFO] 00:59:55:828 Carpincho/(15038:15040): NUEVO CARPINCHO
+[INFO] 00:59:55:838 Carpincho/(15038:15039): NUEVO CARPINCHO
+[INFO] 00:59:55:876 Carpincho/(15038:15040): Carpincho creado correctamente con el pid: 0
+[INFO] 00:59:57:876 Carpincho/(15038:15040): CALL_IO a hierbitas
+[INFO] 00:59:58:879 Carpincho/(15038:15040): RESPUESA DE IO RECIBIDA 0 
+[INFO] 00:59:58:882 Carpincho/(15038:15040): Se realizó el CALL IO correctamente
+[INFO] 01:00:00:882 Carpincho/(15038:15040): CALL_IO a laguna
+[INFO] 01:00:00:908 Carpincho/(15038:15040): RESPUESA DE IO RECIBIDA 0 
+[INFO] 01:00:00:909 Carpincho/(15038:15040): Se realizó el CALL IO correctamente
+[INFO] 01:00:02:909 Carpincho/(15038:15040): MATE_CLOSE
+[INFO] 01:00:02:909 Carpincho/(15038:15040): MATE_CLOSE: mensaje enviado a kernel
+[INFO] 01:00:02:909 Carpincho/(15038:15040): libero memoria
+[INFO] 01:00:02:909 Carpincho/(15038:15040): libero memoria
+[INFO] 01:00:02:909 Carpincho/(15038:15040): Carpincho eliminado
+[INFO] 01:00:02:911 Carpincho/(15038:15039): Carpincho creado correctamente con el pid: 1
+[INFO] 01:00:04:911 Carpincho/(15038:15039): CALL_IO a hierbitas
+[INFO] 01:00:05:915 Carpincho/(15038:15039): RESPUESA DE IO RECIBIDA 0 
+[INFO] 01:00:05:916 Carpincho/(15038:15039): Se realizó el CALL IO correctamente
+[INFO] 01:00:07:917 Carpincho/(15038:15039): CALL_IO a laguna
+[INFO] 01:00:07:942 Carpincho/(15038:15039): RESPUESA DE IO RECIBIDA 0 
+[INFO] 01:00:07:943 Carpincho/(15038:15039): Se realizó el CALL IO correctamente
+[INFO] 01:00:09:944 Carpincho/(15038:15039): MATE_CLOSE
+[INFO] 01:00:09:944 Carpincho/(15038:15039): MATE_CLOSE: mensaje enviado a kernel
+[INFO] 01:00:09:944 Carpincho/(15038:15039): libero memoria
+[INFO] 01:00:09:944 Carpincho/(15038:15039): libero memoria
+[INFO] 01:00:09:944 Carpincho/(15038:15039): Carpincho eliminado
+[INFO] 01:02:11:293 Carpincho/(15171:15173): Log creado
+[INFO] 01:02:11:293 Carpincho/(15171:15173): Esperando respuesta de servidor
+[INFO] 01:02:19:189 Carpincho/(15314:15316): Log creado
+[INFO] 01:02:19:189 Carpincho/(15314:15316): Esperando respuesta de servidor
+[INFO] 01:02:19:190 Carpincho/(15314:15315): Log creado
+[INFO] 01:02:19:190 Carpincho/(15314:15315): Esperando respuesta de servidor
+[INFO] 01:02:19:191 Carpincho/(15314:15316): NUEVO CARPINCHO
+[INFO] 01:02:19:203 Carpincho/(15314:15315): NUEVO CARPINCHO
+[INFO] 01:02:19:241 Carpincho/(15314:15316): Carpincho creado correctamente con el pid: 0
+[INFO] 01:02:21:241 Carpincho/(15314:15316): CALL_IO a hierbitas
+[INFO] 01:02:21:242 Carpincho/(15314:15315): Carpincho creado correctamente con el pid: 1
+[INFO] 01:02:22:243 Carpincho/(15314:15316): RESPUESA DE IO RECIBIDA 0 
+[INFO] 01:02:23:242 Carpincho/(15314:15315): CALL_IO a hierbitas
+[INFO] 01:02:23:244 Carpincho/(15314:15316): Se realizó el CALL IO correctamente
+[INFO] 01:02:24:244 Carpincho/(15314:15315): RESPUESA DE IO RECIBIDA 0 
+[INFO] 01:02:25:244 Carpincho/(15314:15316): CALL_IO a laguna
+[INFO] 01:02:25:249 Carpincho/(15314:15315): Se realizó el CALL IO correctamente
+[INFO] 01:02:25:280 Carpincho/(15314:15316): RESPUESA DE IO RECIBIDA 0 
+[INFO] 01:02:27:249 Carpincho/(15314:15315): CALL_IO a laguna
+[INFO] 01:02:27:293 Carpincho/(15314:15316): Se realizó el CALL IO correctamente
+[INFO] 01:02:27:314 Carpincho/(15314:15315): RESPUESA DE IO RECIBIDA 0 
+[INFO] 01:02:29:294 Carpincho/(15314:15316): MATE_CLOSE
+[INFO] 01:02:29:294 Carpincho/(15314:15316): MATE_CLOSE: mensaje enviado a kernel
+[INFO] 01:02:29:294 Carpincho/(15314:15316): libero memoria
+[INFO] 01:02:29:294 Carpincho/(15314:15316): libero memoria
+[INFO] 01:02:29:294 Carpincho/(15314:15316): Carpincho eliminado
+[INFO] 01:02:29:295 Carpincho/(15314:15315): Se realizó el CALL IO correctamente
+[INFO] 01:02:31:295 Carpincho/(15314:15315): MATE_CLOSE
+[INFO] 01:02:31:296 Carpincho/(15314:15315): MATE_CLOSE: mensaje enviado a kernel
+[INFO] 01:02:31:296 Carpincho/(15314:15315): libero memoria
+[INFO] 01:02:31:296 Carpincho/(15314:15315): libero memoria
+[INFO] 01:02:31:296 Carpincho/(15314:15315): Carpincho eliminado
+[INFO] 01:06:05:541 Carpincho/(15565:15567): Log creado
+[INFO] 01:06:05:541 Carpincho/(15565:15567): Esperando respuesta de servidor
+[INFO] 01:06:05:541 Carpincho/(15565:15566): Log creado
+[INFO] 01:06:05:541 Carpincho/(15565:15566): Esperando respuesta de servidor
+[INFO] 01:06:05:548 Carpincho/(15565:15567): NUEVO CARPINCHO
+[INFO] 01:06:05:549 Carpincho/(15565:15566): NUEVO CARPINCHO
+[INFO] 01:06:05:588 Carpincho/(15565:15567): Carpincho creado correctamente con el pid: 2
+[INFO] 01:06:07:588 Carpincho/(15565:15567): CALL_IO a hierbitas
+[INFO] 01:06:07:590 Carpincho/(15565:15566): Carpincho creado correctamente con el pid: 3
+[INFO] 01:06:08:590 Carpincho/(15565:15567): RESPUESA DE IO RECIBIDA 0 
+[INFO] 01:06:09:590 Carpincho/(15565:15566): CALL_IO a hierbitas
+[INFO] 01:06:09:593 Carpincho/(15565:15567): Se realizó el CALL IO correctamente
+[INFO] 01:06:10:594 Carpincho/(15565:15566): RESPUESA DE IO RECIBIDA 0 
+[INFO] 01:06:11:594 Carpincho/(15565:15567): CALL_IO a laguna
+[INFO] 01:06:11:598 Carpincho/(15565:15566): Se realizó el CALL IO correctamente
+[INFO] 01:06:11:626 Carpincho/(15565:15567): RESPUESA DE IO RECIBIDA 0 
+[INFO] 01:06:13:600 Carpincho/(15565:15566): CALL_IO a laguna
+[INFO] 01:06:13:602 Carpincho/(15565:15567): Se realizó el CALL IO correctamente
+[INFO] 01:06:13:629 Carpincho/(15565:15566): RESPUESA DE IO RECIBIDA 0 
+[INFO] 01:06:15:602 Carpincho/(15565:15567): MATE_CLOSE
+[INFO] 01:06:15:603 Carpincho/(15565:15567): MATE_CLOSE: mensaje enviado a kernel
+[INFO] 01:06:15:603 Carpincho/(15565:15567): libero memoria
+[INFO] 01:06:15:603 Carpincho/(15565:15567): libero memoria
+[INFO] 01:06:15:603 Carpincho/(15565:15567): Carpincho eliminado
+[INFO] 01:06:15:605 Carpincho/(15565:15566): Se realizó el CALL IO correctamente
+[INFO] 01:06:17:608 Carpincho/(15565:15566): MATE_CLOSE
+[INFO] 01:06:17:608 Carpincho/(15565:15566): MATE_CLOSE: mensaje enviado a kernel
+[INFO] 01:06:17:608 Carpincho/(15565:15566): libero memoria
+[INFO] 01:06:17:608 Carpincho/(15565:15566): libero memoria
+[INFO] 01:06:17:608 Carpincho/(15565:15566): Carpincho eliminado
+[INFO] 01:08:25:969 Carpincho/(15761:15766): Log creado
+[INFO] 01:08:25:970 Carpincho/(15761:15765): Log creado
+[INFO] 01:08:25:970 Carpincho/(15761:15765): Esperando respuesta de servidor
+[INFO] 01:08:25:970 Carpincho/(15761:15766): Esperando respuesta de servidor
+[INFO] 01:08:25:970 Carpincho/(15761:15764): Log creado
+[INFO] 01:08:25:970 Carpincho/(15761:15764): Esperando respuesta de servidor
+[INFO] 01:08:25:970 Carpincho/(15761:15763): Log creado
+[INFO] 01:08:25:970 Carpincho/(15761:15763): Esperando respuesta de servidor
+[INFO] 01:08:25:972 Carpincho/(15761:15766): NUEVO CARPINCHO
+[INFO] 01:08:25:978 Carpincho/(15761:15765): NUEVO CARPINCHO
+[INFO] 01:08:25:979 Carpincho/(15761:15762): Log creado
+[INFO] 01:08:25:979 Carpincho/(15761:15762): Esperando respuesta de servidor
+[INFO] 01:08:25:981 Carpincho/(15761:15764): NUEVO CARPINCHO
+[INFO] 01:08:25:982 Carpincho/(15761:15763): NUEVO CARPINCHO
+[INFO] 01:08:25:985 Carpincho/(15761:15762): NUEVO CARPINCHO
+[INFO] 01:08:26:016 Carpincho/(15761:15766): Carpincho creado correctamente con el pid: 4
+[INFO] 01:08:28:017 Carpincho/(15761:15766): CALL_IO a hierbitas
+[INFO] 01:08:28:019 Carpincho/(15761:15765): Carpincho creado correctamente con el pid: 5
+[INFO] 01:08:29:020 Carpincho/(15761:15766): RESPUESA DE IO RECIBIDA 0 
+[INFO] 01:08:30:019 Carpincho/(15761:15765): CALL_IO a hierbitas
+[INFO] 01:08:30:021 Carpincho/(15761:15766): Se realizó el CALL IO correctamente
+[INFO] 01:08:31:021 Carpincho/(15761:15765): RESPUESA DE IO RECIBIDA 0 
+[INFO] 01:08:32:021 Carpincho/(15761:15766): CALL_IO a laguna
+[INFO] 01:08:32:022 Carpincho/(15761:15765): Se realizó el CALL IO correctamente
+[INFO] 01:08:32:048 Carpincho/(15761:15766): RESPUESA DE IO RECIBIDA 0 
+[INFO] 01:08:34:022 Carpincho/(15761:15765): CALL_IO a laguna
+[INFO] 01:08:34:024 Carpincho/(15761:15766): Se realizó el CALL IO correctamente
+[INFO] 01:08:34:049 Carpincho/(15761:15765): RESPUESA DE IO RECIBIDA 0 
+[INFO] 01:08:36:024 Carpincho/(15761:15766): MATE_CLOSE
+[INFO] 01:08:36:024 Carpincho/(15761:15766): MATE_CLOSE: mensaje enviado a kernel
+[INFO] 01:08:36:024 Carpincho/(15761:15766): libero memoria
+[INFO] 01:08:36:024 Carpincho/(15761:15766): libero memoria
+[INFO] 01:08:36:024 Carpincho/(15761:15766): Carpincho eliminado
+[INFO] 01:08:36:026 Carpincho/(15761:15765): Se realizó el CALL IO correctamente
+[INFO] 01:08:38:027 Carpincho/(15761:15765): MATE_CLOSE
+[INFO] 01:08:38:027 Carpincho/(15761:15765): MATE_CLOSE: mensaje enviado a kernel
+[INFO] 01:08:38:027 Carpincho/(15761:15765): libero memoria
+[INFO] 01:08:38:027 Carpincho/(15761:15765): libero memoria
+[INFO] 01:08:38:027 Carpincho/(15761:15765): Carpincho eliminado
+[INFO] 01:08:38:028 Carpincho/(15761:15764): Carpincho creado correctamente con el pid: 6
+[INFO] 01:08:40:029 Carpincho/(15761:15764): CALL_IO a hierbitas
+[INFO] 01:08:40:030 Carpincho/(15761:15763): Carpincho creado correctamente con el pid: 7
+[INFO] 01:08:41:030 Carpincho/(15761:15764): RESPUESA DE IO RECIBIDA 0 
+[INFO] 01:08:42:030 Carpincho/(15761:15763): CALL_IO a hierbitas
+[INFO] 01:08:42:032 Carpincho/(15761:15764): Se realizó el CALL IO correctamente
+[INFO] 01:08:43:032 Carpincho/(15761:15763): RESPUESA DE IO RECIBIDA 0 
+[INFO] 01:08:44:032 Carpincho/(15761:15764): CALL_IO a laguna
+[INFO] 01:08:44:033 Carpincho/(15761:15763): Se realizó el CALL IO correctamente
+[INFO] 01:08:44:059 Carpincho/(15761:15764): RESPUESA DE IO RECIBIDA 0 
+[INFO] 01:08:46:034 Carpincho/(15761:15763): CALL_IO a laguna
+[INFO] 01:08:46:035 Carpincho/(15761:15764): Se realizó el CALL IO correctamente
+[INFO] 01:08:46:061 Carpincho/(15761:15763): RESPUESA DE IO RECIBIDA 0 
+[INFO] 01:08:48:036 Carpincho/(15761:15764): MATE_CLOSE
+[INFO] 01:08:48:037 Carpincho/(15761:15764): MATE_CLOSE: mensaje enviado a kernel
+[INFO] 01:08:48:037 Carpincho/(15761:15764): libero memoria
+[INFO] 01:08:48:037 Carpincho/(15761:15764): libero memoria
+[INFO] 01:08:48:037 Carpincho/(15761:15764): Carpincho eliminado
+[INFO] 01:08:48:041 Carpincho/(15761:15763): Se realizó el CALL IO correctamente
+[INFO] 01:08:50:043 Carpincho/(15761:15763): MATE_CLOSE
+[INFO] 01:08:50:044 Carpincho/(15761:15763): MATE_CLOSE: mensaje enviado a kernel
+[INFO] 01:08:50:044 Carpincho/(15761:15763): libero memoria
+[INFO] 01:08:50:044 Carpincho/(15761:15763): libero memoria
+[INFO] 01:08:50:044 Carpincho/(15761:15763): Carpincho eliminado
+[INFO] 01:08:50:045 Carpincho/(15761:15762): Carpincho creado correctamente con el pid: 8
+[INFO] 01:08:52:046 Carpincho/(15761:15762): CALL_IO a hierbitas
+[INFO] 01:08:53:047 Carpincho/(15761:15762): RESPUESA DE IO RECIBIDA 0 
+[INFO] 01:08:53:048 Carpincho/(15761:15762): Se realizó el CALL IO correctamente
+[INFO] 01:08:55:049 Carpincho/(15761:15762): CALL_IO a laguna
+[INFO] 01:08:55:078 Carpincho/(15761:15762): RESPUESA DE IO RECIBIDA 0 
+[INFO] 01:08:55:078 Carpincho/(15761:15762): Se realizó el CALL IO correctamente
+[INFO] 01:08:57:079 Carpincho/(15761:15762): MATE_CLOSE
+[INFO] 01:08:57:079 Carpincho/(15761:15762): MATE_CLOSE: mensaje enviado a kernel
+[INFO] 01:08:57:079 Carpincho/(15761:15762): libero memoria
+[INFO] 01:08:57:079 Carpincho/(15761:15762): libero memoria
+[INFO] 01:08:57:079 Carpincho/(15761:15762): Carpincho eliminado

@@ -3,15 +3,15 @@
 #include <matelib/matelib.h>
 #include <pthread.h>
 
-#define CANT_CARPINCHOS 4
+#define CANT_CARPINCHOS 5
 int main(int argc, char* argv[]) {
 
-   if ( argc>1 && (strcmp(argv[1], "memoria")== 0)) memoria_carpincho();
+  // if ( argc>1 && (strcmp(argv[1], "memoria")== 0)) memoria_carpincho();
 
    pthread_t hilos[CANT_CARPINCHOS];
    printf("entro al main carpincho\n");
    for (int i=0; i < CANT_CARPINCHOS; i++) {
-      pthread_create(&hilos[i], NULL, (void*)carpincho_comportamiento_memoria, NULL);
+      pthread_create(&hilos[i], NULL, (void*)carpincho_comportamiento, NULL);
    }
    sleep(2);
    //pthread_t hilo;
@@ -30,7 +30,7 @@ void carpincho_comportamiento(void *arg)
    printf("creo instancia\n");
    int devolvio = mate_init(ref, "cfg/carpincho.config");
    printf("devolvio %d\n", devolvio);
-
+/*
    printf("VOY A MANADAR UN SEM INIT\n");
    devolvio = mate_sem_init(ref, "SEM_HELLO", 0);
 
@@ -50,8 +50,13 @@ void carpincho_comportamiento(void *arg)
 sleep(5);
       devolvio = mate_sem_post(ref, "SEM_BYE");
    printf("devolvio sem post: %d\n", devolvio);
-
-
+*/sleep(2); //procesador
+ devolvio = mate_call_io(ref, "hierbitas", "hi");// seva a io
+   printf("TERMINO IO: hierbitas carpincho %d\n", ((mate_inner_structure *)ref->group_info)->pid);
+sleep(2);//porcesador
+ devolvio =  mate_call_io(ref, "laguna", "hi");
+ printf("TERMINO IO: laguna carpincho %d con %d\n", ((mate_inner_structure *)ref->group_info)->pid, devolvio);
+sleep(2);
    printf("VOY A cerrar instancia\n");
    mate_close(ref);
 
