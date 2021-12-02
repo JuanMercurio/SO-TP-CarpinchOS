@@ -85,13 +85,14 @@ int sem_kernel_post(char *nombre)
    if(sem!=NULL){ 
       sem_wait(&mutex_lista_sem_kernel);
       sem->val ++;
-      if(sem->val >= 0 && !queue_is_empty(sem->bloqueados))
+      if(!queue_is_empty(sem->bloqueados))
       {
       bloqueado_a_listo(sem->bloqueados, &sem->mutex_cola);
       }
    
       sem_post(&mutex_lista_sem_kernel);
-      log_info(logger, "SEM POST EXITOSO a semaforo %s", sem->id);
+      log_info(logger, "SEM POST EXITOSO a semaforo %s VALOR DEL SEMAFORO ============= %d", sem->id, sem->val);
+      printf("SEM POST EXITOSO a semaforo %s VALOR DEL SEMAFORO ============= %d\n", sem->id, sem->val);
       return 0;
    }
   else{
@@ -240,17 +241,18 @@ void gestor_cola_io(void *datos){
    while(!terminar){
    log_info(logger,"IO %s lista para recibir carpinchos", io->id);
    sem_wait(&io->cola_con_elementos);
-   carpincho = queue_pop(io->bloqueados);
+   sem_wait(&io->mutex_io);
+   carpincho = (t_pcb*) queue_pop(io->bloqueados);
    sem_post(&io->mutex_io);
    printf("GESTOR IO: carpincho PID %d en IO %s\n", carpincho->pid, io->id);
-   usleep(io->retardo);
-   
+   sleep(io->retardo * 0.001);
    enviar_int(carpincho->fd_cliente, 0);
    sem_wait(&mutex_cola_ready);
    queue_push(cola_ready, (void*) carpincho);
    sem_post(&mutex_cola_ready);
    carpincho->tiempo.time_stamp_inicio = temporal_get_string_time("%H:%M:%S:%MS");
    sem_post(&cola_ready_con_elementos);
+   carpinchos_bloqueados --;
     printf("GESTOR IO: carpincho PID %d TERMINO IO %s\n", carpincho->pid, io->id);
    log_info(logger,"GESTOR IO: desbloqueando carpincho PID %d", carpincho->pid);
 

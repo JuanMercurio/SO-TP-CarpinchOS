@@ -75,10 +75,11 @@ int mate_sem_init(mate_instance *lib_ref, mate_sem_name sem, unsigned int value)
 
   //((mate_inner_structure *)lib_ref->group_info)->sem_instance = malloc(sizeof(sem_t));
   // sem_init(((mate_inner_structure *)lib_ref->group_info)->sem_instance, 0, value);
-
+log_info(logger, "Conectado con memoria. No se puede inicializar semáforo.");
   enviar_sem_init(sem, (int)value, ((mate_inner_structure *)lib_ref->group_info)->conexion, INIT_SEMAFORO); // codear fiuncion; pasar valor
+  log_info(logger, "envio sem init al kernel.");
   int respuesta = recibir_int(((mate_inner_structure *)lib_ref->group_info)->conexion);               // espera respuesta para continuar ejecutando condigo???
-
+log_info(logger, "recibio algo del kernel por sem init %d .", respuesta);
 return respuesta;
 }
 
@@ -121,7 +122,7 @@ int mate_sem_post(mate_instance *lib_ref, mate_sem_name sem)
 
   enviar_mensaje_y_cod_op(sem, ((mate_inner_structure *)lib_ref->group_info)->conexion, SEM_POST);
   int respuesta = recibir_int(((mate_inner_structure *)lib_ref->group_info)->conexion);
-  if (respuesta)
+  if (respuesta == 0)
   {
     log_info(logger, "Se realizó el POST correctamente");
   }
@@ -176,8 +177,9 @@ log_info(logger, "RESPUESA DE IO RECIBIDA %d ", respuesta);
 
 
   if (respuesta == 0)
-  {
-     recibir_mensaje(((mate_inner_structure *)lib_ref->group_info)->conexion);
+  {log_info(logger, "MATE IO ESPERANDO OK DEL PROCESADOR PARA SEGUIR carpincho %d\n\n", ((mate_inner_structure *)lib_ref->group_info)->pid);
+    char *espuesta = recibir_mensaje(((mate_inner_structure *)lib_ref->group_info)->conexion);
+    log_info(logger,"\n_____llego del procesador un %s para el caprincho %d\n\n", espuesta, ((mate_inner_structure *)lib_ref->group_info)->pid);
     log_info(logger, "Se realizó el CALL IO correctamente");
   }
   else

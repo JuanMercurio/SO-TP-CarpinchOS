@@ -139,7 +139,6 @@ void receptor(void *arg)
    {
       
       int operacion = recibir_operacion(cliente);
-         printf("RECEPTOR:recibi codigo de operacion %d\n", operacion);
       switch (operacion)
       {
 
@@ -148,27 +147,30 @@ void receptor(void *arg)
 
             carpincho = malloc(sizeof(t_pcb)); // aca no recibe la pcb en si , recibe un paquete con datos que habra que guardar en un t_pcb luego de desserializar lo que viene
             carpincho->fd_cliente = cliente;
-            carpincho->fd_memoria = crear_conexion(configuracion.IP_MEMORIA, configuracion.PUERTO_MEMORIA);
+            //carpincho->fd_memoria = crear_conexion(configuracion.IP_MEMORIA, configuracion.PUERTO_MEMORIA);
             carpincho->pid = crearID(&id_procesos);
+            carpincho->pid ++;
+             printf("RECEPTOR:-----------------recibi codigo de operacion %d el carpincho es %d\n", operacion, carpincho->pid);
             carpincho->estado ='N';
 
-           // enviar_cod_op_e_int(carpincho->fd_memoria, NEW_INSTANCE_KERNEL, carpincho->pid);
+            // enviar_cod_op_e_int(carpincho->fd_memoria, NEW_INSTANCE_KERNEL, carpincho->pid);
             //recibido = recibir_mensaje(carpincho->fd_memoria); //handshake
-          //  aux_int = recibir_int(carpincho->fd_memoria);
-       // printf("recibio de memoria un %d\n", aux_int);
+            //  aux_int = recibir_int(carpincho->fd_memoria);
+            // printf("recibio de memoria un %d\n", aux_int);
 
-          //  if (aux_int == 0) {
-               printf("carpincho creado\n");
-               enviar_int(cliente, carpincho->pid);
-               sem_wait(&mutex_cola_new);
-               queue_push(cola_new, (void*) carpincho); // pensando que el proceso queda trabado en mate init hasta que sea planificado
-               sem_post(&mutex_cola_new);
-               sem_post(&cola_new_con_elementos);
-               printf("encolo en new\n");
-               log_info(logger, "Se agregó el carpincho ID: %d a la cola de new", carpincho->pid);
-          //  } else {
+            //  if (aux_int == 0) {
+            //  printf("carpincho creado\n");
+             enviar_int(cliente, carpincho->pid);
+            sem_wait(&mutex_cola_new);
+            queue_push(cola_new, (void *)carpincho); // pensando que el proceso queda trabado en mate init hasta que sea planificado
+            sem_post(&mutex_cola_new);
+            sem_post(&cola_new_con_elementos);
+           
+            printf("RECEPTOR:0000000000000000000000000000000000000000000    carpincho ingrea a NEW %d\n", carpincho->pid);
+            log_info(logger, "Se agregó el carpincho ID: %d a la cola de new", carpincho->pid);
+            //  } else {
             //   enviar_mensaje(cliente, "FAIL");
-           // }
+            // }
 
             break;
 
@@ -191,7 +193,7 @@ void receptor(void *arg)
                carpincho->io_solicitada = string_duplicate(recibido);              
                carpincho->proxima_instruccion = IO;
                aux_int = bloquear_por_io(carpincho);
-               printf("RECEPTOR: io: recibido de bloquear por io\n");
+               printf("RECEPTOR: io: recibido de bloquear por io a carpincho %d\n", carpincho->pid);
                if(aux_int == -1){
                   enviar_int(cliente, -1);
                }else
@@ -204,7 +206,7 @@ void receptor(void *arg)
       case SEM_WAIT: 
                recibido = recibir_mensaje(cliente);
                carpincho->semaforo_a_modificar = string_duplicate(recibido);
-               printf("RECEPTOR: semaforo recibido %s\n", recibido);
+               printf("RECEPTOR: semaforo %s recibido para wait de carpincho %d \n", recibido, carpincho->pid);
                int pos;
                sem = buscar_semaforo2(carpincho->semaforo_a_modificar, &pos );
                 printf("RECEPTOR: ---------------------------------------\n");
@@ -324,9 +326,10 @@ void receptor(void *arg)
                log_info(logger, "Se recibió del carpincho %d un MATE CLOSE", carpincho->pid);
                carpincho->proxima_instruccion = MATE_CLOSE;
                sem_post(&carpincho->semaforo_evento);
-               enviar_int(carpincho->fd_memoria, MATE_CLOSE);
+              // enviar_int(carpincho->fd_memoria, MATE_CLOSE);
                conectado = false;
-              printf("RECEPTOR: terminando conexion... carpincho fue asado\n");
+            
+              printf("RECEPTOR: #######################   terminando conexion... carpincho fue asado\n");
       break;
 
       default: 
@@ -335,6 +338,13 @@ void receptor(void *arg)
       break;
       }
    }
+   
+ /*  sem_init(&mate_close, 0, 1);
+   sem_wait(&mate_close);
+    printf("RECEPTOR: VA A ELIMINAR CARPINCHO A FUERA DE WHILE\n");
+   //eliminar_carpincho(carpincho);
+    sem_post(&controlador_multiprogramacion);
+printf("RECEPTOR: saliendo\n");*/
 }
 
 void inicializar_planificacion()

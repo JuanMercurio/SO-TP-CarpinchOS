@@ -4,6 +4,7 @@
 
 t_pcb *ultimo_bloqueado;
 void listar_por_sjf(t_pcb* carpincho);
+void listar_por_hrrn(t_pcb *carpincho);
 
 /* 
     @NAME: inciar_cpu

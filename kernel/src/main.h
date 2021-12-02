@@ -16,7 +16,7 @@
 
 extern bool terminar;
 extern int carpinchos_bloqueados;
-
+sem_t mate_close;
 // type struct
 struct timeval *tiempito;
 struct tm *aux;

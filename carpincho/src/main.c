@@ -27,7 +27,7 @@ void imprimir_carpincho_n_hace_algo(int numero_de_carpincho)
 }
 
 void exec_carpincho_1(char *config)
-{ printf("entro hilo1\n");
+{
     mate_instance self;
     mate_init(&self, config);
     sem_post(va_el_2);
@@ -38,12 +38,10 @@ void exec_carpincho_1(char *config)
     }
     imprimir_carpincho_n_hace_algo(1);
     mate_close(&self);
-    printf("MATE CLOSE 1\n");
 }
 
 void exec_carpincho_2(char *config)
 {
-    printf("entro hilo2\n");
     mate_instance self;
     sem_wait(va_el_2);
     mate_init(&self, config);
@@ -55,7 +53,6 @@ void exec_carpincho_2(char *config)
     }
     imprimir_carpincho_n_hace_algo(2);
     mate_close(&self);
-    printf("MATE CLOSE 2\n");
 }
 
 void exec_carpincho_3(char *config)
@@ -63,7 +60,6 @@ void exec_carpincho_3(char *config)
     mate_instance self;
     sem_wait(va_el_3);
     mate_init(&self, config);
-
     for (int i = 0; i < 3; i++)
     {
         imprimir_carpincho_n_hace_algo(3);
@@ -79,11 +75,11 @@ void exec_carpincho_3(char *config)
     imprimir_carpincho_n_hace_algo(3);
     imprimir_carpincho_n_hace_algo(3);
     mate_close(&self);
-     printf("MATE CLOSE 3\n");
 }
 
 void free_all()
 {
+
     sem_destroy(va_el_3);
     free(va_el_3);
     sem_destroy(va_el_2);
@@ -107,6 +103,7 @@ int main(int argc, char *argv[])
     pthread_t carpincho1_thread;
     pthread_t carpincho2_thread;
     pthread_t carpincho3_thread;
+   
  printf("creo hilos\n");
     init_sems();
  printf("creo sems\n");
