@@ -174,8 +174,6 @@ int mate_call_io(mate_instance *lib_ref, mate_io_resource io, void *msg)
   enviar_mensaje_y_cod_op(io, ((mate_inner_structure *)lib_ref->group_info)->conexion, IO);
  int respuesta = recibir_operacion(((mate_inner_structure *)lib_ref->group_info)->conexion);
 log_info(logger, "RESPUESA DE IO RECIBIDA %d ", respuesta);
-
-
   if (respuesta == 0)
   {log_info(logger, "MATE IO ESPERANDO OK DEL PROCESADOR PARA SEGUIR carpincho %d\n\n", ((mate_inner_structure *)lib_ref->group_info)->pid);
     char *espuesta = recibir_mensaje(((mate_inner_structure *)lib_ref->group_info)->conexion);

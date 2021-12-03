@@ -44,8 +44,8 @@ void iniciar_planificador_largo_plazo();
  */
 void iniciar_gestor_finalizados();
 
-bool comparador_HRRN(t_pcb* carpincho1, t_pcb* carpincho2);
-bool comparador_SFJ(t_pcb* carpincho1, t_pcb* carpincho2);
+void* comparador_HRRN(void* carpincho1, void* carpincho2);
+bool comparador_SFJ(void* carpincho1, void* carpincho2);
 
 /* 
     @NAME: obtener_tiempo

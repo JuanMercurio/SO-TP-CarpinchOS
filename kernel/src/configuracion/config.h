@@ -17,8 +17,8 @@ typedef struct {
    int RETARDO_CPU;
    int GRADO_MULTIPROGRAMACION;
    int GRADO_MULTIPROCESAMIENTO;
-   double ALPHA;
-   double ESTIMACION_INICIAL;
+   float ALPHA;
+   float ESTIMACION_INICIAL;
    int TIEMPO_DEADLOCK;
 
 }t_cfg;

@@ -143,53 +143,44 @@ void receptor(void *arg)
       {
 
       case NEW_INSTANCE: 
-            log_info(logger, "\n \n Se recibió un NEW INSTANCE. Comienza creación del carpincho");
-
+            log_info(logger, "\n Se recibió un NEW INSTANCE. Comienza creación del carpincho");
             carpincho = malloc(sizeof(t_pcb)); // aca no recibe la pcb en si , recibe un paquete con datos que habra que guardar en un t_pcb luego de desserializar lo que viene
             carpincho->fd_cliente = cliente;
-            //carpincho->fd_memoria = crear_conexion(configuracion.IP_MEMORIA, configuracion.PUERTO_MEMORIA);
             carpincho->pid = crearID(&id_procesos);
-            carpincho->pid ++;
-             printf("RECEPTOR:-----------------recibi codigo de operacion %d el carpincho es %d\n", operacion, carpincho->pid);
-            carpincho->estado ='N';
+            carpincho->pid++;
+            carpincho->estado = 'N';
+/*             carpincho->fd_memoria = crear_conexion(configuracion.IP_MEMORIA, configuracion.PUERTO_MEMORIA);
+            enviar_cod_op_e_int(carpincho->fd_memoria, NEW_INSTANCE_KERNEL, carpincho->pid);
+            recibido = recibir_mensaje(carpincho->fd_memoria); //handshake
+            aux_int = recibir_int(carpincho->fd_memoria);
+            printf("recibio de memoria un %d\n", aux_int);
 
-            // enviar_cod_op_e_int(carpincho->fd_memoria, NEW_INSTANCE_KERNEL, carpincho->pid);
-            //recibido = recibir_mensaje(carpincho->fd_memoria); //handshake
-            //  aux_int = recibir_int(carpincho->fd_memoria);
-            // printf("recibio de memoria un %d\n", aux_int);
+            if (aux_int == 0)
+            { */
+               printf("carpincho creado\n");
+               enviar_int(cliente, carpincho->pid);
+               sem_wait(&mutex_cola_new);
+               queue_push(cola_new, (void *)carpincho); // pensando que el proceso queda trabado en mate init hasta que sea planificado
+               sem_post(&mutex_cola_new);
+               sem_post(&cola_new_con_elementos);
+               log_info(logger, "NEW INSTANCE: Se agregó el carpincho ID: %d a la cola de new", carpincho->pid);
+                /*  } else {
+                  enviar_mensaje(cliente, "FAIL");
+                } */
+               break;
 
-            //  if (aux_int == 0) {
-            //  printf("carpincho creado\n");
-             enviar_int(cliente, carpincho->pid);
-            sem_wait(&mutex_cola_new);
-            queue_push(cola_new, (void *)carpincho); // pensando que el proceso queda trabado en mate init hasta que sea planificado
-            sem_post(&mutex_cola_new);
-            sem_post(&cola_new_con_elementos);
-           
-            printf("RECEPTOR:0000000000000000000000000000000000000000000    carpincho ingrea a NEW %d\n", carpincho->pid);
-            log_info(logger, "Se agregó el carpincho ID: %d a la cola de new", carpincho->pid);
-            //  } else {
-            //   enviar_mensaje(cliente, "FAIL");
-            // }
-
-            break;
-
-      case INIT_SEMAFORO:// SE PUEDE MODIFICAR PARA CONFIRMAR  MAL
+            case INIT_SEMAFORO: // SE PUEDE MODIFICAR PARA CONFIRMAR  MAL
                printf("MAIN:recibi un init semaforo\n");
-
                semaforo = recibir_semaforo(cliente);// recibe el puntero
                log_info(logger, "Se recibió del carpincho %d un SEM INIT para el semáforo %s con valor %d\n ", carpincho->pid, semaforo->nombre_semaforo, semaforo->valor);
-               int resultado = sem_kernel_init(semaforo->nombre_semaforo, semaforo->valor);// usa lo que necesita
-   
+               int resultado = sem_kernel_init(semaforo->nombre_semaforo, semaforo->valor);// usa lo que necesit   
                enviar_int(cliente, resultado);// responde peticion con ok 
-
                free(semaforo->nombre_semaforo);// bora lo que alloco 
                free(semaforo);
             
                break;
       case IO: 
                recibido = recibir_mensaje(cliente);
-               //io_kernel io_to_be_served = *(buscar_io(io, lista_io_kernel));// DIRECTAMENT, AL SER UNA LISTA GLOBAL SE PUEDE ACCEDER DESDE LA FUNJCION Y NO PASARLA TODO EL TIEMPO COMO PARAMEETRO
                carpincho->io_solicitada = string_duplicate(recibido);              
                carpincho->proxima_instruccion = IO;
                aux_int = bloquear_por_io(carpincho);
@@ -197,9 +188,10 @@ void receptor(void *arg)
                if(aux_int == -1){
                   enviar_int(cliente, -1);
                }else
-               {sem_post(&carpincho->semaforo_evento);
+               {
+               sem_post(&carpincho->semaforo_evento);
+               enviar_int(carpincho->fd_cliente, 0);
                log_info(logger, "Se recibió del carpincho %d un CALL IO para %s", carpincho->pid, recibido);
-               
                }free(recibido);
                break;
 
