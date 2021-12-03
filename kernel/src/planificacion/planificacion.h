@@ -5,6 +5,7 @@
 t_pcb *ultimo_bloqueado;
 void listar_por_sjf(t_pcb* carpincho);
 void listar_por_hrrn(t_pcb *carpincho);
+void mostrar_tiempos(t_pcb* carpincho);
 
 /* 
     @NAME: inciar_cpu
@@ -26,7 +27,7 @@ void procesador();
     @DESC: quita un puntero de la cola de listos y lo planifica
            enlistandolo ordenadamente segun el algoritmo de planificacion.
  */
-void iniciar_planificador_corto_plazo();
+void iniciar_planificador_corto_plazo(t_pcb* carpincho);
 
 void iniciar_planificador_mediano_plazo();
 

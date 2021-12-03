@@ -123,7 +123,7 @@ void destruir_semaforos(){
 
 void receptor(void *arg)
 {
-   printf("RECEPTOR DE CLIENTE %d\n", *(int*)arg );
+   printf("RECEPTOR E CLIENTE %d\n", *(int*)arg );
    int cliente = *(int *)arg;
    free(arg);
    int  aux_int;
@@ -356,12 +356,12 @@ void inicializar_planificacion()
    
    iniciar_colas();
   log_info(logger, "Inicio colas de planificación");
-   if(pthread_create(&hilos_planificadores, &detached3, (void *) iniciar_planificador_corto_plazo, NULL)!= 0){
+/*    if(pthread_create(&hilos_planificadores, &detached3, (void *) iniciar_planificador_corto_plazo, NULL)!= 0){
       log_info(logger,"No se pudo crear el hilo Planificador Corto Plazo");
    }else{
       log_info(logger, "Hilo Planificador Corto Plazo creado");
    }
-
+ */
    if(pthread_create(&hilos_planificadores, &detached3,  (void *)iniciar_planificador_largo_plazo, NULL)!= 0){
       log_info(logger,"No se pudo crear el hilo Planificador Largo Plazo");
    }else{
