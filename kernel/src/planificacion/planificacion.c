@@ -176,7 +176,11 @@ void listar_por_sjf(t_pcb *carpincho)
          comparado = (t_pcb *)list_get(lista_ordenada_por_algoritmo, i);
          printf("SJF:\n");
          mostrar_tiempos(comparado);
-         double diferencia =  carpincho->tiempo.estimacion - comparado->tiempo.estimacion;
+/*          double diferencia =  carpincho->tiempo.estimacion - comparado->tiempo.estimacion;
+         if(diferencia < 0 && diferencia > -0.3){
+            list_add_in_index(lista_ordenada_por_algoritmo, i+1, (void *)carpincho);
+            ok = true;
+         }else{ */
          if (carpincho->tiempo.estimacion < comparado->tiempo.estimacion)
          {
             list_add_in_index(lista_ordenada_por_algoritmo, i, (void *)carpincho);
@@ -187,6 +191,7 @@ void listar_por_sjf(t_pcb *carpincho)
             list_add_in_index(lista_ordenada_por_algoritmo, i + 1, (void *)carpincho);
             ok = true;
          }
+         //}
          i++;
       }
       if (!ok)

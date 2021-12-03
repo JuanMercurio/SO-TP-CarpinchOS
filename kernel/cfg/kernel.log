@@ -4412,3 +4412,171 @@
 [INFO] 14:39:08:044 Kernel/(14338:14345): Carpincho 3 - Comienza a ejecutar
 [INFO] 14:39:18:046 Kernel/(14338:14416): Se recibió del carpincho 3 un MATE CLOSE
 [INFO] 14:39:18:047 Kernel/(14338:14345): Carpincho 3 - Eliminado
+[INFO] 14:50:19:885 Kernel/(14872:14872): Log creado
+[INFO] 14:50:19:891 Kernel/(14872:14872): Configuración obtenida
+[INFO] 14:50:19:891 Kernel/(14872:14872): Semáforos inicializados
+[INFO] 14:50:19:891 Kernel/(14872:14872): Colas de dispositivos IO creadas
+[INFO] 14:50:19:891 Kernel/(14872:14872): Se creó el hilo gestor de la IO pelopincho
+[INFO] 14:50:19:891 Kernel/(14872:14872): Inicio colas de planificación
+[INFO] 14:50:19:892 Kernel/(14872:14872): Hilo Planificador Largo Plazo creado
+[INFO] 14:50:19:892 Kernel/(14872:14872): Hilo Planificador Gestor Finalizados creado
+[INFO] 14:50:19:893 Kernel/(14872:14872): Hilo Detección Deadlock creado
+[INFO] 14:50:19:893 Kernel/(14872:14872): Hilo para terminar el programa creado
+[INFO] 14:50:19:893 Kernel/(14872:14872): Hilo CPU creado
+[INFO] 14:50:19:897 Kernel/(14872:14877): Para terminar precione cualquier tecla.
+[INFO] 14:50:19:897 Kernel/(14872:14873): IO pelopincho lista para recibir carpinchos
+[INFO] 14:50:21:715 Kernel/(14872:14943): 
+ Se recibió un NEW INSTANCE. Comienza creación del carpincho
+[INFO] 14:50:21:715 Kernel/(14872:14874): Llegó un carpincho al planificador de largo plazo
+[INFO] 14:50:21:715 Kernel/(14872:14874): Carpincho 1 - Se saca de la cola new
+[INFO] 14:50:21:715 Kernel/(14872:14879): Carpincho 1 - Comienza a ejecutar
+[INFO] 14:50:21:720 Kernel/(14872:14943): NEW INSTANCE: Se agregó el carpincho ID: 1 a la cola de new
+[INFO] 14:50:21:798 Kernel/(14872:14944): 
+ Se recibió un NEW INSTANCE. Comienza creación del carpincho
+[INFO] 14:50:21:798 Kernel/(14872:14874): Llegó un carpincho al planificador de largo plazo
+[INFO] 14:50:21:798 Kernel/(14872:14874): Carpincho 2 - Se saca de la cola new
+[INFO] 14:50:21:798 Kernel/(14872:14944): NEW INSTANCE: Se agregó el carpincho ID: 2 a la cola de new
+[INFO] 14:50:23:770 Kernel/(14872:14943): El carpincho 1 está bloqueado por IO pelopincho
+[INFO] 14:50:23:771 Kernel/(14872:14943): Se recibió del carpincho 1 un CALL IO para pelopincho
+[INFO] 14:50:23:771 Kernel/(14872:14879): El carpincho 1 fue BLOQUEADO por io
+[INFO] 14:50:23:771 Kernel/(14872:14879): Carpincho 2 - Comienza a ejecutar
+[INFO] 14:50:23:780 Kernel/(14872:14945): 
+ Se recibió un NEW INSTANCE. Comienza creación del carpincho
+[INFO] 14:50:23:780 Kernel/(14872:14874): Llegó un carpincho al planificador de largo plazo
+[INFO] 14:50:23:780 Kernel/(14872:14874): Carpincho 3 - Se saca de la cola new
+[INFO] 14:50:23:780 Kernel/(14872:14945): NEW INSTANCE: Se agregó el carpincho ID: 3 a la cola de new
+[INFO] 14:50:25:771 Kernel/(14872:14873): GESTOR IO: desbloqueando carpincho PID 1
+[INFO] 14:50:25:771 Kernel/(14872:14873): IO pelopincho lista para recibir carpinchos
+[INFO] 14:50:25:772 Kernel/(14872:14944): El carpincho 2 está bloqueado por IO pelopincho
+[INFO] 14:50:25:772 Kernel/(14872:14944): Se recibió del carpincho 2 un CALL IO para pelopincho
+[INFO] 14:50:25:772 Kernel/(14872:14879): El carpincho 2 fue BLOQUEADO por io
+[INFO] 14:50:25:772 Kernel/(14872:14879): Carpincho 3 - Comienza a ejecutar
+[INFO] 14:50:27:772 Kernel/(14872:14873): GESTOR IO: desbloqueando carpincho PID 2
+[INFO] 14:50:27:772 Kernel/(14872:14873): IO pelopincho lista para recibir carpinchos
+[INFO] 14:50:35:773 Kernel/(14872:14945): El carpincho 3 está bloqueado por IO pelopincho
+[INFO] 14:50:35:774 Kernel/(14872:14945): Se recibió del carpincho 3 un CALL IO para pelopincho
+[INFO] 14:50:35:774 Kernel/(14872:14879): El carpincho 3 fue BLOQUEADO por io
+[INFO] 14:50:35:774 Kernel/(14872:14879): Carpincho 1 - Comienza a ejecutar
+[INFO] 14:50:37:775 Kernel/(14872:14943): El carpincho 1 está bloqueado por IO pelopincho
+[INFO] 14:50:37:775 Kernel/(14872:14873): GESTOR IO: desbloqueando carpincho PID 3
+[INFO] 14:50:37:775 Kernel/(14872:14873): IO pelopincho lista para recibir carpinchos
+[INFO] 14:50:37:775 Kernel/(14872:14943): Se recibió del carpincho 1 un CALL IO para pelopincho
+[INFO] 14:50:37:775 Kernel/(14872:14879): El carpincho 1 fue BLOQUEADO por io
+[INFO] 14:50:37:775 Kernel/(14872:14879): Carpincho 2 - Comienza a ejecutar
+[INFO] 14:50:39:776 Kernel/(14872:14873): GESTOR IO: desbloqueando carpincho PID 1
+[INFO] 14:50:39:776 Kernel/(14872:14873): IO pelopincho lista para recibir carpinchos
+[INFO] 14:50:39:776 Kernel/(14872:14944): El carpincho 2 está bloqueado por IO pelopincho
+[INFO] 14:50:39:776 Kernel/(14872:14944): Se recibió del carpincho 2 un CALL IO para pelopincho
+[INFO] 14:50:39:776 Kernel/(14872:14879): El carpincho 2 fue BLOQUEADO por io
+[INFO] 14:50:39:776 Kernel/(14872:14879): Carpincho 1 - Comienza a ejecutar
+[INFO] 14:50:41:777 Kernel/(14872:14943): El carpincho 1 está bloqueado por IO pelopincho
+[INFO] 14:50:41:777 Kernel/(14872:14873): GESTOR IO: desbloqueando carpincho PID 2
+[INFO] 14:50:41:777 Kernel/(14872:14873): IO pelopincho lista para recibir carpinchos
+[INFO] 14:50:41:777 Kernel/(14872:14943): Se recibió del carpincho 1 un CALL IO para pelopincho
+[INFO] 14:50:41:777 Kernel/(14872:14879): El carpincho 1 fue BLOQUEADO por io
+[INFO] 14:50:41:777 Kernel/(14872:14879): Carpincho 2 - Comienza a ejecutar
+[INFO] 14:50:43:778 Kernel/(14872:14944): El carpincho 2 está bloqueado por IO pelopincho
+[INFO] 14:50:43:779 Kernel/(14872:14873): GESTOR IO: desbloqueando carpincho PID 1
+[INFO] 14:50:43:779 Kernel/(14872:14944): Se recibió del carpincho 2 un CALL IO para pelopincho
+[INFO] 14:50:43:779 Kernel/(14872:14879): El carpincho 2 fue BLOQUEADO por io
+[INFO] 14:50:43:779 Kernel/(14872:14879): Carpincho 1 - Comienza a ejecutar
+[INFO] 14:50:43:779 Kernel/(14872:14873): IO pelopincho lista para recibir carpinchos
+[INFO] 14:50:45:779 Kernel/(14872:14943): Se recibió del carpincho 1 un MATE CLOSE
+[INFO] 14:50:45:780 Kernel/(14872:14879): Carpincho 1 - Eliminado
+[INFO] 14:50:45:780 Kernel/(14872:14879): Carpincho 3 - Comienza a ejecutar
+[INFO] 14:50:45:781 Kernel/(14872:14873): GESTOR IO: desbloqueando carpincho PID 2
+[INFO] 14:50:45:781 Kernel/(14872:14873): IO pelopincho lista para recibir carpinchos
+[INFO] 14:50:55:781 Kernel/(14872:14945): El carpincho 3 está bloqueado por IO pelopincho
+[INFO] 14:50:55:781 Kernel/(14872:14945): Se recibió del carpincho 3 un CALL IO para pelopincho
+[INFO] 14:50:55:781 Kernel/(14872:14879): El carpincho 3 fue BLOQUEADO por io
+[INFO] 14:50:55:781 Kernel/(14872:14879): Carpincho 2 - Comienza a ejecutar
+[INFO] 14:50:57:781 Kernel/(14872:14873): GESTOR IO: desbloqueando carpincho PID 3
+[INFO] 14:50:57:781 Kernel/(14872:14873): IO pelopincho lista para recibir carpinchos
+[INFO] 14:50:57:782 Kernel/(14872:14944): Se recibió del carpincho 2 un MATE CLOSE
+[INFO] 14:50:57:782 Kernel/(14872:14879): Carpincho 2 - Eliminado
+[INFO] 14:50:57:782 Kernel/(14872:14879): Carpincho 3 - Comienza a ejecutar
+[INFO] 14:51:07:783 Kernel/(14872:14945): El carpincho 3 está bloqueado por IO pelopincho
+[INFO] 14:51:07:784 Kernel/(14872:14945): Se recibió del carpincho 3 un CALL IO para pelopincho
+[INFO] 14:51:07:784 Kernel/(14872:14879): El carpincho 3 fue BLOQUEADO por io
+[INFO] 14:51:09:784 Kernel/(14872:14873): GESTOR IO: desbloqueando carpincho PID 3
+[INFO] 14:51:09:784 Kernel/(14872:14873): IO pelopincho lista para recibir carpinchos
+[INFO] 14:51:09:784 Kernel/(14872:14879): Carpincho 3 - Comienza a ejecutar
+[INFO] 14:51:19:786 Kernel/(14872:14945): Se recibió del carpincho 3 un MATE CLOSE
+[INFO] 14:51:19:787 Kernel/(14872:14879): Carpincho 3 - Eliminado
+[INFO] 14:53:00:079 Kernel/(15332:15332): Log creado
+[INFO] 14:53:00:080 Kernel/(15332:15332): Configuración obtenida
+[INFO] 14:53:00:080 Kernel/(15332:15332): Semáforos inicializados
+[INFO] 14:53:00:080 Kernel/(15332:15332): Colas de dispositivos IO creadas
+[INFO] 14:53:00:080 Kernel/(15332:15332): Se creó el hilo gestor de la IO pelopincho
+[INFO] 14:53:00:080 Kernel/(15332:15332): Inicio colas de planificación
+[INFO] 14:53:00:080 Kernel/(15332:15332): Hilo Planificador Largo Plazo creado
+[INFO] 14:53:00:080 Kernel/(15332:15332): Hilo Planificador Gestor Finalizados creado
+[INFO] 14:53:00:080 Kernel/(15332:15332): Hilo Detección Deadlock creado
+[INFO] 14:53:00:080 Kernel/(15332:15332): Hilo para terminar el programa creado
+[INFO] 14:53:00:080 Kernel/(15332:15332): Hilo CPU creado
+[INFO] 14:53:00:081 Kernel/(15332:15337): Para terminar precione cualquier tecla.
+[INFO] 14:53:00:081 Kernel/(15332:15333): IO pelopincho lista para recibir carpinchos
+[INFO] 14:53:01:838 Kernel/(15332:15403): 
+ Se recibió un NEW INSTANCE. Comienza creación del carpincho
+[INFO] 14:53:01:839 Kernel/(15332:15334): Llegó un carpincho al planificador de largo plazo
+[INFO] 14:53:01:839 Kernel/(15332:15334): Carpincho 1 - Se saca de la cola new
+[INFO] 14:53:01:839 Kernel/(15332:15339): Carpincho 1 - Comienza a ejecutar
+[INFO] 14:53:01:843 Kernel/(15332:15403): NEW INSTANCE: Se agregó el carpincho ID: 1 a la cola de new
+[INFO] 14:53:01:879 Kernel/(15332:15404): 
+ Se recibió un NEW INSTANCE. Comienza creación del carpincho
+[INFO] 14:53:01:879 Kernel/(15332:15334): Llegó un carpincho al planificador de largo plazo
+[INFO] 14:53:01:879 Kernel/(15332:15334): Carpincho 2 - Se saca de la cola new
+[INFO] 14:53:01:879 Kernel/(15332:15404): NEW INSTANCE: Se agregó el carpincho ID: 2 a la cola de new
+[INFO] 14:53:03:876 Kernel/(15332:15403): El carpincho 1 está bloqueado por IO pelopincho
+[INFO] 14:53:03:876 Kernel/(15332:15403): Se recibió del carpincho 1 un CALL IO para pelopincho
+[INFO] 14:53:03:876 Kernel/(15332:15339): El carpincho 1 fue BLOQUEADO por io
+[INFO] 14:53:03:876 Kernel/(15332:15339): Carpincho 2 - Comienza a ejecutar
+[INFO] 14:53:03:884 Kernel/(15332:15405): 
+ Se recibió un NEW INSTANCE. Comienza creación del carpincho
+[INFO] 14:53:03:884 Kernel/(15332:15334): Llegó un carpincho al planificador de largo plazo
+[INFO] 14:53:03:884 Kernel/(15332:15334): Carpincho 3 - Se saca de la cola new
+[INFO] 14:53:03:884 Kernel/(15332:15405): NEW INSTANCE: Se agregó el carpincho ID: 3 a la cola de new
+[INFO] 14:53:04:876 Kernel/(15332:15333): GESTOR IO: desbloqueando carpincho PID 1
+[INFO] 14:53:04:877 Kernel/(15332:15333): IO pelopincho lista para recibir carpinchos
+[INFO] 14:53:05:877 Kernel/(15332:15404): El carpincho 2 está bloqueado por IO pelopincho
+[INFO] 14:53:05:877 Kernel/(15332:15404): Se recibió del carpincho 2 un CALL IO para pelopincho
+[INFO] 14:53:05:878 Kernel/(15332:15339): El carpincho 2 fue BLOQUEADO por io
+[INFO] 14:53:05:878 Kernel/(15332:15339): Carpincho 3 - Comienza a ejecutar
+[INFO] 14:53:06:878 Kernel/(15332:15333): GESTOR IO: desbloqueando carpincho PID 2
+[INFO] 14:53:06:878 Kernel/(15332:15333): IO pelopincho lista para recibir carpinchos
+[INFO] 14:53:15:879 Kernel/(15332:15405): El carpincho 3 está bloqueado por IO pelopincho
+[INFO] 14:53:15:880 Kernel/(15332:15405): Se recibió del carpincho 3 un CALL IO para pelopincho
+[INFO] 14:53:15:880 Kernel/(15332:15339): El carpincho 3 fue BLOQUEADO por io
+[INFO] 14:53:15:880 Kernel/(15332:15339): Carpincho 2 - Comienza a ejecutar
+[INFO] 14:53:16:880 Kernel/(15332:15333): GESTOR IO: desbloqueando carpincho PID 3
+[INFO] 14:53:16:880 Kernel/(15332:15333): IO pelopincho lista para recibir carpinchos
+[INFO] 14:53:17:880 Kernel/(15332:15404): El carpincho 2 está bloqueado por IO pelopincho
+[INFO] 14:53:17:881 Kernel/(15332:15404): Se recibió del carpincho 2 un CALL IO para pelopincho
+[INFO] 14:53:17:881 Kernel/(15332:15339): El carpincho 2 fue BLOQUEADO por io
+[INFO] 14:53:17:881 Kernel/(15332:15339): Carpincho 1 - Comienza a ejecutar
+[INFO] 14:53:18:881 Kernel/(15332:15333): GESTOR IO: desbloqueando carpincho PID 2
+[INFO] 14:53:18:881 Kernel/(15332:15333): IO pelopincho lista para recibir carpinchos
+[INFO] 14:53:19:881 Kernel/(15332:15403): El carpincho 1 está bloqueado por IO pelopincho
+[INFO] 14:53:19:882 Kernel/(15332:15403): Se recibió del carpincho 1 un CALL IO para pelopincho
+[INFO] 14:53:19:882 Kernel/(15332:15339): El carpincho 1 fue BLOQUEADO por io
+[INFO] 14:53:19:882 Kernel/(15332:15339): Carpincho 2 - Comienza a ejecutar
+[INFO] 14:53:20:882 Kernel/(15332:15333): GESTOR IO: desbloqueando carpincho PID 1
+[INFO] 14:53:20:882 Kernel/(15332:15333): IO pelopincho lista para recibir carpinchos
+[INFO] 14:53:21:883 Kernel/(15332:15404): El carpincho 2 está bloqueado por IO pelopincho
+[INFO] 14:53:21:883 Kernel/(15332:15404): Se recibió del carpincho 2 un CALL IO para pelopincho
+[INFO] 14:53:21:883 Kernel/(15332:15339): El carpincho 2 fue BLOQUEADO por io
+[INFO] 14:53:21:883 Kernel/(15332:15339): Carpincho 1 - Comienza a ejecutar
+[INFO] 14:53:22:884 Kernel/(15332:15333): GESTOR IO: desbloqueando carpincho PID 2
+[INFO] 14:53:22:884 Kernel/(15332:15333): IO pelopincho lista para recibir carpinchos
+[INFO] 14:53:23:884 Kernel/(15332:15403): El carpincho 1 está bloqueado por IO pelopincho
+[INFO] 14:53:23:884 Kernel/(15332:15403): Se recibió del carpincho 1 un CALL IO para pelopincho
+[INFO] 14:53:23:885 Kernel/(15332:15339): El carpincho 1 fue BLOQUEADO por io
+[INFO] 14:53:23:885 Kernel/(15332:15339): Carpincho 2 - Comienza a ejecutar
+[INFO] 14:53:24:884 Kernel/(15332:15333): GESTOR IO: desbloqueando carpincho PID 1
+[INFO] 14:53:24:885 Kernel/(15332:15333): IO pelopincho lista para recibir carpinchos
+[INFO] 14:53:25:885 Kernel/(15332:15404): Se recibió del carpincho 2 un MATE CLOSE
+[INFO] 14:53:25:885 Kernel/(15332:15339): Carpincho 2 - Eliminado
+[INFO] 14:53:25:885 Kernel/(15332:15339): Carpincho 1 - Comienza a ejecutar
+[INFO] 14:53:27:886 Kernel/(15332:15403): Se recibió del carpincho 1 un MATE CLOSE
+[INFO] 14:53:27:887 Kernel/(15332:15339): Carpincho 1 - Eliminado
+[INFO] 14:53:27:887 Kernel/(15332:15339): Carpincho 3 - Comienza a ejecutar

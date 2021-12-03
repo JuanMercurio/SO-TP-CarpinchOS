@@ -5927,3 +5927,285 @@ _____llego del procesador un OK para el caprincho 3
 [INFO] 14:39:18:045 Carpincho/(14410:14413): libero memoria
 [INFO] 14:39:18:045 Carpincho/(14410:14413): libero memoria
 [INFO] 14:39:18:045 Carpincho/(14410:14413): Carpincho eliminado
+[INFO] 14:50:21:714 Carpincho/(14939:14940): Log creado
+[INFO] 14:50:21:714 Carpincho/(14939:14940): Esperando respuesta de servidor
+[INFO] 14:50:21:715 Carpincho/(14939:14940): 
+NUEVO CARPINCHO
+
+[INFO] 14:50:21:755 Carpincho/(14939:14940): Carpincho creado correctamente con el pid: 1
+[INFO] 14:50:21:755 Carpincho/(14939:14940): EJECUTANDO Carpincho 1
+[INFO] 14:50:21:755 Carpincho/(14939:14941): Log creado
+[INFO] 14:50:21:770 Carpincho/(14939:14941): Esperando respuesta de servidor
+[INFO] 14:50:21:798 Carpincho/(14939:14941): 
+NUEVO CARPINCHO
+
+[INFO] 14:50:23:770 Carpincho/(14939:14940): CALL_IO a pelopincho
+[INFO] 14:50:23:770 Carpincho/(14939:14940): Carpincho 1 se va a IO
+[INFO] 14:50:23:771 Carpincho/(14939:14941): Carpincho creado correctamente con el pid: 2
+[INFO] 14:50:23:771 Carpincho/(14939:14941): EJECUTANDO Carpincho 2
+[INFO] 14:50:23:771 Carpincho/(14939:14942): Log creado
+[INFO] 14:50:23:771 Carpincho/(14939:14940): RESPUESA DE IO RECIBIDA 0 
+[INFO] 14:50:23:771 Carpincho/(14939:14940): MATE IO ESPERANDO OK DEL PROCESADOR PARA SEGUIR carpincho 1
+
+
+[INFO] 14:50:23:771 Carpincho/(14939:14942): Esperando respuesta de servidor
+[INFO] 14:50:23:780 Carpincho/(14939:14942): 
+NUEVO CARPINCHO
+
+[INFO] 14:50:25:771 Carpincho/(14939:14941): CALL_IO a pelopincho
+[INFO] 14:50:25:771 Carpincho/(14939:14941): Carpincho 2 se va a IO
+[INFO] 14:50:25:772 Carpincho/(14939:14942): Carpincho creado correctamente con el pid: 3
+[INFO] 14:50:25:772 Carpincho/(14939:14942): EJECUTANDO Carpincho 3
+[INFO] 14:50:25:772 Carpincho/(14939:14941): RESPUESA DE IO RECIBIDA 0 
+[INFO] 14:50:25:772 Carpincho/(14939:14941): MATE IO ESPERANDO OK DEL PROCESADOR PARA SEGUIR carpincho 2
+
+
+[INFO] 14:50:27:773 Carpincho/(14939:14942): EJECUTANDO Carpincho 3
+[INFO] 14:50:29:773 Carpincho/(14939:14942): EJECUTANDO Carpincho 3
+[INFO] 14:50:31:773 Carpincho/(14939:14942): EJECUTANDO Carpincho 3
+[INFO] 14:50:33:773 Carpincho/(14939:14942): EJECUTANDO Carpincho 3
+[INFO] 14:50:35:773 Carpincho/(14939:14942): CALL_IO a pelopincho
+[INFO] 14:50:35:773 Carpincho/(14939:14942): Carpincho 3 se va a IO
+[INFO] 14:50:35:774 Carpincho/(14939:14940): 
+_____llego del procesador un OK para el caprincho 1
+
+
+[INFO] 14:50:35:774 Carpincho/(14939:14940): Se realizó el CALL IO correctamente
+[INFO] 14:50:35:774 Carpincho/(14939:14940): EJECUTANDO Carpincho 1
+[INFO] 14:50:35:774 Carpincho/(14939:14942): RESPUESA DE IO RECIBIDA 0 
+[INFO] 14:50:35:774 Carpincho/(14939:14942): MATE IO ESPERANDO OK DEL PROCESADOR PARA SEGUIR carpincho 3
+
+
+[INFO] 14:50:37:774 Carpincho/(14939:14940): CALL_IO a pelopincho
+[INFO] 14:50:37:774 Carpincho/(14939:14940): Carpincho 1 se va a IO
+[INFO] 14:50:37:775 Carpincho/(14939:14941): 
+_____llego del procesador un OK para el caprincho 2
+
+
+[INFO] 14:50:37:775 Carpincho/(14939:14941): Se realizó el CALL IO correctamente
+[INFO] 14:50:37:775 Carpincho/(14939:14941): EJECUTANDO Carpincho 2
+[INFO] 14:50:37:776 Carpincho/(14939:14940): RESPUESA DE IO RECIBIDA 0 
+[INFO] 14:50:37:776 Carpincho/(14939:14940): MATE IO ESPERANDO OK DEL PROCESADOR PARA SEGUIR carpincho 1
+
+
+[INFO] 14:50:39:776 Carpincho/(14939:14941): CALL_IO a pelopincho
+[INFO] 14:50:39:776 Carpincho/(14939:14941): Carpincho 2 se va a IO
+[INFO] 14:50:39:776 Carpincho/(14939:14940): 
+_____llego del procesador un OK para el caprincho 1
+
+
+[INFO] 14:50:39:776 Carpincho/(14939:14940): Se realizó el CALL IO correctamente
+[INFO] 14:50:39:776 Carpincho/(14939:14940): EJECUTANDO Carpincho 1
+[INFO] 14:50:39:776 Carpincho/(14939:14941): RESPUESA DE IO RECIBIDA 0 
+[INFO] 14:50:39:776 Carpincho/(14939:14941): MATE IO ESPERANDO OK DEL PROCESADOR PARA SEGUIR carpincho 2
+
+
+[INFO] 14:50:41:776 Carpincho/(14939:14940): CALL_IO a pelopincho
+[INFO] 14:50:41:776 Carpincho/(14939:14940): Carpincho 1 se va a IO
+[INFO] 14:50:41:778 Carpincho/(14939:14941): 
+_____llego del procesador un OK para el caprincho 2
+
+
+[INFO] 14:50:41:778 Carpincho/(14939:14941): Se realizó el CALL IO correctamente
+[INFO] 14:50:41:778 Carpincho/(14939:14941): EJECUTANDO Carpincho 2
+[INFO] 14:50:41:778 Carpincho/(14939:14940): RESPUESA DE IO RECIBIDA 0 
+[INFO] 14:50:41:778 Carpincho/(14939:14940): MATE IO ESPERANDO OK DEL PROCESADOR PARA SEGUIR carpincho 1
+
+
+[INFO] 14:50:43:778 Carpincho/(14939:14941): CALL_IO a pelopincho
+[INFO] 14:50:43:778 Carpincho/(14939:14941): Carpincho 2 se va a IO
+[INFO] 14:50:43:779 Carpincho/(14939:14940): 
+_____llego del procesador un OK para el caprincho 1
+
+
+[INFO] 14:50:43:779 Carpincho/(14939:14940): Se realizó el CALL IO correctamente
+[INFO] 14:50:43:779 Carpincho/(14939:14940): EJECUTANDO Carpincho 1
+[INFO] 14:50:43:779 Carpincho/(14939:14941): RESPUESA DE IO RECIBIDA 0 
+[INFO] 14:50:43:779 Carpincho/(14939:14941): MATE IO ESPERANDO OK DEL PROCESADOR PARA SEGUIR carpincho 2
+
+
+[INFO] 14:50:45:779 Carpincho/(14939:14940): MATE_CLOSE
+[INFO] 14:50:45:779 Carpincho/(14939:14940): MATE_CLOSE: mensaje enviado a kernel
+[INFO] 14:50:45:779 Carpincho/(14939:14940): libero memoria
+[INFO] 14:50:45:779 Carpincho/(14939:14940): libero memoria
+[INFO] 14:50:45:779 Carpincho/(14939:14940): Carpincho eliminado
+[INFO] 14:50:45:780 Carpincho/(14939:14942): 
+_____llego del procesador un OK para el caprincho 3
+
+
+[INFO] 14:50:45:780 Carpincho/(14939:14942): Se realizó el CALL IO correctamente
+[INFO] 14:50:45:780 Carpincho/(14939:14942): EJECUTANDO Carpincho 3
+[INFO] 14:50:47:780 Carpincho/(14939:14942): EJECUTANDO Carpincho 3
+[INFO] 14:50:49:780 Carpincho/(14939:14942): EJECUTANDO Carpincho 3
+[INFO] 14:50:51:780 Carpincho/(14939:14942): EJECUTANDO Carpincho 3
+[INFO] 14:50:53:780 Carpincho/(14939:14942): EJECUTANDO Carpincho 3
+[INFO] 14:50:55:781 Carpincho/(14939:14942): CALL_IO a pelopincho
+[INFO] 14:50:55:781 Carpincho/(14939:14942): Carpincho 3 se va a IO
+[INFO] 14:50:55:781 Carpincho/(14939:14941): 
+_____llego del procesador un OK para el caprincho 2
+
+
+[INFO] 14:50:55:781 Carpincho/(14939:14941): Se realizó el CALL IO correctamente
+[INFO] 14:50:55:781 Carpincho/(14939:14941): EJECUTANDO Carpincho 2
+[INFO] 14:50:55:781 Carpincho/(14939:14942): RESPUESA DE IO RECIBIDA 0 
+[INFO] 14:50:55:781 Carpincho/(14939:14942): MATE IO ESPERANDO OK DEL PROCESADOR PARA SEGUIR carpincho 3
+
+
+[INFO] 14:50:57:782 Carpincho/(14939:14941): MATE_CLOSE
+[INFO] 14:50:57:782 Carpincho/(14939:14941): MATE_CLOSE: mensaje enviado a kernel
+[INFO] 14:50:57:782 Carpincho/(14939:14941): libero memoria
+[INFO] 14:50:57:782 Carpincho/(14939:14941): libero memoria
+[INFO] 14:50:57:782 Carpincho/(14939:14941): Carpincho eliminado
+[INFO] 14:50:57:782 Carpincho/(14939:14942): 
+_____llego del procesador un OK para el caprincho 3
+
+
+[INFO] 14:50:57:782 Carpincho/(14939:14942): Se realizó el CALL IO correctamente
+[INFO] 14:50:57:782 Carpincho/(14939:14942): EJECUTANDO Carpincho 3
+[INFO] 14:50:59:782 Carpincho/(14939:14942): EJECUTANDO Carpincho 3
+[INFO] 14:51:01:782 Carpincho/(14939:14942): EJECUTANDO Carpincho 3
+[INFO] 14:51:03:783 Carpincho/(14939:14942): EJECUTANDO Carpincho 3
+[INFO] 14:51:05:783 Carpincho/(14939:14942): EJECUTANDO Carpincho 3
+[INFO] 14:51:07:783 Carpincho/(14939:14942): CALL_IO a pelopincho
+[INFO] 14:51:07:783 Carpincho/(14939:14942): Carpincho 3 se va a IO
+[INFO] 14:51:07:784 Carpincho/(14939:14942): RESPUESA DE IO RECIBIDA 0 
+[INFO] 14:51:07:784 Carpincho/(14939:14942): MATE IO ESPERANDO OK DEL PROCESADOR PARA SEGUIR carpincho 3
+
+
+[INFO] 14:51:09:784 Carpincho/(14939:14942): 
+_____llego del procesador un OK para el caprincho 3
+
+
+[INFO] 14:51:09:784 Carpincho/(14939:14942): Se realizó el CALL IO correctamente
+[INFO] 14:51:09:784 Carpincho/(14939:14942): EJECUTANDO Carpincho 3
+[INFO] 14:51:11:784 Carpincho/(14939:14942): EJECUTANDO Carpincho 3
+[INFO] 14:51:13:784 Carpincho/(14939:14942): EJECUTANDO Carpincho 3
+[INFO] 14:51:15:785 Carpincho/(14939:14942): EJECUTANDO Carpincho 3
+[INFO] 14:51:17:785 Carpincho/(14939:14942): EJECUTANDO Carpincho 3
+[INFO] 14:51:19:786 Carpincho/(14939:14942): MATE_CLOSE
+[INFO] 14:51:19:786 Carpincho/(14939:14942): MATE_CLOSE: mensaje enviado a kernel
+[INFO] 14:51:19:786 Carpincho/(14939:14942): libero memoria
+[INFO] 14:51:19:786 Carpincho/(14939:14942): libero memoria
+[INFO] 14:51:19:786 Carpincho/(14939:14942): Carpincho eliminado
+[INFO] 14:52:38:306 Carpincho/(15188:15189): Log creado
+[INFO] 14:52:38:306 Carpincho/(15188:15189): Esperando respuesta de servidor
+[INFO] 14:53:01:837 Carpincho/(15399:15400): Log creado
+[INFO] 14:53:01:837 Carpincho/(15399:15400): Esperando respuesta de servidor
+[INFO] 14:53:01:838 Carpincho/(15399:15400): 
+NUEVO CARPINCHO
+
+[INFO] 14:53:01:875 Carpincho/(15399:15400): Carpincho creado correctamente con el pid: 1
+[INFO] 14:53:01:875 Carpincho/(15399:15400): EJECUTANDO Carpincho 1
+[INFO] 14:53:01:875 Carpincho/(15399:15401): Log creado
+[INFO] 14:53:01:876 Carpincho/(15399:15401): Esperando respuesta de servidor
+[INFO] 14:53:01:879 Carpincho/(15399:15401): 
+NUEVO CARPINCHO
+
+[INFO] 14:53:03:876 Carpincho/(15399:15400): CALL_IO a pelopincho
+[INFO] 14:53:03:876 Carpincho/(15399:15400): Carpincho 1 se va a IO
+[INFO] 14:53:03:876 Carpincho/(15399:15401): Carpincho creado correctamente con el pid: 2
+[INFO] 14:53:03:876 Carpincho/(15399:15401): EJECUTANDO Carpincho 2
+[INFO] 14:53:03:876 Carpincho/(15399:15402): Log creado
+[INFO] 14:53:03:877 Carpincho/(15399:15400): RESPUESA DE IO RECIBIDA 0 
+[INFO] 14:53:03:877 Carpincho/(15399:15400): MATE IO ESPERANDO OK DEL PROCESADOR PARA SEGUIR carpincho 1
+
+
+[INFO] 14:53:03:877 Carpincho/(15399:15402): Esperando respuesta de servidor
+[INFO] 14:53:03:884 Carpincho/(15399:15402): 
+NUEVO CARPINCHO
+
+[INFO] 14:53:05:877 Carpincho/(15399:15401): CALL_IO a pelopincho
+[INFO] 14:53:05:877 Carpincho/(15399:15401): Carpincho 2 se va a IO
+[INFO] 14:53:05:878 Carpincho/(15399:15402): Carpincho creado correctamente con el pid: 3
+[INFO] 14:53:05:878 Carpincho/(15399:15402): EJECUTANDO Carpincho 3
+[INFO] 14:53:05:878 Carpincho/(15399:15401): RESPUESA DE IO RECIBIDA 0 
+[INFO] 14:53:05:878 Carpincho/(15399:15401): MATE IO ESPERANDO OK DEL PROCESADOR PARA SEGUIR carpincho 2
+
+
+[INFO] 14:53:07:878 Carpincho/(15399:15402): EJECUTANDO Carpincho 3
+[INFO] 14:53:09:878 Carpincho/(15399:15402): EJECUTANDO Carpincho 3
+[INFO] 14:53:11:878 Carpincho/(15399:15402): EJECUTANDO Carpincho 3
+[INFO] 14:53:13:879 Carpincho/(15399:15402): EJECUTANDO Carpincho 3
+[INFO] 14:53:15:879 Carpincho/(15399:15402): CALL_IO a pelopincho
+[INFO] 14:53:15:879 Carpincho/(15399:15402): Carpincho 3 se va a IO
+[INFO] 14:53:15:880 Carpincho/(15399:15401): 
+_____llego del procesador un OK para el caprincho 2
+
+
+[INFO] 14:53:15:880 Carpincho/(15399:15401): Se realizó el CALL IO correctamente
+[INFO] 14:53:15:880 Carpincho/(15399:15401): EJECUTANDO Carpincho 2
+[INFO] 14:53:15:880 Carpincho/(15399:15402): RESPUESA DE IO RECIBIDA 0 
+[INFO] 14:53:15:880 Carpincho/(15399:15402): MATE IO ESPERANDO OK DEL PROCESADOR PARA SEGUIR carpincho 3
+
+
+[INFO] 14:53:17:880 Carpincho/(15399:15401): CALL_IO a pelopincho
+[INFO] 14:53:17:880 Carpincho/(15399:15401): Carpincho 2 se va a IO
+[INFO] 14:53:17:881 Carpincho/(15399:15400): 
+_____llego del procesador un OK para el caprincho 1
+
+
+[INFO] 14:53:17:881 Carpincho/(15399:15400): Se realizó el CALL IO correctamente
+[INFO] 14:53:17:881 Carpincho/(15399:15400): EJECUTANDO Carpincho 1
+[INFO] 14:53:17:881 Carpincho/(15399:15401): RESPUESA DE IO RECIBIDA 0 
+[INFO] 14:53:17:881 Carpincho/(15399:15401): MATE IO ESPERANDO OK DEL PROCESADOR PARA SEGUIR carpincho 2
+
+
+[INFO] 14:53:19:881 Carpincho/(15399:15400): CALL_IO a pelopincho
+[INFO] 14:53:19:881 Carpincho/(15399:15400): Carpincho 1 se va a IO
+[INFO] 14:53:19:882 Carpincho/(15399:15401): 
+_____llego del procesador un OK para el caprincho 2
+
+
+[INFO] 14:53:19:882 Carpincho/(15399:15401): Se realizó el CALL IO correctamente
+[INFO] 14:53:19:882 Carpincho/(15399:15401): EJECUTANDO Carpincho 2
+[INFO] 14:53:19:882 Carpincho/(15399:15400): RESPUESA DE IO RECIBIDA 0 
+[INFO] 14:53:19:882 Carpincho/(15399:15400): MATE IO ESPERANDO OK DEL PROCESADOR PARA SEGUIR carpincho 1
+
+
+[INFO] 14:53:21:882 Carpincho/(15399:15401): CALL_IO a pelopincho
+[INFO] 14:53:21:883 Carpincho/(15399:15401): Carpincho 2 se va a IO
+[INFO] 14:53:21:883 Carpincho/(15399:15400): 
+_____llego del procesador un OK para el caprincho 1
+
+
+[INFO] 14:53:21:883 Carpincho/(15399:15400): Se realizó el CALL IO correctamente
+[INFO] 14:53:21:883 Carpincho/(15399:15400): EJECUTANDO Carpincho 1
+[INFO] 14:53:21:884 Carpincho/(15399:15401): RESPUESA DE IO RECIBIDA 0 
+[INFO] 14:53:21:884 Carpincho/(15399:15401): MATE IO ESPERANDO OK DEL PROCESADOR PARA SEGUIR carpincho 2
+
+
+[INFO] 14:53:23:884 Carpincho/(15399:15400): CALL_IO a pelopincho
+[INFO] 14:53:23:884 Carpincho/(15399:15400): Carpincho 1 se va a IO
+[INFO] 14:53:23:885 Carpincho/(15399:15401): 
+_____llego del procesador un OK para el caprincho 2
+
+
+[INFO] 14:53:23:885 Carpincho/(15399:15401): Se realizó el CALL IO correctamente
+[INFO] 14:53:23:885 Carpincho/(15399:15401): EJECUTANDO Carpincho 2
+[INFO] 14:53:23:885 Carpincho/(15399:15400): RESPUESA DE IO RECIBIDA 0 
+[INFO] 14:53:23:885 Carpincho/(15399:15400): MATE IO ESPERANDO OK DEL PROCESADOR PARA SEGUIR carpincho 1
+
+
+[INFO] 14:53:25:885 Carpincho/(15399:15401): MATE_CLOSE
+[INFO] 14:53:25:885 Carpincho/(15399:15401): MATE_CLOSE: mensaje enviado a kernel
+[INFO] 14:53:25:885 Carpincho/(15399:15401): libero memoria
+[INFO] 14:53:25:885 Carpincho/(15399:15401): libero memoria
+[INFO] 14:53:25:885 Carpincho/(15399:15401): Carpincho eliminado
+[INFO] 14:53:25:885 Carpincho/(15399:15400): 
+_____llego del procesador un OK para el caprincho 1
+
+
+[INFO] 14:53:25:885 Carpincho/(15399:15400): Se realizó el CALL IO correctamente
+[INFO] 14:53:25:885 Carpincho/(15399:15400): EJECUTANDO Carpincho 1
+[INFO] 14:53:27:886 Carpincho/(15399:15400): MATE_CLOSE
+[INFO] 14:53:27:886 Carpincho/(15399:15400): MATE_CLOSE: mensaje enviado a kernel
+[INFO] 14:53:27:886 Carpincho/(15399:15400): libero memoria
+[INFO] 14:53:27:886 Carpincho/(15399:15400): libero memoria
+[INFO] 14:53:27:886 Carpincho/(15399:15400): Carpincho eliminado
+[INFO] 14:53:27:887 Carpincho/(15399:15402): 
+_____llego del procesador un OK para el caprincho 3
+
+
+[INFO] 14:53:27:887 Carpincho/(15399:15402): Se realizó el CALL IO correctamente
+[INFO] 14:53:27:887 Carpincho/(15399:15402): EJECUTANDO Carpincho 3
+[INFO] 14:53:29:887 Carpincho/(15399:15402): EJECUTANDO Carpincho 3
