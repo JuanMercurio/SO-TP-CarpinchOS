@@ -19,6 +19,7 @@ void iniciar_signals();
 void imprimir_TLB();
 void generar_dump();
 void limpiar_TLB();
+void programa_terminar_forzado();
     
 void tabla_actualizar(tlb_t* reg);
 void tlb_imprimir_reg(tab_pags* reg);
