@@ -2,6 +2,8 @@
 
 //------------------General Functions---------------------/
 
+t_log* logger;
+
 /* 
   - recibe un mensaje (handshake)
   - envia NEW_INSTANCE

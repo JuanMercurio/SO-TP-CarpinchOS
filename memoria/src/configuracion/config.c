@@ -2,7 +2,7 @@
 
 #include <pthread.h>
 
-t_log* logger;
+t_log* logger_memoria;
 pthread_mutex_t mutex_log;
 
 t_config* config;
@@ -27,13 +27,13 @@ void obtener_config(){
 }
 
 void iniciar_logger(){
-    logger = log_create("cfg/memoria.log", "Memoria", 0, LOG_LEVEL_INFO);
+    logger_memoria = log_create("cfg/memoria.log", "Memoria", 0, LOG_LEVEL_INFO);
     pthread_mutex_init(&mutex_log, 0);
 }
 
 void loggear_mensaje(char* mensaje){
     pthread_mutex_lock(&mutex_log);
-    log_info(logger, mensaje);
+    log_info(logger_memoria, mensaje);
     pthread_mutex_unlock(&mutex_log);
 }
 

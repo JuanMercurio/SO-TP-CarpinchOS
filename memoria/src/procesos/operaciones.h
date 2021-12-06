@@ -2,7 +2,7 @@
 #define _OPERACIONES_MEMORIA_
 
 #include "../esquema/paginacion.h"
-#include <matelib/matelib.h>
+#include <matelib.h>
 
 #include <commons/collections/list.h>
 #include <stdint.h>

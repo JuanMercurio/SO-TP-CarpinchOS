@@ -4,7 +4,8 @@
 #include "../esquema/tlb.h"
 #include "operaciones.h"
 
-#include <matelib/matelib.h>
+#include <matelib.h>
+
 #include <mensajes/mensajes.h>
 #include <pthread.h>
 #include <sys/socket.h>

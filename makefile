@@ -1,5 +1,5 @@
 # Custom shared libraries
-SHARED_LIBS = utils
+SHARED_LIBS = matelib
 
 # ===============================================================================================================
 
@@ -29,7 +29,7 @@ CONFIG=cfg
 .VSCODE=.vscode
 
 # Tasks and Debugg
-UTILS_TASKS = utils/.vscode/tasks.json
+UTILS_TASKS = matelib/.vscode/tasks.json
 TASKS = .vscode/tasks.json
 DEBUG = .vscode/launch.json 
 

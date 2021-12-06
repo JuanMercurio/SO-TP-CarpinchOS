@@ -7,7 +7,7 @@
 //#include <lib/matelib.h>
 #include <commons/log.h>
 #include "main.h"
-#include <matelib/matelib.h>
+#include <matelib.h>
 
 #define CANT_CARPINCHOS 1
 char *LOG_PATH = "./planificacion.log";

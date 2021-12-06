@@ -1,7 +1,7 @@
 #ifndef _MATELIB_H_
 #define _MATELIB_H_
 
-#include "../mensajes/mensajes.h"
+#include "mensajes/mensajes.h"
 
 #include <commons/collections/list.h>
 #include <commons/config.h>
@@ -61,7 +61,7 @@ typedef char *mate_sem_name;
 
 typedef int32_t mate_pointer;
 
-t_log* logger;
+extern t_log* logger;
 
 //------------------General Functions---------------------/
 int mate_init(mate_instance *lib_ref, char *config);
