@@ -162,8 +162,8 @@ void receptor(void *arg)
                sem_wait(&mutex_cola_new);
                queue_push(cola_new, (void *)carpincho); // pensando que el proceso queda trabado en mate init hasta que sea planificado
                sem_post(&mutex_cola_new);
-               sem_post(&cola_new_con_elementos);
                log_info(logger, "NEW INSTANCE: Se agregó el carpincho ID: %d a la cola de new", carpincho->pid);
+               sem_post(&cola_new_con_elementos);
                 /*  } else {
                   enviar_mensaje(cliente, "FAIL");
                 } */
