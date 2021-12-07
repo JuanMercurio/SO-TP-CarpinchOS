@@ -245,22 +245,21 @@ void gestor_cola_io(void *datos){
    carpincho = (t_pcb*) queue_pop(io->bloqueados);
    sem_post(&io->mutex_io);
    sleep(io->retardo * 0.001);
+   if(carpincho->estado == 'S'){
+      sem_post(&carpincho->semaforo_fin_evento);
+   }else
    iniciar_planificador_corto_plazo(carpincho);
   // printf("GESTOR IO: carpincho PID %d TERMINO IO %s\n", carpincho->pid, io->id);
    carpinchos_bloqueados --;
    log_info(logger,"GESTOR IO: desbloqueando carpincho PID %d", carpincho->pid);
 }
 }
-int bloquear_por_io(t_pcb *carpincho){
+io_kernel* bloquear_por_io(t_pcb *carpincho){
    io_kernel *io = buscar_io(carpincho->io_solicitada);
-   if(io == NULL){
+   return io;
+  /*  if(io == NULL){
       return -1;
    }else{
-   sem_wait(&io->mutex_io);//time stamp
-   queue_push(io->bloqueados, (void*)carpincho);
-   sem_post(&io->mutex_io);
-   sem_post(&io->cola_con_elementos);
-   log_info(logger, "El carpincho %d está bloqueado por IO %s", carpincho->pid, io->id);
    return 0;
-   }
+   } */
 }

@@ -29,6 +29,15 @@ typedef struct tiempo_t{
     char* time_stamp_fin;
 }tiempo_t;
 
+typedef struct io_kernel{
+    char* id;
+    int retardo;
+    t_queue* bloqueados;
+    sem_t mutex_io;
+    sem_t cola_con_elementos;
+}io_kernel;
+
+
 typedef struct t_pcb{
     int pid;
     int fd_cliente;
@@ -37,6 +46,7 @@ typedef struct t_pcb{
     char estado;
     int proxima_instruccion;
     char* io_solicitada;
+    io_kernel* io;
     char* semaforo_a_modificar;
     sem_t semaforo_evento;
     sem_t semaforo_fin_evento;
@@ -69,13 +79,6 @@ typedef struct sem_kernel{
     int tomado_por;
 }sem_kernel;
 
-typedef struct io_kernel{
-    char* id;
-    int retardo;
-    t_queue* bloqueados;
-    sem_t mutex_io;
-    sem_t cola_con_elementos;
-}io_kernel;
 
 
 
@@ -86,6 +89,7 @@ t_queue *suspendido_bloqueado;
 t_queue *suspendido_listo;
 t_queue *cola_finalizados;
 // listas
+//t_list *lista_new;
 t_list *lista_ejecutando;
 t_list *lista_sem_kernel;
 t_list *lista_io_kernel;

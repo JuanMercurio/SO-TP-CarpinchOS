@@ -35,22 +35,32 @@ void procesador()
       {
       case IO:
          if (verificar_suspension())
-         { //verifiva que el grado de multiprogramacion no este copado por carpinchos bloqueados
+         { printf("BLOQUEAR POR SUSPENDIDO CARPINCHO %d\n", carpincho->pid);
             bloquear_por_mediano_plazo(carpincho);
             log_info(logger, "El carpincho %d fue suspendido", carpincho->pid);
+         }else
+         {
+            carpinchos_bloqueados++;
          }
-        //int aux = bloquear_por_io(carpincho);
+         sem_wait(&carpincho->io->mutex_io);
+         queue_push(carpincho->io->bloqueados, (void*)carpincho);
+         sem_post(&carpincho->io->mutex_io);
+         sem_post(&carpincho->io->cola_con_elementos);
+         log_info(logger, "El carpincho %d está bloqueado por IO %s", carpincho->pid, carpincho->io->id);
          log_info(logger, "El carpincho %d fue BLOQUEADO por io", carpincho->pid);
-         carpinchos_bloqueados++;
+         carpincho->tiempo.time_stamp_fin = temporal_get_string_time("%H:%M:%S:%MS");//TIEMPO EJECUTADO FIN
+         carpincho->tiempo.tiempo_ejecutado = obtener_tiempo(carpincho->tiempo.time_stamp_inicio, carpincho->tiempo.time_stamp_fin);
          printf("PROCESADOR: carpinchos bloqueados--------------------------- %d\n", carpinchos_bloqueados);
          break;
 
       case SEM_WAIT:
          if (verificar_suspension())
-         {  
+         {  printf("BLOQUEAR POR SUSPENDIDO CARPINCHO %d\n", carpincho->pid);
             bloquear_por_mediano_plazo(carpincho);
             log_info(logger, "El carpincho %d fue suspendido", carpincho->pid);
          }
+         carpincho->tiempo.time_stamp_fin = temporal_get_string_time("%H:%M:%S:%MS");//TIEMPO EJECUTADO FIN
+         carpincho->tiempo.tiempo_ejecutado = obtener_tiempo(carpincho->tiempo.time_stamp_inicio, carpincho->tiempo.time_stamp_fin);
          printf("PROCESADOR: carpincho se blqueara por semaforo\n");
          carpinchos_bloqueados++;
          printf("PROCESADOR: carpinchos cloqueados %d\n", carpinchos_bloqueados);
@@ -67,14 +77,14 @@ void procesador()
          sem_post(&mate_close);*/
          break;
       }
-      carpincho->tiempo.time_stamp_fin = temporal_get_string_time("%H:%M:%S:%MS");//TIEMPO EJECUTADO FIN
-      carpincho->tiempo.tiempo_ejecutado = obtener_tiempo(carpincho->tiempo.time_stamp_inicio, carpincho->tiempo.time_stamp_fin);
+      
    }
 }
 
 bool verificar_suspension()
 {
-   if (carpinchos_bloqueados == configuracion.GRADO_MULTIPROGRAMACION - 1 && list_is_empty(lista_ordenada_por_algoritmo) && !queue_is_empty(cola_new))
+
+   if (carpinchos_bloqueados == configuracion.GRADO_MULTIPROGRAMACION - 1 && list_is_empty(lista_ordenada_por_algoritmo) && !queue_is_empty(cola_new))//cambiado
       return true;
    else
 
@@ -256,7 +266,7 @@ double obtener_tiempo(char *inicio, char *fin)
             total += dif; //segundos
             break;
          case 3:
-            total += (dif * 0.001); //milisegundo
+           total += (dif * 0.001); //milisegundo
             break;
          }
       }
@@ -293,13 +303,16 @@ void* comparador_HRRN(void *arg1,void* arg2)
 void bloquear_por_mediano_plazo(t_pcb *carpincho)
 {
    //AVISAR A MEMORIA QUE EL CARPINCHO ESTA SUSPENDIDO (SWAMP)
-
-   enviar_int(carpincho->fd_memoria, SUSPENCION);// ARREGLAR
+   printf("ENTRO A MEDIANO PLAZO CARPINCHO %d\n", carpincho->pid);
+   //enviar_int(carpincho->fd_memoria, SUSPENCION);// ARREGLAR
+   carpincho->estado = 'S';
    sem_wait(&mutex_cola_bloqueado_suspendido);
    queue_push(suspendido_bloqueado, carpincho);
    sem_post(&mutex_cola_bloqueado_suspendido);
    sem_post(&cola_suspendido_bloquedo_con_elementos);
+   sem_post(&controlador_multiprogramacion);
 }
+
 void planificador_mediano_plazo()
 {
    t_pcb *carpincho;
@@ -309,13 +322,14 @@ void planificador_mediano_plazo()
       sem_wait(&mutex_cola_bloqueado_suspendido);
       carpincho = (t_pcb *)queue_pop(suspendido_bloqueado);
       sem_post(&mutex_cola_bloqueado_suspendido);
-
       sem_wait(&carpincho->semaforo_fin_evento);
+printf("--------------carpincho %d termino evento que lo suspendia\n", carpincho->pid);
 
-      sem_wait(&mutex_cola_listo_suspendido);
+       sem_wait(&mutex_cola_listo_suspendido);
       queue_push(suspendido_listo, carpincho);
       sem_post(&mutex_cola_listo_suspendido);
-     // sem_post(&cola_suspendido_listo_con_elementos);
+      sem_post(&cola_new_con_elementos);
+     /// sem_post(&cola_suspendido_listo_con_elementos);
    }
 }
 
@@ -327,26 +341,21 @@ void iniciar_planificador_largo_plazo()
       sem_wait(&controlador_multiprogramacion);
       sem_wait(&cola_new_con_elementos);
       log_info(logger, "Llegó un carpincho al planificador de largo plazo");
-      if (queue_is_empty(suspendido_listo))
-      { //si el mediano plazo suspendio algo tiene prioridad ese
-         sem_wait(&mutex_cola_new);
-         carpincho = queue_pop(cola_new);
-         sem_post(&mutex_cola_new);
-         log_info(logger, "Carpincho %d - Se saca de la cola new", carpincho->pid);
-         printf(" inicia carpincho plp\n");
-         inicializar_proceso_carpincho(carpincho);
-         printf(" lo inicio plp\n");
-      }
-      else
-      {
-         sem_wait(&mutex_cola_listo_suspendido);
-         carpincho = queue_pop(suspendido_listo);
-         log_info(logger, "Carpincho %d - Se saca de la cola suspendido", carpincho->pid);
-         enviar_mensaje_y_cod_op("sali de suspension", carpincho->fd_memoria, VUELTA_A_READY);// traer de swamp las paginasssssss
+      if (!queue_is_empty(suspendido_listo))
+      { //si el mediano plazo suspendio algo tiene prioridad es
+       sem_wait(&mutex_cola_listo_suspendido);
+         carpincho = (t_pcb*) queue_pop(suspendido_listo);
          sem_post(&mutex_cola_listo_suspendido);
+         log_info(logger, "Carpincho %d - Se saca de suspencion", carpincho->pid);
+        // enviar_mensaje_y_cod_op("sali de suspension", carpincho->fd_memoria, VUELTA_A_READY);// traer de swamp las paginasssssss
+      }else{
+         sem_wait(&mutex_cola_new);
+         carpincho = (t_pcb*) queue_pop(cola_new);
+         sem_post(&mutex_cola_new);
+         inicializar_proceso_carpincho(carpincho);
+         log_info(logger, "Carpincho %d - Se INICIARA carpincho %d", carpincho->pid);
       }
       printf(" se va  a corotoplazo plp\n");
-
       iniciar_planificador_corto_plazo(carpincho);
      /*  sem_wait(&mutex_cola_ready);
       queue_push(cola_ready, carpincho);

@@ -29,7 +29,7 @@ void procesador();
  */
 void iniciar_planificador_corto_plazo(t_pcb* carpincho);
 
-void iniciar_planificador_mediano_plazo();
+void planificador_mediano_plazo();
 
 /* 
     @NAME: inciar_planificador_largo_plazo

@@ -47,7 +47,7 @@ void destruir_colas_y_listas(){
 
    list_destroy_and_destroy_elements(lista_io_kernel, (void *)io_destroyer);
 
-   if (!queue_is_empty(cola_new))
+   if (!queue_is_empty(cola_new))// cambiado
    {
       queue_destroy_and_destroy_elements(cola_new, (void *)eliminar_carpincho);
    }
@@ -160,7 +160,7 @@ void receptor(void *arg)
                printf("carpincho creado\n");
                enviar_int(cliente, carpincho->pid);
                sem_wait(&mutex_cola_new);
-               queue_push(cola_new, (void *)carpincho); // pensando que el proceso queda trabado en mate init hasta que sea planificado
+               queue_push(cola_new,carpincho); // pensando que el proceso queda trabado en mate init hasta que sea planificado
                sem_post(&mutex_cola_new);
                sem_post(&cola_new_con_elementos);
                log_info(logger, "NEW INSTANCE: Se agregó el carpincho ID: %d a la cola de new", carpincho->pid);
@@ -183,9 +183,9 @@ void receptor(void *arg)
                recibido = recibir_mensaje(cliente);
                carpincho->io_solicitada = string_duplicate(recibido);              
                carpincho->proxima_instruccion = IO;
-               aux_int = bloquear_por_io(carpincho);
+               carpincho->io = buscar_io(carpincho->io_solicitada);
                printf("RECEPTOR: io: recibido de bloquear por io a carpincho %d\n", carpincho->pid);
-               if(aux_int == -1){
+               if(carpincho->io == NULL){
                   enviar_int(cliente, -1);
                }else
                {
@@ -348,12 +348,12 @@ void inicializar_planificacion()
    
    iniciar_colas();
   log_info(logger, "Inicio colas de planificación");
-/*    if(pthread_create(&hilos_planificadores, &detached3, (void *) iniciar_planificador_corto_plazo, NULL)!= 0){
+    if(pthread_create(&hilos_planificadores, &detached3, (void *) planificador_mediano_plazo, NULL)!= 0){
       log_info(logger,"No se pudo crear el hilo Planificador Corto Plazo");
    }else{
       log_info(logger, "Hilo Planificador Corto Plazo creado");
    }
- */
+ 
    if(pthread_create(&hilos_planificadores, &detached3,  (void *)iniciar_planificador_largo_plazo, NULL)!= 0){
       log_info(logger,"No se pudo crear el hilo Planificador Largo Plazo");
    }else{
@@ -396,7 +396,7 @@ void program_killer(){
 
 void iniciar_colas()
 {
-   cola_new = queue_create();
+   cola_new = queue_create();// cambio
    cola_ready = queue_create();
    suspendido_bloqueado = queue_create();
    suspendido_listo = queue_create();

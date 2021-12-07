@@ -5,7 +5,10 @@ void carpincho_comportamiento(void* arg);
 void carpincho_comportamiento2(void* arg);
 void carpincho_comportamiento3(void *arg);
 void carpincho_comportamiento_memoria(void* arg);
-
+void* carpincho1_func(void* config);
+void* carpincho2_func(void* config);
+void* carpincho3_func(void* config);
+void* carpincho4_func(void* config);
 void memoria_carpincho();
 
 //-----------------------------------------------------
