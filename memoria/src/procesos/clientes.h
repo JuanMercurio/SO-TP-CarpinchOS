@@ -42,7 +42,7 @@ void comprobar_inicio(int estado, int socket);
 int iniciar_proceso(int proceso);
 void inicio_comprobar(tab_pags* tabla, int cliente, bool* conectado);
 
-int swap_solicitud_iniciar();
+int swap_solicitud_iniciar(int);
 void cliente_terminar(tab_pags* tabla, int cliente);
 
 /*

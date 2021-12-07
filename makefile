@@ -1,5 +1,5 @@
 # Custom shared libraries
-SHARED_LIBS = utils
+SHARED_LIBS = matelib
 
 # ===============================================================================================================
 
@@ -13,9 +13,9 @@ MODULES = $(filter-out $(SHARED_LIBS), $(DIRECTORIES))
 BASE_PROJECT =$(strip $(word 1, $(MODULES)))
 
 print:
-	@echo $(DIRECTORIES)
-	@echo $(MODULES)
-	@echo $(BASE_PROJECT)
+	@echo DIRECTORIES:  $(DIRECTORIES)
+	@echo MODULES:      $(MODULES)
+	@echo BASE_PROJECT: $(BASE_PROJECT)
 
 # Name of workspace file
 WORKSPACE = $(word 1,$(shell find . -maxdepth 1 -name *.code-workspace | tr './' ' '))
@@ -29,7 +29,7 @@ CONFIG=cfg
 .VSCODE=.vscode
 
 # Tasks and Debugg
-UTILS_TASKS = utils/.vscode/tasks.json
+UTILS_TASKS = matelib/.vscode/tasks.json
 TASKS = .vscode/tasks.json
 DEBUG = .vscode/launch.json 
 
@@ -40,7 +40,7 @@ SED_TASK =build_tasks:
 
 # ===============================================================================================================
 
-all:
+all: $(DIRECTORIES) $(MODULES) $(BASE_PROJECT)
 	@for dir in $(DIRECTORIES);		\
 	do 								\
 		cd $$dir; 					\
@@ -49,8 +49,11 @@ all:
 	done; 							\
 	echo "Make $@ was succesfull"
 
+$(DIRECTORIES):
+	make -C $@ all
+
 #p: project
-project:
+project: $(DIRECTORIES) $(MODULES) $(BASE_PROJECT)
 	@mkdir $(name) $(name)/$(SRC) $(name)/$(CONFIG)  $(name)/$(TESTS)
 	
 	@touch $(name)/$(CONFIG)/$(name).config  	\
@@ -106,7 +109,7 @@ delete: $(BASE_PROJECT)
 
 	@echo "$(name) was removed"
 
-clean: $(DIRECTORIES)
+clean:
 	@for dir in $(DIRECTORIES); 	\
 	do 								\
 		cd $$dir; 					\
@@ -132,7 +135,7 @@ help:
 	@echo " "
 
 
-.PHONY: project clean all delete del p
+.PHONY: project clean all delete del p $(DIRECTORIES)
 
 # ===============================================================================================================
 

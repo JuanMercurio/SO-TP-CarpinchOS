@@ -9,14 +9,19 @@ int main(int argc, char* argv[]) {
 
     memoria_tests(argc, argv[1]);
 
-    int memoria = crear_conexion("127.0.0.1", "5001");
+    int memoria = crear_conexion("127.0.0.1", "5003");
+    char* handshake = recibir_mensaje(memoria);
+    printf("------------------%s\n", handshake);
+    enviar_int(memoria,14);
     char* tipo_asignacion = recibir_mensaje(memoria);
-    asignacionFija = 1;
-    if(strcmp(tipo_asignacion,"fija")){
+     printf("%s\n", tipo_asignacion);
+    asignacionFija = 0;
+
+    if(strcmp(tipo_asignacion,"FIJA") == 0){
+        printf("entro a if de FIJA\n");
         asignacionFija = 1;
     }
-    printf("%s\n", tipo_asignacion);
-
+         printf("%d\n", asignacionFija);
     lista_carpinchos= list_create();
     lista_marcos= list_create();
     marcos_libres_fija = list_create();
@@ -66,10 +71,11 @@ int main(int argc, char* argv[]) {
     */
     while(1){
         sem_wait(agrego_lista_pedidos);
-        Pedido* ped = malloc(sizeof(Pedido));
+        Pedido* ped; /* = malloc(sizeof(Pedido)); */
         sem_wait(mutex_lista_pedidos);
-        ped = list_remove(lista_pedidos,0);
+        ped = (Pedido*) list_remove(lista_pedidos,0);
         sem_post(mutex_lista_pedidos);
+        printf(" saco de lista pedido %d\n", ped->pid);
         if(strcmp(ped->nombre_pedido,"ESCRIBIR_PAGINA")){
             int pido;
             if(asignacionFija){
@@ -90,7 +96,7 @@ int main(int argc, char* argv[]) {
             else{
                 puede = quedaPaginasEnArchivo(ped->pid);
             }
-            if ( puede){
+            if (puede){
                 enviar_int(memoria,1);
             }
             else{
@@ -110,6 +116,7 @@ int main(int argc, char* argv[]) {
         }
         else if(strcmp(ped->nombre_pedido,"SOLICITUD_PAGINA") ){
             // puede pedir una pagina
+            printf(" entro a solicitud pagina\n");
             int error;
             bool puede;
             if(asignacionFija){
@@ -1124,7 +1131,8 @@ void memoria_tests(int argc, char* argv)
 void memoria_operacion(int cliente){
 
     int codop = recibir_operacion(cliente);
-    int tamanio = recibir_int(cliente);
+    printf("codigo de operacdion %d\n", codop);
+    //int tamanio = recibir_int(cliente);
     Pedido* ped = malloc(sizeof(Pedido));
     int tamanio_pid,pid,tamanio_pagina,pagina,tamanio2;
    switch(codop){
@@ -1148,16 +1156,19 @@ void memoria_operacion(int cliente){
             break;
 
         case SOLICITUD_INICIO:
-            tamanio_pid = recibir_int(cliente);
+         printf("entro a solicitud inicio\n");
+            //tamanio_pid = recibir_int(cliente);
             pid = recibir_int(cliente);
             // queda lugar
             ped->nombre_pedido = "SOLICITUD_INICIO";
             ped->pid = pid;
             ped->oper = codop;
+            printf("creo struct de pid %d\n", pid);
             sem_wait(mutex_lista_pedidos);
             list_add(lista_pedidos,ped);
             sem_post(mutex_lista_pedidos);
             sem_post(agrego_lista_pedidos);
+            printf("agrego a lista\n");
             break;
 
         case INICIO:

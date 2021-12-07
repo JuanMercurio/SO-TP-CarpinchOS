@@ -13,7 +13,7 @@
                 "/usr/include/i386-linux-gnu",
                 "/usr/include",
                 "${workspaceFolder}/src",
-                "${workspaceFolder:utils}/src"
+                "${workspaceFolder:matelib}/src"
                 
             ],
             "defines": [

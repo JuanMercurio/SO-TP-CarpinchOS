@@ -18,6 +18,7 @@ void iniciar_signals(){
     signal_init(SIGINT, &imprimir_TLB);
     signal_init(SIGUSR1, &generar_dump);
     signal_init(SIGUSR2, &limpiar_TLB);
+    signal_init(SIGTSTP, &programa_terminar_forzado);
 }
 
 /* Las siguientes funciones pueden ser transferidas a otro lugar para mas comodidad */
@@ -29,12 +30,12 @@ void imprimir_TLB(){
     printf("Total TLB Misses: %d\n", TLB_MISS_COUNT);
     printf("\n");
 
-    int tamanio = list_size(tablas.lista);
-    for(int i=0; i < tamanio; i++)
-    {
-        tab_pags* reg = list_get(tlb, i);
-        tlb_imprimir_reg(reg);
-    }
+    /* int tamanio = list_size(tablas.lista); */
+    /* for(int i=0; i < tamanio; i++) */
+    /* { */
+    /*     tab_pags* reg = list_get(tlb, i); */
+    /*     tlb_imprimir_reg(reg); */
+    /* } */
 }
 
 void generar_dump(){
@@ -134,6 +135,11 @@ void limpiar_TLB(){
     }
 }
 
+void programa_terminar_forzado()
+{
+	int pid = getpid();
+	kill(pid, SIGTERM);
+}
 
 /* Funciones adicionales */
 

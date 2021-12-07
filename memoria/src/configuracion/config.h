@@ -22,7 +22,7 @@ typedef struct {
 extern pthread_mutex_t mutex_log;
 extern t_cfg configuracion;
 extern t_config* config;
-extern t_log* logger;
+extern t_log* logger_memoria;
 
 /*
    @NAME: obtener_config

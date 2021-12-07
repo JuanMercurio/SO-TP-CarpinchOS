@@ -1,7 +1,7 @@
 # Include libraries here
-LIBRARIES=utils pthread cunit commons
+LIBRARIES=matelib pthread cunit commons
 # Include custom library paths here
-LIBRARY_PATHS=../utils
+LIBRARY_PATHS=../matelib
 
 # ==============================================================================================================
 

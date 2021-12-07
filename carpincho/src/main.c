@@ -1,17 +1,15 @@
-#include "main.h"
-#include <matelib/matelib.h>
-#include <pthread.h>
-
 #include <pthread.h>
 #include <semaphore.h>
 #include <time.h>
+#include <unistd.h>
 #include <stdio.h>
 #include <stdlib.h>
 //#include <lib/matelib.h>
 #include <commons/log.h>
 #include "main.h"
-#include <matelib/matelib.h>
 //------------------------------- PLANIFICACION--------------------//
+#include <matelib.h>
+
 #define CANT_CARPINCHOS 1
 char *LOG_PATH = "./planificacion.log";
 char *PROGRAM_NAME = "planificacion";
@@ -119,7 +117,7 @@ void init_sems()
     pthread_join(carpincho3_thread, NULL);
     free_all();
     puts("Termine!");
-}  */
+} */ 
 //----------------------SUSPENSION---------------------//
 void* carpincho1_func(void* config){
 
@@ -209,7 +207,9 @@ void* carpincho4_func(void* config){
 
 int main(int argc, char *argv[]) {
 
-	pthread_t carpincho1;
+   memoria_carpincho();
+
+	/* pthread_t carpincho1;
 	pthread_t carpincho2;
 	pthread_t carpincho3;
 	pthread_t carpincho4;
@@ -229,10 +229,10 @@ int main(int argc, char *argv[]) {
 	pthread_join(carpincho2, NULL);
 	pthread_join(carpincho1, NULL);
 
-	printf("MAIN - Retirados los carpinchos de la pelea, hora de analizar los hechos\n");
+	printf("MAIN - Retirados los carpinchos de la pelea, hora de analizar los hechos\n"); */
 
 	return EXIT_SUCCESS;
-}
+} 
 /*
 int main(int argc, char* argv[]) {
 

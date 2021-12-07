@@ -4,7 +4,8 @@
 #include "../esquema/tlb.h"
 #include "operaciones.h"
 
-#include <matelib/matelib.h>
+#include <matelib.h>
+
 #include <mensajes/mensajes.h>
 #include <pthread.h>
 #include <sys/socket.h>
@@ -66,6 +67,12 @@ void ejecutar_proceso(int cliente)
                 mate_close_comportamiento(tabla, cliente, &conectado);
                 break;
 
+            case SWAMP:
+                printf("se conecto swamp\n");
+                swap = cliente;
+                enviar_mensaje(cliente, configuracion.TIPO_ASIGNACION);
+                break;
+
             default:
                 conectado = false;
                 break;
@@ -120,11 +127,14 @@ void new_instance_kernel_comportamiento(tab_pags* tabla, int cliente, bool *cone
 }
 
 
-int swap_solicitud_iniciar(){
-    return 0;
-    // enviar_int(swap, SOLICITUD_INICIO);
-    // int estado = recibir_int(swap);
-    // return estado;
+int swap_solicitud_iniciar(int pid){
+    //return 0;
+     enviar_int(swap, SOLICITUD_INICIO);
+      printf("------------------------ENVIANDO A SWAMP PID %d\n", pid);
+      enviar_int(swap,pid );
+     int estado = recibir_int(swap);
+     printf("------------------------RECIBIDO DE SWAMP %d\n", estado);
+     return estado;
 }
 
 void memalloc_comportamiento(tab_pags* tabla, int cliente)
@@ -188,7 +198,7 @@ void iniciar_paginas(tab_pags* tabla)
 
 void inicio_comprobar(tab_pags* tabla, int cliente, bool* conectado){
     
-    int respuesta = swap_solicitud_iniciar();
+    int respuesta = swap_solicitud_iniciar(tabla->pid);
 
     if(respuesta == -1) 
     {
