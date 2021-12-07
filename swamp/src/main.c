@@ -10,6 +10,7 @@ int main(int argc, char* argv[]) {
     memoria_tests(argc, argv[1]);
 
     int memoria = crear_conexion("127.0.0.1", "5003");
+    printf("memoria %d\n", memoria);
     char* handshake = recibir_mensaje(memoria);
     printf("------------------%s\n", handshake);
     enviar_int(memoria,14);
@@ -76,7 +77,7 @@ int main(int argc, char* argv[]) {
         ped = (Pedido*) list_remove(lista_pedidos,0);
         sem_post(mutex_lista_pedidos);
         printf(" saco de lista pedido %d\n", ped->pid);
-        if(strcmp(ped->nombre_pedido,"ESCRIBIR_PAGINA")){
+        if(strcmp(ped->nombre_pedido,"ESCRIBIR_PAGINA") == 0){
             int pido;
             if(asignacionFija){
                 pido = remplazoPaginaFija(ped->pid, ped->pagina, ped->contenido_pagina);
@@ -86,7 +87,8 @@ int main(int argc, char* argv[]) {
             }
             enviar_int(memoria, pido);
         }
-        else if(strcmp(ped->nombre_pedido,"SOLICITUD_INICIO") ){
+        else if(strcmp(ped->nombre_pedido,"SOLICITUD_INICIO") ==0 ){
+            printf("solicitud inicio despues de strcmp\n");
             bool puede;
             if(asignacionFija){
                 // SE FIJA SI HAY ESPACIO O SI YA EXISTE ESE CARPINCHO
@@ -97,14 +99,16 @@ int main(int argc, char* argv[]) {
                 puede = quedaPaginasEnArchivo(ped->pid);
             }
             if (puede){
+                 printf("devuelve 1\n");
                 enviar_int(memoria,1);
+                printf("envioooooo a memoria %d\n", memoria);
             }
-            else{
+            else{ printf("devuelve -1\n");
                 enviar_int(memoria,-1);
             }
             
         }
-        else if(strcmp(ped->nombre_pedido,"INICIO") ){
+        else if(strcmp(ped->nombre_pedido,"INICIO") == 0){
             int inicio;
             if(asignacionFija){
                 inicio = crearCarpinchoFijaDOS(ped->pid);
@@ -114,7 +118,7 @@ int main(int argc, char* argv[]) {
             }
             enviar_int(memoria,inicio);
         }
-        else if(strcmp(ped->nombre_pedido,"SOLICITUD_PAGINA") ){
+        else if(strcmp(ped->nombre_pedido,"SOLICITUD_PAGINA") == 0 ){
             // puede pedir una pagina
             printf(" entro a solicitud pagina\n");
             int error;
@@ -139,7 +143,7 @@ int main(int argc, char* argv[]) {
                 enviar_int(memoria,-1);
             }
         }
-        else if(strcmp(ped->nombre_pedido,"BORRAR_PAGINA") ){
+        else if(strcmp(ped->nombre_pedido,"BORRAR_PAGINA") == 0){
            int pudo;
             if(asignacionFija){
                 pudo = BorrarPaginaFija(ped->pid, ped->pagina);
@@ -149,7 +153,7 @@ int main(int argc, char* argv[]) {
             }
             enviar_int(memoria, pudo);
         }
-        else if(strcmp(ped->nombre_pedido,"BORRAR_CARPINCHO") ){
+        else if(strcmp(ped->nombre_pedido,"BORRAR_CARPINCHO") == 0){
            int error;
             if(asignacionFija){
               error = borrarCarpinchoFija(ped->pid);
@@ -159,7 +163,7 @@ int main(int argc, char* argv[]) {
             }
             enviar_int(memoria, error);
         }
-        else if(strcmp(ped->nombre_pedido,"OBTENER_PAGINA") ){
+        else if(strcmp(ped->nombre_pedido,"OBTENER_PAGINA") == 0){
            char* cont_pag;
             if(asignacionFija){
                 cont_pag =  buscarPaginaFija(ped->pid,ped->pagina);
@@ -168,7 +172,7 @@ int main(int argc, char* argv[]) {
                 cont_pag =  buscarPaginaDinamico(ped->pid,ped->pagina);
                 
             }
-            if ( strcmp(cont_pag,"")){
+            if ( strcmp(cont_pag,"")== 0){
                 enviar_int(memoria, -1);
             }
             else{

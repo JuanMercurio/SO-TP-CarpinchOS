@@ -130,8 +130,9 @@ void new_instance_kernel_comportamiento(tab_pags* tabla, int cliente, bool *cone
 int swap_solicitud_iniciar(int pid){
     //return 0;
      enviar_int(swap, SOLICITUD_INICIO);
-      printf("------------------------ENVIANDO A SWAMP PID %d\n", pid);
-      enviar_int(swap,pid );
+     printf("------------------------ENVIANDO A SWAMP PID %d\n", pid);
+     enviar_int(swap,pid );
+     printf("------------------------ESPERANDO....\n");
      int estado = recibir_int(swap);
      printf("------------------------RECIBIDO DE SWAMP %d\n", estado);
      return estado;
