@@ -4,8 +4,9 @@
 		{"path": "swamp"},
 		{"path": "memoria"},
 		{"path": "kernel"},
-    {"path": "utils"},
+    {"path": "matelib"},
     {"path": "carpincho"},
+    {"path": "pruebas"},
   ],
 
   /* aca irian las tasks globales del workspace pero no nos da la version para eso :( */
