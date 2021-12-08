@@ -1962,3 +1962,199 @@ NUEVO CARPINCHO
 [INFO] 19:40:22:293 Carpincho/(16124:16125): libero memoria
 [INFO] 19:40:22:293 Carpincho/(16124:16125): libero memoria
 [INFO] 19:40:22:293 Carpincho/(16124:16125): Carpincho eliminado
+[INFO] 00:46:18:299 Carpincho/(5967:5967): Log creado
+[INFO] 00:46:18:300 Carpincho/(5967:5967): Esperando respuesta de servidor
+[INFO] 00:46:18:300 Carpincho/(5967:5967): 
+NUEVO CARPINCHO
+
+[INFO] 00:46:18:338 Carpincho/(5967:5967): Carpincho creado correctamente con el pid: 1
+[INFO] 00:46:18:338 Carpincho/(5967:5967): SEM_INIT
+[INFO] 00:46:18:338 Carpincho/(5967:5967): Conectado con memoria. No se puede inicializar semáforo.
+[INFO] 00:46:18:338 Carpincho/(5967:5967): envio sem init al kernel.
+[INFO] 00:46:18:338 Carpincho/(5967:5967): recibio algo del kernel por sem init 0 .
+[INFO] 00:46:18:338 Carpincho/(5967:5967): SEM_INIT
+[INFO] 00:46:18:338 Carpincho/(5967:5967): Conectado con memoria. No se puede inicializar semáforo.
+[INFO] 00:46:18:338 Carpincho/(5967:5967): envio sem init al kernel.
+[INFO] 00:46:18:338 Carpincho/(5967:5967): recibio algo del kernel por sem init 0 .
+[INFO] 00:46:18:338 Carpincho/(5967:5967): SEM_INIT
+[INFO] 00:46:18:338 Carpincho/(5967:5967): Conectado con memoria. No se puede inicializar semáforo.
+[INFO] 00:46:18:338 Carpincho/(5967:5967): envio sem init al kernel.
+[INFO] 00:46:18:338 Carpincho/(5967:5967): recibio algo del kernel por sem init 0 .
+[INFO] 00:46:18:338 Carpincho/(5967:5967): SEM_INIT
+[INFO] 00:46:18:338 Carpincho/(5967:5967): Conectado con memoria. No se puede inicializar semáforo.
+[INFO] 00:46:18:338 Carpincho/(5967:5967): envio sem init al kernel.
+[INFO] 00:46:18:338 Carpincho/(5967:5967): recibio algo del kernel por sem init 0 .
+[INFO] 00:46:18:338 Carpincho/(5967:5967): SEM_INIT
+[INFO] 00:46:18:338 Carpincho/(5967:5967): Conectado con memoria. No se puede inicializar semáforo.
+[INFO] 00:46:18:338 Carpincho/(5967:5967): envio sem init al kernel.
+[INFO] 00:46:18:338 Carpincho/(5967:5967): recibio algo del kernel por sem init 0 .
+[INFO] 00:46:18:338 Carpincho/(5967:5967): SEM_INIT
+[INFO] 00:46:18:338 Carpincho/(5967:5967): Conectado con memoria. No se puede inicializar semáforo.
+[INFO] 00:46:18:339 Carpincho/(5967:5967): envio sem init al kernel.
+[INFO] 00:46:18:339 Carpincho/(5967:5967): recibio algo del kernel por sem init 0 .
+[INFO] 00:46:18:342 Carpincho/(5967:5970): Log creado
+[INFO] 00:46:18:342 Carpincho/(5967:5970): Esperando respuesta de servidor
+[INFO] 00:46:18:343 Carpincho/(5967:5970): 
+NUEVO CARPINCHO
+
+[INFO] 00:46:18:381 Carpincho/(5967:5970): Carpincho creado correctamente con el pid: 2
+[INFO] 00:46:18:383 Carpincho/(5967:5970): SEM_WAIT al semáforo SEM1
+[INFO] 00:46:18:383 Carpincho/(5967:5970): Se realizó el WAIT correctamente
+[INFO] 00:46:19:346 Carpincho/(5967:5974): Log creado
+[INFO] 00:46:19:346 Carpincho/(5967:5974): Esperando respuesta de servidor
+[INFO] 00:46:19:346 Carpincho/(5967:5974): 
+NUEVO CARPINCHO
+
+[INFO] 00:46:19:386 Carpincho/(5967:5974): Carpincho creado correctamente con el pid: 3
+[INFO] 00:46:19:386 Carpincho/(5967:5974): SEM_WAIT al semáforo SEM2
+[INFO] 00:46:19:387 Carpincho/(5967:5974): Se realizó el WAIT correctamente
+[INFO] 00:46:20:346 Carpincho/(5967:5982): Log creado
+[INFO] 00:46:20:346 Carpincho/(5967:5982): Esperando respuesta de servidor
+[INFO] 00:46:20:346 Carpincho/(5967:5982): 
+NUEVO CARPINCHO
+
+[INFO] 00:46:20:386 Carpincho/(5967:5982): Carpincho creado correctamente con el pid: 4
+[INFO] 00:46:20:386 Carpincho/(5967:5982): SEM_WAIT al semáforo SEM3
+[INFO] 00:46:20:386 Carpincho/(5967:5982): Se realizó el WAIT correctamente
+[INFO] 00:46:21:345 Carpincho/(5967:5988): Log creado
+[INFO] 00:46:21:345 Carpincho/(5967:5988): Esperando respuesta de servidor
+[INFO] 00:46:21:346 Carpincho/(5967:5988): 
+NUEVO CARPINCHO
+
+[INFO] 00:46:21:383 Carpincho/(5967:5970): SEM_WAIT al semáforo SEM2
+[INFO] 00:46:21:386 Carpincho/(5967:5988): Carpincho creado correctamente con el pid: 5
+[INFO] 00:46:21:386 Carpincho/(5967:5988): SEM_WAIT al semáforo SEM4
+[INFO] 00:46:21:386 Carpincho/(5967:5988): Se realizó el WAIT correctamente
+[INFO] 00:46:22:344 Carpincho/(5967:5994): Log creado
+[INFO] 00:46:22:344 Carpincho/(5967:5994): Esperando respuesta de servidor
+[INFO] 00:46:22:346 Carpincho/(5967:5994): 
+NUEVO CARPINCHO
+
+[INFO] 00:46:22:386 Carpincho/(5967:5994): Carpincho creado correctamente con el pid: 6
+[INFO] 00:46:22:386 Carpincho/(5967:5994): SEM_WAIT al semáforo SEM5
+[INFO] 00:46:22:386 Carpincho/(5967:5994): Se realizó el WAIT correctamente
+[INFO] 00:46:22:387 Carpincho/(5967:5974): SEM_WAIT al semáforo SEM3
+[INFO] 00:46:23:345 Carpincho/(5967:6000): Log creado
+[INFO] 00:46:23:346 Carpincho/(5967:6000): Esperando respuesta de servidor
+[INFO] 00:46:23:350 Carpincho/(5967:6000): 
+NUEVO CARPINCHO
+
+[INFO] 00:46:23:387 Carpincho/(5967:5982): SEM_WAIT al semáforo SEM4
+[INFO] 00:46:23:389 Carpincho/(5967:6000): Carpincho creado correctamente con el pid: 7
+[INFO] 00:46:23:389 Carpincho/(5967:6000): SEM_WAIT al semáforo SEM6
+[INFO] 00:46:23:389 Carpincho/(5967:6000): Se realizó el WAIT correctamente
+[INFO] 00:46:24:342 Carpincho/(5967:5967): MATE_CLOSE
+[INFO] 00:46:24:342 Carpincho/(5967:5967): MATE_CLOSE: mensaje enviado a kernel
+[INFO] 00:46:24:342 Carpincho/(5967:5967): libero memoria
+[INFO] 00:46:24:342 Carpincho/(5967:5967): libero memoria
+[INFO] 00:46:24:342 Carpincho/(5967:5967): Carpincho eliminado
+[INFO] 00:46:24:387 Carpincho/(5967:5988): SEM_WAIT al semáforo SEM1
+[INFO] 00:46:25:386 Carpincho/(5967:5994): SEM_WAIT al semáforo SEM6
+[INFO] 00:46:26:390 Carpincho/(5967:6000): SEM_WAIT al semáforo SEM1
+[INFO] 00:46:35:922 Carpincho/(5967:6000): Se realizó el WAIT correctamente
+[INFO] 00:46:35:922 Carpincho/(5967:5994): Se realizó el WAIT correctamente
+[INFO] 00:46:35:922 Carpincho/(5967:5988): Se realizó el WAIT correctamente
+[INFO] 00:46:35:922 Carpincho/(5967:5982): Se realizó el WAIT correctamente
+[INFO] 00:46:35:922 Carpincho/(5967:5974): Se realizó el WAIT correctamente
+[INFO] 00:46:35:922 Carpincho/(5967:5970): Se realizó el WAIT correctamente
+[INFO] 00:46:38:922 Carpincho/(5967:6000): SEM_POST al semáforo SEM1
+[INFO] 00:46:38:922 Carpincho/(5967:6000): Error al realizar el POST
+[INFO] 00:46:38:922 Carpincho/(5967:6000): SEM_WAIT al semáforo SEM5
+[INFO] 00:46:48:471 Carpincho/(6185:6185): Log creado
+[INFO] 00:46:48:471 Carpincho/(6185:6185): Esperando respuesta de servidor
+[INFO] 00:46:48:473 Carpincho/(6185:6185): 
+NUEVO CARPINCHO
+
+[INFO] 00:46:48:509 Carpincho/(6185:6185): Carpincho creado correctamente con el pid: 1
+[INFO] 00:46:48:509 Carpincho/(6185:6185): SEM_INIT
+[INFO] 00:46:48:509 Carpincho/(6185:6185): Conectado con memoria. No se puede inicializar semáforo.
+[INFO] 00:46:48:509 Carpincho/(6185:6185): envio sem init al kernel.
+[INFO] 00:46:48:510 Carpincho/(6185:6185): recibio algo del kernel por sem init 0 .
+[INFO] 00:46:48:510 Carpincho/(6185:6185): SEM_INIT
+[INFO] 00:46:48:511 Carpincho/(6185:6185): Conectado con memoria. No se puede inicializar semáforo.
+[INFO] 00:46:48:511 Carpincho/(6185:6185): envio sem init al kernel.
+[INFO] 00:46:48:511 Carpincho/(6185:6185): recibio algo del kernel por sem init 0 .
+[INFO] 00:46:48:511 Carpincho/(6185:6185): SEM_INIT
+[INFO] 00:46:48:511 Carpincho/(6185:6185): Conectado con memoria. No se puede inicializar semáforo.
+[INFO] 00:46:48:511 Carpincho/(6185:6185): envio sem init al kernel.
+[INFO] 00:46:48:511 Carpincho/(6185:6185): recibio algo del kernel por sem init 0 .
+[INFO] 00:46:48:511 Carpincho/(6185:6185): SEM_INIT
+[INFO] 00:46:48:511 Carpincho/(6185:6185): Conectado con memoria. No se puede inicializar semáforo.
+[INFO] 00:46:48:511 Carpincho/(6185:6185): envio sem init al kernel.
+[INFO] 00:46:48:511 Carpincho/(6185:6185): recibio algo del kernel por sem init 0 .
+[INFO] 00:46:48:511 Carpincho/(6185:6185): SEM_INIT
+[INFO] 00:46:48:511 Carpincho/(6185:6185): Conectado con memoria. No se puede inicializar semáforo.
+[INFO] 00:46:48:511 Carpincho/(6185:6185): envio sem init al kernel.
+[INFO] 00:46:48:512 Carpincho/(6185:6185): recibio algo del kernel por sem init 0 .
+[INFO] 00:46:48:512 Carpincho/(6185:6185): SEM_INIT
+[INFO] 00:46:48:512 Carpincho/(6185:6185): Conectado con memoria. No se puede inicializar semáforo.
+[INFO] 00:46:48:512 Carpincho/(6185:6185): envio sem init al kernel.
+[INFO] 00:46:48:512 Carpincho/(6185:6185): recibio algo del kernel por sem init 0 .
+[INFO] 00:46:48:513 Carpincho/(6185:6188): Log creado
+[INFO] 00:46:48:513 Carpincho/(6185:6188): Esperando respuesta de servidor
+[INFO] 00:46:48:514 Carpincho/(6185:6188): 
+NUEVO CARPINCHO
+
+[INFO] 00:46:48:553 Carpincho/(6185:6188): Carpincho creado correctamente con el pid: 2
+[INFO] 00:46:48:554 Carpincho/(6185:6188): SEM_WAIT al semáforo SEM1
+[INFO] 00:46:48:554 Carpincho/(6185:6188): Se realizó el WAIT correctamente
+[INFO] 00:46:49:515 Carpincho/(6185:6193): Log creado
+[INFO] 00:46:49:516 Carpincho/(6185:6193): Esperando respuesta de servidor
+[INFO] 00:46:49:518 Carpincho/(6185:6193): 
+NUEVO CARPINCHO
+
+[INFO] 00:46:49:557 Carpincho/(6185:6193): Carpincho creado correctamente con el pid: 3
+[INFO] 00:46:49:557 Carpincho/(6185:6193): SEM_WAIT al semáforo SEM2
+[INFO] 00:46:49:558 Carpincho/(6185:6193): Se realizó el WAIT correctamente
+[INFO] 00:46:50:518 Carpincho/(6185:6200): Log creado
+[INFO] 00:46:50:518 Carpincho/(6185:6200): Esperando respuesta de servidor
+[INFO] 00:46:50:518 Carpincho/(6185:6200): 
+NUEVO CARPINCHO
+
+[INFO] 00:46:50:558 Carpincho/(6185:6200): Carpincho creado correctamente con el pid: 4
+[INFO] 00:46:50:558 Carpincho/(6185:6200): SEM_WAIT al semáforo SEM3
+[INFO] 00:46:50:558 Carpincho/(6185:6200): Se realizó el WAIT correctamente
+[INFO] 00:46:51:518 Carpincho/(6185:6206): Log creado
+[INFO] 00:46:51:518 Carpincho/(6185:6206): Esperando respuesta de servidor
+[INFO] 00:46:51:519 Carpincho/(6185:6206): 
+NUEVO CARPINCHO
+
+[INFO] 00:46:51:554 Carpincho/(6185:6188): SEM_WAIT al semáforo SEM2
+[INFO] 00:46:51:558 Carpincho/(6185:6206): Carpincho creado correctamente con el pid: 5
+[INFO] 00:46:51:559 Carpincho/(6185:6206): SEM_WAIT al semáforo SEM4
+[INFO] 00:46:51:559 Carpincho/(6185:6206): Se realizó el WAIT correctamente
+[INFO] 00:46:52:518 Carpincho/(6185:6212): Log creado
+[INFO] 00:46:52:518 Carpincho/(6185:6212): Esperando respuesta de servidor
+[INFO] 00:46:52:522 Carpincho/(6185:6212): 
+NUEVO CARPINCHO
+
+[INFO] 00:46:52:559 Carpincho/(6185:6193): SEM_WAIT al semáforo SEM3
+[INFO] 00:46:52:563 Carpincho/(6185:6212): Carpincho creado correctamente con el pid: 6
+[INFO] 00:46:52:563 Carpincho/(6185:6212): SEM_WAIT al semáforo SEM5
+[INFO] 00:46:52:563 Carpincho/(6185:6212): Se realizó el WAIT correctamente
+[INFO] 00:46:53:518 Carpincho/(6185:6217): Log creado
+[INFO] 00:46:53:518 Carpincho/(6185:6217): Esperando respuesta de servidor
+[INFO] 00:46:53:520 Carpincho/(6185:6217): 
+NUEVO CARPINCHO
+
+[INFO] 00:46:53:558 Carpincho/(6185:6217): Carpincho creado correctamente con el pid: 7
+[INFO] 00:46:53:558 Carpincho/(6185:6217): SEM_WAIT al semáforo SEM6
+[INFO] 00:46:53:558 Carpincho/(6185:6217): Se realizó el WAIT correctamente
+[INFO] 00:46:53:559 Carpincho/(6185:6200): SEM_WAIT al semáforo SEM4
+[INFO] 00:46:54:515 Carpincho/(6185:6185): MATE_CLOSE
+[INFO] 00:46:54:515 Carpincho/(6185:6185): MATE_CLOSE: mensaje enviado a kernel
+[INFO] 00:46:54:515 Carpincho/(6185:6185): libero memoria
+[INFO] 00:46:54:515 Carpincho/(6185:6185): libero memoria
+[INFO] 00:46:54:515 Carpincho/(6185:6185): Carpincho eliminado
+[INFO] 00:46:54:559 Carpincho/(6185:6206): SEM_WAIT al semáforo SEM1
+[INFO] 00:46:55:563 Carpincho/(6185:6212): SEM_WAIT al semáforo SEM6
+[INFO] 00:46:56:559 Carpincho/(6185:6217): SEM_WAIT al semáforo SEM1
+[INFO] 00:47:33:464 Carpincho/(6185:6217): Se realizó el WAIT correctamente
+[INFO] 00:47:33:464 Carpincho/(6185:6212): Se realizó el WAIT correctamente
+[INFO] 00:47:33:464 Carpincho/(6185:6206): Se realizó el WAIT correctamente
+[INFO] 00:47:33:465 Carpincho/(6185:6200): Se realizó el WAIT correctamente
+[INFO] 00:47:33:465 Carpincho/(6185:6193): Se realizó el WAIT correctamente
+[INFO] 00:47:33:465 Carpincho/(6185:6188): Se realizó el WAIT correctamente
+[INFO] 00:47:36:465 Carpincho/(6185:6217): SEM_POST al semáforo SEM1
+[INFO] 00:47:36:465 Carpincho/(6185:6217): Error al realizar el POST
+[INFO] 00:47:36:465 Carpincho/(6185:6217): SEM_WAIT al semáforo SEM5
