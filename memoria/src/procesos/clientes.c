@@ -67,10 +67,11 @@ void ejecutar_proceso(int cliente)
                 mate_close_comportamiento(tabla, cliente, &conectado);
                 break;
 
-            case SWAMP:
+    case SWAMP:
                 printf("se conecto swamp\n");
                 swap = cliente;
                 enviar_mensaje(cliente, configuracion.TIPO_ASIGNACION);
+                conectado = false;
                 break;
 
             default:
@@ -79,9 +80,8 @@ void ejecutar_proceso(int cliente)
         }
         pthread_mutex_unlock(&ram.mutex);
     }
-
+sleep(40);
 }
-
 
 /* Functions */ 
 

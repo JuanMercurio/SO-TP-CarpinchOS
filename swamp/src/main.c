@@ -9,12 +9,12 @@ int main(int argc, char* argv[]) {
 
     memoria_tests(argc, argv[1]);
 
-    int memoria = crear_conexion("127.0.0.1", "5003");
-    printf("memoria %d\n", memoria);
-    char* handshake = recibir_mensaje(memoria);
+    int fd_memoria = crear_conexion("127.0.0.1", "5003");
+    printf("memoria %d\n", fd_memoria);
+    char* handshake = recibir_mensaje(fd_memoria);
     printf("------------------%s\n", handshake);
-    enviar_int(memoria,14);
-    char* tipo_asignacion = recibir_mensaje(memoria);
+    enviar_int(fd_memoria,14);
+    char* tipo_asignacion = recibir_mensaje(fd_memoria);
      printf("%s\n", tipo_asignacion);
     asignacionFija = 0;
 
@@ -50,7 +50,7 @@ int main(int argc, char* argv[]) {
   */
     
     pthread_t tid;
-    pthread_create(&tid, NULL, &agregarPedidosMemoria, memoria);
+    pthread_create(&tid, NULL, &agregarPedidosMemoria, fd_memoria);
     
     crearArchivos();
     if(asignacionFija){
@@ -85,7 +85,7 @@ int main(int argc, char* argv[]) {
             else{
                 pido = agregarPaginaDinamica(ped->pid, ped->pagina, ped->contenido_pagina);
             }
-            enviar_int(memoria, pido);
+            enviar_int(fd_memoria, pido);
         }
         else if(strcmp(ped->nombre_pedido,"SOLICITUD_INICIO") ==0 ){
             printf("solicitud inicio despues de strcmp\n");
@@ -100,11 +100,11 @@ int main(int argc, char* argv[]) {
             }
             if (puede){
                  printf("devuelve 1\n");
-                enviar_int(memoria,1);
-                printf("envioooooo a memoria %d\n", memoria);
+                enviar_int(fd_memoria,1);
+                printf("envioooooo a memoria %d\n", fd_memoria);
             }
             else{ printf("devuelve -1\n");
-                enviar_int(memoria,-1);
+                enviar_int(fd_memoria,-1);
             }
             
         }
@@ -116,7 +116,7 @@ int main(int argc, char* argv[]) {
             else{
                 inicio = CrearCarpincho(ped->pid);
             }
-            enviar_int(memoria,inicio);
+            enviar_int(fd_memoria,inicio);
         }
         else if(strcmp(ped->nombre_pedido,"SOLICITUD_PAGINA") == 0 ){
             // puede pedir una pagina
@@ -137,10 +137,10 @@ int main(int argc, char* argv[]) {
                 // DEVOLVER AL SOCKET CON EL OPER Y UN -1
             }
             if (puede && error == 1){
-                enviar_int(memoria,1);
+                enviar_int(fd_memoria,1);
             }
             else{
-                enviar_int(memoria,-1);
+                enviar_int(fd_memoria,-1);
             }
         }
         else if(strcmp(ped->nombre_pedido,"BORRAR_PAGINA") == 0){
@@ -151,7 +151,7 @@ int main(int argc, char* argv[]) {
             else{
                 pudo = borrarPagina(ped->pid, ped->pagina);
             }
-            enviar_int(memoria, pudo);
+            enviar_int(fd_memoria, pudo);
         }
         else if(strcmp(ped->nombre_pedido,"BORRAR_CARPINCHO") == 0){
            int error;
@@ -161,7 +161,7 @@ int main(int argc, char* argv[]) {
             else{
                 error =borrarCarpincho(ped->pid);
             }
-            enviar_int(memoria, error);
+            enviar_int(fd_memoria, error);
         }
         else if(strcmp(ped->nombre_pedido,"OBTENER_PAGINA") == 0){
            char* cont_pag;
@@ -173,11 +173,11 @@ int main(int argc, char* argv[]) {
                 
             }
             if ( strcmp(cont_pag,"")== 0){
-                enviar_int(memoria, -1);
+                enviar_int(fd_memoria, -1);
             }
             else{
-                enviar_int(memoria, configuracion.TAMANIO_PAGINA);
-                enviar_mensaje(memoria, cont_pag);
+                enviar_int(fd_memoria, configuracion.TAMANIO_PAGINA);
+                enviar_mensaje(fd_memoria, cont_pag);
             }
     
         }
