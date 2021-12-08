@@ -68,7 +68,7 @@ void ejecutar_proceso(int cliente)
                 mate_close_comportamiento(tabla, cliente, &conectado);
                 break;
 
-            case SWAMP:
+    case SWAMP:
                 printf("se conecto swamp\n");
                 swap = cliente;
                 enviar_mensaje(cliente, configuracion.TIPO_ASIGNACION);
@@ -83,7 +83,6 @@ void ejecutar_proceso(int cliente)
     }
 sleep(40);
 }
-
 
 /* Functions */ 
 

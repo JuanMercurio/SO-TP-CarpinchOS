@@ -12,17 +12,21 @@ void deteccion_deadlock()
         usleep(configuracion.TIEMPO_DEADLOCK);
         //log_info(logger, "Comienza la ejecución de la detección de Deadlock");
         //pausar_todo????
-        for (int i = 0; i > list_size(lista_sem_kernel); i++)
+        for (int i = 0; i < list_size(lista_sem_kernel); i++)
         {
-            //mutex
+            log_info(logger,"Entro al for deadlock");
             sem_wait(&mutex_lista_sem_kernel);
             semaforo = (sem_kernel *)list_get(lista_sem_kernel, i);
             sem_post(&mutex_lista_sem_kernel);
+            log_info(logger, "Semaforo->tomado_por %d", semaforo->tomado_por);
             a_enlistar = buscar_en_otras_listas(semaforo->tomado_por, i, semaforo->id);// ruido
+            log_info(logger, "Salgo de buscar_en_otras_listas con iteracion %d", i);
             if (a_enlistar != NULL)
             {
+                log_info(logger,"Entro a if a_enlistar=!NULL");
                 list_add(lista_posible_deadlock, (void *)a_enlistar);
             }
+            log_info(logger, "Termine iteracion %d del for deadlock", i);
         }
 
         //log_info(logger, "Finaliza la búsqueda de carpinchos en posible deadlock");
@@ -30,6 +34,7 @@ void deteccion_deadlock()
         if (!list_is_empty(lista_posible_deadlock))
         {
             log_info(logger, "Verificando espera circular");
+            log_info(logger,"Size lista_posible_deadlock %d", list_size(lista_posible_deadlock));
             t_list *lista_con_deadlock = verificar_espera_circular(lista_posible_deadlock);
 
             while (lista_con_deadlock == NULL)
@@ -55,18 +60,24 @@ void lista_deadlock_destroyer(void *arg)
 t_deadlock *buscar_en_otras_listas(int pid, int index, char *semaforo_retenido)
 {
     //  t_list *lista_peticiones = list_create();
+    log_info(logger,"Estoy en buscar_en_otras_listas con carpincho %d", pid);
     t_pcb *carpincho_bloqueado;
     int i = 0;
     bool encontrado = false;
     t_deadlock *carpincho_deadlock = malloc(sizeof(t_deadlock));
     while (i < list_size(lista_sem_kernel) && !encontrado)
     {
-        if (i == index)
-            continue;
+        if (i == index){
+            continue;}
         sem_kernel *semaforo = (sem_kernel *)list_get(lista_sem_kernel, i);
+        log_info(logger,"buscar_en_otras_listas semaforo que saco %s", semaforo->id);
+        log_info(logger,"buscar_en_otras_listas ---- antes de while  cola NO vacía --- size %d", queue_size(semaforo->bloqueados)); 
+
         while(!queue_is_empty(semaforo->bloqueados) && !encontrado)
         {
+            log_info(logger,"buscar_en_otras_listas ---- la cola NO está vacía --- size %d", queue_size(semaforo->bloqueados)); 
             carpincho_bloqueado = (t_pcb *)queue_pop(semaforo->bloqueados);
+            log_info(logger, "buscar_en_otras_listas - carpincho que recibe %d - carpincho que saca de bloqueado %d", pid, carpincho_bloqueado->pid);
             if (pid == carpincho_bloqueado->pid)
             {
                 log_info(logger, "El carpincho %d está en posible deadlock - Semáforo retenido: %s - Semáforo por el que se bloqueó: %s", pid, semaforo_retenido, semaforo->id);
