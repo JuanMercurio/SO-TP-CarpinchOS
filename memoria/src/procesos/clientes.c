@@ -61,6 +61,7 @@ void ejecutar_proceso(int cliente)
 
             case NEW_INSTANCE_KERNEL:printf("llego desde KERNEL\n");
                 new_instance_kernel_comportamiento(tabla, cliente, &conectado);
+                
                 break;
 
             case MATE_CLOSE:
@@ -71,6 +72,7 @@ void ejecutar_proceso(int cliente)
                 printf("se conecto swamp\n");
                 swap = cliente;
                 enviar_mensaje(cliente, configuracion.TIPO_ASIGNACION);
+                conectado = false;
                 break;
 
             default:
@@ -79,7 +81,7 @@ void ejecutar_proceso(int cliente)
         }
         pthread_mutex_unlock(&ram.mutex);
     }
-
+sleep(40);
 }
 
 

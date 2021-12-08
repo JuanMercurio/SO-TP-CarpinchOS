@@ -59,6 +59,9 @@ sem_t*  agrego_lista_pedidos;
     @DESC: Se encarga de liberar todas las estructuras y de hacer lo necesario para
            que el programa termine sin memory leaks y sin errores
  */
+
+void pruebas();
+void destroy_and_free (int);
 //GENERAL
 void crearArchivos();
 int elegirMejorArchivo();
