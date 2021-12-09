@@ -72,7 +72,7 @@ int main(int argc, char* argv[]) {
         //sem_wait(agrego_lista_pedidos);
         Pedido* ped = malloc(sizeof(Pedido)); 
         sem_wait(mutex_lista_pedidos);
-        mostrarSemaforosYListaPedidos("ANTES DE FIJARSE EN LA LISTA");
+        // mostrarSemaforosYListaPedidos("ANTES DE FIJARSE EN LA LISTA");
         if ( list_size(lista_pedidos) >0 ){
             ped = (Pedido*) list_remove(lista_pedidos,0);
             sem_post(mutex_lista_pedidos);
@@ -218,7 +218,7 @@ int main(int argc, char* argv[]) {
          
         
         
-        sleep(configuracion.RETARDO_SWAP);
+        usleep(configuracion.RETARDO_SWAP);
     }
     
    
@@ -1226,6 +1226,7 @@ void memoria_operacion(int cliente){
             break;
 
         case INICIO:
+        printf("inicio\n");
             //tamanio_pid = recibir_int(cliente);
             pid = recibir_int(cliente);
             ped->nombre_pedido = "INICIO";
@@ -1234,8 +1235,9 @@ void memoria_operacion(int cliente){
             sem_wait(mutex_lista_pedidos);
             list_add(lista_pedidos,ped);
             sem_post(mutex_lista_pedidos);
+            printf("agregue un pedido a la lista \n");
             //sem_post(agrego_lista_pedidos);
-            mostrarSemaforosYListaPedidos("AGREGA A LA LISTA");
+            // mostrarSemaforosYListaPedidos("AGREGA A LA LISTA");
             break;
 
         case SOLICITUD_PAGINA:

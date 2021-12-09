@@ -10,7 +10,7 @@
 //------------------------------- PLANIFICACION--------------------//
 #include <matelib.h>
 
-#define CANT_CARPINCHOS 1
+#define CANT_CARPINCHOS 2
 char *LOG_PATH = "./planificacion.log";
 char *PROGRAM_NAME = "planificacion";
 sem_t *va_el_2;
