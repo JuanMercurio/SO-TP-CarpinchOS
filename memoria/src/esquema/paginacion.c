@@ -170,6 +170,17 @@ void actualizar_nueva_pagina(int pagina, int marco, tab_pags *tabla)
     reg->marco = marco;
 
 }
+void actualizar_victima_de_tlb(tlb_t* reg)
+{
+    tab_pags* tabla = buscar_page_table(reg->pid);
+    pag_t* pagina = list_get(tabla->tabla_pag, reg->pagina);
+
+    pagina->algoritmo = reg->alg_tlb;
+    pagina->marco = reg->marco;
+    pagina->modificado = reg->modificado;
+    pagina->presente = 1;
+    pagina->tlb = 0;
+}
 
 void *recibir_marco(int cliente)
 {
@@ -248,7 +259,6 @@ int marco_libre()
 void pagina_iniciar(tab_pags *tabla)
 {
     //verificar en swap
-
     int pagina = crear_pagina(tabla->tabla_pag);
 
     int marco = marco_libre();
@@ -274,7 +284,6 @@ void memoria_asignar_pagina_vacia(tab_pags* tabla, int pagina, int marco)
     pag_t* p = list_get(tabla->tabla_pag, pagina);
 
     page_use(tabla->pid, marco, p, pagina, READ);
-    
 }
 
 void add_new_page_table(tab_pags *tabla)

@@ -206,4 +206,6 @@ dir_t decimal_a_dl(int dir_log);
 
 int dl_a_decimal(dir_t dl);
 
+void actualizar_victima_de_tlb(tlb_t* reg);
+
 #endif

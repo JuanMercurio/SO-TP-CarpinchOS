@@ -104,9 +104,11 @@ dir_t heap_get_location(dir_t dl, tab_pags* t);
 
 bool alloc_valido(dir_t dl, tab_pags* t, int tamanio);
 
+int swap_pedir_paginas(tab_pags* tabla, int c_paginas);
+
 bool heap_lectura_valida(HeapMetadata* data, dir_t dl, int tamanio);
 
-void heap_init(tab_pags* tabla);
+int heap_init(tab_pags* tabla);
     
 int paginas_a_agregar(int dl, tab_pags* tabla);
 

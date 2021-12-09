@@ -32,8 +32,9 @@ int memalloc(tab_pags* tabla, int tamanio){ //quizas al igual que antes, el carp
 		puts("ERROR CARPINCHO INVALIDO");
 		return -1;
 	}
-
-    if (tabla_paginas->tabla_pag->head == NULL) { printf("Tengo que iniciar las paginas\n"); heap_init(tabla); }
+	int heap_init_return;
+    if (tabla_paginas->tabla_pag->head == NULL) { printf("Tengo que iniciar las paginas\n"); heap_init_return = heap_init(tabla); }
+	if (heap_init_return == -1) return -1;
 
 	printf("- Memalloc: encontre la pagina del carpincho %i.\n", tabla_paginas->pid);
 	HeapMetadata* ptr_potencial_segmento = primer_segmento(tabla_paginas);
@@ -666,8 +667,11 @@ int memoria_escribir_por_dirlog(tab_pags* tabla, int dl, void* contenido, int ta
 }
 
 
-void heap_init(tab_pags* tabla)
+int heap_init(tab_pags* tabla)
 {
+	int estado_swap = swap_pedir_paginas(tabla, 1);  //que pasa si las paginas son de 8?
+	if (estado_swap == -1) return -1;
+
     HeapMetadata* data = malloc(SIZE_METADATA);
     data->isFree = true;
     data->nextAlloc = LAST_METADATA;
@@ -688,8 +692,33 @@ int paginas_a_agregar(int dl, tab_pags* tabla)
 
 	int nuevas = victima - paginas + 1;
 	//verficiar con swamp y asignacion 
+	int estado_swap = swap_pedir_paginas(tabla, nuevas);
+	if (estado_swap == -1) return -1;
+
 	return nuevas;
 	}
+
+int swap_pedir_paginas(tab_pags* tabla, int c_paginas)
+{
+	int paginas_totales = list_size(tabla->tabla_pag);
+	int pagina = paginas_totales;
+	int estado;
+
+	for (int i=0; i < c_paginas; ++i) {
+		printf(" ===================== Estoy pidiendo una pagina\n");
+		enviar_int(swap, SOLICITUD_PAGINA);
+		enviar_int(swap, tabla->pid);
+		enviar_int(swap, pagina);
+
+		estado = recibir_int(swap);
+		if (estado == -1) break;
+
+		pagina++;
+	}
+
+	printf("Termine de pedir una pagina\n");
+	return estado;
+}
 
 int paginas_agregar(int new_pags, tab_pags* tabla)
 {

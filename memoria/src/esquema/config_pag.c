@@ -25,12 +25,14 @@ void set_alg_tlb(){
      if ( strcmp(configuracion.ALGORITMO_REEMPLAZO_TLB, "FIFO") == 0 ) 
           { 
                algoritmo_tlb = fifo_tlb;
+               tlb_page_use = tlb_page_use_fifo;
                alg_comportamiento_tlb = alg_comportamiento_tlb_fifo;
                return;
           }
      if ( strcmp(configuracion.ALGORITMO_REEMPLAZO_TLB, "LRU")  == 0 )
           { 
                algoritmo_tlb = lru_tlb;
+               tlb_page_use = tlb_page_use_lru;
                alg_comportamiento_tlb = alg_comportamiento_tlb_lru;
                return;
           }
