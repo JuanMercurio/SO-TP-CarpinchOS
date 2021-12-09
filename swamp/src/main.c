@@ -13,6 +13,7 @@ int main(int argc, char* argv[]) {
     // CAMBIAR IP Y PUERTO POR LA COFIG. 
 
     int fd_memoria = crear_conexion("127.0.0.1", "5003");
+    termino = 0;
     printf("memoria %d\n", fd_memoria);
     char* handshake = recibir_mensaje(fd_memoria);
     printf("------------------%s\n", handshake);
@@ -54,7 +55,7 @@ int main(int argc, char* argv[]) {
   */
     
     pthread_t tid;
-    pthread_create(&tid, NULL, &agregarPedidosMemoria, fd_memoria);
+    pthread_create(&tid, NULL, agregarPedidosMemoria, fd_memoria);
     
     crearArchivos();
     if(asignacionFija){
@@ -64,8 +65,8 @@ int main(int argc, char* argv[]) {
         marcosLibes();
     }
 
- 
-    while(1){
+    int cantidad_lista_pedidos = 0;
+    while( cantidad_lista_pedidos > 0 || termino == 0 ){
        
         
 
@@ -73,8 +74,10 @@ int main(int argc, char* argv[]) {
         Pedido* ped = malloc(sizeof(Pedido)); 
         sem_wait(mutex_lista_pedidos);
         // mostrarSemaforosYListaPedidos("ANTES DE FIJARSE EN LA LISTA");
-        if ( list_size(lista_pedidos) >0 ){
+        cantidad_lista_pedidos = list_size(lista_pedidos);
+        if ( cantidad_lista_pedidos >0 ){
             ped = (Pedido*) list_remove(lista_pedidos,0);
+            cantidad_lista_pedidos--;
             sem_post(mutex_lista_pedidos);
             mostrarSemaforosYListaPedidos("DESPUES DE FIJARSE EN LA LISTA");
             printf("--------------------------------------------------------------------- VERIFICA OPERACION\n");
@@ -225,10 +228,12 @@ int main(int argc, char* argv[]) {
     destroy_and_free(fd_memoria);
     // CONEXIONES
     // SE PUEDE BORRAR ESTO?
-    pthread_join(tid, NULL);
+    //pthread_join(tid, NULL);
    return 0;
 }
+
 void destroy_and_free ( int fd_memoria){
+    printf("Entro a destruir y libearar.\n");
     list_destroy(lista_carpinchos);
     list_destroy(lista_marcos);
 
@@ -1162,12 +1167,10 @@ void agregarPedidosMemoria (int cliente){
     }
     
 }
-
-
 void recibir_asignacion(int cliente){
     int op = recibir_operacion(cliente);
     if(op != INICIO_CONFIG)return ;
-    int size = recibir_int(cliente);
+    //int size = recibir_int(cliente);
 
 }
 
@@ -1187,13 +1190,15 @@ void memoria_operacion(int cliente){
     //printf("codigo de operacdion %d\n", codop);
     //int tamanio = recibir_int(cliente);
     Pedido* ped = malloc(sizeof(Pedido));
-    int tamanio_pid,pid,tamanio_pagina,pagina,tamanio2;
+    int pid,pagina,tamanio2;
+    //tamanio_pid ,tamanio_pagina
     switch(codop){
         case ESCRIBIR_PAGINA:
             //tamanio_pid = recibir_int(cliente);
             pid = recibir_int(cliente);
             //tamanio_pagina = recibir_int(cliente);
             pagina = recibir_int(cliente);
+            tamanio2 = configuracion.TAMANIO_PAGINA;
             void* buffer = recibir_buffer_t(tamanio2, cliente);
             ped->nombre_pedido = malloc(sizeof("ESCRIBIR_PAGINA"));
             ped->nombre_pedido = "ESCRIBIR_PAGINA";
@@ -1300,6 +1305,7 @@ void memoria_operacion(int cliente){
             mostrarSemaforosYListaPedidos("AGREGA A LA LISTA");
             break;
         default:
+            termino = 1;
             //printf("NO ES DE SWAP %d.\n",codop);
         break;
     }
@@ -1310,9 +1316,11 @@ void memoria_operacion(int cliente){
 void mostrarSemaforosYListaPedidos(char* mensaje){
     printf("%s\n", mensaje);
     int sem2;
-    int semaforo = sem_getvalue(mutex_lista_pedidos,&sem2);
+    //int semaforo = 
+    sem_getvalue(mutex_lista_pedidos,&sem2);
     printf("VALOR MUTEX: %d\n",sem2);
-    semaforo = sem_getvalue(agrego_lista_pedidos,&sem2);
+    //semaforo = 
+    sem_getvalue(agrego_lista_pedidos,&sem2);
     printf("VALOR lista pedidos: %d\n",sem2);
     printf("La lista de pedidos tiene %d pedidos\n", list_size(lista_pedidos));
 }
