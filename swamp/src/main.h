@@ -62,6 +62,7 @@ sem_t*  agrego_lista_pedidos;
 
 void pruebas();
 void destroy_and_free (int);
+void mostrarSemaforosYListaPedidos(char* mensaje);
 //GENERAL
 void crearArchivos();
 int elegirMejorArchivo();
