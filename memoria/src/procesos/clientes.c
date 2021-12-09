@@ -24,7 +24,6 @@ void atender_proceso(void* arg){
     handshake(cliente, "MEMORIA");
     ejecutar_proceso(cliente);
 
-    close(cliente);
 }
 
 void ejecutar_proceso(int cliente)
@@ -68,7 +67,7 @@ void ejecutar_proceso(int cliente)
                 mate_close_comportamiento(tabla, cliente, &conectado);
                 break;
 
-    case SWAMP:
+            case SWAMP:
                 printf("se conecto swamp\n");
                 swap = cliente;
                 enviar_mensaje(cliente, configuracion.TIPO_ASIGNACION);
@@ -88,6 +87,7 @@ sleep(40);
 
 void new_instance_comportamiento(tab_pags* tabla, int cliente, bool *conectado)
 {   
+    tabla->pid = crearID(&ids_memoria);
     int respuesta = swap_solicitud_iniciar(tabla->pid);
 
     if(respuesta == -1) 
@@ -100,8 +100,6 @@ void new_instance_comportamiento(tab_pags* tabla, int cliente, bool *conectado)
         return;
     }
 
-    tabla->pid = crearID(&ids_memoria);
-
     enviar_int(cliente, tabla->pid);
     // enviar_int(swap, tabla->pid);
     enviar_mensaje(cliente, "OK");
@@ -110,8 +108,8 @@ void new_instance_comportamiento(tab_pags* tabla, int cliente, bool *conectado)
 
 
 void new_instance_kernel_comportamiento(tab_pags* tabla, int cliente, bool *conectado){ 
-    tabla->pid = recibir_operacion(cliente); 
 
+    tabla->pid = recibir_operacion(cliente); 
     int respuesta = swap_solicitud_iniciar(tabla->pid);
 
     if(respuesta == -1) 
@@ -130,13 +128,14 @@ void new_instance_kernel_comportamiento(tab_pags* tabla, int cliente, bool *cone
 
 int swap_solicitud_iniciar(int pid){
     //return 0;
-     enviar_int(swap, SOLICITUD_INICIO);
-     printf("------------------------ENVIANDO A SWAMP PID %d\n", pid);
-     enviar_int(swap,pid );
-     printf("------------------------ESPERANDO....\n");
-     int estado = recibir_int(swap);
-     printf("------------------------RECIBIDO DE SWAMP %d\n", estado);
-     return estado;
+    printf("------------------------ENVIANDO A SWAMP Solicitud %d\n", pid);
+    enviar_int(swap, INICIO);
+    printf("Enviar un pid %d\n", pid);
+    enviar_int(swap, pid);
+    printf("------------------------ESPERANDO....\n");
+    int estado = recibir_int(swap);
+    printf("------------------------RECIBIDO DE SWAMP %d\n", estado);
+    return estado;
 }
 
 void memalloc_comportamiento(tab_pags* tabla, int cliente)
@@ -184,6 +183,7 @@ void memwrite_comportamiento(tab_pags* tabla, int cliente)
 
 void mate_close_comportamiento(tab_pags *tabla, int cliente, bool *conectado)
 {
+    enviar_int(swap, BORRAR_CARPINCHO);
     cliente_terminar(tabla, cliente);
     *conectado = false;
 }
