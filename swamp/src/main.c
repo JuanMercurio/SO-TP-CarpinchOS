@@ -8,12 +8,10 @@
 int main(int argc, char* argv[]) {
 
     memoria_tests(argc, argv[1]);
-<<<<<<< HEAD
+
     // CONECTARSE A MEMORIA
     // CAMBIAR IP Y PUERTO POR LA COFIG. 
-=======
 
->>>>>>> 4ce0624b24d533c18db638141140fbd6b663e68f
     int fd_memoria = crear_conexion("127.0.0.1", "5003");
     printf("memoria %d\n", fd_memoria);
     char* handshake = recibir_mensaje(fd_memoria);
@@ -83,10 +81,8 @@ int main(int argc, char* argv[]) {
             else{
                 pido = agregarPaginaDinamica(ped->pid, ped->pagina, ped->contenido_pagina);
             }
-<<<<<<< HEAD
+
             printf("Envia a memoria %d\n",pido);
-=======
->>>>>>> 4ce0624b24d533c18db638141140fbd6b663e68f
             enviar_int(fd_memoria, pido);
         }
         else if(strcmp(ped->nombre_pedido,"SOLICITUD_INICIO") ==0 ){
@@ -101,19 +97,12 @@ int main(int argc, char* argv[]) {
                 puede = quedaPaginasEnArchivo(ped->pid);
             }
             if (puede){
-<<<<<<< HEAD
                  printf("Envia a memoria 1\n");
                 enviar_int(fd_memoria,1);
                 printf("envioooooo a memoria %d\n", fd_memoria);
             }
             else{ printf("Envia a memoria -1\n");
-=======
-                 printf("devuelve 1\n");
-                enviar_int(fd_memoria,1);
-                printf("envioooooo a memoria %d\n", fd_memoria);
-            }
-            else{ printf("devuelve -1\n");
->>>>>>> 4ce0624b24d533c18db638141140fbd6b663e68f
+
                 enviar_int(fd_memoria,-1);
             }
             
@@ -128,10 +117,9 @@ int main(int argc, char* argv[]) {
                 inicio = CrearCarpincho(ped->pid);
             }
             enviar_int(fd_memoria,inicio);
-<<<<<<< HEAD
+
             printf("Envia a memoria %d\n",inicio);
-=======
->>>>>>> 4ce0624b24d533c18db638141140fbd6b663e68f
+
         }
         else if(strcmp(ped->nombre_pedido,"SOLICITUD_PAGINA") == 0 ){
             // puede pedir una pagina
@@ -152,17 +140,12 @@ int main(int argc, char* argv[]) {
                 // DEVOLVER AL SOCKET CON EL OPER Y UN -1
             }
             if (puede && error == 1){
-<<<<<<< HEAD
                 printf("Envia a memoria 1\n");
                 enviar_int(fd_memoria,1);
             }
             else{
                 printf("Envia a memoria -1\n");
-=======
-                enviar_int(fd_memoria,1);
-            }
-            else{
->>>>>>> 4ce0624b24d533c18db638141140fbd6b663e68f
+
                 enviar_int(fd_memoria,-1);
             }
         }
@@ -176,10 +159,9 @@ int main(int argc, char* argv[]) {
                 pudo = borrarPagina(ped->pid, ped->pagina);
             }
             enviar_int(fd_memoria, pudo);
-<<<<<<< HEAD
+
             printf("Envia a memoria %d\n",pudo);
-=======
->>>>>>> 4ce0624b24d533c18db638141140fbd6b663e68f
+
         }
         else if(strcmp(ped->nombre_pedido,"BORRAR_CARPINCHO") == 0){
             printf("BORRAR_CARPINCHO: pid: %d\n", ped->pid);
@@ -191,10 +173,9 @@ int main(int argc, char* argv[]) {
                 error =borrarCarpincho(ped->pid);
             }
             enviar_int(fd_memoria, error);
-<<<<<<< HEAD
+
             printf("Envia a memoria %d\n",error);
-=======
->>>>>>> 4ce0624b24d533c18db638141140fbd6b663e68f
+
         }
         else if(strcmp(ped->nombre_pedido,"OBTENER_PAGINA") == 0){
             printf("OBTENER_PAGINA: pid: %d pag: %d\n", ped->pid, ped->pagina);
@@ -207,7 +188,6 @@ int main(int argc, char* argv[]) {
                 
             }
             if ( strcmp(cont_pag,"")== 0){
-<<<<<<< HEAD
                 printf("Envia a memoria -1\n");
                 printf("NO ENCONTRO LA PAGINA\n");
                 enviar_int(fd_memoria, -1);
@@ -217,13 +197,7 @@ int main(int argc, char* argv[]) {
                 enviar_int(fd_memoria, configuracion.TAMANIO_PAGINA);
                 enviar_mensaje(fd_memoria, cont_pag);
                 printf("Envia a memoria: tam pagina: %d - contenido pagina: %s\n",configuracion.TAMANIO_PAGINA,cont_pag);
-=======
-                enviar_int(fd_memoria, -1);
-            }
-            else{
-                enviar_int(fd_memoria, configuracion.TAMANIO_PAGINA);
-                enviar_mensaje(fd_memoria, cont_pag);
->>>>>>> 4ce0624b24d533c18db638141140fbd6b663e68f
+
             }
     
         }
