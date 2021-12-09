@@ -570,6 +570,8 @@ void* carpincho6_func(void* config){
 
 int main(int argc, char *argv[]) {
 
+    if ( argc>1 && (strcmp(argv[1], "memoria")== 0)) memoria_carpincho();
+
     mate_instance instance;
 
     mate_init(&instance, "cfg/carpincho.config");
