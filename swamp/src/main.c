@@ -25,7 +25,7 @@ int main(int argc, char* argv[]) {
         printf("entro a if de FIJA\n");
         asignacionFija = 1;
     }
-         printf("%d\n", asignacionFija);
+    printf("%d\n", asignacionFija);
     lista_carpinchos= list_create();
     lista_marcos= list_create();
     //marcos_libres_fija = list_create();
@@ -66,11 +66,16 @@ int main(int argc, char* argv[]) {
 
  
     while(1){
+       
+        mostrarSemaforosYListaPedidos("ANTES DE FIJARSE EN LA LISTA");
+
         sem_wait(agrego_lista_pedidos);
-        Pedido* ped; /* = malloc(sizeof(Pedido)); */
+        Pedido* ped = malloc(sizeof(Pedido)); 
         sem_wait(mutex_lista_pedidos);
         ped = (Pedido*) list_remove(lista_pedidos,0);
         sem_post(mutex_lista_pedidos);
+        mostrarSemaforosYListaPedidos("DESPUES DE FIJARSE EN LA LISTA");
+        
         printf(" saco de lista pedido %d\n", ped->pid);
         if(strcmp(ped->nombre_pedido,"ESCRIBIR_PAGINA") == 0){
             printf("ESCRIBIR_PAGINA: pid: %d - pag: %d \n Contenido: %s ",ped->pid, ped->pagina, ped->contenido_pagina);
@@ -110,11 +115,14 @@ int main(int argc, char* argv[]) {
         else if(strcmp(ped->nombre_pedido,"INICIO") == 0){
             printf("INICIO: pid: %d\n", ped->pid);
             int inicio;
+            bool puede;
             if(asignacionFija){
                 inicio = crearCarpinchoFijaDOS(ped->pid);
             }
             else{
+                
                 inicio = CrearCarpincho(ped->pid);
+                                
             }
             enviar_int(fd_memoria,inicio);
 
@@ -1169,17 +1177,16 @@ void memoria_tests(int argc, char* argv)
 void memoria_operacion(int cliente){
 
     int codop = recibir_operacion(cliente);
-    printf("codigo de operacdion %d\n", codop);
+    //printf("codigo de operacdion %d\n", codop);
     //int tamanio = recibir_int(cliente);
     Pedido* ped = malloc(sizeof(Pedido));
     int tamanio_pid,pid,tamanio_pagina,pagina,tamanio2;
-   switch(codop){
+    switch(codop){
         case ESCRIBIR_PAGINA:
-            tamanio_pid = recibir_int(cliente);
+            //tamanio_pid = recibir_int(cliente);
             pid = recibir_int(cliente);
-            tamanio_pagina = recibir_int(cliente);
+            //tamanio_pagina = recibir_int(cliente);
             pagina = recibir_int(cliente);
-            tamanio2;
             void* buffer = recibir_buffer_t(tamanio2, cliente);
             ped->nombre_pedido = malloc(sizeof("ESCRIBIR_PAGINA"));
             ped->nombre_pedido = "ESCRIBIR_PAGINA";
@@ -1191,10 +1198,11 @@ void memoria_operacion(int cliente){
             list_add(lista_pedidos,ped);
             sem_post(mutex_lista_pedidos);
             sem_post(agrego_lista_pedidos);
+            mostrarSemaforosYListaPedidos("AGREGA A LA LISTA");
             break;
 
         case SOLICITUD_INICIO:
-         printf("entro a solicitud inicio\n");
+         //printf("entro a solicitud inicio\n");
             //tamanio_pid = recibir_int(cliente);
             pid = recibir_int(cliente);
             // queda lugar
@@ -1207,10 +1215,11 @@ void memoria_operacion(int cliente){
             sem_post(mutex_lista_pedidos);
             sem_post(agrego_lista_pedidos);
             printf("agrego a lista\n");
+            mostrarSemaforosYListaPedidos("AGREGA A LA LISTA");
             break;
 
         case INICIO:
-            tamanio_pid = recibir_int(cliente);
+            //tamanio_pid = recibir_int(cliente);
             pid = recibir_int(cliente);
             ped->nombre_pedido = "INICIO";
             ped->pid = pid;
@@ -1219,12 +1228,13 @@ void memoria_operacion(int cliente){
             list_add(lista_pedidos,ped);
             sem_post(mutex_lista_pedidos);
             sem_post(agrego_lista_pedidos);
+            mostrarSemaforosYListaPedidos("AGREGA A LA LISTA");
             break;
 
         case SOLICITUD_PAGINA:
-            tamanio_pid = recibir_int(cliente);
+            //tamanio_pid = recibir_int(cliente);
             pid = recibir_int(cliente);
-            tamanio_pagina = recibir_int(cliente);
+            //tamanio_pagina = recibir_int(cliente);
             pagina = recibir_int(cliente);
             ped->nombre_pedido = "SOLICITUD_PAGINA";
             ped->pid = pid;
@@ -1234,12 +1244,13 @@ void memoria_operacion(int cliente){
             list_add(lista_pedidos,ped);
             sem_post(mutex_lista_pedidos);
             sem_post(agrego_lista_pedidos);
+            mostrarSemaforosYListaPedidos("AGREGA A LA LISTA");
             break;
 
         case BORRAR_PAGINA:
-            tamanio_pid = recibir_int(cliente);
+            //tamanio_pid = recibir_int(cliente);
             pid = recibir_int(cliente);
-            tamanio_pagina = recibir_int(cliente);
+            //tamanio_pagina = recibir_int(cliente);
             pagina = recibir_int(cliente);
             ped->nombre_pedido = "BORRAR_PAGINA";
             ped->pid = pid;
@@ -1249,11 +1260,12 @@ void memoria_operacion(int cliente){
             list_add(lista_pedidos,ped);
             sem_post(mutex_lista_pedidos);
             sem_post(agrego_lista_pedidos);
+            mostrarSemaforosYListaPedidos("AGREGA A LA LISTA");
             break;
          case OBTENER_PAGINA:
-            tamanio_pid = recibir_int(cliente);
+            //tamanio_pid = recibir_int(cliente);
             pid = recibir_int(cliente);
-            tamanio_pagina = recibir_int(cliente);
+            //tamanio_pagina = recibir_int(cliente);
             pagina = recibir_int(cliente);
             ped->nombre_pedido = "OBTENER_PAGINA";
             ped->pid = pid;
@@ -1263,10 +1275,11 @@ void memoria_operacion(int cliente){
             list_add(lista_pedidos,ped);
             sem_post(mutex_lista_pedidos);
             sem_post(agrego_lista_pedidos);
+            mostrarSemaforosYListaPedidos("AGREGA A LA LISTA");
             break;
 
         case BORRAR_CARPINCHO:
-            tamanio_pid = recibir_int(cliente);
+            //tamanio_pid = recibir_int(cliente);
             pid = recibir_int(cliente);
             ped->nombre_pedido = "BORRAR_CARPINCHO";
             ped->pid = pid;
@@ -1275,10 +1288,22 @@ void memoria_operacion(int cliente){
             list_add(lista_pedidos,ped);
             sem_post(mutex_lista_pedidos);
             sem_post(agrego_lista_pedidos);
+            mostrarSemaforosYListaPedidos("AGREGA A LA LISTA");
             break;
         default:
-            printf("NO ES DE SWAP %d.\n",codop);
-            break;
+            //printf("NO ES DE SWAP %d.\n",codop);
+        break;
     }
+    
 
+
+}
+void mostrarSemaforosYListaPedidos(char* mensaje){
+    printf("%s\n", mensaje);
+    int sem2;
+    int semaforo = sem_getvalue(mutex_lista_pedidos,&sem2);
+    printf("VALOR MUTEX: %d\n",sem2);
+    semaforo = sem_getvalue(agrego_lista_pedidos,&sem2);
+    printf("VALOR lista pedidos: %d\n",sem2);
+    printf("La lista de pedidos tiene %d pedidos\n", list_size(lista_pedidos));
 }
