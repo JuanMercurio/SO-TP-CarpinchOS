@@ -67,148 +67,155 @@ int main(int argc, char* argv[]) {
  
     while(1){
        
-        mostrarSemaforosYListaPedidos("ANTES DE FIJARSE EN LA LISTA");
+        
 
-        sem_wait(agrego_lista_pedidos);
+        //sem_wait(agrego_lista_pedidos);
         Pedido* ped = malloc(sizeof(Pedido)); 
         sem_wait(mutex_lista_pedidos);
-        ped = (Pedido*) list_remove(lista_pedidos,0);
-        sem_post(mutex_lista_pedidos);
-        mostrarSemaforosYListaPedidos("DESPUES DE FIJARSE EN LA LISTA");
+        mostrarSemaforosYListaPedidos("ANTES DE FIJARSE EN LA LISTA");
+        if ( list_size(lista_pedidos) >0 ){
+            ped = (Pedido*) list_remove(lista_pedidos,0);
+            sem_post(mutex_lista_pedidos);
+            mostrarSemaforosYListaPedidos("DESPUES DE FIJARSE EN LA LISTA");
+            printf("--------------------------------------------------------------------- VERIFICA OPERACION\n");
+            printf("------- <<<<<<<<< >>>>> SACO de lista pedido %d\n", ped->pid);
+            if(strcmp(ped->nombre_pedido,"ESCRIBIR_PAGINA") == 0){
+                printf("ESCRIBIR_PAGINA: pid: %d - pag: %d \n Contenido: %s ",ped->pid, ped->pagina, ped->contenido_pagina);
+                int pido;
+                if(asignacionFija){
+                    pido = remplazoPaginaFija(ped->pid, ped->pagina, ped->contenido_pagina);
+                }
+                else{
+                    pido = agregarPaginaDinamica(ped->pid, ped->pagina, ped->contenido_pagina);
+                }
+
+                printf("Envia a memoria %d\n",pido);
+                enviar_int(fd_memoria, pido);
+            }
+            else if(strcmp(ped->nombre_pedido,"SOLICITUD_INICIO") ==0 ){
+                printf("SOLICITUD_INICIO: pid: %d\n", ped->pid);
+                bool puede;
+                if(asignacionFija){
+                    // SE FIJA SI HAY ESPACIO O SI YA EXISTE ESE CARPINCHO
+                    Carpincho_Swamp* car = buscarCarpincho(ped->pid);
+                    puede = elegirMejorArchivoDOS (ped->pid) != -1 && car->pid == -1;
+                }
+                else{
+                    puede = quedaPaginasEnArchivo(ped->pid);
+                }
+                if (puede){
+                    printf("Envia a memoria 1\n");
+                    enviar_int(fd_memoria,1);
+                    printf("envioooooo a memoria %d\n", fd_memoria);
+                }
+                else{ printf("Envia a memoria -1\n");
+
+                    enviar_int(fd_memoria,-1);
+                }
+                
+            }
+            else if(strcmp(ped->nombre_pedido,"INICIO") == 0){
+                printf("INICIO: pid: %d\n", ped->pid);
+                int inicio;
+                bool puede;
+                if(asignacionFija){
+                    inicio = crearCarpinchoFijaDOS(ped->pid);
+                }
+                else{
+                    
+                    inicio = CrearCarpincho(ped->pid);
+                                    
+                }
+                enviar_int(fd_memoria,inicio);
+
+                printf("Envia a memoria %d\n",inicio);
+
+            }
+            else if(strcmp(ped->nombre_pedido,"SOLICITUD_PAGINA") == 0 ){
+                // puede pedir una pagina
+                printf("SOLICITUD_PAGINA: pid: %d\n", ped->pid);
+                int error;
+                bool puede;
+                if(asignacionFija){
+                    // ¿COMO SERIA?
+                    // LLEGUO A SU NUMERO DE MARCOS DE MARCOS.
+                    puede = puedeAgregarPagina( ped->pid);
+                    error= solicitarPaginaFija(ped->pid, ped->pagina);
+                }
+                else{
+                    // ASIGNARLE UN MARCO LIBRE 
+                    // PASARME EL PID. 
+                    puede = quedaPaginasEnArchivo(ped->pid);
+                    error = solicitudPagina(ped->pid, ped->pagina);
+                    // DEVOLVER AL SOCKET CON EL OPER Y UN -1
+                }
+                if (puede && error == 1){
+                    printf("Envia a memoria 1\n");
+                    enviar_int(fd_memoria,1);
+                }
+                else{
+                    printf("Envia a memoria -1\n");
+
+                    enviar_int(fd_memoria,-1);
+                }
+            }
+            else if(strcmp(ped->nombre_pedido,"BORRAR_PAGINA") == 0){
+                printf("BORRAR_PAGINA: pid: %d pag: %d\n", ped->pid, ped->pagina);
+                int pudo;
+                if(asignacionFija){
+                    pudo = BorrarPaginaFija(ped->pid, ped->pagina);
+                }
+                else{
+                    pudo = borrarPagina(ped->pid, ped->pagina);
+                }
+                enviar_int(fd_memoria, pudo);
+
+                printf("Envia a memoria %d\n",pudo);
+
+            }
+            else if(strcmp(ped->nombre_pedido,"BORRAR_CARPINCHO") == 0){
+                printf("BORRAR_CARPINCHO: pid: %d\n", ped->pid);
+                int error;
+                if(asignacionFija){
+                error = borrarCarpinchoFija(ped->pid);
+                }
+                else{
+                    error =borrarCarpincho(ped->pid);
+                }
+                enviar_int(fd_memoria, error);
+
+                printf("Envia a memoria %d\n",error);
+
+            }
+            else if(strcmp(ped->nombre_pedido,"OBTENER_PAGINA") == 0){
+                printf("OBTENER_PAGINA: pid: %d pag: %d\n", ped->pid, ped->pagina);
+            char* cont_pag;
+                if(asignacionFija){
+                    cont_pag =  buscarPaginaFija(ped->pid,ped->pagina);
+                }
+                else{
+                    cont_pag =  buscarPaginaDinamico(ped->pid,ped->pagina);
+                    
+                }
+                if ( strcmp(cont_pag,"")== 0){
+                    printf("Envia a memoria -1\n");
+                    printf("NO ENCONTRO LA PAGINA\n");
+                    enviar_int(fd_memoria, -1);
+                }
+                else{
+                    
+                    enviar_int(fd_memoria, configuracion.TAMANIO_PAGINA);
+                    enviar_mensaje(fd_memoria, cont_pag);
+                    printf("Envia a memoria: tam pagina: %d - contenido pagina: %s\n",configuracion.TAMANIO_PAGINA,cont_pag);
+
+                }
         
-        printf(" saco de lista pedido %d\n", ped->pid);
-        if(strcmp(ped->nombre_pedido,"ESCRIBIR_PAGINA") == 0){
-            printf("ESCRIBIR_PAGINA: pid: %d - pag: %d \n Contenido: %s ",ped->pid, ped->pagina, ped->contenido_pagina);
-            int pido;
-            if(asignacionFija){
-                pido = remplazoPaginaFija(ped->pid, ped->pagina, ped->contenido_pagina);
-            }
-            else{
-                pido = agregarPaginaDinamica(ped->pid, ped->pagina, ped->contenido_pagina);
-            }
-
-            printf("Envia a memoria %d\n",pido);
-            enviar_int(fd_memoria, pido);
-        }
-        else if(strcmp(ped->nombre_pedido,"SOLICITUD_INICIO") ==0 ){
-            printf("SOLICITUD_INICIO: pid: %d\n", ped->pid);
-            bool puede;
-            if(asignacionFija){
-                // SE FIJA SI HAY ESPACIO O SI YA EXISTE ESE CARPINCHO
-                Carpincho_Swamp* car = buscarCarpincho(ped->pid);
-                puede = elegirMejorArchivoDOS (ped->pid) != -1 && car->pid == -1;
-            }
-            else{
-                puede = quedaPaginasEnArchivo(ped->pid);
-            }
-            if (puede){
-                 printf("Envia a memoria 1\n");
-                enviar_int(fd_memoria,1);
-                printf("envioooooo a memoria %d\n", fd_memoria);
-            }
-            else{ printf("Envia a memoria -1\n");
-
-                enviar_int(fd_memoria,-1);
-            }
-            
-        }
-        else if(strcmp(ped->nombre_pedido,"INICIO") == 0){
-            printf("INICIO: pid: %d\n", ped->pid);
-            int inicio;
-            bool puede;
-            if(asignacionFija){
-                inicio = crearCarpinchoFijaDOS(ped->pid);
-            }
-            else{
-                
-                inicio = CrearCarpincho(ped->pid);
-                                
-            }
-            enviar_int(fd_memoria,inicio);
-
-            printf("Envia a memoria %d\n",inicio);
-
-        }
-        else if(strcmp(ped->nombre_pedido,"SOLICITUD_PAGINA") == 0 ){
-            // puede pedir una pagina
-            printf("SOLICITUD_PAGINA: pid: %d\n", ped->pid);
-            int error;
-            bool puede;
-            if(asignacionFija){
-                // ¿COMO SERIA?
-                // LLEGUO A SU NUMERO DE MARCOS DE MARCOS.
-                puede = puedeAgregarPagina( ped->pid);
-                error= solicitarPaginaFija(ped->pid, ped->pagina);
-            }
-            else{
-                // ASIGNARLE UN MARCO LIBRE 
-                // PASARME EL PID. 
-                puede = quedaPaginasEnArchivo(ped->pid);
-                error = solicitudPagina(ped->pid, ped->pagina);
-                // DEVOLVER AL SOCKET CON EL OPER Y UN -1
-            }
-            if (puede && error == 1){
-                printf("Envia a memoria 1\n");
-                enviar_int(fd_memoria,1);
-            }
-            else{
-                printf("Envia a memoria -1\n");
-
-                enviar_int(fd_memoria,-1);
             }
         }
-        else if(strcmp(ped->nombre_pedido,"BORRAR_PAGINA") == 0){
-            printf("BORRAR_PAGINA: pid: %d pag: %d\n", ped->pid, ped->pagina);
-            int pudo;
-            if(asignacionFija){
-                pudo = BorrarPaginaFija(ped->pid, ped->pagina);
-            }
-            else{
-                pudo = borrarPagina(ped->pid, ped->pagina);
-            }
-            enviar_int(fd_memoria, pudo);
-
-            printf("Envia a memoria %d\n",pudo);
-
+        else{
+            sem_post(mutex_lista_pedidos);
         }
-        else if(strcmp(ped->nombre_pedido,"BORRAR_CARPINCHO") == 0){
-            printf("BORRAR_CARPINCHO: pid: %d\n", ped->pid);
-            int error;
-            if(asignacionFija){
-              error = borrarCarpinchoFija(ped->pid);
-            }
-            else{
-                error =borrarCarpincho(ped->pid);
-            }
-            enviar_int(fd_memoria, error);
-
-            printf("Envia a memoria %d\n",error);
-
-        }
-        else if(strcmp(ped->nombre_pedido,"OBTENER_PAGINA") == 0){
-            printf("OBTENER_PAGINA: pid: %d pag: %d\n", ped->pid, ped->pagina);
-           char* cont_pag;
-            if(asignacionFija){
-                cont_pag =  buscarPaginaFija(ped->pid,ped->pagina);
-            }
-            else{
-                cont_pag =  buscarPaginaDinamico(ped->pid,ped->pagina);
-                
-            }
-            if ( strcmp(cont_pag,"")== 0){
-                printf("Envia a memoria -1\n");
-                printf("NO ENCONTRO LA PAGINA\n");
-                enviar_int(fd_memoria, -1);
-            }
-            else{
-                
-                enviar_int(fd_memoria, configuracion.TAMANIO_PAGINA);
-                enviar_mensaje(fd_memoria, cont_pag);
-                printf("Envia a memoria: tam pagina: %d - contenido pagina: %s\n",configuracion.TAMANIO_PAGINA,cont_pag);
-
-            }
-    
-        }
+         
         
         
         sleep(configuracion.RETARDO_SWAP);
@@ -1197,7 +1204,7 @@ void memoria_operacion(int cliente){
             sem_wait(mutex_lista_pedidos);
             list_add(lista_pedidos,ped);
             sem_post(mutex_lista_pedidos);
-            sem_post(agrego_lista_pedidos);
+            //sem_post(agrego_lista_pedidos);
             mostrarSemaforosYListaPedidos("AGREGA A LA LISTA");
             break;
 
@@ -1213,7 +1220,7 @@ void memoria_operacion(int cliente){
             sem_wait(mutex_lista_pedidos);
             list_add(lista_pedidos,ped);
             sem_post(mutex_lista_pedidos);
-            sem_post(agrego_lista_pedidos);
+            //sem_post(agrego_lista_pedidos);
             printf("agrego a lista\n");
             mostrarSemaforosYListaPedidos("AGREGA A LA LISTA");
             break;
@@ -1227,7 +1234,7 @@ void memoria_operacion(int cliente){
             sem_wait(mutex_lista_pedidos);
             list_add(lista_pedidos,ped);
             sem_post(mutex_lista_pedidos);
-            sem_post(agrego_lista_pedidos);
+            //sem_post(agrego_lista_pedidos);
             mostrarSemaforosYListaPedidos("AGREGA A LA LISTA");
             break;
 
@@ -1243,7 +1250,7 @@ void memoria_operacion(int cliente){
             sem_wait(mutex_lista_pedidos);
             list_add(lista_pedidos,ped);
             sem_post(mutex_lista_pedidos);
-            sem_post(agrego_lista_pedidos);
+            //sem_post(agrego_lista_pedidos);
             mostrarSemaforosYListaPedidos("AGREGA A LA LISTA");
             break;
 
@@ -1259,7 +1266,7 @@ void memoria_operacion(int cliente){
             sem_wait(mutex_lista_pedidos);
             list_add(lista_pedidos,ped);
             sem_post(mutex_lista_pedidos);
-            sem_post(agrego_lista_pedidos);
+            //sem_post(agrego_lista_pedidos);
             mostrarSemaforosYListaPedidos("AGREGA A LA LISTA");
             break;
          case OBTENER_PAGINA:
@@ -1274,7 +1281,7 @@ void memoria_operacion(int cliente){
             sem_wait(mutex_lista_pedidos);
             list_add(lista_pedidos,ped);
             sem_post(mutex_lista_pedidos);
-            sem_post(agrego_lista_pedidos);
+            //sem_post(agrego_lista_pedidos);
             mostrarSemaforosYListaPedidos("AGREGA A LA LISTA");
             break;
 
@@ -1287,7 +1294,7 @@ void memoria_operacion(int cliente){
             sem_wait(mutex_lista_pedidos);
             list_add(lista_pedidos,ped);
             sem_post(mutex_lista_pedidos);
-            sem_post(agrego_lista_pedidos);
+            //sem_post(agrego_lista_pedidos);
             mostrarSemaforosYListaPedidos("AGREGA A LA LISTA");
             break;
         default:
