@@ -422,7 +422,7 @@ void eliminar_carpincho(void *arg)
    
    sem_destroy(&carpincho->semaforo_evento);
    sem_destroy(&carpincho->semaforo_fin_evento);
-  //close(carpincho->fd_cliente);
+   close(carpincho->fd_cliente);
    printf("ELIMINAR CARPINCHO: CERRANDO CONEXION %d de carpincho %d\n", carpincho->fd_cliente, carpincho->pid);
    //close(carpincho->fd_memoria);
    log_info(logger, "Carpincho %d - Eliminado", carpincho->pid);
@@ -440,10 +440,11 @@ void ejecutando_a_bloqueado(t_pcb *carpincho, t_queue *cola, sem_t *mutex)
    sem_post(mutex);
 }
 
-void bloqueado_a_listo(t_queue *cola, sem_t *mutex)
+void bloqueado_a_listo(t_list *cola, sem_t *mutex)
 {
    sem_wait(mutex);
-   t_pcb *carpincho = (t_pcb*)queue_pop(cola);
+   t_pcb *carpincho = (t_pcb*)list_remove(cola,0);
+   printf("bloqueado a listo carpincho %d\n", carpincho->pid);
    sem_post(mutex);
    if(carpincho->estado == 'S'){
       sem_post(&carpincho->semaforo_fin_evento);

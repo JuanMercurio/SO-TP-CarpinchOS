@@ -37,6 +37,11 @@ typedef struct io_kernel{
     sem_t cola_con_elementos;
 }io_kernel;
 
+typedef struct{
+   int pid;
+   char* retenido;
+   char* esperando;
+}deadlock_kernel;
 
 typedef struct t_pcb{
     int pid;
@@ -73,7 +78,7 @@ typedef struct sem_kernel{
     char* id;
     int val;
     int max_val;
-    t_queue* bloqueados;
+    t_list* bloqueados;
     sem_t mutex;
     sem_t mutex_cola;
     int tomado_por;
