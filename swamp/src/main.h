@@ -46,6 +46,7 @@ typedef struct {
 //VARIABLES GLOBALES
 int server;
 bool asignacionFija;
+bool termino;
 t_list* lista_carpinchos;
 t_list* lista_marcos;
 t_list* marcos_libres_fija;
@@ -62,6 +63,8 @@ sem_t*  agrego_lista_pedidos;
 
 void pruebas();
 void destroy_and_free (int);
+void mostrarSemaforosYListaPedidos(char* mensaje);
+void memoria_operacion(int cliente);
 //GENERAL
 void crearArchivos();
 int elegirMejorArchivo();

@@ -10,7 +10,9 @@
 //------------------------------- PLANIFICACION--------------------//
 #include <matelib.h>
 
-#define CANT_CARPINCHOS 1
+#define CANT_CARPINCHOS 2
+#define ALLOCAR 10
+
 char *LOG_PATH = "./planificacion.log";
 char *PROGRAM_NAME = "planificacion";
 sem_t *va_el_2;
@@ -361,7 +363,7 @@ void carpincho_comportamiento_memoria(void* arg)
    }
 
    printf("-- Mate MALLOC -- \n");
-   int dl = mate_memalloc(c, 117);
+   int dl = mate_memalloc(c, ALLOCAR);
    if (dl == -1){
       fprintf(stderr, "No pude reservar memoria \n");
       abort();
@@ -571,6 +573,8 @@ void* carpincho6_func(void* config){
 }
 //------DEADLOCK MAIN
 int main(int argc, char *argv[]) {
+
+    if ( argc>1 && (strcmp(argv[1], "memoria")== 0)) memoria_carpincho();
 
     mate_instance instance;
 
