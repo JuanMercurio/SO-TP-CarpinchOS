@@ -54,6 +54,7 @@ t_list* marcos_libres;
 t_list* lista_pedidos;
 sem_t* mutex_lista_pedidos;
 sem_t*  agrego_lista_pedidos;
+int cant_ped;
 
 /*
     @NAME: terminar_programa
@@ -65,6 +66,9 @@ void pruebas();
 void destroy_and_free (int);
 void mostrarSemaforosYListaPedidos(char* mensaje);
 void memoria_operacion(int cliente);
+void borrar_Carpincho(Carpincho_Swamp* car);
+void borrar_paginas_Ocupadas( Marcos_x_pagina* mar_pag);
+void borrar_marcos_libres (un_marco_libre* mar_lib);
 //GENERAL
 void crearArchivos();
 int elegirMejorArchivo();
@@ -73,6 +77,8 @@ int cantidadCaracteresFile (char* path);
 bool quedaEspacioEnArchivo();
 int cantidadBarra0File (char* path);
 bool quedaEspacioEnArchivoDOS();
+int elegirMejorArchivoDOS();
+int buscarMarcoLibre(int num_archivo);
 
 //ASIGNACION DINAMICA
 int agregarPaginaDinamica(int pid, int pagina, char* contenido);
@@ -82,6 +88,7 @@ void marcosLibes();
 bool quedaPaginasEnArchivo(int pid);
 int solicitudPagina(int pid, int pagina);
 int borrarPagina(int pid, int pagina);
+int borrarCarpincho(int pid);
 
 //ASIGNACION FIJA
 
