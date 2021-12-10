@@ -87,7 +87,7 @@ return respuesta;
 
 int mate_sem_wait(mate_instance *lib_ref, mate_sem_name sem)
 {
-  log_info(logger, "SEM_WAIT al semáforo %s", sem);
+  log_info(logger, "SEM_WAIT al semáforo %s de carpincho %d", sem,((mate_inner_structure *)lib_ref->group_info)->pid );
 
   if (conectado_a_memoria(lib_ref))
   {
@@ -114,7 +114,7 @@ int mate_sem_wait(mate_instance *lib_ref, mate_sem_name sem)
 
 int mate_sem_post(mate_instance *lib_ref, mate_sem_name sem)
 {
-  log_info(logger, "SEM_POST al semáforo %s", sem);
+  log_info(logger, "SEM_POST al semáforo %s del carpincho %d", sem, ((mate_inner_structure *)lib_ref->group_info)->conexion);
 
   if (conectado_a_memoria(lib_ref))
   {

@@ -1,6 +1,8 @@
 {
     "files.associations": {
         "main.h": "c",
-        "mensajes.h": "c"
+        "mensajes.h": "c",
+        "io_semaforos.h": "c",
+        "deadlock.h": "c"
     }
 }

@@ -96,8 +96,8 @@ void init_sems()
     sem_init(va_el_3, 1, 0);
 }
 
-
-/* int main(int argc, char *argv[])
+//----PLANIFICACION MAIN
+/*  int main(int argc, char *argv[])
 {
     logger = log_create(LOG_PATH, PROGRAM_NAME, true, LOG_LEVEL_DEBUG);
     printf("creo logger\n");
@@ -119,7 +119,7 @@ void init_sems()
     pthread_join(carpincho3_thread, NULL);
     free_all();
     puts("Termine!");
-} */ 
+}  */
 //----------------------SUSPENSION---------------------//
 /* void* carpincho1_func(void* config){
 
@@ -206,6 +206,7 @@ void* carpincho4_func(void* config){
 }*/
 
 /*
+//----SUSPENSION MAIN
 int main(int argc, char *argv[]) {
 
    memoria_carpincho();
@@ -446,7 +447,7 @@ void* carpincho1_func(void* config){
     printf("C1 - libera SEM2\n");
     mate_sem_post(&instance, "SEM2");
 
-    printf("C2 - Se retira a descansar\n");
+    printf("C1 - Se retira a descansar\n");
     mate_close(&instance);
     return 0;
 }
@@ -509,12 +510,12 @@ void* carpincho4_func(void* config){
     printf("C4 - toma SEM1\n");
     mate_sem_wait(&instance, "SEM1");
     sleep(3);
-
-    printf("C4 - libera SEM1\n");
+    printf("PASARON LOS 3 SEGNDOS DESPUES DE RECIBIR -1 DEL KERNEL\n");
+ printf("C4 - libera SEM1\n");
     mate_sem_post(&instance, "SEM1");
     printf("C4 - libera SEM4\n");
     mate_sem_post(&instance, "SEM4");
-
+ 
 	printf("C4 - Se retira a descansar\n");
 	mate_close(&instance);
 	return 0;
@@ -540,6 +541,7 @@ void* carpincho5_func(void* config){
 
 	printf("C5 - Se retira a descansar\n");
 	mate_close(&instance);
+    printf("C5 - Se retira HIZO MATE CLOSE\n");
 	return 0;
 }
 
@@ -557,19 +559,19 @@ void* carpincho6_func(void* config){
     sleep(3);
     printf("C6 - Libera SEM1\n");
     mate_sem_post(&instance, "SEM1");
-
+ printf("se resolvio primer deadlock quedara esperando en SEM5\n");
     printf("C6 - toma SEM5\n");
     mate_sem_wait(&instance, "SEM5");
     sleep(3);
 
-    mate_sem_post(&instance, "SEM5");
+     mate_sem_post(&instance, "SEM5");
     mate_sem_post(&instance, "SEM6");
-
+ 
 	printf("C6 - Se retira a descansar\n");
 	mate_close(&instance);
 	return 0;
 }
-
+//------DEADLOCK MAIN
 int main(int argc, char *argv[]) {
 
     if ( argc>1 && (strcmp(argv[1], "memoria")== 0)) memoria_carpincho();
@@ -637,3 +639,4 @@ int main(int argc, char *argv[]) {
 
 	return EXIT_SUCCESS;
 }
+ 

@@ -13,7 +13,7 @@ void deteccion_deadlock()
         printf("---------------------------------------DEADLOCK ACTIVADO\n");
         sleep(configuracion.TIEMPO_DEADLOCK * 0.001);
         printf("---------------------------------------PASARON LOS SEGUNDOS\n");
-        //log_info(logger, "Comienza la ejecución de la detección de Deadlock");
+        log_info(logger, "Comienza la ejecución de la detección de Deadlock");
         //pausar_todo????
         if (!list_is_empty(lista_sem_kernel))
         {
@@ -268,8 +268,10 @@ void sacar_de_cola_bloqueados(sem_kernel *semaforo, int id)
         {
            list_remove(semaforo->bloqueados,i);
            printf("carpincho %d con deadlock removid de lista\n", carpincho->pid);
-           enviar_int(carpincho->fd_cliente, -1);
-           enviar_mensaje(carpincho->fd_cliente, "MUERE");
+          // enviar_int(carpincho->fd_cliente, 0);
+           enviar_mensaje(carpincho->fd_cliente, "OK");
+          // close(carpincho->fd_cliente);
+         // shutdown(carpincho->fd_cliente, SHUT_RD);
            eliminar_carpincho((void*)carpincho);
            removido = true;
          /* close(carpincho->fd_cliente);
