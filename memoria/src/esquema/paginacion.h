@@ -208,4 +208,7 @@ int dl_a_decimal(dir_t dl);
 
 void actualizar_victima_de_tlb(tlb_t* reg);
 
+void tlb_limpiar_registro(int pid, int pagina);
+
+pag_t* obtener_pagina(int pid, int pagina);
 #endif

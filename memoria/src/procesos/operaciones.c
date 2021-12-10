@@ -595,7 +595,7 @@ int memoria_escribir(tab_pags* tabla, dir_t dl, void* contenido, int tamanio){
         memcpy(ram.memoria + offset_memoria(df), contenido + written, bytes_to_write);
 		pag_t* pagina = list_get(tabla->tabla_pag, dl.PAGINA);
 
-        page_use(tabla->pid, marco, pagina, dl.PAGINA, READ);
+        page_use(tabla->pid, marco, pagina, dl.PAGINA, WRITE);
 
         bytes_remaining_space = configuracion.TAMANIO_PAGINAS;
         bytes_remaining -= bytes_to_write;
@@ -705,7 +705,6 @@ int swap_pedir_paginas(tab_pags* tabla, int c_paginas)
 	int estado;
 
 	for (int i=0; i < c_paginas; ++i) {
-		printf(" ===================== Estoy pidiendo una pagina\n");
 		enviar_int(swap, SOLICITUD_PAGINA);
 		enviar_int(swap, tabla->pid);
 		enviar_int(swap, pagina);
@@ -716,7 +715,6 @@ int swap_pedir_paginas(tab_pags* tabla, int c_paginas)
 		pagina++;
 	}
 
-	printf("Termine de pedir una pagina\n");
 	return estado;
 }
 

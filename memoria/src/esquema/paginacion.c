@@ -1,5 +1,6 @@
 #include "paginacion.h"
 #include "tlb.h"
+#include "../procesos/operaciones.h"
 
 #include <mensajes/mensajes.h>
 #include <stdlib.h>
@@ -127,39 +128,55 @@ int nro_marco(int pagina, tab_pags *tabla)
 
 int buscar_en_swap(tab_pags *tabla, int pagina)
 {
+    enviar_int(swap, OBTENER_PAGINA);
+    enviar_int(swap, tabla->pid);
+    enviar_int(swap, pagina);
 
-    // void* buffer = serializar_pedido_pagina(tabla->pid, pagina);
-    // t_paquete* paquete = crear_paquete(SOLICITUD_PAGINA);
-    // agregar_a_paquete(paquete, buffer, sizeof(int)*2);
+    int op = recibir_int(swap);
 
-    // int swap = crear_conexion("127.0.0.1", "5003");
-    // enviar_paquete(paquete, swap);
+    if (op == -1) {
+        return -1;
+    }
 
-    // int op = recibir_int(swap);
+    void* contenido = recibir_buffer(configuracion.TAMANIO_PAGINAS, swap);
 
-    // if (op == -1) {
-    //     close(swap);
-    //     return -1;
-    // }
+    t_victima victima = algoritmo_mmu(tabla->pid, tabla);
+    reemplazar_pagina(victima, contenido, pagina, tabla);
 
-    // void* contenido = recibir_contenido(swap);
-    // close(swap);
-
-    // t_victima victima = algoritmo_mmu(tabla->pid, tabla);
-    // reemplazar_pagina(victima, contenido, pagina, tabla);
-
-    // return victima.marco;
-
-    return -1;
+    return victima.marco;
 }
 
 void reemplazar_pagina(t_victima victima, void *buffer, int pagina, tab_pags *tabla)
 {
+    if(victima.tlb == 1) tlb_limpiar_registro(victima.pid, victima.pagina);
     // y si buffer es NULL?
-    if (victima.modificado == 1)
-        enviar_pagina_a_swap(victima.pid, victima.pagina, victima.marco);
+
+    if (victima.modificado == 1) {
+       enviar_pagina_a_swap(victima.pid, victima.pagina, victima.marco);
+       int pido = recibir_int(swap);
+    }
+
+    tlb_insert_page(tabla->pid, pagina, victima.marco, READ);
     insertar_pagina(buffer, victima.marco);
     actualizar_nueva_pagina(pagina, victima.marco, tabla);
+}
+
+pag_t* obtener_pagina(int pid, int pagina)
+{
+    tab_pags* tabla = buscar_page_table(pid);
+    return list_get(tabla->tabla_pag, pagina);
+}
+
+void tlb_limpiar_registro(int pid, int pagina) 
+{
+    int tamanio = list_size(tlb);
+    for (int i=0; i < tamanio; i++) {
+        tlb_t* reg = list_get(tlb, i);
+        if ( reg->pid == pid && reg->pagina == pagina) {
+            reg->pid = -1;
+            return;
+        }
+    }
 }
 
 void actualizar_nueva_pagina(int pagina, int marco, tab_pags *tabla)
@@ -167,18 +184,19 @@ void actualizar_nueva_pagina(int pagina, int marco, tab_pags *tabla)
 
     pag_t *reg = list_get(tabla->tabla_pag, pagina);
     reg->presente = 1;
+    reg->tlb = 1;
     reg->marco = marco;
+    reg->algoritmo = alg_comportamiento();
 
 }
 void actualizar_victima_de_tlb(tlb_t* reg)
 {
     tab_pags* tabla = buscar_page_table(reg->pid);
     pag_t* pagina = list_get(tabla->tabla_pag, reg->pagina);
-
-    pagina->algoritmo = reg->alg_tlb;
+    
+    pagina->algoritmo = reg->alg;
     pagina->marco = reg->marco;
     pagina->modificado = reg->modificado;
-    pagina->presente = 1;
     pagina->tlb = 0;
 }
 
@@ -427,15 +445,27 @@ void *pagina_obtener_swap(int pid, int pagina)
 
 void enviar_pagina_a_swap(int pid, int pagina, int marco)
 {
+    enviar_int(swap, ESCRIBIR_PAGINA);
+    enviar_int(swap, pid);
+    enviar_int(swap, pagina);
+    enviar_int(swap, configuracion.TAMANIO_PAGINAS);
 
-    t_paquete *paquete = crear_paquete(ESCRIBIR_PAGINA);
     void *contenido = malloc(configuracion.TAMANIO_PAGINAS);
+
     memcpy(contenido, ram.memoria + marco * configuracion.TAMANIO_PAGINAS, configuracion.TAMANIO_PAGINAS);
+    enviar_buffer(swap, contenido, configuracion.TAMANIO_PAGINAS);
+    printf("Contenido %d \n", ((HeapMetadata*)contenido)->prevAlloc);
+    printf("SWAP - PID: %d - PAG: %d  enviado \n", pid, pagina);
 
-    agregar_a_paquete(paquete, &pagina, sizeof(int));
-    agregar_a_paquete(paquete, contenido, configuracion.TAMANIO_PAGINAS);
+    // Este codigo comentado es para mandar las cosas de una por ahora no lo usamoso
+    // t_paquete *paquete = crear_paquete(ESCRIBIR_PAGINA);
+    // void *contenido = malloc(configuracion.TAMANIO_PAGINAS);
+    // memcpy(contenido, ram.memoria + marco * configuracion.TAMANIO_PAGINAS, configuracion.TAMANIO_PAGINAS);
 
-    enviar_paquete(paquete, swap);
+    // agregar_a_paquete(paquete, &pagina, sizeof(int));
+    // agregar_a_paquete(paquete, contenido, configuracion.TAMANIO_PAGINAS);
+
+    // enviar_paquete(paquete, swap);
 
     free(contenido);
 }

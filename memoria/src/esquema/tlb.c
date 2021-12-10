@@ -76,7 +76,8 @@ void actualizar_tlb(int pid, int marco, int pagina){
     reg->pid         =  pid;
     reg->marco       =  marco;
     reg->pagina      =  pagina;
-    reg->alg_tlb     =  suma_atomica(&alg_tlb);
+    reg->alg_tlb     =  alg_comportamiento_tlb();
+    reg->alg         =  alg_comportamiento();
     reg->modificado  =  0;
 }
 
