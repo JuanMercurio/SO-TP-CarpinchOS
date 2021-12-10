@@ -37,7 +37,7 @@ typedef struct io_kernel{
     sem_t cola_con_elementos;
 }io_kernel;
 
-typedef struct{
+typedef struct deadlock_kernel{
    int pid;
    char* retenido;
    char* esperando;

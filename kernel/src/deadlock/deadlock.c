@@ -211,6 +211,7 @@ bool comparar_lista(deadlock_kernel *alf, t_list *list, int *index)
             aux = list_get(list, i);
             if (strcmp(alf->esperando, aux->retenido) == 0)
             {
+                
                 *index = i;
                 encontro = true;
             }

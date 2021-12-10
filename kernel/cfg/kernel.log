@@ -1,814 +1,113 @@
-[INFO] 20:24:00:456 Kernel/(4717:4722): Comienza la ejecución de la detección de Deadlock
-[INFO] 20:24:00:456 Kernel/(4717:4722): Entro al for deadlock
-[INFO] 20:24:00:456 Kernel/(4717:4722): Salgo de buscar_en_otras_listas con iteracion 0
-[INFO] 20:24:00:456 Kernel/(4717:4722): Termine iteracion 0 del for deadlock
-[INFO] 20:24:00:456 Kernel/(4717:4722): Entro al for deadlock
-[INFO] 20:24:00:456 Kernel/(4717:4722): Salgo de buscar_en_otras_listas con iteracion 1
-[INFO] 20:24:00:456 Kernel/(4717:4722): Termine iteracion 1 del for deadlock
-[INFO] 20:24:00:456 Kernel/(4717:4722): Entro al for deadlock
-[INFO] 20:24:00:456 Kernel/(4717:4722): Salgo de buscar_en_otras_listas con iteracion 2
-[INFO] 20:24:00:456 Kernel/(4717:4722): Termine iteracion 2 del for deadlock
-[INFO] 20:24:00:456 Kernel/(4717:4722): Entro al for deadlock
-[INFO] 20:24:00:456 Kernel/(4717:4722): Salgo de buscar_en_otras_listas con iteracion 3
-[INFO] 20:24:00:456 Kernel/(4717:4722): Termine iteracion 3 del for deadlock
-[INFO] 20:24:00:456 Kernel/(4717:4722): Entro al for deadlock
-[INFO] 20:24:00:456 Kernel/(4717:4722): Estoy en buscar_en_otras_listas con carpincho 6
-[INFO] 20:24:00:457 Kernel/(4717:4722): Salgo de buscar_en_otras_listas con iteracion 4
-[INFO] 20:24:00:457 Kernel/(4717:4722): Entro a if a_enlistar=!NULL
-[INFO] 20:24:00:457 Kernel/(4717:4722): Termine iteracion 4 del for deadlock
-[INFO] 20:24:00:457 Kernel/(4717:4722): Entro al for deadlock
-[INFO] 20:24:00:457 Kernel/(4717:4722): Estoy en buscar_en_otras_listas con carpincho 7
-[INFO] 20:24:00:457 Kernel/(4717:4722): Salgo de buscar_en_otras_listas con iteracion 5
-[INFO] 20:24:00:457 Kernel/(4717:4722): Entro a if a_enlistar=!NULL
-[INFO] 20:24:00:457 Kernel/(4717:4722): Termine iteracion 5 del for deadlock
-[INFO] 20:24:00:457 Kernel/(4717:4722): Verificando espera circular
-[INFO] 20:24:00:457 Kernel/(4717:4722): Size lista_posible_deadlock 2
-[INFO] 20:24:22:401 Kernel/(4925:4925): Log creado
-[INFO] 20:24:22:402 Kernel/(4925:4925): Configuración obtenida
-[INFO] 20:24:22:403 Kernel/(4925:4925): Semáforos inicializados
-[INFO] 20:24:22:404 Kernel/(4925:4925): Colas de dispositivos IO creadas
-[INFO] 20:24:22:404 Kernel/(4925:4925): Se creó el hilo gestor de la IO laguna
-[INFO] 20:24:22:405 Kernel/(4925:4925): Inicio colas de planificación
-[INFO] 20:24:22:405 Kernel/(4925:4925): Hilo Planificador Corto Plazo creado
-[INFO] 20:24:22:405 Kernel/(4925:4925): Hilo Planificador Largo Plazo creado
-[INFO] 20:24:22:405 Kernel/(4925:4925): Hilo Planificador Gestor Finalizados creado
-[INFO] 20:24:22:405 Kernel/(4925:4925): Hilo Detección Deadlock creado
-[INFO] 20:24:22:405 Kernel/(4925:4925): Hilo para terminar el programa creado
-[INFO] 20:24:22:405 Kernel/(4925:4925): Hilo CPU creado
-[INFO] 20:24:22:406 Kernel/(4925:4931): Para terminar precione cualquier tecla.
-[INFO] 20:24:27:741 Kernel/(4925:5008): 
+[INFO] 16:14:35:498 Kernel/(4563:4563): Log creado
+[INFO] 16:14:35:863 Kernel/(4563:4563): Configuración obtenida
+[INFO] 16:14:35:881 Kernel/(4563:4563): Semáforos inicializados
+[INFO] 16:14:35:893 Kernel/(4563:4563): Colas de dispositivos IO creadas
+[INFO] 16:14:36:012 Kernel/(4563:4563): Se creó el hilo gestor de la IO pelopincho
+[INFO] 16:14:36:033 Kernel/(4563:4563): Inicio colas de planificación
+[INFO] 16:14:36:035 Kernel/(4563:4563): Hilo Planificador Corto Plazo creado
+[INFO] 16:14:36:037 Kernel/(4563:4563): Hilo Planificador Largo Plazo creado
+[INFO] 16:14:36:039 Kernel/(4563:4563): Hilo Planificador Gestor Finalizados creado
+[INFO] 16:14:36:060 Kernel/(4563:4563): Hilo Detección Deadlock creado
+[INFO] 16:14:36:069 Kernel/(4563:4563): Hilo para terminar el programa creado
+[INFO] 16:14:36:070 Kernel/(4563:4578): Para terminar precione cualquier tecla.
+[INFO] 16:14:36:092 Kernel/(4563:4563): Hilo CPU creado
+[INFO] 16:14:39:230 Kernel/(4563:4646): 
  Se recibió un NEW INSTANCE. Comienza creación del carpincho
-[INFO] 20:24:27:741 Kernel/(4925:5008): NEW INSTANCE: Se agregó el carpincho ID: 1 a la cola de new
-[INFO] 20:24:27:741 Kernel/(4925:4928): Llegó un carpincho al planificador de largo plazo
-[INFO] 20:24:27:741 Kernel/(4925:4928): Carpincho 1 - Se INICIARA carpincho 0
-[INFO] 20:24:27:741 Kernel/(4925:4933): Carpincho 1 - Comienza a ejecutar
-[INFO] 20:24:27:782 Kernel/(4925:5008): Se recibió del carpincho 1 un SEM INIT para el semáforo SEM1 con valor 1
- 
-[INFO] 20:24:27:782 Kernel/(4925:5008): SEMAFORO SEM1 inicializado con 1
-[INFO] 20:24:27:782 Kernel/(4925:5008): Se recibió del carpincho 1 un SEM INIT para el semáforo SEM2 con valor 1
- 
-[INFO] 20:24:27:782 Kernel/(4925:5008): SEMAFORO SEM2 inicializado con 1
-[INFO] 20:24:27:782 Kernel/(4925:5008): Se recibió del carpincho 1 un SEM INIT para el semáforo SEM3 con valor 1
- 
-[INFO] 20:24:27:782 Kernel/(4925:5008): SEMAFORO SEM3 inicializado con 1
-[INFO] 20:24:27:783 Kernel/(4925:5008): Se recibió del carpincho 1 un SEM INIT para el semáforo SEM4 con valor 1
- 
-[INFO] 20:24:27:783 Kernel/(4925:5008): SEMAFORO SEM4 inicializado con 1
-[INFO] 20:24:27:783 Kernel/(4925:5008): Se recibió del carpincho 1 un SEM INIT para el semáforo SEM5 con valor 1
- 
-[INFO] 20:24:27:783 Kernel/(4925:5008): SEMAFORO SEM5 inicializado con 1
-[INFO] 20:24:27:783 Kernel/(4925:5008): Se recibió del carpincho 1 un SEM INIT para el semáforo SEM6 con valor 1
- 
-[INFO] 20:24:27:783 Kernel/(4925:5008): SEMAFORO SEM6 inicializado con 1
-[INFO] 20:24:27:798 Kernel/(4925:5010): 
+[INFO] 16:14:39:236 Kernel/(4563:4646): NEW INSTANCE: Se agregó el carpincho ID: 1 a la cola de new
+[INFO] 16:14:39:242 Kernel/(4563:4575): Llegó un carpincho al planificador de largo plazo
+[INFO] 16:14:39:286 Kernel/(4563:4575): Carpincho 1 - Se INICIARA carpincho 0
+[INFO] 16:14:39:377 Kernel/(4563:4575): Carpincho 1 - Estimación actual: 1.000000
+[INFO] 16:14:39:396 Kernel/(4563:4581): Carpincho 1 - Comienza a ejecutar
+[INFO] 16:14:39:425 Kernel/(4563:4648): 
  Se recibió un NEW INSTANCE. Comienza creación del carpincho
-[INFO] 20:24:27:799 Kernel/(4925:5010): NEW INSTANCE: Se agregó el carpincho ID: 2 a la cola de new
-[INFO] 20:24:27:799 Kernel/(4925:4928): Llegó un carpincho al planificador de largo plazo
-[INFO] 20:24:27:799 Kernel/(4925:4928): Carpincho 2 - Se INICIARA carpincho 0
-[INFO] 20:24:27:799 Kernel/(4925:4934): Carpincho 2 - Comienza a ejecutar
-[INFO] 20:24:27:837 Kernel/(4925:5010): Se recibió del carpincho 2 un SEM WAIT para SEM1 pero NO se bloqueara
-[INFO] 20:24:28:794 Kernel/(4925:5012): 
+[INFO] 16:14:39:427 Kernel/(4563:4648): NEW INSTANCE: Se agregó el carpincho ID: 2 a la cola de new
+[INFO] 16:14:39:428 Kernel/(4563:4575): Llegó un carpincho al planificador de largo plazo
+[INFO] 16:14:39:429 Kernel/(4563:4575): Carpincho 2 - Se INICIARA carpincho 0
+[INFO] 16:14:39:431 Kernel/(4563:4575): Carpincho 2 - Estimación actual: 1.000000
+[INFO] 16:14:41:468 Kernel/(4563:4581): No se deben suspender carpinchos
+[INFO] 16:14:41:480 Kernel/(4563:4581): Carpinchos bloqueados: 0
+[INFO] 16:14:41:476 Kernel/(4563:4646): Se recibió del carpincho 1 un CALL IO para pelopincho
+[INFO] 16:14:41:500 Kernel/(4563:4581): El carpincho 1 está bloqueado por IO pelopincho
+[INFO] 16:14:41:506 Kernel/(4563:4581): El carpincho 1 fue BLOQUEADO por io
+[INFO] 16:14:41:519 Kernel/(4563:4581): Carpincho 2 - Comienza a ejecutar
+[INFO] 16:14:41:533 Kernel/(4563:4653): 
  Se recibió un NEW INSTANCE. Comienza creación del carpincho
-[INFO] 20:24:28:796 Kernel/(4925:5012): NEW INSTANCE: Se agregó el carpincho ID: 3 a la cola de new
-[INFO] 20:24:28:796 Kernel/(4925:4928): Llegó un carpincho al planificador de largo plazo
-[INFO] 20:24:28:796 Kernel/(4925:4928): Carpincho 3 - Se INICIARA carpincho 0
-[INFO] 20:24:28:797 Kernel/(4925:4936): Carpincho 3 - Comienza a ejecutar
-[INFO] 20:24:28:833 Kernel/(4925:5012): Se recibió del carpincho 3 un SEM WAIT para SEM2 pero NO se bloqueara
-[INFO] 20:24:29:795 Kernel/(4925:5014): 
- Se recibió un NEW INSTANCE. Comienza creación del carpincho
-[INFO] 20:24:29:796 Kernel/(4925:5014): NEW INSTANCE: Se agregó el carpincho ID: 4 a la cola de new
-[INFO] 20:24:29:797 Kernel/(4925:4928): Llegó un carpincho al planificador de largo plazo
-[INFO] 20:24:29:797 Kernel/(4925:4928): Carpincho 4 - Se INICIARA carpincho 0
-[INFO] 20:24:29:797 Kernel/(4925:4935): Carpincho 4 - Comienza a ejecutar
-[INFO] 20:24:29:837 Kernel/(4925:5014): Se recibió del carpincho 4 un SEM WAIT para SEM3 pero NO se bloqueara
-[INFO] 20:24:30:805 Kernel/(4925:5016): 
- Se recibió un NEW INSTANCE. Comienza creación del carpincho
-[INFO] 20:24:30:813 Kernel/(4925:5016): NEW INSTANCE: Se agregó el carpincho ID: 5 a la cola de new
-[INFO] 20:24:30:813 Kernel/(4925:4928): Llegó un carpincho al planificador de largo plazo
-[INFO] 20:24:30:813 Kernel/(4925:4928): Carpincho 5 - Se INICIARA carpincho 0
-[INFO] 20:24:30:815 Kernel/(4925:4940): Carpincho 5 - Comienza a ejecutar
-[INFO] 20:24:30:838 Kernel/(4925:5010): El carpincho 2 está bloqueado por el semáforo SEM2
-[INFO] 20:24:30:839 Kernel/(4925:5010): Se recibió del carpincho 2 un SEM WAIT para SEM2 y se bloqueara
-[INFO] 20:24:30:853 Kernel/(4925:5016): Se recibió del carpincho 5 un SEM WAIT para SEM4 pero NO se bloqueara
-[INFO] 20:24:31:791 Kernel/(4925:5018): 
- Se recibió un NEW INSTANCE. Comienza creación del carpincho
-[INFO] 20:24:31:793 Kernel/(4925:5018): NEW INSTANCE: Se agregó el carpincho ID: 6 a la cola de new
-[INFO] 20:24:31:795 Kernel/(4925:4928): Llegó un carpincho al planificador de largo plazo
-[INFO] 20:24:31:795 Kernel/(4925:4928): Carpincho 6 - Se INICIARA carpincho 0
-[INFO] 20:24:31:795 Kernel/(4925:4939): Carpincho 6 - Comienza a ejecutar
-[INFO] 20:24:31:833 Kernel/(4925:5018): Se recibió del carpincho 6 un SEM WAIT para SEM5 pero NO se bloqueara
-[INFO] 20:24:31:834 Kernel/(4925:5012): El carpincho 3 está bloqueado por el semáforo SEM3
-[INFO] 20:24:31:834 Kernel/(4925:5012): Se recibió del carpincho 3 un SEM WAIT para SEM3 y se bloqueara
-[INFO] 20:24:32:818 Kernel/(4925:5020): 
- Se recibió un NEW INSTANCE. Comienza creación del carpincho
-[INFO] 20:24:32:819 Kernel/(4925:5020): NEW INSTANCE: Se agregó el carpincho ID: 7 a la cola de new
-[INFO] 20:24:32:819 Kernel/(4925:4928): Llegó un carpincho al planificador de largo plazo
-[INFO] 20:24:32:819 Kernel/(4925:4928): Carpincho 7 - Se INICIARA carpincho 0
-[INFO] 20:24:32:820 Kernel/(4925:4938): Carpincho 7 - Comienza a ejecutar
-[INFO] 20:24:32:839 Kernel/(4925:5014): El carpincho 4 está bloqueado por el semáforo SEM4
-[INFO] 20:24:32:839 Kernel/(4925:5014): Se recibió del carpincho 4 un SEM WAIT para SEM4 y se bloqueara
-[INFO] 20:24:32:858 Kernel/(4925:5020): Se recibió del carpincho 7 un SEM WAIT para SEM6 pero NO se bloqueara
-[INFO] 20:24:33:789 Kernel/(4925:5008): MATE_CLOSE: Se recibió del carpincho 1 un MATE CLOSE
-[INFO] 20:24:33:790 Kernel/(4925:4933): Carpincho 1 - Eliminado
-[INFO] 20:24:33:857 Kernel/(4925:5016): El carpincho 5 está bloqueado por el semáforo SEM1
-[INFO] 20:24:33:857 Kernel/(4925:5016): Se recibió del carpincho 5 un SEM WAIT para SEM1 y se bloqueara
-[INFO] 20:24:34:837 Kernel/(4925:5018): El carpincho 6 está bloqueado por el semáforo SEM6
-[INFO] 20:24:34:837 Kernel/(4925:5018): Se recibió del carpincho 6 un SEM WAIT para SEM6 y se bloqueara
-[INFO] 20:24:35:865 Kernel/(4925:5020): El carpincho 7 está bloqueado por el semáforo SEM1
-[INFO] 20:24:35:866 Kernel/(4925:5020): Se recibió del carpincho 7 un SEM WAIT para SEM1 y se bloqueara
-[INFO] 20:25:12:408 Kernel/(4925:4930): Comienza la ejecución de la detección de Deadlock
-[INFO] 20:25:12:410 Kernel/(4925:4930): Entro al for deadlock
-[INFO] 20:25:12:410 Kernel/(4925:4930): Estoy en buscar_en_otras_listas con carpincho 2
-[INFO] 20:25:12:411 Kernel/(4925:4930): Salgo de buscar_en_otras_listas con iteracion 0
-[INFO] 20:25:12:411 Kernel/(4925:4930): Entro a if a_enlistar=!NULL
-[INFO] 20:25:12:411 Kernel/(4925:4930): Termine iteracion 0 del for deadlock
-[INFO] 20:25:12:411 Kernel/(4925:4930): Entro al for deadlock
-[INFO] 20:25:12:411 Kernel/(4925:4930): Estoy en buscar_en_otras_listas con carpincho 3
-[INFO] 20:25:12:415 Kernel/(4925:4930): Salgo de buscar_en_otras_listas con iteracion 1
-[INFO] 20:25:12:415 Kernel/(4925:4930): Entro a if a_enlistar=!NULL
-[INFO] 20:25:12:415 Kernel/(4925:4930): Termine iteracion 1 del for deadlock
-[INFO] 20:25:12:415 Kernel/(4925:4930): Entro al for deadlock
-[INFO] 20:25:12:415 Kernel/(4925:4930): Estoy en buscar_en_otras_listas con carpincho 4
-[INFO] 20:25:12:416 Kernel/(4925:4930): Salgo de buscar_en_otras_listas con iteracion 2
-[INFO] 20:25:12:416 Kernel/(4925:4930): Entro a if a_enlistar=!NULL
-[INFO] 20:25:12:416 Kernel/(4925:4930): Termine iteracion 2 del for deadlock
-[INFO] 20:25:12:416 Kernel/(4925:4930): Entro al for deadlock
-[INFO] 20:25:12:416 Kernel/(4925:4930): Estoy en buscar_en_otras_listas con carpincho 5
-[INFO] 20:25:12:418 Kernel/(4925:4930): Salgo de buscar_en_otras_listas con iteracion 3
-[INFO] 20:25:12:418 Kernel/(4925:4930): Entro a if a_enlistar=!NULL
-[INFO] 20:25:12:419 Kernel/(4925:4930): Termine iteracion 3 del for deadlock
-[INFO] 20:25:12:419 Kernel/(4925:4930): Entro al for deadlock
-[INFO] 20:25:12:419 Kernel/(4925:4930): Estoy en buscar_en_otras_listas con carpincho 6
-[INFO] 20:25:12:423 Kernel/(4925:4930): Salgo de buscar_en_otras_listas con iteracion 4
-[INFO] 20:25:12:423 Kernel/(4925:4930): Entro a if a_enlistar=!NULL
-[INFO] 20:25:12:423 Kernel/(4925:4930): Termine iteracion 4 del for deadlock
-[INFO] 20:25:12:423 Kernel/(4925:4930): Entro al for deadlock
-[INFO] 20:25:12:423 Kernel/(4925:4930): Estoy en buscar_en_otras_listas con carpincho 7
-[INFO] 20:25:12:425 Kernel/(4925:4930): Salgo de buscar_en_otras_listas con iteracion 5
-[INFO] 20:25:12:425 Kernel/(4925:4930): Entro a if a_enlistar=!NULL
-[INFO] 20:25:12:425 Kernel/(4925:4930): Termine iteracion 5 del for deadlock
-[INFO] 20:25:12:425 Kernel/(4925:4930): Verificando espera circular
-[INFO] 20:25:12:425 Kernel/(4925:4930): Size lista_posible_deadlock 6
-[INFO] 20:25:12:431 Kernel/(4925:4930): Espera circular detectada
-[INFO] 20:25:12:432 Kernel/(4925:4930): Se finaliza el carpincho PID 5
-[INFO] 20:25:12:433 Kernel/(4925:4930): Carpincho 5 - Eliminado
-[INFO] 20:25:12:437 Kernel/(4925:4937): Carpincho 4 - Comienza a ejecutar
-[INFO] 20:25:12:438 Kernel/(4925:4930): SEM POST EXITOSO a semaforo SEM4 VALOR DEL SEMAFORO ============= 0
-[INFO] 20:25:12:439 Kernel/(4925:4934): Carpincho 7 - Comienza a ejecutar
-[INFO] 20:25:12:439 Kernel/(4925:4930): SEM POST EXITOSO a semaforo SEM1 VALOR DEL SEMAFORO ============= -1
-[INFO] 20:26:02:440 Kernel/(4925:4930): Comienza la ejecución de la detección de Deadlock
-[INFO] 20:26:02:444 Kernel/(4925:4930): Entro al for deadlock
-[INFO] 20:26:02:445 Kernel/(4925:4930): Estoy en buscar_en_otras_listas con carpincho 2
-[INFO] 20:26:02:446 Kernel/(4925:4930): Salgo de buscar_en_otras_listas con iteracion 0
-[INFO] 20:26:02:446 Kernel/(4925:4930): Entro a if a_enlistar=!NULL
-[INFO] 20:26:02:446 Kernel/(4925:4930): Termine iteracion 0 del for deadlock
-[INFO] 20:26:02:446 Kernel/(4925:4930): Entro al for deadlock
-[INFO] 20:26:02:446 Kernel/(4925:4930): Estoy en buscar_en_otras_listas con carpincho 3
-[INFO] 20:26:02:448 Kernel/(4925:4930): Salgo de buscar_en_otras_listas con iteracion 1
-[INFO] 20:26:02:448 Kernel/(4925:4930): Entro a if a_enlistar=!NULL
-[INFO] 20:26:02:450 Kernel/(4925:4930): Termine iteracion 1 del for deadlock
-[INFO] 20:26:02:450 Kernel/(4925:4930): Entro al for deadlock
-[INFO] 20:26:02:450 Kernel/(4925:4930): Estoy en buscar_en_otras_listas con carpincho 4
-[INFO] 20:26:02:453 Kernel/(4925:4930): Salgo de buscar_en_otras_listas con iteracion 2
-[INFO] 20:26:02:453 Kernel/(4925:4930): Entro a if a_enlistar=!NULL
-[INFO] 20:26:02:453 Kernel/(4925:4930): Termine iteracion 2 del for deadlock
-[INFO] 20:26:02:453 Kernel/(4925:4930): Entro al for deadlock
-[INFO] 20:26:02:454 Kernel/(4925:4930): Estoy en buscar_en_otras_listas con carpincho 5
-[INFO] 20:26:02:458 Kernel/(4925:4930): Salgo de buscar_en_otras_listas con iteracion 3
-[INFO] 20:26:02:458 Kernel/(4925:4930): Entro a if a_enlistar=!NULL
-[INFO] 20:26:02:458 Kernel/(4925:4930): Termine iteracion 3 del for deadlock
-[INFO] 20:26:02:459 Kernel/(4925:4930): Entro al for deadlock
-[INFO] 20:26:02:459 Kernel/(4925:4930): Estoy en buscar_en_otras_listas con carpincho 6
-[INFO] 20:26:02:469 Kernel/(4925:4930): Salgo de buscar_en_otras_listas con iteracion 4
-[INFO] 20:26:02:469 Kernel/(4925:4930): Entro a if a_enlistar=!NULL
-[INFO] 20:26:02:469 Kernel/(4925:4930): Termine iteracion 4 del for deadlock
-[INFO] 20:26:02:469 Kernel/(4925:4930): Entro al for deadlock
-[INFO] 20:26:02:469 Kernel/(4925:4930): Estoy en buscar_en_otras_listas con carpincho 7
-[INFO] 20:26:02:471 Kernel/(4925:4930): Salgo de buscar_en_otras_listas con iteracion 5
-[INFO] 20:26:02:471 Kernel/(4925:4930): Entro a if a_enlistar=!NULL
-[INFO] 20:26:02:471 Kernel/(4925:4930): Termine iteracion 5 del for deadlock
-[INFO] 20:26:02:471 Kernel/(4925:4930): Verificando espera circular
-[INFO] 20:26:02:471 Kernel/(4925:4930): Size lista_posible_deadlock 6
-[INFO] 20:26:02:475 Kernel/(4925:4930): No se detectó espera circular
-[INFO] 20:28:04:248 Kernel/(5177:5177): Log creado
-[INFO] 20:28:04:249 Kernel/(5177:5177): Configuración obtenida
-[INFO] 20:28:04:249 Kernel/(5177:5177): Semáforos inicializados
-[INFO] 20:28:04:250 Kernel/(5177:5177): Colas de dispositivos IO creadas
-[INFO] 20:28:04:251 Kernel/(5177:5177): Se creó el hilo gestor de la IO laguna
-[INFO] 20:28:04:251 Kernel/(5177:5177): Inicio colas de planificación
-[INFO] 20:28:04:251 Kernel/(5177:5177): Hilo Planificador Corto Plazo creado
-[INFO] 20:28:04:251 Kernel/(5177:5177): Hilo Planificador Largo Plazo creado
-[INFO] 20:28:04:251 Kernel/(5177:5177): Hilo Planificador Gestor Finalizados creado
-[INFO] 20:28:04:251 Kernel/(5177:5177): Hilo Detección Deadlock creado
-[INFO] 20:28:04:251 Kernel/(5177:5177): Hilo para terminar el programa creado
-[INFO] 20:28:04:251 Kernel/(5177:5177): Hilo CPU creado
-[INFO] 20:28:04:252 Kernel/(5177:5183): Para terminar precione cualquier tecla.
-[INFO] 20:28:07:639 Kernel/(5177:5260): 
- Se recibió un NEW INSTANCE. Comienza creación del carpincho
-[INFO] 20:28:07:643 Kernel/(5177:5260): NEW INSTANCE: Se agregó el carpincho ID: 1 a la cola de new
-[INFO] 20:28:07:644 Kernel/(5177:5180): Llegó un carpincho al planificador de largo plazo
-[INFO] 20:28:07:644 Kernel/(5177:5180): Carpincho 1 - Se INICIARA carpincho 0
-[INFO] 20:28:07:644 Kernel/(5177:5185): Carpincho 1 - Comienza a ejecutar
-[INFO] 20:28:07:681 Kernel/(5177:5260): Se recibió del carpincho 1 un SEM INIT para el semáforo SEM1 con valor 1
- 
-[INFO] 20:28:07:681 Kernel/(5177:5260): SEMAFORO SEM1 inicializado con 1
-[INFO] 20:28:07:682 Kernel/(5177:5260): Se recibió del carpincho 1 un SEM INIT para el semáforo SEM2 con valor 1
- 
-[INFO] 20:28:07:682 Kernel/(5177:5260): SEMAFORO SEM2 inicializado con 1
-[INFO] 20:28:07:682 Kernel/(5177:5260): Se recibió del carpincho 1 un SEM INIT para el semáforo SEM3 con valor 1
- 
-[INFO] 20:28:07:682 Kernel/(5177:5260): SEMAFORO SEM3 inicializado con 1
-[INFO] 20:28:07:682 Kernel/(5177:5260): Se recibió del carpincho 1 un SEM INIT para el semáforo SEM4 con valor 1
- 
-[INFO] 20:28:07:682 Kernel/(5177:5260): SEMAFORO SEM4 inicializado con 1
-[INFO] 20:28:07:683 Kernel/(5177:5260): Se recibió del carpincho 1 un SEM INIT para el semáforo SEM5 con valor 1
- 
-[INFO] 20:28:07:683 Kernel/(5177:5260): SEMAFORO SEM5 inicializado con 1
-[INFO] 20:28:07:684 Kernel/(5177:5260): Se recibió del carpincho 1 un SEM INIT para el semáforo SEM6 con valor 1
- 
-[INFO] 20:28:07:684 Kernel/(5177:5260): SEMAFORO SEM6 inicializado con 1
-[INFO] 20:28:07:702 Kernel/(5177:5262): 
- Se recibió un NEW INSTANCE. Comienza creación del carpincho
-[INFO] 20:28:07:703 Kernel/(5177:5262): NEW INSTANCE: Se agregó el carpincho ID: 2 a la cola de new
-[INFO] 20:28:07:703 Kernel/(5177:5180): Llegó un carpincho al planificador de largo plazo
-[INFO] 20:28:07:703 Kernel/(5177:5180): Carpincho 2 - Se INICIARA carpincho 0
-[INFO] 20:28:07:703 Kernel/(5177:5186): Carpincho 2 - Comienza a ejecutar
-[INFO] 20:28:07:741 Kernel/(5177:5262): Se recibió del carpincho 2 un SEM WAIT para SEM1 pero NO se bloqueara
-[INFO] 20:28:08:721 Kernel/(5177:5264): 
- Se recibió un NEW INSTANCE. Comienza creación del carpincho
-[INFO] 20:28:08:722 Kernel/(5177:5264): NEW INSTANCE: Se agregó el carpincho ID: 3 a la cola de new
-[INFO] 20:28:08:722 Kernel/(5177:5180): Llegó un carpincho al planificador de largo plazo
-[INFO] 20:28:08:722 Kernel/(5177:5180): Carpincho 3 - Se INICIARA carpincho 0
-[INFO] 20:28:08:723 Kernel/(5177:5187): Carpincho 3 - Comienza a ejecutar
-[INFO] 20:28:08:764 Kernel/(5177:5264): Se recibió del carpincho 3 un SEM WAIT para SEM2 pero NO se bloqueara
-[INFO] 20:28:09:733 Kernel/(5177:5266): 
- Se recibió un NEW INSTANCE. Comienza creación del carpincho
-[INFO] 20:28:09:733 Kernel/(5177:5266): NEW INSTANCE: Se agregó el carpincho ID: 4 a la cola de new
-[INFO] 20:28:09:733 Kernel/(5177:5180): Llegó un carpincho al planificador de largo plazo
-[INFO] 20:28:09:733 Kernel/(5177:5180): Carpincho 4 - Se INICIARA carpincho 0
-[INFO] 20:28:09:733 Kernel/(5177:5188): Carpincho 4 - Comienza a ejecutar
-[INFO] 20:28:09:773 Kernel/(5177:5266): Se recibió del carpincho 4 un SEM WAIT para SEM3 pero NO se bloqueara
-[INFO] 20:28:10:736 Kernel/(5177:5268): 
- Se recibió un NEW INSTANCE. Comienza creación del carpincho
-[INFO] 20:28:10:737 Kernel/(5177:5268): NEW INSTANCE: Se agregó el carpincho ID: 5 a la cola de new
-[INFO] 20:28:10:737 Kernel/(5177:5180): Llegó un carpincho al planificador de largo plazo
-[INFO] 20:28:10:737 Kernel/(5177:5180): Carpincho 5 - Se INICIARA carpincho 0
-[INFO] 20:28:10:738 Kernel/(5177:5189): Carpincho 5 - Comienza a ejecutar
-[INFO] 20:28:10:743 Kernel/(5177:5262): El carpincho 2 está bloqueado por el semáforo SEM2
-[INFO] 20:28:10:743 Kernel/(5177:5262): Se recibió del carpincho 2 un SEM WAIT para SEM2 y se bloqueara
-[INFO] 20:28:10:781 Kernel/(5177:5268): Se recibió del carpincho 5 un SEM WAIT para SEM4 pero NO se bloqueara
-[INFO] 20:28:11:741 Kernel/(5177:5270): 
- Se recibió un NEW INSTANCE. Comienza creación del carpincho
-[INFO] 20:28:11:742 Kernel/(5177:5270): NEW INSTANCE: Se agregó el carpincho ID: 6 a la cola de new
-[INFO] 20:28:11:742 Kernel/(5177:5180): Llegó un carpincho al planificador de largo plazo
-[INFO] 20:28:11:742 Kernel/(5177:5180): Carpincho 6 - Se INICIARA carpincho 0
-[INFO] 20:28:11:743 Kernel/(5177:5190): Carpincho 6 - Comienza a ejecutar
-[INFO] 20:28:11:768 Kernel/(5177:5264): El carpincho 3 está bloqueado por el semáforo SEM3
-[INFO] 20:28:11:768 Kernel/(5177:5264): Se recibió del carpincho 3 un SEM WAIT para SEM3 y se bloqueara
-[INFO] 20:28:11:782 Kernel/(5177:5270): Se recibió del carpincho 6 un SEM WAIT para SEM5 pero NO se bloqueara
-[INFO] 20:28:12:737 Kernel/(5177:5272): 
- Se recibió un NEW INSTANCE. Comienza creación del carpincho
-[INFO] 20:28:12:737 Kernel/(5177:5272): NEW INSTANCE: Se agregó el carpincho ID: 7 a la cola de new
-[INFO] 20:28:12:737 Kernel/(5177:5180): Llegó un carpincho al planificador de largo plazo
-[INFO] 20:28:12:737 Kernel/(5177:5180): Carpincho 7 - Se INICIARA carpincho 0
-[INFO] 20:28:12:738 Kernel/(5177:5191): Carpincho 7 - Comienza a ejecutar
-[INFO] 20:28:12:777 Kernel/(5177:5266): El carpincho 4 está bloqueado por el semáforo SEM4
-[INFO] 20:28:12:777 Kernel/(5177:5266): Se recibió del carpincho 4 un SEM WAIT para SEM4 y se bloqueara
-[INFO] 20:28:12:778 Kernel/(5177:5272): Se recibió del carpincho 7 un SEM WAIT para SEM6 pero NO se bloqueara
-[INFO] 20:28:13:727 Kernel/(5177:5260): MATE_CLOSE: Se recibió del carpincho 1 un MATE CLOSE
-[INFO] 20:28:13:728 Kernel/(5177:5185): Carpincho 1 - Eliminado
-[INFO] 20:28:13:782 Kernel/(5177:5268): El carpincho 5 está bloqueado por el semáforo SEM1
-[INFO] 20:28:13:782 Kernel/(5177:5268): Se recibió del carpincho 5 un SEM WAIT para SEM1 y se bloqueara
-[INFO] 20:28:14:785 Kernel/(5177:5270): El carpincho 6 está bloqueado por el semáforo SEM6
-[INFO] 20:28:14:785 Kernel/(5177:5270): Se recibió del carpincho 6 un SEM WAIT para SEM6 y se bloqueara
-[INFO] 20:28:15:782 Kernel/(5177:5272): El carpincho 7 está bloqueado por el semáforo SEM1
-[INFO] 20:28:15:782 Kernel/(5177:5272): Se recibió del carpincho 7 un SEM WAIT para SEM1 y se bloqueara
-[INFO] 20:28:54:256 Kernel/(5177:5182): Comienza la ejecución de la detección de Deadlock
-[INFO] 20:28:54:257 Kernel/(5177:5182): Entro al for deadlock
-[INFO] 20:28:54:257 Kernel/(5177:5182): Estoy en buscar_en_otras_listas con carpincho 2
-[INFO] 20:28:54:258 Kernel/(5177:5182): Salgo de buscar_en_otras_listas con iteracion 0
-[INFO] 20:28:54:258 Kernel/(5177:5182): Entro a if a_enlistar=!NULL
-[INFO] 20:28:54:259 Kernel/(5177:5182): Termine iteracion 0 del for deadlock
-[INFO] 20:28:54:259 Kernel/(5177:5182): Entro al for deadlock
-[INFO] 20:28:54:260 Kernel/(5177:5182): Estoy en buscar_en_otras_listas con carpincho 3
-[INFO] 20:28:54:261 Kernel/(5177:5182): Salgo de buscar_en_otras_listas con iteracion 1
-[INFO] 20:28:54:261 Kernel/(5177:5182): Entro a if a_enlistar=!NULL
-[INFO] 20:28:54:261 Kernel/(5177:5182): Termine iteracion 1 del for deadlock
-[INFO] 20:28:54:261 Kernel/(5177:5182): Entro al for deadlock
-[INFO] 20:28:54:261 Kernel/(5177:5182): Estoy en buscar_en_otras_listas con carpincho 4
-[INFO] 20:28:54:263 Kernel/(5177:5182): Salgo de buscar_en_otras_listas con iteracion 2
-[INFO] 20:28:54:263 Kernel/(5177:5182): Entro a if a_enlistar=!NULL
-[INFO] 20:28:54:265 Kernel/(5177:5182): Termine iteracion 2 del for deadlock
-[INFO] 20:28:54:265 Kernel/(5177:5182): Entro al for deadlock
-[INFO] 20:28:54:266 Kernel/(5177:5182): Estoy en buscar_en_otras_listas con carpincho 5
-[INFO] 20:28:54:266 Kernel/(5177:5182): Salgo de buscar_en_otras_listas con iteracion 3
-[INFO] 20:28:54:266 Kernel/(5177:5182): Entro a if a_enlistar=!NULL
-[INFO] 20:28:54:266 Kernel/(5177:5182): Termine iteracion 3 del for deadlock
-[INFO] 20:28:54:267 Kernel/(5177:5182): Entro al for deadlock
-[INFO] 20:28:54:267 Kernel/(5177:5182): Estoy en buscar_en_otras_listas con carpincho 6
-[INFO] 20:28:54:269 Kernel/(5177:5182): Salgo de buscar_en_otras_listas con iteracion 4
-[INFO] 20:28:54:270 Kernel/(5177:5182): Entro a if a_enlistar=!NULL
-[INFO] 20:28:54:270 Kernel/(5177:5182): Termine iteracion 4 del for deadlock
-[INFO] 20:28:54:270 Kernel/(5177:5182): Entro al for deadlock
-[INFO] 20:28:54:270 Kernel/(5177:5182): Estoy en buscar_en_otras_listas con carpincho 7
-[INFO] 20:28:54:277 Kernel/(5177:5182): Salgo de buscar_en_otras_listas con iteracion 5
-[INFO] 20:28:54:278 Kernel/(5177:5182): Entro a if a_enlistar=!NULL
-[INFO] 20:28:54:278 Kernel/(5177:5182): Termine iteracion 5 del for deadlock
-[INFO] 20:28:54:278 Kernel/(5177:5182): Verificando espera circular
-[INFO] 20:28:54:278 Kernel/(5177:5182): Size lista_posible_deadlock 6
-[INFO] 20:28:54:278 Kernel/(5177:5182): Espera circular detectada
-[INFO] 20:28:54:279 Kernel/(5177:5182): Se finaliza el carpincho PID 5
-[INFO] 20:28:54:279 Kernel/(5177:5182): Carpincho 5 - Eliminado
-[INFO] 20:28:54:282 Kernel/(5177:5192): Carpincho 4 - Comienza a ejecutar
-[INFO] 20:28:54:283 Kernel/(5177:5182): SEM POST EXITOSO a semaforo SEM4 VALOR DEL SEMAFORO ============= 0
-[INFO] 20:28:54:285 Kernel/(5177:5186): Carpincho 7 - Comienza a ejecutar
-[INFO] 20:28:54:285 Kernel/(5177:5182): SEM POST EXITOSO a semaforo SEM1 VALOR DEL SEMAFORO ============= -1
-[INFO] 20:28:57:285 Kernel/(5177:5266): Se recibió del carpincho 4 un SEM POST para SEM3
-[INFO] 20:28:57:286 Kernel/(5177:5272): Se recibió del carpincho 7 un SEM POST para SEM1
-[INFO] 20:28:57:288 Kernel/(5177:5187): Carpincho 3 - Comienza a ejecutar
-[INFO] 20:28:57:289 Kernel/(5177:5266): SEM POST EXITOSO a semaforo SEM3 VALOR DEL SEMAFORO ============= 0
-[INFO] 20:28:57:293 Kernel/(5177:5272): SEM POST EXITOSO a semaforo SEM1 VALOR DEL SEMAFORO ============= 0
-[INFO] 20:28:57:294 Kernel/(5177:5272): El carpincho 7 está bloqueado por el semáforo SEM5
-[INFO] 20:28:57:294 Kernel/(5177:5272): Se recibió del carpincho 7 un SEM WAIT para SEM5 y se bloqueara
-[INFO] 20:28:57:295 Kernel/(5177:5266): Se recibió del carpincho 4 un SEM POST para SEM4
-[INFO] 20:28:57:296 Kernel/(5177:5266): SEM POST EXITOSO a semaforo SEM4 VALOR DEL SEMAFORO ============= 1
-[INFO] 20:28:57:298 Kernel/(5177:5266): MATE_CLOSE: Se recibió del carpincho 4 un MATE CLOSE
-[INFO] 20:28:57:298 Kernel/(5177:5192): Carpincho 4 - Eliminado
-[INFO] 20:29:00:291 Kernel/(5177:5264): Se recibió del carpincho 3 un SEM POST para SEM2
-[INFO] 20:29:00:293 Kernel/(5177:5188): Carpincho 2 - Comienza a ejecutar
-[INFO] 20:29:00:294 Kernel/(5177:5264): SEM POST EXITOSO a semaforo SEM2 VALOR DEL SEMAFORO ============= 0
-[INFO] 20:29:00:299 Kernel/(5177:5264): Se recibió del carpincho 3 un SEM POST para SEM3
-[INFO] 20:29:00:299 Kernel/(5177:5264): SEM POST EXITOSO a semaforo SEM3 VALOR DEL SEMAFORO ============= 1
-[INFO] 20:29:00:307 Kernel/(5177:5264): MATE_CLOSE: Se recibió del carpincho 3 un MATE CLOSE
-[INFO] 20:29:00:307 Kernel/(5177:5187): Carpincho 3 - Eliminado
-[INFO] 20:29:03:297 Kernel/(5177:5262): Se recibió del carpincho 2 un SEM POST para SEM1
-[INFO] 20:29:03:297 Kernel/(5177:5262): SEM POST EXITOSO a semaforo SEM1 VALOR DEL SEMAFORO ============= 1
-[INFO] 20:29:03:299 Kernel/(5177:5262): Se recibió del carpincho 2 un SEM POST para SEM2
-[INFO] 20:29:03:299 Kernel/(5177:5262): SEM POST EXITOSO a semaforo SEM2 VALOR DEL SEMAFORO ============= 1
-[INFO] 20:29:03:301 Kernel/(5177:5262): MATE_CLOSE: Se recibió del carpincho 2 un MATE CLOSE
-[INFO] 20:29:03:301 Kernel/(5177:5188): Carpincho 2 - Eliminado
-[INFO] 20:29:44:292 Kernel/(5177:5182): Comienza la ejecución de la detección de Deadlock
-[INFO] 20:29:44:293 Kernel/(5177:5182): Entro al for deadlock
-[INFO] 20:29:44:294 Kernel/(5177:5182): Salgo de buscar_en_otras_listas con iteracion 0
-[INFO] 20:29:44:294 Kernel/(5177:5182): Termine iteracion 0 del for deadlock
-[INFO] 20:29:44:294 Kernel/(5177:5182): Entro al for deadlock
-[INFO] 20:29:44:294 Kernel/(5177:5182): Salgo de buscar_en_otras_listas con iteracion 1
-[INFO] 20:29:44:294 Kernel/(5177:5182): Termine iteracion 1 del for deadlock
-[INFO] 20:29:44:294 Kernel/(5177:5182): Entro al for deadlock
-[INFO] 20:29:44:294 Kernel/(5177:5182): Salgo de buscar_en_otras_listas con iteracion 2
-[INFO] 20:29:44:294 Kernel/(5177:5182): Termine iteracion 2 del for deadlock
-[INFO] 20:29:44:294 Kernel/(5177:5182): Entro al for deadlock
-[INFO] 20:29:44:295 Kernel/(5177:5182): Salgo de buscar_en_otras_listas con iteracion 3
-[INFO] 20:29:44:295 Kernel/(5177:5182): Termine iteracion 3 del for deadlock
-[INFO] 20:29:44:295 Kernel/(5177:5182): Entro al for deadlock
-[INFO] 20:29:44:300 Kernel/(5177:5182): Estoy en buscar_en_otras_listas con carpincho 6
-[INFO] 20:29:44:302 Kernel/(5177:5182): Salgo de buscar_en_otras_listas con iteracion 4
-[INFO] 20:29:44:302 Kernel/(5177:5182): Entro a if a_enlistar=!NULL
-[INFO] 20:29:44:304 Kernel/(5177:5182): Termine iteracion 4 del for deadlock
-[INFO] 20:29:44:304 Kernel/(5177:5182): Entro al for deadlock
-[INFO] 20:29:44:305 Kernel/(5177:5182): Estoy en buscar_en_otras_listas con carpincho 7
-[INFO] 20:29:44:307 Kernel/(5177:5182): Salgo de buscar_en_otras_listas con iteracion 5
-[INFO] 20:29:44:308 Kernel/(5177:5182): Entro a if a_enlistar=!NULL
-[INFO] 20:29:44:311 Kernel/(5177:5182): Termine iteracion 5 del for deadlock
-[INFO] 20:29:44:311 Kernel/(5177:5182): Verificando espera circular
-[INFO] 20:29:44:311 Kernel/(5177:5182): Size lista_posible_deadlock 2
-[INFO] 20:29:44:317 Kernel/(5177:5182): Espera circular detectada
-[INFO] 20:29:44:317 Kernel/(5177:5182): Se finaliza el carpincho PID 7
-[INFO] 20:29:44:319 Kernel/(5177:5182): Carpincho 7 - Eliminado
-[INFO] 20:29:44:323 Kernel/(5177:5185): Carpincho 6 - Comienza a ejecutar
-[INFO] 20:29:44:326 Kernel/(5177:5182): SEM POST EXITOSO a semaforo SEM6 VALOR DEL SEMAFORO ============= 0
-[INFO] 20:29:44:327 Kernel/(5177:5182): SEM POST EXITOSO a semaforo SEM5 VALOR DEL SEMAFORO ============= 0
-[INFO] 20:29:47:325 Kernel/(5177:5270): Se recibió del carpincho 6 un SEM POST para SEM5
-[INFO] 20:29:47:326 Kernel/(5177:5270): SEM POST EXITOSO a semaforo SEM5 VALOR DEL SEMAFORO ============= 1
-[INFO] 20:29:47:327 Kernel/(5177:5270): Se recibió del carpincho 6 un SEM POST para SEM6
-[INFO] 20:29:47:327 Kernel/(5177:5270): SEM POST EXITOSO a semaforo SEM6 VALOR DEL SEMAFORO ============= 1
-[INFO] 20:29:47:328 Kernel/(5177:5270): MATE_CLOSE: Se recibió del carpincho 6 un MATE CLOSE
-[INFO] 20:29:47:329 Kernel/(5177:5185): Carpincho 6 - Eliminado
-[INFO] 20:29:47:337 Kernel/(5177:5279): 
- Se recibió un NEW INSTANCE. Comienza creación del carpincho
-[INFO] 20:29:47:337 Kernel/(5177:5279): NEW INSTANCE: Se agregó el carpincho ID: 8 a la cola de new
-[INFO] 20:29:47:338 Kernel/(5177:5180): Llegó un carpincho al planificador de largo plazo
-[INFO] 20:29:47:338 Kernel/(5177:5180): Carpincho 8 - Se INICIARA carpincho 0
-[INFO] 20:29:47:338 Kernel/(5177:5189): Carpincho 8 - Comienza a ejecutar
-[INFO] 20:29:47:377 Kernel/(5177:5279): Se recibió del carpincho 8 un SEM DESTROY para SEM1
-[INFO] 20:29:47:377 Kernel/(5177:5279): SEM DESTROY EXITOSO
-[INFO] 20:29:47:378 Kernel/(5177:5279): Se recibió del carpincho 8 un SEM DESTROY para SEM2
-[INFO] 20:29:47:378 Kernel/(5177:5279): SEM DESTROY EXITOSO
-[INFO] 20:29:47:379 Kernel/(5177:5279): Se recibió del carpincho 8 un SEM DESTROY para SEM3
-[INFO] 20:29:47:379 Kernel/(5177:5279): SEM DESTROY EXITOSO
-[INFO] 20:29:47:379 Kernel/(5177:5279): Se recibió del carpincho 8 un SEM DESTROY para SEM4
-[INFO] 20:29:47:379 Kernel/(5177:5279): SEM DESTROY EXITOSO
-[INFO] 20:29:47:380 Kernel/(5177:5279): Se recibió del carpincho 8 un SEM DESTROY para SEM5
-[INFO] 20:29:47:380 Kernel/(5177:5279): SEM DESTROY EXITOSO
-[INFO] 20:29:47:381 Kernel/(5177:5279): Se recibió del carpincho 8 un SEM DESTROY para SEM6
-[INFO] 20:29:47:381 Kernel/(5177:5279): SEM DESTROY EXITOSO
-[INFO] 20:29:47:386 Kernel/(5177:5279): MATE_CLOSE: Se recibió del carpincho 8 un MATE CLOSE
-[INFO] 20:29:47:386 Kernel/(5177:5189): Carpincho 8 - Eliminado
-[INFO] 20:29:55:955 Kernel/(5177:5340): 
- Se recibió un NEW INSTANCE. Comienza creación del carpincho
-[INFO] 20:29:55:956 Kernel/(5177:5340): NEW INSTANCE: Se agregó el carpincho ID: 9 a la cola de new
-[INFO] 20:29:55:960 Kernel/(5177:5180): Llegó un carpincho al planificador de largo plazo
-[INFO] 20:29:55:960 Kernel/(5177:5180): Carpincho 9 - Se INICIARA carpincho 0
-[INFO] 20:29:55:960 Kernel/(5177:5190): Carpincho 9 - Comienza a ejecutar
-[INFO] 20:29:55:993 Kernel/(5177:5340): Se recibió del carpincho 9 un SEM INIT para el semáforo SEM1 con valor 1
- 
-[INFO] 20:29:55:993 Kernel/(5177:5340): SEMAFORO SEM1 inicializado con 1
-[INFO] 20:29:55:993 Kernel/(5177:5340): Se recibió del carpincho 9 un SEM INIT para el semáforo SEM2 con valor 1
- 
-[INFO] 20:29:55:993 Kernel/(5177:5340): SEMAFORO SEM2 inicializado con 1
-[INFO] 20:29:55:993 Kernel/(5177:5340): Se recibió del carpincho 9 un SEM INIT para el semáforo SEM3 con valor 1
- 
-[INFO] 20:29:55:993 Kernel/(5177:5340): SEMAFORO SEM3 inicializado con 1
-[INFO] 20:29:55:994 Kernel/(5177:5340): Se recibió del carpincho 9 un SEM INIT para el semáforo SEM4 con valor 1
- 
-[INFO] 20:29:55:994 Kernel/(5177:5340): SEMAFORO SEM4 inicializado con 1
-[INFO] 20:29:55:995 Kernel/(5177:5340): Se recibió del carpincho 9 un SEM INIT para el semáforo SEM5 con valor 1
- 
-[INFO] 20:29:55:995 Kernel/(5177:5340): SEMAFORO SEM5 inicializado con 1
-[INFO] 20:29:55:995 Kernel/(5177:5340): Se recibió del carpincho 9 un SEM INIT para el semáforo SEM6 con valor 1
- 
-[INFO] 20:29:55:995 Kernel/(5177:5340): SEMAFORO SEM6 inicializado con 1
-[INFO] 20:29:56:010 Kernel/(5177:5342): 
- Se recibió un NEW INSTANCE. Comienza creación del carpincho
-[INFO] 20:29:56:012 Kernel/(5177:5342): NEW INSTANCE: Se agregó el carpincho ID: 10 a la cola de new
-[INFO] 20:29:56:012 Kernel/(5177:5180): Llegó un carpincho al planificador de largo plazo
-[INFO] 20:29:56:012 Kernel/(5177:5180): Carpincho 10 - Se INICIARA carpincho 0
-[INFO] 20:29:56:012 Kernel/(5177:5191): Carpincho 10 - Comienza a ejecutar
-[INFO] 20:29:56:049 Kernel/(5177:5342): Se recibió del carpincho 10 un SEM WAIT para SEM1 pero NO se bloqueara
-[INFO] 20:29:57:014 Kernel/(5177:5344): 
- Se recibió un NEW INSTANCE. Comienza creación del carpincho
-[INFO] 20:29:57:015 Kernel/(5177:5344): NEW INSTANCE: Se agregó el carpincho ID: 11 a la cola de new
-[INFO] 20:29:57:015 Kernel/(5177:5180): Llegó un carpincho al planificador de largo plazo
-[INFO] 20:29:57:015 Kernel/(5177:5180): Carpincho 11 - Se INICIARA carpincho 0
-[INFO] 20:29:57:017 Kernel/(5177:5186): Carpincho 11 - Comienza a ejecutar
-[INFO] 20:29:57:054 Kernel/(5177:5344): Se recibió del carpincho 11 un SEM WAIT para SEM2 pero NO se bloqueara
-[INFO] 20:29:58:014 Kernel/(5177:5347): 
- Se recibió un NEW INSTANCE. Comienza creación del carpincho
-[INFO] 20:29:58:014 Kernel/(5177:5347): NEW INSTANCE: Se agregó el carpincho ID: 12 a la cola de new
-[INFO] 20:29:58:014 Kernel/(5177:5180): Llegó un carpincho al planificador de largo plazo
-[INFO] 20:29:58:014 Kernel/(5177:5180): Carpincho 12 - Se INICIARA carpincho 0
-[INFO] 20:29:58:016 Kernel/(5177:5192): Carpincho 12 - Comienza a ejecutar
-[INFO] 20:29:58:062 Kernel/(5177:5347): Se recibió del carpincho 12 un SEM WAIT para SEM3 pero NO se bloqueara
-[INFO] 20:29:59:013 Kernel/(5177:5349): 
- Se recibió un NEW INSTANCE. Comienza creación del carpincho
-[INFO] 20:29:59:014 Kernel/(5177:5349): NEW INSTANCE: Se agregó el carpincho ID: 13 a la cola de new
-[INFO] 20:29:59:014 Kernel/(5177:5180): Llegó un carpincho al planificador de largo plazo
-[INFO] 20:29:59:014 Kernel/(5177:5180): Carpincho 13 - Se INICIARA carpincho 0
-[INFO] 20:29:59:015 Kernel/(5177:5187): Carpincho 13 - Comienza a ejecutar
-[INFO] 20:29:59:050 Kernel/(5177:5342): El carpincho 10 está bloqueado por el semáforo SEM2
-[INFO] 20:29:59:051 Kernel/(5177:5342): Se recibió del carpincho 10 un SEM WAIT para SEM2 y se bloqueara
-[INFO] 20:29:59:053 Kernel/(5177:5349): Se recibió del carpincho 13 un SEM WAIT para SEM4 pero NO se bloqueara
-[INFO] 20:30:00:013 Kernel/(5177:5351): 
- Se recibió un NEW INSTANCE. Comienza creación del carpincho
-[INFO] 20:30:00:014 Kernel/(5177:5351): NEW INSTANCE: Se agregó el carpincho ID: 14 a la cola de new
-[INFO] 20:30:00:014 Kernel/(5177:5180): Llegó un carpincho al planificador de largo plazo
-[INFO] 20:30:00:014 Kernel/(5177:5180): Carpincho 14 - Se INICIARA carpincho 0
-[INFO] 20:30:00:015 Kernel/(5177:5188): Carpincho 14 - Comienza a ejecutar
-[INFO] 20:30:00:054 Kernel/(5177:5351): Se recibió del carpincho 14 un SEM WAIT para SEM5 pero NO se bloqueara
-[INFO] 20:30:00:055 Kernel/(5177:5344): El carpincho 11 está bloqueado por el semáforo SEM3
-[INFO] 20:30:00:055 Kernel/(5177:5344): Se recibió del carpincho 11 un SEM WAIT para SEM3 y se bloqueara
-[INFO] 20:30:01:027 Kernel/(5177:5355): 
- Se recibió un NEW INSTANCE. Comienza creación del carpincho
-[INFO] 20:30:01:033 Kernel/(5177:5355): NEW INSTANCE: Se agregó el carpincho ID: 15 a la cola de new
-[INFO] 20:30:01:033 Kernel/(5177:5180): Llegó un carpincho al planificador de largo plazo
-[INFO] 20:30:01:033 Kernel/(5177:5180): Carpincho 15 - Se INICIARA carpincho 0
-[INFO] 20:30:01:034 Kernel/(5177:5185): Carpincho 15 - Comienza a ejecutar
-[INFO] 20:30:01:065 Kernel/(5177:5347): El carpincho 12 está bloqueado por el semáforo SEM4
-[INFO] 20:30:01:066 Kernel/(5177:5347): Se recibió del carpincho 12 un SEM WAIT para SEM4 y se bloqueara
-[INFO] 20:30:01:071 Kernel/(5177:5355): Se recibió del carpincho 15 un SEM WAIT para SEM6 pero NO se bloqueara
-[INFO] 20:30:02:000 Kernel/(5177:5340): MATE_CLOSE: Se recibió del carpincho 9 un MATE CLOSE
-[INFO] 20:30:02:000 Kernel/(5177:5190): Carpincho 9 - Eliminado
-[INFO] 20:30:02:054 Kernel/(5177:5349): El carpincho 13 está bloqueado por el semáforo SEM1
-[INFO] 20:30:02:054 Kernel/(5177:5349): Se recibió del carpincho 13 un SEM WAIT para SEM1 y se bloqueara
-[INFO] 20:30:03:057 Kernel/(5177:5351): El carpincho 14 está bloqueado por el semáforo SEM6
-[INFO] 20:30:03:057 Kernel/(5177:5351): Se recibió del carpincho 14 un SEM WAIT para SEM6 y se bloqueara
-[INFO] 20:30:04:073 Kernel/(5177:5355): El carpincho 15 está bloqueado por el semáforo SEM1
-[INFO] 20:30:04:074 Kernel/(5177:5355): Se recibió del carpincho 15 un SEM WAIT para SEM1 y se bloqueara
-[INFO] 20:30:34:328 Kernel/(5177:5182): Comienza la ejecución de la detección de Deadlock
-[INFO] 20:30:34:330 Kernel/(5177:5182): Entro al for deadlock
-[INFO] 20:30:34:330 Kernel/(5177:5182): Estoy en buscar_en_otras_listas con carpincho 10
-[INFO] 20:30:34:331 Kernel/(5177:5182): Salgo de buscar_en_otras_listas con iteracion 0
-[INFO] 20:30:34:331 Kernel/(5177:5182): Entro a if a_enlistar=!NULL
-[INFO] 20:30:34:333 Kernel/(5177:5182): Termine iteracion 0 del for deadlock
-[INFO] 20:30:34:333 Kernel/(5177:5182): Entro al for deadlock
-[INFO] 20:30:34:333 Kernel/(5177:5182): Estoy en buscar_en_otras_listas con carpincho 11
-[INFO] 20:30:34:334 Kernel/(5177:5182): Salgo de buscar_en_otras_listas con iteracion 1
-[INFO] 20:30:34:334 Kernel/(5177:5182): Entro a if a_enlistar=!NULL
-[INFO] 20:30:34:335 Kernel/(5177:5182): Termine iteracion 1 del for deadlock
-[INFO] 20:30:34:335 Kernel/(5177:5182): Entro al for deadlock
-[INFO] 20:30:34:335 Kernel/(5177:5182): Estoy en buscar_en_otras_listas con carpincho 12
-[INFO] 20:30:34:338 Kernel/(5177:5182): Salgo de buscar_en_otras_listas con iteracion 2
-[INFO] 20:30:34:339 Kernel/(5177:5182): Entro a if a_enlistar=!NULL
-[INFO] 20:30:34:341 Kernel/(5177:5182): Termine iteracion 2 del for deadlock
-[INFO] 20:30:34:341 Kernel/(5177:5182): Entro al for deadlock
-[INFO] 20:30:34:343 Kernel/(5177:5182): Estoy en buscar_en_otras_listas con carpincho 13
-[INFO] 20:30:34:343 Kernel/(5177:5182): Salgo de buscar_en_otras_listas con iteracion 3
-[INFO] 20:30:34:344 Kernel/(5177:5182): Entro a if a_enlistar=!NULL
-[INFO] 20:30:34:345 Kernel/(5177:5182): Termine iteracion 3 del for deadlock
-[INFO] 20:30:34:345 Kernel/(5177:5182): Entro al for deadlock
-[INFO] 20:30:34:345 Kernel/(5177:5182): Estoy en buscar_en_otras_listas con carpincho 14
-[INFO] 20:30:34:364 Kernel/(5177:5182): Salgo de buscar_en_otras_listas con iteracion 4
-[INFO] 20:30:34:364 Kernel/(5177:5182): Entro a if a_enlistar=!NULL
-[INFO] 20:30:34:364 Kernel/(5177:5182): Termine iteracion 4 del for deadlock
-[INFO] 20:30:34:365 Kernel/(5177:5182): Entro al for deadlock
-[INFO] 20:30:34:365 Kernel/(5177:5182): Estoy en buscar_en_otras_listas con carpincho 15
-[INFO] 20:30:34:365 Kernel/(5177:5182): Salgo de buscar_en_otras_listas con iteracion 5
-[INFO] 20:30:34:366 Kernel/(5177:5182): Entro a if a_enlistar=!NULL
-[INFO] 20:30:34:366 Kernel/(5177:5182): Termine iteracion 5 del for deadlock
-[INFO] 20:30:34:366 Kernel/(5177:5182): Verificando espera circular
-[INFO] 20:30:34:366 Kernel/(5177:5182): Size lista_posible_deadlock 6
-[INFO] 20:30:34:368 Kernel/(5177:5182): Espera circular detectada
-[INFO] 20:30:34:369 Kernel/(5177:5182): Se finaliza el carpincho PID 13
-[INFO] 20:30:34:397 Kernel/(5177:5182): Carpincho 13 - Eliminado
-[INFO] 20:30:34:399 Kernel/(5177:5189): Carpincho 12 - Comienza a ejecutar
-[INFO] 20:30:34:400 Kernel/(5177:5182): SEM POST EXITOSO a semaforo SEM4 VALOR DEL SEMAFORO ============= 0
-[INFO] 20:30:34:401 Kernel/(5177:5191): Carpincho 15 - Comienza a ejecutar
-[INFO] 20:30:34:402 Kernel/(5177:5182): SEM POST EXITOSO a semaforo SEM1 VALOR DEL SEMAFORO ============= -1
-[INFO] 20:30:37:400 Kernel/(5177:5347): Se recibió del carpincho 12 un SEM POST para SEM3
-[INFO] 20:30:37:403 Kernel/(5177:5347): SEM POST EXITOSO a semaforo SEM3 VALOR DEL SEMAFORO ============= 0
-[INFO] 20:30:37:403 Kernel/(5177:5186): Carpincho 11 - Comienza a ejecutar
-[INFO] 20:30:37:405 Kernel/(5177:5355): Se recibió del carpincho 15 un SEM POST para SEM1
-[INFO] 20:30:37:405 Kernel/(5177:5355): SEM POST EXITOSO a semaforo SEM1 VALOR DEL SEMAFORO ============= 0
-[INFO] 20:30:37:407 Kernel/(5177:5355): El carpincho 15 está bloqueado por el semáforo SEM5
-[INFO] 20:30:37:408 Kernel/(5177:5355): Se recibió del carpincho 15 un SEM WAIT para SEM5 y se bloqueara
-[INFO] 20:30:37:408 Kernel/(5177:5347): Se recibió del carpincho 12 un SEM POST para SEM4
-[INFO] 20:30:37:410 Kernel/(5177:5347): SEM POST EXITOSO a semaforo SEM4 VALOR DEL SEMAFORO ============= 1
-[INFO] 20:30:37:411 Kernel/(5177:5347): MATE_CLOSE: Se recibió del carpincho 12 un MATE CLOSE
-[INFO] 20:30:37:411 Kernel/(5177:5189): Carpincho 12 - Eliminado
-[INFO] 20:30:40:407 Kernel/(5177:5344): Se recibió del carpincho 11 un SEM POST para SEM2
-[INFO] 20:30:40:408 Kernel/(5177:5344): SEM POST EXITOSO a semaforo SEM2 VALOR DEL SEMAFORO ============= 0
-[INFO] 20:30:40:409 Kernel/(5177:5344): Se recibió del carpincho 11 un SEM POST para SEM3
-[INFO] 20:30:40:409 Kernel/(5177:5192): Carpincho 10 - Comienza a ejecutar
-[INFO] 20:30:40:410 Kernel/(5177:5344): SEM POST EXITOSO a semaforo SEM3 VALOR DEL SEMAFORO ============= 1
-[INFO] 20:30:40:412 Kernel/(5177:5344): MATE_CLOSE: Se recibió del carpincho 11 un MATE CLOSE
-[INFO] 20:30:40:412 Kernel/(5177:5186): Carpincho 11 - Eliminado
-[INFO] 20:30:43:412 Kernel/(5177:5342): Se recibió del carpincho 10 un SEM POST para SEM1
-[INFO] 20:30:43:413 Kernel/(5177:5342): SEM POST EXITOSO a semaforo SEM1 VALOR DEL SEMAFORO ============= 1
-[INFO] 20:30:43:414 Kernel/(5177:5342): Se recibió del carpincho 10 un SEM POST para SEM2
-[INFO] 20:30:43:415 Kernel/(5177:5342): SEM POST EXITOSO a semaforo SEM2 VALOR DEL SEMAFORO ============= 1
-[INFO] 20:30:43:417 Kernel/(5177:5342): MATE_CLOSE: Se recibió del carpincho 10 un MATE CLOSE
-[INFO] 20:30:43:417 Kernel/(5177:5192): Carpincho 10 - Eliminado
-[INFO] 20:31:24:403 Kernel/(5177:5182): Comienza la ejecución de la detección de Deadlock
-[INFO] 20:31:24:404 Kernel/(5177:5182): Entro al for deadlock
-[INFO] 20:31:24:405 Kernel/(5177:5182): Salgo de buscar_en_otras_listas con iteracion 0
-[INFO] 20:31:24:405 Kernel/(5177:5182): Termine iteracion 0 del for deadlock
-[INFO] 20:31:24:405 Kernel/(5177:5182): Entro al for deadlock
-[INFO] 20:31:24:406 Kernel/(5177:5182): Salgo de buscar_en_otras_listas con iteracion 1
-[INFO] 20:31:24:406 Kernel/(5177:5182): Termine iteracion 1 del for deadlock
-[INFO] 20:31:24:406 Kernel/(5177:5182): Entro al for deadlock
-[INFO] 20:31:24:406 Kernel/(5177:5182): Salgo de buscar_en_otras_listas con iteracion 2
-[INFO] 20:31:24:406 Kernel/(5177:5182): Termine iteracion 2 del for deadlock
-[INFO] 20:31:24:406 Kernel/(5177:5182): Entro al for deadlock
-[INFO] 20:31:24:408 Kernel/(5177:5182): Salgo de buscar_en_otras_listas con iteracion 3
-[INFO] 20:31:24:408 Kernel/(5177:5182): Termine iteracion 3 del for deadlock
-[INFO] 20:31:24:408 Kernel/(5177:5182): Entro al for deadlock
-[INFO] 20:31:24:408 Kernel/(5177:5182): Estoy en buscar_en_otras_listas con carpincho 14
-[INFO] 20:31:24:409 Kernel/(5177:5182): Salgo de buscar_en_otras_listas con iteracion 4
-[INFO] 20:31:24:409 Kernel/(5177:5182): Entro a if a_enlistar=!NULL
-[INFO] 20:31:24:410 Kernel/(5177:5182): Termine iteracion 4 del for deadlock
-[INFO] 20:31:24:410 Kernel/(5177:5182): Entro al for deadlock
-[INFO] 20:31:24:410 Kernel/(5177:5182): Estoy en buscar_en_otras_listas con carpincho 15
-[INFO] 20:31:24:413 Kernel/(5177:5182): Salgo de buscar_en_otras_listas con iteracion 5
-[INFO] 20:31:24:413 Kernel/(5177:5182): Entro a if a_enlistar=!NULL
-[INFO] 20:31:24:416 Kernel/(5177:5182): Termine iteracion 5 del for deadlock
-[INFO] 20:31:24:416 Kernel/(5177:5182): Verificando espera circular
-[INFO] 20:31:24:416 Kernel/(5177:5182): Size lista_posible_deadlock 2
-[INFO] 20:31:24:417 Kernel/(5177:5182): Espera circular detectada
-[INFO] 20:31:24:417 Kernel/(5177:5182): Se finaliza el carpincho PID 15
-[INFO] 20:31:24:419 Kernel/(5177:5182): Carpincho 15 - Eliminado
-[INFO] 20:31:24:419 Kernel/(5177:5190): Carpincho 14 - Comienza a ejecutar
-[INFO] 20:31:24:420 Kernel/(5177:5182): SEM POST EXITOSO a semaforo SEM6 VALOR DEL SEMAFORO ============= 0
-[INFO] 20:31:24:420 Kernel/(5177:5182): SEM POST EXITOSO a semaforo SEM5 VALOR DEL SEMAFORO ============= 0
-[INFO] 20:31:27:418 Kernel/(5177:5355): Se recibió del carpincho 140630464 un SEM POST para SEM5
-[INFO] 20:31:27:419 Kernel/(5177:5355): SEM POST EXITOSO a semaforo SEM5 VALOR DEL SEMAFORO ============= 1
-[INFO] 20:31:27:419 Kernel/(5177:5355): Se recibió del carpincho 140632152 un SEM POST para SEM6
-[INFO] 20:31:27:419 Kernel/(5177:5355): SEM POST EXITOSO a semaforo SEM6 VALOR DEL SEMAFORO ============= 1
-[INFO] 20:31:27:419 Kernel/(5177:5355): MATE_CLOSE: Se recibió del carpincho 140632152 un MATE CLOSE
-[INFO] 20:31:27:420 Kernel/(5177:5351): Se recibió del carpincho 14 un SEM POST para SEM5
-[INFO] 20:31:27:420 Kernel/(5177:5351): SEM POST EXITOSO a semaforo SEM5 VALOR DEL SEMAFORO ============= 2
-[INFO] 20:31:27:420 Kernel/(5177:5351): Se recibió del carpincho 14 un SEM POST para SEM6
-[INFO] 20:31:27:421 Kernel/(5177:5351): SEM POST EXITOSO a semaforo SEM6 VALOR DEL SEMAFORO ============= 2
-[INFO] 20:31:27:421 Kernel/(5177:5351): MATE_CLOSE: Se recibió del carpincho 14 un MATE CLOSE
-[INFO] 20:31:27:421 Kernel/(5177:5190): Carpincho 14 - Eliminado
-[INFO] 20:31:27:426 Kernel/(5177:5362): 
- Se recibió un NEW INSTANCE. Comienza creación del carpincho
-[INFO] 20:31:27:426 Kernel/(5177:5362): NEW INSTANCE: Se agregó el carpincho ID: 16 a la cola de new
-[INFO] 20:31:27:426 Kernel/(5177:5180): Llegó un carpincho al planificador de largo plazo
-[INFO] 20:31:27:426 Kernel/(5177:5180): Carpincho 16 - Se INICIARA carpincho 0
-[INFO] 20:31:27:426 Kernel/(5177:5187): Carpincho 16 - Comienza a ejecutar
-[INFO] 20:31:27:465 Kernel/(5177:5362): Se recibió del carpincho 16 un SEM DESTROY para SEM1
-[INFO] 20:31:27:465 Kernel/(5177:5362): SEM DESTROY EXITOSO
-[INFO] 20:31:27:465 Kernel/(5177:5362): Se recibió del carpincho 16 un SEM DESTROY para SEM2
-[INFO] 20:31:27:465 Kernel/(5177:5362): SEM DESTROY EXITOSO
-[INFO] 20:31:27:465 Kernel/(5177:5362): Se recibió del carpincho 16 un SEM DESTROY para SEM3
-[INFO] 20:31:27:465 Kernel/(5177:5362): SEM DESTROY EXITOSO
-[INFO] 20:31:27:465 Kernel/(5177:5362): Se recibió del carpincho 16 un SEM DESTROY para SEM4
-[INFO] 20:31:27:465 Kernel/(5177:5362): SEM DESTROY EXITOSO
-[INFO] 20:31:27:465 Kernel/(5177:5362): Se recibió del carpincho 16 un SEM DESTROY para SEM5
-[INFO] 20:31:27:465 Kernel/(5177:5362): SEM DESTROY EXITOSO
-[INFO] 20:31:27:465 Kernel/(5177:5362): Se recibió del carpincho 16 un SEM DESTROY para SEM6
-[INFO] 20:31:27:465 Kernel/(5177:5362): SEM DESTROY EXITOSO
-[INFO] 20:31:27:466 Kernel/(5177:5362): MATE_CLOSE: Se recibió del carpincho 16 un MATE CLOSE
-[INFO] 20:31:27:467 Kernel/(5177:5187): Carpincho 16 - Eliminado
-[INFO] 20:31:50:692 Kernel/(5177:5430): 
- Se recibió un NEW INSTANCE. Comienza creación del carpincho
-[INFO] 20:31:50:698 Kernel/(5177:5430): NEW INSTANCE: Se agregó el carpincho ID: 17 a la cola de new
-[INFO] 20:31:50:698 Kernel/(5177:5180): Llegó un carpincho al planificador de largo plazo
-[INFO] 20:31:50:698 Kernel/(5177:5180): Carpincho 17 - Se INICIARA carpincho 0
-[INFO] 20:31:50:698 Kernel/(5177:5188): Carpincho 17 - Comienza a ejecutar
-[INFO] 20:31:50:737 Kernel/(5177:5430): Se recibió del carpincho 17 un SEM INIT para el semáforo SEM1 con valor 1
- 
-[INFO] 20:31:50:738 Kernel/(5177:5430): SEMAFORO SEM1 inicializado con 1
-[INFO] 20:31:50:738 Kernel/(5177:5430): Se recibió del carpincho 17 un SEM INIT para el semáforo SEM2 con valor 1
- 
-[INFO] 20:31:50:738 Kernel/(5177:5430): SEMAFORO SEM2 inicializado con 1
-[INFO] 20:31:50:738 Kernel/(5177:5430): Se recibió del carpincho 17 un SEM INIT para el semáforo SEM3 con valor 1
- 
-[INFO] 20:31:50:738 Kernel/(5177:5430): SEMAFORO SEM3 inicializado con 1
-[INFO] 20:31:50:740 Kernel/(5177:5430): Se recibió del carpincho 17 un SEM INIT para el semáforo SEM4 con valor 1
- 
-[INFO] 20:31:50:740 Kernel/(5177:5430): SEMAFORO SEM4 inicializado con 1
-[INFO] 20:31:50:740 Kernel/(5177:5430): Se recibió del carpincho 17 un SEM INIT para el semáforo SEM5 con valor 1
- 
-[INFO] 20:31:50:740 Kernel/(5177:5430): SEMAFORO SEM5 inicializado con 1
-[INFO] 20:31:50:740 Kernel/(5177:5430): Se recibió del carpincho 17 un SEM INIT para el semáforo SEM6 con valor 1
- 
-[INFO] 20:31:50:740 Kernel/(5177:5430): SEMAFORO SEM6 inicializado con 1
-[INFO] 20:31:50:755 Kernel/(5177:5432): 
- Se recibió un NEW INSTANCE. Comienza creación del carpincho
-[INFO] 20:31:50:756 Kernel/(5177:5432): NEW INSTANCE: Se agregó el carpincho ID: 18 a la cola de new
-[INFO] 20:31:50:756 Kernel/(5177:5180): Llegó un carpincho al planificador de largo plazo
-[INFO] 20:31:50:757 Kernel/(5177:5180): Carpincho 18 - Se INICIARA carpincho 0
-[INFO] 20:31:50:757 Kernel/(5177:5185): Carpincho 18 - Comienza a ejecutar
-[INFO] 20:31:50:793 Kernel/(5177:5432): Se recibió del carpincho 18 un SEM WAIT para SEM1 pero NO se bloqueara
-[INFO] 20:31:51:762 Kernel/(5177:5434): 
- Se recibió un NEW INSTANCE. Comienza creación del carpincho
-[INFO] 20:31:51:762 Kernel/(5177:5434): NEW INSTANCE: Se agregó el carpincho ID: 19 a la cola de new
-[INFO] 20:31:51:762 Kernel/(5177:5180): Llegó un carpincho al planificador de largo plazo
-[INFO] 20:31:51:763 Kernel/(5177:5180): Carpincho 19 - Se INICIARA carpincho 0
-[INFO] 20:31:51:764 Kernel/(5177:5191): Carpincho 19 - Comienza a ejecutar
-[INFO] 20:31:51:802 Kernel/(5177:5434): Se recibió del carpincho 19 un SEM WAIT para SEM2 pero NO se bloqueara
-[INFO] 20:31:52:761 Kernel/(5177:5436): 
- Se recibió un NEW INSTANCE. Comienza creación del carpincho
-[INFO] 20:31:52:762 Kernel/(5177:5436): NEW INSTANCE: Se agregó el carpincho ID: 20 a la cola de new
-[INFO] 20:31:52:762 Kernel/(5177:5180): Llegó un carpincho al planificador de largo plazo
-[INFO] 20:31:52:762 Kernel/(5177:5180): Carpincho 20 - Se INICIARA carpincho 0
-[INFO] 20:31:52:763 Kernel/(5177:5189): Carpincho 20 - Comienza a ejecutar
-[INFO] 20:31:52:803 Kernel/(5177:5436): Se recibió del carpincho 20 un SEM WAIT para SEM3 pero NO se bloqueara
-[INFO] 20:31:53:762 Kernel/(5177:5438): 
- Se recibió un NEW INSTANCE. Comienza creación del carpincho
-[INFO] 20:31:53:762 Kernel/(5177:5438): NEW INSTANCE: Se agregó el carpincho ID: 21 a la cola de new
-[INFO] 20:31:53:762 Kernel/(5177:5180): Llegó un carpincho al planificador de largo plazo
-[INFO] 20:31:53:762 Kernel/(5177:5180): Carpincho 21 - Se INICIARA carpincho 0
-[INFO] 20:31:53:763 Kernel/(5177:5186): Carpincho 21 - Comienza a ejecutar
-[INFO] 20:31:53:795 Kernel/(5177:5432): El carpincho 18 está bloqueado por el semáforo SEM2
-[INFO] 20:31:53:796 Kernel/(5177:5432): Se recibió del carpincho 18 un SEM WAIT para SEM2 y se bloqueara
-[INFO] 20:31:53:801 Kernel/(5177:5438): Se recibió del carpincho 21 un SEM WAIT para SEM4 pero NO se bloqueara
-[INFO] 20:31:54:761 Kernel/(5177:5440): 
- Se recibió un NEW INSTANCE. Comienza creación del carpincho
-[INFO] 20:31:54:764 Kernel/(5177:5440): NEW INSTANCE: Se agregó el carpincho ID: 22 a la cola de new
-[INFO] 20:31:54:764 Kernel/(5177:5180): Llegó un carpincho al planificador de largo plazo
-[INFO] 20:31:54:765 Kernel/(5177:5180): Carpincho 22 - Se INICIARA carpincho 0
-[INFO] 20:31:54:766 Kernel/(5177:5192): Carpincho 22 - Comienza a ejecutar
-[INFO] 20:31:54:804 Kernel/(5177:5440): Se recibió del carpincho 22 un SEM WAIT para SEM5 pero NO se bloqueara
-[INFO] 20:31:54:805 Kernel/(5177:5434): El carpincho 19 está bloqueado por el semáforo SEM3
-[INFO] 20:31:54:805 Kernel/(5177:5434): Se recibió del carpincho 19 un SEM WAIT para SEM3 y se bloqueara
-[INFO] 20:31:55:765 Kernel/(5177:5443): 
- Se recibió un NEW INSTANCE. Comienza creación del carpincho
-[INFO] 20:31:55:768 Kernel/(5177:5443): NEW INSTANCE: Se agregó el carpincho ID: 23 a la cola de new
-[INFO] 20:31:55:768 Kernel/(5177:5180): Llegó un carpincho al planificador de largo plazo
-[INFO] 20:31:55:768 Kernel/(5177:5180): Carpincho 23 - Se INICIARA carpincho 0
-[INFO] 20:31:55:770 Kernel/(5177:5190): Carpincho 23 - Comienza a ejecutar
-[INFO] 20:31:55:804 Kernel/(5177:5436): El carpincho 20 está bloqueado por el semáforo SEM4
-[INFO] 20:31:55:804 Kernel/(5177:5436): Se recibió del carpincho 20 un SEM WAIT para SEM4 y se bloqueara
-[INFO] 20:31:55:805 Kernel/(5177:5443): Se recibió del carpincho 23 un SEM WAIT para SEM6 pero NO se bloqueara
-[INFO] 20:31:56:750 Kernel/(5177:5430): MATE_CLOSE: Se recibió del carpincho 17 un MATE CLOSE
-[INFO] 20:31:56:750 Kernel/(5177:5188): Carpincho 17 - Eliminado
-[INFO] 20:31:56:804 Kernel/(5177:5438): El carpincho 21 está bloqueado por el semáforo SEM1
-[INFO] 20:31:56:804 Kernel/(5177:5438): Se recibió del carpincho 21 un SEM WAIT para SEM1 y se bloqueara
-[INFO] 20:31:57:809 Kernel/(5177:5440): El carpincho 22 está bloqueado por el semáforo SEM6
-[INFO] 20:31:57:809 Kernel/(5177:5440): Se recibió del carpincho 22 un SEM WAIT para SEM6 y se bloqueara
-[INFO] 20:31:58:808 Kernel/(5177:5443): El carpincho 23 está bloqueado por el semáforo SEM1
-[INFO] 20:31:58:811 Kernel/(5177:5443): Se recibió del carpincho 23 un SEM WAIT para SEM1 y se bloqueara
-[INFO] 20:32:14:421 Kernel/(5177:5182): Comienza la ejecución de la detección de Deadlock
-[INFO] 20:32:14:422 Kernel/(5177:5182): Entro al for deadlock
-[INFO] 20:32:14:423 Kernel/(5177:5182): Estoy en buscar_en_otras_listas con carpincho 18
-[INFO] 20:32:14:424 Kernel/(5177:5182): Salgo de buscar_en_otras_listas con iteracion 0
-[INFO] 20:32:14:424 Kernel/(5177:5182): Entro a if a_enlistar=!NULL
-[INFO] 20:32:14:424 Kernel/(5177:5182): Termine iteracion 0 del for deadlock
-[INFO] 20:32:14:424 Kernel/(5177:5182): Entro al for deadlock
-[INFO] 20:32:14:425 Kernel/(5177:5182): Estoy en buscar_en_otras_listas con carpincho 19
-[INFO] 20:32:14:427 Kernel/(5177:5182): Salgo de buscar_en_otras_listas con iteracion 1
-[INFO] 20:32:14:428 Kernel/(5177:5182): Entro a if a_enlistar=!NULL
-[INFO] 20:32:14:428 Kernel/(5177:5182): Termine iteracion 1 del for deadlock
-[INFO] 20:32:14:428 Kernel/(5177:5182): Entro al for deadlock
-[INFO] 20:32:14:428 Kernel/(5177:5182): Estoy en buscar_en_otras_listas con carpincho 20
-[INFO] 20:32:14:430 Kernel/(5177:5182): Salgo de buscar_en_otras_listas con iteracion 2
-[INFO] 20:32:14:430 Kernel/(5177:5182): Entro a if a_enlistar=!NULL
-[INFO] 20:32:14:431 Kernel/(5177:5182): Termine iteracion 2 del for deadlock
-[INFO] 20:32:14:431 Kernel/(5177:5182): Entro al for deadlock
-[INFO] 20:32:14:431 Kernel/(5177:5182): Estoy en buscar_en_otras_listas con carpincho 21
-[INFO] 20:32:14:434 Kernel/(5177:5182): Salgo de buscar_en_otras_listas con iteracion 3
-[INFO] 20:32:14:434 Kernel/(5177:5182): Entro a if a_enlistar=!NULL
-[INFO] 20:32:14:435 Kernel/(5177:5182): Termine iteracion 3 del for deadlock
-[INFO] 20:32:14:435 Kernel/(5177:5182): Entro al for deadlock
-[INFO] 20:32:14:435 Kernel/(5177:5182): Estoy en buscar_en_otras_listas con carpincho 22
-[INFO] 20:32:14:438 Kernel/(5177:5182): Salgo de buscar_en_otras_listas con iteracion 4
-[INFO] 20:32:14:438 Kernel/(5177:5182): Entro a if a_enlistar=!NULL
-[INFO] 20:32:14:438 Kernel/(5177:5182): Termine iteracion 4 del for deadlock
-[INFO] 20:32:14:438 Kernel/(5177:5182): Entro al for deadlock
-[INFO] 20:32:14:442 Kernel/(5177:5182): Estoy en buscar_en_otras_listas con carpincho 23
-[INFO] 20:32:14:445 Kernel/(5177:5182): Salgo de buscar_en_otras_listas con iteracion 5
-[INFO] 20:32:14:446 Kernel/(5177:5182): Entro a if a_enlistar=!NULL
-[INFO] 20:32:14:446 Kernel/(5177:5182): Termine iteracion 5 del for deadlock
-[INFO] 20:32:14:449 Kernel/(5177:5182): Verificando espera circular
-[INFO] 20:32:14:449 Kernel/(5177:5182): Size lista_posible_deadlock 6
-[INFO] 20:32:14:450 Kernel/(5177:5182): Espera circular detectada
-[INFO] 20:32:14:450 Kernel/(5177:5182): Se finaliza el carpincho PID 21
-[INFO] 20:32:14:450 Kernel/(5177:5182): Carpincho 21 - Eliminado
-[INFO] 20:32:14:453 Kernel/(5177:5187): Carpincho 20 - Comienza a ejecutar
-[INFO] 20:32:14:454 Kernel/(5177:5182): SEM POST EXITOSO a semaforo SEM4 VALOR DEL SEMAFORO ============= 0
-[INFO] 20:32:14:456 Kernel/(5177:5185): Carpincho 23 - Comienza a ejecutar
-[INFO] 20:32:14:456 Kernel/(5177:5182): SEM POST EXITOSO a semaforo SEM1 VALOR DEL SEMAFORO ============= -1
-[INFO] 20:32:17:454 Kernel/(5177:5436): Se recibió del carpincho 20 un SEM POST para SEM3
-[INFO] 20:32:17:455 Kernel/(5177:5436): SEM POST EXITOSO a semaforo SEM3 VALOR DEL SEMAFORO ============= 0
-[INFO] 20:32:17:455 Kernel/(5177:5436): Se recibió del carpincho 20 un SEM POST para SEM4
-[INFO] 20:32:17:455 Kernel/(5177:5436): SEM POST EXITOSO a semaforo SEM4 VALOR DEL SEMAFORO ============= 1
-[INFO] 20:32:17:456 Kernel/(5177:5436): MATE_CLOSE: Se recibió del carpincho 20 un MATE CLOSE
-[INFO] 20:32:17:456 Kernel/(5177:5187): Carpincho 20 - Eliminado
-[INFO] 20:32:17:456 Kernel/(5177:5191): Carpincho 19 - Comienza a ejecutar
-[INFO] 20:32:17:457 Kernel/(5177:5443): Se recibió del carpincho 23 un SEM POST para SEM1
-[INFO] 20:32:17:457 Kernel/(5177:5443): SEM POST EXITOSO a semaforo SEM1 VALOR DEL SEMAFORO ============= 0
-[INFO] 20:32:17:457 Kernel/(5177:5443): El carpincho 23 está bloqueado por el semáforo SEM5
-[INFO] 20:32:17:457 Kernel/(5177:5443): Se recibió del carpincho 23 un SEM WAIT para SEM5 y se bloqueara
-[INFO] 20:32:20:459 Kernel/(5177:5434): Se recibió del carpincho 19 un SEM POST para SEM2
-[INFO] 20:32:20:462 Kernel/(5177:5189): Carpincho 18 - Comienza a ejecutar
-[INFO] 20:32:20:463 Kernel/(5177:5434): SEM POST EXITOSO a semaforo SEM2 VALOR DEL SEMAFORO ============= 0
-[INFO] 20:32:20:465 Kernel/(5177:5434): Se recibió del carpincho 19 un SEM POST para SEM3
-[INFO] 20:32:20:466 Kernel/(5177:5434): SEM POST EXITOSO a semaforo SEM3 VALOR DEL SEMAFORO ============= 1
-[INFO] 20:32:20:473 Kernel/(5177:5434): MATE_CLOSE: Se recibió del carpincho 19 un MATE CLOSE
-[INFO] 20:32:20:473 Kernel/(5177:5191): Carpincho 19 - Eliminado
-[INFO] 20:32:23:464 Kernel/(5177:5432): Se recibió del carpincho 18 un SEM POST para SEM1
-[INFO] 20:32:23:465 Kernel/(5177:5432): SEM POST EXITOSO a semaforo SEM1 VALOR DEL SEMAFORO ============= 1
-[INFO] 20:32:23:466 Kernel/(5177:5432): Se recibió del carpincho 18 un SEM POST para SEM2
-[INFO] 20:32:23:467 Kernel/(5177:5432): SEM POST EXITOSO a semaforo SEM2 VALOR DEL SEMAFORO ============= 1
-[INFO] 20:32:23:470 Kernel/(5177:5432): MATE_CLOSE: Se recibió del carpincho 18 un MATE CLOSE
-[INFO] 20:32:23:470 Kernel/(5177:5189): Carpincho 18 - Eliminado
-[INFO] 20:33:04:458 Kernel/(5177:5182): Comienza la ejecución de la detección de Deadlock
-[INFO] 20:33:04:459 Kernel/(5177:5182): Entro al for deadlock
-[INFO] 20:33:04:460 Kernel/(5177:5182): Salgo de buscar_en_otras_listas con iteracion 0
-[INFO] 20:33:04:460 Kernel/(5177:5182): Termine iteracion 0 del for deadlock
-[INFO] 20:33:04:460 Kernel/(5177:5182): Entro al for deadlock
-[INFO] 20:33:04:460 Kernel/(5177:5182): Salgo de buscar_en_otras_listas con iteracion 1
-[INFO] 20:33:04:460 Kernel/(5177:5182): Termine iteracion 1 del for deadlock
-[INFO] 20:33:04:460 Kernel/(5177:5182): Entro al for deadlock
-[INFO] 20:33:04:460 Kernel/(5177:5182): Salgo de buscar_en_otras_listas con iteracion 2
-[INFO] 20:33:04:460 Kernel/(5177:5182): Termine iteracion 2 del for deadlock
-[INFO] 20:33:04:460 Kernel/(5177:5182): Entro al for deadlock
-[INFO] 20:33:04:461 Kernel/(5177:5182): Salgo de buscar_en_otras_listas con iteracion 3
-[INFO] 20:33:04:461 Kernel/(5177:5182): Termine iteracion 3 del for deadlock
-[INFO] 20:33:04:461 Kernel/(5177:5182): Entro al for deadlock
-[INFO] 20:33:04:463 Kernel/(5177:5182): Estoy en buscar_en_otras_listas con carpincho 22
-[INFO] 20:33:04:464 Kernel/(5177:5182): Salgo de buscar_en_otras_listas con iteracion 4
-[INFO] 20:33:04:464 Kernel/(5177:5182): Entro a if a_enlistar=!NULL
-[INFO] 20:33:04:464 Kernel/(5177:5182): Termine iteracion 4 del for deadlock
-[INFO] 20:33:04:464 Kernel/(5177:5182): Entro al for deadlock
-[INFO] 20:33:04:465 Kernel/(5177:5182): Estoy en buscar_en_otras_listas con carpincho 23
-[INFO] 20:33:04:466 Kernel/(5177:5182): Salgo de buscar_en_otras_listas con iteracion 5
-[INFO] 20:33:04:467 Kernel/(5177:5182): Entro a if a_enlistar=!NULL
-[INFO] 20:33:04:467 Kernel/(5177:5182): Termine iteracion 5 del for deadlock
-[INFO] 20:33:04:467 Kernel/(5177:5182): Verificando espera circular
-[INFO] 20:33:04:467 Kernel/(5177:5182): Size lista_posible_deadlock 2
-[INFO] 20:33:04:469 Kernel/(5177:5182): Espera circular detectada
-[INFO] 20:33:04:470 Kernel/(5177:5182): Se finaliza el carpincho PID 23
-[INFO] 20:33:04:473 Kernel/(5177:5182): Carpincho 23 - Eliminado
-[INFO] 20:33:04:475 Kernel/(5177:5188): Carpincho 22 - Comienza a ejecutar
-[INFO] 20:33:04:476 Kernel/(5177:5182): SEM POST EXITOSO a semaforo SEM6 VALOR DEL SEMAFORO ============= 0
-[INFO] 20:33:04:476 Kernel/(5177:5182): SEM POST EXITOSO a semaforo SEM5 VALOR DEL SEMAFORO ============= 0
-[INFO] 20:33:07:476 Kernel/(5177:5440): Se recibió del carpincho 22 un SEM POST para SEM5
-[INFO] 20:33:07:476 Kernel/(5177:5440): SEM POST EXITOSO a semaforo SEM5 VALOR DEL SEMAFORO ============= 1
-[INFO] 20:33:07:476 Kernel/(5177:5440): Se recibió del carpincho 22 un SEM POST para SEM6
-[INFO] 20:33:07:476 Kernel/(5177:5440): SEM POST EXITOSO a semaforo SEM6 VALOR DEL SEMAFORO ============= 1
-[INFO] 20:33:07:477 Kernel/(5177:5440): MATE_CLOSE: Se recibió del carpincho 22 un MATE CLOSE
-[INFO] 20:33:07:477 Kernel/(5177:5188): Carpincho 22 - Eliminado
-[INFO] 20:33:07:506 Kernel/(5177:5453): 
- Se recibió un NEW INSTANCE. Comienza creación del carpincho
-[INFO] 20:33:07:508 Kernel/(5177:5453): NEW INSTANCE: Se agregó el carpincho ID: 24 a la cola de new
-[INFO] 20:33:07:508 Kernel/(5177:5180): Llegó un carpincho al planificador de largo plazo
-[INFO] 20:33:07:508 Kernel/(5177:5180): Carpincho 24 - Se INICIARA carpincho 0
-[INFO] 20:33:07:509 Kernel/(5177:5186): Carpincho 24 - Comienza a ejecutar
-[INFO] 20:33:07:549 Kernel/(5177:5453): Se recibió del carpincho 24 un SEM DESTROY para SEM1
-[INFO] 20:33:07:549 Kernel/(5177:5453): SEM DESTROY EXITOSO
-[INFO] 20:33:07:549 Kernel/(5177:5453): Se recibió del carpincho 24 un SEM DESTROY para SEM2
-[INFO] 20:33:07:549 Kernel/(5177:5453): SEM DESTROY EXITOSO
-[INFO] 20:33:07:549 Kernel/(5177:5453): Se recibió del carpincho 24 un SEM DESTROY para SEM3
-[INFO] 20:33:07:549 Kernel/(5177:5453): SEM DESTROY EXITOSO
-[INFO] 20:33:07:549 Kernel/(5177:5453): Se recibió del carpincho 24 un SEM DESTROY para SEM4
-[INFO] 20:33:07:549 Kernel/(5177:5453): SEM DESTROY EXITOSO
-[INFO] 20:33:07:549 Kernel/(5177:5453): Se recibió del carpincho 24 un SEM DESTROY para SEM5
-[INFO] 20:33:07:549 Kernel/(5177:5453): SEM DESTROY EXITOSO
-[INFO] 20:33:07:550 Kernel/(5177:5453): Se recibió del carpincho 24 un SEM DESTROY para SEM6
-[INFO] 20:33:07:550 Kernel/(5177:5453): SEM DESTROY EXITOSO
-[INFO] 20:33:07:552 Kernel/(5177:5453): MATE_CLOSE: Se recibió del carpincho 24 un MATE CLOSE
-[INFO] 20:33:07:552 Kernel/(5177:5186): Carpincho 24 - Eliminado
-                                                                                            
+[INFO] 16:14:41:534 Kernel/(4563:4653): NEW INSTANCE: Se agregó el carpincho ID: 3 a la cola de new
+[INFO] 16:14:41:536 Kernel/(4563:4575): Llegó un carpincho al planificador de largo plazo
+[INFO] 16:14:41:536 Kernel/(4563:4575): Carpincho 3 - Se INICIARA carpincho 0
+[INFO] 16:14:41:538 Kernel/(4563:4575): Carpincho 3 - Estimación actual: 1.000000
+[INFO] 16:14:43:537 Kernel/(4563:4581): No se deben suspender carpinchos
+[INFO] 16:14:43:539 Kernel/(4563:4581): Carpinchos bloqueados: 0
+[INFO] 16:14:43:545 Kernel/(4563:4581): El carpincho 2 está bloqueado por IO pelopincho
+[INFO] 16:14:43:550 Kernel/(4563:4581): El carpincho 2 fue BLOQUEADO por io
+[INFO] 16:14:43:542 Kernel/(4563:4648): Se recibió del carpincho 2 un CALL IO para pelopincho
+[INFO] 16:14:43:548 Kernel/(4563:4573): Carpincho 1 - Estimación actual: 1.054890
+[INFO] 16:14:43:629 Kernel/(4563:4573): Carpincho 3 - Estimación actual: 2.054890
+[INFO] 16:14:43:737 Kernel/(4563:4581): Carpincho 3 - Comienza a ejecutar
+[INFO] 16:14:45:764 Kernel/(4563:4573): Carpincho 2 - Estimación actual: 2.192964
+[INFO] 16:14:45:785 Kernel/(4563:4573): Carpincho 1 - Estimación actual: 3.171757
+[INFO] 16:14:53:752 Kernel/(4563:4581): No se deben suspender carpinchos
+[INFO] 16:14:53:754 Kernel/(4563:4581): Carpinchos bloqueados: 0
+[INFO] 16:14:53:756 Kernel/(4563:4653): Se recibió del carpincho 3 un CALL IO para pelopincho
+[INFO] 16:14:53:761 Kernel/(4563:4581): El carpincho 3 está bloqueado por IO pelopincho
+[INFO] 16:14:53:770 Kernel/(4563:4581): El carpincho 3 fue BLOQUEADO por io
+[INFO] 16:14:53:776 Kernel/(4563:4581): Carpincho 1 - Comienza a ejecutar
+[INFO] 16:14:55:782 Kernel/(4563:4573): Carpincho 3 - Estimación actual: 1.287764
+[INFO] 16:14:55:803 Kernel/(4563:4573): Carpincho 2 - Estimación actual: 2.539817
+[INFO] 16:14:55:986 Kernel/(4563:4646): Se recibió del carpincho 1 un CALL IO para pelopincho
+[INFO] 16:14:55:986 Kernel/(4563:4581): No se deben suspender carpinchos
+[INFO] 16:14:55:987 Kernel/(4563:4581): Carpinchos bloqueados: 0
+[INFO] 16:14:55:987 Kernel/(4563:4581): El carpincho 1 está bloqueado por IO pelopincho
+[INFO] 16:14:55:987 Kernel/(4563:4581): El carpincho 1 fue BLOQUEADO por io
+[INFO] 16:14:55:988 Kernel/(4563:4581): Carpincho 2 - Comienza a ejecutar
+[INFO] 16:14:57:992 Kernel/(4563:4648): Se recibió del carpincho 2 un CALL IO para pelopincho
+[INFO] 16:14:57:994 Kernel/(4563:4581): No se deben suspender carpinchos
+[INFO] 16:14:57:998 Kernel/(4563:4581): Carpinchos bloqueados: 0
+[INFO] 16:14:58:004 Kernel/(4563:4581): El carpincho 2 está bloqueado por IO pelopincho
+[INFO] 16:14:58:014 Kernel/(4563:4581): El carpincho 2 fue BLOQUEADO por io
+[INFO] 16:14:58:032 Kernel/(4563:4573): Carpincho 1 - Estimación actual: 5.105720
+[INFO] 16:14:58:049 Kernel/(4563:4573): Carpincho 3 - Estimación actual: 6.672403
+[INFO] 16:14:58:102 Kernel/(4563:4581): Carpincho 3 - Comienza a ejecutar
+[INFO] 16:15:00:166 Kernel/(4563:4573): Carpincho 2 - Estimación actual: 5.682690
+[INFO] 16:15:00:231 Kernel/(4563:4573): Carpincho 1 - Estimación actual: 4.123299
+[INFO] 16:15:08:125 Kernel/(4563:4653): Se recibió del carpincho 3 un CALL IO para pelopincho
+[INFO] 16:15:08:127 Kernel/(4563:4581): No se deben suspender carpinchos
+[INFO] 16:15:08:128 Kernel/(4563:4581): Carpinchos bloqueados: 0
+[INFO] 16:15:08:133 Kernel/(4563:4581): El carpincho 3 está bloqueado por IO pelopincho
+[INFO] 16:15:08:144 Kernel/(4563:4581): El carpincho 3 fue BLOQUEADO por io
+[INFO] 16:15:08:157 Kernel/(4563:4581): Carpincho 2 - Comienza a ejecutar
+[INFO] 16:15:10:155 Kernel/(4563:4573): Carpincho 3 - Estimación actual: 1.258933
+[INFO] 16:15:10:176 Kernel/(4563:4648): Se recibió del carpincho 2 un CALL IO para pelopincho
+[INFO] 16:15:10:178 Kernel/(4563:4581): No se deben suspender carpinchos
+[INFO] 16:15:10:182 Kernel/(4563:4581): Carpinchos bloqueados: 0
+[INFO] 16:15:10:186 Kernel/(4563:4581): El carpincho 2 está bloqueado por IO pelopincho
+[INFO] 16:15:10:198 Kernel/(4563:4581): El carpincho 2 fue BLOQUEADO por io
+[INFO] 16:15:10:202 Kernel/(4563:4573): Carpincho 1 - Estimación actual: 5.172781
+[INFO] 16:15:10:252 Kernel/(4563:4581): Carpincho 1 - Comienza a ejecutar
+[INFO] 16:15:12:261 Kernel/(4563:4646): Se recibió del carpincho 1 un CALL IO para pelopincho
+[INFO] 16:15:12:265 Kernel/(4563:4581): No se deben suspender carpinchos
+[INFO] 16:15:12:270 Kernel/(4563:4581): Carpinchos bloqueados: 0
+[INFO] 16:15:12:275 Kernel/(4563:4581): El carpincho 1 está bloqueado por IO pelopincho
+[INFO] 16:15:12:290 Kernel/(4563:4581): El carpincho 1 fue BLOQUEADO por io
+[INFO] 16:15:12:301 Kernel/(4563:4573): Carpincho 2 - Estimación actual: 3.560865
+[INFO] 16:15:12:340 Kernel/(4563:4573): Carpincho 3 - Estimación actual: 5.686401
+[INFO] 16:15:12:373 Kernel/(4563:4581): Carpincho 3 - Comienza a ejecutar
+[INFO] 16:15:14:410 Kernel/(4563:4573): Carpincho 1 - Estimación actual: 5.108574
+[INFO] 16:15:14:433 Kernel/(4563:4573): Carpincho 2 - Estimación actual: 4.694207
+[INFO] 16:15:22:382 Kernel/(4563:4653): Se recibió del carpincho 3 un CALL IO para pelopincho
+[INFO] 16:15:22:385 Kernel/(4563:4581): No se deben suspender carpinchos
+[INFO] 16:15:22:389 Kernel/(4563:4581): Carpinchos bloqueados: 0
+[INFO] 16:15:22:392 Kernel/(4563:4581): El carpincho 3 está bloqueado por IO pelopincho
+[INFO] 16:15:22:401 Kernel/(4563:4581): El carpincho 3 fue BLOQUEADO por io
+[INFO] 16:15:22:413 Kernel/(4563:4581): Carpincho 1 - Comienza a ejecutar
+[INFO] 16:15:24:413 Kernel/(4563:4573): Carpincho 3 - Estimación actual: 1.256615
+[INFO] 16:15:24:429 Kernel/(4563:4646): MATE_CLOSE: Se recibió del carpincho 1 un MATE CLOSE
+[INFO] 16:15:24:441 Kernel/(4563:4573): Carpincho 2 - Estimación actual: 4.069994
+[INFO] 16:15:24:482 Kernel/(4563:4581): Carpincho 1 - Eliminado
+[INFO] 16:15:24:497 Kernel/(4563:4581): Carpincho 2 - Comienza a ejecutar
+[INFO] 16:15:26:083 Kernel/(4563:4577): Comienza la ejecución de la detección de Deadlock
+[INFO] 16:15:26:502 Kernel/(4563:4648): MATE_CLOSE: Se recibió del carpincho 2 un MATE CLOSE
+[INFO] 16:15:26:506 Kernel/(4563:4581): Carpincho 2 - Eliminado
+[INFO] 16:15:26:507 Kernel/(4563:4581): Carpincho 3 - Comienza a ejecutar
+[INFO] 16:15:36:519 Kernel/(4563:4653): MATE_CLOSE: Se recibió del carpincho 3 un MATE CLOSE
+[INFO] 16:15:36:524 Kernel/(4563:4581): Carpincho 3 - Eliminado
