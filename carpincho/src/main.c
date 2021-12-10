@@ -97,7 +97,7 @@ void init_sems()
 }
 
 //----PLANIFICACION MAIN
-/*  int main(int argc, char *argv[])
+/*int main(int argc, char *argv[])
 {
     logger = log_create(LOG_PATH, PROGRAM_NAME, true, LOG_LEVEL_DEBUG);
     printf("creo logger\n");
@@ -119,9 +119,9 @@ void init_sems()
     pthread_join(carpincho3_thread, NULL);
     free_all();
     puts("Termine!");
-}  */
+} */
 //----------------------SUSPENSION---------------------//
-/* void* carpincho1_func(void* config){
+ void* carpincho1_func(void* config){
 
 	mate_instance instance;
 
@@ -145,7 +145,7 @@ void init_sems()
 void* carpincho2_func(void* config){
 
 	mate_instance instance;
-
+    
 	printf("C2 - Llamo a mate_init\n");
 	mate_init(&instance, (char*)config);
 
@@ -203,19 +203,20 @@ void* carpincho4_func(void* config){
     mate_close(&instance);
 
 	return 0;
-}*/
+}
 
-/*
+
 //----SUSPENSION MAIN
 int main(int argc, char *argv[]) {
 
-   memoria_carpincho();
+   //memoria_carpincho();
 
-	/* pthread_t carpincho1;
+	pthread_t carpincho1;
 	pthread_t carpincho2;
 	pthread_t carpincho3;
 	pthread_t carpincho4;
-
+	
+    printf("Prueba de suspensión");
 	printf("MAIN - Utilizando el archivo de config: %s\n", "cfg/carpincho.config");
 
 	pthread_create(&carpincho1, NULL, carpincho1_func, "cfg/carpincho.config");
@@ -235,7 +236,7 @@ int main(int argc, char *argv[]) {
 
 	return EXIT_SUCCESS;
 } 
- */
+
 /*
 int main(int argc, char* argv[]) {
 
@@ -256,7 +257,7 @@ int main(int argc, char* argv[]) {
  //pthread_join(hilo, NULL);
    return 0;
 }
-/*int main(int argc, char *argv[])
+int main(int argc, char *argv[])
 {
     logger = log_create(LOG_PATH, PROGRAM_NAME, true, LOG_LEVEL_DEBUG);
     pthread_t carpincho1_thread;
@@ -352,7 +353,7 @@ void carpincho_comportamiento3(void *arg)
 
 }
 
-void carpincho_comportamiento_memoria(void* arg)
+/*void carpincho_comportamiento_memoria(void* arg)
 {
    mate_instance* c = malloc(sizeof(mate_instance));
 
@@ -424,10 +425,10 @@ void memoria_carpincho()
    }
 
    abort();
-}
+}*/
 
 //------------------------------- DEADLOCK--------------------//
-
+/*
 
 void* carpincho1_func(void* config){
 
@@ -571,10 +572,11 @@ void* carpincho6_func(void* config){
 	mate_close(&instance);
 	return 0;
 }
+
 //------DEADLOCK MAIN
 int main(int argc, char *argv[]) {
 
-    if ( argc>1 && (strcmp(argv[1], "memoria")== 0)) memoria_carpincho();
+    //if ( argc>1 && (strcmp(argv[1], "memoria")== 0)) memoria_carpincho();
 
     mate_instance instance;
 
@@ -639,4 +641,4 @@ int main(int argc, char *argv[]) {
 
 	return EXIT_SUCCESS;
 }
- 
+*/
