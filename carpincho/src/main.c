@@ -94,8 +94,8 @@ void init_sems()
     sem_init(va_el_3, 1, 0);
 }
 
-
-/* int main(int argc, char *argv[])
+//----PLANIFICACION MAIN
+/*  int main(int argc, char *argv[])
 {
     logger = log_create(LOG_PATH, PROGRAM_NAME, true, LOG_LEVEL_DEBUG);
     printf("creo logger\n");
@@ -117,7 +117,7 @@ void init_sems()
     pthread_join(carpincho3_thread, NULL);
     free_all();
     puts("Termine!");
-} */ 
+}  */
 //----------------------SUSPENSION---------------------//
 /* void* carpincho1_func(void* config){
 
@@ -204,6 +204,7 @@ void* carpincho4_func(void* config){
 }*/
 
 /*
+//----SUSPENSION MAIN
 int main(int argc, char *argv[]) {
 
    memoria_carpincho();
@@ -568,7 +569,7 @@ void* carpincho6_func(void* config){
 	mate_close(&instance);
 	return 0;
 }
-
+//------DEADLOCK MAIN
 int main(int argc, char *argv[]) {
 
     mate_instance instance;
@@ -634,3 +635,4 @@ int main(int argc, char *argv[]) {
 
 	return EXIT_SUCCESS;
 }
+ 

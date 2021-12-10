@@ -16,15 +16,17 @@ void procesador()
 { t_pcb *carpincho;
    while (!terminar)
    {
+     
       sem_wait(&lista_ejecutando_con_elementos);
+     // sem_wait(&mutex_lista_oredenada_por_algoritmo);
       printf("paso a procesador\n");
       sem_wait(&mutex_lista_oredenada_por_algoritmo);
       carpincho = (t_pcb *)list_remove(lista_ordenada_por_algoritmo, 0);
       sem_post(&mutex_lista_oredenada_por_algoritmo);
-      log_info(logger, "Carpincho %d - Comienza a ejecutar", carpincho->pid);
-      printf("\n!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!PROCESADOR: saco de lista ejecutando ordenada a carpincho %d\n", carpincho->pid);
       carpincho->tiempo.time_stamp_fin = temporal_get_string_time("%H:%M:%S:%MS"); // TIEMPO DE ESPERA
       carpincho->tiempo.tiempo_de_espera = obtener_tiempo(carpincho->tiempo.time_stamp_inicio, carpincho->tiempo.time_stamp_fin);
+      log_info(logger, "Carpincho %d - Comienza a ejecutar", carpincho->pid);
+      printf("\n!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!PROCESADOR: saco de lista ejecutando ordenada a carpincho %d\n", carpincho->pid);
       printf("PROCESADOR:  carpincho %d TIEMPO DE ESPERA %f\n\n",carpincho->pid, carpincho->tiempo.tiempo_de_espera);
       strcpy(carpincho->tiempo.time_stamp_inicio, carpincho->tiempo.time_stamp_fin);//TIEMPO EJECUTADO INICIO
       carpincho->estado = 'E';
@@ -61,20 +63,12 @@ void procesador()
          }
          carpincho->tiempo.time_stamp_fin = temporal_get_string_time("%H:%M:%S:%MS");//TIEMPO EJECUTADO FIN
          carpincho->tiempo.tiempo_ejecutado = obtener_tiempo(carpincho->tiempo.time_stamp_inicio, carpincho->tiempo.time_stamp_fin);
-         printf("PROCESADOR: carpincho se blqueara por semaforo\n");
          carpinchos_bloqueados++;
          printf("PROCESADOR: carpinchos cloqueados %d\n", carpinchos_bloqueados);
          break; /* ACA SE ATAJAN LOS ENVENTO SUQ HACEN QUE EL CARPINCHO PASE A BLOQUEADO */
 
       case MATE_CLOSE:
          eliminar_carpincho(carpincho);
-         sem_post(&controlador_multiprogramacion);
-         /* carpincho->estado = 'F';
-         sem_wait(&mutex_cola_finalizados);
-         queue_push(cola_finalizados, (void *)carpincho);
-         sem_post(&mutex_cola_finalizados);
-         sem_post(&cola_finalizados_con_elementos);
-         sem_post(&mate_close);*/
          break;
       }
       
@@ -88,9 +82,7 @@ bool verificar_suspension()
       return true;
    else{
    log_info(logger, "No se deben suspender carpinchos");
-   printf("No se deben suspender carpinchos");
    log_info(logger, "Carpinchos bloqueados: %d", carpinchos_bloqueados);
-   printf("Carpinchos bloqueados: %d", carpinchos_bloqueados);
       return false;
    }
 }
@@ -99,8 +91,9 @@ void iniciar_planificador_corto_plazo(t_pcb* carpincho)
    sem_wait(&mutex_lista_oredenada_por_algoritmo);
    carpincho->estado = 'R';
    carpincho->tiempo.time_stamp_inicio = temporal_get_string_time("%H:%M:%S:%MS");//INICIO TIEMPO DE ESPERA
+  
      if (strcmp(configuracion.ALGORITMO_PLANIFICACION, "SJF") == 0)
-      {  estimador(carpincho);
+      {   estimador(carpincho);
          listar_por_sjf(carpincho);
          for(int i= 0; i< list_size(lista_ordenada_por_algoritmo); i++){
          t_pcb* carpincho2= (t_pcb*) list_get(lista_ordenada_por_algoritmo, i);
@@ -108,9 +101,8 @@ void iniciar_planificador_corto_plazo(t_pcb* carpincho)
          }
       }
       else
-      {  
-         estimador(carpincho);
-         estimador_HRRN(carpincho);
+      {  estimador(carpincho);
+          estimador_HRRN(carpincho);
          listar_por_hrrn((void *)carpincho);
          for (int i = 0; i < list_size(lista_ordenada_por_algoritmo); i++)
          {
@@ -118,7 +110,8 @@ void iniciar_planificador_corto_plazo(t_pcb* carpincho)
             printf("\nlista ordenada HRRN :----------------------------------------------------------------- carpincho %d, estimacion %f\n", carpincho2->pid, carpincho2->tiempo.estimacion);
          } 
 
-      } sem_post(&mutex_lista_oredenada_por_algoritmo);
+      } //sem_post(&mutex_lista_oredenada_por_algoritmo);
+       sem_post(&mutex_lista_oredenada_por_algoritmo);
         sem_post(&lista_ejecutando_con_elementos); 
 }
 
@@ -220,9 +213,7 @@ void listar_por_sjf(t_pcb *carpincho)
 }
 
 void estimador(t_pcb *carpincho)
-
 {
-   printf("ESTIMADOR SJF:\n");
    mostrar_tiempos(carpincho);
    double aux = (carpincho->tiempo.estimacion * configuracion.ALPHA);
    carpincho->tiempo.estimacion = aux + (carpincho->tiempo.tiempo_ejecutado * (1 - configuracion.ALPHA));
@@ -236,7 +227,6 @@ void estimador_HRRN(t_pcb* carpincho)
    if (carpincho->tiempo.estimacion != 0.000000)
    {
       carpincho->tiempo.estimacion = (carpincho->tiempo.tiempo_de_espera + carpincho->tiempo.estimacion) / carpincho->tiempo.estimacion;
-      printf("paso\n");
    }
    mostrar_tiempos(carpincho);
    log_info(logger, "Carpincho %d - Estimación actual: %f", carpincho->pid, carpincho->tiempo.estimacion);
@@ -261,7 +251,7 @@ double obtener_tiempo(char *inicio, char *fin)
          switch (i)
          {
          case 0:
-            total += (dif * 3600); //horas
+           // total += (dif * 3600); //horas
             break;
          case 1:
             total += (dif * 60); //minutos
@@ -300,9 +290,7 @@ void* comparador_HRRN(void *arg1,void* arg2)
    } else
    {
      return (void*)carpincho2;
-   }
-   
-  
+   } 
 }
 void bloquear_por_mediano_plazo(t_pcb *carpincho)
 {
@@ -367,13 +355,6 @@ void iniciar_planificador_largo_plazo()
       }
       printf(" se va  a corotoplazo plp\n");
       iniciar_planificador_corto_plazo(carpincho);
-     /*  sem_wait(&mutex_cola_ready);
-      queue_push(cola_ready, carpincho);
-      carpincho->estado = 'R';
-      carpincho->tiempo.time_stamp_inicio = temporal_get_string_time("%H:%M:%S:%MS");
-      sem_post(&mutex_cola_ready);
-      sem_post(&cola_ready_con_elementos);
-      printf("PLANIFICADOR LARGO PLAZO: metio a carpincho %d en READYYYYYYYYYYYYYYYYYYYYYYYYY\n", carpincho->pid); */
    }
 }
 
@@ -422,11 +403,10 @@ void eliminar_carpincho(void *arg)
    
    sem_destroy(&carpincho->semaforo_evento);
    sem_destroy(&carpincho->semaforo_fin_evento);
-   close(carpincho->fd_cliente);
    printf("ELIMINAR CARPINCHO: CERRANDO CONEXION %d de carpincho %d\n", carpincho->fd_cliente, carpincho->pid);
    //close(carpincho->fd_memoria);
    log_info(logger, "Carpincho %d - Eliminado", carpincho->pid);
-  // free(carpincho);
+   free(carpincho);
 }
 
 void ejecutando_a_bloqueado(t_pcb *carpincho, t_queue *cola, sem_t *mutex)
