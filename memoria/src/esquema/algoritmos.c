@@ -265,20 +265,21 @@ void page_use(int pid, int marco, pag_t* p, int n_pagina, int codigo)
         p->modificado = 0;
     }
 
+    if (p->tlb == 1) {
+        tlb_t *reg = buscar_reg_en_tlb(pid, n_pagina);
+        tlb_page_use(reg);
+        return;
+    }
+
     if (p->tlb == 0) {
         tlb_insert_page(pid, n_pagina, marco, codigo);
         p->tlb = 1;
-    }
-
-    if (p->tlb == 1) {
+        return;
     }
 
     p->presente = 1;
     p->algoritmo = alg_comportamiento();
     p->marco = marco;
-
-  
-
 
 }
 
@@ -292,29 +293,27 @@ int alg_comportamiento_clock_modificado()
     return 1;
 }
 
-
-
 void tlb_insert_page(int pid, int n_pagina, int marco, int codigo)
 {
     int victima = tlb_obtener_victima();
+    printf("Pagina insertada en tlb: %d \n", victima);
     
     tlb_t* reg = list_get(tlb, victima);
+    if (reg->pid != -1) actualizar_victima_de_tlb(reg);
 
     reg->pid = pid;
     reg->pagina = n_pagina;
     reg->marco = marco;
     reg->modificado = codigo == WRITE ? 1 : 0;
-    reg->alg_tlb = alg_comportamiento_tlb();
-
-
+    reg->alg_tlb = suma_atomica(&LRU_C);
 }
 
 int alg_comportamiento_tlb_fifo()
 {
-    return suma_atomica(&FIFO_TLB);
+    return suma_atomica(&LRU_C);
 }
 
 int alg_comportamiento_tlb_lru()
 {
-    return suma_atomica(&FIFO_TLB);
+    return suma_atomica(&LRU_C);
 }

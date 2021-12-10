@@ -111,19 +111,18 @@ void paginas_actualizar_modificado(int pid, int pagina){
 int fifo_tlb()
 {
     int tamanio = list_size(tlb);
-    int tlb_victima = FIFO_TLB;
-    int victima;
+    int tlb_victima = LRU_C;
+    int victima = 10;
 
-    for(int i =0; i < tamanio; i++) 
-    {
+    for(int i =0; i < tamanio; i++) {
+
        tlb_t * reg = list_get(tlb, i);
-       if(reg->FIFO_TLB < tlb_victima) 
-       {
+
+       if (reg->FIFO_TLB < tlb_victima) {
            victima = i;
            tlb_victima = reg->FIFO_TLB;
        }
     } 
-
     return victima;
 } 
 
@@ -136,5 +135,17 @@ int lru_tlb()
 void tlb_page_use_fifo(tlb_t* reg){}
 
 void tlb_page_use_lru(tlb_t* reg){
-    reg->alg_tlb = suma_atomica(&LRU_TLB);
+    reg->alg_tlb = suma_atomica(&FIFO_TLB);
+}
+
+tlb_t* buscar_reg_en_tlb(int pid, int n_pagina)
+{
+    int tamanio = list_size(tlb);
+
+    for (int i=0; i < tamanio; i++) {
+        tlb_t *reg = list_get(tlb, i);
+        if (reg->pid == pid && reg->pagina == n_pagina) return reg;
+    }
+
+    return NULL;
 }

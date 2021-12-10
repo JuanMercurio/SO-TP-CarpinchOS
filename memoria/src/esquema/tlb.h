@@ -48,4 +48,6 @@ int tlb_obtener_victima();
 
 int tlb_lugar_libre();
 
+tlb_t* buscar_reg_en_tlb(int pid, int n_pagina);
+
 #endif
