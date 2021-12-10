@@ -145,7 +145,7 @@ void init_sems()
 void* carpincho2_func(void* config){
 
 	mate_instance instance;
-
+    
 	printf("C2 - Llamo a mate_init\n");
 	mate_init(&instance, (char*)config);
 
@@ -215,7 +215,8 @@ void* carpincho4_func(void* config){
 	pthread_t carpincho2;
 	pthread_t carpincho3;
 	pthread_t carpincho4;
-
+	
+    printf("Prueba de suspensión");
 	printf("MAIN - Utilizando el archivo de config: %s\n", "cfg/carpincho.config");
 
 	pthread_create(&carpincho1, NULL, carpincho1_func, "cfg/carpincho.config");
@@ -256,7 +257,7 @@ int main(int argc, char* argv[]) {
  //pthread_join(hilo, NULL);
    return 0;
 }
-/*int main(int argc, char *argv[])
+int main(int argc, char *argv[])
 {
     logger = log_create(LOG_PATH, PROGRAM_NAME, true, LOG_LEVEL_DEBUG);
     pthread_t carpincho1_thread;
@@ -497,7 +498,7 @@ void* carpincho6_func(void* config){
 //------DEADLOCK MAIN
 /* int main(int argc, char *argv[]) {
 
-    if ( argc>1 && (strcmp(argv[1], "memoria")== 0)) memoria_carpincho();
+    //if ( argc>1 && (strcmp(argv[1], "memoria")== 0)) memoria_carpincho();
 
     mate_instance instance;
 

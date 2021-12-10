@@ -27,10 +27,15 @@ int main(int argc, char *argv[])
 
 void terminar_programa()
 {
+   printf("Entro a destrucción config\n");
    config_destroy(config);
+   printf("Entro a destrucción logger\n");
    log_destroy(logger);
+   printf("Entro a destrucción semaforos\n");
    destruir_semaforos();
+   printf("Entro a destrucción colas y listas\n");
    destruir_colas_y_listas();
+   printf("destuyendo detacheds\n");
    //pthread_attr_destroy(&detached2);
    //pthread_attr_destroy(&detached3);
 }
@@ -379,7 +384,8 @@ void receptor(void *arg)
    }
    printf("MAIN KERNEL SALIO DEL WHILEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEE\n");
    //close(cliente);
-   sem_post(&controlador_multiprogramacion);
+
+   //sem_post(&controlador_multiprogramacion);
    printf("RECEPTOR: saliendo\n");
 }
 
@@ -448,9 +454,12 @@ void inicializar_planificacion()
 }
 void program_killer()
 {
+   printf("en program killer\n");
    char *leido = string_new();
    log_info(logger, "Para terminar precione cualquier tecla.");
    scanf("%s", leido);
+   //leido=getchar();
+   printf("terminar=true");
    terminar = true;
    terminar_programa();
 }

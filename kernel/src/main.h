@@ -13,6 +13,7 @@
 #include <commons/collections/queue.h>
 #include <commons/temporal.h>
 #include <mensajes/mensajes.h>
+#include <stdio.h>
 
 extern bool terminar;
 extern int carpinchos_bloqueados;

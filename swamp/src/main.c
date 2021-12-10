@@ -7,7 +7,7 @@
 
 int main(int argc, char* argv[]) {
 
-    memoria_tests(argc, argv[1]);
+    //memoria_tests(argc, argv[1]);
 
     // CONECTARSE A MEMORIA
     // CAMBIAR IP Y PUERTO POR LA COFIG. 
@@ -21,11 +21,13 @@ int main(int argc, char* argv[]) {
     char* tipo_asignacion = recibir_mensaje(fd_memoria);
      printf("%s\n", tipo_asignacion);
     asignacionFija = 0;
-
+    
     if(strcmp(tipo_asignacion,"FIJA") == 0){
         printf("entro a if de FIJA\n");
         asignacionFija = 1;
     }
+    free(handshake);
+    free(tipo_asignacion);
     printf("%d\n", asignacionFija);
     lista_carpinchos= list_create();
     lista_marcos= list_create();
@@ -36,7 +38,7 @@ int main(int argc, char* argv[]) {
     agrego_lista_pedidos = malloc(sizeof(sem_t));
     sem_init(mutex_lista_pedidos,0,1);
     sem_init(agrego_lista_pedidos,0,0);
-  
+    cant_ped = 0;
 
    //solo corre si corremos el binario asi: binario test
    tests(argc, argv[1]);
@@ -65,17 +67,20 @@ int main(int argc, char* argv[]) {
         marcosLibes();
     }
 
-    int cantidad_lista_pedidos = 0;
-    while( cantidad_lista_pedidos > 0 || termino == 0 ){
-       
+    int cantidad_lista_pedidos = 1;
+    //cantidad_lista_pedidos
+    while(cant_ped  > 0 || termino == 0 ){
         
-
         //sem_wait(agrego_lista_pedidos);
-        Pedido* ped = malloc(sizeof(Pedido)); 
+        Pedido* ped; //= malloc(sizeof(Pedido)); 
         sem_wait(mutex_lista_pedidos);
         // mostrarSemaforosYListaPedidos("ANTES DE FIJARSE EN LA LISTA");
         cantidad_lista_pedidos = list_size(lista_pedidos);
-        if ( cantidad_lista_pedidos >0 ){
+        
+        if ( cantidad_lista_pedidos > 0 ){
+            cant_ped--;
+            printf("<<<<<<< cant elementos: %d <<<<<<<< termino %d  <<<<<<\n",cantidad_lista_pedidos,termino);
+            printf("Queda en pedidos %d\n",list_size(lista_pedidos));
             ped = (Pedido*) list_remove(lista_pedidos,0);
             cantidad_lista_pedidos--;
             sem_post(mutex_lista_pedidos);
@@ -197,6 +202,8 @@ int main(int argc, char* argv[]) {
                     cont_pag =  buscarPaginaFija(ped->pid,ped->pagina);
                 }
                 else{
+                    //---------------------------------------------------------------------------------------------------
+                    // VERIFICAR QUE EXISTA ESE PID Y PAGINA
                     cont_pag =  buscarPaginaDinamico(ped->pid,ped->pagina);
                     
                 }
@@ -220,7 +227,7 @@ int main(int argc, char* argv[]) {
         }
          
         
-        
+        // VERUFUCAR TEMA MILISEGUNDOS Y MICROSEGUNDOS. 
         usleep(configuracion.RETARDO_SWAP);
     }
     
@@ -234,15 +241,47 @@ int main(int argc, char* argv[]) {
 
 void destroy_and_free ( int fd_memoria){
     printf("Entro a destruir y libearar.\n");
-    list_destroy(lista_carpinchos);
+    printf("Queda en pedidos %d\n",list_size(lista_pedidos));
+    if( list_size(lista_pedidos) > 0){
+        Pedido* ped = (Pedido*) list_remove(lista_pedidos,0);
+        printf("Pedido no realizado: pid %d oper: %d \n",ped->pid,ped->oper);
+    }
+    
+    
+    list_destroy_and_destroy_elements(lista_carpinchos,&borrar_Carpincho);
     list_destroy(lista_marcos);
 
     //marcos_libres_fija = list_create();
-    list_destroy(marcos_libres);
+    list_destroy_and_destroy_elements(marcos_libres, &borrar_marcos_libres);
+    //list_destroy(marcos_libres);
     list_destroy(lista_pedidos);
     sem_destroy(mutex_lista_pedidos);
     sem_destroy(agrego_lista_pedidos);
     close(fd_memoria);
+}
+void borrar_Carpincho(Carpincho_Swamp* car){
+
+   /*free(car->pid);
+   free(car->numero_archivo);
+   free(car-> cantidadPaginas);
+   free(car-> orden);
+   free(car->base);*/
+   // borrar lista paginas
+   //printf("entro\n");
+   list_destroy_and_destroy_elements(car->paginas,&borrar_paginas_Ocupadas);
+   free(car);
+
+}
+void borrar_paginas_Ocupadas( Marcos_x_pagina* mar_pag){
+
+    //free(mar_pag->base);
+    //free(mar_pag->pagina);
+    //free(mar_pag->marco);
+    free(mar_pag);
+}
+void borrar_marcos_libres (un_marco_libre* mar_lib){
+    free(mar_lib);
+    
 }
 void pruebas(){
     if ( asignacionFija){
@@ -252,7 +291,7 @@ void pruebas(){
         }
         //printf("La cantidad del archivo 0 es: %d\n",cantidadBarra0File (configuracion.ARCHIVOS_SWAP_list[0]));
         //printf("La cantidad del archivo 1 es: %d\n",cantidadBarra0File (configuracion.ARCHIVOS_SWAP_list[1]));
-        int error;
+       
         crearCarpinchoFijaDOS(1);
         crearCarpinchoFijaDOS(2);
         crearCarpinchoFijaDOS(3);
@@ -286,7 +325,7 @@ void pruebas(){
         pal = buscarPaginaFija(2,2);
         printf("pagina 1:%s\n",pal);
         BorrarPaginaFija(1,2);
-        //int error = borrarCarpinchoFija(2);
+        int error = borrarCarpinchoFija(2);
         error = borrarCarpinchoFija(5);
         pal = buscarPaginaFija(4,3);
         printf("pagina 1:%s\n",pal);
@@ -348,7 +387,7 @@ void crearArchivos(){
         
         /*FILE* archivo = fopen (configuracion.ARCHIVOS_SWAP_list[i],"w+");
 
-        /*for ( int j = 0; j< configuracion.TAMANIO_SWAP;j++){
+        for ( int j = 0; j< configuracion.TAMANIO_SWAP;j++){
             fputs("\0",archivo);
         }
         fclose(archivo);*/
@@ -530,7 +569,7 @@ int CrearCarpincho( int pidd){
         carpincho = malloc(sizeof(Carpincho_Swamp));
         carpincho->pid = pidd;
         carpincho->numeroArchivo = mejorArchivo;
-        carpincho->paginas= list_create();
+        carpincho->paginas = list_create();
         list_add(lista_carpinchos,carpincho);
         return 1;
     }
@@ -566,9 +605,11 @@ int agregarPaginaDinamica(int pid, int pagina, char* contenido){
         // printf("FILE IN MEMORY: %s\n",file_in_memory);
         //printf("CANT FILE IN MEMORY: %d\n",string_length(file_in_memory));
         close(file);
+        return 1;
     }
     else{
         printf("CARPINCHO NO ENCONTRADO\n");
+        return -1;
     }
 }
 
@@ -589,8 +630,8 @@ char* buscarPaginaDinamico(int pid, int pagina){
     }
     //printf("La cantidad del archivo es: %d\n",cantidadCaracteresFile(configuracion.ARCHIVOS_SWAP_list[car->numeroArchivo]));
     int  file =  open(configuracion.ARCHIVOS_SWAP_list[car->numeroArchivo], O_RDWR, S_IRUSR|S_IWUSR);
-    struct stat* estadisticas;
-    int tamano = stat (file,estadisticas);
+    //struct stat* estadisticas;
+    //int tamano = stat (file,estadisticas);
     //printf("El valor el tamaño es %d\n",estadisticas.st_size);
     char * file_in_memory = mmap(NULL,configuracion.TAMANIO_SWAP,PROT_READ |PROT_WRITE ,MAP_SHARED, file,0);
     //printf("FILE IN MEMORY: %s\n",file_in_memory);
@@ -623,13 +664,16 @@ int buscarMarcoLibre(int num_archivo){
     int max = list_size(marcos_libres);
     printf("EL max es %d\n",max);
     for(int i = 0; i<max;i++){
-        un_marco_libre* mar = malloc (sizeof(un_marco_libre));
+        // ¿¿PORQUE??
+        un_marco_libre* mar;// = malloc (sizeof(un_marco_libre));
         mar = list_get(marcos_libres,i);
         printf("marco_pagina %d - numero_archivo:%d - base:%d \n",i,mar->numero_archivo,mar->base);
         if(mar->numero_archivo == num_archivo){
-            list_remove(marcos_libres,i);
+            //list_remove_and_destroy_element(lista_carpinchos,i,&borrar_Carpincho);
+           Carpincho_Swamp* car = list_remove(marcos_libres,i);
             max = max-1;
             return mar->base;
+            free(car);
         }
     }
     return -1;
@@ -642,7 +686,8 @@ int borrarCarpincho(int pid){
         int  file =  open(configuracion.ARCHIVOS_SWAP_list[car->numeroArchivo], O_RDWR, S_IRUSR|S_IWUSR);
         char * file_in_memory = mmap(NULL,configuracion.TAMANIO_SWAP,PROT_READ |PROT_WRITE ,MAP_SHARED, file,0);
         for(int i = 0; i<max;i++){
-            mar_x_pag = malloc (sizeof(Marcos_x_pagina));
+            // ¿¿PORQUE??
+            //mar_x_pag = malloc (sizeof(Marcos_x_pagina));
             mar_x_pag = list_get(car->paginas,i);
             for(int j =mar_x_pag->base; j< mar_x_pag->base+configuracion.TAMANIO_PAGINA;j++){
                 file_in_memory[j]='\0';
@@ -741,7 +786,7 @@ int borrarPagina(int pid, int pagina){
 int crearCarpinchoFijaDOS(int pidd){
     printf("Creando carpincho %d\n",pidd);
     Carpincho_Swamp* car = buscarCarpincho(pidd);
-    Marcos_x_pagina* mar_x_pag;
+    //Marcos_x_pagina* mar_x_pag;
     if (elegirMejorArchivoDOS (pidd) != -1 && car->pid == -1 ){
         //printf("ENTRO %d\n",pidd);
         int mejorArchivo = elegirMejorArchivoDOS();
@@ -750,7 +795,9 @@ int crearCarpinchoFijaDOS(int pidd){
         carpincho = malloc(sizeof(Carpincho_Swamp));
         carpincho->pid = pidd;
         carpincho->numeroArchivo = mejorArchivo;
+        // verificar que da bien la BASE
         carpincho->base = elegirBaseCarpincho(mejorArchivo);
+       
         carpincho->paginas = list_create();
         for( int i = 0; i< configuracion.MARCOS_MAXIMOS; i++ ){
             Marcos_x_pagina* mar_pag = malloc(sizeof(Marcos_x_pagina));
@@ -837,6 +884,7 @@ int elegirBaseCarpincho(int num_archivo){
         }
         
     }
+    return -1;
 }
 void mostrarCarpinchos(){
     printf("--------\nMostrando carpincho\n");
@@ -894,6 +942,7 @@ int agregarPaginaFija(int pid, int pagina, char* contenido){
         //munmap(file_in_memory,cantidadCaracteresFile(configuracion.ARCHIVOS_SWAP_list[car->numeroArchivo]));
         
         close(file);
+        return 1;
 
        
     }
@@ -1009,8 +1058,10 @@ int BorrarPaginaFija(int pid, int pagina){
         //printf("Devuelve: %s.\n",pagina_devolver);
         //printf("CANT CARACTERES: %d.\n",string_length(pagina_devolver));
         //return pagina_devolver;
+        return 1;
     }
     else{
+        return -1;
         printf("Pagina no encontrada o pagina no encontrada\n");
     }
     
@@ -1100,7 +1151,8 @@ int solicitarPaginaFija(int pid, int pagina){
 }
 
 // CONEXIONES
-void terminar_programa(){
+
+/*void terminar_programa(){
    config_destroy(config);
 }
 void iniciar_swamp(){
@@ -1145,6 +1197,27 @@ int resolver_estado(int estado, int cliente){
    }
 
 }
+
+
+
+
+
+// funcion para testear con memoria rapido
+void memoria_tests(int argc, char* argv)
+{
+    if(argc == 1 || strcmp(argv, "memoria") != 0) return;
+    iniciar_swamp();
+    atender_clientes();
+    abort();
+}*/
+
+void recibir_asignacion(int cliente){
+    int op = recibir_operacion(cliente);
+    if(op != INICIO_CONFIG)return ;
+    //int size = recibir_int(cliente);
+
+}
+
 void agregarPedidosMemoria (int cliente){
     int i = 0;
     while(1){
@@ -1159,30 +1232,14 @@ void agregarPedidosMemoria (int cliente){
         sem_post(agrego_lista_pedidos);
         sleep(1);
         i++;
-        /* char* nombre_pedido;
+         char* nombre_pedido;
             int pid;
             int pagina;
-            char* contenido_pagina;
-        */
+            char* contenido_pagina;*/
+        
     }
     
 }
-void recibir_asignacion(int cliente){
-    int op = recibir_operacion(cliente);
-    if(op != INICIO_CONFIG)return ;
-    //int size = recibir_int(cliente);
-
-}
-
-// funcion para testear con memoria rapido
-void memoria_tests(int argc, char* argv)
-{
-    if(argc == 1 || strcmp(argv, "memoria") != 0) return;
-    iniciar_swamp();
-    atender_clientes();
-    abort();
-}
-
 
 void memoria_operacion(int cliente){
 
@@ -1208,9 +1265,11 @@ void memoria_operacion(int cliente){
             ped->oper = codop;
             sem_wait(mutex_lista_pedidos);
             list_add(lista_pedidos,ped);
+            cant_ped++;
             sem_post(mutex_lista_pedidos);
             //sem_post(agrego_lista_pedidos);
             mostrarSemaforosYListaPedidos("AGREGA A LA LISTA");
+            termino = 0;
             break;
 
         case SOLICITUD_INICIO:
@@ -1224,10 +1283,12 @@ void memoria_operacion(int cliente){
             printf("creo struct de pid %d\n", pid);
             sem_wait(mutex_lista_pedidos);
             list_add(lista_pedidos,ped);
+            cant_ped++;
             sem_post(mutex_lista_pedidos);
             //sem_post(agrego_lista_pedidos);
             printf("agrego a lista\n");
             mostrarSemaforosYListaPedidos("AGREGA A LA LISTA");
+            termino = 0;
             break;
 
         case INICIO:
@@ -1239,10 +1300,12 @@ void memoria_operacion(int cliente){
             ped->oper = codop;
             sem_wait(mutex_lista_pedidos);
             list_add(lista_pedidos,ped);
+            cant_ped++;
             sem_post(mutex_lista_pedidos);
             printf("agregue un pedido a la lista \n");
             //sem_post(agrego_lista_pedidos);
             // mostrarSemaforosYListaPedidos("AGREGA A LA LISTA");
+            termino = 0;
             break;
 
         case SOLICITUD_PAGINA:
@@ -1256,9 +1319,11 @@ void memoria_operacion(int cliente){
             ped->oper = codop;
             sem_wait(mutex_lista_pedidos);
             list_add(lista_pedidos,ped);
+            cant_ped++;
             sem_post(mutex_lista_pedidos);
             //sem_post(agrego_lista_pedidos);
             mostrarSemaforosYListaPedidos("AGREGA A LA LISTA");
+            termino = 0;
             break;
 
         case BORRAR_PAGINA:
@@ -1272,9 +1337,11 @@ void memoria_operacion(int cliente){
             ped->oper = codop;
             sem_wait(mutex_lista_pedidos);
             list_add(lista_pedidos,ped);
+            cant_ped++;
             sem_post(mutex_lista_pedidos);
             //sem_post(agrego_lista_pedidos);
             mostrarSemaforosYListaPedidos("AGREGA A LA LISTA");
+            termino = 0;
             break;
          case OBTENER_PAGINA:
             //tamanio_pid = recibir_int(cliente);
@@ -1287,9 +1354,11 @@ void memoria_operacion(int cliente){
             ped->oper = codop;
             sem_wait(mutex_lista_pedidos);
             list_add(lista_pedidos,ped);
+            cant_ped++;
             sem_post(mutex_lista_pedidos);
             //sem_post(agrego_lista_pedidos);
             mostrarSemaforosYListaPedidos("AGREGA A LA LISTA");
+            termino = 0;
             break;
 
         case BORRAR_CARPINCHO:
@@ -1300,9 +1369,11 @@ void memoria_operacion(int cliente){
             ped->oper = codop;
             sem_wait(mutex_lista_pedidos);
             list_add(lista_pedidos,ped);
+            cant_ped++;
             sem_post(mutex_lista_pedidos);
             //sem_post(agrego_lista_pedidos);
             mostrarSemaforosYListaPedidos("AGREGA A LA LISTA");
+            termino = 0;
             break;
         default:
             termino = 1;
@@ -1320,7 +1391,7 @@ void mostrarSemaforosYListaPedidos(char* mensaje){
     sem_getvalue(mutex_lista_pedidos,&sem2);
     printf("VALOR MUTEX: %d\n",sem2);
     //semaforo = 
-    sem_getvalue(agrego_lista_pedidos,&sem2);
-    printf("VALOR lista pedidos: %d\n",sem2);
-    printf("La lista de pedidos tiene %d pedidos\n", list_size(lista_pedidos));
+    //sem_getvalue(agrego_lista_pedidos,&sem2);
+    //printf("VALOR lista pedidos: %d\n",sem2);
+    //printf("La lista de pedidos tiene %d pedidos\n", list_size(lista_pedidos));
 }
