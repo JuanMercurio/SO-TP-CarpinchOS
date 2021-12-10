@@ -148,7 +148,8 @@ while(!list_is_empty(sem->bloqueados)){
 }
 void sem_destroyer(void* semaforo){
  sem_kernel *a_destruir  = (sem_kernel*) semaforo;
-  list_destroy(a_destruir->bloqueados); 
+ free(a_destruir->id);
+  list_destroy(&a_destruir->bloqueados); 
  sem_destroy(&a_destruir->mutex);
  sem_destroy(&a_destruir->mutex_cola);
 free(a_destruir); 
@@ -164,8 +165,8 @@ void io_destroyer(void *arg)
    else
    {
       queue_destroy_and_destroy_elements(a_destruir->bloqueados, (void *)eliminar_carpincho);
-   }
-
+   } 
+   free(&a_destruir->id);
    sem_destroy(&a_destruir->mutex_io);
    sem_destroy(&a_destruir->cola_con_elementos);
    free(a_destruir);

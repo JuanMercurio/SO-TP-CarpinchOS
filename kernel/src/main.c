@@ -187,7 +187,8 @@ void receptor(void *arg)
          log_info(logger, "Se recibió del carpincho %d un SEM INIT para el semáforo %s con valor %d\n ", carpincho->pid, semaforo->nombre_semaforo, semaforo->valor);
          int resultado = sem_kernel_init(semaforo->nombre_semaforo, semaforo->valor); // usa lo que necesit
          enviar_int(cliente, resultado);                                              // responde peticion con ok
-         free(semaforo->nombre_semaforo);                                             // bora lo que alloco
+         free(semaforo->nombre_semaforo);
+         free(semaforo->buffer);                                             // bora lo que alloco
          free(semaforo);
 
          break;

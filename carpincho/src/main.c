@@ -121,7 +121,7 @@ void init_sems()
     puts("Termine!");
 } */
 //----------------------SUSPENSION---------------------//
- void* carpincho1_func(void* config){
+/* void* carpincho1_func(void* config){
 
 	mate_instance instance;
 
@@ -236,7 +236,7 @@ int main(int argc, char *argv[]) {
 
 	return EXIT_SUCCESS;
 } 
-
+*/
 /*
 int main(int argc, char* argv[]) {
 
@@ -428,7 +428,7 @@ void memoria_carpincho()
 }*/
 
 //------------------------------- DEADLOCK--------------------//
-/*
+
 
 void* carpincho1_func(void* config){
 
@@ -641,4 +641,3 @@ int main(int argc, char *argv[]) {
 
 	return EXIT_SUCCESS;
 }
-*/
