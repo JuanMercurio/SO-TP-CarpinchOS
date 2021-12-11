@@ -39,7 +39,7 @@ bool sem_kernel_wait2( t_pcb *carpincho)
     bloquear_por_semaforo( carpincho); 
     return true;
 }
-printf("El carpincho %d realizo un SEM WAIT al semaforo %s", carpincho->pid, carpincho->semaforo_a_modificar);
+//printf("El carpincho %d realizo un SEM WAIT al semaforo %s", carpincho->pid, carpincho->semaforo_a_modificar);
    log_info(logger, "El carpincho %d realizo un SEM WAIT al semaforo %s", carpincho->pid, carpincho->semaforo_a_modificar);
 
   return false;
@@ -82,8 +82,8 @@ void bloquear_por_semaforo(t_pcb *carpincho){
 int sem_kernel_post(char *nombre) 
 {   int pos; 
    sem_kernel *sem = buscar_semaforo2(nombre, &pos);
-printf("semaforo encontrado %s\n", sem->id);
-printf("tamaño lista de bloqueados del semaforo %d\n", list_size(sem->bloqueados));
+//printf("semaforo encontrado %s\n", sem->id);
+//printf("tamaño lista de bloqueados del semaforo %d\n", list_size(sem->bloqueados));
    if(sem!=NULL){ 
       sem_wait(&mutex_lista_sem_kernel);
       sem->val ++;
@@ -97,7 +97,7 @@ printf("tamaño lista de bloqueados del semaforo %d\n", list_size(sem->bloqueado
    
       sem_post(&mutex_lista_sem_kernel);
       log_info(logger, "SEM POST EXITOSO a semaforo %s VALOR DEL SEMAFORO ============= %d", sem->id, sem->val);
-      printf("SEM POST EXITOSO a semaforo %s VALOR DEL SEMAFORO ============= %d\n", sem->id, sem->val);
+      //printf("SEM POST EXITOSO a semaforo %s VALOR DEL SEMAFORO ============= %d\n", sem->id, sem->val);
       return 0;
    }
   else{ printf("sem post : no se encontro semaforo\n");
@@ -158,27 +158,27 @@ free(a_destruir);
 void io_destroyer(void *arg)
 {
    io_kernel *a_destruir = (io_kernel *)arg;
-   printf("entro a destruir\n");
+   //printf("entro a destruir\n");
    if (queue_is_empty(a_destruir->bloqueados))
    {
       queue_destroy(a_destruir->bloqueados);
-      printf("destruyo cola de bloqueados de io %s sin elementos\n", a_destruir->id);
+      //printf("destruyo cola de bloqueados de io %s sin elementos\n", a_destruir->id);
    }
    else
    {
       queue_destroy_and_destroy_elements(a_destruir->bloqueados, (void *)eliminar_carpincho);
-       printf("destruyo cola de bloqueados de io %s con elementos\n", a_destruir->id);
+       //printf("destruyo cola de bloqueados de io %s con elementos\n", a_destruir->id);
    } 
    free(a_destruir->id);
-   printf("libero id de io\n");
+   //printf("libero id de io\n");
    sem_destroy(&a_destruir->mutex_io);
-      printf("destruyo semaforo mutex de io\n");
+     // printf("destruyo semaforo mutex de io\n");
 
    sem_destroy(&a_destruir->cola_con_elementos);
-      printf("destruyo semaforo de cola con elementos\n");
+     // printf("destruyo semaforo de cola con elementos\n");
 
    free(a_destruir);
-      printf("libero struct\n");
+      printf("IOs destruidas\n");
 
 }
 
@@ -272,7 +272,7 @@ void gestor_cola_io(void *datos){
    
   //log_info(logger,"GESTOR IO: desbloqueando carpincho PID %d", carpincho->pid);
 }
-printf("termino gestor de io\n");
+//printf("termino gestor de io\n");
 }
 io_kernel* bloquear_por_io(t_pcb *carpincho){
    io_kernel *io = buscar_io(carpincho->io_solicitada);
