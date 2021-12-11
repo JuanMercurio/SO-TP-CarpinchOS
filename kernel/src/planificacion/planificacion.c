@@ -265,9 +265,18 @@ double obtener_tiempo(char *inicio, char *fin)
          }
       }
    }
-   free(valores_inicio);
-   free(valores_fin);
+   liberar_char(valores_inicio);
+   liberar_char(valores_fin);
    return total;
+}
+
+void liberar_char(char** lista){
+int contador = 0;
+while(lista[contador] != NULL){
+        free(lista[contador]);
+        contador++;
+}
+free(lista);
 }
 
 bool comparador_SFJ(void* arg1,void* arg2)

@@ -6,10 +6,11 @@ void deteccion_deadlock()
 {
     sem_kernel *semaforo;
     deadlock_kernel *a_enlistar;
+    t_list *lista_posible_deadlock = list_create();
+    t_list *lista_con_deadlock = list_create();
 
     while (!terminar)
     {
-        t_list *lista_posible_deadlock = list_create();
         printf("---------------------------------------DEADLOCK ACTIVADO\n");
         sleep(configuracion.TIEMPO_DEADLOCK * 0.001);
         printf("---------------------------------------PASARON LOS SEGUNDOS\n");
@@ -53,7 +54,7 @@ void deteccion_deadlock()
                 printf("Verificando espera circular\n");
                 log_info(logger, "Verificando espera circular");
                 //log_info(logger, "Size lista_posible_deadlock %d", list_size(lista_posible_deadlock));
-                t_list *lista_con_deadlock = verificar_espera_circular(lista_posible_deadlock);
+                lista_con_deadlock = verificar_espera_circular(lista_posible_deadlock);
                 //printf("Size lista_posible_deadlock %d\n", list_size(lista_posible_deadlock));
                 //printf("Size lista_con_deadlock %d\n", list_size(lista_con_deadlock));
                 //  while (lista_con_deadlock != NULL)
@@ -62,32 +63,34 @@ void deteccion_deadlock()
                     finalizar_involucrados(lista_con_deadlock);
                 //lista_con_deadlock = verificar_espera_circular(lista_posible_deadlock);
                 // }
+
+                 printf("DESTUYENDO LISTA DE POSIBLE DEADLOCK\n");
+                log_info(logger,"Destruyendo lista de posible deadlock");
+                list_destroy_and_destroy_elements(lista_posible_deadlock, lista_deadlock_destroyer);
             }
             else
             {
                 printf("No se encontraron carpinchos en posible deadlock\n");
                 log_info(logger,"No se encontraron carpinchos en posible deadlock");
-            }
-            if (!list_is_empty(lista_posible_deadlock))
-            {
-                printf("DESTUYENDO LISTA DE POSIBLE DEADLOCK\n");
-                log_info(logger,"Destruyendo lista de posible deadlock");
-                list_destroy_and_destroy_elements(lista_posible_deadlock, lista_deadlock_destroyer);
-            }
-            else
-            {   log_info(logger,"Destruyendo lista de posible deadlock vacia");
+                log_info(logger,"Destruyendo lista de posible deadlock vacia");
                 printf("DESTUYENDO LISTA DE POSIBLE DEADLOCK VACIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA\n");
                 list_destroy(lista_posible_deadlock);
             }
         }
+    }
+    if(!list_is_empty(lista_posible_deadlock)){
+            list_destroy_and_destroy_elements(lista_posible_deadlock,lista_deadlock_destroyer);
+    }
+    else{
+            list_destroy(lista_posible_deadlock);
     }
 }
 
     void lista_deadlock_destroyer(void *arg)
     {
         deadlock_kernel *a_destruir = (deadlock_kernel *)arg;
-        free(a_destruir->retenido);
-        free(a_destruir->esperando);
+        free(&a_destruir->retenido);
+        free(&a_destruir->esperando);
         free(a_destruir);
     }
 

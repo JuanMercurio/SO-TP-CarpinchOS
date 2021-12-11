@@ -188,7 +188,7 @@ void receptor(void *arg)
          int resultado = sem_kernel_init(semaforo->nombre_semaforo, semaforo->valor); // usa lo que necesit
          enviar_int(cliente, resultado);                                              // responde peticion con ok
          free(semaforo->nombre_semaforo);
-         free(semaforo->buffer);                                             // bora lo que alloco
+         //free(semaforo->buffer->stream);                                             // bora lo que alloco
          free(semaforo);
 
          break;
