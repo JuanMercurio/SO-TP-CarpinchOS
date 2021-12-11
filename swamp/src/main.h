@@ -75,6 +75,8 @@ void memoria_operacion(int cliente);
 void borrar_Carpincho(Carpincho_Swamp* car);
 void borrar_paginas_Ocupadas( Marcos_x_pagina* mar_pag);
 void borrar_marcos_libres (un_marco_libre* mar_lib);
+void mostrarPaginasCarpincho(t_list* paginas);
+Marcos_x_pagina* tieneMarcoPaginas ( t_list* paginas, int pagina);
 //GENERAL
 void crearArchivos();
 int elegirMejorArchivo();
