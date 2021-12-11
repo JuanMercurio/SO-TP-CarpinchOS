@@ -369,8 +369,8 @@ int memfree(tab_pags* tabla, int dir_log){
 		return -5; //
 	}
 //	printf("- Memfree: la pagina del segmento es la %i.\n", num_pag);
-
-	if(ptr_segmento->isFree){
+	printf("- Memfree: isFree = %d\n", ptr_segmento->isFree);
+	if(ptr_segmento->isFree == 1){
 		puts("- Memfree: el segmento ya esta libre.");
 		return -5;
 	}
@@ -585,7 +585,7 @@ int memoria_escribir(tab_pags* tabla, dir_t dl, void* contenido, int tamanio){
     {
         int marco = nro_marco(dl.PAGINA, tabla);
 		if (marco < 0) {
-			fprintf(stderr, "\n Error con el nro de marco obtenido \n");
+			fprintf(stderr, "\n Error con el nro de marco obtenido \n\n");
 		}
 
         dir_t df = { marco, dl.offset };

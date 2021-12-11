@@ -137,6 +137,7 @@ int nro_marco(int pagina, tab_pags *tabla)
 
 int buscar_en_swap(tab_pags *tabla, int pagina)
 {
+    printf(" SWAP - PID: %d - PAG: %d \n", tabla->pid, pagina);
     enviar_int(swap, OBTENER_PAGINA);
     enviar_int(swap, tabla->pid);
     enviar_int(swap, pagina);
@@ -144,6 +145,7 @@ int buscar_en_swap(tab_pags *tabla, int pagina)
     int op = recibir_int(swap);
 
     if (op == -1) {
+        printf("SWAP: no se encontro la pagina en swap\n");
         return -1;
     }
 
@@ -152,6 +154,11 @@ int buscar_en_swap(tab_pags *tabla, int pagina)
     printf("Recibido = Contenido isfree %d \n", ((HeapMetadata*)contenido)->isFree);
     printf("Recibido = Contenido prevalloc %d \n", ((HeapMetadata*)contenido)->prevAlloc);
     printf("Recibido = Contenido nextalloc %d \n", ((HeapMetadata*)contenido)->nextAlloc);
+    int receptor = recibir_int(swap);
+    if (receptor == -1) {
+        printf("No existe la pagina en swap\n");
+        abort();
+    }
 
     t_victima victima = algoritmo_mmu(tabla->pid, tabla);
     reemplazar_pagina(victima, contenido, pagina, tabla);

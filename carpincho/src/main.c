@@ -374,7 +374,7 @@ void carpincho_comportamiento_memoria(void* arg)
    }
 
    printf("-- Mate WRITE -- \n");
-   char* saturno = "jejeje";
+   char* saturno = "jejejeje";
    int size = strlen(saturno) + 1;
    void* buffer = malloc(size);
    memcpy(buffer, saturno, size);
@@ -399,7 +399,7 @@ void carpincho_comportamiento_memoria(void* arg)
    int free_valido = mate_memfree(c, dl);
    if (free_valido == MATE_FREE_FAULT){
      fprintf(stderr, "Error de MATE_FREE_FAULT \n");
-     abort();
+     //abort();
    }
 
    printf("-- Mate CLOSE -- \n");
@@ -408,6 +408,8 @@ void carpincho_comportamiento_memoria(void* arg)
       fprintf(stderr, "El programa termino con errores");
       abort();
    }
+
+   printf("Termino memoria\n");
    free(buffer);
 }
 

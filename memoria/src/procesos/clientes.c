@@ -184,6 +184,11 @@ void memwrite_comportamiento(tab_pags* tabla, int cliente)
 void mate_close_comportamiento(tab_pags *tabla, int cliente, bool *conectado)
 {
     enviar_int(swap, BORRAR_CARPINCHO);
+    enviar_int(swap, tabla->pid);
+    int pudo = recibir_int(swap);
+    printf("Resultado swap: %d\n", pudo);
+    if (pudo == -1) abort();
+
     cliente_terminar(tabla, cliente);
     *conectado = false;
 }

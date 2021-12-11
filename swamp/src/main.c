@@ -725,9 +725,9 @@ int agregarPaginaDinamica(int pid, int pagina, char *contenido)
         char *file_in_memory = mmap(NULL, configuracion.TAMANIO_SWAP, PROT_READ | PROT_WRITE, MAP_SHARED, file, 0);
         printf("base: %d\n",base);
         memcpy(file_in_memory+base, contenido,configuracion.TAMANIO_PAGINA);
-            printf("Contenido isfree %d \n", ((HeapMetadata *)file_in_memory+base)->isFree);
-            printf("Contenido prevalloc %d \n", ((HeapMetadata *)file_in_memory+base)->prevAlloc);
-            printf("Contenido nextalloc %d \n", ((HeapMetadata *)file_in_memory+base)->nextAlloc);
+            printf("Contenido isfree %d \n", ((HeapMetadata *)(file_in_memory+base))->isFree);
+            printf("Contenido prevalloc %d \n", ((HeapMetadata *)(file_in_memory+base))->prevAlloc);
+            printf("Contenido nextalloc %d \n", ((HeapMetadata *)(file_in_memory+base))->nextAlloc);
         /*for (int i = base; i < base + configuracion.TAMANIO_PAGINA; i++)
         {
             file_in_memory[i] = contenido[j];
@@ -774,14 +774,15 @@ char *buscarPaginaDinamico(int pid, int pagina)
             int file = open(configuracion.ARCHIVOS_SWAP_list[car->numeroArchivo], O_RDWR, S_IRUSR | S_IWUSR);
             //struct stat* estadisticas;
             //int tamano = stat (file,estadisticas);
-            //printf("El valor el tamaño es %d\n",estadisticas.st_size);
+            // printf("El valor el tamaño es %d\n",estadisticas.st_size);
             char *file_in_memory = mmap(NULL, configuracion.TAMANIO_SWAP, PROT_READ | PROT_WRITE, MAP_SHARED, file, 0);
             //printf("FILE IN MEMORY: %s\n",file_in_memory);
             //printf("CANT FILE IN MEMORY: %d\n",string_length(file_in_memory));
             char *pagina_devolver = string_substring(file_in_memory, mar_x_pag->base, configuracion.TAMANIO_PAGINA);
+            printf("BASE EN OBTENER PAGINA %d\n", mar_x_pag->base);
             //char * file_in_memory2 = mmap(NULL,configuracion.TAMANIO_SWAP,PROT_READ |PROT_WRITE ,MAP_SHARED, file,0);
             close(file);
-            //printf("se encontro: %s\n",pagina_devolver);
+            printf("se encontro: %s\n",pagina_devolver);
             return pagina_devolver;
         }
         else
