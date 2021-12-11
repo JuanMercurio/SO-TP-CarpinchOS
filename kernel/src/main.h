@@ -45,6 +45,16 @@ typedef struct deadlock_kernel{
    char* esperando;
 }deadlock_kernel;
 
+typedef struct sem_kernel{
+    char* id;
+    int val;
+    int max_val;
+    t_list* bloqueados;
+    sem_t mutex;
+    sem_t mutex_cola;
+    int tomado_por;
+}sem_kernel;
+
 typedef struct t_pcb{
     int pid;
     int fd_cliente;
@@ -76,15 +86,6 @@ typedef enum{
     VUELTA_A_READY
 }cod_op;
 
-typedef struct sem_kernel{
-    char* id;
-    int val;
-    int max_val;
-    t_list* bloqueados;
-    sem_t mutex;
-    sem_t mutex_cola;
-    int tomado_por;
-}sem_kernel;
 
 
 
