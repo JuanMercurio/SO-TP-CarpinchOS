@@ -60,6 +60,7 @@ int main(int argc, char *argv[])
     pthread_create(&tid, NULL, agregarPedidosMemoria, fd_memoria);*/
 
     crearArchivos();
+    //char* file = mmap( )
     if (asignacionFija)
     {
         marcosLIbresFija();
@@ -68,7 +69,7 @@ int main(int argc, char *argv[])
     {
         marcosLibes();
     }
-
+    //pruebas();
     int cantidad_lista_pedidos = 1;
     //cantidad_lista_pedidos
     termino = 0;
@@ -94,14 +95,17 @@ int main(int argc, char *argv[])
             pagina = recibir_int(fd_memoria);
             tamanio2 = configuracion.TAMANIO_PAGINA;
             void *buffer = recibir_buffer_t(&tamanio2, fd_memoria);
-    printf("Contenido isfree %d \n", ((HeapMetadata*)buffer)->isFree);
-    printf("Contenido prevalloc %d \n", ((HeapMetadata*)buffer)->prevAlloc);
-    printf("Contenido nextalloc %d \n", ((HeapMetadata*)buffer)->nextAlloc);
+            printf("Contenido isfree %d \n", ((HeapMetadata *)buffer)->isFree);
+            printf("Contenido prevalloc %d \n", ((HeapMetadata *)buffer)->prevAlloc);
+            printf("Contenido nextalloc %d \n", ((HeapMetadata *)buffer)->nextAlloc);
+            /*realloc(buffer, configuracion.TAMANIO_PAGINA + 1);
+            memcpy(buffer+configuracion.TAMANIO_PAGINA+1, '\0',1);*/
+
             ped->nombre_pedido = malloc(sizeof("ESCRIBIR_PAGINA"));
             ped->nombre_pedido = "ESCRIBIR_PAGINA";
             ped->pid = pid;
             ped->pagina = pagina;
-            ped->contenido_pagina = buffer;
+            ped->contenido_pagina = string_duplicate((char*)buffer);
             ped->oper = codop;
             int pido;
             if (asignacionFija)
@@ -243,6 +247,7 @@ int main(int argc, char *argv[])
 
             break;
         case OBTENER_PAGINA:
+            printf("OBTENER PAGINA\n");
             //tamanio_pid = recibir_int(fd_memoria);
             pid = recibir_int(fd_memoria);
             //tamanio_pagina = recibir_int(fd_memoria);
@@ -264,6 +269,10 @@ int main(int argc, char *argv[])
                 // VERIFICAR QUE EXISTA ESE PID Y PAGINA
                 cont_pag = buscarPaginaDinamico(ped->pid, ped->pagina);
             }
+            printf("Contenido isfree %d \n", ((HeapMetadata *)cont_pag)->isFree);
+                printf("Contenido prevalloc %d \n", ((HeapMetadata *)cont_pag)->prevAlloc);
+                printf("Contenido nextalloc %d \n", ((HeapMetadata *)cont_pag)->nextAlloc);
+            printf("Envia a memoria: tam pagina: %d - contenido pagina: %s\n", configuracion.TAMANIO_PAGINA, cont_pag);
             if (strcmp(cont_pag, "") == 0)
             {
                 printf("Envia a memoria -1\n");
@@ -275,10 +284,10 @@ int main(int argc, char *argv[])
 
                 enviar_int(fd_memoria, configuracion.TAMANIO_PAGINA);
                 enviar_buffer(fd_memoria, cont_pag, configuracion.TAMANIO_PAGINA);
-                printf("Contenido isfree %d \n", ((HeapMetadata*)cont_pag)->isFree);
-                printf("Contenido prevalloc %d \n", ((HeapMetadata*)cont_pag)->prevAlloc);
-                printf("Contenido nextalloc %d \n", ((HeapMetadata*)cont_pag)->nextAlloc);
-                printf("Envia a memoria: tam pagina: %d - contenido pagina: %s\n", configuracion.TAMANIO_PAGINA, cont_pag);
+                printf("Contenido isfree %d \n", ((HeapMetadata *)cont_pag)->isFree);
+                printf("Contenido prevalloc %d \n", ((HeapMetadata *)cont_pag)->prevAlloc);
+                printf("Contenido nextalloc %d \n", ((HeapMetadata *)cont_pag)->nextAlloc);
+                
             }
 
             break;
@@ -449,10 +458,12 @@ void pruebas()
         error = agregarPaginaDinamica(1, 3, basura);
         basura = string_repeat('4', configuracion.TAMANIO_PAGINA);
         error = agregarPaginaDinamica(4, 1, basura);
-        char *pal = buscarPaginaDinamico(2, 2);
+        
 
         basura = string_repeat('#', configuracion.TAMANIO_PAGINA);
         error = agregarPaginaDinamica(2, 2, basura);
+
+        char *pal = buscarPaginaDinamico(2, 2);
         printf("PAGINA: %s\n", pal);
         pal = buscarPaginaDinamico(1, 2);
         printf("PAGINA: %s\n", pal);
@@ -460,7 +471,7 @@ void pruebas()
         printf("PAGINA: %s\n", pal);
         CrearCarpincho(3);
         mostrarCarpinchos();
-        borrarCarpincho(2);
+        borrarCarpincho(1);
         borrarCarpincho(4);
         pal = buscarPaginaDinamico(1, 2);
         printf("PAGINA: %s\n", pal);
@@ -680,6 +691,7 @@ int CrearCarpincho(int pidd)
         carpincho->pid = pidd;
         carpincho->numeroArchivo = mejorArchivo;
         carpincho->paginas = list_create();
+        carpincho->cantidadPaginas = 0;
         list_add(lista_carpinchos, carpincho);
         return 1;
     }
@@ -690,7 +702,10 @@ int agregarPaginaDinamica(int pid, int pagina, char *contenido)
 {
     //TAMBIEN MODIFICA
     printf("Agregando pagina: pid: %d pag: %d\n", pid, pagina);
-    //printf("ENTRO contenido: %s\n",contenido);
+    printf("ENTRO contenido: %s\n",contenido);
+    printf("Contenido isfree %d \n", ((HeapMetadata *)contenido)->isFree);
+            printf("Contenido prevalloc %d \n", ((HeapMetadata *)contenido)->prevAlloc);
+            printf("Contenido nextalloc %d \n", ((HeapMetadata *)contenido)->nextAlloc);
     Carpincho_Swamp *car = buscarCarpincho(pid);
     if (car->pid != -1)
     {
@@ -700,19 +715,25 @@ int agregarPaginaDinamica(int pid, int pagina, char *contenido)
         mar_pag->base = base;
         mar_pag->pagina = pagina;
         list_add(car->paginas, mar_pag);
+        car->cantidadPaginas++;
         //printf("Agrego a la lista\n");
         int file = open(configuracion.ARCHIVOS_SWAP_list[car->numeroArchivo], O_RDWR, S_IRUSR | S_IWUSR);
         int j = 0;
         /*lseek (file , base, 0);
         write(file,contenido,configuracion.TAMANIO_PAGINA);*/
+        void * pepe = malloc(configuracion.TAMANIO_PAGINA);
         char *file_in_memory = mmap(NULL, configuracion.TAMANIO_SWAP, PROT_READ | PROT_WRITE, MAP_SHARED, file, 0);
-        for (int i = base; i < base + configuracion.TAMANIO_PAGINA; i++)
+        printf("base: %d\n",base);
+        memcpy(file_in_memory+base, contenido,configuracion.TAMANIO_PAGINA);
+            printf("Contenido isfree %d \n", ((HeapMetadata *)file_in_memory+base)->isFree);
+            printf("Contenido prevalloc %d \n", ((HeapMetadata *)file_in_memory+base)->prevAlloc);
+            printf("Contenido nextalloc %d \n", ((HeapMetadata *)file_in_memory+base)->nextAlloc);
+        /*for (int i = base; i < base + configuracion.TAMANIO_PAGINA; i++)
         {
-
             file_in_memory[i] = contenido[j];
             //printf("%d/%c - ",i,file_in_memory[i]);
             j++;
-        }
+        }*/
         //printf("\n");
         //munmap(file_in_memory,configuracion.TAMANIO_SWAP);
         // printf("FILE IN MEMORY: %s\n",file_in_memory);
@@ -801,7 +822,7 @@ int buscarMarcoLibre(int num_archivo)
         // ¿¿PORQUE??
         un_marco_libre *mar = malloc(sizeof(un_marco_libre));
         mar = list_get(marcos_libres, i);
-        printf("marco_pagina %d - numero_archivo:%d - base:%d \n", i, mar->numero_archivo, mar->base);
+        //printf("marco_pagina %d - numero_archivo:%d - base:%d \n", i, mar->numero_archivo, mar->base);
         if (mar->numero_archivo == num_archivo)
         {
             //list_remove_and_destroy_element(lista_carpinchos,i,&borrar_Carpincho);
@@ -824,16 +845,16 @@ int borrarCarpincho(int pid)
     {
         int max = list_size(car->paginas);
         Marcos_x_pagina *mar_x_pag;
-        printf("encontro carpincho, voy a borrar\n");
+        printf("encontro carpincho, voy a borrar- max %d\n",max);
         int file = open(configuracion.ARCHIVOS_SWAP_list[car->numeroArchivo], O_RDWR, S_IRUSR | S_IWUSR);
         printf("paso 1\n");
         char *file_in_memory = mmap(NULL, configuracion.TAMANIO_SWAP, PROT_READ | PROT_WRITE, MAP_SHARED, file, 0);
         printf("paso 2\n");
-        for (int i = 0; i < max; i++)
+        for (int i = 0; i < car->cantidadPaginas; i++)
         {
             printf("paso 3, for : i = %d\n", i);
             // ¿¿PORQUE??
-            //mar_x_pag = malloc (sizeof(Marcos_x_pagina));
+            mar_x_pag = malloc(sizeof(Marcos_x_pagina));
 
             mar_x_pag = list_get(car->paginas, i);
             printf("!= -1 pagina= %d\n", mar_x_pag->pagina);
@@ -844,6 +865,8 @@ int borrarCarpincho(int pid)
                     file_in_memory[j] = '\0';
                 }
                 list_remove(car->paginas, i);
+                i--;
+                car->cantidadPaginas--;
                 un_marco_libre *mar = malloc(sizeof(un_marco_libre));
                 mar->numero_archivo = car->numeroArchivo;
                 mar->base = mar_x_pag->base;
