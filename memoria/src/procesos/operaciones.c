@@ -363,7 +363,6 @@ int memfree(tab_pags* tabla, int dir_log){
 //	HeapMetadata* ptr_segmento = hallar_metadata(dir_log, tabla_paginas, &num_pag);
 	// HeapMetadata* ptr_segmento = hallar_metadata(dir_log, tabla_paginas);
 	HeapMetadata* ptr_segmento = memoria_leer_por_dirlog(tabla, dir_log - sizeof(HeapMetadata), sizeof(HeapMetadata));
-	printf("El selecionado tiene ->isFree %d\n", ptr_segmento->isFree);
 
 	if(ptr_segmento == NULL){
 		puts("- Memfree->ERROR: direccion logica invalida");
@@ -528,16 +527,16 @@ void TEST_report_metadatas(int pid){
 // int memfree(tab_pags *tabla, int dl){return 0;}
 
 void* memread(tab_pags* tabla, int dir_log, int tamanio){
-    // dir_t dl = traducir_dir_log(dir_log);
-	dir_t dl = decimal_a_dl(dir_log);
+    dir_t dl = traducir_dir_log(dir_log);
+	// dir_t dl = decimal_a_dl(dir_log);
 
     // if(!alloc_valido(dl, tabla, tamanio)) return NULL; 
     return memoria_leer(tabla, dl, tamanio);
 }
 
 int memwrite(tab_pags* tabla, int dir_log, void* contenido, int tamanio){
-    // dir_t dl = traducir_dir_log(dir_log);
-	dir_t dl = decimal_a_dl(dir_log);
+    dir_t dl = traducir_dir_log(dir_log);
+	// dir_t dl = decimal_a_dl(dir_log);
 
     // if(!alloc_valido(dl, tabla, tamanio)) return MATE_WRITE_FAULT;
 
@@ -581,7 +580,7 @@ int memoria_escribir(tab_pags* tabla, dir_t dl, void* contenido, int tamanio){
     int written = 0;
     int bytes_remaining = tamanio;
     int bytes_remaining_space = configuracion.TAMANIO_PAGINAS - dl.offset;
-
+	printf("ESCRIBIR: quiero escribir en PAG: %d PID: %d \n", dl.PAGINA, tabla->pid);
     while(bytes_remaining > 0)
     {
         int marco = nro_marco(dl.PAGINA, tabla);

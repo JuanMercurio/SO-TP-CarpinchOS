@@ -16,7 +16,13 @@
 #include <commons/collections/list.h>
 #include <pthread.h>
 #include <semaphore.h>
+#include <stdint.h>
 
+typedef struct HeapMetadata{
+    uint32_t prevAlloc;
+    uint32_t nextAlloc;
+    uint8_t isFree;
+}__attribute__((packed)) HeapMetadata;
 
 typedef struct {
     int pid;

@@ -10,7 +10,7 @@
 //------------------------------- PLANIFICACION--------------------//
 #include <matelib.h>
 
-#define CANT_CARPINCHOS 2
+#define CANT_CARPINCHOS 1
 #define ALLOCAR 10
 
 char *LOG_PATH = "./planificacion.log";
@@ -355,6 +355,7 @@ void carpincho_comportamiento3(void *arg)
 void carpincho_comportamiento_memoria(void* arg)
 {
    mate_instance* c = malloc(sizeof(mate_instance));
+   mate_inner_structure* info = (mate_inner_structure*)c;
 
    printf("-- Mate INIT -- \n");
    int init = mate_init(c, "cfg/carpincho.config");
@@ -393,7 +394,6 @@ void carpincho_comportamiento_memoria(void* arg)
    }
 	printf("MemRead leyo: %s\n", (char*)leer);
 
-sleep(1);
 
    printf("-- Mate FREE -- \n");
    int free_valido = mate_memfree(c, dl);

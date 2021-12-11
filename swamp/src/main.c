@@ -94,6 +94,9 @@ int main(int argc, char *argv[])
             pagina = recibir_int(fd_memoria);
             tamanio2 = configuracion.TAMANIO_PAGINA;
             void *buffer = recibir_buffer_t(&tamanio2, fd_memoria);
+    printf("Contenido isfree %d \n", ((HeapMetadata*)buffer)->isFree);
+    printf("Contenido prevalloc %d \n", ((HeapMetadata*)buffer)->prevAlloc);
+    printf("Contenido nextalloc %d \n", ((HeapMetadata*)buffer)->nextAlloc);
             ped->nombre_pedido = malloc(sizeof("ESCRIBIR_PAGINA"));
             ped->nombre_pedido = "ESCRIBIR_PAGINA";
             ped->pid = pid;
@@ -240,7 +243,6 @@ int main(int argc, char *argv[])
 
             break;
         case OBTENER_PAGINA:
-            printf("AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA\n");
             //tamanio_pid = recibir_int(fd_memoria);
             pid = recibir_int(fd_memoria);
             //tamanio_pagina = recibir_int(fd_memoria);
@@ -273,6 +275,9 @@ int main(int argc, char *argv[])
 
                 enviar_int(fd_memoria, configuracion.TAMANIO_PAGINA);
                 enviar_buffer(fd_memoria, cont_pag, configuracion.TAMANIO_PAGINA);
+                printf("Contenido isfree %d \n", ((HeapMetadata*)cont_pag)->isFree);
+                printf("Contenido prevalloc %d \n", ((HeapMetadata*)cont_pag)->prevAlloc);
+                printf("Contenido nextalloc %d \n", ((HeapMetadata*)cont_pag)->nextAlloc);
                 printf("Envia a memoria: tam pagina: %d - contenido pagina: %s\n", configuracion.TAMANIO_PAGINA, cont_pag);
             }
 
@@ -1446,6 +1451,7 @@ void memoria_operacion(int cliente)
     switch (codop)
     {
     case ESCRIBIR_PAGINA:
+        printf("Recibi una pagina\n");
         printf("Quiero escribir una pagina 1234\n");
         //tamanio_pid = recibir_int(cliente);
         pid = recibir_int(cliente);

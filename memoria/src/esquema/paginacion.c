@@ -114,14 +114,23 @@ int nro_marco(int pagina, tab_pags *tabla)
 
     // Busco en TLB
     marco = buscar_en_tlb(tabla, pagina);
-    if (marco != TLB_MISS) return marco; 
+    if (marco != TLB_MISS) {
+        printf("Entontre en la tlb\n");
+        return marco; 
+    }
 
     // Busco en tabla de paginas
     marco = buscar_en_tabPags(tabla, pagina);
-    if (marco != MEMP_MISS) return marco; 
+    if (marco != MEMP_MISS) {
+        printf("Encontre en tabla de paginas\n");
+        return marco; 
+    }
 
     marco = buscar_en_swap(tabla, pagina);
-    if (marco != -1) return marco;
+    if (marco != -1) {
+        printf("Encontre en swap");
+        return marco;
+    }
 
     return -1;
 }
@@ -139,6 +148,10 @@ int buscar_en_swap(tab_pags *tabla, int pagina)
     }
 
     void* contenido = recibir_buffer(configuracion.TAMANIO_PAGINAS, swap);
+    printf("RECIBIDO: PID: %d, PAG: %d \n", tabla->pid, pagina);
+    printf("Recibido = Contenido isfree %d \n", ((HeapMetadata*)contenido)->isFree);
+    printf("Recibido = Contenido prevalloc %d \n", ((HeapMetadata*)contenido)->prevAlloc);
+    printf("Recibido = Contenido nextalloc %d \n", ((HeapMetadata*)contenido)->nextAlloc);
 
     t_victima victima = algoritmo_mmu(tabla->pid, tabla);
     reemplazar_pagina(victima, contenido, pagina, tabla);
@@ -159,6 +172,7 @@ void reemplazar_pagina(t_victima victima, void *buffer, int pagina, tab_pags *ta
     tlb_insert_page(tabla->pid, pagina, victima.marco, READ);
     insertar_pagina(buffer, victima.marco);
     actualizar_nueva_pagina(pagina, victima.marco, tabla);
+    printf("Reemplace la pagina %d del pid %d \n", victima.pagina, victima.pid);
 }
 
 pag_t* obtener_pagina(int pid, int pagina)
@@ -454,8 +468,10 @@ void enviar_pagina_a_swap(int pid, int pagina, int marco)
 
     memcpy(contenido, ram.memoria + marco * configuracion.TAMANIO_PAGINAS, configuracion.TAMANIO_PAGINAS);
     enviar_buffer(swap, contenido, configuracion.TAMANIO_PAGINAS);
-    printf("Contenido %d \n", ((HeapMetadata*)contenido)->prevAlloc);
-    printf("SWAP - PID: %d - PAG: %d  enviado \n", pid, pagina);
+    printf("SWAP Le envie a- PID: %d - PAG: %d  enviado \n", pid, pagina);
+    printf("Contenido isfree %d \n", ((HeapMetadata*)contenido)->isFree);
+    printf("Contenido prevalloc %d \n", ((HeapMetadata*)contenido)->prevAlloc);
+    printf("Contenido nextalloc %d \n", ((HeapMetadata*)contenido)->nextAlloc);
 
     // Este codigo comentado es para mandar las cosas de una por ahora no lo usamoso
     // t_paquete *paquete = crear_paquete(ESCRIBIR_PAGINA);
