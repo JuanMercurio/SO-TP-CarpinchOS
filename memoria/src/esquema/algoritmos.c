@@ -295,8 +295,10 @@ t_victima clock_dinamico(int pid, tab_pags* tabla)
 
 void page_use(int pid, int marco, pag_t* p, int n_pagina, int codigo)
 {
-    printf("Usando el pid: %d, pagina %d \n", pid, n_pagina);
+    printf("Usando el pid: %d, pagina %d, P->TLB %d \n", pid, n_pagina, p->tlb);
+
     if (p->tlb == 1) {
+        printf("\n\np->tlb es igual a 1\n");
         tlb_t *reg = buscar_reg_en_tlb(pid, n_pagina);
         tlb_page_use(reg);
         reg->alg = alg_comportamiento();
@@ -305,7 +307,7 @@ void page_use(int pid, int marco, pag_t* p, int n_pagina, int codigo)
         }
         return;
     }
-
+    printf("p->tlb no es igual a 1\n");
     tlb_insert_page(pid, n_pagina, marco, codigo);
 
     p->tlb        = 1;
@@ -328,11 +330,14 @@ int alg_comportamiento_clock_modificado()
 
 void tlb_insert_page(int pid, int n_pagina, int marco, int codigo)
 {
+    printf("ENTRO TLB INSERT PAGE\n");
+    printf( "pid: %d , n_pagina: %d , marco: %d , codigo: %d\n", pid,  n_pagina,  marco,  codigo);
     int victima = tlb_obtener_victima();
-    
+    printf("1 --- ENTRO TLB INSERT PAGE   VICTIMA %d\n", victima);
+    printf("LIST SIZE %d", list_size(tlb) );
     tlb_t* reg = list_get(tlb, victima);
     if (reg->pid != -1) actualizar_victima_de_tlb(reg);
-
+    printf("2 --- ENTRO TLB INSERT PAGE\n");
     reg->pid = pid;
     reg->pagina = n_pagina;
     reg->marco = marco;

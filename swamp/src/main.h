@@ -69,6 +69,7 @@ void memoria_operacion(int cliente);
 void borrar_Carpincho(Carpincho_Swamp* car);
 void borrar_paginas_Ocupadas( Marcos_x_pagina* mar_pag);
 void borrar_marcos_libres (un_marco_libre* mar_lib);
+int cantArchivosAsignadosA(int archivo);
 //GENERAL
 void crearArchivos();
 int elegirMejorArchivo();

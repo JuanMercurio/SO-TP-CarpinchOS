@@ -15,9 +15,11 @@ int TLB_HIT_COUNT  = 0;
 
 void iniciar_tlb(){
 
+    printf( "CREO LA LISTA TLB\n");
     tlb = list_create();
-
+    printf("cantidad entradas a la tlb %d\n",configuracion.CANTIDAD_ENTRADAS_TLB);
     for(int i=0; i<configuracion.CANTIDAD_ENTRADAS_TLB; i++){ 
+        printf( "AGREGA A LISTA TLB\n");
         tlb_t* registro = malloc(sizeof(tlb_t));
         registro->marco = TLB_EMPTY;
         registro->pid = TLB_EMPTY;

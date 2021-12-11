@@ -571,7 +571,8 @@ Carpincho_Swamp *buscarCarpincho(int pidd)
 {
     //printf("BUSCANDO NUMERO CARPINCHO. %d\n",pidd);
     int max = list_size(lista_carpinchos);
-    Carpincho_Swamp *car = malloc(sizeof(Carpincho_Swamp));
+    // CUIDADO
+    Carpincho_Swamp *car; //= malloc(sizeof(Carpincho_Swamp));
     //printf("Cantidad de carpinchos en lista es %d\n",max);
     for (int i = 0; i < max; i++)
     {
@@ -734,7 +735,7 @@ char *buscarPaginaDinamico(int pid, int pagina)
             //printf("EL max es %d\n",max);
             for (int i = 0; i < max; i++)
             {
-                mar_x_pag = malloc(sizeof(Marcos_x_pagina));
+                //mar_x_pag = malloc(sizeof(Marcos_x_pagina));
                 mar_x_pag = list_get(car->paginas, i);
                 //printf("La pagina es: %d\n",mar_x_pag->pagina);
                 //printf("La base es: %d \n",mar_x_pag->base);
@@ -796,7 +797,7 @@ int buscarMarcoLibre(int num_archivo)
         // ¿¿PORQUE??
         un_marco_libre *mar = malloc(sizeof(un_marco_libre));
         mar = list_get(marcos_libres, i);
-        printf("marco_pagina %d - numero_archivo:%d - base:%d \n", i, mar->numero_archivo, mar->base);
+       // printf("marco_pagina %d - numero_archivo:%d - base:%d \n", i, mar->numero_archivo, mar->base);
         if (mar->numero_archivo == num_archivo)
         {
             //list_remove_and_destroy_element(lista_carpinchos,i,&borrar_Carpincho);
@@ -985,8 +986,11 @@ int elegirMejorArchivoDOS()
     int mayorBloque = 0;
     int contador;
     int archivo_mayor = -1;
+    int cantMenorAsignado;
+    int archivo_menor_asignado;
     while (configuracion.ARCHIVOS_SWAP_list[i])
     {
+        //int cantidad_asignado = cantArchivosAsignadosA(i);
         contador = 0;
         un_marco_libre *mar = malloc(sizeof(un_marco_libre));
         int max = list_size(marcos_libres);
@@ -1017,6 +1021,29 @@ int elegirMejorArchivoDOS()
         i++;
     }
     return archivo_mayor;
+}
+int cantArchivosAsignadosA(int archivo){
+    int max = list_size(lista_carpinchos);
+    Carpincho_Swamp *car; //= malloc(sizeof(Carpincho_Swamp));
+    int cont = 0;
+    if( max != 0){
+        
+        for (int i = 0; i < max; i++)
+        {
+
+            car = (Carpincho_Swamp *)list_get(lista_carpinchos, i);
+            /*printf("ITERACION %d\n",i);
+            printf("EL pid es %d \n",car->pid);
+            printf("EL num archivo es %d \n",car->numeroArchivo);*/
+            if (car-> numeroArchivo == archivo)
+            {
+                cont++;
+            }
+        }
+    }
+    
+    return cont;
+
 }
 void marcosLIbresFija()
 {
