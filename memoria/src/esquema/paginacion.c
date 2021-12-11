@@ -137,7 +137,6 @@ int nro_marco(int pagina, tab_pags *tabla)
 
 int buscar_en_swap(tab_pags *tabla, int pagina)
 {
-    printf(" SWAP - PID: %d - PAG: %d \n", tabla->pid, pagina);
     enviar_int(swap, OBTENER_PAGINA);
     enviar_int(swap, tabla->pid);
     enviar_int(swap, pagina);
@@ -150,15 +149,6 @@ int buscar_en_swap(tab_pags *tabla, int pagina)
     }
 
     void* contenido = recibir_buffer(configuracion.TAMANIO_PAGINAS, swap);
-    printf("RECIBIDO: PID: %d, PAG: %d \n", tabla->pid, pagina);
-    printf("Recibido = Contenido isfree %d \n", ((HeapMetadata*)contenido)->isFree);
-    printf("Recibido = Contenido prevalloc %d \n", ((HeapMetadata*)contenido)->prevAlloc);
-    printf("Recibido = Contenido nextalloc %d \n", ((HeapMetadata*)contenido)->nextAlloc);
-    int receptor = recibir_int(swap);
-    if (receptor == -1) {
-        printf("No existe la pagina en swap\n");
-        abort();
-    }
 
     t_victima victima = algoritmo_mmu(tabla->pid, tabla);
     reemplazar_pagina(victima, contenido, pagina, tabla);
@@ -176,10 +166,12 @@ void reemplazar_pagina(t_victima victima, void *buffer, int pagina, tab_pags *ta
        int pido = recibir_int(swap);
     }
 
-    tlb_insert_page(tabla->pid, pagina, victima.marco, READ);
-    insertar_pagina(buffer, victima.marco);
+    tab_pags* t = buscar_page_table(victima.pid);
+    pag_t* p = list_get(t->tabla_pag, victima.pagina);
+
+    if (configuracion.CANTIDAD_ENTRADAS_TLB > 0 ) tlb_insert_page(tabla->pid, pagina, victima.marco, READ);
+    if (buffer != NULL) insertar_pagina(buffer, victima.marco);
     actualizar_nueva_pagina(pagina, victima.marco, tabla);
-    printf("Reemplace la pagina %d del pid %d \n", victima.pagina, victima.pid);
 }
 
 pag_t* obtener_pagina(int pid, int pagina)
@@ -205,7 +197,7 @@ void actualizar_nueva_pagina(int pagina, int marco, tab_pags *tabla)
 
     pag_t *reg = list_get(tabla->tabla_pag, pagina);
     reg->presente = 1;
-    if (list_size(tlb) != 0) reg->tlb = 1;
+    if (configuracion.CANTIDAD_ENTRADAS_TLB != 0) reg->tlb = 1;
     reg->marco = marco;
     reg->algoritmo = alg_comportamiento();
 
@@ -262,7 +254,7 @@ int buscar_en_tabPags(tab_pags *tabla, int pagina)
 
     if (reg->presente == 1)
     {
-        actualizar_tlb(tabla->pid, reg->marco, pagina);
+        // actualizar_tlb(tabla->pid, reg->marco, pagina);
         return reg->marco;
     }
 
@@ -475,10 +467,6 @@ void enviar_pagina_a_swap(int pid, int pagina, int marco)
 
     memcpy(contenido, ram.memoria + marco * configuracion.TAMANIO_PAGINAS, configuracion.TAMANIO_PAGINAS);
     enviar_buffer(swap, contenido, configuracion.TAMANIO_PAGINAS);
-    printf("SWAP Le envie a- PID: %d - PAG: %d  enviado \n", pid, pagina);
-    printf("Contenido isfree %d \n", ((HeapMetadata*)contenido)->isFree);
-    printf("Contenido prevalloc %d \n", ((HeapMetadata*)contenido)->prevAlloc);
-    printf("Contenido nextalloc %d \n", ((HeapMetadata*)contenido)->nextAlloc);
 
     // Este codigo comentado es para mandar las cosas de una por ahora no lo usamoso
     // t_paquete *paquete = crear_paquete(ESCRIBIR_PAGINA);

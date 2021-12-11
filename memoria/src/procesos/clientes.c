@@ -292,6 +292,7 @@ void eliminar_proceso_i(int i){
         pag_t* reg = list_get(tabla->tabla_pag, i);
         if(reg->presente == 1)
         {
+            printf("El coso a eliminar es: %d", reg->marco);
             int* marco = list_get(marcos, reg->marco);
             *marco = 0;
         }

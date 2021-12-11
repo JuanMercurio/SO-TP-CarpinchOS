@@ -46,13 +46,14 @@ t_victima lru_dinamico(int pid, tab_pags* tabla)
 			}
 		}
 	}
-	pagina->presente = 0;
-
 	t_victima victima;    
 	victima.marco      = pagina->marco;
 	victima.modificado = pagina->modificado;
 	victima.pid        = pid_victima;
 	victima.pagina     = n_pagina;
+
+	pagina->presente = 0;
+    pagina->modificado = 0; //esto es para que cuando busque en swap la pagina este en modo read hasta que le diga que no
 
 	return victima;
 }
@@ -154,6 +155,15 @@ int clock_buscar_00(tab_pags* tabla)
 			continue;
 		}
 
+        if (reg->tlb == 1) {
+            tlb_t* registro = tlb_obtener_registro(tabla->pid, i);
+            reg->algoritmo = registro->alg_tlb;
+            reg->marco = registro->marco; 
+            reg->modificado = registro->modificado;
+            reg->presente = 1;
+            reg->tlb = 1;
+        }
+
         if(reg->modificado == 0 && reg->algoritmo == 0) 
         {
 
@@ -194,7 +204,7 @@ int clock_buscar_01(tab_pags* tabla)
         
         pag_t* reg = list_get(tabla->tabla_pag, i);
 
-        if(reg->presente != 1 || reg->tlb == 1) 
+        if(reg->presente != 1 || reg->algoritmo == -1) 
 		{
 			if(i+1 == tamanio) 
 				i = 0;
@@ -205,6 +215,14 @@ int clock_buscar_01(tab_pags* tabla)
 			continue;
 		}
 
+        if (reg->tlb == 1) {
+            tlb_t* registro = tlb_obtener_registro(tabla->pid, i);
+            reg->algoritmo = registro->alg_tlb;
+            reg->marco = registro->marco; 
+            reg->modificado = registro->modificado;
+            reg->presente = 1;
+            reg->tlb = 1;
+        }
         /* codigo horrible  */
         if(reg->modificado == 1 && reg->algoritmo == 0) 
         {
@@ -295,9 +313,7 @@ t_victima clock_dinamico(int pid, tab_pags* tabla)
 
 void page_use(int pid, int marco, pag_t* p, int n_pagina, int codigo)
 {
-    printf("Usando el pid: %d, pagina %d \n", pid, n_pagina);
     if (p->tlb == 1) {
-        printf("El bit de la tlb esta en 1\n");
         tlb_t *reg = buscar_reg_en_tlb(pid, n_pagina);
         tlb_page_use(reg);
         reg->alg = alg_comportamiento();
@@ -309,8 +325,8 @@ void page_use(int pid, int marco, pag_t* p, int n_pagina, int codigo)
 
     tlb_insert_page(pid, n_pagina, marco, codigo);
 
-    if (list_size(tlb) > 0) p->tlb = 1;
-    if(p->modificado == WRITE) p->modificado = WRITE;
+    if (configuracion.CANTIDAD_ENTRADAS_TLB > 0) p->tlb = 1;
+    if (codigo == WRITE) p->modificado = WRITE;
     p->presente   = 1;
     p->algoritmo  = alg_comportamiento();
     p->marco      = marco;
@@ -329,7 +345,7 @@ int alg_comportamiento_clock_modificado()
 
 void tlb_insert_page(int pid, int n_pagina, int marco, int codigo)
 {
-    if (list_size(tlb) == 0) return; 
+    if (configuracion.CANTIDAD_ENTRADAS_TLB == 0) return; 
     int victima = tlb_obtener_victima();
     
     tlb_t* reg = list_get(tlb, victima);

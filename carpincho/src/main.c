@@ -374,7 +374,7 @@ void carpincho_comportamiento_memoria(void* arg)
    }
 
    printf("-- Mate WRITE -- \n");
-   char* saturno = "jejejeje";
+   char* saturno = "ejejejeje";
    int size = strlen(saturno) + 1;
    void* buffer = malloc(size);
    memcpy(buffer, saturno, size);
