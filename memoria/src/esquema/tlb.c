@@ -68,6 +68,8 @@ int comportamiento_TLB_MISS(tab_pags* tabla, int pagina){
 
 void actualizar_tlb(int pid, int marco, int pagina){
 
+    if (list_size(tlb) == 0) return;
+
     int victima = tlb_obtener_victima();
     tlb_t* reg = list_get(tlb, victima);
 

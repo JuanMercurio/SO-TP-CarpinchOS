@@ -205,7 +205,7 @@ void actualizar_nueva_pagina(int pagina, int marco, tab_pags *tabla)
 
     pag_t *reg = list_get(tabla->tabla_pag, pagina);
     reg->presente = 1;
-    reg->tlb = 1;
+    if (list_size(tlb) != 0) reg->tlb = 1;
     reg->marco = marco;
     reg->algoritmo = alg_comportamiento();
 

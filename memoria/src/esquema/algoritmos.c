@@ -297,6 +297,7 @@ void page_use(int pid, int marco, pag_t* p, int n_pagina, int codigo)
 {
     printf("Usando el pid: %d, pagina %d \n", pid, n_pagina);
     if (p->tlb == 1) {
+        printf("El bit de la tlb esta en 1\n");
         tlb_t *reg = buscar_reg_en_tlb(pid, n_pagina);
         tlb_page_use(reg);
         reg->alg = alg_comportamiento();
@@ -308,7 +309,7 @@ void page_use(int pid, int marco, pag_t* p, int n_pagina, int codigo)
 
     tlb_insert_page(pid, n_pagina, marco, codigo);
 
-    p->tlb        = 1;
+    if (list_size(tlb) > 0) p->tlb = 1;
     if(p->modificado == WRITE) p->modificado = WRITE;
     p->presente   = 1;
     p->algoritmo  = alg_comportamiento();
@@ -328,6 +329,7 @@ int alg_comportamiento_clock_modificado()
 
 void tlb_insert_page(int pid, int n_pagina, int marco, int codigo)
 {
+    if (list_size(tlb) == 0) return; 
     int victima = tlb_obtener_victima();
     
     tlb_t* reg = list_get(tlb, victima);
