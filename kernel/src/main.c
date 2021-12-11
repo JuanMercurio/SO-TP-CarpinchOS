@@ -46,7 +46,9 @@ void terminar_programa()
    sem_post(&cola_suspendido_bloquedo_con_elementos);
    sem_post(&controlador_multiprogramacion);
    sem_post(&cola_new_con_elementos);
+   for(int i = 0; i < configuracion.GRADO_MULTIPROGRAMACION; i ++){
    sem_post(&lista_ejecutando_con_elementos);
+}
 
    printf("Entro a destrucción config\n");
    config_destroy(config);
@@ -438,9 +440,9 @@ void receptor(void *arg)
       }
    }
    printf("MAIN KERNEL SALIO DEL WHILEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEE\n");
-   //close(cliente);
+   close(cliente);
 
-   //sem_post(&controlador_multiprogramacion);
+   sem_post(&controlador_multiprogramacion);
    printf("RECEPTOR: saliendo\n");
 }
 
@@ -478,7 +480,7 @@ void inicializar_planificacion()
       log_info(logger, "Hilo Planificador Gestor Finalizados creado");
    } */
 
-   if (pthread_create(&hilos_planificadores, &detached2, deteccion_deadlock, NULL) != 0)
+   if (pthread_create(&hilos_planificadores, &detached2, (void*)deteccion_deadlock, NULL) != 0)
    {
       log_info(logger, "No se pudo crear el hilo Detección Deadlock");
    }

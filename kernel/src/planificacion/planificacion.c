@@ -6,7 +6,7 @@ void iniciar_cpu()
    pthread_t cpu;
    for (int i = 0; i < configuracion.GRADO_MULTIPROCESAMIENTO; i++)
    {
-      if (pthread_create(&cpu, &detached2, procesador, NULL) != 0)
+      if (pthread_create(&cpu, &detached2, (void*)procesador, NULL) != 0)
       {
          log_info(logger, "NO SE PUDO CREAR HILO CPU");
       }
@@ -422,7 +422,7 @@ void eliminar_carpincho(void *arg)
    printf("ELIMINAR CARPINCHO: CERRANDO CONEXION %d de carpincho %d\n", carpincho->fd_cliente, carpincho->pid);
    //close(carpincho->fd_memoria);
   // log_info(logger, "Carpincho %d - Eliminado", carpincho->pid);
-  // free(carpincho);
+   free(carpincho);
 }
 
 void ejecutando_a_bloqueado(t_pcb *carpincho, t_queue *cola, sem_t *mutex)
