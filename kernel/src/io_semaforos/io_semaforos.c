@@ -26,21 +26,21 @@ sem_kernel * buscar_semaforo2(char* nombre, int* pos){
 bool sem_kernel_wait2( t_pcb *carpincho)
 {
    int pos;
-   sem_kernel *sem = buscar_semaforo2(carpincho->semaforo_a_modificar, &pos);
-   sem_wait(&sem->mutex);
-   sem->val --;
-   sem_post(&sem->mutex);
+   //sem_kernel *sem = buscar_semaforo2(, &pos);
+   sem_wait(&carpincho->bloqueado_en->mutex);
+   carpincho->bloqueado_en->val --;
+   sem_post(&carpincho->bloqueado_en->mutex);
 
-   if(sem->val == 0){
-      sem->tomado_por = carpincho->pid;
+   if(carpincho->bloqueado_en->val == 0){
+      carpincho->bloqueado_en->tomado_por = carpincho->pid;
       return false;
    }
-  if(sem->val  < 0){
+  if(carpincho->bloqueado_en->val  < 0){
     bloquear_por_semaforo( carpincho); 
     return true;
 }
-//printf("El carpincho %d realizo un SEM WAIT al semaforo %s", carpincho->pid, carpincho->semaforo_a_modificar);
-   log_info(logger, "El carpincho %d realizo un SEM WAIT al semaforo %s", carpincho->pid, carpincho->semaforo_a_modificar);
+printf("El carpincho %d realizo un SEM WAIT al semaforo %s", carpincho->pid, carpincho->bloqueado_en->id);
+   log_info(logger, "El carpincho %d realizo un SEM WAIT al semaforo %s", carpincho->pid, carpincho->bloqueado_en->id);
 
   return false;
 }
@@ -56,7 +56,7 @@ bool sem_kernel_wait2( t_pcb *carpincho)
 }*/
 
 bool verificar_bloqueo_por_semaforo(t_pcb *carpincho){
-   int sem_valor_actual = obtener_valor_semaforo(carpincho->semaforo_a_modificar); // falta
+   int sem_valor_actual = obtener_valor_semaforo(carpincho->bloqueado_en->id); // falta
    if(sem_valor_actual -1 < 0){
       return true;
    }else
@@ -72,12 +72,12 @@ return sem->val;
 }
 
 void bloquear_por_semaforo(t_pcb *carpincho){
-   int pos;
-   sem_kernel *semaforo = buscar_semaforo2(carpincho->semaforo_a_modificar, &pos);
-   sem_wait(&semaforo->mutex_cola);
-   list_add(semaforo->bloqueados, (void*)carpincho);
-   sem_post(&semaforo->mutex_cola);
-   log_info(logger, "El carpincho %d está bloqueado por el semáforo %s", carpincho->pid, semaforo->id);
+      int pos;
+  // sem_kernel *semaforo = buscar_semaforo2(carpincho->semaforo_a_modificar, &pos);
+   sem_wait(&carpincho->bloqueado_en->mutex_cola);
+   list_add(carpincho->bloqueado_en->bloqueados, (void*)carpincho);
+   sem_post(&carpincho->bloqueado_en->mutex_cola);
+   log_info(logger, "El carpincho %d está bloqueado por el semáforo %s", carpincho->pid, carpincho->bloqueado_en->id);
 }
 int sem_kernel_post(char *nombre) 
 {   int pos; 

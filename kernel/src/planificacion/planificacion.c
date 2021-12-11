@@ -21,12 +21,14 @@ void procesador()
       sem_wait(&mutex_lista_oredenada_por_algoritmo);
       carpincho = (t_pcb *)list_remove(lista_ordenada_por_algoritmo, 0);
       sem_post(&mutex_lista_oredenada_por_algoritmo);
-      carpincho->tiempo.time_stamp_fin = temporal_get_string_time("%H:%M:%S:%MS"); // TIEMPO DE ESPERA
+      /*       free(carpincho->tiempo.time_stamp_inicio);
+ */      carpincho->tiempo.time_stamp_fin = temporal_get_string_time("%H:%M:%S:%MS"); // TIEMPO DE ESPERA
       carpincho->tiempo.tiempo_de_espera = obtener_tiempo(carpincho->tiempo.time_stamp_inicio, carpincho->tiempo.time_stamp_fin);
       log_info(logger, "Carpincho %d - Comienza a ejecutar", carpincho->pid);
       //printf("\n!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!PROCESADOR: saco de lista ejecutando ordenada a carpincho %d\n", carpincho->pid);
       printf("PROCESADOR: carpincho %d va a ejecutar\n",carpincho->pid);
-      strcpy(carpincho->tiempo.time_stamp_inicio, carpincho->tiempo.time_stamp_fin);//TIEMPO EJECUTADO INICIO
+      /*          free(carpincho->tiempo.time_stamp_fin);
+ */         carpincho->tiempo.time_stamp_fin = temporal_get_string_time("%H:%M:%S:%MS");//TIEMPO EJECUTADO FIN
       carpincho->estado = 'E';
       enviar_mensaje(carpincho->fd_cliente, "OK");
       //printf("\nPROCESADOR: ESPERANDO EVENTO BLOQUEANTE de carpinchooooooo %d\n\n", carpincho->pid);
@@ -59,6 +61,7 @@ void procesador()
             bloquear_por_mediano_plazo(carpincho);
             log_info(logger, "---------------El carpincho %d fue suspendido", carpincho->pid);
          }
+         
          carpincho->tiempo.time_stamp_fin = temporal_get_string_time("%H:%M:%S:%MS");//TIEMPO EJECUTADO FIN
          carpincho->tiempo.tiempo_ejecutado = obtener_tiempo(carpincho->tiempo.time_stamp_inicio, carpincho->tiempo.time_stamp_fin);
          carpinchos_bloqueados++;
@@ -427,9 +430,9 @@ void eliminar_carpincho(void *arg)
    if(carpincho->tiempo.time_stamp_inicio != NULL){
    free(carpincho->tiempo.time_stamp_inicio);
    }
-  if(carpincho->io_solicitada != NULL){    
+  /*if(carpincho->io_solicitada != NULL){    
    free(carpincho->io_solicitada);
-   }
+   }*/
    if(carpincho->semaforo_a_modificar != NULL){
       free(carpincho->semaforo_a_modificar);
    }
