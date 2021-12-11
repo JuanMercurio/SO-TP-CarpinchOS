@@ -1,5 +1,4 @@
 #include "conexiones.h"
-
 #include <stdlib.h>
 #include <stdio.h>
 #include <string.h>
@@ -20,8 +19,9 @@ void administrar_clientes(char* IP, char* PUERTO, void (*funcion)(void*)){
       int *cliente = malloc(sizeof(int));
       *cliente= aceptar_cliente(servidor);
       pthread_create(&hilo, &detached, (void*)funcion,(void*) cliente);
-   }
-
+   
+}
+printf("termino atender clientes\n");
    pthread_attr_destroy(&detached); 
 
 }

@@ -121,7 +121,7 @@ void init_sems()
     puts("Termine!");
 } 
 //----------------------SUSPENSION---------------------//
- void* carpincho1_func(void* config){
+/* void* carpincho1_func(void* config){
 
 	mate_instance instance;
 

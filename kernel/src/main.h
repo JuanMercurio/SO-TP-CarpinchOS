@@ -124,7 +124,7 @@ sem_t mutex_lista_io_kernel;
 
 
  pthread_attr_t detached2, detached3;
-
+void administrar_clientes_kernel(char* IP, char* PUERTO, void (*funcion)(void*));
 /*
     @NAME: terminar_programa
     @DESC: Se encarga de liberar todas las estructuras y de hacer lo necesario para

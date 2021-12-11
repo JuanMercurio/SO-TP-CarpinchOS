@@ -148,7 +148,8 @@ while(!list_is_empty(sem->bloqueados)){
 }
 void sem_destroyer(void* semaforo){
  sem_kernel *a_destruir  = (sem_kernel*) semaforo;
-  list_destroy(a_destruir->bloqueados); 
+ free(a_destruir->id);
+  list_destroy(&a_destruir->bloqueados); 
  sem_destroy(&a_destruir->mutex);
  sem_destroy(&a_destruir->mutex_cola);
 free(a_destruir); 
@@ -157,18 +158,28 @@ free(a_destruir);
 void io_destroyer(void *arg)
 {
    io_kernel *a_destruir = (io_kernel *)arg;
+   printf("entro a destruir\n");
    if (queue_is_empty(a_destruir->bloqueados))
    {
       queue_destroy(a_destruir->bloqueados);
+      printf("destruyo cola de bloqueados de io %s sin elementos\n", a_destruir->id);
    }
    else
    {
       queue_destroy_and_destroy_elements(a_destruir->bloqueados, (void *)eliminar_carpincho);
-   }
-
+       printf("destruyo cola de bloqueados de io %s con elementos\n", a_destruir->id);
+   } 
+   free(a_destruir->id);
+   printf("libero id de io\n");
    sem_destroy(&a_destruir->mutex_io);
+      printf("destruyo semaforo mutex de io\n");
+
    sem_destroy(&a_destruir->cola_con_elementos);
-   free(a_destruir);
+      printf("destruyo semaforo de cola con elementos\n");
+
+   free((void*)a_destruir);
+      printf("libero struct\n");
+
 }
 
 io_kernel *buscar_io(char *nombre)
@@ -245,6 +256,7 @@ void gestor_cola_io(void *datos){
    while(!terminar){
    //log_info(logger,"IO %s lista para recibir carpinchos", io->id);
    sem_wait(&io->cola_con_elementos);
+   if(!terminar){
    sem_wait(&io->mutex_io);
    carpincho = (t_pcb*) queue_pop(io->bloqueados);
    sem_post(&io->mutex_io);
@@ -254,10 +266,12 @@ void gestor_cola_io(void *datos){
    }else
    carpinchos_bloqueados --;
    iniciar_planificador_corto_plazo(carpincho);
+   }
   // printf("GESTOR IO: carpincho PID %d TERMINO IO %s\n", carpincho->pid, io->id);
    
   //log_info(logger,"GESTOR IO: desbloqueando carpincho PID %d", carpincho->pid);
 }
+printf("termino gestor de io\n");
 }
 io_kernel* bloquear_por_io(t_pcb *carpincho){
    io_kernel *io = buscar_io(carpincho->io_solicitada);

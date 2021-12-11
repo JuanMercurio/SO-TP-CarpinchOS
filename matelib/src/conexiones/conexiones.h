@@ -1,6 +1,5 @@
 #ifndef _CONEXIONES_
 #define _CONEXIONES_
-
 #include <sys/socket.h>
 #include <unistd.h>
 

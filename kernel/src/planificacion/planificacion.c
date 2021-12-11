@@ -14,10 +14,9 @@ void iniciar_cpu()
 }
 void procesador()
 { t_pcb *carpincho;
-   while (!terminar)
-   {
-     
-      sem_wait(&lista_ejecutando_con_elementos);
+   while(!terminar)
+   {  sem_wait(&lista_ejecutando_con_elementos);
+      if(!terminar){
       // sem_wait(&mutex_lista_oredenada_por_algoritmo);
       printf("paso a procesador\n");
       sem_wait(&mutex_lista_oredenada_por_algoritmo);
@@ -71,8 +70,9 @@ void procesador()
          eliminar_carpincho(carpincho);
          break;
       }
+      }
       
-   }
+   }printf("termino procesador\n");
 }
 
 bool verificar_suspension()
@@ -126,7 +126,7 @@ void listar_por_hrrn(t_pcb *carpincho)
       t_pcb *comparado;
       int i = 0;
       bool ok = false;
-      while (i < list_size(lista_ordenada_por_algoritmo))
+      while(i < list_size(lista_ordenada_por_algoritmo))
       {
          comparado = (t_pcb *)list_get(lista_ordenada_por_algoritmo, i);
          mostrar_tiempos(comparado);
@@ -310,9 +310,10 @@ void bloquear_por_mediano_plazo(t_pcb *carpincho)
 void planificador_mediano_plazo()
 {
    t_pcb *carpincho;
-   while (!terminar)
+   while(!terminar)
    {
       sem_wait(&cola_suspendido_bloquedo_con_elementos);
+      if(!terminar){
       sem_wait(&mutex_cola_bloqueado_suspendido);
       carpincho = (t_pcb *)queue_pop(suspendido_bloqueado);
       sem_post(&mutex_cola_bloqueado_suspendido);
@@ -331,15 +332,18 @@ void planificador_mediano_plazo()
       log_info(logger, "Se agrega el carpincho %d a la cola suspendido-listo porque recibió evento", carpincho->pid);
       printf("Se agrega el carpincho %d a la cola suspendido-listo porque recibió evento\n", carpincho->pid);
    }
+   }printf("termino mediano plazo\n");
 }
 
 void iniciar_planificador_largo_plazo()
 {
    t_pcb *carpincho = NULL;
-   while (1)
+   while(!terminar)
    {
       sem_wait(&controlador_multiprogramacion);
+      if(!terminar)
       sem_wait(&cola_new_con_elementos);
+      if(!terminar){
       log_info(logger, "Llegó un carpincho al planificador de largo plazo");
       if (!queue_is_empty(suspendido_listo))
       { //si el mediano plazo suspendio algo tiene prioridad es
@@ -359,6 +363,7 @@ void iniciar_planificador_largo_plazo()
       printf(" se va  a corotoplazo plp\n");
       iniciar_planificador_corto_plazo(carpincho);
    }
+   }printf("termino corto plazo\n");
 }
 
 void inicializar_proceso_carpincho(t_pcb *carpincho)
@@ -374,9 +379,9 @@ void inicializar_proceso_carpincho(t_pcb *carpincho)
    sem_init(&carpincho->semaforo_evento, 0, 0);
    sem_init(&carpincho->semaforo_fin_evento, 0, 0);
 }
-void iniciar_gestor_finalizados()
+/* void iniciar_gestor_finalizados()
 {
-   while (!terminar)
+   while(!terminar)
    {
       sem_wait(&cola_finalizados_con_elementos);
       sem_wait(&mutex_cola_finalizados);
@@ -386,8 +391,8 @@ void iniciar_gestor_finalizados()
       eliminar_carpincho((void *)carpincho);
       sem_post(&controlador_multiprogramacion);
 
-   }
-}
+   }printf("termino gestor finalizados\n");
+} */
 void eliminar_carpincho(void *arg)
 { // revisar que este este borrando lo necesario y no haya free's de mas
    t_pcb *carpincho = (t_pcb *)arg;

@@ -4,6 +4,7 @@
 #include "deadlock/deadlock.h"
 bool terminar = false;
 
+
 int id_procesos = 0;
 int carpinchos_bloqueados = 0;
 int main(int argc, char *argv[])
@@ -20,13 +21,24 @@ int main(int argc, char *argv[])
    init_dispositivos_io();
    printf("inicio dispositivos io\n");
    inicializar_planificacion();
-   administrar_clientes(configuracion.IP, configuracion.PUERTO, (void *)&receptor);
-   log_info(logger, "Kernel listo para recibir solicitudes");
+   administrar_clientes_kernel(configuracion.IP, configuracion.PUERTO, (void *)&receptor);
    return 0;
 }
 
 void terminar_programa()
 {
+   printf("eviando posts para terminar hilos\n");
+   while(!list_is_empty(lista_io_kernel)){
+      io_kernel * destroy = list_remove(lista_io_kernel,0);
+      sem_post(&destroy->cola_con_elementos);
+      printf("post a io %s\n", destroy->id);
+      io_destroyer((void*)destroy);
+      printf("destruyo io\n");
+   }
+  sem_post(&cola_suspendido_bloquedo_con_elementos);
+   sem_post(&controlador_multiprogramacion);
+      sem_post(&cola_new_con_elementos);
+    sem_post(&lista_ejecutando_con_elementos);
    printf("Entro a destrucción config\n");
    config_destroy(config);
    printf("Entro a destrucción logger\n");
@@ -36,8 +48,9 @@ void terminar_programa()
    printf("Entro a destrucción colas y listas\n");
    destruir_colas_y_listas();
    printf("destuyendo detacheds\n");
-   //pthread_attr_destroy(&detached2);
-   //pthread_attr_destroy(&detached3);
+   pthread_attr_destroy(&detached2);
+   pthread_attr_destroy(&detached3);
+   
 }
 
 void destruir_colas_y_listas()
@@ -45,90 +58,120 @@ void destruir_colas_y_listas()
    if (!list_is_empty(lista_sem_kernel))
    {
       list_destroy_and_destroy_elements(lista_sem_kernel, (void *)sem_destroyer);
+      printf("destruyo lista sem kernel con elementos\n");
    }
    else
    {
       list_destroy(lista_sem_kernel);
+            printf("destruyo lista sem kernel sin elementos\n");
+
    }
-
+/*    if(!list_is_empty(lista_io_kernel)){
    list_destroy_and_destroy_elements(lista_io_kernel, (void *)io_destroyer);
+printf(" destruyo listas io con elementos\n");
+   }else
+   {
+      list_destroy(lista_io_kernel);
+      printf(" destruyo listas io sin elementos\n");
 
+   } */
+   
    if (!queue_is_empty(cola_new)) // cambiado
    {
       queue_destroy_and_destroy_elements(cola_new, (void *)eliminar_carpincho);
+            printf("destruyo cola new con elementos\n");
    }
    else
    {
       queue_destroy(cola_new);
+                  printf("destruyo cola new sin elementos\n");
    }
-   if (!queue_is_empty(cola_ready))
+ /*   if (!queue_is_empty(cola_ready))
    {
       queue_destroy_and_destroy_elements(cola_ready, (void *)eliminar_carpincho);
+                  printf("destruyo cola ready con elementos\n");
    }
    else
    {
       queue_destroy(cola_ready);
-   }
+                        printf("destruyo cola ready sin elementos\n");
+
+   } */
    if (!queue_is_empty(suspendido_bloqueado))
    {
       queue_destroy_and_destroy_elements(suspendido_bloqueado, (void *)eliminar_carpincho);
+            printf("destruyo suspendo bloquedo con elementos\n");
+
    }
    else
    {
       queue_destroy(suspendido_bloqueado);
+      printf("destruyo suspendo bloquedo sin elementos\n");
    }
    if (!queue_is_empty(suspendido_listo))
    {
       queue_destroy_and_destroy_elements(suspendido_listo, (void *)eliminar_carpincho);
+            printf("destruyo suspendo listo con elementos\n");
+
    }
    else
    {
       queue_destroy(suspendido_listo);
+                  printf("destruyo suspendo listo sin elementos\n");
    }
-   if (!queue_is_empty(cola_finalizados))
+/*    if (!queue_is_empty(cola_finalizados))
    {
       queue_destroy_and_destroy_elements(cola_finalizados, (void *)eliminar_carpincho);
+                  printf("destruyo finalizados con elementos\n");
+
    }
    else
    {
       queue_destroy(cola_finalizados);
-   }
+                        printf("destruyo finalizados sin elementos\n");
 
-   if (!list_is_empty(lista_ejecutando))
+   } */
+
+/*    if (!list_is_empty(lista_ejecutando))
    {
       list_destroy_and_destroy_elements(lista_ejecutando, (void *)eliminar_carpincho);
    }
    else
    {
       list_destroy(lista_ejecutando);
-   }
+   } */
    if (!list_is_empty(lista_ordenada_por_algoritmo))
    {
       list_destroy_and_destroy_elements(lista_ordenada_por_algoritmo, (void *)eliminar_carpincho);
+                        printf("destruyo lista ordenaod por algoritmo con elementos\n");
+
    }
    else
    {
-      list_destroy(lista_ejecutando);
+      list_destroy(lista_ordenada_por_algoritmo);
+                              printf("destruyo lista ordenaod por algoritmo sin elementos\n");
+
    }
-   log_info(logger, "Colas, listas y sus respectivos elementos destruidos");
+   //log_info(logger, "Colas, listas y sus respectivos elementos destruidos");
+   
 }
 
 void destruir_semaforos()
 {
    sem_destroy(&cola_new_con_elementos);
-   sem_destroy(&cola_ready_con_elementos);
+  // sem_destroy(&cola_ready_con_elementos);
    sem_destroy(&cola_suspendido_bloquedo_con_elementos);
    sem_destroy(&cola_suspendido_listo_con_elementos);
-   sem_destroy(&cola_finalizados_con_elementos);
+   //sem_destroy(&cola_finalizados_con_elementos);
    sem_destroy(&mutex_cola_new);
-   sem_destroy(&mutex_cola_ready);
+ //  sem_destroy(&mutex_cola_ready);
    sem_destroy(&mutex_cola_bloqueado_suspendido);
    sem_destroy(&mutex_cola_listo_suspendido);
-   sem_destroy(&mutex_lista_ejecutando);
-   sem_destroy(&mutex_cola_finalizados);
+  // sem_destroy(&mutex_lista);
+  // sem_destroy(&mutex_cola_finalizados);
    sem_destroy(&mutex_lista_oredenada_por_algoritmo);
    sem_destroy(&controlador_multiprogramacion);
-   log_info(logger, "Semáforos destruidos");
+   //log_info(logger, "Semáforos destruidos");
 }
 
 void receptor(void *arg)
@@ -188,7 +231,8 @@ void receptor(void *arg)
          log_info(logger, "Se recibió del carpincho %d un SEM INIT para el semáforo %s con valor %d\n ", carpincho->pid, semaforo->nombre_semaforo, semaforo->valor);
          int resultado = sem_kernel_init(semaforo->nombre_semaforo, semaforo->valor); // usa lo que necesit
          enviar_int(cliente, resultado);                                              // responde peticion con ok
-         free(semaforo->nombre_semaforo);                                             // bora lo que alloco
+         free(semaforo->nombre_semaforo);
+         free(semaforo->buffer);                                             // bora lo que alloco
          free(semaforo);
 
          break;
@@ -415,7 +459,7 @@ void inicializar_planificacion()
    {
       log_info(logger, "Hilo Planificador Largo Plazo creado");
    }
-
+/* 
    if (pthread_create(&hilos_planificadores, &detached3, (void *)iniciar_gestor_finalizados, NULL) != 0)
    {
       log_info(logger, "No se pudo crear el hilo Gestor Finalizados");
@@ -423,7 +467,7 @@ void inicializar_planificacion()
    else
    {
       log_info(logger, "Hilo Planificador Gestor Finalizados creado");
-   }
+   } */
 
    if (pthread_create(&hilos_planificadores, &detached3, (void *)&deteccion_deadlock, NULL) != 0)
    {
@@ -462,32 +506,33 @@ void program_killer()
    printf("terminar=true");
    terminar = true;
    terminar_programa();
+   printf("TERMINO SERVIDOR\n");
 }
 
 void iniciar_colas()
 {
    cola_new = queue_create(); // cambio
-   cola_ready = queue_create();
+  // cola_ready = queue_create();
    suspendido_bloqueado = queue_create();
    suspendido_listo = queue_create();
-   cola_finalizados = queue_create();
+ //  cola_finalizados = queue_create();
    lista_ordenada_por_algoritmo = list_create();
 }
 void inicializar_semaforos()
 {
 
    sem_init(&cola_new_con_elementos, 0, 0);
-   sem_init(&cola_ready_con_elementos, 0, 0);
+  // sem_init(&cola_ready_con_elementos, 0, 0);
    sem_init(&cola_suspendido_bloquedo_con_elementos, 0, 0);
    sem_init(&cola_suspendido_listo_con_elementos, 0, 0);
-   sem_init(&cola_finalizados_con_elementos, 0, 0);
+  // sem_init(&cola_finalizados_con_elementos, 0, 0);
 
    sem_init(&mutex_cola_new, 0, 1);
-   sem_init(&mutex_cola_ready, 0, 1);
+  // sem_init(&mutex_cola_ready, 0, 1);
    sem_init(&mutex_cola_bloqueado_suspendido, 0, 1);
    sem_init(&mutex_cola_listo_suspendido, 0, 1);
-   sem_init(&mutex_lista_ejecutando, 0, 1);
-   sem_init(&mutex_cola_finalizados, 0, 1);
+  // sem_init(&mutex_lista_ejecutando, 0, 1);
+  // sem_init(&mutex_cola_finalizados, 0, 1);
    sem_init(&mutex_lista_oredenada_por_algoritmo, 0, 1);
    sem_init(&mutex_lista_sem_kernel, 0, 1);
    sem_init(&mutex_lista_io_kernel, 0, 1);
@@ -498,4 +543,27 @@ void inicializar_listas_sem_io()
 {
    lista_io_kernel = list_create();
    lista_sem_kernel = list_create();
+   printf("CREO LISTA IO Y KERNEL SEM\n");
+}
+
+void administrar_clientes_kernel(char* IP, char* PUERTO, void (*funcion)(void*)){
+
+  int servidor = iniciar_servidor(IP, PUERTO);
+
+   pthread_attr_t detached;
+   pthread_attr_init(&detached);
+   pthread_attr_setdetachstate(&detached, PTHREAD_CREATE_DETACHED);
+
+   /* Revisar Condicion para terminar este while */
+   while(!terminar){
+      pthread_t hilo;
+      int *cliente = malloc(sizeof(int));
+      if(!terminar){
+      *cliente= aceptar_cliente(servidor);
+      pthread_create(&hilo, &detached, (void*)funcion,(void*) cliente);
+   
+}}
+printf("termino atender clientes\n");
+   pthread_attr_destroy(&detached); 
+
 }
