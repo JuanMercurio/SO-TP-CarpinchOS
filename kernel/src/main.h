@@ -15,6 +15,7 @@
 #include <mensajes/mensajes.h>
 #include <stdio.h>
 
+int servidor;
 extern bool terminar;
 extern int carpinchos_bloqueados;
 sem_t mate_close;
@@ -123,7 +124,7 @@ sem_t mutex_lista_io_kernel;
 
 
 
- pthread_attr_t detached2, detached3;
+ pthread_attr_t detached2;
 void administrar_clientes_kernel(char* IP, char* PUERTO, void (*funcion)(void*));
 /*
     @NAME: terminar_programa

@@ -2,16 +2,24 @@
 #include "io_semaforos/io_semaforos.h"
 #include "planificacion/planificacion.h"
 #include "deadlock/deadlock.h"
+#include "signal.h"
 bool terminar = false;
 
 
 int id_procesos = 0;
 int carpinchos_bloqueados = 0;
+void signal_init(int sig, void(*handler)){ 
+    struct sigaction sa;
+    sa.sa_flags = SA_RESTART;
+    sa.sa_handler = handler;
+    sigaction(sig, &sa, NULL);
+}
+
 int main(int argc, char *argv[])
 {
    //solo corre si corremos el binario asi: binario test
    //tests(argc, argv[1]);
-
+   signal_init(SIGINT, program_killer);
    iniciar_logger();
    printf("inicio\n");
    obtener_config();
@@ -35,10 +43,11 @@ void terminar_programa()
       io_destroyer((void*)destroy);
       printf("destruyo io\n");
    }
-  sem_post(&cola_suspendido_bloquedo_con_elementos);
+   sem_post(&cola_suspendido_bloquedo_con_elementos);
    sem_post(&controlador_multiprogramacion);
-      sem_post(&cola_new_con_elementos);
-    sem_post(&lista_ejecutando_con_elementos);
+   sem_post(&cola_new_con_elementos);
+   sem_post(&lista_ejecutando_con_elementos);
+
    printf("Entro a destrucción config\n");
    config_destroy(config);
    printf("Entro a destrucción logger\n");
@@ -49,7 +58,8 @@ void terminar_programa()
    destruir_colas_y_listas();
    printf("destuyendo detacheds\n");
    pthread_attr_destroy(&detached2);
-   pthread_attr_destroy(&detached3);
+   printf("cerrando servidor...\n");
+   close(servidor);
    
 }
 
@@ -110,9 +120,8 @@ printf(" destruyo listas io con elementos\n");
    }
    if (!queue_is_empty(suspendido_listo))
    {
-      queue_destroy_and_destroy_elements(suspendido_listo, (void *)eliminar_carpincho);
+      queue_destroy_and_destroy_elements(suspendido_listo, eliminar_carpincho);
             printf("destruyo suspendo listo con elementos\n");
-
    }
    else
    {
@@ -171,6 +180,8 @@ void destruir_semaforos()
   // sem_destroy(&mutex_cola_finalizados);
    sem_destroy(&mutex_lista_oredenada_por_algoritmo);
    sem_destroy(&controlador_multiprogramacion);
+   printf("se rompe aca\n");
+   sem_destroy(&lista_ejecutando_con_elementos);
    //log_info(logger, "Semáforos destruidos");
 }
 
@@ -232,7 +243,7 @@ void receptor(void *arg)
          int resultado = sem_kernel_init(semaforo->nombre_semaforo, semaforo->valor); // usa lo que necesit
          enviar_int(cliente, resultado);                                              // responde peticion con ok
          free(semaforo->nombre_semaforo);
-         free(semaforo->buffer);                                             // bora lo que alloco
+         //free(semaforo->buffer->stream);                                             // bora lo que alloco
          free(semaforo);
 
          break;
@@ -436,13 +447,11 @@ void receptor(void *arg)
 void inicializar_planificacion()
 {
    pthread_t hilos_planificadores;
-   pthread_attr_t detached3;
-   pthread_attr_init(&detached3);
-   pthread_attr_setdetachstate(&detached3, PTHREAD_CREATE_DETACHED);
+   pthread_attr_setdetachstate(&detached2, PTHREAD_CREATE_DETACHED);
 
    iniciar_colas();
    log_info(logger, "Inicio colas de planificación");
-   if (pthread_create(&hilos_planificadores, &detached3, (void *)planificador_mediano_plazo, NULL) != 0)
+   if (pthread_create(&hilos_planificadores, &detached2, (void *)planificador_mediano_plazo, NULL) != 0)
    {
       log_info(logger, "No se pudo crear el hilo Planificador Corto Plazo");
    }
@@ -451,7 +460,7 @@ void inicializar_planificacion()
       log_info(logger, "Hilo Planificador Corto Plazo creado");
    }
 
-   if (pthread_create(&hilos_planificadores, &detached3, (void *)iniciar_planificador_largo_plazo, NULL) != 0)
+   if (pthread_create(&hilos_planificadores, &detached2, (void *)iniciar_planificador_largo_plazo, NULL) != 0)
    {
       log_info(logger, "No se pudo crear el hilo Planificador Largo Plazo");
    }
@@ -469,7 +478,7 @@ void inicializar_planificacion()
       log_info(logger, "Hilo Planificador Gestor Finalizados creado");
    } */
 
-   if (pthread_create(&hilos_planificadores, &detached3, (void *)&deteccion_deadlock, NULL) != 0)
+   if (pthread_create(&hilos_planificadores, &detached2, deteccion_deadlock, NULL) != 0)
    {
       log_info(logger, "No se pudo crear el hilo Detección Deadlock");
    }
@@ -478,16 +487,16 @@ void inicializar_planificacion()
       log_info(logger, "Hilo Detección Deadlock creado");
    }
 
-   if (pthread_create(&hilos_planificadores, &detached3, (void *)&program_killer, NULL) != 0)
+/*    if (pthread_create(&hilos_planificadores, &detached3, (void *)&program_killer, NULL) != 0)
    {
       log_info(logger, "No se pudo crear el hilo para terminar el programa");
    }
    else
    {
       log_info(logger, "Hilo para terminar el programa creado");
-   }
+   } */
 
-   if (pthread_create(&hilos_planificadores, &detached3, (void *)iniciar_cpu, NULL) != 0)
+   if (pthread_create(&hilos_planificadores, &detached2, (void *)iniciar_cpu, NULL) != 0)
    {
       log_info(logger, "No se pudo crear el hilo CPU");
    }
@@ -498,12 +507,12 @@ void inicializar_planificacion()
 }
 void program_killer()
 {
-   printf("en program killer\n");
+/*    printf("en program killer\n");
    char *leido = string_new();
    log_info(logger, "Para terminar precione cualquier tecla.");
    scanf("%s", leido);
    //leido=getchar();
-   printf("terminar=true");
+   printf("terminar=true"); */
    terminar = true;
    terminar_programa();
    printf("TERMINO SERVIDOR\n");
@@ -548,7 +557,7 @@ void inicializar_listas_sem_io()
 
 void administrar_clientes_kernel(char* IP, char* PUERTO, void (*funcion)(void*)){
 
-  int servidor = iniciar_servidor(IP, PUERTO);
+   servidor = iniciar_servidor(IP, PUERTO);
 
    pthread_attr_t detached;
    pthread_attr_init(&detached);
@@ -557,12 +566,15 @@ void administrar_clientes_kernel(char* IP, char* PUERTO, void (*funcion)(void*))
    /* Revisar Condicion para terminar este while */
    while(!terminar){
       pthread_t hilo;
-      int *cliente = malloc(sizeof(int));
-      if(!terminar){
+      int *cliente = malloc(sizeof(int)); // posible memory leaking
       *cliente= aceptar_cliente(servidor);
+      if(*cliente == -1){
+         free(cliente);
+      }else{
       pthread_create(&hilo, &detached, (void*)funcion,(void*) cliente);
+      }
    
-}}
+}
 printf("termino atender clientes\n");
    pthread_attr_destroy(&detached); 
 

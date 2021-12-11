@@ -68,4 +68,6 @@ void inicializar_proceso_carpincho(t_pcb *carpincho);
 
 void eliminar_carpincho(void *arg);
 
+void liberar_char(char** lista);
+
 #endif

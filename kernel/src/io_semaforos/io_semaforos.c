@@ -177,7 +177,7 @@ void io_destroyer(void *arg)
    sem_destroy(&a_destruir->cola_con_elementos);
       printf("destruyo semaforo de cola con elementos\n");
 
-   free((void*)a_destruir);
+   free(a_destruir);
       printf("libero struct\n");
 
 }
@@ -237,7 +237,7 @@ void iniciar_hilos_gestores_de_io(){
       {  
          pthread_t hilo2;
          io = (io_kernel*)list_get(lista_io_kernel, i-1);
-         if ((pthread_create(&hilo2, NULL, (void*)gestor_cola_io, (void *)io))!=0)
+         if ((pthread_create(&hilo2, &detached2, (void*)gestor_cola_io, (void *)io))!=0)
          {
             log_info(logger, "No se pudo crear el hilo gestor de la IO %s", io->id);
          }else
@@ -263,9 +263,10 @@ void gestor_cola_io(void *datos){
    sleep(io->retardo * 0.001);
    if(carpincho->estado == 'S'){
       sem_post(&carpincho->semaforo_fin_evento);
-   }else
+   }else{
    carpinchos_bloqueados --;
    iniciar_planificador_corto_plazo(carpincho);
+   }
    }
   // printf("GESTOR IO: carpincho PID %d TERMINO IO %s\n", carpincho->pid, io->id);
    

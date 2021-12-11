@@ -6,7 +6,7 @@ void iniciar_cpu()
    pthread_t cpu;
    for (int i = 0; i < configuracion.GRADO_MULTIPROCESAMIENTO; i++)
    {
-      if (pthread_create(&cpu, &detached3, (void *)procesador, NULL) != 0)
+      if (pthread_create(&cpu, &detached2, procesador, NULL) != 0)
       {
          log_info(logger, "NO SE PUDO CREAR HILO CPU");
       }
@@ -17,7 +17,6 @@ void procesador()
    while(!terminar)
    {  sem_wait(&lista_ejecutando_con_elementos);
       if(!terminar){
-      // sem_wait(&mutex_lista_oredenada_por_algoritmo);
       printf("paso a procesador\n");
       sem_wait(&mutex_lista_oredenada_por_algoritmo);
       carpincho = (t_pcb *)list_remove(lista_ordenada_por_algoritmo, 0);
@@ -78,7 +77,7 @@ void procesador()
 bool verificar_suspension()
 {
 
-   if (carpinchos_bloqueados == configuracion.GRADO_MULTIPROGRAMACION - 1 && list_is_empty(lista_ordenada_por_algoritmo) && !queue_is_empty(cola_new))//cambiado
+   if (carpinchos_bloqueados >= configuracion.GRADO_MULTIPROGRAMACION - 1 && list_is_empty(lista_ordenada_por_algoritmo) && !queue_is_empty(cola_new))//cambiado
       return true;
    else{
    log_info(logger, "No se deben suspender carpinchos");
@@ -265,9 +264,18 @@ double obtener_tiempo(char *inicio, char *fin)
          }
       }
    }
-   free(valores_inicio);
-   free(valores_fin);
+   liberar_char(valores_inicio);
+   liberar_char(valores_fin);
    return total;
+}
+
+void liberar_char(char** lista){
+int contador = 0;
+while(lista[contador] != NULL){
+        free(lista[contador]);
+        contador++;
+}
+free(lista);
 }
 
 bool comparador_SFJ(void* arg1,void* arg2)
@@ -297,7 +305,7 @@ void* comparador_HRRN(void *arg1,void* arg2)
 void bloquear_por_mediano_plazo(t_pcb *carpincho)
 {
    //AVISAR A MEMORIA QUE EL CARPINCHO ESTA SUSPENDIDO (SWAMP)
-   printf("ENTRO A MEDIANO PLAZO CARPINCHO %d\n", carpincho->pid);
+   printf("|||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||ENTRO A MEDIANO PLAZO CARPINCHO %d\n", carpincho->pid);
    //enviar_int(carpincho->fd_memoria, SUSPENCION);// ARREGLAR
    carpincho->estado = 'S';
    sem_wait(&mutex_cola_bloqueado_suspendido);
@@ -351,7 +359,7 @@ void iniciar_planificador_largo_plazo()
          carpincho = (t_pcb*) queue_pop(suspendido_listo);
          sem_post(&mutex_cola_listo_suspendido);
          log_info(logger, "Carpincho %d - Se saca de suspencion", carpincho->pid);
-         printf("Carpincho %d - Se saca de suspencion", carpincho->pid);
+         printf("++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++Carpincho %d - Se saca de suspencion\n", carpincho->pid);
         // enviar_mensaje_y_cod_op("sali de suspension", carpincho->fd_memoria, VUELTA_A_READY);// traer de swamp las paginasssssss
       }else{
          sem_wait(&mutex_cola_new);
@@ -413,8 +421,8 @@ void eliminar_carpincho(void *arg)
    sem_destroy(&carpincho->semaforo_fin_evento);
    printf("ELIMINAR CARPINCHO: CERRANDO CONEXION %d de carpincho %d\n", carpincho->fd_cliente, carpincho->pid);
    //close(carpincho->fd_memoria);
-   log_info(logger, "Carpincho %d - Eliminado", carpincho->pid);
-   free(carpincho);
+  // log_info(logger, "Carpincho %d - Eliminado", carpincho->pid);
+  // free(carpincho);
 }
 
 void ejecutando_a_bloqueado(t_pcb *carpincho, t_queue *cola, sem_t *mutex)

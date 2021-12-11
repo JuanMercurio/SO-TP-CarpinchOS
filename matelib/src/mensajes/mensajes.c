@@ -98,10 +98,9 @@ void recibir_buffer_v(void* buffer, int size, int socket){
 
 char* recibir_mensaje(int socket){
     int size = recibir_tamanio(socket);
-    void* buffer = malloc(size);
+    void* buffer;
     buffer = recibir_buffer(size, socket);
     return (char*)buffer;
-
 }
 
  void enviar_buffer( int cliente, void* buffer, int tamanio){
