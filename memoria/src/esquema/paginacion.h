@@ -20,6 +20,8 @@ extern memoria_t ram;
 /* "Bitmap" de marcos */
 extern t_list* marcos; 
 
+extern bool primero;
+
 /*
     @NAME:  iniciar_paginacion
     @DESC:  inicia todas las estructuras necesarias 

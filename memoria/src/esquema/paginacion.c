@@ -16,6 +16,7 @@ memoria_t ram;
 tablas_t tablas;
 t_list *marcos;
 int ids_memoria = 1;
+bool primero = true;
 
 /* --------------- INICIACION ---------------------- */
 
@@ -128,7 +129,7 @@ int nro_marco(int pagina, tab_pags *tabla)
 
     marco = buscar_en_swap(tabla, pagina);
     if (marco != -1) {
-        printf("Encontre en swap");
+        printf("Encontre en swap\n");
         return marco;
     }
 
@@ -144,10 +145,10 @@ int buscar_en_swap(tab_pags *tabla, int pagina)
     int op = recibir_int(swap);
 
     if (op == -1) {
-        printf("SWAP: no se encontro la pagina en swap\n");
+        log_info(logger_memoria, "SWAP - PID: %d - PAG: %d - NO FUE ENCONTRADA EN SWAP", tabla->pid, pagina);
         return -1;
     }
-
+    log_info(logger_memoria, "SWAP - Recibi - PID: %d - PAG: %d", tabla->pid, pagina);
     void* contenido = recibir_buffer(configuracion.TAMANIO_PAGINAS, swap);
 
     t_victima victima = algoritmo_mmu(tabla->pid, tabla);
@@ -162,12 +163,10 @@ void reemplazar_pagina(t_victima victima, void *buffer, int pagina, tab_pags *ta
     // y si buffer es NULL?
 
     if (victima.modificado == 1) {
-       enviar_pagina_a_swap(victima.pid, victima.pagina, victima.marco);
-       int pido = recibir_int(swap);
+        enviar_pagina_a_swap(victima.pid, victima.pagina, victima.marco);
+        log_info(logger_memoria, "SWAP - Envie  - PID: %d - PAG: %d", victima.pid, victima.pagina);
+        int pido = recibir_int(swap);
     }
-
-    tab_pags* t = buscar_page_table(victima.pid);
-    pag_t* p = list_get(t->tabla_pag, victima.pagina);
 
     if (configuracion.CANTIDAD_ENTRADAS_TLB > 0 ) tlb_insert_page(tabla->pid, pagina, victima.marco, READ);
     if (buffer != NULL) insertar_pagina(buffer, victima.marco);
@@ -194,14 +193,13 @@ void tlb_limpiar_registro(int pid, int pagina)
 
 void actualizar_nueva_pagina(int pagina, int marco, tab_pags *tabla)
 {
-
     pag_t *reg = list_get(tabla->tabla_pag, pagina);
     reg->presente = 1;
     if (configuracion.CANTIDAD_ENTRADAS_TLB != 0) reg->tlb = 1;
     reg->marco = marco;
     reg->algoritmo = alg_comportamiento();
-
 }
+
 void actualizar_victima_de_tlb(tlb_t* reg)
 {
     tab_pags* tabla = buscar_page_table(reg->pid);
@@ -290,6 +288,11 @@ int marco_libre()
 void pagina_iniciar(tab_pags *tabla)
 {
     //verificar en swap
+    if (primero) {
+        tabla->p_clock = 0;
+        primero = false;
+    }
+
     int pagina = crear_pagina(tabla->tabla_pag);
 
     int marco = marco_libre();

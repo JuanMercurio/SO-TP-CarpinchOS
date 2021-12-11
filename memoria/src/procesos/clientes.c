@@ -223,6 +223,7 @@ void inicio_comprobar(tab_pags* tabla, int cliente, bool* conectado){
 
 void cliente_terminar(tab_pags* tabla, int cliente)
 { 
+    if (tabla->p_clock != -1) clock_puntero_actualizar(tabla->pid);
     tablas_eliminar_proceso(tabla->pid);
     tlb_eliminar_proceso(tabla->pid);
 
@@ -232,6 +233,27 @@ void cliente_terminar(tab_pags* tabla, int cliente)
     sprintf(mensaje, "Se desconecto un cliente - Socket: %d - PID: %d", cliente, tabla->pid);
     loggear_mensaje(mensaje);
     close(cliente);
+}
+
+void clock_puntero_actualizar(int pid)
+{
+    if (strcmp(configuracion.ALGORITMO_REEMPLAZO_MMU, "CLOCK-M") != 0) return;
+
+    int ganador;
+    int procesos = list_size(tablas.lista);
+    for (int i=0; i < procesos; i++) {
+
+        tab_pags* t = list_get(tablas.lista, i);
+        if (t->pid == pid) {
+            ganador = procesos-1 == i ? 0 : i+1;
+            break;
+        }
+    }
+
+    if (procesos == 1) primero = true;
+
+    tab_pags* t = list_get(tablas.lista, ganador);
+    t->p_clock = 0;
 }
 
 tab_pags* tabla_init()

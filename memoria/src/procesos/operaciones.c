@@ -579,6 +579,7 @@ int memoria_escribir(tab_pags* tabla, dir_t dl, void* contenido, int tamanio){
     int written = 0;
     int bytes_remaining = tamanio;
     int bytes_remaining_space = configuracion.TAMANIO_PAGINAS - dl.offset;
+
     while(bytes_remaining > 0)
     {
         int marco = nro_marco(dl.PAGINA, tabla);

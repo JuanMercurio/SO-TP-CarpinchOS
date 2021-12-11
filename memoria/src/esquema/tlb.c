@@ -30,6 +30,8 @@ void iniciar_tlb(){
 
 int buscar_en_tlb(tab_pags* tabla, int pagina){
 
+    if (configuracion.CANTIDAD_ENTRADAS_TLB == 0) return TLB_MISS;
+
     int pid = tabla->pid;
 
     for(int i=0; i<list_size(tlb); i++){
