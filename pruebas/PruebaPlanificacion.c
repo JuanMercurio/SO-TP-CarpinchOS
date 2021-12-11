@@ -15,6 +15,7 @@ t_log *logger;
 void imprimir_carpincho_n_hace_algo(int numero_de_carpincho)
 {
     log_info(logger, "EJECUTANDO Carpincho %d", numero_de_carpincho);
+    printf("EJECUTANDO Carpincho %d\n", numero_de_carpincho);
     sleep(2);
 }
 

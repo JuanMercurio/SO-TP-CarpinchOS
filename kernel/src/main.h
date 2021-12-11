@@ -54,9 +54,9 @@ typedef struct t_pcb{
     int proxima_instruccion;
     char* io_solicitada;
     io_kernel* io;
-    char* semaforo_a_modificar;
     sem_t semaforo_evento;
     sem_t semaforo_fin_evento;
+    sem_kernel* bloqueado_en;
 }t_pcb;
 
 typedef enum{

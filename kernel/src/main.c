@@ -255,9 +255,12 @@ void receptor(void *arg)
             break;
          }
          recibido = recibir_mensaje(cliente);
-         carpincho->io_solicitada = string_duplicate(recibido);
+         //carpincho->io_solicitada = string_new();
+      // strcpy(carpincho->io_solicitada ,recibido);
+         //printf(" RECIBIDO DE IO-----------------------------------------------------%s  y coipiado %s\n", recibido, carpincho->io_solicitada);
          carpincho->proxima_instruccion = IO;
-         carpincho->io = buscar_io(carpincho->io_solicitada);
+         carpincho->io = buscar_io(recibido);
+         
          printf("RECEPTOR: io: recibido de bloquear por io a carpincho %d\n", carpincho->pid);
          if (carpincho->io == NULL)
          {
@@ -278,11 +281,11 @@ void receptor(void *arg)
             break;
          }
          recibido = recibir_mensaje(cliente);
-         carpincho->semaforo_a_modificar = string_duplicate(recibido);
          printf("RECEPTOR: semaforo %s recibido para wait de carpincho %d \n", recibido, carpincho->pid);
          int pos;
-         sem = buscar_semaforo2(carpincho->semaforo_a_modificar, &pos);
+         sem = buscar_semaforo2(recibido, &pos);
          printf("RECEPTOR: ---------------------------------------\n");
+          free(recibido);
 
          if (sem == NULL)
          {
@@ -305,7 +308,7 @@ void receptor(void *arg)
                log_info(logger, "Se recibió del carpincho %d un SEM WAIT para %s pero NO se bloqueara", carpincho->pid, sem->id);
             }
          }
-         free(recibido);
+        
          break;
 
       case SEM_POST:

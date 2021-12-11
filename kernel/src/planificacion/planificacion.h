@@ -13,7 +13,6 @@ void mostrar_tiempos(t_pcb* carpincho);
            multiprogramacion creando hilos con la funcion procesador.
  */
 void iniciar_cpu();
-
 /* 
     @NAME: procesador
     @DESC: toma un puntero de la lista ordenada por algoritmo
