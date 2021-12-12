@@ -184,3 +184,1353 @@
 [INFO] 12:01:21:182 Memoria/(1785031298:1616): TLB MISS - PID: 1 - Pagina: 0
 [INFO] 12:01:21:223 Memoria/(1785031298:1616): TLB MISS - PID: 1 - Pagina: 1
 [INFO] 12:01:21:262 Memoria/(1785031298:1616): TLB MISS - PID: 1 - Pagina: 0
+[INFO] 11:20:56:118 Memoria/(4291:4291): Tlb Inicializada
+[INFO] 11:21:00:231 Memoria/(4291:4447): Se conecto un cliente - Socket: 15
+[INFO] 11:21:05:692 Memoria/(4291:4460): Se conecto un cliente - Socket: 16
+[INFO] 11:21:05:843 Memoria/(4291:4460): SWAP - Envie  - PID: 1 - PAG: 0
+[INFO] 11:21:05:923 Memoria/(4291:4460): SWAP - Recibi - PID: 1 - PAG: 0
+[INFO] 11:21:05:963 Memoria/(4291:4460): SWAP - Envie  - PID: 1 - PAG: 1
+[INFO] 11:21:06:095 Memoria/(4291:4460): SWAP - Recibi - PID: 1 - PAG: 1
+[INFO] 11:21:06:095 Memoria/(4291:4460): SWAP - Envie  - PID: 1 - PAG: 0
+[INFO] 11:21:06:175 Memoria/(4291:4460): Se desconecto un cliente - Socket: 16 - PID: 1
+[INFO] 16:55:10:397 Memoria/(745:745): Tlb Inicializada
+[INFO] 16:55:11:583 Memoria/(745:884): Se conecto un cliente - Socket: 15
+[INFO] 16:55:48:229 Memoria/(745:1197): Se conecto un cliente - Socket: 16
+[INFO] 16:55:48:241 Memoria/(745:1198): Se conecto un cliente - Socket: 20
+[INFO] 16:55:48:392 Memoria/(745:1197): SWAP - Envie  - PID: 1 - PAG: 0
+[INFO] 16:55:48:472 Memoria/(745:1198): SWAP - Envie  - PID: 1 - PAG: 1
+[INFO] 16:55:48:552 Memoria/(745:1198): SWAP - Envie  - PID: 2 - PAG: 0
+[INFO] 16:55:48:632 Memoria/(745:1197): SWAP - Recibi - PID: 1 - PAG: 0
+[INFO] 16:55:48:672 Memoria/(745:1197): SWAP - Envie  - PID: 2 - PAG: 1
+[INFO] 16:55:48:752 Memoria/(745:1198): SWAP - Recibi - PID: 2 - PAG: 0
+[INFO] 16:55:48:792 Memoria/(745:1198): SWAP - Envie  - PID: 1 - PAG: 0
+[INFO] 16:55:48:872 Memoria/(745:1197): SWAP - Recibi - PID: 1 - PAG: 0
+[INFO] 16:55:48:912 Memoria/(745:1197): SWAP - Envie  - PID: 2 - PAG: 0
+[INFO] 16:55:48:992 Memoria/(745:1198): SWAP - Recibi - PID: 2 - PAG: 0
+[INFO] 16:55:49:072 Memoria/(745:1197): SWAP - Recibi - PID: 1 - PAG: 0
+[INFO] 16:55:49:152 Memoria/(745:1197): SWAP - Recibi - PID: 1 - PAG: 1
+[INFO] 16:55:49:232 Memoria/(745:1198): SWAP - Recibi - PID: 2 - PAG: 0
+[INFO] 16:55:49:312 Memoria/(745:1198): SWAP - Recibi - PID: 2 - PAG: 1
+[INFO] 16:55:49:395 Memoria/(745:1197): Se desconecto un cliente - Socket: 16 - PID: 1
+[INFO] 16:55:49:436 Memoria/(745:1198): Se desconecto un cliente - Socket: 20 - PID: 2
+[INFO] 16:57:14:003 Memoria/(745:1430): Se conecto un cliente - Socket: 21
+[INFO] 16:57:14:004 Memoria/(745:1431): Se conecto un cliente - Socket: 16
+[INFO] 16:57:14:212 Memoria/(745:1430): SWAP - Envie  - PID: 3 - PAG: 0
+[INFO] 16:57:14:292 Memoria/(745:1431): SWAP - Envie  - PID: 3 - PAG: 1
+[INFO] 16:57:14:372 Memoria/(745:1431): SWAP - Envie  - PID: 4 - PAG: 0
+[INFO] 16:57:14:454 Memoria/(745:1430): SWAP - Recibi - PID: 3 - PAG: 0
+[INFO] 16:57:14:492 Memoria/(745:1430): SWAP - Envie  - PID: 4 - PAG: 1
+[INFO] 16:57:14:572 Memoria/(745:1431): SWAP - Recibi - PID: 4 - PAG: 0
+[INFO] 16:57:14:612 Memoria/(745:1431): SWAP - Envie  - PID: 3 - PAG: 0
+[INFO] 16:57:14:694 Memoria/(745:1430): SWAP - Recibi - PID: 3 - PAG: 0
+[INFO] 16:57:14:732 Memoria/(745:1430): SWAP - Envie  - PID: 4 - PAG: 0
+[INFO] 16:57:14:812 Memoria/(745:1431): SWAP - Recibi - PID: 4 - PAG: 0
+[INFO] 16:57:14:892 Memoria/(745:1430): SWAP - Recibi - PID: 3 - PAG: 0
+[INFO] 16:57:14:972 Memoria/(745:1430): SWAP - Recibi - PID: 3 - PAG: 1
+[INFO] 16:57:15:052 Memoria/(745:1431): SWAP - Recibi - PID: 4 - PAG: 0
+[INFO] 16:57:15:132 Memoria/(745:1431): SWAP - Recibi - PID: 4 - PAG: 1
+[INFO] 16:57:15:212 Memoria/(745:1430): Se desconecto un cliente - Socket: 21 - PID: 3
+[INFO] 16:57:15:253 Memoria/(745:1431): Se desconecto un cliente - Socket: 16 - PID: 4
+[INFO] 16:58:15:886 Memoria/(745:1646): Se conecto un cliente - Socket: 20
+[INFO] 16:58:16:068 Memoria/(745:1646): SWAP - Envie  - PID: 5 - PAG: 0
+[INFO] 16:58:16:147 Memoria/(745:1646): SWAP - Recibi - PID: 5 - PAG: 0
+[INFO] 16:58:16:188 Memoria/(745:1646): SWAP - Envie  - PID: 5 - PAG: 1
+[INFO] 16:58:16:308 Memoria/(745:1646): SWAP - Recibi - PID: 5 - PAG: 1
+[INFO] 16:58:16:308 Memoria/(745:1646): SWAP - Envie  - PID: 5 - PAG: 0
+[INFO] 16:58:16:388 Memoria/(745:1646): Se desconecto un cliente - Socket: 20 - PID: 5
+[INFO] 16:59:18:444 Memoria/(745:1840): Se conecto un cliente - Socket: 16
+[INFO] 16:59:18:632 Memoria/(745:1840): SWAP - Envie  - PID: 6 - PAG: 0
+[INFO] 16:59:18:713 Memoria/(745:1840): SWAP - Recibi - PID: 6 - PAG: 0
+[INFO] 16:59:18:752 Memoria/(745:1840): SWAP - Envie  - PID: 6 - PAG: 1
+[INFO] 16:59:18:832 Memoria/(745:1840): SWAP - Recibi - PID: 6 - PAG: 1
+[INFO] 16:59:18:872 Memoria/(745:1840): SWAP - Envie  - PID: 6 - PAG: 0
+[INFO] 16:59:18:953 Memoria/(745:1840): SWAP - Recibi - PID: 6 - PAG: 0
+[INFO] 16:59:18:991 Memoria/(745:1840): SWAP - Envie  - PID: 6 - PAG: 1
+[INFO] 16:59:19:072 Memoria/(745:1840): SWAP - Recibi - PID: 6 - PAG: 1
+[INFO] 16:59:19:192 Memoria/(745:1840): SWAP - Recibi - PID: 6 - PAG: 0
+[INFO] 16:59:19:232 Memoria/(745:1840): SWAP - Recibi - PID: 6 - PAG: 1
+[INFO] 16:59:19:312 Memoria/(745:1840): Se desconecto un cliente - Socket: 16 - PID: 6
+[INFO] 17:00:03:975 Memoria/(2078:2078): Tlb Inicializada
+[INFO] 17:00:05:378 Memoria/(2078:2213): Se conecto un cliente - Socket: 15
+[INFO] 17:00:18:130 Memoria/(2078:2338): Se conecto un cliente - Socket: 16
+[INFO] 17:00:18:140 Memoria/(2078:2339): Se conecto un cliente - Socket: 20
+[INFO] 17:00:18:145 Memoria/(2078:2340): Se conecto un cliente - Socket: 21
+[INFO] 17:00:18:400 Memoria/(2078:2339): SWAP - Envie  - PID: 1 - PAG: 0
+[INFO] 17:00:18:480 Memoria/(2078:2339): SWAP - Envie  - PID: 1 - PAG: 1
+[INFO] 17:00:18:560 Memoria/(2078:2340): SWAP - Envie  - PID: 2 - PAG: 0
+[INFO] 17:00:18:640 Memoria/(2078:2340): SWAP - Envie  - PID: 2 - PAG: 1
+[INFO] 17:00:18:720 Memoria/(2078:2338): SWAP - Recibi - PID: 1 - PAG: 0
+[INFO] 17:00:18:760 Memoria/(2078:2338): SWAP - Envie  - PID: 3 - PAG: 0
+[INFO] 17:00:18:840 Memoria/(2078:2338): SWAP - Recibi - PID: 1 - PAG: 1
+[INFO] 17:00:18:879 Memoria/(2078:2338): SWAP - Envie  - PID: 3 - PAG: 1
+[INFO] 17:00:18:960 Memoria/(2078:2339): SWAP - Recibi - PID: 2 - PAG: 0
+[INFO] 17:00:18:999 Memoria/(2078:2339): SWAP - Envie  - PID: 1 - PAG: 0
+[INFO] 17:00:19:080 Memoria/(2078:2339): SWAP - Recibi - PID: 2 - PAG: 1
+[INFO] 17:00:19:120 Memoria/(2078:2339): SWAP - Envie  - PID: 1 - PAG: 1
+[INFO] 17:00:19:200 Memoria/(2078:2340): SWAP - Recibi - PID: 3 - PAG: 0
+[INFO] 17:00:19:240 Memoria/(2078:2340): SWAP - Envie  - PID: 2 - PAG: 0
+[INFO] 17:00:19:320 Memoria/(2078:2340): SWAP - Recibi - PID: 3 - PAG: 1
+[INFO] 17:00:19:360 Memoria/(2078:2340): SWAP - Envie  - PID: 2 - PAG: 1
+[INFO] 17:00:19:440 Memoria/(2078:2338): SWAP - Recibi - PID: 1 - PAG: 0
+[INFO] 17:00:19:479 Memoria/(2078:2338): SWAP - Envie  - PID: 3 - PAG: 0
+[INFO] 17:00:19:560 Memoria/(2078:2338): SWAP - Recibi - PID: 1 - PAG: 1
+[INFO] 17:00:19:600 Memoria/(2078:2338): SWAP - Envie  - PID: 3 - PAG: 1
+[INFO] 17:00:19:680 Memoria/(2078:2339): SWAP - Recibi - PID: 2 - PAG: 0
+[INFO] 17:00:19:760 Memoria/(2078:2339): SWAP - Recibi - PID: 2 - PAG: 1
+[INFO] 17:00:19:840 Memoria/(2078:2340): SWAP - Recibi - PID: 3 - PAG: 0
+[INFO] 17:00:19:920 Memoria/(2078:2340): SWAP - Recibi - PID: 3 - PAG: 1
+[INFO] 17:00:20:001 Memoria/(2078:2338): SWAP - Recibi - PID: 1 - PAG: 0
+[INFO] 17:00:20:080 Memoria/(2078:2338): SWAP - Recibi - PID: 1 - PAG: 1
+[INFO] 17:00:20:160 Memoria/(2078:2339): SWAP - Recibi - PID: 2 - PAG: 0
+[INFO] 17:00:20:240 Memoria/(2078:2339): SWAP - Recibi - PID: 2 - PAG: 1
+[INFO] 17:00:20:320 Memoria/(2078:2340): SWAP - Recibi - PID: 3 - PAG: 0
+[INFO] 17:00:20:400 Memoria/(2078:2340): SWAP - Recibi - PID: 3 - PAG: 1
+[INFO] 17:00:20:483 Memoria/(2078:2338): Se desconecto un cliente - Socket: 16 - PID: 1
+[INFO] 17:00:20:520 Memoria/(2078:2339): Se desconecto un cliente - Socket: 20 - PID: 2
+[INFO] 17:00:20:560 Memoria/(2078:2340): Se desconecto un cliente - Socket: 21 - PID: 3
+[INFO] 17:01:33:976 Memoria/(2654:2654): Tlb Inicializada
+[INFO] 17:01:35:289 Memoria/(2654:2863): Se conecto un cliente - Socket: 15
+[INFO] 17:01:37:199 Memoria/(2654:2872): Se conecto un cliente - Socket: 16
+[INFO] 17:01:37:212 Memoria/(2654:2873): Se conecto un cliente - Socket: 20
+[INFO] 17:01:37:212 Memoria/(2654:2875): Se conecto un cliente - Socket: 21
+[INFO] 17:01:37:393 Memoria/(2654:2872): TLB HIT - PID: 1 - Pagina: 0 - Marco: 0
+[INFO] 17:01:37:393 Memoria/(2654:2872): TLB HIT - PID: 1 - Pagina: 0 - Marco: 0
+[INFO] 17:01:37:394 Memoria/(2654:2872): TLB HIT - PID: 1 - Pagina: 0 - Marco: 0
+[INFO] 17:01:37:437 Memoria/(2654:2872): TLB HIT - PID: 1 - Pagina: 1 - Marco: 1
+[INFO] 17:01:37:476 Memoria/(2654:2873): SWAP - Envie  - PID: 1 - PAG: 0
+[INFO] 17:01:37:516 Memoria/(2654:2873): TLB HIT - PID: 2 - Pagina: 0 - Marco: 0
+[INFO] 17:01:37:517 Memoria/(2654:2873): TLB HIT - PID: 2 - Pagina: 0 - Marco: 0
+[INFO] 17:01:37:518 Memoria/(2654:2873): TLB HIT - PID: 2 - Pagina: 0 - Marco: 0
+[INFO] 17:01:37:556 Memoria/(2654:2873): SWAP - Envie  - PID: 1 - PAG: 1
+[INFO] 17:01:37:597 Memoria/(2654:2873): TLB HIT - PID: 2 - Pagina: 1 - Marco: 1
+[INFO] 17:01:37:635 Memoria/(2654:2875): SWAP - Envie  - PID: 2 - PAG: 0
+[INFO] 17:01:37:676 Memoria/(2654:2875): TLB HIT - PID: 3 - Pagina: 0 - Marco: 0
+[INFO] 17:01:37:676 Memoria/(2654:2875): TLB HIT - PID: 3 - Pagina: 0 - Marco: 0
+[INFO] 17:01:37:677 Memoria/(2654:2875): TLB HIT - PID: 3 - Pagina: 0 - Marco: 0
+[INFO] 17:01:37:716 Memoria/(2654:2875): SWAP - Envie  - PID: 2 - PAG: 1
+[INFO] 17:01:37:756 Memoria/(2654:2875): TLB HIT - PID: 3 - Pagina: 1 - Marco: 1
+[INFO] 17:01:37:757 Memoria/(2654:2872): TLB MISS - PID: 1 - Pagina: 0
+[INFO] 17:01:37:796 Memoria/(2654:2872): SWAP - Recibi - PID: 1 - PAG: 0
+[INFO] 17:01:37:836 Memoria/(2654:2872): SWAP - Envie  - PID: 3 - PAG: 0
+[INFO] 17:01:37:876 Memoria/(2654:2872): TLB MISS - PID: 1 - Pagina: 1
+[INFO] 17:01:37:916 Memoria/(2654:2872): SWAP - Recibi - PID: 1 - PAG: 1
+[INFO] 17:01:37:956 Memoria/(2654:2872): SWAP - Envie  - PID: 3 - PAG: 1
+[INFO] 17:01:37:996 Memoria/(2654:2873): TLB MISS - PID: 2 - Pagina: 0
+[INFO] 17:01:38:036 Memoria/(2654:2873): SWAP - Recibi - PID: 2 - PAG: 0
+[INFO] 17:01:38:076 Memoria/(2654:2873): SWAP - Envie  - PID: 1 - PAG: 0
+[INFO] 17:01:38:116 Memoria/(2654:2873): TLB MISS - PID: 2 - Pagina: 1
+[INFO] 17:01:38:156 Memoria/(2654:2873): SWAP - Recibi - PID: 2 - PAG: 1
+[INFO] 17:01:38:195 Memoria/(2654:2873): SWAP - Envie  - PID: 1 - PAG: 1
+[INFO] 17:01:38:236 Memoria/(2654:2875): TLB MISS - PID: 3 - Pagina: 0
+[INFO] 17:01:38:276 Memoria/(2654:2875): SWAP - Recibi - PID: 3 - PAG: 0
+[INFO] 17:01:38:316 Memoria/(2654:2875): SWAP - Envie  - PID: 2 - PAG: 0
+[INFO] 17:01:38:358 Memoria/(2654:2875): TLB MISS - PID: 3 - Pagina: 1
+[INFO] 17:01:38:400 Memoria/(2654:2875): SWAP - Recibi - PID: 3 - PAG: 1
+[INFO] 17:01:38:440 Memoria/(2654:2875): SWAP - Envie  - PID: 2 - PAG: 1
+[INFO] 17:01:38:480 Memoria/(2654:2872): TLB MISS - PID: 1 - Pagina: 0
+[INFO] 17:01:38:520 Memoria/(2654:2872): SWAP - Recibi - PID: 1 - PAG: 0
+[INFO] 17:01:38:559 Memoria/(2654:2872): SWAP - Envie  - PID: 3 - PAG: 0
+[INFO] 17:01:38:600 Memoria/(2654:2872): TLB MISS - PID: 1 - Pagina: 1
+[INFO] 17:01:38:640 Memoria/(2654:2872): SWAP - Recibi - PID: 1 - PAG: 1
+[INFO] 17:01:38:680 Memoria/(2654:2872): SWAP - Envie  - PID: 3 - PAG: 1
+[INFO] 17:01:38:720 Memoria/(2654:2873): TLB MISS - PID: 2 - Pagina: 0
+[INFO] 17:01:38:760 Memoria/(2654:2873): SWAP - Recibi - PID: 2 - PAG: 0
+[INFO] 17:01:38:800 Memoria/(2654:2873): TLB MISS - PID: 2 - Pagina: 1
+[INFO] 17:01:38:840 Memoria/(2654:2873): SWAP - Recibi - PID: 2 - PAG: 1
+[INFO] 17:01:38:881 Memoria/(2654:2875): TLB MISS - PID: 3 - Pagina: 0
+[INFO] 17:01:38:920 Memoria/(2654:2875): SWAP - Recibi - PID: 3 - PAG: 0
+[INFO] 17:01:38:960 Memoria/(2654:2875): TLB MISS - PID: 3 - Pagina: 1
+[INFO] 17:01:39:000 Memoria/(2654:2875): SWAP - Recibi - PID: 3 - PAG: 1
+[INFO] 17:01:39:040 Memoria/(2654:2872): TLB MISS - PID: 1 - Pagina: 0
+[INFO] 17:01:39:080 Memoria/(2654:2872): SWAP - Recibi - PID: 1 - PAG: 0
+[INFO] 17:01:39:120 Memoria/(2654:2872): TLB MISS - PID: 1 - Pagina: 1
+[INFO] 17:01:39:161 Memoria/(2654:2872): SWAP - Recibi - PID: 1 - PAG: 1
+[INFO] 17:01:39:200 Memoria/(2654:2873): TLB MISS - PID: 2 - Pagina: 0
+[INFO] 17:01:39:240 Memoria/(2654:2873): SWAP - Recibi - PID: 2 - PAG: 0
+[INFO] 17:01:39:280 Memoria/(2654:2873): TLB MISS - PID: 2 - Pagina: 1
+[INFO] 17:01:39:320 Memoria/(2654:2873): SWAP - Recibi - PID: 2 - PAG: 1
+[INFO] 17:01:39:361 Memoria/(2654:2875): TLB MISS - PID: 3 - Pagina: 0
+[INFO] 17:01:39:404 Memoria/(2654:2875): SWAP - Recibi - PID: 3 - PAG: 0
+[INFO] 17:01:39:443 Memoria/(2654:2875): TLB MISS - PID: 3 - Pagina: 1
+[INFO] 17:01:39:484 Memoria/(2654:2875): SWAP - Recibi - PID: 3 - PAG: 1
+[INFO] 17:01:39:564 Memoria/(2654:2872): Se desconecto un cliente - Socket: 16 - PID: 1
+[INFO] 17:01:39:604 Memoria/(2654:2873): Se desconecto un cliente - Socket: 20 - PID: 2
+[INFO] 17:01:39:644 Memoria/(2654:2875): Se desconecto un cliente - Socket: 21 - PID: 3
+[INFO] 17:02:51:477 Memoria/(3338:3338): Tlb Inicializada
+[INFO] 17:02:52:031 Memoria/(3338:3566): Se conecto un cliente - Socket: 15
+[INFO] 17:02:54:960 Memoria/(3338:3577): Se conecto un cliente - Socket: 16
+[INFO] 17:02:54:969 Memoria/(3338:3578): Se conecto un cliente - Socket: 20
+[INFO] 17:04:48:781 Memoria/(3991:3991): Tlb Inicializada
+[INFO] 17:04:49:180 Memoria/(3991:4123): Se conecto un cliente - Socket: 15
+[INFO] 17:04:50:569 Memoria/(3991:4131): Se conecto un cliente - Socket: 16
+[INFO] 17:04:50:581 Memoria/(3991:4132): Se conecto un cliente - Socket: 20
+[INFO] 17:11:56:187 Memoria/(4895:4895): Tlb Inicializada
+[INFO] 17:11:58:015 Memoria/(4895:5040): Se conecto un cliente - Socket: 15
+[INFO] 17:12:48:347 Memoria/(4895:5216): Se conecto un cliente - Socket: 16
+[INFO] 17:12:48:499 Memoria/(4895:5216): SWAP - Envie  - PID: 1 - PAG: 0
+[INFO] 17:12:48:580 Memoria/(4895:5216): SWAP - Recibi - PID: 1 - PAG: 0
+[INFO] 17:12:48:620 Memoria/(4895:5216): SWAP - Envie  - PID: 1 - PAG: 1
+[INFO] 17:12:48:700 Memoria/(4895:5216): SWAP - Recibi - PID: 1 - PAG: 1
+[INFO] 17:12:48:740 Memoria/(4895:5216): SWAP - Envie  - PID: 1 - PAG: 0
+[INFO] 17:12:48:820 Memoria/(4895:5216): SWAP - Recibi - PID: 1 - PAG: 0
+[INFO] 17:12:48:860 Memoria/(4895:5216): SWAP - Envie  - PID: 1 - PAG: 1
+[INFO] 17:12:48:940 Memoria/(4895:5216): SWAP - Recibi - PID: 1 - PAG: 1
+[INFO] 17:12:49:060 Memoria/(4895:5216): SWAP - Recibi - PID: 1 - PAG: 0
+[INFO] 17:12:49:100 Memoria/(4895:5216): SWAP - Recibi - PID: 1 - PAG: 1
+[INFO] 17:12:49:184 Memoria/(4895:5216): Se desconecto un cliente - Socket: 16 - PID: 1
+[INFO] 17:14:48:976 Memoria/(5634:5634): Tlb Inicializada
+[INFO] 17:14:49:880 Memoria/(5634:5769): Se conecto un cliente - Socket: 15
+[INFO] 17:14:54:914 Memoria/(5634:5781): Se conecto un cliente - Socket: 16
+[INFO] 17:14:54:924 Memoria/(5634:5782): Se conecto un cliente - Socket: 20
+[INFO] 17:14:55:093 Memoria/(5634:5781): SWAP - Envie  - PID: 1 - PAG: 0
+[INFO] 17:14:55:172 Memoria/(5634:5782): SWAP - Envie  - PID: 1 - PAG: 1
+[INFO] 17:14:55:252 Memoria/(5634:5782): SWAP - Envie  - PID: 2 - PAG: 0
+[INFO] 17:14:55:332 Memoria/(5634:5781): SWAP - Recibi - PID: 1 - PAG: 0
+[INFO] 17:14:55:372 Memoria/(5634:5781): SWAP - Envie  - PID: 2 - PAG: 1
+[INFO] 17:14:55:452 Memoria/(5634:5781): SWAP - Recibi - PID: 1 - PAG: 1
+[INFO] 17:14:55:492 Memoria/(5634:5781): SWAP - Envie  - PID: 1 - PAG: 0
+[INFO] 17:14:55:572 Memoria/(5634:5782): SWAP - Recibi - PID: 2 - PAG: 0
+[INFO] 17:14:55:612 Memoria/(5634:5782): SWAP - Envie  - PID: 1 - PAG: 1
+[INFO] 17:14:55:692 Memoria/(5634:5782): SWAP - Recibi - PID: 2 - PAG: 1
+[INFO] 17:14:55:731 Memoria/(5634:5782): SWAP - Envie  - PID: 2 - PAG: 0
+[INFO] 17:14:55:812 Memoria/(5634:5781): SWAP - Recibi - PID: 1 - PAG: 0
+[INFO] 17:14:55:852 Memoria/(5634:5781): SWAP - Envie  - PID: 2 - PAG: 1
+[INFO] 17:14:55:932 Memoria/(5634:5781): SWAP - Recibi - PID: 1 - PAG: 1
+[INFO] 17:14:56:012 Memoria/(5634:5782): SWAP - Recibi - PID: 2 - PAG: 0
+[INFO] 17:14:56:092 Memoria/(5634:5782): SWAP - Recibi - PID: 2 - PAG: 1
+[INFO] 17:14:56:172 Memoria/(5634:5781): SWAP - Recibi - PID: 1 - PAG: 0
+[INFO] 17:14:56:252 Memoria/(5634:5781): SWAP - Recibi - PID: 1 - PAG: 1
+[INFO] 17:14:56:332 Memoria/(5634:5782): SWAP - Recibi - PID: 2 - PAG: 0
+[INFO] 17:14:56:413 Memoria/(5634:5782): SWAP - Recibi - PID: 2 - PAG: 1
+[INFO] 17:14:56:492 Memoria/(5634:5781): Se desconecto un cliente - Socket: 16 - PID: 1
+[INFO] 17:14:56:532 Memoria/(5634:5782): Se desconecto un cliente - Socket: 20 - PID: 2
+[INFO] 17:17:26:789 Memoria/(6218:6218): Tlb Inicializada
+[INFO] 17:17:27:435 Memoria/(6218:6350): Se conecto un cliente - Socket: 15
+[INFO] 17:17:28:590 Memoria/(6218:6355): Se conecto un cliente - Socket: 16
+[INFO] 17:17:28:604 Memoria/(6218:6356): Se conecto un cliente - Socket: 20
+[INFO] 17:17:28:772 Memoria/(6218:6355): SWAP - Envie  - PID: 1 - PAG: 0
+[INFO] 17:17:28:852 Memoria/(6218:6356): SWAP - Envie  - PID: 1 - PAG: 1
+[INFO] 17:17:28:932 Memoria/(6218:6356): SWAP - Envie  - PID: 2 - PAG: 0
+[INFO] 17:17:29:012 Memoria/(6218:6355): SWAP - Recibi - PID: 1 - PAG: 0
+[INFO] 17:17:29:051 Memoria/(6218:6355): SWAP - Envie  - PID: 2 - PAG: 1
+[INFO] 17:17:29:133 Memoria/(6218:6355): SWAP - Recibi - PID: 1 - PAG: 1
+[INFO] 17:17:29:172 Memoria/(6218:6355): SWAP - Envie  - PID: 1 - PAG: 0
+[INFO] 17:17:29:253 Memoria/(6218:6356): SWAP - Recibi - PID: 2 - PAG: 0
+[INFO] 17:17:29:292 Memoria/(6218:6356): SWAP - Envie  - PID: 1 - PAG: 1
+[INFO] 17:17:29:372 Memoria/(6218:6356): SWAP - Recibi - PID: 2 - PAG: 1
+[INFO] 17:17:29:412 Memoria/(6218:6356): SWAP - Envie  - PID: 2 - PAG: 0
+[INFO] 17:17:29:492 Memoria/(6218:6355): SWAP - Recibi - PID: 1 - PAG: 0
+[INFO] 17:17:29:531 Memoria/(6218:6355): SWAP - Envie  - PID: 2 - PAG: 1
+[INFO] 17:17:29:612 Memoria/(6218:6355): SWAP - Recibi - PID: 1 - PAG: 1
+[INFO] 17:17:29:692 Memoria/(6218:6356): SWAP - Recibi - PID: 2 - PAG: 0
+[INFO] 17:17:29:772 Memoria/(6218:6356): SWAP - Recibi - PID: 2 - PAG: 1
+[INFO] 17:17:29:852 Memoria/(6218:6355): SWAP - Recibi - PID: 1 - PAG: 0
+[INFO] 17:17:29:932 Memoria/(6218:6355): SWAP - Recibi - PID: 1 - PAG: 1
+[INFO] 17:17:30:012 Memoria/(6218:6356): SWAP - Recibi - PID: 2 - PAG: 0
+[INFO] 17:17:30:094 Memoria/(6218:6356): SWAP - Recibi - PID: 2 - PAG: 1
+[INFO] 17:17:30:172 Memoria/(6218:6355): Se desconecto un cliente - Socket: 16 - PID: 1
+[INFO] 17:17:30:220 Memoria/(6218:6356): Se desconecto un cliente - Socket: 20 - PID: 2
+[INFO] 17:22:08:421 Memoria/(7038:7038): Tlb Inicializada
+[INFO] 17:22:08:542 Memoria/(7038:7113): Se conecto un cliente - Socket: 15
+[INFO] 17:22:11:039 Memoria/(7038:7121): Se conecto un cliente - Socket: 16
+[INFO] 17:22:11:052 Memoria/(7038:7122): Se conecto un cliente - Socket: 20
+[INFO] 17:22:11:072 Memoria/(7038:7121): Inicio un cliente - PID: 1 - Socket 16
+[INFO] 17:22:11:139 Memoria/(7038:7122): Inicio un cliente - PID: 2 - Socket 20
+[INFO] 17:22:11:216 Memoria/(7038:7121): SWAP - Envie  - PID: 1 - PAG: 0
+[INFO] 17:22:11:296 Memoria/(7038:7122): SWAP - Envie  - PID: 1 - PAG: 1
+[INFO] 17:22:11:376 Memoria/(7038:7122): SWAP - Envie  - PID: 2 - PAG: 0
+[INFO] 17:22:11:460 Memoria/(7038:7121): SWAP - Recibi - PID: 1 - PAG: 0
+[INFO] 17:22:11:500 Memoria/(7038:7121): SWAP - Envie  - PID: 2 - PAG: 1
+[INFO] 17:22:11:580 Memoria/(7038:7121): SWAP - Recibi - PID: 1 - PAG: 1
+[INFO] 17:22:11:620 Memoria/(7038:7121): SWAP - Envie  - PID: 1 - PAG: 0
+[INFO] 17:22:11:700 Memoria/(7038:7122): SWAP - Recibi - PID: 2 - PAG: 0
+[INFO] 17:22:11:740 Memoria/(7038:7122): SWAP - Envie  - PID: 1 - PAG: 1
+[INFO] 17:22:11:820 Memoria/(7038:7122): SWAP - Recibi - PID: 2 - PAG: 1
+[INFO] 17:22:11:860 Memoria/(7038:7122): SWAP - Envie  - PID: 2 - PAG: 0
+[INFO] 17:22:11:940 Memoria/(7038:7121): SWAP - Recibi - PID: 1 - PAG: 0
+[INFO] 17:22:11:980 Memoria/(7038:7121): SWAP - Envie  - PID: 2 - PAG: 1
+[INFO] 17:22:12:060 Memoria/(7038:7121): SWAP - Recibi - PID: 1 - PAG: 1
+[INFO] 17:22:12:140 Memoria/(7038:7122): SWAP - Recibi - PID: 2 - PAG: 0
+[INFO] 17:22:12:220 Memoria/(7038:7122): SWAP - Recibi - PID: 2 - PAG: 1
+[INFO] 17:22:12:300 Memoria/(7038:7121): SWAP - Recibi - PID: 1 - PAG: 0
+[INFO] 17:22:12:380 Memoria/(7038:7121): SWAP - Recibi - PID: 1 - PAG: 1
+[INFO] 17:22:12:460 Memoria/(7038:7122): SWAP - Recibi - PID: 2 - PAG: 0
+[INFO] 17:22:12:540 Memoria/(7038:7122): SWAP - Recibi - PID: 2 - PAG: 1
+[INFO] 17:22:12:620 Memoria/(7038:7121): Se desconecto un cliente - Socket: 16 - PID: 1
+[INFO] 17:22:12:664 Memoria/(7038:7122): Se desconecto un cliente - Socket: 20 - PID: 2
+[INFO] 17:29:52:153 Memoria/(8150:8150): Tlb Inicializada
+[INFO] 17:29:54:192 Memoria/(8150:8158): Se conecto un cliente - Socket: 15
+[INFO] 17:29:54:200 Memoria/(8150:8158): Inicio un proceso - PID: 1 - Socket 15
+[INFO] 17:29:54:200 Memoria/(8150:8159): Se conecto un cliente - Socket: 16
+[INFO] 17:29:54:200 Memoria/(8150:8159): Inicio un proceso - PID: 2 - Socket 16
+[INFO] 17:29:54:241 Memoria/(8150:8159): SWAP - Envie  - PID: 2 - PAG: 0
+[INFO] 17:29:54:241 Memoria/(8150:8158): SWAP - Envie  - PID: 2 - PAG: 1
+[INFO] 17:29:54:241 Memoria/(8150:8158): SWAP - Envie  - PID: 1 - PAG: 0
+[INFO] 17:29:54:280 Memoria/(8150:8158): SWAP - Recibi - PID: 1 - PAG: 0
+[INFO] 17:29:54:280 Memoria/(8150:8158): SWAP - Envie  - PID: 1 - PAG: 1
+[INFO] 17:29:54:280 Memoria/(8150:8158): SWAP - Recibi - PID: 1 - PAG: 1
+[INFO] 17:29:54:280 Memoria/(8150:8158): SWAP - Envie  - PID: 1 - PAG: 0
+[INFO] 17:29:54:281 Memoria/(8150:8159): SWAP - Recibi - PID: 2 - PAG: 0
+[INFO] 17:29:54:281 Memoria/(8150:8159): SWAP - Envie  - PID: 1 - PAG: 1
+[INFO] 17:29:54:281 Memoria/(8150:8159): SWAP - Recibi - PID: 2 - PAG: 1
+[INFO] 17:29:54:281 Memoria/(8150:8159): SWAP - Envie  - PID: 2 - PAG: 0
+[INFO] 17:29:54:320 Memoria/(8150:8159): SWAP - Recibi - PID: 2 - PAG: 0
+[INFO] 17:29:54:320 Memoria/(8150:8159): SWAP - Envie  - PID: 2 - PAG: 1
+[INFO] 17:29:54:320 Memoria/(8150:8159): SWAP - Recibi - PID: 2 - PAG: 1
+[INFO] 17:29:54:320 Memoria/(8150:8158): SWAP - Recibi - PID: 1 - PAG: 0
+[INFO] 17:29:54:320 Memoria/(8150:8158): SWAP - Recibi - PID: 1 - PAG: 1
+[INFO] 17:29:54:360 Memoria/(8150:8158): SWAP - Recibi - PID: 1 - PAG: 0
+[INFO] 17:30:26:539 Memoria/(8399:8399): Tlb Inicializada
+[INFO] 17:30:27:348 Memoria/(8399:8534): Se conecto un cliente - Socket: 15
+[INFO] 17:30:28:778 Memoria/(8399:8539): Se conecto un cliente - Socket: 16
+[INFO] 17:30:28:792 Memoria/(8399:8540): Se conecto un cliente - Socket: 20
+[INFO] 17:30:28:818 Memoria/(8399:8539): Inicio un proceso - PID: 1 - Socket 16
+[INFO] 17:30:28:860 Memoria/(8399:8540): Inicio un proceso - PID: 2 - Socket 20
+[INFO] 17:30:28:921 Memoria/(8399:8539): SWAP - Envie  - PID: 1 - PAG: 0
+[INFO] 17:30:29:000 Memoria/(8399:8540): SWAP - Envie  - PID: 1 - PAG: 1
+[INFO] 17:30:29:080 Memoria/(8399:8540): SWAP - Envie  - PID: 2 - PAG: 0
+[INFO] 17:30:29:160 Memoria/(8399:8539): SWAP - Recibi - PID: 1 - PAG: 0
+[INFO] 17:30:29:200 Memoria/(8399:8539): SWAP - Envie  - PID: 2 - PAG: 1
+[INFO] 17:30:29:280 Memoria/(8399:8539): SWAP - Recibi - PID: 1 - PAG: 1
+[INFO] 17:30:29:320 Memoria/(8399:8539): SWAP - Envie  - PID: 1 - PAG: 0
+[INFO] 17:30:29:400 Memoria/(8399:8540): SWAP - Recibi - PID: 2 - PAG: 0
+[INFO] 17:30:29:440 Memoria/(8399:8540): SWAP - Envie  - PID: 1 - PAG: 1
+[INFO] 17:30:29:520 Memoria/(8399:8540): SWAP - Recibi - PID: 2 - PAG: 1
+[INFO] 17:30:29:560 Memoria/(8399:8540): SWAP - Envie  - PID: 2 - PAG: 0
+[INFO] 17:30:29:640 Memoria/(8399:8539): SWAP - Recibi - PID: 1 - PAG: 0
+[INFO] 17:30:29:680 Memoria/(8399:8539): SWAP - Envie  - PID: 2 - PAG: 1
+[INFO] 17:30:29:760 Memoria/(8399:8539): SWAP - Recibi - PID: 1 - PAG: 1
+[INFO] 17:30:29:840 Memoria/(8399:8540): SWAP - Recibi - PID: 2 - PAG: 0
+[INFO] 17:30:29:920 Memoria/(8399:8540): SWAP - Recibi - PID: 2 - PAG: 1
+[INFO] 17:30:30:000 Memoria/(8399:8539): SWAP - Recibi - PID: 1 - PAG: 0
+[INFO] 17:30:30:080 Memoria/(8399:8539): SWAP - Recibi - PID: 1 - PAG: 1
+[INFO] 17:30:30:160 Memoria/(8399:8540): SWAP - Recibi - PID: 2 - PAG: 0
+[INFO] 17:30:30:241 Memoria/(8399:8540): SWAP - Recibi - PID: 2 - PAG: 1
+[INFO] 17:30:30:324 Memoria/(8399:8539): Se desconecto un cliente - Socket: 16 - PID: 1
+[INFO] 17:30:30:368 Memoria/(8399:8540): Se desconecto un cliente - Socket: 20 - PID: 2
+[INFO] 17:34:42:851 Memoria/(9113:9113): Tlb Inicializada
+[INFO] 17:34:43:205 Memoria/(9113:9232): Se conecto un cliente - Socket: 15
+[INFO] 17:34:44:379 Memoria/(9113:9237): Se conecto un cliente - Socket: 16
+[INFO] 17:34:44:396 Memoria/(9113:9238): Se conecto un cliente - Socket: 20
+[INFO] 17:34:44:415 Memoria/(9113:9237): Inicio un proceso - PID: 1 - Socket 16
+[INFO] 17:34:44:485 Memoria/(9113:9238): Inicio un proceso - PID: 2 - Socket 20
+[INFO] 17:34:44:564 Memoria/(9113:9237): SWAP - Envie  - PID: 1 - PAG: 0
+[INFO] 17:34:44:644 Memoria/(9113:9238): SWAP - Envie  - PID: 1 - PAG: 1
+[INFO] 17:34:44:725 Memoria/(9113:9238): SWAP - Envie  - PID: 2 - PAG: 0
+[INFO] 17:34:44:807 Memoria/(9113:9237): SWAP - Recibi - PID: 1 - PAG: 0
+[INFO] 17:36:19:415 Memoria/(9772:9772): Tlb Inicializada
+[INFO] 17:36:21:828 Memoria/(9772:9907): Se conecto un cliente - Socket: 15
+[INFO] 17:36:23:109 Memoria/(9772:9915): Se conecto un cliente - Socket: 16
+[INFO] 17:36:23:125 Memoria/(9772:9916): Se conecto un cliente - Socket: 20
+[INFO] 17:36:23:150 Memoria/(9772:9915): Inicio un proceso - PID: 1 - Socket 16
+[INFO] 17:36:23:193 Memoria/(9772:9916): Inicio un proceso - PID: 2 - Socket 20
+[INFO] 17:36:23:240 Memoria/(9772:9915): SWAP - Envie  - PID: 1 - PAG: 0
+[INFO] 17:36:23:320 Memoria/(9772:9916): SWAP - Envie  - PID: 1 - PAG: 1
+[INFO] 17:36:23:400 Memoria/(9772:9916): SWAP - Envie  - PID: 2 - PAG: 0
+[INFO] 17:36:23:480 Memoria/(9772:9915): SWAP - Recibi - PID: 1 - PAG: 0
+[INFO] 17:37:38:646 Memoria/(10226:10226): Tlb Inicializada
+[INFO] 17:37:39:101 Memoria/(10226:10358): Se conecto un cliente - Socket: 15
+[INFO] 17:37:40:193 Memoria/(10226:10363): Se conecto un cliente - Socket: 16
+[INFO] 17:37:40:208 Memoria/(10226:10364): Se conecto un cliente - Socket: 20
+[INFO] 17:37:40:231 Memoria/(10226:10363): Inicio un proceso - PID: 1 - Socket 16
+[INFO] 17:37:40:291 Memoria/(10226:10364): Inicio un proceso - PID: 2 - Socket 20
+[INFO] 17:37:40:368 Memoria/(10226:10363): SWAP - Envie  - PID: 1 - PAG: 0
+[INFO] 17:37:40:448 Memoria/(10226:10364): SWAP - Envie  - PID: 1 - PAG: 1
+[INFO] 17:37:40:527 Memoria/(10226:10364): SWAP - Envie  - PID: 2 - PAG: 0
+[INFO] 17:37:40:608 Memoria/(10226:10363): SWAP - Recibi - PID: 1 - PAG: 0
+[INFO] 17:47:59:818 Memoria/(11379:11379): Tlb Inicializada
+[INFO] 17:48:00:416 Memoria/(11379:11511): Se conecto un cliente - Socket: 15
+[INFO] 17:48:01:511 Memoria/(11379:11516): Se conecto un cliente - Socket: 16
+[INFO] 17:48:01:525 Memoria/(11379:11517): Se conecto un cliente - Socket: 20
+[INFO] 17:48:01:549 Memoria/(11379:11516): Inicio un proceso - PID: 1 - Socket 16
+[INFO] 17:48:01:622 Memoria/(11379:11517): Inicio un proceso - PID: 2 - Socket 20
+[INFO] 17:48:01:700 Memoria/(11379:11516): SWAP - Envie  - PID: 1 - PAG: 0
+[INFO] 17:48:01:781 Memoria/(11379:11517): SWAP - Envie  - PID: 1 - PAG: 1
+[INFO] 17:48:01:860 Memoria/(11379:11517): SWAP - Envie  - PID: 2 - PAG: 0
+[INFO] 17:48:01:940 Memoria/(11379:11516): SWAP - Recibi - PID: 1 - PAG: 0
+[INFO] 17:48:01:980 Memoria/(11379:11516): SWAP - Envie  - PID: 2 - PAG: 1
+[INFO] 17:48:02:060 Memoria/(11379:11516): SWAP - Recibi - PID: 1 - PAG: 1
+[INFO] 17:48:02:100 Memoria/(11379:11516): SWAP - Envie  - PID: 1 - PAG: 0
+[INFO] 17:48:02:180 Memoria/(11379:11517): SWAP - Recibi - PID: 2 - PAG: 0
+[INFO] 17:48:02:219 Memoria/(11379:11517): SWAP - Envie  - PID: 1 - PAG: 1
+[INFO] 17:48:02:301 Memoria/(11379:11517): SWAP - Recibi - PID: 2 - PAG: 1
+[INFO] 17:48:02:340 Memoria/(11379:11517): SWAP - Envie  - PID: 2 - PAG: 0
+[INFO] 17:48:02:421 Memoria/(11379:11516): SWAP - Recibi - PID: 1 - PAG: 0
+[INFO] 17:48:02:460 Memoria/(11379:11516): SWAP - Envie  - PID: 2 - PAG: 1
+[INFO] 17:48:02:540 Memoria/(11379:11516): SWAP - Recibi - PID: 1 - PAG: 1
+[INFO] 17:48:02:620 Memoria/(11379:11517): SWAP - Recibi - PID: 2 - PAG: 0
+[INFO] 17:48:02:700 Memoria/(11379:11517): SWAP - Recibi - PID: 2 - PAG: 1
+[INFO] 17:48:02:780 Memoria/(11379:11516): SWAP - Recibi - PID: 1 - PAG: 0
+[INFO] 17:48:02:860 Memoria/(11379:11516): SWAP - Recibi - PID: 1 - PAG: 1
+[INFO] 17:48:02:940 Memoria/(11379:11517): SWAP - Recibi - PID: 2 - PAG: 0
+[INFO] 17:48:03:020 Memoria/(11379:11517): SWAP - Recibi - PID: 2 - PAG: 1
+[INFO] 17:48:03:102 Memoria/(11379:11516): Se desconecto un cliente - Socket: 16 - PID: 1
+[INFO] 17:48:03:140 Memoria/(11379:11517): Se desconecto un cliente - Socket: 20 - PID: 2
+[INFO] 17:48:28:192 Memoria/(11805:11805): Tlb Inicializada
+[INFO] 17:48:28:427 Memoria/(11805:11894): Se conecto un cliente - Socket: 15
+[INFO] 17:48:31:485 Memoria/(11805:11909): Se conecto un cliente - Socket: 16
+[INFO] 17:48:31:501 Memoria/(11805:11910): Se conecto un cliente - Socket: 20
+[INFO] 17:48:31:522 Memoria/(11805:11909): Inicio un proceso - PID: 1 - Socket 16
+[INFO] 17:48:31:598 Memoria/(11805:11910): Inicio un proceso - PID: 2 - Socket 20
+[INFO] 17:48:31:677 Memoria/(11805:11909): SWAP - Envie  - PID: 1 - PAG: 0
+[INFO] 17:48:31:756 Memoria/(11805:11910): SWAP - Envie  - PID: 1 - PAG: 1
+[INFO] 17:48:31:836 Memoria/(11805:11910): SWAP - Envie  - PID: 2 - PAG: 0
+[INFO] 17:48:31:916 Memoria/(11805:11909): SWAP - Recibi - PID: 1 - PAG: 0
+[INFO] 17:48:31:956 Memoria/(11805:11909): SWAP - Envie  - PID: 2 - PAG: 1
+[INFO] 17:48:32:036 Memoria/(11805:11909): SWAP - Recibi - PID: 1 - PAG: 1
+[INFO] 17:48:32:076 Memoria/(11805:11909): SWAP - Envie  - PID: 1 - PAG: 0
+[INFO] 17:48:32:159 Memoria/(11805:11910): SWAP - Recibi - PID: 2 - PAG: 0
+[INFO] 17:48:32:196 Memoria/(11805:11910): SWAP - Envie  - PID: 1 - PAG: 1
+[INFO] 17:48:32:276 Memoria/(11805:11910): SWAP - Recibi - PID: 2 - PAG: 1
+[INFO] 17:48:32:316 Memoria/(11805:11910): SWAP - Envie  - PID: 2 - PAG: 0
+[INFO] 17:48:32:396 Memoria/(11805:11909): SWAP - Recibi - PID: 1 - PAG: 0
+[INFO] 17:48:32:436 Memoria/(11805:11909): SWAP - Envie  - PID: 2 - PAG: 1
+[INFO] 17:48:32:516 Memoria/(11805:11909): SWAP - Recibi - PID: 1 - PAG: 1
+[INFO] 17:48:32:596 Memoria/(11805:11910): SWAP - Recibi - PID: 2 - PAG: 0
+[INFO] 17:48:32:676 Memoria/(11805:11910): SWAP - Recibi - PID: 2 - PAG: 1
+[INFO] 17:48:32:756 Memoria/(11805:11909): SWAP - Recibi - PID: 1 - PAG: 0
+[INFO] 17:48:32:836 Memoria/(11805:11909): SWAP - Recibi - PID: 1 - PAG: 1
+[INFO] 17:48:32:916 Memoria/(11805:11910): SWAP - Recibi - PID: 2 - PAG: 0
+[INFO] 17:48:32:997 Memoria/(11805:11910): SWAP - Recibi - PID: 2 - PAG: 1
+[INFO] 17:48:33:076 Memoria/(11805:11909): Se desconecto un cliente - Socket: 16 - PID: 1
+[INFO] 17:48:33:120 Memoria/(11805:11910): Se desconecto un cliente - Socket: 20 - PID: 2
+[INFO] 17:49:57:670 Memoria/(12334:12334): Tlb Inicializada
+[INFO] 17:49:57:895 Memoria/(12334:12405): Se conecto un cliente - Socket: 15
+[INFO] 17:49:58:694 Memoria/(12334:12410): Se conecto un cliente - Socket: 16
+[INFO] 17:49:58:720 Memoria/(12334:12411): Se conecto un cliente - Socket: 20
+[INFO] 17:49:58:738 Memoria/(12334:12410): Inicio un proceso - PID: 1 - Socket 16
+[INFO] 17:49:58:773 Memoria/(12334:12411): Inicio un proceso - PID: 2 - Socket 20
+[INFO] 17:49:58:856 Memoria/(12334:12410): SWAP - Envie  - PID: 1 - PAG: 0
+[INFO] 17:49:58:936 Memoria/(12334:12411): SWAP - Envie  - PID: 1 - PAG: 1
+[INFO] 17:49:59:016 Memoria/(12334:12411): SWAP - Envie  - PID: 2 - PAG: 0
+[INFO] 17:49:59:096 Memoria/(12334:12410): SWAP - Recibi - PID: 1 - PAG: 0
+[INFO] 17:49:59:136 Memoria/(12334:12410): SWAP - Envie  - PID: 2 - PAG: 1
+[INFO] 17:49:59:216 Memoria/(12334:12410): SWAP - Recibi - PID: 1 - PAG: 1
+[INFO] 17:49:59:258 Memoria/(12334:12410): SWAP - Envie  - PID: 1 - PAG: 0
+[INFO] 17:49:59:336 Memoria/(12334:12411): SWAP - Recibi - PID: 2 - PAG: 0
+[INFO] 17:49:59:376 Memoria/(12334:12411): SWAP - Envie  - PID: 1 - PAG: 1
+[INFO] 17:49:59:456 Memoria/(12334:12411): SWAP - Recibi - PID: 2 - PAG: 1
+[INFO] 17:49:59:496 Memoria/(12334:12411): SWAP - Envie  - PID: 2 - PAG: 0
+[INFO] 17:49:59:576 Memoria/(12334:12410): SWAP - Recibi - PID: 1 - PAG: 0
+[INFO] 17:49:59:616 Memoria/(12334:12410): SWAP - Envie  - PID: 2 - PAG: 1
+[INFO] 17:49:59:697 Memoria/(12334:12410): SWAP - Recibi - PID: 1 - PAG: 1
+[INFO] 17:49:59:779 Memoria/(12334:12411): SWAP - Recibi - PID: 2 - PAG: 0
+[INFO] 17:49:59:856 Memoria/(12334:12411): SWAP - Recibi - PID: 2 - PAG: 1
+[INFO] 17:49:59:936 Memoria/(12334:12410): SWAP - Recibi - PID: 1 - PAG: 0
+[INFO] 17:50:00:016 Memoria/(12334:12410): SWAP - Recibi - PID: 1 - PAG: 1
+[INFO] 17:50:00:096 Memoria/(12334:12411): SWAP - Recibi - PID: 2 - PAG: 0
+[INFO] 17:50:00:176 Memoria/(12334:12411): SWAP - Recibi - PID: 2 - PAG: 1
+[INFO] 17:50:00:256 Memoria/(12334:12410): Se desconecto un cliente - Socket: 16 - PID: 1
+[INFO] 17:50:00:296 Memoria/(12334:12411): Se desconecto un cliente - Socket: 20 - PID: 2
+[INFO] 17:51:21:901 Memoria/(12730:12730): Tlb Inicializada
+[INFO] 17:51:22:325 Memoria/(12730:12858): Se conecto un cliente - Socket: 15
+[INFO] 17:51:23:412 Memoria/(12730:12866): Se conecto un cliente - Socket: 16
+[INFO] 17:51:23:432 Memoria/(12730:12867): Se conecto un cliente - Socket: 20
+[INFO] 17:51:23:450 Memoria/(12730:12866): Inicio un proceso - PID: 1 - Socket 16
+[INFO] 17:51:23:524 Memoria/(12730:12867): Inicio un proceso - PID: 2 - Socket 20
+[INFO] 17:51:23:604 Memoria/(12730:12866): SWAP - Envie  - PID: 1 - PAG: 0
+[INFO] 17:51:23:685 Memoria/(12730:12867): SWAP - Envie  - PID: 1 - PAG: 1
+[INFO] 17:51:23:764 Memoria/(12730:12867): SWAP - Envie  - PID: 2 - PAG: 0
+[INFO] 17:51:23:844 Memoria/(12730:12866): SWAP - Recibi - PID: 1 - PAG: 0
+[INFO] 17:51:23:886 Memoria/(12730:12866): SWAP - Envie  - PID: 2 - PAG: 1
+[INFO] 17:51:23:964 Memoria/(12730:12866): SWAP - Recibi - PID: 1 - PAG: 1
+[INFO] 17:51:24:004 Memoria/(12730:12866): SWAP - Envie  - PID: 1 - PAG: 0
+[INFO] 17:51:24:084 Memoria/(12730:12867): SWAP - Recibi - PID: 2 - PAG: 0
+[INFO] 17:51:24:124 Memoria/(12730:12867): SWAP - Envie  - PID: 1 - PAG: 1
+[INFO] 17:51:24:204 Memoria/(12730:12867): SWAP - Recibi - PID: 2 - PAG: 1
+[INFO] 17:51:24:244 Memoria/(12730:12867): SWAP - Envie  - PID: 2 - PAG: 0
+[INFO] 17:51:24:324 Memoria/(12730:12866): SWAP - Recibi - PID: 1 - PAG: 0
+[INFO] 17:51:24:364 Memoria/(12730:12866): SWAP - Envie  - PID: 2 - PAG: 1
+[INFO] 17:51:24:444 Memoria/(12730:12866): SWAP - Recibi - PID: 1 - PAG: 1
+[INFO] 17:51:24:524 Memoria/(12730:12867): SWAP - Recibi - PID: 2 - PAG: 0
+[INFO] 17:51:24:604 Memoria/(12730:12867): SWAP - Recibi - PID: 2 - PAG: 1
+[INFO] 17:51:24:685 Memoria/(12730:12866): SWAP - Recibi - PID: 1 - PAG: 0
+[INFO] 17:51:24:764 Memoria/(12730:12866): SWAP - Recibi - PID: 1 - PAG: 1
+[INFO] 17:51:24:845 Memoria/(12730:12867): SWAP - Recibi - PID: 2 - PAG: 0
+[INFO] 17:51:24:924 Memoria/(12730:12867): SWAP - Recibi - PID: 2 - PAG: 1
+[INFO] 17:51:25:008 Memoria/(12730:12866): Se desconecto un cliente - Socket: 16 - PID: 1
+[INFO] 17:51:25:048 Memoria/(12730:12867): Se desconecto un cliente - Socket: 20 - PID: 2
+[INFO] 17:51:46:353 Memoria/(13135:13135): Tlb Inicializada
+[INFO] 17:51:46:518 Memoria/(13135:13229): Se conecto un cliente - Socket: 15
+[INFO] 17:51:47:961 Memoria/(13135:13237): Se conecto un cliente - Socket: 16
+[INFO] 17:51:47:974 Memoria/(13135:13238): Se conecto un cliente - Socket: 20
+[INFO] 17:51:48:002 Memoria/(13135:13237): Inicio un proceso - PID: 1 - Socket 16
+[INFO] 17:51:48:037 Memoria/(13135:13238): Inicio un proceso - PID: 2 - Socket 20
+[INFO] 17:51:48:120 Memoria/(13135:13237): SWAP - Envie  - PID: 1 - PAG: 0
+[INFO] 17:51:48:200 Memoria/(13135:13238): SWAP - Envie  - PID: 1 - PAG: 1
+[INFO] 17:51:48:280 Memoria/(13135:13238): SWAP - Envie  - PID: 2 - PAG: 0
+[INFO] 17:51:48:360 Memoria/(13135:13237): SWAP - Recibi - PID: 1 - PAG: 0
+[INFO] 17:51:48:400 Memoria/(13135:13237): SWAP - Envie  - PID: 2 - PAG: 1
+[INFO] 17:51:48:480 Memoria/(13135:13237): SWAP - Recibi - PID: 1 - PAG: 1
+[INFO] 17:51:48:520 Memoria/(13135:13237): SWAP - Envie  - PID: 1 - PAG: 0
+[INFO] 17:51:48:602 Memoria/(13135:13238): SWAP - Recibi - PID: 2 - PAG: 0
+[INFO] 17:51:48:640 Memoria/(13135:13238): SWAP - Envie  - PID: 1 - PAG: 1
+[INFO] 17:51:48:720 Memoria/(13135:13238): SWAP - Recibi - PID: 2 - PAG: 1
+[INFO] 17:51:48:759 Memoria/(13135:13238): SWAP - Envie  - PID: 2 - PAG: 0
+[INFO] 17:51:48:840 Memoria/(13135:13237): SWAP - Recibi - PID: 1 - PAG: 0
+[INFO] 17:51:48:880 Memoria/(13135:13237): SWAP - Envie  - PID: 2 - PAG: 1
+[INFO] 17:51:48:960 Memoria/(13135:13237): SWAP - Recibi - PID: 1 - PAG: 1
+[INFO] 17:51:49:041 Memoria/(13135:13238): SWAP - Recibi - PID: 2 - PAG: 0
+[INFO] 17:51:49:120 Memoria/(13135:13238): SWAP - Recibi - PID: 2 - PAG: 1
+[INFO] 17:51:49:200 Memoria/(13135:13237): SWAP - Recibi - PID: 1 - PAG: 0
+[INFO] 17:51:49:280 Memoria/(13135:13237): SWAP - Recibi - PID: 1 - PAG: 1
+[INFO] 17:51:49:362 Memoria/(13135:13238): SWAP - Recibi - PID: 2 - PAG: 0
+[INFO] 17:51:49:440 Memoria/(13135:13238): SWAP - Recibi - PID: 2 - PAG: 1
+[INFO] 17:51:49:522 Memoria/(13135:13237): Se desconecto un cliente - Socket: 16 - PID: 1
+[INFO] 17:51:49:562 Memoria/(13135:13238): Se desconecto un cliente - Socket: 20 - PID: 2
+[INFO] 17:52:35:984 Memoria/(13528:13528): Tlb Inicializada
+[INFO] 17:52:36:592 Memoria/(13528:13647): Se conecto un cliente - Socket: 15
+[INFO] 17:52:37:208 Memoria/(13528:13651): Se conecto un cliente - Socket: 16
+[INFO] 17:52:37:223 Memoria/(13528:13652): Se conecto un cliente - Socket: 20
+[INFO] 17:52:37:231 Memoria/(13528:13651): Inicio un proceso - PID: 1 - Socket 16
+[INFO] 17:52:37:296 Memoria/(13528:13652): Inicio un proceso - PID: 2 - Socket 20
+[INFO] 17:52:37:376 Memoria/(13528:13651): SWAP - Envie  - PID: 1 - PAG: 0
+[INFO] 17:52:37:456 Memoria/(13528:13652): SWAP - Envie  - PID: 1 - PAG: 1
+[INFO] 17:52:37:537 Memoria/(13528:13652): SWAP - Envie  - PID: 2 - PAG: 0
+[INFO] 17:52:37:616 Memoria/(13528:13651): SWAP - Recibi - PID: 1 - PAG: 0
+[INFO] 17:52:37:656 Memoria/(13528:13651): SWAP - Envie  - PID: 2 - PAG: 1
+[INFO] 17:52:37:736 Memoria/(13528:13651): SWAP - Recibi - PID: 1 - PAG: 1
+[INFO] 17:52:37:776 Memoria/(13528:13651): SWAP - Envie  - PID: 1 - PAG: 0
+[INFO] 17:52:37:856 Memoria/(13528:13652): SWAP - Recibi - PID: 2 - PAG: 0
+[INFO] 17:52:37:896 Memoria/(13528:13652): SWAP - Envie  - PID: 1 - PAG: 1
+[INFO] 17:52:37:976 Memoria/(13528:13652): SWAP - Recibi - PID: 2 - PAG: 1
+[INFO] 17:52:38:016 Memoria/(13528:13652): SWAP - Envie  - PID: 2 - PAG: 0
+[INFO] 17:52:38:096 Memoria/(13528:13651): SWAP - Recibi - PID: 1 - PAG: 0
+[INFO] 17:52:38:136 Memoria/(13528:13651): SWAP - Envie  - PID: 2 - PAG: 1
+[INFO] 17:52:38:216 Memoria/(13528:13651): SWAP - Recibi - PID: 1 - PAG: 1
+[INFO] 17:52:38:296 Memoria/(13528:13652): SWAP - Recibi - PID: 2 - PAG: 0
+[INFO] 17:52:38:376 Memoria/(13528:13652): SWAP - Recibi - PID: 2 - PAG: 1
+[INFO] 17:52:38:456 Memoria/(13528:13651): SWAP - Recibi - PID: 1 - PAG: 0
+[INFO] 17:52:38:536 Memoria/(13528:13651): SWAP - Recibi - PID: 1 - PAG: 1
+[INFO] 17:52:38:618 Memoria/(13528:13652): SWAP - Recibi - PID: 2 - PAG: 0
+[INFO] 17:52:38:696 Memoria/(13528:13652): SWAP - Recibi - PID: 2 - PAG: 1
+[INFO] 17:52:38:776 Memoria/(13528:13651): Se desconecto un cliente - Socket: 16 - PID: 1
+[INFO] 17:52:38:820 Memoria/(13528:13652): Se desconecto un cliente - Socket: 20 - PID: 2
+[INFO] 17:52:49:712 Memoria/(13900:13900): Tlb Inicializada
+[INFO] 17:52:49:854 Memoria/(13900:13982): Se conecto un cliente - Socket: 15
+[INFO] 17:52:51:061 Memoria/(13900:13986): Se conecto un cliente - Socket: 16
+[INFO] 17:52:51:072 Memoria/(13900:13987): Se conecto un cliente - Socket: 20
+[INFO] 17:52:51:098 Memoria/(13900:13986): Inicio un proceso - PID: 1 - Socket 16
+[INFO] 17:52:51:168 Memoria/(13900:13987): Inicio un proceso - PID: 2 - Socket 20
+[INFO] 17:52:51:249 Memoria/(13900:13986): SWAP - Envie  - PID: 1 - PAG: 0
+[INFO] 17:52:51:328 Memoria/(13900:13987): SWAP - Envie  - PID: 1 - PAG: 1
+[INFO] 17:52:51:409 Memoria/(13900:13987): SWAP - Envie  - PID: 2 - PAG: 0
+[INFO] 17:52:51:488 Memoria/(13900:13986): SWAP - Recibi - PID: 1 - PAG: 0
+[INFO] 17:53:10:369 Memoria/(14240:14240): Tlb Inicializada
+[INFO] 17:53:10:528 Memoria/(14240:14339): Se conecto un cliente - Socket: 15
+[INFO] 17:53:11:567 Memoria/(14240:14343): Se conecto un cliente - Socket: 16
+[INFO] 17:53:11:584 Memoria/(14240:14344): Se conecto un cliente - Socket: 20
+[INFO] 17:53:11:606 Memoria/(14240:14343): Inicio un proceso - PID: 1 - Socket 16
+[INFO] 17:53:11:671 Memoria/(14240:14344): Inicio un proceso - PID: 2 - Socket 20
+[INFO] 17:53:11:747 Memoria/(14240:14343): SWAP - Envie  - PID: 1 - PAG: 0
+[INFO] 17:53:11:828 Memoria/(14240:14344): SWAP - Envie  - PID: 1 - PAG: 1
+[INFO] 17:53:11:908 Memoria/(14240:14344): SWAP - Envie  - PID: 2 - PAG: 0
+[INFO] 17:53:11:988 Memoria/(14240:14343): SWAP - Recibi - PID: 1 - PAG: 0
+[INFO] 17:53:22:453 Memoria/(14558:14558): Tlb Inicializada
+[INFO] 17:53:22:688 Memoria/(14558:14678): Se conecto un cliente - Socket: 15
+[INFO] 17:53:23:898 Memoria/(14558:14682): Se conecto un cliente - Socket: 16
+[INFO] 17:53:23:913 Memoria/(14558:14683): Se conecto un cliente - Socket: 20
+[INFO] 17:53:23:935 Memoria/(14558:14682): Inicio un proceso - PID: 1 - Socket 16
+[INFO] 17:53:23:999 Memoria/(14558:14683): Inicio un proceso - PID: 2 - Socket 20
+[INFO] 17:53:24:076 Memoria/(14558:14682): SWAP - Envie  - PID: 1 - PAG: 0
+[INFO] 17:53:24:156 Memoria/(14558:14683): SWAP - Envie  - PID: 1 - PAG: 1
+[INFO] 17:53:24:235 Memoria/(14558:14683): SWAP - Envie  - PID: 2 - PAG: 0
+[INFO] 17:53:24:316 Memoria/(14558:14682): SWAP - Recibi - PID: 1 - PAG: 0
+[INFO] 17:53:32:960 Memoria/(14777:14777): Tlb Inicializada
+[INFO] 17:53:33:780 Memoria/(14777:14911): Se conecto un cliente - Socket: 16
+[INFO] 17:53:35:473 Memoria/(14777:14925): Se conecto un cliente - Socket: 20
+[INFO] 17:53:35:477 Memoria/(14777:14926): Se conecto un cliente - Socket: 21
+[INFO] 17:53:35:536 Memoria/(14777:14925): Inicio un proceso - PID: 1 - Socket 20
+[INFO] 17:53:35:595 Memoria/(14777:14926): Inicio un proceso - PID: 2 - Socket 21
+[INFO] 17:53:35:751 Memoria/(14777:14925): SWAP - Envie  - PID: 1 - PAG: 0
+[INFO] 17:53:35:829 Memoria/(14777:14926): SWAP - Envie  - PID: 1 - PAG: 1
+[INFO] 17:53:35:912 Memoria/(14777:14926): SWAP - Envie  - PID: 2 - PAG: 0
+[INFO] 17:53:35:993 Memoria/(14777:14925): SWAP - Recibi - PID: 1 - PAG: 0
+[INFO] 17:54:27:456 Memoria/(15187:15187): Tlb Inicializada
+[INFO] 17:54:28:479 Memoria/(15187:15323): Se conecto un cliente - Socket: 15
+[INFO] 17:54:29:781 Memoria/(15187:15330): Se conecto un cliente - Socket: 16
+[INFO] 17:54:29:798 Memoria/(15187:15331): Se conecto un cliente - Socket: 20
+[INFO] 17:54:29:821 Memoria/(15187:15330): Inicio un proceso - PID: 1 - Socket 16
+[INFO] 17:54:29:864 Memoria/(15187:15331): Inicio un proceso - PID: 2 - Socket 20
+[INFO] 17:54:29:916 Memoria/(15187:15330): SWAP - Envie  - PID: 1 - PAG: 0
+[INFO] 17:54:29:997 Memoria/(15187:15331): SWAP - Envie  - PID: 1 - PAG: 1
+[INFO] 17:54:30:076 Memoria/(15187:15331): SWAP - Envie  - PID: 2 - PAG: 0
+[INFO] 17:54:30:156 Memoria/(15187:15330): SWAP - Recibi - PID: 1 - PAG: 0
+[INFO] 17:54:44:445 Memoria/(15583:15583): Tlb Inicializada
+[INFO] 17:54:44:596 Memoria/(15583:15668): Se conecto un cliente - Socket: 15
+[INFO] 17:54:46:100 Memoria/(15583:15672): Se conecto un cliente - Socket: 16
+[INFO] 17:54:46:114 Memoria/(15583:15673): Se conecto un cliente - Socket: 20
+[INFO] 17:54:46:141 Memoria/(15583:15672): Inicio un proceso - PID: 1 - Socket 16
+[INFO] 17:54:46:184 Memoria/(15583:15673): Inicio un proceso - PID: 2 - Socket 20
+[INFO] 17:54:46:232 Memoria/(15583:15672): SWAP - Envie  - PID: 1 - PAG: 0
+[INFO] 17:54:46:312 Memoria/(15583:15673): SWAP - Envie  - PID: 1 - PAG: 1
+[INFO] 17:54:46:396 Memoria/(15583:15673): SWAP - Envie  - PID: 2 - PAG: 0
+[INFO] 17:54:46:476 Memoria/(15583:15672): SWAP - Recibi - PID: 1 - PAG: 0
+[INFO] 17:56:14:269 Memoria/(16216:16216): Tlb Inicializada
+[INFO] 17:56:15:292 Memoria/(16216:16350): Se conecto un cliente - Socket: 15
+[INFO] 17:56:16:468 Memoria/(16216:16354): Se conecto un cliente - Socket: 16
+[INFO] 17:56:16:483 Memoria/(16216:16355): Se conecto un cliente - Socket: 20
+[INFO] 17:56:16:503 Memoria/(16216:16354): Inicio un proceso - PID: 1 - Socket 16
+[INFO] 17:56:16:559 Memoria/(16216:16355): Inicio un proceso - PID: 2 - Socket 20
+[INFO] 17:56:16:636 Memoria/(16216:16354): SWAP - Envie  - PID: 1 - PAG: 0
+[INFO] 17:56:16:717 Memoria/(16216:16355): SWAP - Envie  - PID: 1 - PAG: 1
+[INFO] 17:56:16:797 Memoria/(16216:16355): SWAP - Envie  - PID: 2 - PAG: 0
+[INFO] 17:56:16:876 Memoria/(16216:16354): SWAP - Recibi - PID: 1 - PAG: 0
+[INFO] 17:56:16:916 Memoria/(16216:16354): SWAP - Envie  - PID: 2 - PAG: 1
+[INFO] 17:56:56:143 Memoria/(16663:16663): Tlb Inicializada
+[INFO] 17:56:56:303 Memoria/(16663:16725): Se conecto un cliente - Socket: 15
+[INFO] 17:56:57:389 Memoria/(16663:16729): Se conecto un cliente - Socket: 16
+[INFO] 17:56:57:390 Memoria/(16663:16730): Se conecto un cliente - Socket: 20
+[INFO] 17:56:57:428 Memoria/(16663:16729): Inicio un proceso - PID: 1 - Socket 16
+[INFO] 17:56:57:501 Memoria/(16663:16730): Inicio un proceso - PID: 2 - Socket 20
+[INFO] 17:56:57:581 Memoria/(16663:16729): SWAP - Envie  - PID: 1 - PAG: 0
+[INFO] 17:56:57:659 Memoria/(16663:16730): SWAP - Envie  - PID: 1 - PAG: 1
+[INFO] 17:56:57:740 Memoria/(16663:16730): SWAP - Envie  - PID: 2 - PAG: 0
+[INFO] 17:56:57:820 Memoria/(16663:16729): SWAP - Recibi - PID: 1 - PAG: 0
+[INFO] 17:56:57:860 Memoria/(16663:16729): SWAP - Envie  - PID: 2 - PAG: 1
+[INFO] 17:57:19:109 Memoria/(17028:17028): Tlb Inicializada
+[INFO] 17:57:19:292 Memoria/(17028:17077): Se conecto un cliente - Socket: 15
+[INFO] 17:57:27:154 Memoria/(17301:17301): Tlb Inicializada
+[INFO] 17:57:27:410 Memoria/(17301:17396): Se conecto un cliente - Socket: 15
+[INFO] 17:57:30:926 Memoria/(17301:17408): Se conecto un cliente - Socket: 16
+[INFO] 17:57:30:940 Memoria/(17301:17409): Se conecto un cliente - Socket: 20
+[INFO] 17:57:30:951 Memoria/(17301:17408): Inicio un proceso - PID: 1 - Socket 16
+[INFO] 17:57:31:024 Memoria/(17301:17409): Inicio un proceso - PID: 2 - Socket 20
+[INFO] 17:57:31:106 Memoria/(17301:17408): SWAP - Envie  - PID: 1 - PAG: 0
+[INFO] 17:57:31:184 Memoria/(17301:17409): SWAP - Envie  - PID: 1 - PAG: 1
+[INFO] 17:57:31:264 Memoria/(17301:17409): SWAP - Envie  - PID: 2 - PAG: 0
+[INFO] 17:57:31:345 Memoria/(17301:17408): SWAP - Recibi - PID: 1 - PAG: 0
+[INFO] 17:57:31:384 Memoria/(17301:17408): SWAP - Envie  - PID: 2 - PAG: 1
+[INFO] 17:57:31:464 Memoria/(17301:17408): SWAP - Recibi - PID: 1 - PAG: 1
+[INFO] 17:57:31:504 Memoria/(17301:17408): SWAP - Envie  - PID: 1 - PAG: 0
+[INFO] 17:57:31:588 Memoria/(17301:17409): SWAP - Recibi - PID: 2 - PAG: 0
+[INFO] 17:57:31:628 Memoria/(17301:17409): SWAP - Envie  - PID: 1 - PAG: 1
+[INFO] 17:57:31:708 Memoria/(17301:17409): SWAP - Recibi - PID: 2 - PAG: 1
+[INFO] 17:57:31:748 Memoria/(17301:17409): SWAP - Envie  - PID: 2 - PAG: 0
+[INFO] 17:57:31:828 Memoria/(17301:17408): SWAP - Recibi - PID: 1 - PAG: 0
+[INFO] 17:57:31:868 Memoria/(17301:17408): SWAP - Envie  - PID: 2 - PAG: 1
+[INFO] 17:57:31:948 Memoria/(17301:17408): SWAP - Recibi - PID: 1 - PAG: 1
+[INFO] 17:57:32:028 Memoria/(17301:17409): SWAP - Recibi - PID: 2 - PAG: 0
+[INFO] 17:57:32:108 Memoria/(17301:17409): SWAP - Recibi - PID: 2 - PAG: 1
+[INFO] 17:57:32:188 Memoria/(17301:17408): SWAP - Recibi - PID: 1 - PAG: 0
+[INFO] 17:57:32:268 Memoria/(17301:17408): SWAP - Recibi - PID: 1 - PAG: 1
+[INFO] 17:57:32:348 Memoria/(17301:17409): SWAP - Recibi - PID: 2 - PAG: 0
+[INFO] 17:57:32:428 Memoria/(17301:17409): SWAP - Recibi - PID: 2 - PAG: 1
+[INFO] 17:57:32:511 Memoria/(17301:17408): Se desconecto un cliente - Socket: 16 - PID: 1
+[INFO] 17:57:32:552 Memoria/(17301:17409): Se desconecto un cliente - Socket: 20 - PID: 2
+[INFO] 17:57:55:953 Memoria/(17779:17779): Tlb Inicializada
+[INFO] 17:57:56:624 Memoria/(17779:17783): Se conecto un cliente - Socket: 15
+[INFO] 17:57:56:625 Memoria/(17779:17783): Inicio un proceso - PID: 1 - Socket 15
+[INFO] 17:57:56:625 Memoria/(17779:17784): Se conecto un cliente - Socket: 16
+[INFO] 17:57:56:632 Memoria/(17779:17784): Inicio un proceso - PID: 2 - Socket 16
+[INFO] 17:57:56:664 Memoria/(17779:17783): SWAP - Envie  - PID: 1 - PAG: 0
+[INFO] 17:57:56:704 Memoria/(17779:17783): SWAP - Recibi - PID: 1 - PAG: 0
+[INFO] 17:57:56:704 Memoria/(17779:17783): SWAP - Envie  - PID: 1 - PAG: 1
+[INFO] 17:57:56:704 Memoria/(17779:17783): SWAP - Recibi - PID: 1 - PAG: 1
+[INFO] 17:57:56:704 Memoria/(17779:17783): SWAP - Envie  - PID: 1 - PAG: 0
+[INFO] 17:57:56:704 Memoria/(17779:17784): SWAP - Envie  - PID: 1 - PAG: 1
+[INFO] 17:57:56:704 Memoria/(17779:17784): SWAP - Envie  - PID: 2 - PAG: 0
+[INFO] 17:57:56:744 Memoria/(17779:17784): SWAP - Recibi - PID: 2 - PAG: 0
+[INFO] 17:57:56:744 Memoria/(17779:17784): SWAP - Envie  - PID: 2 - PAG: 1
+[INFO] 17:57:56:744 Memoria/(17779:17784): SWAP - Recibi - PID: 2 - PAG: 1
+[INFO] 17:57:56:744 Memoria/(17779:17784): SWAP - Envie  - PID: 2 - PAG: 0
+[INFO] 17:57:56:744 Memoria/(17779:17783): SWAP - Recibi - PID: 1 - PAG: 0
+[INFO] 17:57:56:744 Memoria/(17779:17783): SWAP - Envie  - PID: 2 - PAG: 1
+[INFO] 17:57:56:744 Memoria/(17779:17783): SWAP - Recibi - PID: 1 - PAG: 1
+[INFO] 17:57:56:784 Memoria/(17779:17784): SWAP - Recibi - PID: 2 - PAG: 0
+[INFO] 17:57:56:784 Memoria/(17779:17784): SWAP - Recibi - PID: 2 - PAG: 1
+[INFO] 17:57:56:784 Memoria/(17779:17783): SWAP - Recibi - PID: 1 - PAG: 0
+[INFO] 17:58:01:393 Memoria/(17934:17934): Tlb Inicializada
+[INFO] 17:58:02:793 Memoria/(17934:18066): Se conecto un cliente - Socket: 15
+[INFO] 17:58:04:000 Memoria/(17934:18073): Se conecto un cliente - Socket: 16
+[INFO] 17:58:04:009 Memoria/(17934:18074): Se conecto un cliente - Socket: 20
+[INFO] 17:58:04:031 Memoria/(17934:18073): Inicio un proceso - PID: 1 - Socket 16
+[INFO] 17:58:04:102 Memoria/(17934:18074): Inicio un proceso - PID: 2 - Socket 20
+[INFO] 17:58:04:179 Memoria/(17934:18073): SWAP - Envie  - PID: 1 - PAG: 0
+[INFO] 17:58:04:260 Memoria/(17934:18074): SWAP - Envie  - PID: 1 - PAG: 1
+[INFO] 17:58:04:340 Memoria/(17934:18074): SWAP - Envie  - PID: 2 - PAG: 0
+[INFO] 17:58:04:420 Memoria/(17934:18073): SWAP - Recibi - PID: 1 - PAG: 0
+[INFO] 17:58:04:460 Memoria/(17934:18073): SWAP - Envie  - PID: 2 - PAG: 1
+[INFO] 17:58:04:542 Memoria/(17934:18073): SWAP - Recibi - PID: 1 - PAG: 1
+[INFO] 17:58:04:580 Memoria/(17934:18073): SWAP - Envie  - PID: 1 - PAG: 0
+[INFO] 17:58:04:660 Memoria/(17934:18074): SWAP - Recibi - PID: 2 - PAG: 0
+[INFO] 17:58:04:702 Memoria/(17934:18074): SWAP - Envie  - PID: 1 - PAG: 1
+[INFO] 17:58:04:780 Memoria/(17934:18074): SWAP - Recibi - PID: 2 - PAG: 1
+[INFO] 17:58:04:820 Memoria/(17934:18074): SWAP - Envie  - PID: 2 - PAG: 0
+[INFO] 17:58:04:900 Memoria/(17934:18073): SWAP - Recibi - PID: 1 - PAG: 0
+[INFO] 17:58:04:940 Memoria/(17934:18073): SWAP - Envie  - PID: 2 - PAG: 1
+[INFO] 17:58:05:020 Memoria/(17934:18073): SWAP - Recibi - PID: 1 - PAG: 1
+[INFO] 17:58:05:100 Memoria/(17934:18074): SWAP - Recibi - PID: 2 - PAG: 0
+[INFO] 17:58:05:180 Memoria/(17934:18074): SWAP - Recibi - PID: 2 - PAG: 1
+[INFO] 17:58:05:262 Memoria/(17934:18073): SWAP - Recibi - PID: 1 - PAG: 0
+[INFO] 17:58:05:340 Memoria/(17934:18073): SWAP - Recibi - PID: 1 - PAG: 1
+[INFO] 17:58:05:420 Memoria/(17934:18074): SWAP - Recibi - PID: 2 - PAG: 0
+[INFO] 17:58:05:500 Memoria/(17934:18074): SWAP - Recibi - PID: 2 - PAG: 1
+[INFO] 17:58:05:583 Memoria/(17934:18073): Se desconecto un cliente - Socket: 16 - PID: 1
+[INFO] 17:58:05:620 Memoria/(17934:18074): Se desconecto un cliente - Socket: 20 - PID: 2
+[INFO] 17:58:34:865 Memoria/(18320:18320): Tlb Inicializada
+[INFO] 17:58:35:540 Memoria/(18320:18454): Se conecto un cliente - Socket: 15
+[INFO] 17:58:36:638 Memoria/(18320:18458): Se conecto un cliente - Socket: 16
+[INFO] 17:58:36:653 Memoria/(18320:18459): Se conecto un cliente - Socket: 20
+[INFO] 17:58:36:676 Memoria/(18320:18458): Inicio un proceso - PID: 1 - Socket 16
+[INFO] 17:58:36:751 Memoria/(18320:18459): Inicio un proceso - PID: 2 - Socket 20
+[INFO] 17:58:36:828 Memoria/(18320:18458): SWAP - Envie  - PID: 1 - PAG: 0
+[INFO] 17:58:36:908 Memoria/(18320:18459): SWAP - Envie  - PID: 1 - PAG: 1
+[INFO] 17:58:36:988 Memoria/(18320:18459): SWAP - Envie  - PID: 2 - PAG: 0
+[INFO] 17:58:37:068 Memoria/(18320:18458): SWAP - Recibi - PID: 1 - PAG: 0
+[INFO] 17:58:37:108 Memoria/(18320:18458): SWAP - Envie  - PID: 2 - PAG: 1
+[INFO] 17:58:37:188 Memoria/(18320:18458): SWAP - Recibi - PID: 1 - PAG: 1
+[INFO] 17:58:37:228 Memoria/(18320:18458): SWAP - Envie  - PID: 1 - PAG: 0
+[INFO] 17:58:37:308 Memoria/(18320:18459): SWAP - Recibi - PID: 2 - PAG: 0
+[INFO] 17:58:37:350 Memoria/(18320:18459): SWAP - Envie  - PID: 1 - PAG: 1
+[INFO] 17:58:37:428 Memoria/(18320:18459): SWAP - Recibi - PID: 2 - PAG: 1
+[INFO] 17:58:37:468 Memoria/(18320:18459): SWAP - Envie  - PID: 2 - PAG: 0
+[INFO] 17:58:37:548 Memoria/(18320:18458): SWAP - Recibi - PID: 1 - PAG: 0
+[INFO] 17:58:37:588 Memoria/(18320:18458): SWAP - Envie  - PID: 2 - PAG: 1
+[INFO] 17:58:37:668 Memoria/(18320:18458): SWAP - Recibi - PID: 1 - PAG: 1
+[INFO] 17:58:37:749 Memoria/(18320:18459): SWAP - Recibi - PID: 2 - PAG: 0
+[INFO] 17:58:37:828 Memoria/(18320:18459): SWAP - Recibi - PID: 2 - PAG: 1
+[INFO] 17:58:37:908 Memoria/(18320:18458): SWAP - Recibi - PID: 1 - PAG: 0
+[INFO] 17:58:37:988 Memoria/(18320:18458): SWAP - Recibi - PID: 1 - PAG: 1
+[INFO] 17:58:38:068 Memoria/(18320:18459): SWAP - Recibi - PID: 2 - PAG: 0
+[INFO] 17:58:38:148 Memoria/(18320:18459): SWAP - Recibi - PID: 2 - PAG: 1
+[INFO] 17:58:38:232 Memoria/(18320:18458): Se desconecto un cliente - Socket: 16 - PID: 1
+[INFO] 17:58:38:272 Memoria/(18320:18459): Se desconecto un cliente - Socket: 20 - PID: 2
+[INFO] 17:58:59:214 Memoria/(18701:18701): Tlb Inicializada
+[INFO] 17:58:59:819 Memoria/(18701:18818): Se conecto un cliente - Socket: 15
+[INFO] 17:59:00:758 Memoria/(18701:18825): Se conecto un cliente - Socket: 16
+[INFO] 17:59:00:772 Memoria/(18701:18826): Se conecto un cliente - Socket: 20
+[INFO] 17:59:00:795 Memoria/(18701:18825): Inicio un proceso - PID: 1 - Socket 16
+[INFO] 17:59:00:872 Memoria/(18701:18826): Inicio un proceso - PID: 2 - Socket 20
+[INFO] 17:59:00:912 Memoria/(18701:18825): SWAP - Envie  - PID: 1 - PAG: 0
+[INFO] 17:59:00:992 Memoria/(18701:18826): SWAP - Envie  - PID: 1 - PAG: 1
+[INFO] 17:59:01:072 Memoria/(18701:18826): SWAP - Envie  - PID: 2 - PAG: 0
+[INFO] 17:59:01:152 Memoria/(18701:18825): SWAP - Recibi - PID: 1 - PAG: 0
+[INFO] 17:59:01:192 Memoria/(18701:18825): SWAP - Envie  - PID: 2 - PAG: 1
+[INFO] 17:59:01:272 Memoria/(18701:18825): SWAP - Recibi - PID: 1 - PAG: 1
+[INFO] 17:59:01:312 Memoria/(18701:18825): SWAP - Envie  - PID: 1 - PAG: 0
+[INFO] 17:59:01:392 Memoria/(18701:18826): SWAP - Recibi - PID: 2 - PAG: 0
+[INFO] 17:59:01:432 Memoria/(18701:18826): SWAP - Envie  - PID: 1 - PAG: 1
+[INFO] 17:59:01:512 Memoria/(18701:18826): SWAP - Recibi - PID: 2 - PAG: 1
+[INFO] 17:59:01:552 Memoria/(18701:18826): SWAP - Envie  - PID: 2 - PAG: 0
+[INFO] 17:59:01:632 Memoria/(18701:18825): SWAP - Recibi - PID: 1 - PAG: 0
+[INFO] 17:59:01:672 Memoria/(18701:18825): SWAP - Envie  - PID: 2 - PAG: 1
+[INFO] 17:59:01:753 Memoria/(18701:18825): SWAP - Recibi - PID: 1 - PAG: 1
+[INFO] 17:59:01:832 Memoria/(18701:18826): SWAP - Recibi - PID: 2 - PAG: 0
+[INFO] 17:59:01:912 Memoria/(18701:18826): SWAP - Recibi - PID: 2 - PAG: 1
+[INFO] 17:59:01:993 Memoria/(18701:18825): SWAP - Recibi - PID: 1 - PAG: 0
+[INFO] 17:59:02:072 Memoria/(18701:18825): SWAP - Recibi - PID: 1 - PAG: 1
+[INFO] 17:59:02:152 Memoria/(18701:18826): SWAP - Recibi - PID: 2 - PAG: 0
+[INFO] 17:59:02:232 Memoria/(18701:18826): SWAP - Recibi - PID: 2 - PAG: 1
+[INFO] 17:59:02:312 Memoria/(18701:18825): Se desconecto un cliente - Socket: 16 - PID: 1
+[INFO] 17:59:02:352 Memoria/(18701:18826): Se desconecto un cliente - Socket: 20 - PID: 2
+[INFO] 18:04:28:121 Memoria/(19674:19674): Tlb Inicializada
+[INFO] 18:04:28:499 Memoria/(19674:19790): Se conecto un cliente - Socket: 15
+[INFO] 18:04:29:973 Memoria/(19674:19797): Se conecto un cliente - Socket: 16
+[INFO] 18:04:29:990 Memoria/(19674:19798): Se conecto un cliente - Socket: 20
+[INFO] 18:04:30:005 Memoria/(19674:19797): Inicio un proceso - PID: 1 - Socket 16
+[INFO] 18:04:30:082 Memoria/(19674:19798): Inicio un proceso - PID: 2 - Socket 20
+[INFO] 18:04:30:163 Memoria/(19674:19797): SWAP - Envie  - PID: 1 - PAG: 0
+[INFO] 18:04:30:240 Memoria/(19674:19798): SWAP - Envie  - PID: 1 - PAG: 1
+[INFO] 18:04:30:320 Memoria/(19674:19798): SWAP - Envie  - PID: 2 - PAG: 0
+[INFO] 18:04:30:400 Memoria/(19674:19797): SWAP - Recibi - PID: 1 - PAG: 0
+[INFO] 18:04:30:440 Memoria/(19674:19797): SWAP - Envie  - PID: 2 - PAG: 1
+[INFO] 18:04:30:520 Memoria/(19674:19797): SWAP - Recibi - PID: 1 - PAG: 1
+[INFO] 18:04:30:560 Memoria/(19674:19797): SWAP - Envie  - PID: 1 - PAG: 0
+[INFO] 18:04:30:640 Memoria/(19674:19798): SWAP - Recibi - PID: 2 - PAG: 0
+[INFO] 18:04:30:680 Memoria/(19674:19798): SWAP - Envie  - PID: 1 - PAG: 1
+[INFO] 18:04:30:760 Memoria/(19674:19798): SWAP - Recibi - PID: 2 - PAG: 1
+[INFO] 18:04:30:800 Memoria/(19674:19798): SWAP - Envie  - PID: 2 - PAG: 0
+[INFO] 18:04:30:880 Memoria/(19674:19797): SWAP - Recibi - PID: 1 - PAG: 0
+[INFO] 18:04:30:920 Memoria/(19674:19797): SWAP - Envie  - PID: 2 - PAG: 1
+[INFO] 18:04:31:000 Memoria/(19674:19797): SWAP - Recibi - PID: 1 - PAG: 1
+[INFO] 18:04:31:081 Memoria/(19674:19798): SWAP - Recibi - PID: 2 - PAG: 0
+[INFO] 18:04:31:160 Memoria/(19674:19798): SWAP - Recibi - PID: 2 - PAG: 1
+[INFO] 18:04:31:240 Memoria/(19674:19797): SWAP - Recibi - PID: 1 - PAG: 0
+[INFO] 18:04:31:320 Memoria/(19674:19797): SWAP - Recibi - PID: 1 - PAG: 1
+[INFO] 18:04:31:400 Memoria/(19674:19798): SWAP - Recibi - PID: 2 - PAG: 0
+[INFO] 18:04:31:480 Memoria/(19674:19798): SWAP - Recibi - PID: 2 - PAG: 1
+[INFO] 18:04:31:564 Memoria/(19674:19797): Se desconecto un cliente - Socket: 16 - PID: 1
+[INFO] 18:04:31:605 Memoria/(19674:19798): Se desconecto un cliente - Socket: 20 - PID: 2
+[INFO] 18:06:10:951 Memoria/(20139:20139): Tlb Inicializada
+[INFO] 18:06:11:545 Memoria/(20139:20269): Se conecto un cliente - Socket: 15
+[INFO] 18:06:12:984 Memoria/(20139:20273): Se conecto un cliente - Socket: 16
+[INFO] 18:06:12:996 Memoria/(20139:20274): Se conecto un cliente - Socket: 20
+[INFO] 18:06:13:024 Memoria/(20139:20273): Inicio un proceso - PID: 1 - Socket 16
+[INFO] 18:06:13:054 Memoria/(20139:20274): Inicio un proceso - PID: 2 - Socket 20
+[INFO] 18:06:13:143 Memoria/(20139:20273): SWAP - Envie  - PID: 1 - PAG: 0
+[INFO] 18:06:13:224 Memoria/(20139:20274): SWAP - Envie  - PID: 1 - PAG: 1
+[INFO] 18:06:13:304 Memoria/(20139:20274): SWAP - Envie  - PID: 2 - PAG: 0
+[INFO] 18:06:13:384 Memoria/(20139:20273): SWAP - Recibi - PID: 1 - PAG: 0
+[INFO] 18:06:13:424 Memoria/(20139:20273): SWAP - Envie  - PID: 2 - PAG: 1
+[INFO] 18:06:13:504 Memoria/(20139:20273): SWAP - Recibi - PID: 1 - PAG: 1
+[INFO] 18:06:13:544 Memoria/(20139:20273): SWAP - Envie  - PID: 1 - PAG: 0
+[INFO] 18:06:13:624 Memoria/(20139:20274): SWAP - Recibi - PID: 2 - PAG: 0
+[INFO] 18:06:13:664 Memoria/(20139:20274): SWAP - Envie  - PID: 1 - PAG: 1
+[INFO] 18:06:13:744 Memoria/(20139:20274): SWAP - Recibi - PID: 2 - PAG: 1
+[INFO] 18:06:13:784 Memoria/(20139:20274): SWAP - Envie  - PID: 2 - PAG: 0
+[INFO] 18:06:13:864 Memoria/(20139:20273): SWAP - Recibi - PID: 1 - PAG: 0
+[INFO] 18:06:13:904 Memoria/(20139:20273): SWAP - Envie  - PID: 2 - PAG: 1
+[INFO] 18:06:13:985 Memoria/(20139:20273): SWAP - Recibi - PID: 1 - PAG: 1
+[INFO] 18:06:14:064 Memoria/(20139:20274): SWAP - Recibi - PID: 2 - PAG: 0
+[INFO] 18:06:14:144 Memoria/(20139:20274): SWAP - Recibi - PID: 2 - PAG: 1
+[INFO] 18:06:14:224 Memoria/(20139:20273): SWAP - Recibi - PID: 1 - PAG: 0
+[INFO] 18:06:14:304 Memoria/(20139:20273): SWAP - Recibi - PID: 1 - PAG: 1
+[INFO] 18:06:14:384 Memoria/(20139:20274): SWAP - Recibi - PID: 2 - PAG: 0
+[INFO] 18:06:14:464 Memoria/(20139:20274): SWAP - Recibi - PID: 2 - PAG: 1
+[INFO] 18:06:14:548 Memoria/(20139:20273): Se desconecto un cliente - Socket: 16 - PID: 1
+[INFO] 18:06:14:588 Memoria/(20139:20274): Se desconecto un cliente - Socket: 20 - PID: 2
+[INFO] 18:07:00:704 Memoria/(20569:20569): Tlb Inicializada
+[INFO] 18:07:01:012 Memoria/(20569:20691): Se conecto un cliente - Socket: 15
+[INFO] 18:07:01:845 Memoria/(20569:20695): Se conecto un cliente - Socket: 16
+[INFO] 18:07:01:861 Memoria/(20569:20696): Se conecto un cliente - Socket: 20
+[INFO] 18:07:01:878 Memoria/(20569:20695): Inicio un proceso - PID: 1 - Socket 16
+[INFO] 18:07:01:956 Memoria/(20569:20696): Inicio un proceso - PID: 2 - Socket 20
+[INFO] 18:07:02:032 Memoria/(20569:20695): SWAP - Envie  - PID: 1 - PAG: 0
+[INFO] 18:07:02:112 Memoria/(20569:20696): SWAP - Envie  - PID: 1 - PAG: 1
+[INFO] 18:07:02:192 Memoria/(20569:20696): SWAP - Envie  - PID: 2 - PAG: 0
+[INFO] 18:07:02:272 Memoria/(20569:20695): SWAP - Recibi - PID: 1 - PAG: 0
+[INFO] 18:07:02:312 Memoria/(20569:20695): SWAP - Envie  - PID: 2 - PAG: 1
+[INFO] 18:07:02:392 Memoria/(20569:20695): SWAP - Recibi - PID: 1 - PAG: 1
+[INFO] 18:07:02:432 Memoria/(20569:20695): SWAP - Envie  - PID: 1 - PAG: 0
+[INFO] 18:07:02:512 Memoria/(20569:20696): SWAP - Recibi - PID: 2 - PAG: 0
+[INFO] 18:07:02:551 Memoria/(20569:20696): SWAP - Envie  - PID: 1 - PAG: 1
+[INFO] 18:07:02:632 Memoria/(20569:20696): SWAP - Recibi - PID: 2 - PAG: 1
+[INFO] 18:07:02:672 Memoria/(20569:20696): SWAP - Envie  - PID: 2 - PAG: 0
+[INFO] 18:07:02:752 Memoria/(20569:20695): SWAP - Recibi - PID: 1 - PAG: 0
+[INFO] 18:07:02:792 Memoria/(20569:20695): SWAP - Envie  - PID: 2 - PAG: 1
+[INFO] 18:07:02:872 Memoria/(20569:20695): SWAP - Recibi - PID: 1 - PAG: 1
+[INFO] 18:07:02:952 Memoria/(20569:20696): SWAP - Recibi - PID: 2 - PAG: 0
+[INFO] 18:07:03:032 Memoria/(20569:20696): SWAP - Recibi - PID: 2 - PAG: 1
+[INFO] 18:07:03:112 Memoria/(20569:20695): SWAP - Recibi - PID: 1 - PAG: 0
+[INFO] 18:07:03:192 Memoria/(20569:20695): SWAP - Recibi - PID: 1 - PAG: 1
+[INFO] 18:07:03:272 Memoria/(20569:20696): SWAP - Recibi - PID: 2 - PAG: 0
+[INFO] 18:07:03:352 Memoria/(20569:20696): SWAP - Recibi - PID: 2 - PAG: 1
+[INFO] 18:07:03:435 Memoria/(20569:20695): Se desconecto un cliente - Socket: 16 - PID: 1
+[INFO] 18:07:03:474 Memoria/(20569:20696): Se desconecto un cliente - Socket: 20 - PID: 2
+[INFO] 18:07:53:845 Memoria/(21108:21108): Tlb Inicializada
+[INFO] 18:07:56:641 Memoria/(21108:21255): Se conecto un cliente - Socket: 15
+[INFO] 18:07:57:796 Memoria/(21108:21259): Se conecto un cliente - Socket: 16
+[INFO] 18:07:57:815 Memoria/(21108:21260): Se conecto un cliente - Socket: 20
+[INFO] 18:07:57:829 Memoria/(21108:21259): Inicio un proceso - PID: 1 - Socket 16
+[INFO] 18:07:57:895 Memoria/(21108:21260): Inicio un proceso - PID: 2 - Socket 20
+[INFO] 18:07:57:972 Memoria/(21108:21259): SWAP - Envie  - PID: 1 - PAG: 0
+[INFO] 18:07:58:052 Memoria/(21108:21260): SWAP - Envie  - PID: 1 - PAG: 1
+[INFO] 18:07:58:132 Memoria/(21108:21260): SWAP - Envie  - PID: 2 - PAG: 0
+[INFO] 18:07:58:212 Memoria/(21108:21259): SWAP - Recibi - PID: 1 - PAG: 0
+[INFO] 18:07:58:253 Memoria/(21108:21259): SWAP - Envie  - PID: 2 - PAG: 1
+[INFO] 18:07:58:332 Memoria/(21108:21259): SWAP - Recibi - PID: 1 - PAG: 1
+[INFO] 18:07:58:372 Memoria/(21108:21259): SWAP - Envie  - PID: 1 - PAG: 0
+[INFO] 18:07:58:452 Memoria/(21108:21260): SWAP - Recibi - PID: 2 - PAG: 0
+[INFO] 18:07:58:492 Memoria/(21108:21260): SWAP - Envie  - PID: 1 - PAG: 1
+[INFO] 18:07:58:572 Memoria/(21108:21260): SWAP - Recibi - PID: 2 - PAG: 1
+[INFO] 18:07:58:612 Memoria/(21108:21260): SWAP - Envie  - PID: 2 - PAG: 0
+[INFO] 18:07:58:692 Memoria/(21108:21259): SWAP - Recibi - PID: 1 - PAG: 0
+[INFO] 18:07:58:732 Memoria/(21108:21259): SWAP - Envie  - PID: 2 - PAG: 1
+[INFO] 18:07:58:812 Memoria/(21108:21259): SWAP - Recibi - PID: 1 - PAG: 1
+[INFO] 18:07:58:892 Memoria/(21108:21260): SWAP - Recibi - PID: 2 - PAG: 0
+[INFO] 18:07:58:972 Memoria/(21108:21260): SWAP - Recibi - PID: 2 - PAG: 1
+[INFO] 18:07:59:052 Memoria/(21108:21259): SWAP - Recibi - PID: 1 - PAG: 0
+[INFO] 18:07:59:132 Memoria/(21108:21259): SWAP - Recibi - PID: 1 - PAG: 1
+[INFO] 18:07:59:214 Memoria/(21108:21260): SWAP - Recibi - PID: 2 - PAG: 0
+[INFO] 18:07:59:293 Memoria/(21108:21260): SWAP - Recibi - PID: 2 - PAG: 1
+[INFO] 18:07:59:376 Memoria/(21108:21259): Se desconecto un cliente - Socket: 16 - PID: 1
+[INFO] 18:07:59:420 Memoria/(21108:21260): Se desconecto un cliente - Socket: 20 - PID: 2
+[INFO] 18:13:42:289 Memoria/(21996:21996): Tlb Inicializada
+[INFO] 18:13:42:498 Memoria/(21996:22113): Se conecto un cliente - Socket: 15
+[INFO] 18:13:45:438 Memoria/(21996:22120): Se conecto un cliente - Socket: 16
+[INFO] 18:13:45:451 Memoria/(21996:22121): Se conecto un cliente - Socket: 20
+[INFO] 18:13:45:470 Memoria/(21996:22120): Inicio un proceso - PID: 1 - Socket 16
+[INFO] 18:13:45:529 Memoria/(21996:22121): Inicio un proceso - PID: 2 - Socket 20
+[INFO] 18:13:45:608 Memoria/(21996:22120): SWAP - Envie  - PID: 1 - PAG: 0
+[INFO] 18:13:45:688 Memoria/(21996:22121): SWAP - Envie  - PID: 1 - PAG: 1
+[INFO] 18:13:45:768 Memoria/(21996:22121): SWAP - Envie  - PID: 2 - PAG: 0
+[INFO] 18:13:45:848 Memoria/(21996:22120): SWAP - Recibi - PID: 1 - PAG: 0
+[INFO] 18:13:45:888 Memoria/(21996:22120): SWAP - Envie  - PID: 2 - PAG: 1
+[INFO] 18:13:45:968 Memoria/(21996:22120): SWAP - Recibi - PID: 1 - PAG: 1
+[INFO] 18:13:46:008 Memoria/(21996:22120): SWAP - Envie  - PID: 1 - PAG: 0
+[INFO] 18:13:46:088 Memoria/(21996:22121): SWAP - Recibi - PID: 2 - PAG: 0
+[INFO] 18:13:46:128 Memoria/(21996:22121): SWAP - Envie  - PID: 1 - PAG: 1
+[INFO] 18:13:46:208 Memoria/(21996:22121): SWAP - Recibi - PID: 2 - PAG: 1
+[INFO] 18:13:46:248 Memoria/(21996:22121): SWAP - Envie  - PID: 2 - PAG: 0
+[INFO] 18:13:46:328 Memoria/(21996:22120): SWAP - Recibi - PID: 1 - PAG: 0
+[INFO] 18:13:46:368 Memoria/(21996:22120): SWAP - Envie  - PID: 2 - PAG: 1
+[INFO] 18:13:46:448 Memoria/(21996:22120): SWAP - Recibi - PID: 1 - PAG: 1
+[INFO] 18:13:46:528 Memoria/(21996:22121): SWAP - Recibi - PID: 2 - PAG: 0
+[INFO] 18:13:46:608 Memoria/(21996:22121): SWAP - Recibi - PID: 2 - PAG: 1
+[INFO] 18:13:46:688 Memoria/(21996:22120): SWAP - Recibi - PID: 1 - PAG: 0
+[INFO] 18:13:46:768 Memoria/(21996:22120): SWAP - Recibi - PID: 1 - PAG: 1
+[INFO] 18:13:46:848 Memoria/(21996:22121): SWAP - Recibi - PID: 2 - PAG: 0
+[INFO] 18:13:46:928 Memoria/(21996:22121): SWAP - Recibi - PID: 2 - PAG: 1
+[INFO] 18:13:47:008 Memoria/(21996:22120): Se desconecto un cliente - Socket: 16 - PID: 1
+[INFO] 18:13:47:048 Memoria/(21996:22121): Se desconecto un cliente - Socket: 20 - PID: 2
+[INFO] 18:14:44:073 Memoria/(22439:22439): Tlb Inicializada
+[INFO] 18:14:48:172 Memoria/(22583:22583): Tlb Inicializada
+[INFO] 18:14:48:644 Memoria/(22583:22715): Se conecto un cliente - Socket: 15
+[INFO] 18:14:49:997 Memoria/(22583:22722): Se conecto un cliente - Socket: 16
+[INFO] 18:14:50:008 Memoria/(22583:22723): Se conecto un cliente - Socket: 20
+[INFO] 18:14:50:028 Memoria/(22583:22722): Inicio un proceso - PID: 1 - Socket 16
+[INFO] 18:14:50:083 Memoria/(22583:22723): Inicio un proceso - PID: 2 - Socket 20
+[INFO] 18:14:50:160 Memoria/(22583:22722): SWAP - Envie  - PID: 1 - PAG: 0
+[INFO] 18:14:50:240 Memoria/(22583:22723): SWAP - Envie  - PID: 1 - PAG: 1
+[INFO] 18:14:50:321 Memoria/(22583:22723): SWAP - Envie  - PID: 2 - PAG: 0
+[INFO] 18:14:50:400 Memoria/(22583:22722): SWAP - Recibi - PID: 1 - PAG: 0
+[INFO] 18:14:50:439 Memoria/(22583:22722): SWAP - Envie  - PID: 2 - PAG: 1
+[INFO] 18:14:50:520 Memoria/(22583:22722): SWAP - Recibi - PID: 1 - PAG: 1
+[INFO] 18:14:50:560 Memoria/(22583:22722): SWAP - Envie  - PID: 1 - PAG: 0
+[INFO] 18:14:50:640 Memoria/(22583:22723): SWAP - Recibi - PID: 2 - PAG: 0
+[INFO] 18:14:50:680 Memoria/(22583:22723): SWAP - Envie  - PID: 1 - PAG: 1
+[INFO] 18:14:50:760 Memoria/(22583:22723): SWAP - Recibi - PID: 2 - PAG: 1
+[INFO] 18:14:50:800 Memoria/(22583:22723): SWAP - Envie  - PID: 2 - PAG: 0
+[INFO] 18:14:50:880 Memoria/(22583:22722): SWAP - Recibi - PID: 1 - PAG: 0
+[INFO] 18:14:50:920 Memoria/(22583:22722): SWAP - Envie  - PID: 2 - PAG: 1
+[INFO] 18:14:51:000 Memoria/(22583:22722): SWAP - Recibi - PID: 1 - PAG: 1
+[INFO] 18:14:51:081 Memoria/(22583:22723): SWAP - Recibi - PID: 2 - PAG: 0
+[INFO] 18:14:51:160 Memoria/(22583:22723): SWAP - Recibi - PID: 2 - PAG: 1
+[INFO] 18:14:51:241 Memoria/(22583:22722): SWAP - Recibi - PID: 1 - PAG: 0
+[INFO] 18:14:51:321 Memoria/(22583:22722): SWAP - Recibi - PID: 1 - PAG: 1
+[INFO] 18:14:51:400 Memoria/(22583:22723): SWAP - Recibi - PID: 2 - PAG: 0
+[INFO] 18:14:51:480 Memoria/(22583:22723): SWAP - Recibi - PID: 2 - PAG: 1
+[INFO] 18:14:51:564 Memoria/(22583:22722): Se desconecto un cliente - Socket: 16 - PID: 1
+[INFO] 18:14:51:608 Memoria/(22583:22723): Se desconecto un cliente - Socket: 20 - PID: 2
+[INFO] 18:14:58:857 Memoria/(22980:22980): Tlb Inicializada
+[INFO] 18:14:59:099 Memoria/(22980:23099): Se conecto un cliente - Socket: 15
+[INFO] 18:15:01:143 Memoria/(22980:23112): Se conecto un cliente - Socket: 16
+[INFO] 18:15:01:152 Memoria/(22980:23113): Se conecto un cliente - Socket: 20
+[INFO] 18:15:01:154 Memoria/(22980:23114): Se conecto un cliente - Socket: 21
+[INFO] 18:15:01:183 Memoria/(22980:23112): Inicio un proceso - PID: 1 - Socket 16
+[INFO] 18:15:01:252 Memoria/(22980:23113): Inicio un proceso - PID: 2 - Socket 20
+[INFO] 18:15:01:329 Memoria/(22980:23114): Inicio un proceso - PID: 3 - Socket 21
+[INFO] 18:15:01:408 Memoria/(22980:23112): SWAP - Envie  - PID: 1 - PAG: 0
+[INFO] 18:15:01:488 Memoria/(22980:23113): SWAP - Envie  - PID: 1 - PAG: 1
+[INFO] 18:15:01:568 Memoria/(22980:23113): SWAP - Envie  - PID: 2 - PAG: 0
+[INFO] 18:15:01:648 Memoria/(22980:23114): SWAP - Envie  - PID: 2 - PAG: 1
+[INFO] 18:15:01:728 Memoria/(22980:23114): SWAP - Envie  - PID: 3 - PAG: 0
+[INFO] 18:15:01:808 Memoria/(22980:23112): SWAP - Recibi - PID: 1 - PAG: 0
+[INFO] 18:15:01:848 Memoria/(22980:23112): SWAP - Envie  - PID: 3 - PAG: 1
+[INFO] 18:15:01:928 Memoria/(22980:23112): SWAP - Recibi - PID: 1 - PAG: 1
+[INFO] 18:15:01:968 Memoria/(22980:23112): SWAP - Envie  - PID: 1 - PAG: 0
+[INFO] 18:15:02:051 Memoria/(22980:23113): SWAP - Recibi - PID: 2 - PAG: 0
+[INFO] 18:15:02:087 Memoria/(22980:23113): SWAP - Envie  - PID: 1 - PAG: 1
+[INFO] 18:15:02:168 Memoria/(22980:23113): SWAP - Recibi - PID: 2 - PAG: 1
+[INFO] 18:15:02:208 Memoria/(22980:23113): SWAP - Envie  - PID: 2 - PAG: 0
+[INFO] 18:15:02:288 Memoria/(22980:23114): SWAP - Recibi - PID: 3 - PAG: 0
+[INFO] 18:15:02:328 Memoria/(22980:23114): SWAP - Envie  - PID: 2 - PAG: 1
+[INFO] 18:15:02:408 Memoria/(22980:23114): SWAP - Recibi - PID: 3 - PAG: 1
+[INFO] 18:15:02:448 Memoria/(22980:23114): SWAP - Envie  - PID: 3 - PAG: 0
+[INFO] 18:15:02:528 Memoria/(22980:23112): SWAP - Recibi - PID: 1 - PAG: 0
+[INFO] 18:15:02:568 Memoria/(22980:23112): SWAP - Envie  - PID: 3 - PAG: 1
+[INFO] 18:15:02:648 Memoria/(22980:23112): SWAP - Recibi - PID: 1 - PAG: 1
+[INFO] 18:15:02:729 Memoria/(22980:23113): SWAP - Recibi - PID: 2 - PAG: 0
+[INFO] 18:15:02:808 Memoria/(22980:23113): SWAP - Recibi - PID: 2 - PAG: 1
+[INFO] 18:15:02:888 Memoria/(22980:23114): SWAP - Recibi - PID: 3 - PAG: 0
+[INFO] 18:15:02:968 Memoria/(22980:23114): SWAP - Recibi - PID: 3 - PAG: 1
+[INFO] 18:15:03:048 Memoria/(22980:23112): SWAP - Recibi - PID: 1 - PAG: 0
+[INFO] 18:15:03:128 Memoria/(22980:23112): SWAP - Recibi - PID: 1 - PAG: 1
+[INFO] 18:15:03:208 Memoria/(22980:23113): SWAP - Recibi - PID: 2 - PAG: 0
+[INFO] 18:15:03:291 Memoria/(22980:23113): SWAP - Recibi - PID: 2 - PAG: 1
+[INFO] 18:15:03:368 Memoria/(22980:23114): SWAP - Recibi - PID: 3 - PAG: 0
+[INFO] 18:15:03:448 Memoria/(22980:23114): SWAP - Recibi - PID: 3 - PAG: 1
+[INFO] 18:15:03:528 Memoria/(22980:23112): Se desconecto un cliente - Socket: 16 - PID: 1
+[INFO] 18:15:03:568 Memoria/(22980:23113): Se desconecto un cliente - Socket: 20 - PID: 2
+[INFO] 18:15:03:612 Memoria/(22980:23114): Se desconecto un cliente - Socket: 21 - PID: 3
+[INFO] 18:16:09:723 Memoria/(23468:23468): Tlb Inicializada
+[INFO] 18:16:10:981 Memoria/(23468:23599): Se conecto un cliente - Socket: 15
+[INFO] 18:16:13:932 Memoria/(23468:23605): Se conecto un cliente - Socket: 16
+[INFO] 18:16:13:957 Memoria/(23468:23605): Inicio un proceso - PID: 1 - Socket 16
+[INFO] 18:16:14:076 Memoria/(23468:23605): SWAP - Envie  - PID: 1 - PAG: 0
+[INFO] 18:16:14:156 Memoria/(23468:23605): SWAP - Recibi - PID: 1 - PAG: 0
+[INFO] 18:16:14:196 Memoria/(23468:23605): SWAP - Envie  - PID: 1 - PAG: 1
+[INFO] 18:16:14:276 Memoria/(23468:23605): SWAP - Recibi - PID: 1 - PAG: 1
+[INFO] 18:16:14:316 Memoria/(23468:23605): SWAP - Envie  - PID: 1 - PAG: 0
+[INFO] 18:16:14:396 Memoria/(23468:23605): SWAP - Recibi - PID: 1 - PAG: 0
+[INFO] 18:16:14:436 Memoria/(23468:23605): SWAP - Envie  - PID: 1 - PAG: 1
+[INFO] 18:16:14:516 Memoria/(23468:23605): SWAP - Recibi - PID: 1 - PAG: 1
+[INFO] 18:16:14:635 Memoria/(23468:23605): SWAP - Recibi - PID: 1 - PAG: 0
+[INFO] 18:16:14:676 Memoria/(23468:23605): SWAP - Recibi - PID: 1 - PAG: 1
+[INFO] 18:16:14:760 Memoria/(23468:23605): Se desconecto un cliente - Socket: 16 - PID: 1
+[INFO] 18:16:38:147 Memoria/(23468:23755): Se conecto un cliente - Socket: 20
+[INFO] 18:16:38:220 Memoria/(23468:23755): Inicio un proceso - PID: 2 - Socket 20
+[INFO] 18:16:38:274 Memoria/(23468:23757): Se conecto un cliente - Socket: 16
+[INFO] 18:16:38:348 Memoria/(23468:23757): Inicio un proceso - PID: 3 - Socket 16
+[INFO] 18:16:39:261 Memoria/(23468:23759): Se conecto un cliente - Socket: 21
+[INFO] 18:16:39:337 Memoria/(23468:23759): Inicio un proceso - PID: 4 - Socket 21
+[INFO] 18:16:40:262 Memoria/(23468:23764): Se conecto un cliente - Socket: 22
+[INFO] 18:16:40:333 Memoria/(23468:23764): Inicio un proceso - PID: 5 - Socket 22
+[INFO] 18:16:41:263 Memoria/(23468:23766): Se conecto un cliente - Socket: 23
+[INFO] 18:16:41:327 Memoria/(23468:23766): Inicio un proceso - PID: 6 - Socket 23
+[INFO] 18:16:42:263 Memoria/(23468:23772): Se conecto un cliente - Socket: 25
+[INFO] 18:16:42:330 Memoria/(23468:23772): Inicio un proceso - PID: 7 - Socket 25
+[INFO] 18:16:43:263 Memoria/(23468:23774): Se conecto un cliente - Socket: 26
+[INFO] 18:16:43:337 Memoria/(23468:23774): Inicio un proceso - PID: 8 - Socket 26
+[INFO] 18:16:48:902 Memoria/(23468:23783): Se conecto un cliente - Socket: 27
+[INFO] 18:16:48:965 Memoria/(23468:23783): Inicio un proceso - PID: 9 - Socket 27
+[INFO] 18:16:49:084 Memoria/(23468:23783): SWAP - Envie  - PID: 9 - PAG: 0
+[INFO] 18:16:49:167 Memoria/(23468:23783): SWAP - Recibi - PID: 9 - PAG: 0
+[INFO] 18:16:49:204 Memoria/(23468:23783): SWAP - Envie  - PID: 9 - PAG: 1
+[INFO] 18:16:49:324 Memoria/(23468:23783): SWAP - Recibi - PID: 9 - PAG: 1
+[INFO] 18:16:49:324 Memoria/(23468:23783): SWAP - Envie  - PID: 9 - PAG: 0
+[INFO] 18:16:49:408 Memoria/(23468:23783): Se desconecto un cliente - Socket: 27 - PID: 9
+[INFO] 18:24:44:023 Memoria/(24623:24623): Tlb Inicializada
+[INFO] 18:24:45:080 Memoria/(24623:24754): Se conecto un cliente - Socket: 15
+[INFO] 18:24:46:514 Memoria/(24623:24760): Se conecto un cliente - Socket: 16
+[INFO] 18:24:46:560 Memoria/(24623:24760): Inicio un proceso - PID: 1 - Socket 16
+[INFO] 18:24:46:640 Memoria/(24623:24760): SWAP - Envie  - PID: 1 - PAG: 0
+[INFO] 18:24:46:720 Memoria/(24623:24760): SWAP - Recibi - PID: 1 - PAG: 0
+[INFO] 18:24:46:760 Memoria/(24623:24760): SWAP - Envie  - PID: 1 - PAG: 1
+[INFO] 18:24:46:881 Memoria/(24623:24760): SWAP - Recibi - PID: 1 - PAG: 1
+[INFO] 18:24:46:881 Memoria/(24623:24760): SWAP - Envie  - PID: 1 - PAG: 0
+[INFO] 18:24:46:964 Memoria/(24623:24760): Se desconecto un cliente - Socket: 16 - PID: 1
+[INFO] 18:25:17:784 Memoria/(25053:25053): Tlb Inicializada
+[INFO] 18:25:18:616 Memoria/(25053:25184): Se conecto un cliente - Socket: 15
+[INFO] 18:25:20:809 Memoria/(25053:25190): Se conecto un cliente - Socket: 16
+[INFO] 18:25:20:849 Memoria/(25053:25190): Inicio un proceso - PID: 1 - Socket 16
+[INFO] 18:25:20:928 Memoria/(25053:25190): SWAP - Envie  - PID: 1 - PAG: 0
+[INFO] 18:25:21:008 Memoria/(25053:25190): SWAP - Recibi - PID: 1 - PAG: 0
+[INFO] 18:25:21:050 Memoria/(25053:25190): SWAP - Envie  - PID: 1 - PAG: 1
+[INFO] 18:25:21:128 Memoria/(25053:25190): SWAP - Recibi - PID: 1 - PAG: 1
+[INFO] 18:25:21:167 Memoria/(25053:25190): SWAP - Envie  - PID: 1 - PAG: 0
+[INFO] 18:25:21:248 Memoria/(25053:25190): SWAP - Recibi - PID: 1 - PAG: 0
+[INFO] 18:25:21:288 Memoria/(25053:25190): SWAP - Envie  - PID: 1 - PAG: 1
+[INFO] 18:25:21:368 Memoria/(25053:25190): SWAP - Recibi - PID: 1 - PAG: 1
+[INFO] 18:25:21:488 Memoria/(25053:25190): SWAP - Recibi - PID: 1 - PAG: 0
+[INFO] 18:25:21:528 Memoria/(25053:25190): SWAP - Recibi - PID: 1 - PAG: 1
+[INFO] 18:25:21:612 Memoria/(25053:25190): Se desconecto un cliente - Socket: 16 - PID: 1
+[INFO] 18:29:18:059 Memoria/(25754:25754): Tlb Inicializada
+[INFO] 18:29:18:634 Memoria/(25754:25879): Se conecto un cliente - Socket: 15
+[INFO] 18:29:34:153 Memoria/(26110:26110): Tlb Inicializada
+[INFO] 18:29:34:360 Memoria/(26110:26216): Se conecto un cliente - Socket: 15
+[INFO] 18:29:36:793 Memoria/(26110:26222): Se conecto un cliente - Socket: 16
+[INFO] 18:29:36:828 Memoria/(26110:26222): Inicio un proceso - PID: 1 - Socket 16
+[INFO] 18:29:36:948 Memoria/(26110:26222): SWAP - Envie  - PID: 1 - PAG: 0
+[INFO] 18:29:37:029 Memoria/(26110:26222): SWAP - Recibi - PID: 1 - PAG: 0
+[INFO] 18:29:37:068 Memoria/(26110:26222): SWAP - Envie  - PID: 1 - PAG: 1
+[INFO] 18:29:37:148 Memoria/(26110:26222): SWAP - Recibi - PID: 1 - PAG: 1
+[INFO] 18:29:37:189 Memoria/(26110:26222): SWAP - Envie  - PID: 1 - PAG: 0
+[INFO] 18:29:37:268 Memoria/(26110:26222): SWAP - Recibi - PID: 1 - PAG: 0
+[INFO] 18:29:37:308 Memoria/(26110:26222): SWAP - Envie  - PID: 1 - PAG: 1
+[INFO] 18:29:37:388 Memoria/(26110:26222): SWAP - Recibi - PID: 1 - PAG: 1
+[INFO] 18:29:37:508 Memoria/(26110:26222): SWAP - Recibi - PID: 1 - PAG: 0
+[INFO] 18:29:37:548 Memoria/(26110:26222): SWAP - Recibi - PID: 1 - PAG: 1
+[INFO] 18:29:37:628 Memoria/(26110:26222): Se desconecto un cliente - Socket: 16 - PID: 1
+[INFO] 18:30:10:149 Memoria/(26538:26538): Tlb Inicializada
+[INFO] 18:30:10:276 Memoria/(26538:26615): Se conecto un cliente - Socket: 15
+[INFO] 18:30:11:363 Memoria/(26538:26621): Se conecto un cliente - Socket: 16
+[INFO] 18:30:11:397 Memoria/(26538:26621): Inicio un proceso - PID: 1 - Socket 16
+[INFO] 18:30:11:516 Memoria/(26538:26621): SWAP - Envie  - PID: 1 - PAG: 0
+[INFO] 18:30:11:596 Memoria/(26538:26621): SWAP - Recibi - PID: 1 - PAG: 0
+[INFO] 18:30:11:636 Memoria/(26538:26621): SWAP - Envie  - PID: 1 - PAG: 1
+[INFO] 18:30:11:716 Memoria/(26538:26621): SWAP - Recibi - PID: 1 - PAG: 1
+[INFO] 18:30:11:756 Memoria/(26538:26621): SWAP - Envie  - PID: 1 - PAG: 0
+[INFO] 18:30:11:836 Memoria/(26538:26621): SWAP - Recibi - PID: 1 - PAG: 0
+[INFO] 18:30:11:876 Memoria/(26538:26621): SWAP - Envie  - PID: 1 - PAG: 1
+[INFO] 18:30:11:956 Memoria/(26538:26621): SWAP - Recibi - PID: 1 - PAG: 1
+[INFO] 18:30:12:076 Memoria/(26538:26621): SWAP - Recibi - PID: 1 - PAG: 0
+[INFO] 18:30:12:116 Memoria/(26538:26621): SWAP - Recibi - PID: 1 - PAG: 1
+[INFO] 18:30:12:197 Memoria/(26538:26621): Se desconecto un cliente - Socket: 16 - PID: 1
+[INFO] 18:32:33:866 Memoria/(27016:27016): Tlb Inicializada
+[INFO] 18:32:34:354 Memoria/(27016:27149): Se conecto un cliente - Socket: 15
+[INFO] 18:32:35:338 Memoria/(27016:27152): Se conecto un cliente - Socket: 16
+[INFO] 18:32:35:369 Memoria/(27016:27152): Inicio un proceso - PID: 1 - Socket 16
+[INFO] 18:32:35:488 Memoria/(27016:27152): SWAP - Envie  - PID: 1 - PAG: 0
+[INFO] 18:32:35:568 Memoria/(27016:27152): SWAP - Recibi - PID: 1 - PAG: 0
+[INFO] 18:32:35:608 Memoria/(27016:27152): SWAP - Envie  - PID: 1 - PAG: 1
+[INFO] 18:32:35:690 Memoria/(27016:27152): SWAP - Recibi - PID: 1 - PAG: 1
+[INFO] 18:32:35:728 Memoria/(27016:27152): SWAP - Envie  - PID: 1 - PAG: 0
+[INFO] 18:32:35:809 Memoria/(27016:27152): SWAP - Recibi - PID: 1 - PAG: 0
+[INFO] 18:32:35:848 Memoria/(27016:27152): SWAP - Envie  - PID: 1 - PAG: 1
+[INFO] 18:32:35:928 Memoria/(27016:27152): SWAP - Recibi - PID: 1 - PAG: 1
+[INFO] 18:32:36:049 Memoria/(27016:27152): SWAP - Recibi - PID: 1 - PAG: 0
+[INFO] 18:32:36:088 Memoria/(27016:27152): SWAP - Recibi - PID: 1 - PAG: 1
+[INFO] 18:32:36:168 Memoria/(27016:27152): Se desconecto un cliente - Socket: 16 - PID: 1
+[INFO] 18:34:09:577 Memoria/(27639:27639): Tlb Inicializada
+[INFO] 18:34:09:982 Memoria/(27639:27770): Se conecto un cliente - Socket: 15
+[INFO] 18:34:11:384 Memoria/(27639:27773): Se conecto un cliente - Socket: 16
+[INFO] 18:34:11:420 Memoria/(27639:27773): Inicio un proceso - PID: 1 - Socket 16
+[INFO] 18:34:11:540 Memoria/(27639:27773): SWAP - Envie  - PID: 1 - PAG: 0
+[INFO] 18:34:11:620 Memoria/(27639:27773): SWAP - Recibi - PID: 1 - PAG: 0
+[INFO] 18:34:11:660 Memoria/(27639:27773): SWAP - Envie  - PID: 1 - PAG: 1
+[INFO] 18:34:11:741 Memoria/(27639:27773): SWAP - Recibi - PID: 1 - PAG: 1
+[INFO] 18:34:11:780 Memoria/(27639:27773): SWAP - Envie  - PID: 1 - PAG: 0
+[INFO] 18:34:11:860 Memoria/(27639:27773): SWAP - Recibi - PID: 1 - PAG: 0
+[INFO] 18:34:11:901 Memoria/(27639:27773): SWAP - Envie  - PID: 1 - PAG: 1
+[INFO] 18:34:11:981 Memoria/(27639:27773): SWAP - Recibi - PID: 1 - PAG: 1
+[INFO] 18:34:12:100 Memoria/(27639:27773): SWAP - Recibi - PID: 1 - PAG: 0
+[INFO] 18:34:12:141 Memoria/(27639:27773): SWAP - Recibi - PID: 1 - PAG: 1
+[INFO] 18:34:12:220 Memoria/(27639:27773): Se desconecto un cliente - Socket: 16 - PID: 1
+[INFO] 18:35:25:435 Memoria/(28211:28211): Tlb Inicializada
+[INFO] 18:35:26:633 Memoria/(28211:28342): Se conecto un cliente - Socket: 15
+[INFO] 18:35:28:383 Memoria/(28211:28348): Se conecto un cliente - Socket: 16
+[INFO] 18:35:28:420 Memoria/(28211:28348): Inicio un proceso - PID: 1 - Socket 16
+[INFO] 18:35:28:536 Memoria/(28211:28348): SWAP - Envie  - PID: 1 - PAG: 0
+[INFO] 18:35:28:616 Memoria/(28211:28348): SWAP - Recibi - PID: 1 - PAG: 0
+[INFO] 18:35:28:655 Memoria/(28211:28348): SWAP - Envie  - PID: 1 - PAG: 1
+[INFO] 18:35:28:738 Memoria/(28211:28348): SWAP - Recibi - PID: 1 - PAG: 1
+[INFO] 18:35:28:776 Memoria/(28211:28348): SWAP - Envie  - PID: 1 - PAG: 0
+[INFO] 18:35:28:856 Memoria/(28211:28348): SWAP - Recibi - PID: 1 - PAG: 0
+[INFO] 18:35:28:896 Memoria/(28211:28348): SWAP - Envie  - PID: 1 - PAG: 1
+[INFO] 18:35:28:976 Memoria/(28211:28348): SWAP - Recibi - PID: 1 - PAG: 1
+[INFO] 18:35:29:096 Memoria/(28211:28348): SWAP - Recibi - PID: 1 - PAG: 0
+[INFO] 18:35:29:138 Memoria/(28211:28348): SWAP - Recibi - PID: 1 - PAG: 1
+[INFO] 18:35:29:216 Memoria/(28211:28348): Se desconecto un cliente - Socket: 16 - PID: 1
+[INFO] 18:36:22:428 Memoria/(28634:28634): Tlb Inicializada
+[INFO] 18:36:22:629 Memoria/(28634:28751): Se conecto un cliente - Socket: 15
+[INFO] 18:36:23:804 Memoria/(28634:28754): Se conecto un cliente - Socket: 16
+[INFO] 18:36:23:839 Memoria/(28634:28754): Inicio un proceso - PID: 1 - Socket 16
+[INFO] 18:36:23:956 Memoria/(28634:28754): SWAP - Envie  - PID: 1 - PAG: 0
+[INFO] 18:36:24:037 Memoria/(28634:28754): SWAP - Recibi - PID: 1 - PAG: 0
+[INFO] 18:36:24:075 Memoria/(28634:28754): SWAP - Envie  - PID: 1 - PAG: 1
+[INFO] 18:36:24:156 Memoria/(28634:28754): SWAP - Recibi - PID: 1 - PAG: 1
+[INFO] 18:36:24:196 Memoria/(28634:28754): SWAP - Envie  - PID: 1 - PAG: 0
+[INFO] 18:36:24:276 Memoria/(28634:28754): SWAP - Recibi - PID: 1 - PAG: 0
+[INFO] 18:36:24:317 Memoria/(28634:28754): SWAP - Envie  - PID: 1 - PAG: 1
+[INFO] 18:36:24:396 Memoria/(28634:28754): SWAP - Recibi - PID: 1 - PAG: 1
+[INFO] 18:36:24:516 Memoria/(28634:28754): SWAP - Recibi - PID: 1 - PAG: 0
+[INFO] 18:36:24:556 Memoria/(28634:28754): SWAP - Recibi - PID: 1 - PAG: 1
+[INFO] 18:36:24:639 Memoria/(28634:28754): Se desconecto un cliente - Socket: 16 - PID: 1
+[INFO] 18:36:47:768 Memoria/(28988:28988): Tlb Inicializada
+[INFO] 18:36:48:961 Memoria/(28988:29119): Se conecto un cliente - Socket: 15
+[INFO] 18:36:50:043 Memoria/(28988:29125): Se conecto un cliente - Socket: 16
+[INFO] 18:36:50:094 Memoria/(28988:29125): Inicio un proceso - PID: 1 - Socket 16
+[INFO] 18:36:50:172 Memoria/(28988:29125): SWAP - Envie  - PID: 1 - PAG: 0
+[INFO] 18:36:50:252 Memoria/(28988:29125): SWAP - Recibi - PID: 1 - PAG: 0
+[INFO] 18:36:50:292 Memoria/(28988:29125): SWAP - Envie  - PID: 1 - PAG: 1
+[INFO] 18:36:50:372 Memoria/(28988:29125): SWAP - Recibi - PID: 1 - PAG: 1
+[INFO] 18:36:50:412 Memoria/(28988:29125): SWAP - Envie  - PID: 1 - PAG: 0
+[INFO] 18:36:50:492 Memoria/(28988:29125): SWAP - Recibi - PID: 1 - PAG: 0
+[INFO] 18:36:50:532 Memoria/(28988:29125): SWAP - Envie  - PID: 1 - PAG: 1
+[INFO] 18:36:50:612 Memoria/(28988:29125): SWAP - Recibi - PID: 1 - PAG: 1
+[INFO] 18:36:50:732 Memoria/(28988:29125): SWAP - Recibi - PID: 1 - PAG: 0
+[INFO] 18:36:50:772 Memoria/(28988:29125): SWAP - Recibi - PID: 1 - PAG: 1
+[INFO] 18:36:50:852 Memoria/(28988:29125): Se desconecto un cliente - Socket: 16 - PID: 1
+[INFO] 18:38:31:565 Memoria/(29489:29489): Tlb Inicializada
+[INFO] 18:38:32:221 Memoria/(29489:29609): Se conecto un cliente - Socket: 15
+[INFO] 18:38:32:879 Memoria/(29489:29612): Se conecto un cliente - Socket: 16
+[INFO] 18:38:32:907 Memoria/(29489:29612): Inicio un proceso - PID: 1 - Socket 16
+[INFO] 18:38:33:023 Memoria/(29489:29612): SWAP - Envie  - PID: 1 - PAG: 0
+[INFO] 18:38:33:104 Memoria/(29489:29612): SWAP - Recibi - PID: 1 - PAG: 0
+[INFO] 18:38:33:143 Memoria/(29489:29612): SWAP - Envie  - PID: 1 - PAG: 1
+[INFO] 18:38:33:225 Memoria/(29489:29612): SWAP - Recibi - PID: 1 - PAG: 1
+[INFO] 18:38:33:264 Memoria/(29489:29612): SWAP - Envie  - PID: 1 - PAG: 0
+[INFO] 18:38:33:344 Memoria/(29489:29612): SWAP - Recibi - PID: 1 - PAG: 0
+[INFO] 18:38:33:383 Memoria/(29489:29612): SWAP - Envie  - PID: 1 - PAG: 1
+[INFO] 18:38:33:465 Memoria/(29489:29612): SWAP - Recibi - PID: 1 - PAG: 1
+[INFO] 18:38:33:584 Memoria/(29489:29612): SWAP - Recibi - PID: 1 - PAG: 0
+[INFO] 18:38:33:624 Memoria/(29489:29612): SWAP - Recibi - PID: 1 - PAG: 1
+[INFO] 18:38:33:704 Memoria/(29489:29612): Se desconecto un cliente - Socket: 16 - PID: 1
+[INFO] 18:39:38:765 Memoria/(30023:30023): Tlb Inicializada
+[INFO] 18:39:39:866 Memoria/(30023:30157): Se conecto un cliente - Socket: 15
+[INFO] 18:39:42:036 Memoria/(30023:30167): Se conecto un cliente - Socket: 16
+[INFO] 18:39:42:076 Memoria/(30023:30167): Inicio un proceso - PID: 1 - Socket 16
+[INFO] 18:39:42:191 Memoria/(30023:30167): SWAP - Envie  - PID: 1 - PAG: 0
+[INFO] 18:39:42:272 Memoria/(30023:30167): SWAP - Recibi - PID: 1 - PAG: 0
+[INFO] 18:39:42:311 Memoria/(30023:30167): SWAP - Envie  - PID: 1 - PAG: 1
+[INFO] 18:39:42:392 Memoria/(30023:30167): SWAP - Recibi - PID: 1 - PAG: 1
+[INFO] 18:39:42:432 Memoria/(30023:30167): SWAP - Envie  - PID: 1 - PAG: 0
+[INFO] 18:39:42:512 Memoria/(30023:30167): SWAP - Recibi - PID: 1 - PAG: 0
+[INFO] 18:39:42:552 Memoria/(30023:30167): SWAP - Envie  - PID: 1 - PAG: 1
+[INFO] 18:39:42:632 Memoria/(30023:30167): SWAP - Recibi - PID: 1 - PAG: 1
+[INFO] 18:39:42:752 Memoria/(30023:30167): SWAP - Recibi - PID: 1 - PAG: 0
+[INFO] 18:39:42:792 Memoria/(30023:30167): SWAP - Recibi - PID: 1 - PAG: 1
+[INFO] 18:39:42:873 Memoria/(30023:30167): Se desconecto un cliente - Socket: 16 - PID: 1
+[INFO] 18:43:18:197 Memoria/(30671:30671): Tlb Inicializada
+[INFO] 18:43:18:811 Memoria/(30671:30802): Se conecto un cliente - Socket: 15
+[INFO] 18:43:26:615 Memoria/(30671:30869): Se conecto un cliente - Socket: 16
+[INFO] 18:43:26:653 Memoria/(30671:30869): Inicio un proceso - PID: 1 - Socket 16
+[INFO] 18:43:26:699 Memoria/(30671:30871): Se conecto un cliente - Socket: 20
+[INFO] 18:43:26:770 Memoria/(30671:30871): Inicio un proceso - PID: 2 - Socket 20
+[INFO] 18:43:27:693 Memoria/(30671:30873): Se conecto un cliente - Socket: 21
+[INFO] 18:43:27:763 Memoria/(30671:30873): Inicio un proceso - PID: 3 - Socket 21
+[INFO] 18:43:34:253 Memoria/(31029:31029): Tlb Inicializada
+[INFO] 18:43:35:178 Memoria/(31029:31162): Se conecto un cliente - Socket: 15
+[INFO] 18:43:38:963 Memoria/(31029:31171): Se conecto un cliente - Socket: 16
+[INFO] 18:43:39:007 Memoria/(31029:31171): Inicio un proceso - PID: 1 - Socket 16
+[INFO] 18:43:39:084 Memoria/(31029:31171): SWAP - Envie  - PID: 1 - PAG: 0
+[INFO] 18:43:39:164 Memoria/(31029:31171): SWAP - Recibi - PID: 1 - PAG: 0
+[INFO] 18:43:39:204 Memoria/(31029:31171): SWAP - Envie  - PID: 1 - PAG: 1
+[INFO] 18:43:39:284 Memoria/(31029:31171): SWAP - Recibi - PID: 1 - PAG: 1
+[INFO] 18:43:39:324 Memoria/(31029:31171): SWAP - Envie  - PID: 1 - PAG: 0
+[INFO] 18:43:39:404 Memoria/(31029:31171): SWAP - Recibi - PID: 1 - PAG: 0
+[INFO] 18:43:39:444 Memoria/(31029:31171): SWAP - Envie  - PID: 1 - PAG: 1
+[INFO] 18:43:39:524 Memoria/(31029:31171): SWAP - Recibi - PID: 1 - PAG: 1
+[INFO] 18:43:39:644 Memoria/(31029:31171): SWAP - Recibi - PID: 1 - PAG: 0
+[INFO] 18:43:39:684 Memoria/(31029:31171): SWAP - Recibi - PID: 1 - PAG: 1
+[INFO] 18:43:39:769 Memoria/(31029:31171): Se desconecto un cliente - Socket: 16 - PID: 1
+[INFO] 18:54:20:937 Memoria/(32231:32231): Tlb Inicializada
+[INFO] 18:54:21:218 Memoria/(32231:32349): Se conecto un cliente - Socket: 15
+[INFO] 18:54:22:506 Memoria/(32231:32352): Se conecto un cliente - Socket: 16
+[INFO] 18:54:22:547 Memoria/(32231:32352): Inicio un proceso - PID: 1 - Socket 16
+[INFO] 18:54:22:664 Memoria/(32231:32352): SWAP - Envie  - PID: 1 - PAG: 0
+[INFO] 18:54:22:744 Memoria/(32231:32352): SWAP - Recibi - PID: 1 - PAG: 0
+[INFO] 18:54:22:784 Memoria/(32231:32352): SWAP - Envie  - PID: 1 - PAG: 1
+[INFO] 18:54:22:864 Memoria/(32231:32352): SWAP - Recibi - PID: 1 - PAG: 1
+[INFO] 18:54:22:904 Memoria/(32231:32352): SWAP - Envie  - PID: 1 - PAG: 0
+[INFO] 18:54:22:986 Memoria/(32231:32352): SWAP - Recibi - PID: 1 - PAG: 0
+[INFO] 18:54:23:024 Memoria/(32231:32352): SWAP - Envie  - PID: 1 - PAG: 1
+[INFO] 18:54:23:108 Memoria/(32231:32352): SWAP - Recibi - PID: 1 - PAG: 1
+[INFO] 18:54:23:224 Memoria/(32231:32352): SWAP - Recibi - PID: 1 - PAG: 0
+[INFO] 18:54:23:264 Memoria/(32231:32352): SWAP - Recibi - PID: 1 - PAG: 1
+[INFO] 18:54:23:348 Memoria/(32231:32352): Se desconecto un cliente - Socket: 16 - PID: 1
+[INFO] 18:55:47:854 Memoria/(32705:32705): Tlb Inicializada
+[INFO] 18:55:49:404 Memoria/(32705:374): Se conecto un cliente - Socket: 15
+[INFO] 18:55:50:856 Memoria/(32705:377): Se conecto un cliente - Socket: 16
+[INFO] 18:55:50:879 Memoria/(32705:377): Inicio un proceso - PID: 1 - Socket 16
+[INFO] 18:55:50:996 Memoria/(32705:377): SWAP - Envie  - PID: 1 - PAG: 0
+[INFO] 18:55:51:077 Memoria/(32705:377): SWAP - Recibi - PID: 1 - PAG: 0
+[INFO] 18:55:51:116 Memoria/(32705:377): SWAP - Envie  - PID: 1 - PAG: 1
+[INFO] 18:55:51:196 Memoria/(32705:377): SWAP - Recibi - PID: 1 - PAG: 1
+[INFO] 18:55:51:236 Memoria/(32705:377): SWAP - Envie  - PID: 1 - PAG: 0
+[INFO] 18:55:51:316 Memoria/(32705:377): SWAP - Recibi - PID: 1 - PAG: 0
+[INFO] 18:55:51:359 Memoria/(32705:377): SWAP - Envie  - PID: 1 - PAG: 1
+[INFO] 18:55:51:436 Memoria/(32705:377): SWAP - Recibi - PID: 1 - PAG: 1
+[INFO] 18:55:51:560 Memoria/(32705:377): SWAP - Recibi - PID: 1 - PAG: 0
+[INFO] 18:55:51:600 Memoria/(32705:377): SWAP - Recibi - PID: 1 - PAG: 1
+[INFO] 18:55:51:681 Memoria/(32705:377): Se desconecto un cliente - Socket: 16 - PID: 1
+[INFO] 18:59:40:896 Memoria/(941:941): Tlb Inicializada
+[INFO] 18:59:41:779 Memoria/(941:1083): Se conecto un cliente - Socket: 15
+[INFO] 18:59:43:133 Memoria/(941:1086): Se conecto un cliente - Socket: 16
+[INFO] 18:59:43:168 Memoria/(941:1086): Inicio un proceso - PID: 1 - Socket 16
+[INFO] 18:59:43:288 Memoria/(941:1086): SWAP - Envie  - PID: 1 - PAG: 0
+[INFO] 18:59:43:368 Memoria/(941:1086): SWAP - Recibi - PID: 1 - PAG: 0
+[INFO] 18:59:43:408 Memoria/(941:1086): SWAP - Envie  - PID: 1 - PAG: 1
+[INFO] 18:59:43:488 Memoria/(941:1086): SWAP - Recibi - PID: 1 - PAG: 1
+[INFO] 18:59:43:528 Memoria/(941:1086): SWAP - Envie  - PID: 1 - PAG: 0
+[INFO] 18:59:43:608 Memoria/(941:1086): SWAP - Recibi - PID: 1 - PAG: 0
+[INFO] 18:59:43:648 Memoria/(941:1086): SWAP - Envie  - PID: 1 - PAG: 1
+[INFO] 18:59:43:728 Memoria/(941:1086): SWAP - Recibi - PID: 1 - PAG: 1
+[INFO] 18:59:43:848 Memoria/(941:1086): SWAP - Recibi - PID: 1 - PAG: 0
+[INFO] 18:59:43:888 Memoria/(941:1086): SWAP - Recibi - PID: 1 - PAG: 1
+[INFO] 18:59:43:972 Memoria/(941:1086): Se desconecto un cliente - Socket: 16 - PID: 1
+[INFO] 19:02:23:064 Memoria/(1539:1539): Tlb Inicializada
+[INFO] 19:02:23:720 Memoria/(1539:1668): Se conecto un cliente - Socket: 15
+[INFO] 19:02:25:454 Memoria/(1539:1674): Se conecto un cliente - Socket: 16
+[INFO] 19:02:25:496 Memoria/(1539:1674): Inicio un proceso - PID: 1 - Socket 16
+[INFO] 19:02:25:571 Memoria/(1539:1674): SWAP - Envie  - PID: 1 - PAG: 0
+[INFO] 19:02:25:652 Memoria/(1539:1674): SWAP - Recibi - PID: 1 - PAG: 0
+[INFO] 19:02:25:693 Memoria/(1539:1674): SWAP - Envie  - PID: 1 - PAG: 1
+[INFO] 19:02:25:772 Memoria/(1539:1674): SWAP - Recibi - PID: 1 - PAG: 1
+[INFO] 19:02:25:812 Memoria/(1539:1674): SWAP - Envie  - PID: 1 - PAG: 0
+[INFO] 19:02:25:893 Memoria/(1539:1674): SWAP - Recibi - PID: 1 - PAG: 0
+[INFO] 19:02:25:932 Memoria/(1539:1674): SWAP - Envie  - PID: 1 - PAG: 1
+[INFO] 19:02:26:013 Memoria/(1539:1674): SWAP - Recibi - PID: 1 - PAG: 1
+[INFO] 19:02:26:132 Memoria/(1539:1674): SWAP - Recibi - PID: 1 - PAG: 0
+[INFO] 19:02:26:172 Memoria/(1539:1674): SWAP - Recibi - PID: 1 - PAG: 1
+[INFO] 19:02:26:252 Memoria/(1539:1674): Se desconecto un cliente - Socket: 16 - PID: 1
+[INFO] 19:04:42:956 Memoria/(2093:2093): Tlb Inicializada
+[INFO] 19:04:43:491 Memoria/(2093:2225): Se conecto un cliente - Socket: 15
+[INFO] 19:04:44:554 Memoria/(2093:2228): Se conecto un cliente - Socket: 16
+[INFO] 19:04:44:596 Memoria/(2093:2228): Inicio un proceso - PID: 1 - Socket 16
+[INFO] 19:04:44:676 Memoria/(2093:2228): SWAP - Envie  - PID: 1 - PAG: 0
+[INFO] 19:04:44:756 Memoria/(2093:2228): SWAP - Recibi - PID: 1 - PAG: 0
+[INFO] 19:04:44:796 Memoria/(2093:2228): SWAP - Envie  - PID: 1 - PAG: 1
+[INFO] 19:04:44:876 Memoria/(2093:2228): SWAP - Recibi - PID: 1 - PAG: 1
+[INFO] 19:04:44:915 Memoria/(2093:2228): SWAP - Envie  - PID: 1 - PAG: 0
+[INFO] 19:04:44:996 Memoria/(2093:2228): SWAP - Recibi - PID: 1 - PAG: 0
+[INFO] 19:04:45:036 Memoria/(2093:2228): SWAP - Envie  - PID: 1 - PAG: 1
+[INFO] 19:04:45:116 Memoria/(2093:2228): SWAP - Recibi - PID: 1 - PAG: 1
+[INFO] 19:04:45:236 Memoria/(2093:2228): SWAP - Recibi - PID: 1 - PAG: 0
+[INFO] 19:04:45:276 Memoria/(2093:2228): SWAP - Recibi - PID: 1 - PAG: 1
+[INFO] 19:04:45:356 Memoria/(2093:2228): Se desconecto un cliente - Socket: 16 - PID: 1
+[INFO] 19:06:37:414 Memoria/(2639:2639): Tlb Inicializada
+[INFO] 19:06:38:095 Memoria/(2639:2806): Se conecto un cliente - Socket: 15
+[INFO] 19:06:39:691 Memoria/(2639:2809): Se conecto un cliente - Socket: 16
+[INFO] 19:06:39:715 Memoria/(2639:2809): Inicio un proceso - PID: 1 - Socket 16
+[INFO] 19:06:39:833 Memoria/(2639:2809): SWAP - Envie  - PID: 1 - PAG: 0
+[INFO] 19:06:39:912 Memoria/(2639:2809): SWAP - Recibi - PID: 1 - PAG: 0
+[INFO] 19:06:39:952 Memoria/(2639:2809): SWAP - Envie  - PID: 1 - PAG: 1
+[INFO] 19:06:40:032 Memoria/(2639:2809): SWAP - Recibi - PID: 1 - PAG: 1
+[INFO] 19:06:40:072 Memoria/(2639:2809): SWAP - Envie  - PID: 1 - PAG: 0
+[INFO] 19:06:40:152 Memoria/(2639:2809): SWAP - Recibi - PID: 1 - PAG: 0
+[INFO] 19:06:40:192 Memoria/(2639:2809): SWAP - Envie  - PID: 1 - PAG: 1
+[INFO] 19:06:40:272 Memoria/(2639:2809): SWAP - Recibi - PID: 1 - PAG: 1
+[INFO] 19:06:40:392 Memoria/(2639:2809): SWAP - Recibi - PID: 1 - PAG: 0
+[INFO] 19:06:40:432 Memoria/(2639:2809): SWAP - Recibi - PID: 1 - PAG: 1
+[INFO] 19:06:40:513 Memoria/(2639:2809): Se desconecto un cliente - Socket: 16 - PID: 1
+[INFO] 19:09:55:769 Memoria/(3482:3482): Tlb Inicializada
+[INFO] 19:09:57:353 Memoria/(3482:3665): Se conecto un cliente - Socket: 15
+[INFO] 19:09:58:023 Memoria/(3482:3671): Se conecto un cliente - Socket: 16
+[INFO] 19:09:58:047 Memoria/(3482:3671): Inicio un proceso - PID: 1 - Socket 16
+[INFO] 19:09:58:164 Memoria/(3482:3671): SWAP - Envie  - PID: 1 - PAG: 0
+[INFO] 19:09:58:245 Memoria/(3482:3671): SWAP - Recibi - PID: 1 - PAG: 0
+[INFO] 19:09:58:284 Memoria/(3482:3671): SWAP - Envie  - PID: 1 - PAG: 1
+[INFO] 19:09:58:364 Memoria/(3482:3671): SWAP - Recibi - PID: 1 - PAG: 1
+[INFO] 19:09:58:404 Memoria/(3482:3671): SWAP - Envie  - PID: 1 - PAG: 0
+[INFO] 19:09:58:485 Memoria/(3482:3671): SWAP - Recibi - PID: 1 - PAG: 0
+[INFO] 19:09:58:524 Memoria/(3482:3671): SWAP - Envie  - PID: 1 - PAG: 1
+[INFO] 19:09:58:604 Memoria/(3482:3671): SWAP - Recibi - PID: 1 - PAG: 1
+[INFO] 19:09:58:724 Memoria/(3482:3671): SWAP - Recibi - PID: 1 - PAG: 0
+[INFO] 19:09:58:766 Memoria/(3482:3671): SWAP - Recibi - PID: 1 - PAG: 1
+[INFO] 19:09:58:848 Memoria/(3482:3671): Se desconecto un cliente - Socket: 16 - PID: 1
+[INFO] 19:15:04:938 Memoria/(4278:4278): Tlb Inicializada
+[INFO] 19:15:05:236 Memoria/(4278:4392): Se conecto un cliente - Socket: 15
+[INFO] 19:15:07:142 Memoria/(4278:4398): Se conecto un cliente - Socket: 16
+[INFO] 19:15:07:167 Memoria/(4278:4398): Inicio un proceso - PID: 1 - Socket 16
+[INFO] 19:15:07:284 Memoria/(4278:4398): SWAP - Envie  - PID: 1 - PAG: 0
+[INFO] 19:15:07:364 Memoria/(4278:4398): SWAP - Recibi - PID: 1 - PAG: 0
+[INFO] 19:15:07:403 Memoria/(4278:4398): SWAP - Envie  - PID: 1 - PAG: 1
+[INFO] 19:15:07:484 Memoria/(4278:4398): SWAP - Recibi - PID: 1 - PAG: 1
+[INFO] 19:15:07:524 Memoria/(4278:4398): SWAP - Envie  - PID: 1 - PAG: 0
+[INFO] 19:15:07:604 Memoria/(4278:4398): SWAP - Recibi - PID: 1 - PAG: 0
+[INFO] 19:15:07:644 Memoria/(4278:4398): SWAP - Envie  - PID: 1 - PAG: 1
+[INFO] 19:15:07:724 Memoria/(4278:4398): SWAP - Recibi - PID: 1 - PAG: 1
+[INFO] 19:15:07:844 Memoria/(4278:4398): SWAP - Recibi - PID: 1 - PAG: 0
+[INFO] 19:15:07:884 Memoria/(4278:4398): SWAP - Recibi - PID: 1 - PAG: 1
+[INFO] 19:15:07:964 Memoria/(4278:4398): Se desconecto un cliente - Socket: 16 - PID: 1
+[INFO] 19:16:12:040 Memoria/(4764:4764): Tlb Inicializada
+[INFO] 19:16:12:890 Memoria/(4764:4901): Se conecto un cliente - Socket: 15
+[INFO] 19:16:16:713 Memoria/(4764:4910): Se conecto un cliente - Socket: 16
+[INFO] 19:16:16:738 Memoria/(4764:4910): Inicio un proceso - PID: 1 - Socket 16
+[INFO] 19:16:16:855 Memoria/(4764:4910): SWAP - Envie  - PID: 1 - PAG: 0
+[INFO] 19:16:16:936 Memoria/(4764:4910): SWAP - Recibi - PID: 1 - PAG: 0
+[INFO] 19:16:16:976 Memoria/(4764:4910): SWAP - Envie  - PID: 1 - PAG: 1
+[INFO] 19:16:17:096 Memoria/(4764:4910): SWAP - Recibi - PID: 1 - PAG: 1
+[INFO] 19:16:17:096 Memoria/(4764:4910): SWAP - Envie  - PID: 1 - PAG: 0
+[INFO] 19:16:17:180 Memoria/(4764:4910): Se desconecto un cliente - Socket: 16 - PID: 1
+[INFO] 19:17:18:448 Memoria/(5232:5232): Tlb Inicializada
+[INFO] 19:17:18:673 Memoria/(5232:5341): Se conecto un cliente - Socket: 15
+[INFO] 19:17:19:645 Memoria/(5232:5344): Se conecto un cliente - Socket: 16
+[INFO] 19:17:19:669 Memoria/(5232:5344): Inicio un proceso - PID: 1 - Socket 16
+[INFO] 19:17:19:788 Memoria/(5232:5344): SWAP - Envie  - PID: 1 - PAG: 0
+[INFO] 19:17:19:869 Memoria/(5232:5344): SWAP - Recibi - PID: 1 - PAG: 0
+[INFO] 19:17:19:907 Memoria/(5232:5344): SWAP - Envie  - PID: 1 - PAG: 1
+[INFO] 19:17:20:028 Memoria/(5232:5344): SWAP - Recibi - PID: 1 - PAG: 1
+[INFO] 19:17:20:028 Memoria/(5232:5344): SWAP - Envie  - PID: 1 - PAG: 0
+[INFO] 19:17:20:112 Memoria/(5232:5344): Se desconecto un cliente - Socket: 16 - PID: 1
+[INFO] 19:17:53:310 Memoria/(5655:5655): Tlb Inicializada
+[INFO] 19:17:54:142 Memoria/(5655:5787): Se conecto un cliente - Socket: 15
+[INFO] 19:17:57:782 Memoria/(5655:5793): Se conecto un cliente - Socket: 16
+[INFO] 19:17:57:820 Memoria/(5655:5793): Inicio un proceso - PID: 1 - Socket 16
+[INFO] 19:17:57:902 Memoria/(5655:5793): SWAP - Envie  - PID: 1 - PAG: 0
+[INFO] 19:17:57:980 Memoria/(5655:5793): SWAP - Recibi - PID: 1 - PAG: 0
+[INFO] 19:17:58:020 Memoria/(5655:5793): SWAP - Envie  - PID: 1 - PAG: 1
+[INFO] 19:17:58:100 Memoria/(5655:5793): SWAP - Recibi - PID: 1 - PAG: 1
+[INFO] 19:17:58:140 Memoria/(5655:5793): SWAP - Envie  - PID: 1 - PAG: 0
+[INFO] 19:17:58:220 Memoria/(5655:5793): SWAP - Recibi - PID: 1 - PAG: 0
+[INFO] 19:17:58:260 Memoria/(5655:5793): SWAP - Envie  - PID: 1 - PAG: 1
+[INFO] 19:17:58:340 Memoria/(5655:5793): SWAP - Recibi - PID: 1 - PAG: 1
+[INFO] 19:17:58:460 Memoria/(5655:5793): SWAP - Recibi - PID: 1 - PAG: 0
+[INFO] 19:17:58:500 Memoria/(5655:5793): SWAP - Recibi - PID: 1 - PAG: 1
+[INFO] 19:17:58:580 Memoria/(5655:5793): Se desconecto un cliente - Socket: 16 - PID: 1
+[INFO] 19:19:18:817 Memoria/(6159:6159): Tlb Inicializada
+[INFO] 19:19:19:437 Memoria/(6159:6241): Se conecto un cliente - Socket: 15
+[INFO] 19:19:20:365 Memoria/(6159:6244): Se conecto un cliente - Socket: 16
+[INFO] 19:19:20:407 Memoria/(6159:6244): Inicio un proceso - PID: 1 - Socket 16
+[INFO] 19:19:20:484 Memoria/(6159:6244): SWAP - Envie  - PID: 1 - PAG: 0
+[INFO] 19:19:20:564 Memoria/(6159:6244): SWAP - Recibi - PID: 1 - PAG: 0
+[INFO] 19:19:20:604 Memoria/(6159:6244): SWAP - Envie  - PID: 1 - PAG: 1
+[INFO] 19:19:20:684 Memoria/(6159:6244): SWAP - Recibi - PID: 1 - PAG: 1
+[INFO] 19:19:20:724 Memoria/(6159:6244): SWAP - Envie  - PID: 1 - PAG: 0
+[INFO] 19:19:20:804 Memoria/(6159:6244): SWAP - Recibi - PID: 1 - PAG: 0
+[INFO] 19:19:20:844 Memoria/(6159:6244): SWAP - Envie  - PID: 1 - PAG: 1
+[INFO] 19:19:20:924 Memoria/(6159:6244): SWAP - Recibi - PID: 1 - PAG: 1
+[INFO] 19:19:21:047 Memoria/(6159:6244): SWAP - Recibi - PID: 1 - PAG: 0
+[INFO] 19:19:21:084 Memoria/(6159:6244): SWAP - Recibi - PID: 1 - PAG: 1
+[INFO] 19:19:21:164 Memoria/(6159:6244): Se desconecto un cliente - Socket: 16 - PID: 1
+[INFO] 19:22:26:721 Memoria/(6748:6748): Tlb Inicializada
+[INFO] 19:22:28:508 Memoria/(6748:6920): Se conecto un cliente - Socket: 15
+[INFO] 19:22:30:686 Memoria/(6748:6926): Se conecto un cliente - Socket: 16
+[INFO] 19:22:30:719 Memoria/(6748:6926): Inicio un proceso - PID: 1 - Socket 16
+[INFO] 19:22:30:876 Memoria/(6748:6926): SWAP - Envie  - PID: 1 - PAG: 0
+[INFO] 19:22:30:956 Memoria/(6748:6926): SWAP - Recibi - PID: 1 - PAG: 0
+[INFO] 19:22:30:995 Memoria/(6748:6926): SWAP - Envie  - PID: 1 - PAG: 2
+[INFO] 19:22:31:076 Memoria/(6748:6926): SWAP - PID: 1 - PAG: 1 - NO FUE ENCONTRADA EN SWAP

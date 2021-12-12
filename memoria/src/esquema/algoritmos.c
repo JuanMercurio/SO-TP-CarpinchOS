@@ -143,9 +143,10 @@ int clock_buscar_00(tab_pags* tabla)
     while(iteracion != tamanio)
     {
         if(i == list_size(tabla->tabla_pag)) i = 0;
-					printf("VOY A ESCRIBIR EL NUEVO METADATA\n");
-					printf("El proceso tiene %d paginas \n", list_size(tabla->tabla_pag));
-                    printf("El valor de i es: %d \n", i);
+
+        printf("Estoy adentro 0");
+        printf("El proceso tiene %d paginas \n", list_size(tabla->tabla_pag));
+        printf("El valor de i es: %d \n", i);
                     
         pag_t* reg = list_get(tabla->tabla_pag, i);
         if(reg->presente != 1 ) 

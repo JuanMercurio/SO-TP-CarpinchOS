@@ -544,6 +544,7 @@ int memwrite(tab_pags* tabla, int dir_log, void* contenido, int tamanio){
 }
 
 void* memoria_leer(tab_pags* tabla, dir_t dl, int tamanio){
+	printf("\nLECTURA - PAG %d - OFFSET: %d\n", dl.PAGINA, dl.offset);
 
     if(!read_verify_size(tabla, dl, tamanio)) return NULL; 
 
@@ -559,8 +560,20 @@ void* memoria_leer(tab_pags* tabla, dir_t dl, int tamanio){
         int leer = min_get(bytes_remaining, page_remaining_space);
 
         memcpy(buffer + leido, ram.memoria + offset_memoria(df), leer);
-		pag_t* pagina = list_get(tabla->tabla_pag, dl.PAGINA);
+			printf("Lo que lei: %d \n", leer);
+			printf("El offset es %d\n", offset_memoria(df));
+		if(dl.PAGINA == 0)
+		{
+            printf("Contenido isfree %d \n", ((HeapMetadata *)buffer)->isFree);
+            printf("Contenido prevalloc %d \n", ((HeapMetadata *)buffer)->prevAlloc);
+            printf("Contenido nextalloc %d \n", ((HeapMetadata *)buffer)->nextAlloc);
+			char* je = malloc(11);
+			memcpy(je, buffer+9, leer);
+			memcpy(je+leer, "", 1);
+			printf("HEY lo que lei es: %s \n", je);
+		}
 
+		pag_t* pagina = list_get(tabla->tabla_pag, dl.PAGINA);
         page_use(tabla->pid, marco, pagina, dl.PAGINA, READ);
 
         page_remaining_space = configuracion.TAMANIO_PAGINAS;
@@ -575,6 +588,7 @@ void* memoria_leer(tab_pags* tabla, dir_t dl, int tamanio){
 
 int memoria_escribir(tab_pags* tabla, dir_t dl, void* contenido, int tamanio){
     if(!read_verify_size(tabla, dl, tamanio)) return MATE_WRITE_FAULT;    
+	printf("ESCRITURA - PAG %d - OFFSET: %d\n", dl.PAGINA, dl.offset);
 
     int written = 0;
     int bytes_remaining = tamanio;
@@ -589,8 +603,19 @@ int memoria_escribir(tab_pags* tabla, dir_t dl, void* contenido, int tamanio){
 
         dir_t df = { marco, dl.offset };
         int bytes_to_write = min_get(bytes_remaining, bytes_remaining_space);
+		printf("Voy a escribir %d bytes\n", bytes_to_write);
+		printf("El offset es %d\n", offset_memoria(df));
+
 
         memcpy(ram.memoria + offset_memoria(df), contenido + written, bytes_to_write);
+
+		if(dl.PAGINA == 0)
+		{
+			char* je = malloc(11);
+			memcpy(je, ram.memoria + offset_memoria(df), bytes_to_write);
+			memcpy(je+bytes_to_write, "", 1);
+			printf("HEY lo que escribi es: %s \n", je);
+		}
 		pag_t* pagina = list_get(tabla->tabla_pag, dl.PAGINA);
 
         page_use(tabla->pid, marco, pagina, dl.PAGINA, WRITE);

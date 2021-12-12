@@ -31,7 +31,8 @@ void iniciar_paginacion()
 
 void init_ram()
 {
-    ram.memoria = malloc(configuracion.TAMANIO);
+    // ram.memoria = malloc(configuracion.TAMANIO);
+    ram.memoria = calloc(1, configuracion.TAMANIO);
     pthread_mutex_init(&ram.mutex, NULL);
 }
 
@@ -150,6 +151,8 @@ int buscar_en_swap(tab_pags *tabla, int pagina)
     }
     log_info(logger_memoria, "SWAP - Recibi - PID: %d - PAG: %d", tabla->pid, pagina);
     void* contenido = recibir_buffer(configuracion.TAMANIO_PAGINAS, swap);
+
+    printf("SWAP - PID: %d - PAG: %d - Recibi esto: %s\n", tabla->pid, pagina, (char*)contenido);
 
     t_victima victima = algoritmo_mmu(tabla->pid, tabla);
     reemplazar_pagina(victima, contenido, pagina, tabla);

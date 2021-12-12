@@ -104,6 +104,7 @@ void new_instance_comportamiento(tab_pags* tabla, int cliente, bool *conectado)
     // enviar_int(swap, tabla->pid);
     enviar_mensaje(cliente, "OK");
     iniciar_paginas(tabla);
+    log_info(logger_memoria, "Inicio un proceso - PID: %d - Socket %d", tabla->pid, cliente);
 }
 
 
@@ -123,6 +124,7 @@ void new_instance_kernel_comportamiento(tab_pags* tabla, int cliente, bool *cone
     }
     enviar_int(cliente, 0);
     iniciar_paginas(tabla);
+    log_info(logger_memoria, "Inicio un proceso - PID: %d - Socket %d", tabla->pid, cliente);
 }
 
 
