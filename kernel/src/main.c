@@ -19,7 +19,7 @@ int main(int argc, char *argv[])
 {
    //solo corre si corremos el binario asi: binario test
    //tests(argc, argv[1]);
-   signal_init(SIGINT, program_killer);
+    signal_init(SIGINT, program_killer);
    iniciar_logger();
    printf("Iniciando kernel\n");
    obtener_config();
@@ -30,7 +30,7 @@ int main(int argc, char *argv[])
    //printf("inicio dispositivos io\n");
    inicializar_planificacion();
    printf("Kernel iniciado\n");
-   administrar_clientes_kernel(configuracion.IP, configuracion.PUERTO, (void *)&receptor);
+   administrar_clientes_kernel(configuracion.IP, configuracion.PUERTO, (void *)&receptor); 
    return 0;
 }
 
@@ -54,7 +54,7 @@ void terminar_programa()
    //printf("Entro a destrucción config\n");
    config_destroy(config);
    //printf("Entro a destrucción logger\n");
-   log_destroy(logger);
+   
    //printf("Entro a destrucción semaforos\n");
    destruir_semaforos();
    //printf("Entro a destrucción colas y listas\n");
@@ -62,6 +62,7 @@ void terminar_programa()
    //printf("destuyendo detacheds\n");
    pthread_attr_destroy(&detached2);
    //printf("cerrando servidor...\n");
+   log_destroy(logger);
    close(servidor);
    printf("Kernel finalizado\n");
 }
@@ -165,7 +166,7 @@ printf(" destruyo listas io con elementos\n");
 
    }
    log_info(logger, "Colas, listas y sus respectivos elementos destruidos");
-   printf("Destruidas las listas y colas");
+   printf("Destruidas las listas y colas\n");
 }
 
 void destruir_semaforos()
@@ -185,7 +186,7 @@ void destruir_semaforos()
    sem_destroy(&controlador_multiprogramacion);
    printf("se rompe aca\n");
    sem_destroy(&lista_ejecutando_con_elementos);
-   log_info(logger, "Semáforos destruidos");
+   //log_info(logger, "Semáforos destruidos");
 }
 
 void receptor(void *arg)
@@ -283,14 +284,14 @@ void receptor(void *arg)
             break;
          }
          recibido = recibir_mensaje(cliente);
-         carpincho->semaforo_a_modificar = string_duplicate(recibido);
+        // carpincho->semaforo_a_modificar = string_duplicate(recibido);
          //printf("RECEPTOR: semaforo %s recibido para wait de carpincho %d \n", recibido, carpincho->pid);
          int pos;
-         sem = buscar_semaforo2(recibido, &pos);
-         //printf("RECEPTOR: ---------------------------------------\n");
+         carpincho->bloqueado_en = buscar_semaforo2(recibido, &pos);
+         printf("RECEPTOR: --------------------------------------- recibido %s\n", recibido);
          free(recibido);
 
-         if (sem == NULL)
+         if (carpincho->bloqueado_en == NULL)
          {
             //printf("RECEPTOR: el semaforo no se encuentra\n");
             log_info(logger, "Se recibió del carpincho %d un SEM WAIT para un semáforo que no existe", carpincho->pid);
@@ -300,18 +301,18 @@ void receptor(void *arg)
          {
             //printf("RECEPTOR: el semaforo encontradoe es %s\n", sem->id);
             if (sem_kernel_wait2(carpincho))
-            {
+            {         printf("RECEPTOR: ---------------------------------------paso sem wait2 \n");
+
                sem_post(&carpincho->semaforo_evento);
                enviar_int(cliente, 0);
-               log_info(logger, "Se recibió del carpincho %d un SEM WAIT para %s y se bloqueara", carpincho->pid, sem->id);
+               log_info(logger, "Se recibió del carpincho %d un SEM WAIT para %s y se bloqueara", carpincho->pid, carpincho->bloqueado_en->id);
             }
             else
             {
                enviar_int(cliente, 1);
-               log_info(logger, "Se recibió del carpincho %d un SEM WAIT para %s pero NO se bloqueara", carpincho->pid, sem->id);
+               log_info(logger, "Se recibió del carpincho %d un SEM WAIT para %s pero NO se bloqueara", carpincho->pid, carpincho->bloqueado_en->id);
             }
          }
-         free(recibido);
          break;
 
       case SEM_POST:

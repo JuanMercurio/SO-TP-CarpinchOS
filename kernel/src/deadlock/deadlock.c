@@ -6,11 +6,11 @@ void deteccion_deadlock()
 {
     sem_kernel *semaforo;
     deadlock_kernel *a_enlistar;
-    t_list *lista_posible_deadlock = list_create();
-    t_list *lista_con_deadlock = list_create();
+    
 
     while (!terminar)
-    {
+    {t_list *lista_posible_deadlock = list_create();
+    t_list *lista_con_deadlock = list_create();
         printf("---------------------------------------DEADLOCK ACTIVADO\n");
         sleep(configuracion.TIEMPO_DEADLOCK * 0.001);
         printf("---------------------------------------PASARON LOS SEGUNDOS\n");
@@ -77,13 +77,29 @@ void deteccion_deadlock()
                 list_destroy(lista_posible_deadlock);
             }
         }
+             if(!list_is_empty(lista_con_deadlock)){
+            list_destroy_and_destroy_elements(lista_con_deadlock,lista_deadlock_destroyer);
+                      printf("destruyo lista con deadolock con elementos\n");
+
     }
+    else{
+            list_destroy(lista_con_deadlock);
+                      printf("destruyo lista con deadolock sin elementos\n");
+
+    }
+
     if(!list_is_empty(lista_posible_deadlock)){
             list_destroy_and_destroy_elements(lista_posible_deadlock,lista_deadlock_destroyer);
+                                  printf("destruyo lista posible deadolock con elementos\n");
+
     }
     else{
             list_destroy(lista_posible_deadlock);
+                      printf("destruyo lista posible deadolock sin elementos\n");
+
     }
+    }
+ 
 }
 
     void lista_deadlock_destroyer(void *arg)

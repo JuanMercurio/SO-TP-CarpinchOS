@@ -23,19 +23,25 @@ sem_kernel * buscar_semaforo2(char* nombre, int* pos){
 }
 
 
-bool sem_kernel_wait2( t_pcb *carpincho)
+bool sem_kernel_wait2(t_pcb *carpincho)
 {
-   int pos;
-   //sem_kernel *sem = buscar_semaforo2(, &pos);
+    //sem_kernel *sem = buscar_semaforo2(, &pos);
+    printf(" entro a sem wait 2\n");
    sem_wait(&carpincho->bloqueado_en->mutex);
    carpincho->bloqueado_en->val --;
    sem_post(&carpincho->bloqueado_en->mutex);
+    printf(" resto valor\n");
 
    if(carpincho->bloqueado_en->val == 0){
+          printf(" entro al if de tomado\n");
+
       carpincho->bloqueado_en->tomado_por = carpincho->pid;
+          printf(" asigno tomado\n");
+
       return false;
    }
   if(carpincho->bloqueado_en->val  < 0){
+     
     bloquear_por_semaforo( carpincho); 
     return true;
 }
@@ -72,7 +78,7 @@ return sem->val;
 }
 
 void bloquear_por_semaforo(t_pcb *carpincho){
-      int pos;
+   printf("entro a chupar pijas\n");
   // sem_kernel *semaforo = buscar_semaforo2(carpincho->semaforo_a_modificar, &pos);
    sem_wait(&carpincho->bloqueado_en->mutex_cola);
    list_add(carpincho->bloqueado_en->bloqueados, (void*)carpincho);

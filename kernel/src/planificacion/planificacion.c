@@ -22,13 +22,12 @@ void procesador()
       carpincho = (t_pcb *)list_remove(lista_ordenada_por_algoritmo, 0);
       sem_post(&mutex_lista_oredenada_por_algoritmo);
       /*       free(carpincho->tiempo.time_stamp_inicio);
- */      carpincho->tiempo.time_stamp_fin = temporal_get_string_time("%H:%M:%S:%MS"); // TIEMPO DE ESPERA
-      carpincho->tiempo.tiempo_de_espera = obtener_tiempo(carpincho->tiempo.time_stamp_inicio, carpincho->tiempo.time_stamp_fin);
+ */    //  carpincho->tiempo.time_stamp_fin = temporal_get_string_time("%H:%M:%S:%MS"); // TIEMPO DE ESPERA
+      gettimeofday(&carpincho->tiempo_fin, NULL);
+      carpincho->tiempo.tiempo_de_espera = obtener_tiempo(carpincho);
       log_info(logger, "Carpincho %d - Comienza a ejecutar", carpincho->pid);
-      //printf("\n!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!PROCESADOR: saco de lista ejecutando ordenada a carpincho %d\n", carpincho->pid);
       printf("PROCESADOR: carpincho %d va a ejecutar\n",carpincho->pid);
-      /*          free(carpincho->tiempo.time_stamp_fin);
- */         carpincho->tiempo.time_stamp_fin = temporal_get_string_time("%H:%M:%S:%MS");//TIEMPO EJECUTADO FIN
+      carpincho->tiempo_inicio = carpincho->tiempo_fin;
       carpincho->estado = 'E';
       enviar_mensaje(carpincho->fd_cliente, "OK");
       //printf("\nPROCESADOR: ESPERANDO EVENTO BLOQUEANTE de carpinchooooooo %d\n\n", carpincho->pid);
@@ -49,8 +48,9 @@ void procesador()
          sem_post(&carpincho->io->mutex_io);
          sem_post(&carpincho->io->cola_con_elementos);
          log_info(logger, "---------------El carpincho %d está bloqueado por IO %s", carpincho->pid, carpincho->io->id);
-         carpincho->tiempo.time_stamp_fin = temporal_get_string_time("%H:%M:%S:%MS");//TIEMPO EJECUTADO FIN
-         carpincho->tiempo.tiempo_ejecutado = obtener_tiempo(carpincho->tiempo.time_stamp_inicio, carpincho->tiempo.time_stamp_fin);
+         //carpincho->tiempo.time_stamp_fin = temporal_get_string_time("%H:%M:%S:%MS");//TIEMPO EJECUTADO FIN
+         gettimeofday(&carpincho->tiempo_fin, NULL);
+         carpincho->tiempo.tiempo_ejecutado = obtener_tiempo(carpincho);
          log_info(logger,"Carpinchos bloqueados: %d", carpinchos_bloqueados);
          //printf("PROCESADOR: carpinchos bloqueados--------------------------- %d\n", carpinchos_bloqueados);
          break;
@@ -61,9 +61,8 @@ void procesador()
             bloquear_por_mediano_plazo(carpincho);
             log_info(logger, "---------------El carpincho %d fue suspendido", carpincho->pid);
          }
-         
-         carpincho->tiempo.time_stamp_fin = temporal_get_string_time("%H:%M:%S:%MS");//TIEMPO EJECUTADO FIN
-         carpincho->tiempo.tiempo_ejecutado = obtener_tiempo(carpincho->tiempo.time_stamp_inicio, carpincho->tiempo.time_stamp_fin);
+         gettimeofday(&carpincho->tiempo_fin, NULL);
+         carpincho->tiempo.tiempo_ejecutado = obtener_tiempo(carpincho);
          carpinchos_bloqueados++;
          //printf("PROCESADOR: carpinchos cloqueados %d\n", carpinchos_bloqueados);
          log_info(logger,"Carpinchos bloqueados: %d", carpinchos_bloqueados);         
@@ -92,8 +91,8 @@ void iniciar_planificador_corto_plazo(t_pcb* carpincho)
 {  //printf("entro plani corto\n");
    sem_wait(&mutex_lista_oredenada_por_algoritmo);
    carpincho->estado = 'R';
-   carpincho->tiempo.time_stamp_inicio = temporal_get_string_time("%H:%M:%S:%MS");//INICIO TIEMPO DE ESPERA
-  
+ // carpincho->tiempo.time_stamp_inicio = temporal_get_string_time("%H:%M:%S:%MS");//INICIO TIEMPO DE ESPERA
+ gettimeofday(&carpincho->tiempo_inicio, NULL);
      if (strcmp(configuracion.ALGORITMO_PLANIFICACION, "SJF") == 0)
       {   estimador(carpincho);
          listar_por_sjf(carpincho);
@@ -170,8 +169,8 @@ void mostrar_tiempos(t_pcb *carpincho)
    printf("tiempo de espera: %f\n", carpincho->tiempo.tiempo_de_espera);
    printf("tiempo de ejecutado: %f\n", carpincho->tiempo.tiempo_ejecutado);
    printf("estimacion: %f\n", carpincho->tiempo.estimacion);
-   printf("tiempo que entro: %s\n", carpincho->tiempo.time_stamp_inicio);
-   printf("tiempo que salio de lo ultimo: %s\n", carpincho->tiempo.time_stamp_fin);
+  // printf("tiempo que entro: %s\n", carpincho->tiempo.time_stamp_inicio);
+  // printf("tiempo que salio de lo ultimo: %s\n", carpincho->tiempo.time_stamp_fin);
    printf("----------------------------\n");
 }
 
@@ -180,8 +179,8 @@ void mostrar_tiempos_log(t_pcb *carpincho){
    log_info(logger,"Tiempo de espera: %f", carpincho->tiempo.tiempo_de_espera);
    log_info(logger,"Tiempo ejecutado: %f", carpincho->tiempo.tiempo_ejecutado);
    log_info(logger,"Estimacion: %f", carpincho->tiempo.estimacion);
-   log_info(logger,"Time stamp inicio: %s", carpincho->tiempo.time_stamp_inicio);
-   log_info(logger,"Time stamp fin: %s\n", carpincho->tiempo.time_stamp_fin);
+   //log_info(logger,"Time stamp inicio: %s", carpincho->tiempo.time_stamp_inicio);
+   //log_info(logger,"Time stamp fin: %s\n", carpincho->tiempo.time_stamp_fin);
 }
 
 void listar_por_sjf(t_pcb *carpincho)
@@ -251,9 +250,12 @@ void estimador_HRRN(t_pcb* carpincho)
    //log_info(logger, "Carpincho %d - Estimación actual: %f", carpincho->pid, carpincho->tiempo.estimacion);
   
 }
-double obtener_tiempo(char *inicio, char *fin)
-{ // planteo asi esta funcion para poder usarla con el teimpo de espera tambien
-   int aux1, aux2;
+double obtener_tiempo(t_pcb* carpincho)
+{ 
+
+   return (carpincho->tiempo_fin.tv_sec -carpincho->tiempo_inicio.tv_sec) +((double)((carpincho->tiempo_fin.tv_usec- carpincho->tiempo_inicio.tv_usec))*0.000001);
+   // planteo asi esta funcion para poder usarla con el teimpo de espera tambien
+ /*   int aux1, aux2;
    double dif;
    double total = 0.0;
    char **valores_inicio = string_split(inicio, ":");
@@ -286,7 +288,7 @@ double obtener_tiempo(char *inicio, char *fin)
    }
    liberar_char(valores_inicio);
    liberar_char(valores_fin);
-   return total;
+   return total; */
 }
 
 void liberar_char(char** lista){
@@ -399,8 +401,8 @@ void inicializar_proceso_carpincho(t_pcb *carpincho)
    carpincho->tiempo.estimacion = configuracion.ESTIMACION_INICIAL;
    carpincho->tiempo.tiempo_ejecutado = 0.000000;
    carpincho->tiempo.tiempo_de_espera = 0.000000;
-   carpincho->tiempo.time_stamp_inicio = NULL;
-   carpincho->tiempo.time_stamp_fin = NULL;
+  // carpincho->tiempo.time_stamp_inicio = NULL;
+  // carpincho->tiempo.time_stamp_fin = NULL;
    carpincho->io_solicitada = NULL;
    carpincho->semaforo_a_modificar = NULL;
    carpincho->estado = 'N';
@@ -424,19 +426,6 @@ void inicializar_proceso_carpincho(t_pcb *carpincho)
 void eliminar_carpincho(void *arg)
 { // revisar que este este borrando lo necesario y no haya free's de mas
    t_pcb *carpincho = (t_pcb *)arg;
-   if(carpincho->tiempo.time_stamp_fin != NULL){
-   free(carpincho->tiempo.time_stamp_fin);
-   }
-   if(carpincho->tiempo.time_stamp_inicio != NULL){
-   free(carpincho->tiempo.time_stamp_inicio);
-   }
-  /*if(carpincho->io_solicitada != NULL){    
-   free(carpincho->io_solicitada);
-   }*/
-   if(carpincho->semaforo_a_modificar != NULL){
-      free(carpincho->semaforo_a_modificar);
-   }
-   
    sem_destroy(&carpincho->semaforo_evento);
    sem_destroy(&carpincho->semaforo_fin_evento);
    printf("ELIMINAR CARPINCHO: CERRANDO CONEXION %d de carpincho %d\n", carpincho->fd_cliente, carpincho->pid);
@@ -445,7 +434,7 @@ void eliminar_carpincho(void *arg)
    free(carpincho);
 }
 
-void ejecutando_a_bloqueado(t_pcb *carpincho, t_queue *cola, sem_t *mutex)
+/* void ejecutando_a_bloqueado(t_pcb *carpincho, t_queue *cola, sem_t *mutex)
 {
    carpincho->estado = 'B';
    carpincho->tiempo.time_stamp_fin = temporal_get_string_time("%H:%M:%S:%MS");
@@ -454,7 +443,7 @@ void ejecutando_a_bloqueado(t_pcb *carpincho, t_queue *cola, sem_t *mutex)
    sem_wait(mutex);
    queue_push(cola, (void *)carpincho);
    sem_post(mutex);
-}
+} */
 
 void bloqueado_a_listo(t_list *cola, sem_t *mutex)
 {

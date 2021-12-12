@@ -112,7 +112,7 @@ int iniciar_servidor(char* ip, char *puerto)
 
     listen(socket_servidor, SOMAXCONN);
 
-    printf(" INICIO SERVIDOR\n");
+    /* printf("-INICIO SERVIDOR\n"); */
     return socket_servidor;
 }
 

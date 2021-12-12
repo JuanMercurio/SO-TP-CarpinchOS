@@ -2,6 +2,8 @@
 #define _PLANIFICACION_
 #include "../main.h"
 
+
+
 t_pcb *ultimo_bloqueado;
 void listar_por_sjf(t_pcb* carpincho);
 void listar_por_hrrn(t_pcb *carpincho);
@@ -51,7 +53,7 @@ bool comparador_SFJ(void* carpincho1, void* carpincho2);
     @NAME: obtener_tiempo
     @DESC: dadas dos cadenas de time stamps retorna la diferencia en segundos.
  */
-double obtener_tiempo(char* inicio, char* fin);
+double obtener_tiempo(t_pcb*);
 
 void estimador_HRRN(t_pcb* carpincho);
 

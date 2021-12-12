@@ -14,6 +14,7 @@
 #include <commons/temporal.h>
 #include <mensajes/mensajes.h>
 #include <stdio.h>
+#include <sys/time.h>
 
 int servidor;
 extern bool terminar;
@@ -27,8 +28,7 @@ typedef struct tiempo_t{
     double tiempo_ejecutado;
     double estimacion; // en  hrrn el tiepo de servicio es la estimacion para la proximaejecucion
     double tiempo_de_espera;
-    char* time_stamp_inicio;
-    char* time_stamp_fin;
+
 }tiempo_t;
 
 typedef struct io_kernel{
@@ -68,6 +68,8 @@ typedef struct t_pcb{
     sem_t semaforo_evento;
     sem_t semaforo_fin_evento;
     sem_kernel* bloqueado_en;
+    struct timeval tiempo_inicio;
+    struct timeval tiempo_fin;
 }t_pcb;
 
 typedef enum{
