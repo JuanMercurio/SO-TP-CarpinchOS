@@ -77,6 +77,7 @@ void borrar_paginas_Ocupadas( Marcos_x_pagina* mar_pag);
 void borrar_marcos_libres (un_marco_libre* mar_lib);
 void mostrarPaginasCarpincho(t_list* paginas);
 Marcos_x_pagina* tieneMarcoPaginas ( t_list* paginas, int pagina);
+int solicitud_muchas_paginas(int pid, int cantidadPaginas, t_list* paginas);
 //GENERAL
 void crearArchivos();
 int elegirMejorArchivo();

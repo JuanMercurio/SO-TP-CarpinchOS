@@ -221,6 +221,35 @@ int main(int argc, char *argv[])
             }
 
             break;
+        case SOLITIDUC_MUCHAS_PAGINAS:
+
+            pid = recibir_int(fd_memoria);
+            int cantidad_paginas = recibir_int(fd_memoria);
+            t_list *paginas = list_create();
+            for (int i = 0; i < cantidad_paginas; i++)
+            {
+                list_add(paginas, recibir_int(fd_memoria));
+            }
+            error = solicitud_muchas_paginas(pid, cantidad_paginas, paginas);
+            enviar_int(fd_memoria, error);
+            if (error == -1)
+            {
+                // TRATA DE BORRAR LAS PAGINAS ASIGNADAS. 
+                for (int i = 0; i < cantidad_paginas; i++)
+                {
+                    int pudo;
+                    if (asignacionFija)
+                    {
+                        pudo = BorrarPaginaFija(pid, list_get(paginas, i));
+                    }
+                    else
+                    {
+                        pudo = borrarPagina(pid, list_get(paginas, i));
+                    }
+                }
+            }
+
+            break;
 
         case BORRAR_PAGINA:
             //tamanio_pid = recibir_int(fd_memoria);
@@ -331,6 +360,59 @@ int main(int argc, char *argv[])
     return 0;
 }
 
+int solicitud_muchas_paginas(int pid, int cantidad_paginas, t_list *paginas)
+{
+    int j = 0;
+    int puede = 1;
+    int error = 1;
+    int cant_puede_y_error = 0;
+
+    while (j < cantidad_paginas && puede == 1 && error == 1)
+    {
+        if (asignacionFija)
+        {
+            // ¿COMO SERIA?
+            // LLEGUO A SU NUMERO DE MARCOS DE MARCOS.
+            puede = puedeAgregarPagina(pid);
+            error = solicitarPaginaFija(pid, list_get(paginas, j));
+            if (puede && error == 1)
+            {
+                cant_puede_y_error++;
+            }
+            else
+            {
+                return -1;
+            }
+        }
+        else
+        {
+            // ASIGNARLE UN MARCO LIBRE
+            // PASARME EL PID.
+            puede = quedaPaginasEnArchivo(pid);
+            error = solicitudPagina(pid, list_get(paginas, j));
+            if (puede && error == 1)
+            {
+                cant_puede_y_error++;
+            }
+            else
+            {
+                return -1;
+            }
+            // DEVOLVER AL SOCKET CON EL OPER Y UN -1
+        }
+        j++;
+    }
+
+    if (cant_puede_y_error == cantidad_paginas)
+    {
+        return 1;
+    }
+    else
+    {
+        printf("ERROR ERROR ERROR ERROR ERROR \n");
+        return -1;
+    }
+}
 void destroy_and_free(int fd_memoria)
 {
     printf("Entro a destruir y libearar.\n");
@@ -711,7 +793,7 @@ int agregarPaginaDinamica(int pid, int pagina, char *contenido)
         mostrarPaginasCarpincho(car->paginas);
 
         //printf("base:%d\n",base);
-        Marcos_x_pagina* mar_pag = tieneMarcoPaginas ( car->paginas,pagina);
+        Marcos_x_pagina *mar_pag = tieneMarcoPaginas(car->paginas, pagina);
         if (mar_pag->pagina == -1)
         {
             int base = buscarMarcoLibre(car->numeroArchivo);

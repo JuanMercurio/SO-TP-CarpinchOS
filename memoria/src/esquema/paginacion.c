@@ -439,6 +439,20 @@ int dl_a_decimal(dir_t dl)
     decimal += dl.offset;
     return decimal;
 }
+bool muchas_paginas_solicitud_swap(int pid, int cantidad_paginas, int paginas)
+{
+    t_paquete *p = crear_paquete(SOLITIDUC_MUCHAS_PAGINAS);
+    agregar_a_paquete(p, &pid, sizeof(int));
+    agregar_a_paquete(p, &cantidad_paginas, sizeof(int));
+    for ( int i = 0; i < cantidad_paginas; i++){
+        agregar_a_paquete(p, &(paginas+i), sizeof(int));
+    }
+    
+    enviar_paquete(p, swap);
+    eliminar_paquete(p);
+
+    return recibir_int(swap);
+}
 
 bool pagina_solicitud_swap(int pid)
 {
