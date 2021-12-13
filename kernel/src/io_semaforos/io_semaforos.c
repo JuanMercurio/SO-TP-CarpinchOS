@@ -78,7 +78,7 @@ return sem->val;
 }
 
 void bloquear_por_semaforo(t_pcb *carpincho){
-   printf("entro a chupar pijas\n");
+ 
   // sem_kernel *semaforo = buscar_semaforo2(carpincho->semaforo_a_modificar, &pos);
    sem_wait(&carpincho->bloqueado_en->mutex_cola);
    list_add(carpincho->bloqueado_en->bloqueados, (void*)carpincho);
@@ -103,7 +103,6 @@ int sem_kernel_post(char *nombre)
    
       sem_post(&mutex_lista_sem_kernel);
       log_info(logger, "SEM POST EXITOSO a semaforo %s VALOR DEL SEMAFORO ============= %d", sem->id, sem->val);
-      //printf("SEM POST EXITOSO a semaforo %s VALOR DEL SEMAFORO ============= %d\n", sem->id, sem->val);
       return 0;
    }
   else{ printf("sem post : no se encontro semaforo\n");
@@ -119,7 +118,10 @@ int sem_kernel_init(char* nombre, int value){
       return -1;
    }else{
    sem_kernel *nuevo_sem = malloc(sizeof(sem_kernel));
-   nuevo_sem->id = string_duplicate(nombre);
+   nuevo_sem->id = malloc(strlen(nombre)+1);
+   strcpy(nuevo_sem->id, nombre);
+   free(nombre);
+   printf("paso free de nombre\n");
    nuevo_sem->max_val=value;
    nuevo_sem->val=value;
    nuevo_sem->bloqueados=list_create();
@@ -128,8 +130,7 @@ int sem_kernel_init(char* nombre, int value){
    sem_wait(&mutex_lista_sem_kernel);
    list_add(lista_sem_kernel,(void*) nuevo_sem);
    sem_post(&mutex_lista_sem_kernel);
-   log_info(logger, "SEMAFORO %s inicializado con %d",(char*) nombre, value);
-    
+   //log_info(logger, "SEMAFORO %s inicializado con %d",nuevo_sem->id, value);  
     free(pos);
    return 0;
    }
@@ -142,12 +143,15 @@ int pos;
       log_info(logger, "SEMAFORO YA destruido");
       return -1;
    }else{
-
 while(!list_is_empty(sem->bloqueados)){
+   printf("entro a destuir elementos de cola\n");
          bloqueado_a_listo(sem->bloqueados, &sem->mutex_cola);
       }
-   list_remove(lista_sem_kernel, pos);
+      printf("aca\n");
+      sem_wait(&mutex_lista_sem_kernel);
+   sem = list_remove(lista_sem_kernel, pos);
     sem_destroyer(sem);
+    sem_post(&mutex_lista_sem_kernel);
     log_info(logger, "SEM DESTROY EXITOSO");
     return 0;
 }
@@ -155,7 +159,8 @@ while(!list_is_empty(sem->bloqueados)){
 void sem_destroyer(void* semaforo){
  sem_kernel *a_destruir  = (sem_kernel*) semaforo;
  free(a_destruir->id);
-  list_destroy(&a_destruir->bloqueados); 
+  printf("lholaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaall\n");
+ list_destroy(a_destruir->bloqueados); 
  sem_destroy(&a_destruir->mutex);
  sem_destroy(&a_destruir->mutex_cola);
 free(a_destruir); 

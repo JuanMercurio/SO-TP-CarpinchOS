@@ -114,7 +114,7 @@ int mate_sem_wait(mate_instance *lib_ref, mate_sem_name sem)
 
 int mate_sem_post(mate_instance *lib_ref, mate_sem_name sem)
 {
-  log_info(logger, "SEM_POST al semáforo %s del carpincho %d", sem, ((mate_inner_structure *)lib_ref->group_info)->conexion);
+  log_info(logger, "SEM_POST al semáforo %s del carpincho %d", sem, ((mate_inner_structure *)lib_ref->group_info)->pid);
 
   if (conectado_a_memoria(lib_ref))
   {
@@ -126,11 +126,11 @@ int mate_sem_post(mate_instance *lib_ref, mate_sem_name sem)
   int respuesta = recibir_int(((mate_inner_structure *)lib_ref->group_info)->conexion);
   if (respuesta == 0)
   {
-    log_info(logger, "Se realizó el POST correctamente");
+    log_info(logger, "Se realizó el POST correctamente a %s", sem);
   }
   else
   {
-    log_info(logger, "Error al realizar el POST");
+    log_info(logger, "Error al realizar el POST a %s", sem);
   }
   return respuesta;
 }

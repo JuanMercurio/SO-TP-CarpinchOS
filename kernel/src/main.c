@@ -47,7 +47,7 @@ void terminar_programa()
    sem_post(&cola_suspendido_bloquedo_con_elementos);
    sem_post(&controlador_multiprogramacion);
    sem_post(&cola_new_con_elementos);
-   for(int i = 0; i < configuracion.GRADO_MULTIPROGRAMACION; i ++){
+   for(int i = 0; i < configuracion.GRADO_MULTIPROGRAMACION; i ++){// parche
    sem_post(&lista_ejecutando_con_elementos);
 }
 
@@ -216,6 +216,7 @@ void receptor(void *arg)
          carpincho = malloc(sizeof(t_pcb)); // aca no recibe la pcb en si , recibe un paquete con datos que habra que guardar en un t_pcb luego de desserializar lo que viene
          carpincho->fd_cliente = cliente;
          carpincho->pid = crearID(&id_procesos);
+         printf("CLIENTE %d CARPINCHO %d\n", cliente, carpincho->pid);
          carpincho->pid++;
          carpincho->estado = 'N';
          /*     carpincho->fd_memoria = crear_conexion(configuracion.IP_MEMORIA, configuracion.PUERTO_MEMORIA);
@@ -247,7 +248,6 @@ void receptor(void *arg)
          log_info(logger, "Se recibió del carpincho %d un SEM INIT para el semáforo %s con valor %d\n ", carpincho->pid, semaforo->nombre_semaforo, semaforo->valor);
          int resultado = sem_kernel_init(semaforo->nombre_semaforo, semaforo->valor); // usa lo que necesit
          enviar_int(cliente, resultado);                                              // responde peticion con ok
-         free(semaforo->nombre_semaforo);
          //free(semaforo->buffer->stream);                                             // bora lo que alloco
          free(semaforo);
 
@@ -258,13 +258,8 @@ void receptor(void *arg)
             break;
          }
          recibido = recibir_mensaje(cliente);
-
-      //carpincho->io_solicitada = string_new();
-      // strcpy(carpincho->io_solicitada ,recibido);
-         //printf(" RECIBIDO DE IO-----------------------------------------------------%s  y coipiado %s\n", recibido, carpincho->io_solicitada);
          carpincho->proxima_instruccion = IO;
          carpincho->io = buscar_io(recibido);
-
          printf("RECEPTOR: io: recibido de bloquear por io a carpincho %d\n", carpincho->pid);         if (carpincho->io == NULL)
          {
             enviar_int(cliente, -1);
@@ -284,13 +279,12 @@ void receptor(void *arg)
             break;
          }
          recibido = recibir_mensaje(cliente);
-        // carpincho->semaforo_a_modificar = string_duplicate(recibido);
-         //printf("RECEPTOR: semaforo %s recibido para wait de carpincho %d \n", recibido, carpincho->pid);
+          carpincho->proxima_instruccion = SEM_WAIT;
          int pos;
          carpincho->bloqueado_en = buscar_semaforo2(recibido, &pos);
+
          printf("RECEPTOR: --------------------------------------- recibido %s\n", recibido);
          free(recibido);
-
          if (carpincho->bloqueado_en == NULL)
          {
             //printf("RECEPTOR: el semaforo no se encuentra\n");
@@ -310,18 +304,20 @@ void receptor(void *arg)
             else
             {
                enviar_int(cliente, 1);
-               log_info(logger, "Se recibió del carpincho %d un SEM WAIT para %s pero NO se bloqueara", carpincho->pid, carpincho->bloqueado_en->id);
+             //  log_info(logger, "Se recibió del carpincho %d un SEM WAIT para %s pero NO se bloqueara", carpincho->pid, carpincho->bloqueado_en->id);
             }
          }
          break;
 
       case SEM_POST:
          if (carpincho->pid < 0)
-         {enviar_int(cliente,-1);
+         {printf("MANDO -1 POSSSSSSSSSSSSSSSSSSST\n");
+            enviar_int(cliente,-1);
             break;
          }
          recibido = recibir_mensaje(cliente);
-         log_info(logger, "Se recibió del carpincho %d un SEM POST para %s", carpincho->pid, recibido);
+        // log_info(logger, "Se recibió del carpincho %d un SEM POST para %s", carpincho->pid, recibido);
+         printf("Se recibió del carpincho %d un SEM POST para %s", carpincho->pid, recibido);
          //printf("MAIN:recibi un post semaforo para %s DEL CARPINCHO %d cliente %d\n", recibido, carpincho->pid, cliente);
          if (recibido == NULL)
             break;
@@ -341,7 +337,7 @@ void receptor(void *arg)
          log_info(logger, "Se recibió del carpincho %d un SEM DESTROY para %s", carpincho->pid, recibido);
          //printf("sem del destroy %s\n", recibido);
          aux_int = sem_kernel_destroy(recibido);
-         //printf("RECEPTOR: SEM DESTROY auxint %d\n", aux_int);
+         printf("RECEPTOR: SEM DESTROY auxint %d\n", aux_int);
          enviar_int(cliente, aux_int);
          free(recibido);
          break;
@@ -429,6 +425,8 @@ void receptor(void *arg)
       case MATE_CLOSE:
          if (carpincho->pid < 0)
          {
+            log_info("---------------MATE CLOSE - Receptor terminando conexion con %d. ELIMINADO POR DEADLOCK\n", cliente);
+            printf("---------------MATE CLOSE - Receptor terminando conexion con %d. ELIMINADO POR DEADLOCK\n", cliente);
             conectado = false;
             break;
          }
@@ -441,17 +439,22 @@ void receptor(void *arg)
          break;
 
       default:
-         //printf("codigo erroneo DEL CLIENTE %d\n", cliente);
+      if (carpincho->pid < 0){
+         break;
+      }else{
+         printf("codigo erroneo DEL CLIENTE %d\n", cliente);
          log_info(logger,"Se recibió un código erróneo del cliente %d", cliente);
          conectado = false;
          break;
       }
+      }
    }
-   //printf("MAIN KERNEL SALIO DEL WHILEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEE\n");
+   if(carpincho->pid ==-1)
+   eliminar_carpincho(carpincho);
+   printf("MAIN KERNEL SALIO DEL WHILEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEE\n");
    close(cliente);
-
    sem_post(&controlador_multiprogramacion);
-   //printf("RECEPTOR: saliendo\n");
+   printf("RECEPTOR: saliendo------------------------------------------------------------\n");
 }
 
 void inicializar_planificacion()
