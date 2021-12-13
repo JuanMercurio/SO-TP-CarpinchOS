@@ -12,6 +12,7 @@
 
 #define CANT_CARPINCHOS 1
 #define ALLOCAR 10 
+#define STRING "eeeeeeeje"  
 
 char *LOG_PATH = "./planificacion.log";
 char *PROGRAM_NAME = "planificacion";
@@ -374,7 +375,7 @@ void carpincho_comportamiento_memoria(void* arg)
    }
 
    printf("-- Mate WRITE -- \n");
-   char* saturno = "ej";
+   char* saturno = STRING;
    int size = strlen(saturno) + 1;
    void* buffer = malloc(size);
    memcpy(buffer, saturno, size);

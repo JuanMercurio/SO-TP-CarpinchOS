@@ -102,11 +102,11 @@ int main(int argc, char *argv[])
             int pido;
             if (asignacionFija)
             {
-                pido = remplazoPaginaFija(pid, pagina, string_duplicate((char *)buffer));
+                pido = remplazoPaginaFija(pid, pagina, (char *)buffer);
             }
             else
             {
-                pido = agregarPaginaDinamica(pid, pagina, string_duplicate((char *)buffer));
+                pido = agregarPaginaDinamica(pid, pagina, (char*)buffer);
             }
 
             printf("Envia a memoria %d\n", pido);
@@ -843,7 +843,8 @@ char *buscarPaginaDinamico(int pid, int pagina)
             char *file_in_memory = mmap(NULL, configuracion.TAMANIO_SWAP, PROT_READ | PROT_WRITE, MAP_SHARED, file, 0);
             //printf("FILE IN MEMORY: %s\n",file_in_memory);
             //printf("CANT FILE IN MEMORY: %d\n",string_length(file_in_memory));
-            char *pagina_devolver = string_substring(file_in_memory, mar_x_pag->base, configuracion.TAMANIO_PAGINA);
+            char *pagina_devolver = malloc(configuracion.TAMANIO_PAGINA);//string_substring(file_in_memory, mar_x_pag->base, configuracion.TAMANIO_PAGINA);
+            memcpy(pagina_devolver, file_in_memory + mar_x_pag->base, configuracion.TAMANIO_PAGINA);
             //char * file_in_memory2 = mmap(NULL,configuracion.TAMANIO_SWAP,PROT_READ |PROT_WRITE ,MAP_SHARED, file,0);
             printf("BASE %d\n", mar_x_pag->base);
             close(file);
