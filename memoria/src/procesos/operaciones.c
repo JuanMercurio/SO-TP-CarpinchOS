@@ -145,7 +145,7 @@ int memalloc(tab_pags* tabla, int tamanio){ //quizas al igual que antes, el carp
 				if(bytes_faltantes % configuracion.TAMANIO_PAGINAS != 0)	bytes_faltantes += SIZE_METADATA;
 			}
 
-			int paginas_faltantes = bytes_faltantes % configuracion.TAMANIO_PAGINAS + 1;
+			int paginas_faltantes = bytes_faltantes / configuracion.TAMANIO_PAGINAS + 1;
 
 			if(pedir_paginas_a_swap(tabla_paginas, paginas_faltantes) == -1){
 				return -1;
@@ -155,7 +155,7 @@ int memalloc(tab_pags* tabla, int tamanio){ //quizas al igual que antes, el carp
 					puts("- Memalloc->Pedir->Free: el ultimo alloc esta libre. Lo expando.");
 					numero_magico = (ptr_potencial_segmento->nextAlloc == LAST_METADATA ? (list_size(tabla_paginas->tabla_pag)*configuracion.TAMANIO_PAGINAS) : ptr_potencial_segmento->nextAlloc);
 					espacio_en_alloc = numero_magico - SIZE_METADATA - inicio_actual;
-					if(tamanio-espacio_en_alloc % configuracion.TAMANIO_PAGINAS){ //TODO: testear.
+					if(tamanio-espacio_en_alloc % configuracion.TAMANIO_PAGINAS == 0){ //TODO: testear.
 						ptr_potencial_segmento->isFree=false;
 						return inicio_actual+SIZE_METADATA;
 					}
@@ -172,13 +172,14 @@ int memalloc(tab_pags* tabla, int tamanio){ //quizas al igual que antes, el carp
 					new.nextAlloc = LAST_METADATA;
 					new.isFree = true;
 
-
+					printf("Esto deberia ser 18: %d\n", ptr_potencial_segmento->nextAlloc);
 					puts("- Memalloc->Pedir->Free: el metadata esta en otra pagina, obviamente.");
 
-					int new_pags = paginas_a_agregar(ptr_potencial_segmento->nextAlloc, tabla);
-					if (new_pags == -1) return -1;
-					new_pags = paginas_agregar(new_pags, tabla);
-					memoria_escribir_por_dirlog(tabla_paginas, ptr_potencial_segmento->nextAlloc, &new, SIZE_METADATA);
+					paginas_agregar(paginas_faltantes, tabla);
+					// int new_pags = paginas_a_agregar(ptr_potencial_segmento->nextAlloc, tabla);
+					// if (new_pags == -1) return -1;
+					// new_pags = paginas_agregar(new_pags, tabla);
+					memoria_escribir_por_dirlog(tabla, ptr_potencial_segmento->nextAlloc, &new, SIZE_METADATA);
 
 					printf("- Memalloc->Pedir->Free: RETORNO DIR_LOG DE GUARDADO: %i. METADATA ARRANCA EN %i.\n", inicio_actual+SIZE_METADATA, inicio_actual);
 					return inicio_actual + SIZE_METADATA;
@@ -327,7 +328,7 @@ int memfree(tab_pags* tabla, int dir_log){
 	ptr_segmento->isFree = true;
 	puts("- Memfree: cambio el isFree a true.");
 
-	int inicio_actual = dir_log;
+	int inicio_actual = dir_log - SIZE_METADATA;
 	HeapMetadata *ptr_derecha, *ptr_izquierda;
 //	int dir_nextAlloc = ptr_segmento->nextAlloc;
 
@@ -384,9 +385,11 @@ int memfree(tab_pags* tabla, int dir_log){
 			int cant_pags_a_liberar = espacio_en_alloc/configuracion.TAMANIO_PAGINAS;
 			ptr_segmento->nextAlloc -= cant_pags_a_liberar*configuracion.TAMANIO_PAGINAS;
 			for(int i=1; i<=cant_pags_a_liberar; i++){
+				printf("Elimine la pagina %d\n", list_size(tabla_paginas->tabla_pag)-i);
 				list_remove(tabla_paginas->tabla_pag, list_size(tabla_paginas->tabla_pag)-i); //TODO: hace falta algo mas?
 			}
 		}
+		printf("MemFree FIN - El proceso tiene %d paginas\n", list_size(tabla->tabla_pag));
 	}
 
 	return 1;
@@ -696,6 +699,7 @@ int pedir_paginas_a_swap(tab_pags* tabla, int c_paginas){
 
 	enviar_int(swap, SOLITIDUC_MUCHAS_PAGINAS);
 	enviar_int(swap, tabla->pid);
+	enviar_int(swap, c_paginas);
 	for (int i=0; i < c_paginas; i++) {
 		enviar_int(swap, i+pagina);
 	}

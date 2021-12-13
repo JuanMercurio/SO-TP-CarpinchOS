@@ -207,6 +207,7 @@ int main(int argc, char *argv[])
 
             pid = recibir_int(fd_memoria);
             int cantidad_paginas = recibir_int(fd_memoria);
+            printf("SOLICIDUT MUCHAS PAGINAS\n");
             t_list *paginas = list_create();
             for (int i = 0; i < cantidad_paginas; i++)
             {
@@ -214,6 +215,7 @@ int main(int argc, char *argv[])
             }
             error = solicitud_muchas_paginas(pid, cantidad_paginas, paginas);
             enviar_int(fd_memoria, error);
+            printf("erro = %d\n", error);
             if (error == -1)
             {
                 // TRATA DE BORRAR LAS PAGINAS ASIGNADAS.

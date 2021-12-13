@@ -10,9 +10,9 @@
 //------------------------------- PLANIFICACION--------------------//
 #include <matelib.h>
 
-#define CANT_CARPINCHOS 1
+#define CANT_CARPINCHOS 2
 #define ALLOCAR 10 
-#define STRING "eeeeeeeje"  
+#define STRING "ewee"  
 
 char *LOG_PATH = "./planificacion.log";
 char *PROGRAM_NAME = "planificacion";
@@ -373,6 +373,8 @@ void carpincho_comportamiento_memoria(void* arg)
    else{
 	   printf("\n La direccion logica es: %d \n", dl);
    }
+
+   int dl_ = mate_memalloc(c, 14);
 
    printf("-- Mate WRITE -- \n");
    char* saturno = STRING;
