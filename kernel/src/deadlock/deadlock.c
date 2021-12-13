@@ -6,14 +6,14 @@ void deteccion_deadlock()
 {
     sem_kernel *semaforo;
     deadlock_kernel *a_enlistar;
-
     while (!terminar)
     {
-        t_list *lista_posible_deadlock = list_create();
-        t_list *lista_con_deadlock ;
         printf("---------------------------------------DEADLOCK ACTIVADO\n");
         sleep(configuracion.TIEMPO_DEADLOCK * 0.001);
-        printf("---------------------------------------PASARON LOS SEGUNDOS\n");
+        printf("---------------------------------------COMIENZA DETECCION DE DEADLOCK\n");
+        t_list *lista_posible_deadlock = list_create();
+        t_list *lista_con_deadlock ;
+       
         log_info(logger, "Comienza la ejecución de la detección de Deadlock");
         //pausar_todo????
         if (!list_is_empty(lista_sem_kernel))
@@ -25,8 +25,7 @@ void deteccion_deadlock()
                 sem_wait(&mutex_lista_sem_kernel);
                 semaforo = (sem_kernel *)list_get(lista_sem_kernel, i);
                 sem_post(&mutex_lista_sem_kernel);
-               
-                printf("Semaforo->tomado_por %d", semaforo->tomado_por);
+              //  printf("Semaforo->tomado_por %d", semaforo->tomado_por);
                 if (semaforo->tomado_por != -1)
                     // log_info(logger, "Semaforo->tomado_por %d", semaforo->tomado_por);
                     a_enlistar = buscar_en_otras_listas(semaforo->tomado_por, i, semaforo->id);
@@ -72,17 +71,8 @@ void deteccion_deadlock()
                 }
                 printf("DESTUYENDO LISTA DE POSIBLE DEADLOCK\n");
                 log_info(logger, "Destruyendo lista de posible deadlock");
-               /*  if (!list_is_empty(lista_posible_deadlock))
-                {
-                    list_destroy_and_destroy_elements(lista_posible_deadlock, lista_deadlock_destroyer);
-                    printf("destruyo lista posible deadolock con elementos\n");
-                }
-                else
-                {
-                    printf("destruyo lista posible deadolock sin elementos\n"); */
                     list_destroy(lista_posible_deadlock);
                     printf("destruyo lista posible deadolock sin elementos\n");
-               /*  } */
             }
             else
             {
@@ -93,27 +83,6 @@ void deteccion_deadlock()
                 list_destroy(lista_posible_deadlock);
             }
        }
-       
-       /*printf("SALE DEL IFF\n");
-        if (lista_con_deadlock == NULL)
-        {printf("destruyo lista con deadolock null\n");
-           
-        }
-        else
-        {printf("destruyo lista con deadolock sin elementos\n");
-            list_destroy(lista_con_deadlock);
-            printf("destruyo lista con deadolock sin elementos\n");
-        }
-        if (lista_posible_deadlock == NULL)
-        {printf("destruyo lista posible deadolock null\n");
-            list_destroy(lista_posible_deadlock);
-            printf("destruyo lista posible deadolock con elementos\n");
-        }
-        else
-        {printf("destruyo lista posible deadolock sin elementos\n");
-            list_destroy(lista_posible_deadlock);
-            printf("destruyo lista posible deadolock sin elementos\n");
-        } */
     }
 }
 
@@ -127,23 +96,21 @@ void deteccion_deadlock()
         free(a_destruir);
         printf("saliendo de destruir un carpin deadlock DESTRUIR LISTAAAAAA\n");
     }
-
-    deadlock_kernel *buscar_en_otras_listas(int pid, int index, char *semaforo_retenido)
-    {
-        //log_info(logger, "Estoy en buscar_en_otras_listas con carpincho %d", pid);
+deadlock_kernel *buscar_en_otras_listas(int pid, int index, char *semaforo_retenido)
+{       //log_info(logger, "Estoy en buscar_en_otras_listas con carpincho %d", pid);
         t_pcb *carpincho_bloqueado;
         int i = 0, j;
         sem_kernel *semaforo;
         bool encontrado = false;
-        deadlock_kernel *carpincho_deadlock;
         //printf("creo struct tamanio %d\n", sizeof(deadlock_kernel));
         while (i < list_size(lista_sem_kernel) && !encontrado)
         {
             //printf("entro a while de lista semaforos\n");
-            /*   if (i == index){
-             printf("hace continue\n");
-            continue;} */
-            //printf(" valor de i :%d\n", i);
+             if (i == index){
+                  printf(" valor de i :%d\n", i);
+                  i++;
+            continue;
+            }            
             semaforo = (sem_kernel *)list_get(lista_sem_kernel, i);
             //printf("buscar_en_otras_listas semaforo que saco %s\n", semaforo->id);
             j = 0;
@@ -159,26 +126,23 @@ void deteccion_deadlock()
                 {
                  // printf("El carpincho %d está en posible deadlock - Semáforo retenido: %s - Semáforo por el que se bloqueó: %s\n", pid, semaforo_retenido, semaforo->id);
                    // log_info(logger, "El carpincho %d está en posible deadlock - Semáforo retenido: %s - Semáforo por el que se bloqueó: %s", pid, semaforo_retenido, semaforo->id);
-                    carpincho_deadlock = malloc(sizeof(deadlock_kernel));
+                    deadlock_kernel *carpincho_deadlock = (deadlock_kernel*)malloc(sizeof(deadlock_kernel));
                     carpincho_deadlock->pid = pid;
-        
                     carpincho_deadlock->retenido = string_duplicate(semaforo_retenido);
-                    
                     carpincho_deadlock->esperando = string_duplicate(semaforo->id);
-                   
                     encontrado = true;
-                    
+                    return carpincho_deadlock;
                 }
                 else
                 {
-                    //carpincho_deadlock = NULL;
+                    return NULL;
                 }
                 j++;
             }
             i++;
         }
         //printf("devolviendo carponcho en posible deadlock\n");
-        return carpincho_deadlock;
+       
     }
 
 t_list *verificar_espera_circular(t_list * lista)
@@ -210,7 +174,6 @@ t_list *verificar_espera_circular(t_list * lista)
 //--------------------------------------------------------------
 bool encontrar_circulo(deadlock_kernel *a_evaluar, t_list *lista, t_list *lista_aux)
 {
-    int i =0;
     list_add(lista_aux, (void*) a_evaluar);
     int *index = malloc(sizeof(int));
     printf("entro a encontrar circulo\n");
@@ -240,20 +203,26 @@ bool comparar_lista(deadlock_kernel *alf, t_list *list, int *index)
     deadlock_kernel *aux;
     int i = 0;
     bool encontro = false;
-    //printf("entro a comparar lista\n");
+    
+    printf("entro a comparar lista\n");
     if (!list_is_empty(list))
-    {
+    {            printf("tamanio de lista %d\n", list_size(list));
+
         while (i < list_size(list) && !encontro)
-        {
+        {printf("entro a while\n");
             aux = list_get(list, i);
+            printf("desenlisto\n");
+            printf("desenlisto %d con esperando %s\n", aux->pid, aux->esperando);
             if (strcmp(alf->esperando, aux->retenido) == 0)
-            {
-                
+            { 
                 *index = i;
                 encontro = true;
+                printf("encontro\n");
             }
                 i++;
+                printf("i = %d\n", i);
         }
+        printf("sale de compara lista\n");
         return encontro;
     }
     else
@@ -270,8 +239,8 @@ void finalizar_involucrados(t_list *lista_deadlock)
 {
     int mayor_id = 0;
     deadlock_kernel *aux;
-    char *retenido_a_liberar;
-    char *esperando_a_sacar;
+    char *retenido_a_liberar = (char*)malloc(strlen(aux->retenido)+1);
+    char *esperando_a_sacar = (char*)malloc(strlen(aux->esperando)+1);
     sem_kernel *semaforo;
     for (int i=0; i < list_size(lista_deadlock); i++)
     {
@@ -279,8 +248,6 @@ void finalizar_involucrados(t_list *lista_deadlock)
         if (mayor_id < aux->pid)
         {
             mayor_id = aux->pid;
-            retenido_a_liberar = malloc(strlen(aux->retenido)+1);
-            esperando_a_sacar= malloc(strlen(aux->esperando)+1);
             strcpy(retenido_a_liberar,aux->retenido);
             strcpy(esperando_a_sacar,aux->esperando);
         }
@@ -291,7 +258,7 @@ void finalizar_involucrados(t_list *lista_deadlock)
     printf("busca el semaforo para desbloquear\n");
     semaforo = buscar_semaforo2(esperando_a_sacar, &pos);
     sacar_de_cola_bloqueados(semaforo, mayor_id);
-  //  printf("se manda posst a semaforo %s\n", retenido_a_liberar);
+    //printf("se manda posst a semaforo %s\n", retenido_a_liberar);
     sem_kernel_post(retenido_a_liberar);
     sem_kernel_post(esperando_a_sacar);
     free(retenido_a_liberar);

@@ -80,15 +80,6 @@ void destruir_colas_y_listas()
             //printf("destruyo lista sem kernel sin elementos\n");
 
    }
-/*    if(!list_is_empty(lista_io_kernel)){
-   list_destroy_and_destroy_elements(lista_io_kernel, (void *)io_destroyer);
-printf(" destruyo listas io con elementos\n");
-   }else
-   {
-      list_destroy(lista_io_kernel);
-      printf(" destruyo listas io sin elementos\n");
-
-   } */
    
    if (!queue_is_empty(cola_new)) // cambiado
    {
@@ -100,17 +91,6 @@ printf(" destruyo listas io con elementos\n");
       queue_destroy(cola_new);
                   //printf("destruyo cola new sin elementos\n");
    }
- /*   if (!queue_is_empty(cola_ready))
-   {
-      queue_destroy_and_destroy_elements(cola_ready, (void *)eliminar_carpincho);
-                  printf("destruyo cola ready con elementos\n");
-   }
-   else
-   {
-      queue_destroy(cola_ready);
-                        printf("destruyo cola ready sin elementos\n");
-
-   } */
    if (!queue_is_empty(suspendido_bloqueado))
    {
       queue_destroy_and_destroy_elements(suspendido_bloqueado, (void *)eliminar_carpincho);
@@ -132,27 +112,6 @@ printf(" destruyo listas io con elementos\n");
       queue_destroy(suspendido_listo);
                  // printf("destruyo suspendo listo sin elementos\n");
    }
-/*    if (!queue_is_empty(cola_finalizados))
-   {
-      queue_destroy_and_destroy_elements(cola_finalizados, (void *)eliminar_carpincho);
-                  printf("destruyo finalizados con elementos\n");
-
-   }
-   else
-   {
-      queue_destroy(cola_finalizados);
-                        printf("destruyo finalizados sin elementos\n");
-
-   } */
-
-/*    if (!list_is_empty(lista_ejecutando))
-   {
-      list_destroy_and_destroy_elements(lista_ejecutando, (void *)eliminar_carpincho);
-   }
-   else
-   {
-      list_destroy(lista_ejecutando);
-   } */
    if (!list_is_empty(lista_ordenada_por_algoritmo))
    {
       list_destroy_and_destroy_elements(lista_ordenada_por_algoritmo, (void *)eliminar_carpincho);
@@ -481,15 +440,6 @@ void inicializar_planificacion()
    {
       log_info(logger, "Hilo Planificador Largo Plazo creado");
    }
-/* 
-   if (pthread_create(&hilos_planificadores, &detached3, (void *)iniciar_gestor_finalizados, NULL) != 0)
-   {
-      log_info(logger, "No se pudo crear el hilo Gestor Finalizados");
-   }
-   else
-   {
-      log_info(logger, "Hilo Planificador Gestor Finalizados creado");
-   } */
 
    if (pthread_create(&hilos_planificadores, &detached2, (void*)deteccion_deadlock, NULL) != 0)
    {
@@ -499,15 +449,6 @@ void inicializar_planificacion()
    {
       log_info(logger, "Hilo Detección Deadlock creado");
    }
-
-/*    if (pthread_create(&hilos_planificadores, &detached3, (void *)&program_killer, NULL) != 0)
-   {
-      log_info(logger, "No se pudo crear el hilo para terminar el programa");
-   }
-   else
-   {
-      log_info(logger, "Hilo para terminar el programa creado");
-   } */
 
    if (pthread_create(&hilos_planificadores, &detached2, (void *)iniciar_cpu, NULL) != 0)
    {
@@ -520,12 +461,6 @@ void inicializar_planificacion()
 }
 void program_killer()
 {
-/*    printf("en program killer\n");
-   char *leido = string_new();
-   log_info(logger, "Para terminar precione cualquier tecla.");
-   scanf("%s", leido);
-   //leido=getchar();
-   printf("terminar=true"); */
    terminar = true;
    terminar_programa();
    printf("TERMINO SERVIDOR\n");

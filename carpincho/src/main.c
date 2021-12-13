@@ -123,7 +123,7 @@ void init_sems()
 
 
 //----------------------SUSPENSION---------------------//
-  void* carpincho1_func(void* config){
+ /*  void* carpincho1_func(void* config){
 
 	mate_instance instance;
 
@@ -238,7 +238,7 @@ void* carpincho4_func(void* config){
 
 	return EXIT_SUCCESS;
 }  
- 
+  */
 /*
 int main(int argc, char* argv[]) {
 
@@ -354,7 +354,7 @@ void memoria_carpincho()
 
 //------------------------------- DEADLOCK--------------------//
 
-/*  
+
 void* carpincho1_func(void* config){
 
     mate_instance instance;
@@ -565,5 +565,5 @@ int main(int argc, char *argv[]) {
 	printf("MAIN - Retirados los carpinchos de la pelea, hora de analizar los hechos\n");
 
 	return EXIT_SUCCESS;
-}  */
+}  
  
