@@ -445,7 +445,8 @@ bool muchas_paginas_solicitud_swap(int pid, int cantidad_paginas, int paginas)
     agregar_a_paquete(p, &pid, sizeof(int));
     agregar_a_paquete(p, &cantidad_paginas, sizeof(int));
     for ( int i = 0; i < cantidad_paginas; i++){
-        agregar_a_paquete(p, &(paginas+i), sizeof(int));
+        paginas = paginas + i;
+        agregar_a_paquete(p, &paginas, sizeof(int));
     }
     
     enviar_paquete(p, swap);

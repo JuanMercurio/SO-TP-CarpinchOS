@@ -79,7 +79,7 @@ int main(int argc, char *argv[])
         int codop = recibir_operacion(fd_memoria);
         //printf("codigo de operacdion %d\n", codop);
         //int tamanio = recibir_int(fd_memoria);
-        Pedido *ped; //= malloc(sizeof(Pedido));
+        Pedido *ped = malloc(sizeof(Pedido));
         int pid, pagina, tamanio2;
         bool puede;
         int error;
@@ -89,9 +89,7 @@ int main(int argc, char *argv[])
 
         case ESCRIBIR_PAGINA:
             printf("Quiero escribir una pagina 1234\n");
-            //tamanio_pid = recibir_int(fd_memoria);
             pid = recibir_int(fd_memoria);
-            //tamanio_pagina = recibir_int(fd_memoria);
             pagina = recibir_int(fd_memoria);
             tamanio2 = configuracion.TAMANIO_PAGINA;
             void *buffer = recibir_buffer_t(&tamanio2, fd_memoria);
@@ -101,20 +99,14 @@ int main(int argc, char *argv[])
             /*realloc(buffer, configuracion.TAMANIO_PAGINA + 1);
             memcpy(buffer+configuracion.TAMANIO_PAGINA+1, '\0',1);*/
 
-            ped->nombre_pedido = malloc(sizeof("ESCRIBIR_PAGINA"));
-            ped->nombre_pedido = "ESCRIBIR_PAGINA";
-            ped->pid = pid;
-            ped->pagina = pagina;
-            ped->contenido_pagina = string_duplicate((char *)buffer);
-            ped->oper = codop;
             int pido;
             if (asignacionFija)
             {
-                pido = remplazoPaginaFija(ped->pid, ped->pagina, ped->contenido_pagina);
+                pido = remplazoPaginaFija(pid, pagina, string_duplicate((char *)buffer));
             }
             else
             {
-                pido = agregarPaginaDinamica(ped->pid, ped->pagina, ped->contenido_pagina);
+                pido = agregarPaginaDinamica(pid, pagina, string_duplicate((char *)buffer));
             }
 
             printf("Envia a memoria %d\n", pido);
@@ -127,21 +119,18 @@ int main(int argc, char *argv[])
             //tamanio_pid = recibir_int(fd_memoria);
             pid = recibir_int(fd_memoria);
             // queda lugar
-            ped->nombre_pedido = "SOLICITUD_INICIO";
-            ped->pid = pid;
-            ped->oper = codop;
+
             printf("creo struct de pid %d\n", pid);
-            printf("SOLICITUD_INICIO: pid: %d\n", ped->pid);
 
             if (asignacionFija)
             {
                 // SE FIJA SI HAY ESPACIO O SI YA EXISTE ESE CARPINCHO
-                Carpincho_Swamp *car = buscarCarpincho(ped->pid);
-                puede = elegirMejorArchivoDOS(ped->pid) != -1 && car->pid == -1;
+                Carpincho_Swamp *car = buscarCarpincho(pid);
+                puede = elegirMejorArchivoDOS(pid) != -1 && car->pid == -1;
             }
             else
             {
-                puede = quedaPaginasEnArchivo(ped->pid);
+                puede = quedaPaginasEnArchivo(pid);
             }
             if (puede)
             {
@@ -160,21 +149,18 @@ int main(int argc, char *argv[])
 
         case INICIO:
             printf("inicio\n");
-            //tamanio_pid = recibir_int(fd_memoria);
             pid = recibir_int(fd_memoria);
-            ped->nombre_pedido = "INICIO";
-            ped->pid = pid;
-            ped->oper = codop;
-            printf("INICIO: pid: %d\n", ped->pid);
+
+            printf("INICIO: pid: %d\n", pid);
             int inicio;
             if (asignacionFija)
             {
-                inicio = crearCarpinchoFijaDOS(ped->pid);
+                inicio = crearCarpinchoFijaDOS(pid);
             }
             else
             {
 
-                inicio = CrearCarpincho(ped->pid);
+                inicio = CrearCarpincho(pid);
             }
             enviar_int(fd_memoria, inicio);
 
@@ -187,26 +173,22 @@ int main(int argc, char *argv[])
             pid = recibir_int(fd_memoria);
             //tamanio_pagina = recibir_int(fd_memoria);
             pagina = recibir_int(fd_memoria);
-            ped->nombre_pedido = "SOLICITUD_PAGINA";
-            ped->pid = pid;
-            ped->pagina = pagina;
-            ped->oper = codop;
 
-            printf("SOLICITUD_PAGINA: pid: %d\n", ped->pid);
+            printf("SOLICITUD_PAGINA: pid: %d\n", pid);
 
             if (asignacionFija)
             {
                 // ¿COMO SERIA?
                 // LLEGUO A SU NUMERO DE MARCOS DE MARCOS.
-                puede = puedeAgregarPagina(ped->pid);
-                error = solicitarPaginaFija(ped->pid, ped->pagina);
+                puede = puedeAgregarPagina(pid);
+                error = solicitarPaginaFija(pid, pagina);
             }
             else
             {
                 // ASIGNARLE UN MARCO LIBRE
                 // PASARME EL PID.
-                puede = quedaPaginasEnArchivo(ped->pid);
-                error = solicitudPagina(ped->pid, ped->pagina);
+                puede = quedaPaginasEnArchivo(pid);
+                error = solicitudPagina(pid, pagina);
                 // DEVOLVER AL SOCKET CON EL OPER Y UN -1
             }
             if (puede && error == 1)
@@ -234,7 +216,7 @@ int main(int argc, char *argv[])
             enviar_int(fd_memoria, error);
             if (error == -1)
             {
-                // TRATA DE BORRAR LAS PAGINAS ASIGNADAS. 
+                // TRATA DE BORRAR LAS PAGINAS ASIGNADAS.
                 for (int i = 0; i < cantidad_paginas; i++)
                 {
                     int pudo;
@@ -252,23 +234,19 @@ int main(int argc, char *argv[])
             break;
 
         case BORRAR_PAGINA:
-            //tamanio_pid = recibir_int(fd_memoria);
+
             pid = recibir_int(fd_memoria);
-            //tamanio_pagina = recibir_int(fd_memoria);
             pagina = recibir_int(fd_memoria);
-            ped->nombre_pedido = "BORRAR_PAGINA";
-            ped->pid = pid;
-            ped->pagina = pagina;
-            ped->oper = codop;
-            printf("BORRAR_PAGINA: pid: %d pag: %d\n", ped->pid, ped->pagina);
+
+            printf("BORRAR_PAGINA: pid: %d pag: %d\n", pid, pagina);
             int pudo;
             if (asignacionFija)
             {
-                pudo = BorrarPaginaFija(ped->pid, ped->pagina);
+                pudo = BorrarPaginaFija(pid, pagina);
             }
             else
             {
-                pudo = borrarPagina(ped->pid, ped->pagina);
+                pudo = borrarPagina(pid, pagina);
             }
             enviar_int(fd_memoria, pudo);
 
@@ -282,21 +260,18 @@ int main(int argc, char *argv[])
             //tamanio_pagina = recibir_int(fd_memoria);
             pagina = recibir_int(fd_memoria);
             printf("Pedido de pid:%d, pagina %d \n", pid, pagina);
-            ped->nombre_pedido = "OBTENER_PAGINA";
-            ped->pid = pid;
-            ped->pagina = pagina;
-            ped->oper = codop;
+            
 
             char *cont_pag;
             if (asignacionFija)
             {
-                cont_pag = buscarPaginaFija(ped->pid, ped->pagina);
+                cont_pag = buscarPaginaFija(pid, pagina);
             }
             else
             {
                 //---------------------------------------------------------------------------------------------------
                 // VERIFICAR QUE EXISTA ESE PID Y PAGINA
-                cont_pag = buscarPaginaDinamico(ped->pid, ped->pagina);
+                cont_pag = buscarPaginaDinamico( pid, pagina);
             }
             printf("Contenido isfree %d \n", ((HeapMetadata *)cont_pag)->isFree);
             printf("Contenido prevalloc %d \n", ((HeapMetadata *)cont_pag)->prevAlloc);
@@ -323,19 +298,16 @@ int main(int argc, char *argv[])
         case BORRAR_CARPINCHO:
             //tamanio_pid = recibir_int(fd_memoria);
             pid = recibir_int(fd_memoria);
-            ped->nombre_pedido = "BORRAR_CARPINCHO";
-            ped->pid = pid;
-            ped->oper = codop;
-
-            printf("BORRAR_CARPINCHO: pid: %d\n", ped->pid);
+    
+            printf("BORRAR_CARPINCHO: pid: %d\n",  pid);
 
             if (asignacionFija)
             {
-                error = borrarCarpinchoFija(ped->pid);
+                error = borrarCarpinchoFija( pid);
             }
             else
             {
-                error = borrarCarpincho(ped->pid);
+                error = borrarCarpincho( pid);
             }
             enviar_int(fd_memoria, error);
             break;
