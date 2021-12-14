@@ -208,10 +208,15 @@ int main(int argc, char *argv[])
             pid = recibir_int(fd_memoria);
             int cantidad_paginas = recibir_int(fd_memoria);
             printf("SOLICIDUT MUCHAS PAGINAS\n");
+            printf("m llego del pid %d\n", pid);
+            printf("Voy a agregar %d paginas\n", cantidad_paginas);
+
             t_list *paginas = list_create();
             for (int i = 0; i < cantidad_paginas; i++)
             {
-                list_add(paginas, recibir_int(fd_memoria));
+                int  num = recibir_int(fd_memoria);
+                printf("num es igual a %d\n", num);
+                list_add(paginas, num);
             }
             error = solicitud_muchas_paginas(pid, cantidad_paginas, paginas);
             enviar_int(fd_memoria, error);
@@ -221,6 +226,7 @@ int main(int argc, char *argv[])
                 // TRATA DE BORRAR LAS PAGINAS ASIGNADAS.
                 for (int i = 0; i < cantidad_paginas; i++)
                 {
+                    printf("Estoy borrando paginas\n");
                     int pudo;
                     if (asignacionFija)
                     {
@@ -232,6 +238,8 @@ int main(int argc, char *argv[])
                     }
                 }
             }
+            Carpincho_Swamp* car = buscarCarpincho(pid);
+            mostrarPaginasCarpincho(car->paginas);
 
             break;
 
@@ -279,7 +287,7 @@ int main(int argc, char *argv[])
             printf("Contenido prevalloc %d \n", ((HeapMetadata *)cont_pag)->prevAlloc);
             printf("Contenido nextalloc %d \n", ((HeapMetadata *)cont_pag)->nextAlloc);
             printf("Envia a memoria: tam pagina: %d - contenido pagina: %s\n", configuracion.TAMANIO_PAGINA, cont_pag);
-            if (strcmp(cont_pag, "") == 0)
+            if (strcmp(cont_pag, "|") == 0)
             {
                 printf("Envia a memoria -1\n");
                 printf("NO ENCONTRO LA PAGINA\n");
@@ -364,6 +372,7 @@ int solicitud_muchas_paginas(int pid, int cantidad_paginas, t_list *paginas)
             // PASARME EL PID.
             puede = quedaPaginasEnArchivo(pid);
             error = solicitudPagina(pid, list_get(paginas, j));
+            printf("Entre\n");
             if (puede && error == 1)
             {
                 cant_puede_y_error++;
@@ -821,6 +830,7 @@ char *buscarPaginaDinamico(int pid, int pagina)
         printf("pid: %d\n", pid);
         mostrarPaginasCarpincho(car->paginas);
         int max = list_size(car->paginas);
+        printf("el max es %d\n", max);
         if (max > 0)
         {
             Marcos_x_pagina *mar_x_pag;
@@ -833,7 +843,7 @@ char *buscarPaginaDinamico(int pid, int pagina)
                 printf("La base es: %d \n", mar_x_pag->base);
                 if (mar_x_pag->pagina == pagina)
                 {
-                    //printf("ES ESTA\n");
+                    printf("ES ESTA\n");
                     i = max;
                 }
             }
@@ -855,7 +865,7 @@ char *buscarPaginaDinamico(int pid, int pagina)
         }
         else
         {
-            return "";
+            return "|";
         }
     }
     else

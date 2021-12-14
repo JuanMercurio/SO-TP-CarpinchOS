@@ -225,6 +225,7 @@ void inicio_comprobar(tab_pags* tabla, int cliente, bool* conectado){
 
 void cliente_terminar(tab_pags* tabla, int cliente)
 { 
+    tablas_imprimir_saturno();
     if (tabla->p_clock != -1) clock_puntero_actualizar(tabla->pid);
     tablas_eliminar_proceso(tabla->pid);
     tlb_eliminar_proceso(tabla->pid);
@@ -333,6 +334,25 @@ void tlb_eliminar_proceso(int pid){
     {
         tlb_t* reg = list_get(tlb, i);
         if(reg->pid == pid) reg->pid = TLB_EMPTY;
+    }
+
+}
+
+void tablas_imprimir_saturno()
+{
+    int size = list_size(tablas.lista);
+
+    for (int i = 0; i < size; i++) {
+
+        tab_pags*tabla = list_get(tablas.lista, i);
+        int pags = list_size(tabla->tabla_pag);
+        printf(" -- TABLA - %d --\n", tabla->pid);
+
+        for (int j=0; j < pags; j++) {
+
+            pag_t* pag = list_get(tabla->tabla_pag, j);
+            printf("PAG %d - P: %d - M: %d - F: %d - ALG: %d\n", j, pag->presente, pag->modificado, pag->marco, pag->algoritmo);
+        }
     }
 
 }

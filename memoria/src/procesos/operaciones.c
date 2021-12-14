@@ -378,23 +378,22 @@ int memfree(tab_pags* tabla, int dir_log){
 
 
 	puts("- Memfree->Liberar: reviso si hay que liberar paginas.");
-	if(ptr_segmento->nextAlloc == LAST_METADATA){
-		int espacio_en_alloc = list_size(tabla_paginas->tabla_pag)*configuracion.TAMANIO_PAGINAS - SIZE_METADATA - inicio_actual;
-		if(espacio_en_alloc >= configuracion.TAMANIO_PAGINAS){
-			//tengo que liberar al menos una pagina
-			int cant_pags_a_liberar = espacio_en_alloc/configuracion.TAMANIO_PAGINAS;
-			ptr_segmento->nextAlloc -= cant_pags_a_liberar*configuracion.TAMANIO_PAGINAS;
-			for(int i=1; i<=cant_pags_a_liberar; i++){
-				printf("Elimine la pagina %d\n", list_size(tabla_paginas->tabla_pag)-i);
-				list_remove(tabla_paginas->tabla_pag, list_size(tabla_paginas->tabla_pag)-i); //TODO: hace falta algo mas?
-			}
-		}
-		printf("MemFree FIN - El proceso tiene %d paginas\n", list_size(tabla->tabla_pag));
-	}
+	// if(ptr_segmento->nextAlloc == LAST_METADATA){
+	// 	int espacio_en_alloc = list_size(tabla_paginas->tabla_pag)*configuracion.TAMANIO_PAGINAS - SIZE_METADATA - inicio_actual;
+	// 	if(espacio_en_alloc >= configuracion.TAMANIO_PAGINAS){
+	// 		//tengo que liberar al menos una pagina
+	// 		int cant_pags_a_liberar = espacio_en_alloc/configuracion.TAMANIO_PAGINAS;
+	// 		ptr_segmento->nextAlloc -= cant_pags_a_liberar*configuracion.TAMANIO_PAGINAS;
+	// 		for(int i=1; i<=cant_pags_a_liberar; i++){
+	// 			printf("Elimine la pagina %d\n", list_size(tabla_paginas->tabla_pag)-i);
+	// 			list_remove(tabla_paginas->tabla_pag, list_size(tabla_paginas->tabla_pag)-i); //TODO: hace falta algo mas?
+	// 		}
+	// 	}
+	// 	printf("MemFree FIN - El proceso tiene %d paginas\n", list_size(tabla->tabla_pag));
+	// }
 
 	return 1;
 }
-
 
 bool pedir_memoria_a_swap(int tamanio){
 	return true;
