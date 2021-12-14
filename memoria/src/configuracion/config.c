@@ -28,13 +28,10 @@ void obtener_config(){
 
 void iniciar_logger(){
     logger_memoria = log_create("cfg/memoria.log", "Memoria", 0, LOG_LEVEL_INFO);
-    pthread_mutex_init(&mutex_log, 0);
 }
 
 void loggear_mensaje(char* mensaje){
-    pthread_mutex_lock(&mutex_log);
     log_info(logger_memoria, mensaje);
-    pthread_mutex_unlock(&mutex_log);
 }
 
 

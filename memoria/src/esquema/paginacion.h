@@ -213,4 +213,8 @@ void actualizar_victima_de_tlb(tlb_t* reg);
 void tlb_limpiar_registro(int pid, int pagina);
 
 pag_t* obtener_pagina(int pid, int pagina);
+
+int proceso_puede_iniciar(tab_pags* tabla);
+
+int proceso_tiene_frames_asignados(tab_pags* tabla);
 #endif

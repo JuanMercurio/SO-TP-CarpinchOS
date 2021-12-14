@@ -368,6 +368,7 @@ void carpincho_comportamiento_memoria(void* arg)
    int dl = mate_memalloc(c, ALLOCAR);
    if (dl == -1){
       fprintf(stderr, "No pude reservar memoria \n");
+	  mate_close(c);
 	  pthread_exit(0);
    }
    else{

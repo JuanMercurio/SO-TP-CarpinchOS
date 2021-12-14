@@ -28,12 +28,14 @@ void atender_proceso(void* arg){
 
 void ejecutar_proceso(int cliente)
 {
-    tab_pags* tabla = tabla_init();
+    tab_pags* tabla = NULL;
+    tabla = tabla_init();
     bool conectado = true;
+    int operacion;
 
     while(conectado)
     {
-        int operacion = recibir_operacion(cliente);
+        operacion = recibir_operacion(cliente);
 
         pthread_mutex_lock(&ram.mutex);
         switch (operacion)
@@ -169,6 +171,8 @@ void memread_comportamiento(tab_pags* tabla, int cliente)
     enviar_int(cliente, 0);
     enviar_int(cliente, tamanio);
     enviar_buffer(cliente, buffer, tamanio);
+
+    free(buffer);
 }
 
 void memwrite_comportamiento(tab_pags* tabla, int cliente)
@@ -180,7 +184,7 @@ void memwrite_comportamiento(tab_pags* tabla, int cliente)
     int result_memwrite = memwrite(tabla, dl, buffer, *size);
     enviar_int(cliente, result_memwrite);
     free(size);
-
+    free(buffer);
 }
 
 void mate_close_comportamiento(tab_pags *tabla, int cliente, bool *conectado)
@@ -261,8 +265,12 @@ void clock_puntero_actualizar(int pid)
 
 tab_pags* tabla_init()
 { 
-    tab_pags *tabla= malloc(sizeof(tab_pags));
+    tab_pags *tabla = malloc(sizeof(tab_pags));
     tabla->pid = NOT_ASIGNED;
+    tabla->p_clock = NOT_ASIGNED;
+    tabla->TLB_HITS = 0;
+    tabla->TLB_MISSES = 0;
+    tabla->tabla_pag = NULL;
     return tabla;
 }
 
@@ -312,15 +320,17 @@ void tablas_eliminar_proceso(int pid){
 void eliminar_proceso_i(int i){
     tab_pags* tabla = list_remove(tablas.lista, i);
 
-    for(int i=0; i < list_size(tabla->tabla_pag); i++)
+    int tamanio = list_size(tabla->tabla_pag);
+    for(int i = tamanio -1 ; i >= 0; i--)
     {
-        pag_t* reg = list_get(tabla->tabla_pag, i);
+        pag_t* reg = list_remove(tabla->tabla_pag, i);
         if(reg->presente == 1)
         {
             printf("El coso a eliminar es: %d", reg->marco);
             int* marco = list_get(marcos, reg->marco);
             *marco = 0;
         }
+        free(reg);
     }
 
     free(tabla->tabla_pag);

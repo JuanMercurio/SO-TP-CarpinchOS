@@ -7,6 +7,9 @@
 #include <stdio.h>
 #include <unistd.h>
 
+bool ejecutando = true;
+int server;
+
 void signal_init(int sig, void(*handler)){ 
     struct sigaction sa;
     sa.sa_flags = SA_RESTART;
@@ -138,7 +141,9 @@ void limpiar_TLB(){
 void programa_terminar_forzado()
 {
 	int pid = getpid();
-	kill(pid, SIGTERM);
+    ejecutando = false;
+    close(server);
+//	kill(pid, SIGTERM);
 }
 
 /* Funciones adicionales */

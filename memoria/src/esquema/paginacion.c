@@ -168,12 +168,14 @@ void reemplazar_pagina(t_victima victima, void *buffer, int pagina, tab_pags *ta
     if (victima.modificado == 1) {
         enviar_pagina_a_swap(victima.pid, victima.pagina, victima.marco);
         log_info(logger_memoria, "SWAP - Envie  - PID: %d - PAG: %d", victima.pid, victima.pagina);
-        int pido = recibir_int(swap);
+        recibir_int(swap);
     }
 
     if (configuracion.CANTIDAD_ENTRADAS_TLB > 0 ) tlb_insert_page(tabla->pid, pagina, victima.marco, READ);
     if (buffer != NULL) insertar_pagina(buffer, victima.marco);
     actualizar_nueva_pagina(pagina, victima.marco, tabla);
+
+    free(buffer);
 }
 
 pag_t* obtener_pagina(int pid, int pagina)
@@ -189,7 +191,6 @@ void tlb_limpiar_registro(int pid, int pagina)
         tlb_t* reg = list_get(tlb, i);
         if ( reg->pid == pid && reg->pagina == pagina) {
             reg->pid = -1;
-            return;
         }
     }
 }
@@ -206,6 +207,9 @@ void actualizar_nueva_pagina(int pagina, int marco, tab_pags *tabla)
 void actualizar_victima_de_tlb(tlb_t* reg)
 {
     tab_pags* tabla = buscar_page_table(reg->pid);
+    printf("La victima de la TLB es: \n");
+    printf("PID %d - PAG %d - MARCO %d\n", reg->pid, reg->pagina, reg->marco);
+    printf("Y este proceso tiene %d paginas\n", list_size(tabla->tabla_pag));
     pag_t* pagina = list_get(tabla->tabla_pag, reg->pagina);
     
     pagina->algoritmo = reg->alg;
@@ -301,8 +305,20 @@ int pagina_iniciar(tab_pags *tabla)
     int marco = marco_libre();
 
     if (strcmp(configuracion.TIPO_ASIGNACION, "FIJA") == 0) {
-        if (marco == -1) return -1;
-        memoria_asignar_pagina_vacia(tabla, pagina, marco);
+        if (marco != -1 && proceso_puede_iniciar(tabla)) { 
+            memoria_asignar_pagina_vacia(tabla, pagina, marco);
+            return 0;
+        } 
+
+        if ( marco == -1 && proceso_tiene_frames_asignados(tabla)) {
+            
+            t_victima victima = algoritmo_mmu(tabla->pid, tabla);
+            reemplazar_pagina(victima, NULL, pagina, tabla);
+            return 0;
+        }
+
+        return -1;
+
     }
 
     if (marco == -1)
@@ -505,4 +521,36 @@ void enviar_pagina_a_swap(int pid, int pagina, int marco)
     // enviar_paquete(paquete, swap);
 
     free(contenido);
+}
+
+
+int proceso_puede_iniciar(tab_pags* tabla)
+{
+    int tamanio = list_size(tabla->tabla_pag);
+    int marcos_asignados = 0;
+    
+    for (int i=0; i < tamanio; i++) {
+
+        pag_t *pagina = list_get(tabla->tabla_pag, i);
+        if (pagina->presente == 1) marcos_asignados++;
+    }
+
+    return  marcos_asignados + 1 <= configuracion.MARCOS_POR_CARPINCHO;
+}
+
+int proceso_tiene_frames_asignados(tab_pags* tabla)
+{
+    int tamanio = list_size(tabla->tabla_pag);
+    bool tiene_frames = false;
+
+    for (int i=0; i < tamanio; i++) {
+
+        pag_t *pagina = list_get(tabla->tabla_pag, i);
+        if (pagina->presente == 1) {
+            tiene_frames = true;
+            break;
+        }
+    }
+
+    return tiene_frames;
 }

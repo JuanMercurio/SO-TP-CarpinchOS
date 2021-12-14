@@ -117,7 +117,7 @@ int fifo_tlb()
 {
     int tamanio = list_size(tlb);
     int tlb_victima = LRU_C;
-    int victima = 10;
+    int victima = -1;
 
     for(int i =0; i < tamanio; i++) {
 
