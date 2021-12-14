@@ -623,9 +623,12 @@ int heap_init(tab_pags* tabla)
 
     dir_t dl = {0, 0};
 
-	pagina_iniciar(tabla);
+	int inicio = pagina_iniciar(tabla);
+	if (inicio == -1) return -1;
+
     memoria_escribir(tabla, dl, data, SIZE_METADATA);
     
+	return 0;
 }
 
 
@@ -681,7 +684,8 @@ int pedir_paginas_a_swap(tab_pags* tabla, int c_paginas){
 int paginas_agregar(int new_pags, tab_pags* tabla)
 {
 	for (int i=0; i < new_pags; i++) {
-		pagina_iniciar(tabla);
+		int inicio = pagina_iniciar(tabla);
+		if (inicio == -1) return -1;
 	}
 
 	return 0;

@@ -288,7 +288,7 @@ int marco_libre()
     return NOT_ASIGNED;
 }
 
-void pagina_iniciar(tab_pags *tabla)
+int pagina_iniciar(tab_pags *tabla)
 {
     //verificar en swap
     if (primero) {
@@ -299,6 +299,11 @@ void pagina_iniciar(tab_pags *tabla)
     int pagina = crear_pagina(tabla->tabla_pag);
 
     int marco = marco_libre();
+
+    if (strcmp(configuracion.TIPO_ASIGNACION, "FIJA") == 0) {
+        if (marco == -1) return -1;
+        memoria_asignar_pagina_vacia(tabla, pagina, marco);
+    }
 
     if (marco == -1)
     {
@@ -313,7 +318,7 @@ void pagina_iniciar(tab_pags *tabla)
         memoria_asignar_pagina_vacia(tabla, pagina, marco);
     }
 
-    
+    return 0; 
 }
 
 void memoria_asignar_pagina_vacia(tab_pags* tabla, int pagina, int marco)

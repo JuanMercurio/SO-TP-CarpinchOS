@@ -88,9 +88,9 @@ int main(int argc, char *argv[])
         {
 
         case ESCRIBIR_PAGINA:
-            printf("Quiero escribir una pagina 1234\n");
             pid = recibir_int(fd_memoria);
             pagina = recibir_int(fd_memoria);
+            printf("Quiero escribir la pagina %d del pid %d\n", pagina, pid);
             tamanio2 = configuracion.TAMANIO_PAGINA;
             void *buffer = recibir_buffer_t(&tamanio2, fd_memoria);
             printf("Contenido isfree %d \n", ((HeapMetadata *)buffer)->isFree);
@@ -1319,12 +1319,15 @@ int remplazoPaginaFija(int pid, int pagina, char *contenido)
         // supone que las paginas cuentan desde 0. por eso desde la pagina.. hasta pagina +1..
         int j = 0;
 
-        for (int i = mar_pag->base ; i <  mar_pag->base + configuracion.TAMANIO_PAGINA; i++)
-        {
-            //printf("r-%d\n",i);
-            file_in_memory[i] = contenido[j];
-            j++;
-        }
+        // for (int i = mar_pag->base ; i <  mar_pag->base + configuracion.TAMANIO_PAGINA; i++)
+        // {
+        //     //printf("r-%d\n",i);
+        //     file_in_memory[i] = contenido[j];
+        //     j++;
+        // }
+        
+        memcpy(file_in_memory + mar_pag->base, contenido, configuracion.TAMANIO_PAGINA);
+
         //printf("\n");
         //munmap(file_in_memory,cantidadCaracteresFile(configuracion.ARCHIVOS_SWAP_list[car->numeroArchivo]));
 
@@ -1352,7 +1355,8 @@ char *buscarPaginaFija(int pid, int pagina)
         char *file_in_memory = mmap(NULL, configuracion.TAMANIO_SWAP, PROT_READ | PROT_WRITE, MAP_SHARED, file, 0);
         // supone que las paginas cuentan desde 0. por eso desde la pagina.. hasta pagina +1..
 
-        char *pagina_devolver = string_substring(file_in_memory, mar_x_pag->base, configuracion.TAMANIO_PAGINA);
+        char *pagina_devolver = malloc(configuracion.TAMANIO_PAGINA);
+        memcpy(pagina_devolver, file_in_memory + mar_x_pag->base, configuracion.TAMANIO_PAGINA);
 
         /* for (int i = base + pagina*configuracion.TAMANIO_PAGINA; i < tope ;i++){
             //printf("%d\n",j);
@@ -1605,11 +1609,11 @@ void memoria_operacion(int cliente)
     {
     case ESCRIBIR_PAGINA:
         printf("Recibi una pagina\n");
-        printf("Quiero escribir una pagina 1234\n");
         //tamanio_pid = recibir_int(cliente);
         pid = recibir_int(cliente);
         //tamanio_pagina = recibir_int(cliente);
         pagina = recibir_int(cliente);
+        printf("Quiero escribir la pagina %d del pid %d\n", pagina, pid);
         tamanio2 = configuracion.TAMANIO_PAGINA;
         void *buffer = recibir_buffer_t(&tamanio2, cliente);
         ped->nombre_pedido = malloc(sizeof("ESCRIBIR_PAGINA"));
@@ -1801,3 +1805,5 @@ void mostrarSemaforosYListaPedidos(char *mensaje)
     //printf("VALOR lista pedidos: %d\n",sem2);
     //printf("La lista de pedidos tiene %d pedidos\n", list_size(lista_pedidos));
 }
+
+
