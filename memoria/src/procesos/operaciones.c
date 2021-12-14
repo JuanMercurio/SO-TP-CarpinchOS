@@ -125,11 +125,6 @@ int memalloc(tab_pags* tabla, int tamanio){ //quizas al igual que antes, el carp
 
 		if(ptr_potencial_segmento->nextAlloc == LAST_METADATA){
 			puts("- Memalloc->While: llegue al final y no encontre nada");
-//			if(espacio_en_alloc >= tamanio){
-//				puts("- Memalloc->While: la razon por la que no entra es que no le entra el nuevo metadata.\n"
-//						"Esto significa que nunca le va a entrar el nuevo metadata, por lo que declino la operación sin agregar pagina nueva.");
-//				return -1;
-//			}
 
 			printf("- Memalloc->Pedir: estoy en la pagina numero %i.\n", num_pagina_actual);
 			printf("- Memalloc->Pedir: mi inicio actual es %i.\n", inicio_actual);
@@ -353,6 +348,7 @@ int memfree(tab_pags* tabla, int dir_log){
 
 
 	puts("- Memfree->Liberar: reviso si hay que liberar paginas.");
+
 	if(ptr_segmento->nextAlloc == LAST_METADATA){
 		int espacio_en_alloc = list_size(tabla_paginas->tabla_pag)*configuracion.TAMANIO_PAGINAS - SIZE_METADATA - inicio_actual_metadata;
 		if(espacio_en_alloc >= configuracion.TAMANIO_PAGINAS){
@@ -369,7 +365,6 @@ int memfree(tab_pags* tabla, int dir_log){
 
 	return 1;
 }
-
 
 bool pedir_memoria_a_swap(int tamanio){
 	return true;
