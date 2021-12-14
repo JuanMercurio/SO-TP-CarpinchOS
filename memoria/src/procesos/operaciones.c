@@ -125,11 +125,6 @@ int memalloc(tab_pags* tabla, int tamanio){ //quizas al igual que antes, el carp
 
 		if(ptr_potencial_segmento->nextAlloc == LAST_METADATA){
 			puts("- Memalloc->While: llegue al final y no encontre nada");
-//			if(espacio_en_alloc >= tamanio){
-//				puts("- Memalloc->While: la razon por la que no entra es que no le entra el nuevo metadata.\n"
-//						"Esto significa que nunca le va a entrar el nuevo metadata, por lo que declino la operación sin agregar pagina nueva.");
-//				return -1;
-//			}
 
 			printf("- Memalloc->Pedir: estoy en la pagina numero %i.\n", num_pagina_actual);
 			printf("- Memalloc->Pedir: mi inicio actual es %i.\n", inicio_actual);
@@ -176,9 +171,6 @@ int memalloc(tab_pags* tabla, int tamanio){ //quizas al igual que antes, el carp
 					puts("- Memalloc->Pedir->Free: el metadata esta en otra pagina, obviamente.");
 
 					paginas_agregar(paginas_faltantes, tabla);
-					// int new_pags = paginas_a_agregar(ptr_potencial_segmento->nextAlloc, tabla);
-					// if (new_pags == -1) return -1;
-					// new_pags = paginas_agregar(new_pags, tabla);
 					memoria_escribir_por_dirlog(tabla, ptr_potencial_segmento->nextAlloc, &new, SIZE_METADATA);
 
 					printf("- Memalloc->Pedir->Free: RETORNO DIR_LOG DE GUARDADO: %i. METADATA ARRANCA EN %i.\n", inicio_actual+SIZE_METADATA, inicio_actual);
@@ -307,90 +299,69 @@ int memfree(tab_pags* tabla, int dir_log){
 	}
 	puts("Memfree: busco la page table.");
 
-	//CAMBIADO
-//	int num_pag;
-//	HeapMetadata* ptr_segmento = hallar_metadata(dir_log, tabla_paginas, &num_pag);
-	// HeapMetadata* ptr_segmento = hallar_metadata(dir_log, tabla_paginas);
 	HeapMetadata* ptr_segmento = memoria_leer_por_dirlog(tabla, dir_log - sizeof(HeapMetadata), sizeof(HeapMetadata));
 
 	if(ptr_segmento == NULL){
 		puts("- Memfree->ERROR: direccion logica invalida");
 		return -5; //
 	}
-//	printf("- Memfree: la pagina del segmento es la %i.\n", num_pag);
 	printf("- Memfree: isFree = %d\n", ptr_segmento->isFree);
 	if(ptr_segmento->isFree == 1){
 		puts("- Memfree: el segmento ya esta libre.");
 		return -5;
 	}
 
-//	pag_t* pagina_actual = list_get(tabla_paginas->tabla_pag, num_pag);
 	ptr_segmento->isFree = true;
 	puts("- Memfree: cambio el isFree a true.");
 
-	int inicio_actual = dir_log - SIZE_METADATA;
+	int inicio_actual_metadata = dir_log - SIZE_METADATA;
 	HeapMetadata *ptr_derecha, *ptr_izquierda;
-//	int dir_nextAlloc = ptr_segmento->nextAlloc;
 
 	puts("- Memfree->Derecha: reviso a derecha.");
 	if(ptr_segmento->nextAlloc != LAST_METADATA){
-		//CAMBIADO
-//		if(hay_cambio_de_pagina(inicio_actual, ptr_segmento->nextAlloc)){
-//			puts("- Memfree->Derecha: el derecho esta en otra pagina.");
-//			pag_t* pagina_derecha = list_get(tabla_paginas->tabla_pag, num_pag + cant_cambios_de_pagina(inicio_actual, ptr_segmento->nextAlloc));
-//			//: la cargo en memoria
-//			ptr_derecha = ubicacion_nuevo_segmento(pagina_derecha->marco, ptr_segmento->nextAlloc);
-//		}else{
-//			ptr_derecha = ubicacion_nuevo_segmento(pagina_actual->marco, ptr_segmento->nextAlloc); //: REVISAR
-//		}
-//		printf("- Memfree->Derecha: el puntero a derecha esta en el puntero %p.\n", ptr_derecha);
 		ptr_derecha = memoria_leer_por_dirlog(tabla_paginas, ptr_segmento->nextAlloc, SIZE_METADATA);
 		if(ptr_derecha->isFree){
 			puts("- Memfree->Derecha: el puntero a derecha esta libre. Procedo a liberarlo.");
 			ptr_segmento->nextAlloc = ptr_derecha->nextAlloc;
-//			dir_nextAlloc = ptr_segmento->nextAlloc;
+			if (ptr_segmento->nextAlloc != LAST_METADATA) {
+				HeapMetadata *ptr_next = memoria_leer_por_dirlog(tabla, ptr_segmento->nextAlloc, SIZE_METADATA);
+				ptr_next->prevAlloc = inicio_actual_metadata;
+			}
 		} else puts("- Memfree->Derecha: el puntero a derecha esta ocupado.");
 	} else puts("- Memfree->Derecha: no existe puntero a derecha.");
 
 
-	//
 	puts("- Memfree->Izquierda: reviso a izquierda.");
 	if(ptr_segmento->prevAlloc != FIRST_METADATA){
-		//CAMBIADO
-//		if(hay_cambio_de_pagina(ptr_segmento->prevAlloc, inicio_actual)){
-//			puts("- Memfree->Izquierda: el izquierdo esta en otra pagina.");
-//			pag_t* pagina_izquierda = list_get(tabla_paginas->tabla_pag, num_pag + cant_cambios_de_pagina(inicio_actual, ptr_segmento->prevAlloc)); //: checkear porque cambie - por +
-//			//: la cargo en memoria
-//			ptr_izquierda = ubicacion_nuevo_segmento(pagina_izquierda->marco, ptr_segmento->prevAlloc);
-//		}else{
-//			ptr_izquierda = ubicacion_nuevo_segmento(pagina_actual->marco, ptr_segmento->prevAlloc); //: REVISAR
-//		}
-//		printf("- Memfree->Izquierda: el puntero a izquierda esta en el puntero %p.\n", ptr_izquierda);
 		ptr_izquierda = memoria_leer_por_dirlog(tabla_paginas, ptr_segmento->prevAlloc, SIZE_METADATA);
 		if(ptr_izquierda->isFree){
-//			num_pag += cant_cambios_de_pagina(inicio_actual, ptr_segmento->nextAlloc);
 			puts("- Memfree->Izquierda: el puntero a izquierda esta libre. Procedo a eliminarlo.");
 			ptr_izquierda->nextAlloc = ptr_segmento->nextAlloc;
-			inicio_actual = ptr_segmento->prevAlloc;
+			inicio_actual_metadata = ptr_segmento->prevAlloc;
 			ptr_segmento = ptr_izquierda;
+			if(ptr_segmento->prevAlloc != FIRST_METADATA){
+				HeapMetadata *ptr_prev = memoria_leer_por_dirlog(tabla, ptr_segmento->prevAlloc, SIZE_METADATA);
+				ptr_prev->nextAlloc = inicio_actual_metadata;
+			}
 		} else puts("- Memfree->Izquierda: el puntero a izquierda esta ocupado.");
 	} else puts("- Memfree->Izquierda: no existe puntero a izquierda.");
 
 
 	puts("- Memfree->Liberar: reviso si hay que liberar paginas.");
-	// if(ptr_segmento->nextAlloc == LAST_METADATA){
-	// 	int espacio_en_alloc = list_size(tabla_paginas->tabla_pag)*configuracion.TAMANIO_PAGINAS - SIZE_METADATA - inicio_actual;
-	// 	if(espacio_en_alloc >= configuracion.TAMANIO_PAGINAS){
-	// 		//tengo que liberar al menos una pagina
-	// 		int cant_pags_a_liberar = espacio_en_alloc/configuracion.TAMANIO_PAGINAS;
-	// 		ptr_segmento->nextAlloc -= cant_pags_a_liberar*configuracion.TAMANIO_PAGINAS;
-	// 		for(int i=1; i<=cant_pags_a_liberar; i++){
-	// 			printf("Elimine la pagina %d\n", list_size(tabla_paginas->tabla_pag)-i);
-	// 			list_remove(tabla_paginas->tabla_pag, list_size(tabla_paginas->tabla_pag)-i); //TODO: hace falta algo mas?
-	// 		}
-	// 	}
-	// 	printf("MemFree FIN - El proceso tiene %d paginas\n", list_size(tabla->tabla_pag));
-	// }
+
+	if(ptr_segmento->nextAlloc == LAST_METADATA){
+		int espacio_en_alloc = list_size(tabla_paginas->tabla_pag)*configuracion.TAMANIO_PAGINAS - SIZE_METADATA - inicio_actual_metadata;
+		if(espacio_en_alloc >= configuracion.TAMANIO_PAGINAS){
+			//tengo que liberar al menos una pagina
+			int cant_pags_a_liberar = espacio_en_alloc/configuracion.TAMANIO_PAGINAS;
+			ptr_segmento->nextAlloc -= cant_pags_a_liberar*configuracion.TAMANIO_PAGINAS;
+			for(int i=1; i<=cant_pags_a_liberar; i++){
+				printf("Elimine la pagina %d\n", list_size(tabla_paginas->tabla_pag)-i);
+				list_remove(tabla_paginas->tabla_pag, list_size(tabla_paginas->tabla_pag)-i); //TODO: hace falta algo mas?
+			}
+		}
+		printf("MemFree FIN - El proceso tiene %d paginas\n", list_size(tabla->tabla_pag));
+	}
 
 	return 1;
 }
