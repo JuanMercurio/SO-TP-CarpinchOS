@@ -53,7 +53,7 @@ release: clean
 release: all
 
 memcheck: all
-	valgrind --leak-check=full --log-file="$@_$(PROJECT).log" $(BINARY) $(ARGS)
+	valgrind --leak-check=full --show-leak-kinds=all --log-file="$@_$(PROJECT).log" $(BINARY) $(ARGS)
 
 helgrind: all
 	valgrind --tool=helgrind --log-file="$@_$(PROJECT).log" $(BINARY) $(ARGS)

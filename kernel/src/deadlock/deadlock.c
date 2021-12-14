@@ -2,30 +2,29 @@
 #include "../io_semaforos/io_semaforos.h"
 #include "../planificacion/planificacion.h"
 
+void deadlock(){
+     while (!terminar){
+ printf("---------------------------------------DEADLOCK ACTIVADO\n");
+        sleep(configuracion.TIEMPO_DEADLOCK * 0.001);
+        deteccion_deadlock();
+     }
+}
 void deteccion_deadlock()
 {
     sem_kernel *semaforo;
     deadlock_kernel *a_enlistar;
-    while (!terminar)
-    {
-        printf("---------------------------------------DEADLOCK ACTIVADO\n");
-        sleep(configuracion.TIEMPO_DEADLOCK * 0.001);
-        printf("---------------------------------------COMIENZA DETECCION DE DEADLOCK\n");
+   /*  while (!terminar)
+    {  */ printf("---------------------------------------COMIENZA DETECCION DE DEADLOCK\n");
         t_list *lista_posible_deadlock = list_create();
         t_list *lista_con_deadlock ;
-       
         log_info(logger, "Comienza la ejecución de la detección de Deadlock");
-        //pausar_todo????
         if (!list_is_empty(lista_sem_kernel))
-        {
-            //printf("---------------------------------------LISTA NO VACIA BUSCARA TOMADOS POR\n");
-            for (int i = 0; i < list_size(lista_sem_kernel); i++)
+        {     for (int i = 0; i < list_size(lista_sem_kernel); i++)
             {
                 log_info(logger, "Entro al for deadlock");
                 sem_wait(&mutex_lista_sem_kernel);
                 semaforo = (sem_kernel *)list_get(lista_sem_kernel, i);
                 sem_post(&mutex_lista_sem_kernel);
-              //  printf("Semaforo->tomado_por %d", semaforo->tomado_por);
                 if (semaforo->tomado_por != -1)
                     // log_info(logger, "Semaforo->tomado_por %d", semaforo->tomado_por);
                     a_enlistar = buscar_en_otras_listas(semaforo->tomado_por, i, semaforo->id);
@@ -82,8 +81,9 @@ void deteccion_deadlock()
                 printf("DESTUYENDO LISTA DE POSIBLE DEADLOCK VACIA\n");
                 list_destroy(lista_posible_deadlock);
             }
-       }
-    }
+       }else
+       list_destroy(lista_posible_deadlock);
+    
 }
 
     void lista_deadlock_destroyer(void *arg)
@@ -239,30 +239,33 @@ void finalizar_involucrados(t_list *lista_deadlock)
 {
     int mayor_id = 0;
     deadlock_kernel *aux;
-    char *retenido_a_liberar = (char*)malloc(strlen(aux->retenido)+1);
-    char *esperando_a_sacar = (char*)malloc(strlen(aux->esperando)+1);
     sem_kernel *semaforo;
-    for (int i=0; i < list_size(lista_deadlock); i++)
+    int i = 0;
+    bool encontrado = false;
+     while (i < list_size(lista_deadlock) && !encontrado)
     {
         aux = list_get(lista_deadlock, i);
         if (mayor_id < aux->pid)
         {
             mayor_id = aux->pid;
-            strcpy(retenido_a_liberar,aux->retenido);
-            strcpy(esperando_a_sacar,aux->esperando);
+            char *retenido_a_liberar = (char *)malloc(strlen(aux->retenido) + 1);
+            char *esperando_a_sacar = (char *)malloc(strlen(aux->esperando) + 1);
+            strcpy(retenido_a_liberar, aux->retenido);
+            strcpy(esperando_a_sacar, aux->esperando);
+            printf("Se finaliza el carpincho PID %d", mayor_id);
+            log_info(logger, "Se finaliza el carpincho PID %d", mayor_id);
+            int pos;
+            printf("busca el semaforo para desbloquear\n");
+            semaforo = buscar_semaforo2(esperando_a_sacar, &pos);
+            sacar_de_cola_bloqueados(semaforo, mayor_id);
+            //printf("se manda posst a semaforo %s\n", retenido_a_liberar);
+            sem_kernel_post(retenido_a_liberar);
+            sem_kernel_post(esperando_a_sacar);
+            free(retenido_a_liberar);
+            free(esperando_a_sacar);
         }
+        i++;
     }
-    printf("Se finaliza el carpincho PID %d", mayor_id);
-    log_info(logger, "Se finaliza el carpincho PID %d", mayor_id);
-    int pos;
-    printf("busca el semaforo para desbloquear\n");
-    semaforo = buscar_semaforo2(esperando_a_sacar, &pos);
-    sacar_de_cola_bloqueados(semaforo, mayor_id);
-    //printf("se manda posst a semaforo %s\n", retenido_a_liberar);
-    sem_kernel_post(retenido_a_liberar);
-    sem_kernel_post(esperando_a_sacar);
-    free(retenido_a_liberar);
-    free(esperando_a_sacar);
 }
 
 void sacar_de_cola_bloqueados(sem_kernel *semaforo, int id)

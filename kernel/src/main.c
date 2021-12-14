@@ -8,18 +8,28 @@ bool terminar = false;
 
 int id_procesos = 0;
 int carpinchos_bloqueados = 0;
+
 void signal_init(int sig, void(*handler)){ 
     struct sigaction sa;
+    //sa.sa_mask ;
     sa.sa_flags = SA_RESTART;
     sa.sa_handler = handler;
     sigaction(sig, &sa, NULL);
 }
+void signal_usr1(int sig, void(*handler)){ 
+    struct sigaction sa;
+    //sa.sa_mask = 0;
+    sa.sa_flags = SA_RESTART;
+    sa.sa_handler = handler;
+    sigaction(sig, &sa, NULL);
 
+}
 int main(int argc, char *argv[])
 {
    //solo corre si corremos el binario asi: binario test
    //tests(argc, argv[1]);
-    signal_init(SIGINT, program_killer);
+   signal_init(SIGINT, (void*)program_killer);
+   signal_usr1(SIGUSR1, (void*) matar);
    iniciar_logger();
    printf("Iniciando kernel\n");
    obtener_config();
@@ -30,7 +40,10 @@ int main(int argc, char *argv[])
    //printf("inicio dispositivos io\n");
    inicializar_planificacion();
    printf("Kernel iniciado\n");
-   administrar_clientes_kernel(configuracion.IP, configuracion.PUERTO, (void *)&receptor); 
+   administrar_clientes_kernel(configuracion.IP, configuracion.PUERTO, (void *)receptor); 
+   printf("salio de atender clientes\n");
+  /*  terminar = true;
+   terminar_programa(); */
    return 0;
 }
 
@@ -65,6 +78,9 @@ void terminar_programa()
    log_destroy(logger);
    close(servidor);
    printf("Kernel finalizado\n");
+}
+void matar(){
+   printf("mato el hilo acpertador??\n");
 }
 
 void destruir_colas_y_listas()
@@ -154,19 +170,19 @@ void receptor(void *arg)
    log_info(logger,"Recibí el cliente %d",*(int *)arg);
    int cliente = *(int *)arg;
    free(arg);
-   int aux_int;
+   int aux_int = 0;
+   int verificador = 0;
    bool conectado = true;
    //printf("por ahcer handshake\n");
    handshake(cliente, "KERNEL");
-   t_pcb *carpincho;
+   t_pcb *carpincho = NULL;
    t_paquete_semaforo *semaforo;
    char *recibido;
-   sem_kernel *sem;
+   int operacion = 0;
 
    while (conectado)
    {
-
-      int operacion = recibir_operacion(cliente);
+      operacion = recibir_operacion(cliente);
       switch (operacion)
       {
 
@@ -178,6 +194,7 @@ void receptor(void *arg)
          printf("CLIENTE %d CARPINCHO %d\n", cliente, carpincho->pid);
          carpincho->pid++;
          carpincho->estado = 'N';
+        // verificador = 66;
          /*     carpincho->fd_memoria = crear_conexion(configuracion.IP_MEMORIA, configuracion.PUERTO_MEMORIA);
             enviar_cod_op_e_int(carpincho->fd_memoria, NEW_INSTANCE_KERNEL, carpincho->pid);
             recibido = recibir_mensaje(carpincho->fd_memoria); //handshake
@@ -303,7 +320,8 @@ void receptor(void *arg)
 
       case MEMALLOC:
          if (carpincho->pid < 0)
-         {
+         {recibir_int(cliente);
+         enviar_int(cliente, -1);
             break;
          }
          aux_int = recibir_int(cliente);
@@ -318,7 +336,8 @@ void receptor(void *arg)
 
       case MEMFREE:
          if (carpincho->pid < 0)
-         {
+         {recibir_int(cliente);
+         enviar_int(cliente, -5);
             break;
          }
          aux_int = recibir_int(cliente);
@@ -331,8 +350,9 @@ void receptor(void *arg)
 
       case MEMREAD:
          if (carpincho->pid < 0)
-         {
-            enviar_int(cliente, -1);
+         {recibir_int(cliente);
+         recibir_int(cliente);
+            enviar_int(cliente, -6);
             break;
          }
          aux_int = recibir_int(cliente);
@@ -362,7 +382,9 @@ void receptor(void *arg)
 
       case MEMWRITE:
          if (carpincho->pid < 0)
-         {
+         {recibir_mensaje(cliente);
+         recibir_int(cliente);
+         enviar_int(cliente, -7);
             break;
          }
          recibido = recibir_mensaje(cliente);
@@ -394,6 +416,7 @@ void receptor(void *arg)
          carpincho->proxima_instruccion = MATE_CLOSE;
          sem_post(&carpincho->semaforo_evento);
          conectado = false;
+         aux_int =0;
          printf("---------------MATE CLOSE - Receptor terminando conexion con %d. Carpincho fue asado\n", cliente);
          break;
 
@@ -408,12 +431,15 @@ void receptor(void *arg)
       }
       }
    }
-   if(carpincho->pid ==-1)
+  /*  if(verificador == 66)
+   free(carpincho); */
+   if(aux_int != 0)
    eliminar_carpincho(carpincho);
    printf("MAIN KERNEL SALIO DEL WHILEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEE\n");
    close(cliente);
    sem_post(&controlador_multiprogramacion);
    printf("RECEPTOR: saliendo------------------------------------------------------------\n");
+   return;
 }
 
 void inicializar_planificacion()
@@ -441,7 +467,7 @@ void inicializar_planificacion()
       log_info(logger, "Hilo Planificador Largo Plazo creado");
    }
 
-   if (pthread_create(&hilos_planificadores, &detached2, (void*)deteccion_deadlock, NULL) != 0)
+   if (pthread_create(&hilos_planificadores, &detached2, (void*)deadlock, NULL) != 0)
    {
       log_info(logger, "No se pudo crear el hilo Detección Deadlock");
    }
@@ -462,6 +488,9 @@ void inicializar_planificacion()
 void program_killer()
 {
    terminar = true;
+   printf("terminar = true\n");
+   kill(getpid(), SIGUSR1);
+   printf("envia SIGUSR1\n");
    terminar_programa();
    printf("TERMINO SERVIDOR\n");
 }
@@ -518,12 +547,13 @@ void administrar_clientes_kernel(char* IP, char* PUERTO, void (*funcion)(void*))
       *cliente= aceptar_cliente(servidor);
       if(*cliente == -1){
          free(cliente);
+         printf("salio por cliente -1 atender!!!1\n");
       }else{
       pthread_create(&hilo, &detached, (void*)funcion,(void*) cliente);
       }
    
 }
-//printf("termino atender clientes\n");
+printf("termino atender clientes\n");
    pthread_attr_destroy(&detached); 
 
 }

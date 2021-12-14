@@ -13,7 +13,7 @@ void bloquear_por_semaforo(t_pcb *carpincho);
 bool verificar_bloqueo_por_semaforo(t_pcb *carpincho);
 void sem_destroyer(void* semaforo);
 void io_destroyer(void* arg);
-
+sem_kernel * buscar_semaforo2(char* nombre, int* pos);
 io_kernel *buscar_io(char *nombre);
 void init_dispositivos_io();
 //void call_io(char *nombre, t_pcb *carpincho);

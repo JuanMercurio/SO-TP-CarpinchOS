@@ -125,6 +125,7 @@ int sem_kernel_init(char* nombre, int value){
    nuevo_sem->max_val=value;
    nuevo_sem->val=value;
    nuevo_sem->bloqueados=list_create();
+   nuevo_sem->tomado_por = -1;
    sem_init(&nuevo_sem->mutex_cola, 0,1);
    sem_init(&nuevo_sem->mutex,0,1);
    sem_wait(&mutex_lista_sem_kernel);

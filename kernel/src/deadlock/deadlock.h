@@ -5,7 +5,7 @@
 
 
 
-
+void deadlock();
 void deteccion_deadlock();
 void lista_deadlock_destroyer(void *arg);
 deadlock_kernel *buscar_en_otras_listas(int pid, int index, char *semaforo_retenido);

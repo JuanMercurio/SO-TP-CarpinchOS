@@ -158,6 +158,7 @@ void destruir_semaforos();
 void inicializar_planificacion();
 
 void program_killer();
+void matar();
 
 
 //-------------------------------------------------sancocho
