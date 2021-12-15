@@ -75,6 +75,7 @@ void ejecutar_proceso(int cliente)
                 enviar_mensaje(cliente, configuracion.TIPO_ASIGNACION);
                 conectado = false;
                 break;
+                
             case SUSPENCION: printf("recibi un suspension de carpincho %d\n", cliente); //cambiar por comportamiento real
                 break;
 

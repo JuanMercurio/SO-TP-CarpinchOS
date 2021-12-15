@@ -189,7 +189,7 @@ void* serializar_paquete_semaforo(t_paquete_semaforo * paquete, int bytes){
 	desplazamiento+= paquete->buffer->size;
 	memcpy(magico + desplazamiento, &(paquete->valor), sizeof(int));
 	return magico;
-}
+
 
 t_paquete_semaforo *recibir_semaforo(int conexion){
 	t_paquete_semaforo *recibido = malloc(sizeof(t_paquete_semaforo));
