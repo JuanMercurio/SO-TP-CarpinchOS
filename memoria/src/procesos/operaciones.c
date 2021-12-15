@@ -33,7 +33,12 @@ int memalloc(tab_pags* tabla, int tamanio){ //quizas al igual que antes, el carp
 		return -1;
 	}
 	int heap_init_return;
-    if (tabla_paginas->tabla_pag->head == NULL) { printf("Tengo que iniciar las paginas\n"); heap_init_return = heap_init(tabla); }
+
+    if (tabla_paginas->tabla_pag->head == NULL) {
+		printf("Tengo que iniciar las paginas\n"); 
+		heap_init_return = heap_init(tabla); 
+	}
+
 	if (heap_init_return == -1) return -1;
 
 	printf("- Memalloc: encontre la pagina del carpincho %i.\n", tabla_paginas->pid);
@@ -77,6 +82,20 @@ int memalloc(tab_pags* tabla, int tamanio){ //quizas al igual que antes, el carp
 
 				puts("- Memalloc->While: tengo que dividir en 2.");
 				//tengo que dividir en 2
+				puts("- Memalloc->While: reviso que el otro metadata no tenga que ir en una nueva pagina.");
+                if (ptr_potencial_segmento->nextAlloc == LAST_METADATA){
+                    puts("- Memalloc->While: el nuevo metadata no entra en la misma pagina.");
+                    int paginas_a_agregar = SIZE_METADATA / configuracion.TAMANIO_PAGINAS + 1;
+                    printf("- Memalloc->While: tengo que agregar %d mas.", paginas_a_agregar);
+                    if(pedir_paginas_a_swap(tabla_paginas, paginas_a_agregar) == -1){
+                        printf("- Memalloc->While: no recibi las paginas. retorno -1.");
+                        return -1;
+                    }
+                    else{
+                        puts("- Memalloc->While: agregue las paginas.");
+                        paginas_agregar(paginas_a_agregar, tabla);
+                    }
+                }
 				printf("- Memalloc->While: ptr_potencial_segmento->isFree es %d\n", ptr_potencial_segmento->isFree);
 				ptr_potencial_segmento->isFree = false;
 				printf("- Memalloc->While: ptr_potencial_segmento->isFree es %d\n", ptr_potencial_segmento->isFree);

@@ -61,13 +61,14 @@ t_victima lru_dinamico(int pid, tab_pags* tabla)
 t_victima lru_en_pag_table(tab_pags* tabla){
 
     int LRU_min = LRU_C, n_pagina;
-    pag_t* pagina; 
+    pag_t* pagina = NULL; 
 
     for (int i=0; i<list_size(tabla->tabla_pag); i++) {
 
         pag_t* registro = list_get(tabla->tabla_pag, i);
 		if (registro->presente == 0 || registro->algoritmo == -1) continue;
 
+        printf("hay para analizar\n");
         if (registro->tlb == 1) {
             tlb_t* reg = tlb_obtener_registro(tabla->pid, i);
             registro->algoritmo = reg->alg_tlb;
@@ -84,6 +85,11 @@ t_victima lru_en_pag_table(tab_pags* tabla){
             
         }
     }
+    if (pagina ==NULL)
+{ 
+     printf("error con lru fijo\n");
+     abort();
+ }
     pagina->presente = 0;
 
     t_victima victima;    

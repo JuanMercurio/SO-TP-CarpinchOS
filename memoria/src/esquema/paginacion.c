@@ -292,7 +292,6 @@ int marco_libre()
         int *marco = list_get(marcos, i);
         if (*marco == VACIO)
             {
-                *marco = NO_VACIO;
                 return i;
             }
     }
@@ -311,15 +310,18 @@ int pagina_iniciar(tab_pags *tabla)
 
     int marco = marco_libre();
 
+
     if (strcmp(configuracion.TIPO_ASIGNACION, "FIJA") == 0) {
         if (marco != -1 && proceso_puede_iniciar(tabla)) { 
+            marco_ocupar(marco);
             memoria_asignar_pagina_vacia(tabla, pagina, marco);
             return 0;
         } 
 
-        if ( marco == -1 && proceso_tiene_frames_asignados(tabla)) {
-            
+        if (proceso_tiene_frames_asignados(tabla) == true ) {
+           printf("ENTRE EN ESTA COSA \n") ;
             t_victima victima = algoritmo_mmu(tabla->pid, tabla);
+            printf("Vioctia: PID: %d MARCO: %d \n", victima.pid, victima.marco);
             reemplazar_pagina(victima, NULL, pagina, tabla);
             return 0;
         }
@@ -338,6 +340,7 @@ int pagina_iniciar(tab_pags *tabla)
     {
         // int* victima = list_get(marcos, marco);
         // *victima = 1;
+        marco_ocupar(marco);
         memoria_asignar_pagina_vacia(tabla, pagina, marco);
     }
 
@@ -545,7 +548,7 @@ int proceso_puede_iniciar(tab_pags* tabla)
     return  marcos_asignados + 1 <= configuracion.MARCOS_POR_CARPINCHO;
 }
 
-int proceso_tiene_frames_asignados(tab_pags* tabla)
+bool proceso_tiene_frames_asignados(tab_pags* tabla)
 {
     int tamanio = list_size(tabla->tabla_pag);
     bool tiene_frames = false;
@@ -609,4 +612,13 @@ void tablas_imprimir_saturno()
         }
     }
 
+}
+
+
+
+
+void marco_ocupar(int marco)
+{
+    int *m = list_get(marcos, marco);
+    *m = 1;
 }

@@ -195,13 +195,14 @@ void receptor(void *arg)
          carpincho->pid++;
          carpincho->estado = 'N';
         // verificador = 66;
-         /*     carpincho->fd_memoria = crear_conexion(configuracion.IP_MEMORIA, configuracion.PUERTO_MEMORIA);
-            enviar_cod_op_e_int(carpincho->fd_memoria, NEW_INSTANCE_KERNEL, carpincho->pid);
-            recibido = recibir_mensaje(carpincho->fd_memoria); //handshake
-            aux_int = recibir_int(carpincho->fd_memoria);
-            printf("recibio de memoria un %d\n", aux_int);
+         carpincho->fd_memoria = crear_conexion(configuracion.IP_MEMORIA, configuracion.PUERTO_MEMORIA);
+         recibido = recibir_mensaje(carpincho->fd_memoria); //handshake
+         printf("recibido : %s\n", recibido);
+         enviar_cod_op_e_int(carpincho->fd_memoria, NEW_INSTANCE_KERNEL, carpincho->pid);
+         aux_int = recibir_int(carpincho->fd_memoria);
+         printf("recibio de memoria un %d\n", aux_int);
             if (aux_int == 0)
-            { */
+         { 
          //printf("carpincho creado\n");
          enviar_int(cliente, carpincho->pid);
          sem_wait(&mutex_cola_new);
@@ -209,9 +210,9 @@ void receptor(void *arg)
          sem_post(&mutex_cola_new);
          log_info(logger, "NEW INSTANCE: Se agregó el carpincho ID: %d a la cola de new", carpincho->pid);
          sem_post(&cola_new_con_elementos);
-         /*   }else{
+            }else{
                   enviar_mensaje(cliente, "FAIL");
-               } */
+               } 
          break;
 
       case INIT_SEMAFORO:
@@ -412,7 +413,7 @@ void receptor(void *arg)
             break;
          }
          log_info(logger, "MATE_CLOSE: Se recibió del carpincho %d un MATE CLOSE", carpincho->pid);
-         // enviar_int(carpincho->fd_memoria, MATE_CLOSE);
+         enviar_int(carpincho->fd_memoria, MATE_CLOSE);
          carpincho->proxima_instruccion = MATE_CLOSE;
          sem_post(&carpincho->semaforo_evento);
          conectado = false;

@@ -12,7 +12,7 @@
 
 #define CANT_CARPINCHOS 2
 #define ALLOCAR 10 
-#define STRING "012345678"  
+#define STRING "0123456789012345678"  
 
 char *LOG_PATH = "./planificacion.log";
 char *PROGRAM_NAME = "planificacion";
