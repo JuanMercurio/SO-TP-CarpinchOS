@@ -7,7 +7,7 @@
 
 
 
-int swap;
+int swap = -1;
 
 int (*algoritmo_tlb)();
 void (*tlb_page_use)(tlb_t* reg);

@@ -8,7 +8,9 @@
 #include "signals/signal.h"
 #include "tests/tests.h"
 #include "tests/tests_memoria_sola.h"
+#include <semaphore.h>
 
+sem_t finalizar_conexion_swap;
 /*
     @NAME: terminar_programa
     @DESC: Se encarga de liberar todas las estructuras y de hacer lo necesario para

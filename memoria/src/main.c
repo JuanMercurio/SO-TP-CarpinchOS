@@ -26,6 +26,8 @@ int main(int argc, char* argv[]) {
 
 
 void terminar_programa(){
+   if(swap != -1)
+   sem_post(&finalizar_conexion_swap);
    config_destroy(config);
    log_destroy(logger_memoria);
 }

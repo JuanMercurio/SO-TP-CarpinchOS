@@ -3,7 +3,7 @@
 #include "../esquema/algoritmos.h"
 #include "../esquema/tlb.h"
 #include "operaciones.h"
-
+#include "../main.h"
 #include <matelib.h>
 
 #include <mensajes/mensajes.h>
@@ -75,14 +75,23 @@ void ejecutar_proceso(int cliente)
                 enviar_mensaje(cliente, configuracion.TIPO_ASIGNACION);
                 conectado = false;
                 break;
+            case SUSPENCION: printf("recibi un suspension de carpincho %d\n", cliente); //cambiar por comportamiento real
+                break;
 
+            case VUELTA_A_READY: printf("recibi vuelta a ready de carpincho %d\n", cliente); //cambiar por comportamieto real
+                break;
+                
             default:
                 conectado = false;
                 break;
         }
         pthread_mutex_unlock(&ram.mutex);
     }
-sleep(40);
+    if(cliente == swap){
+        sem_init(&finalizar_conexion_swap, 0, 0);
+        sem_wait(&finalizar_conexion_swap);//falta inicilizar seamforo
+        sem_destroy(&finalizar_conexion_swap);
+    }
 }
 
 /* Functions */ 
