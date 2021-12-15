@@ -154,10 +154,17 @@ int buscar_en_swap(tab_pags *tabla, int pagina)
 
     printf("SWAP - PID: %d - PAG: %d - Recibi esto: %s\n", tabla->pid, pagina, (char*)contenido);
 
+    int marco = marco_libre();
+    if ( marco != -1) {
+        insertar_pagina(contenido, marco);
+        actualizar_nueva_pagina(pagina, marco, tabla);
+        return marco;
+    } else { 
     t_victima victima = algoritmo_mmu(tabla->pid, tabla);
     reemplazar_pagina(victima, contenido, pagina, tabla);
-
     return victima.marco;
+    }
+
 }
 
 void reemplazar_pagina(t_victima victima, void *buffer, int pagina, tab_pags *tabla)
@@ -553,4 +560,53 @@ int proceso_tiene_frames_asignados(tab_pags* tabla)
     }
 
     return tiene_frames;
+}
+
+void memoria_marco_liberar(int marco)
+{
+	int *marco_a_liberar = list_get(marcos, marco);
+	*marco_a_liberar = 0;
+}
+
+void pagina_liberar_marco(pag_t *pagina)
+{
+	if (pagina->presente == 1) memoria_marco_liberar(pagina->marco);
+}
+
+void pagina_liberar_tlb(int pid, int pagina)
+{
+	int tlb_size = list_size(tlb);
+
+	for (int i=0; i < tlb_size; i++) {
+		tlb_t *reg = list_get(tlb, i);
+
+		if (reg->pid == pid && reg->pagina == pagina) reg->pid = -1;
+	}
+}
+
+void pagina_liberar(pag_t *pagina, int n_pagina, int pid)
+{
+	pagina_liberar_marco(pagina);
+	pagina_liberar_tlb(pid, n_pagina);
+	free(pagina);
+}
+
+
+void tablas_imprimir_saturno()
+{
+    int size = list_size(tablas.lista);
+
+    for (int i = 0; i < size; i++) {
+
+        tab_pags*tabla = list_get(tablas.lista, i);
+        int pags = list_size(tabla->tabla_pag);
+        printf(" -- TABLA - %d --\n", tabla->pid);
+
+        for (int j=0; j < pags; j++) {
+
+            pag_t* pag = list_get(tabla->tabla_pag, j);
+            printf("PAG %d - P: %d - M: %d - F: %d - ALG: %d\n", j, pag->presente, pag->modificado, pag->marco, pag->algoritmo);
+        }
+    }
+
 }

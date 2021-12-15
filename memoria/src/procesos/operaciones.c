@@ -295,7 +295,7 @@ int memfree(tab_pags* tabla, int dir_log){
 
     tab_pags* tabla_paginas = tabla;
 
-	printf("- Memfree: quiero liberar la direccion logica %i.\n", dir_log);
+	printf("- Memfree: quiero liberar la direccion logica %i | PID: %d.\n", dir_log, tabla->pid) ;
 
 	if(dir_log >= configuracion.TAMANIO){
 		puts("- Memfree->ERROR: direccion logica imposible.");
@@ -355,19 +355,23 @@ int memfree(tab_pags* tabla, int dir_log){
 	free(ptr_segmento);
 	puts("- Memfree->Liberar: reviso si hay que liberar paginas.");
 
-	// if(ptr_segmento->nextAlloc == LAST_METADATA){
-	// 	int espacio_en_alloc = list_size(tabla_paginas->tabla_pag)*configuracion.TAMANIO_PAGINAS - SIZE_METADATA - inicio_actual_metadata;
-	// 	if(espacio_en_alloc >= configuracion.TAMANIO_PAGINAS){
-	// 		//tengo que liberar al menos una pagina
-	// 		int cant_pags_a_liberar = espacio_en_alloc/configuracion.TAMANIO_PAGINAS;
-	// 		ptr_segmento->nextAlloc -= cant_pags_a_liberar*configuracion.TAMANIO_PAGINAS;
-	// 		for(int i=1; i<=cant_pags_a_liberar; i++){
-	// 			printf("Elimine la pagina %d\n", list_size(tabla_paginas->tabla_pag)-i);
-	// 			list_remove(tabla_paginas->tabla_pag, list_size(tabla_paginas->tabla_pag)-i); //TODO: hace falta algo mas?
-	// 		}
-	// 	}
-	// 	printf("MemFree FIN - El proceso tiene %d paginas\n", list_size(tabla->tabla_pag));
-	// }
+	if(ptr_segmento->nextAlloc == LAST_METADATA){
+		int espacio_en_alloc = list_size(tabla_paginas->tabla_pag)*configuracion.TAMANIO_PAGINAS - SIZE_METADATA - inicio_actual_metadata;
+		if(espacio_en_alloc >= configuracion.TAMANIO_PAGINAS){
+			//tengo que liberar al menos una pagina
+			int cant_pags_a_liberar = espacio_en_alloc/configuracion.TAMANIO_PAGINAS;
+			ptr_segmento->nextAlloc -= cant_pags_a_liberar*configuracion.TAMANIO_PAGINAS;
+			for(int i=1; i<=cant_pags_a_liberar; i++){
+				printf("Elimine la pagina %d\n", list_size(tabla_paginas->tabla_pag)-i);
+				
+				int ultima = list_size(tabla_paginas->tabla_pag)-i;
+				pag_t *pagina = list_remove(tabla_paginas->tabla_pag, ultima); //TODO: hace falta algo mas?
+				pagina_liberar(pagina, tabla->pid, i);
+			}
+		}
+		tablas_imprimir_saturno();
+		printf("MemFree FIN - El proceso tiene %d paginas\n", list_size(tabla->tabla_pag));
+	}
 
 	return 1;
 }

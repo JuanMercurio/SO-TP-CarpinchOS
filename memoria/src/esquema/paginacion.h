@@ -217,4 +217,8 @@ pag_t* obtener_pagina(int pid, int pagina);
 int proceso_puede_iniciar(tab_pags* tabla);
 
 int proceso_tiene_frames_asignados(tab_pags* tabla);
+
+void pagina_liberar(pag_t *pagina, int n_pagina, int pid);
+
+void tablas_imprimir_saturno();
 #endif

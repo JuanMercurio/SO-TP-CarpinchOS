@@ -401,11 +401,11 @@ int clock_buscar_00_dinamico(tab_pags** tabla, int posicion)
 					(*tabla)->p_clock = -1;
 					if (i+1 == cantidad_procesos) 
 					{
-						(*tabla) = list_get(tablas.lista, 0);
-						(*tabla)->p_clock = 0;
+						tab_pags* tabla_puntero = list_get(tablas.lista, 0);
+						tabla_puntero->p_clock = 0;
 					} else {
-						(*tabla) = list_get(tablas.lista, i+1);
-						(*tabla)->p_clock = 0;
+						tab_pags* tabla_puntero= list_get(tablas.lista, i+1);
+						tabla_puntero->p_clock = 0;
 					}
 
 				}
@@ -544,6 +544,8 @@ t_victima clock_dinamico(int pid, tab_pags* tabla)
 		//t->p_clock = -1;
 	}
 
+    printf("la elegida es la pagina %d\n", pagina);
+    printf("El carpincho tiee %d paginas\n", list_size(t->tabla_pag));
 	pag_t* p = list_get(t->tabla_pag, pagina);
 
 	t_victima victima;

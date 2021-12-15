@@ -348,21 +348,3 @@ void tlb_eliminar_proceso(int pid){
 
 }
 
-void tablas_imprimir_saturno()
-{
-    int size = list_size(tablas.lista);
-
-    for (int i = 0; i < size; i++) {
-
-        tab_pags*tabla = list_get(tablas.lista, i);
-        int pags = list_size(tabla->tabla_pag);
-        printf(" -- TABLA - %d --\n", tabla->pid);
-
-        for (int j=0; j < pags; j++) {
-
-            pag_t* pag = list_get(tabla->tabla_pag, j);
-            printf("PAG %d - P: %d - M: %d - F: %d - ALG: %d\n", j, pag->presente, pag->modificado, pag->marco, pag->algoritmo);
-        }
-    }
-
-}

@@ -140,7 +140,7 @@ void limpiar_TLB(){
 
 void programa_terminar_forzado()
 {
-	int pid = getpid();
+	// int pid = getpid();
     ejecutando = false;
     close(server);
 //	kill(pid, SIGTERM);
