@@ -2,6 +2,7 @@
 #define _CONEXIONES_
 #include <sys/socket.h>
 #include <unistd.h>
+#include <stdbool.h>
 
 /* 
     @NAME: crear_conexion
@@ -10,7 +11,7 @@
  */
 int crear_conexion(char *IP, char* PUERTO);
 
-void clientes_administrar(int servidor, void (*funcion)(void*));
+void clientes_administrar(int servidor, void (*funcion)(void*), bool *ejecutando);
 /*
     NAME: iniciar_servidor
     DESC: Inicia y pone a escuchar a un servidor en IP y PUERTO

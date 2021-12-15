@@ -16,7 +16,13 @@
 #include <commons/collections/list.h>
 #include <pthread.h>
 #include <semaphore.h>
+#include <stdint.h>
 
+typedef struct HeapMetadata{
+    uint32_t prevAlloc;
+    uint32_t nextAlloc;
+    uint8_t isFree;
+}__attribute__((packed)) HeapMetadata;
 
 typedef struct {
     int pid;
@@ -69,6 +75,9 @@ void memoria_operacion(int cliente);
 void borrar_Carpincho(Carpincho_Swamp* car);
 void borrar_paginas_Ocupadas( Marcos_x_pagina* mar_pag);
 void borrar_marcos_libres (un_marco_libre* mar_lib);
+void mostrarPaginasCarpincho(t_list* paginas);
+Marcos_x_pagina* tieneMarcoPaginas ( t_list* paginas, int pagina);
+int solicitud_muchas_paginas(int pid, int cantidadPaginas, t_list* paginas);
 //GENERAL
 void crearArchivos();
 int elegirMejorArchivo();

@@ -30,6 +30,8 @@ void iniciar_tlb(){
 
 int buscar_en_tlb(tab_pags* tabla, int pagina){
 
+    if (configuracion.CANTIDAD_ENTRADAS_TLB == 0) return TLB_MISS;
+
     int pid = tabla->pid;
 
     for(int i=0; i<list_size(tlb); i++){
@@ -68,6 +70,8 @@ int comportamiento_TLB_MISS(tab_pags* tabla, int pagina){
 
 void actualizar_tlb(int pid, int marco, int pagina){
 
+    if (configuracion.CANTIDAD_ENTRADAS_TLB == 0) return;
+
     int victima = tlb_obtener_victima();
     tlb_t* reg = list_get(tlb, victima);
 
@@ -76,7 +80,8 @@ void actualizar_tlb(int pid, int marco, int pagina){
     reg->pid         =  pid;
     reg->marco       =  marco;
     reg->pagina      =  pagina;
-    reg->alg_tlb     =  suma_atomica(&alg_tlb);
+    reg->alg_tlb     =  alg_comportamiento_tlb();
+    reg->alg         =  alg_comportamiento();
     reg->modificado  =  0;
 }
 
@@ -112,7 +117,7 @@ int fifo_tlb()
 {
     int tamanio = list_size(tlb);
     int tlb_victima = LRU_C;
-    int victima = 10;
+    int victima = -1;
 
     for(int i =0; i < tamanio; i++) {
 

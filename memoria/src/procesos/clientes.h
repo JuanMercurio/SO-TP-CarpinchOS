@@ -57,4 +57,7 @@ void eliminar_proceso_i(int i);
 
 void tablas_eliminar_proceso(int pid);
 
+void clock_puntero_actualizar(int pid);
+
+void tablas_imprimir_saturno();
 #endif

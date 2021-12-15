@@ -114,4 +114,5 @@ int paginas_a_agregar(int dl, tab_pags* tabla);
 
 int paginas_agregar(int new_pags, tab_pags* tabla);
 
+int pedir_paginas_a_swap(tab_pags* tabla, int c_paginas);
 #endif

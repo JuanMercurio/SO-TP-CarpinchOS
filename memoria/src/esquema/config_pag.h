@@ -5,8 +5,8 @@
 #include "algoritmos.h"
 #include "estructuras.h"
 
-#define READ  1
-#define WRITE 2
+#define READ  0
+#define WRITE 1
 
 extern int swap;
 

@@ -11,7 +11,8 @@
 #include <matelib.h>
 
 #define CANT_CARPINCHOS 2
-#define ALLOCAR 10
+#define ALLOCAR 10 
+#define STRING "012345678"  
 
 char *LOG_PATH = "./planificacion.log";
 char *PROGRAM_NAME = "planificacion";
@@ -278,9 +279,10 @@ int main(int argc, char *argv[])
     puts("Termine!");
 } */
 
-/* void carpincho_comportamiento_memoria(void* arg)
+ void carpincho_comportamiento_memoria(void* arg)
 {
    mate_instance* c = malloc(sizeof(mate_instance));
+   mate_inner_structure* info = (mate_inner_structure*)c;
 
    printf("-- Mate INIT -- \n");
    int init = mate_init(c, "cfg/carpincho.config");
@@ -292,14 +294,18 @@ int main(int argc, char *argv[])
    int dl = mate_memalloc(c, ALLOCAR);
    if (dl == -1){
       fprintf(stderr, "No pude reservar memoria \n");
-      abort();
+	  mate_close(c);
+	  pthread_exit(0);
    }
    else{
 	   printf("\n La direccion logica es: %d \n", dl);
    }
 
+   //int dl_ = mate_memalloc(c, 14);
+   //mate_memfree(c, dl_);
+
    printf("-- Mate WRITE -- \n");
-   char* saturno = "jejeje";
+   char* saturno = STRING;
    int size = strlen(saturno) + 1;
    void* buffer = malloc(size);
    memcpy(buffer, saturno, size);
@@ -319,13 +325,12 @@ int main(int argc, char *argv[])
    }
 	printf("MemRead leyo: %s\n", (char*)leer);
 
-sleep(1);
 
    printf("-- Mate FREE -- \n");
    int free_valido = mate_memfree(c, dl);
    if (free_valido == MATE_FREE_FAULT){
      fprintf(stderr, "Error de MATE_FREE_FAULT \n");
-     abort();
+     //abort();
    }
 
    printf("-- Mate CLOSE -- \n");
@@ -334,6 +339,8 @@ sleep(1);
       fprintf(stderr, "El programa termino con errores");
       abort();
    }
+
+   printf("Termino memoria\n");
    free(buffer);
 }
 
@@ -350,7 +357,7 @@ void memoria_carpincho()
    }
 
    abort();
-} */
+} 
 
 //------------------------------- DEADLOCK--------------------//
 
@@ -501,7 +508,7 @@ void* carpincho6_func(void* config){
 //------DEADLOCK MAIN
 int main(int argc, char *argv[]) {
 
-    //if ( argc>1 && (strcmp(argv[1], "memoria")== 0)) memoria_carpincho();
+    if ( argc>1 && (strcmp(argv[1], "memoria")== 0)) memoria_carpincho();
 
     mate_instance instance;
 

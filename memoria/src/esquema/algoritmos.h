@@ -49,5 +49,6 @@ void page_use_lru(pag_t*);
 void tlb_page_use_fifo(tlb_t* reg);
 void tlb_page_use_lru(tlb_t* reg);
 
+tlb_t* tlb_obtener_registro(int pid, int pagina);
 
 #endif

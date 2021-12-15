@@ -20,6 +20,8 @@ extern memoria_t ram;
 /* "Bitmap" de marcos */
 extern t_list* marcos; 
 
+extern bool primero;
+
 /*
     @NAME:  iniciar_paginacion
     @DESC:  inicia todas las estructuras necesarias 
@@ -200,7 +202,7 @@ int paginas_presentes(tab_pags* t);
 
 void memoria_asignar_pagina_vacia(tab_pags* tabla, int pagina, int marco);
 
-void pagina_iniciar(tab_pags *tabla);
+int pagina_iniciar(tab_pags *tabla);
 
 dir_t decimal_a_dl(int dir_log);
 
@@ -208,4 +210,11 @@ int dl_a_decimal(dir_t dl);
 
 void actualizar_victima_de_tlb(tlb_t* reg);
 
+void tlb_limpiar_registro(int pid, int pagina);
+
+pag_t* obtener_pagina(int pid, int pagina);
+
+int proceso_puede_iniciar(tab_pags* tabla);
+
+int proceso_tiene_frames_asignados(tab_pags* tabla);
 #endif

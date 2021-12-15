@@ -15,6 +15,7 @@ t_log* logger;
  */
 int mate_init(mate_instance *lib_ref, char *config) //AGREGAR LOG
 {
+  printf("MATE INIT LLEGUE\n");
   t_config *configuracion = config_create(config);
   char *IP = config_get_string_value(configuracion, "IP");
   char *PUERTO = config_get_string_value(configuracion, "PUERTO");

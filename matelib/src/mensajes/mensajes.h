@@ -19,6 +19,7 @@ typedef enum{
     INICIO_CONFIG, 
     BORRAR_PAGINA,
     BORRAR_CARPINCHO,
+    SOLITIDUC_MUCHAS_PAGINAS,
 }cod_swamp;
 
 typedef struct
