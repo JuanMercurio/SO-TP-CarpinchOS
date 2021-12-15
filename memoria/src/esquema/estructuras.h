@@ -17,6 +17,7 @@ typedef struct tlb_t{
     int marco;
     int modificado;
     int alg_tlb;
+    int alg;
 }tlb_t;
 
 /* Estructura para la supertabla de tablas  */
@@ -55,6 +56,7 @@ typedef struct t_victima{
     int pagina;
     int marco;
     int modificado;
+    int tlb;
 }t_victima;
 
 /* Estructura Memoria */

@@ -28,12 +28,14 @@ void atender_proceso(void* arg){
 
 void ejecutar_proceso(int cliente)
 {
-    tab_pags* tabla = tabla_init();
+    tab_pags* tabla = NULL;
+    tabla = tabla_init();
     bool conectado = true;
+    int operacion;
 
     while(conectado)
     {
-        int operacion = recibir_operacion(cliente);
+        operacion = recibir_operacion(cliente);
 
         pthread_mutex_lock(&ram.mutex);
         switch (operacion)
@@ -104,6 +106,7 @@ void new_instance_comportamiento(tab_pags* tabla, int cliente, bool *conectado)
     // enviar_int(swap, tabla->pid);
     enviar_mensaje(cliente, "OK");
     iniciar_paginas(tabla);
+    log_info(logger_memoria, "Inicio un proceso - PID: %d - Socket %d", tabla->pid, cliente);
 }
 
 
@@ -123,6 +126,7 @@ void new_instance_kernel_comportamiento(tab_pags* tabla, int cliente, bool *cone
     }
     enviar_int(cliente, 0);
     iniciar_paginas(tabla);
+    log_info(logger_memoria, "Inicio un proceso - PID: %d - Socket %d", tabla->pid, cliente);
 }
 
 
@@ -167,6 +171,8 @@ void memread_comportamiento(tab_pags* tabla, int cliente)
     enviar_int(cliente, 0);
     enviar_int(cliente, tamanio);
     enviar_buffer(cliente, buffer, tamanio);
+
+    free(buffer);
 }
 
 void memwrite_comportamiento(tab_pags* tabla, int cliente)
@@ -178,12 +184,17 @@ void memwrite_comportamiento(tab_pags* tabla, int cliente)
     int result_memwrite = memwrite(tabla, dl, buffer, *size);
     enviar_int(cliente, result_memwrite);
     free(size);
-
+    free(buffer);
 }
 
 void mate_close_comportamiento(tab_pags *tabla, int cliente, bool *conectado)
 {
     enviar_int(swap, BORRAR_CARPINCHO);
+    enviar_int(swap, tabla->pid);
+    int pudo = recibir_int(swap);
+    printf("Resultado swap: %d\n", pudo);
+    if (pudo == -1) abort();
+
     cliente_terminar(tabla, cliente);
     *conectado = false;
 }
@@ -218,6 +229,8 @@ void inicio_comprobar(tab_pags* tabla, int cliente, bool* conectado){
 
 void cliente_terminar(tab_pags* tabla, int cliente)
 { 
+    tablas_imprimir_saturno();
+    if (tabla->p_clock != -1) clock_puntero_actualizar(tabla->pid);
     tablas_eliminar_proceso(tabla->pid);
     tlb_eliminar_proceso(tabla->pid);
 
@@ -229,10 +242,35 @@ void cliente_terminar(tab_pags* tabla, int cliente)
     close(cliente);
 }
 
+void clock_puntero_actualizar(int pid)
+{
+    if (strcmp(configuracion.ALGORITMO_REEMPLAZO_MMU, "CLOCK-M") != 0) return;
+
+    int ganador;
+    int procesos = list_size(tablas.lista);
+    for (int i=0; i < procesos; i++) {
+
+        tab_pags* t = list_get(tablas.lista, i);
+        if (t->pid == pid) {
+            ganador = procesos-1 == i ? 0 : i+1;
+            break;
+        }
+    }
+
+    if (procesos == 1) primero = true;
+
+    tab_pags* t = list_get(tablas.lista, ganador);
+    t->p_clock = 0;
+}
+
 tab_pags* tabla_init()
 { 
-    tab_pags *tabla= malloc(sizeof(tab_pags));
+    tab_pags *tabla = malloc(sizeof(tab_pags));
     tabla->pid = NOT_ASIGNED;
+    tabla->p_clock = NOT_ASIGNED;
+    tabla->TLB_HITS = 0;
+    tabla->TLB_MISSES = 0;
+    tabla->tabla_pag = NULL;
     return tabla;
 }
 
@@ -282,14 +320,17 @@ void tablas_eliminar_proceso(int pid){
 void eliminar_proceso_i(int i){
     tab_pags* tabla = list_remove(tablas.lista, i);
 
-    for(int i=0; i < list_size(tabla->tabla_pag); i++)
+    int tamanio = list_size(tabla->tabla_pag);
+    for(int i = tamanio -1 ; i >= 0; i--)
     {
-        pag_t* reg = list_get(tabla->tabla_pag, i);
+        pag_t* reg = list_remove(tabla->tabla_pag, i);
         if(reg->presente == 1)
         {
+            printf("El coso a eliminar es: %d", reg->marco);
             int* marco = list_get(marcos, reg->marco);
             *marco = 0;
         }
+        free(reg);
     }
 
     free(tabla->tabla_pag);
@@ -306,3 +347,4 @@ void tlb_eliminar_proceso(int pid){
     }
 
 }
+

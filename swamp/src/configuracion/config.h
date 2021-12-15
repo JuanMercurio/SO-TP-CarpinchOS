@@ -2,6 +2,8 @@
 #define _SWAMP_CONFIG_
 
 #include <commons/config.h>
+#include <commons/string.h>
+#include <stdio.h>
 
 typedef struct {
    char* IP;

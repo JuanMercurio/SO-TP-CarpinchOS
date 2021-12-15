@@ -3,6 +3,10 @@
 
 #include "../esquema/estructuras.h"
 #include "../esquema/tlb.h"
+
+extern bool ejecutando;
+extern int server;
+
 /*
     @NAME: signal_init
     @DESC: Crea las estrucuras para usar sigaction()

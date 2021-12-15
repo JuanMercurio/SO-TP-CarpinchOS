@@ -1,4 +1,6 @@
 #include "conexiones.h"
+
+#include <stdbool.h>
 #include <stdlib.h>
 #include <stdio.h>
 #include <string.h>
@@ -26,14 +28,14 @@ printf("termino atender clientes\n");
 
 }
 
-void clientes_administrar(int servidor, void (*funcion)(void*)){
+void clientes_administrar(int servidor, void (*funcion)(void*), bool *ejecutando){
 
    pthread_attr_t detached;
    pthread_attr_init(&detached);
    pthread_attr_setdetachstate(&detached, PTHREAD_CREATE_DETACHED);
 
    /* Revisar Condicion para terminar este while */
-   while(1){
+   while(*ejecutando == true){
       pthread_t hilo;
       int *cliente = malloc(sizeof(int));
       *cliente= aceptar_cliente(servidor);
