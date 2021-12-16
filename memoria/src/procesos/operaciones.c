@@ -53,6 +53,7 @@ int memalloc(tab_pags* tabla, int tamanio){
 			if(espacio_en_alloc == tamanio){
 				puts("-Memalloc->While: entra justo.");
 				ptr_potencial_segmento->isFree = false;
+				memoria_escribir_por_dirlog(tabla, inicio_actual, ptr_potencial_segmento, sizeof(HeapMetadata));
 				printf("-Memalloc->While: cambio isFree a false y devuelvo direccion de inicio %i.\n", inicio_actual+SIZE_METADATA);
 				free(ptr_potencial_segmento);
 				return inicio_actual + SIZE_METADATA;
@@ -185,6 +186,9 @@ int memalloc(tab_pags* tabla, int tamanio){
 					int inicio_anterior = inicio_actual;
 					inicio_actual = num_primera_pagina_nueva*configuracion.TAMANIO_PAGINAS;
 					ptr_potencial_segmento->nextAlloc = inicio_actual;
+					memoria_escribir_por_dirlog(tabla, inicio_anterior, ptr_potencial_segmento, sizeof(HeapMetadata));
+
+
 					printf("- Memalloc->Pedir->NoFree: cambie el nextAlloc del segmento anterior a %i.\n", ptr_potencial_segmento->nextAlloc);
 
 					HeapMetadata new;

@@ -391,13 +391,13 @@ void receptor(void *arg)
             break;
          }
          int buffer_size = recibir_int(carpincho->fd_cliente);
-         void* buffer = recibir_buffer(buffer_size, carpincho->fd_cliente);
+         void* recibido = recibir_buffer(buffer_size, carpincho->fd_cliente);
          aux_int = recibir_int(cliente);
          printf("me llego del carpincho %s\n", recibido);
 
          enviar_int(carpincho->fd_memoria, MEMWRITE);
          enviar_int(carpincho->fd_memoria, buffer_size);
-         enviar_buffer(carpincho->fd_memoria, buffer, buffer_size);
+         enviar_buffer(carpincho->fd_memoria, recibido, buffer_size);
          enviar_int(carpincho->fd_memoria, aux_int);
          log_info(logger, "Se recibió del carpincho %d un MEM write desde la posición %d con el mensjaje %s", carpincho->pid, aux_int, recibido);
 

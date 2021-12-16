@@ -86,11 +86,26 @@ void ejecutar_proceso(int cliente)
                          continue;
                     }
                     pag_t * pagina =  list_get(tabla->tabla_pag, i);
+
+
+                    if (pagina->tlb == 1) {
+                        tlb_t* reg = tlb_obtener_registro(tabla->pid, i);
+                        if (reg == NULL) printf("perro estas en cualquiera\n");
+
+                        pagina->algoritmo = reg->alg;
+                        pagina->marco = reg->marco; 
+                        pagina->modificado = reg->modificado;
+                        printf("Modifique el bit a moficado desde TLB\n");
+                        // registro->presente = 1;
+                        // registro->tlb = 1;
+                        }
+
                     if(pagina->modificado == 1)
-                    { enviar_pagina_a_swap(tabla->pid, i, frame);
-                    printf("envio pagina a swap\n");
-                    int aux = recibir_int(swap);
-                    printf("recibo de swap por enviar pagina por suspension %d\n",aux );
+                    { 
+                        enviar_pagina_a_swap(tabla->pid, i, frame);
+                        printf("envio pagina a swap\n");
+                        int aux = recibir_int(swap);
+                        printf("recibo de swap por enviar pagina por suspension %d\n",aux );
                     }else
                     {
                         printf("no encontro modificado\n");
