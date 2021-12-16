@@ -51,6 +51,7 @@ t_victima lru_dinamico(int pid, tab_pags* tabla)
 	victima.modificado = pagina->modificado;
 	victima.pid        = pid_victima;
 	victima.pagina     = n_pagina;
+    victima.tlb        = pagina->tlb;
 
 	pagina->presente = 0;
     pagina->modificado = 0; //esto es para que cuando busque en swap la pagina este en modo read hasta que le diga que no
@@ -75,7 +76,7 @@ t_victima lru_en_pag_table(tab_pags* tabla){
             registro->marco = reg->marco; 
             registro->modificado = reg->modificado;
            // registro->presente = 1;
-           // registro->tlb = 1;
+            registro->tlb = 1;
         }
 
         if (registro->algoritmo < LRU_min) {
@@ -90,14 +91,17 @@ t_victima lru_en_pag_table(tab_pags* tabla){
      printf("error con lru fijo\n");
      abort();
  }
-    pagina->presente = 0;
-    pagina->modificado = 0;
-    pagina->tlb = 0;
+    //pagina->tlb;
     t_victima victima;    
     victima.marco      = pagina->marco;
     victima.modificado = pagina->modificado;
     victima.pid        = tabla->pid;
     victima.pagina     = n_pagina;
+    victima.tlb        = pagina->tlb;
+
+    pagina->tlb=0;
+    pagina->presente = 0;
+    pagina->modificado = 0;
 
     return victima;
 }
@@ -283,10 +287,11 @@ t_victima clock_fijo(int pid, tab_pags* tabla)
     victima.modificado = reg->modificado;
     victima.pagina     = pagina;
     victima.pid        = tabla->pid;
+    victima.tlb        = pagina->tlb;
 
     reg->presente = 0;
     reg->modificado = 0;
-
+    reg->tlb = 0;
     return victima;
 }
 
@@ -570,6 +575,7 @@ t_victima clock_dinamico(int pid, tab_pags* tabla)
 	victima.modificado =  p->modificado;
 	victima.pagina     =  pagina;
 	victima.pid        =  t->pid;
+    victima.tlb         = p->tlb;
 
 	p->presente   = 0;
 	p->modificado = 0;

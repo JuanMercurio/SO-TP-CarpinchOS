@@ -9,6 +9,7 @@
 #include <stdlib.h>
 #include <string.h>
 #include <utils/utils.h>
+#include "../signals/signal.h"
 
 #define SIZE_METADATA sizeof(HeapMetadata)
 
@@ -33,11 +34,16 @@ int memalloc(tab_pags* tabla, int tamanio){
 	HeapMetadata* ptr_potencial_segmento = primer_segmento(tabla_paginas);
 	printf("- Memalloc: encontre el primer segmento, que tiene como nextAlloc al %i, y que su valor de isFree es %i, es decir ", ptr_potencial_segmento->nextAlloc, ptr_potencial_segmento->isFree);
 	printf((ptr_potencial_segmento->isFree) ? "true.\n" : "false.\n");
-	int inicio_actual = 0, num_pagina_actual=0;
+	int inicio_actual = 0, num_pagina_actual=0, inicio_previo = FIRST_METADATA;
 	puts("- Memalloc: entro al while.");
 	int numero_magico; //si nextAlloc es 0, entonces esta variable vale la ultima direccion de memoria+1 (por ejemplo 128), sino vale nextAlloc
 	int espacio_en_alloc;
 	while(1){
+		if(ptr_potencial_segmento->nextAlloc == 0){
+			printf("ERROR. NEXTALLOC = 0 IMPSOBILE EN EL CARPINCHO %d", pid);
+			generar_dump();
+			abort();
+		}
 
 		//  ****BUSCO SI ENTRA****
 		printf("- Memalloc->While->CUENTA:\n");
@@ -142,10 +148,13 @@ int memalloc(tab_pags* tabla, int tamanio){
 			int paginas_faltantes = bytes_faltantes / configuracion.TAMANIO_PAGINAS;
 			if (bytes_faltantes % configuracion.TAMANIO_PAGINAS != 0) paginas_faltantes++;
 
+			printf("NECESITO %d BYTES, QUE SE TRADUCEN A %d PAGINAS\n", bytes_faltantes, paginas_faltantes);
+
 			if(pedir_paginas_a_swap(tabla_paginas, paginas_faltantes) == -1){
 				return -1;
 			}
 			else{
+				printf("-  Memalloc->Pedir->Free: RECIBI %d PAGINAS DE SWAP.\n", paginas_faltantes);
 				if(ptr_potencial_segmento->isFree) {
 					puts("- Memalloc->Pedir->Free: el ultimo alloc esta libre. Lo expando.");
 					numero_magico = (ptr_potencial_segmento->nextAlloc == LAST_METADATA ? (list_size(tabla_paginas->tabla_pag)*configuracion.TAMANIO_PAGINAS) : ptr_potencial_segmento->nextAlloc);
@@ -183,17 +192,17 @@ int memalloc(tab_pags* tabla, int tamanio){
 
 					int num_primera_pagina_nueva = num_pagina_actual+1; 
 
-					int inicio_anterior = inicio_actual;
+					
 					inicio_actual = num_primera_pagina_nueva*configuracion.TAMANIO_PAGINAS;
 					ptr_potencial_segmento->nextAlloc = inicio_actual;
-					memoria_escribir_por_dirlog(tabla, inicio_anterior, ptr_potencial_segmento, sizeof(HeapMetadata));
+					memoria_escribir_por_dirlog(tabla, inicio_previo, ptr_potencial_segmento, sizeof(HeapMetadata));
 
 
 					printf("- Memalloc->Pedir->NoFree: cambie el nextAlloc del segmento anterior a %i.\n", ptr_potencial_segmento->nextAlloc);
 
 					HeapMetadata new;
 					new.isFree = false;
-					new.prevAlloc = inicio_anterior;
+					new.prevAlloc = inicio_previo;
 					dir_t dir_new;
 					dir_new.offset=0;
 					dir_new.PAGINA=num_primera_pagina_nueva;
@@ -235,6 +244,7 @@ int memalloc(tab_pags* tabla, int tamanio){
 
 		puts("- Memalloc->While: este segmento no es valido para alocar. Pasando al proximo segmento.");
 
+		inicio_previo = inicio_actual;
 		inicio_actual = ptr_potencial_segmento->nextAlloc;
 		printf("- Memalloc->While: el nuevo inicio sera %i.\n", inicio_actual);
 		ptr_potencial_segmento = memoria_leer_por_dirlog(tabla_paginas, ptr_potencial_segmento->nextAlloc, SIZE_METADATA);
