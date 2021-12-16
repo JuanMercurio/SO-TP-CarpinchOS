@@ -287,7 +287,7 @@ t_victima clock_fijo(int pid, tab_pags* tabla)
     victima.modificado = reg->modificado;
     victima.pagina     = pagina;
     victima.pid        = tabla->pid;
-    victima.tlb        = pagina->tlb;
+    victima.tlb        = reg->tlb;
 
     reg->presente = 0;
     reg->modificado = 0;
