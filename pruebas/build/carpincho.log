@@ -1,406 +1,45 @@
-[INFO] 02:14:41:469 Carpincho/(6560:6560): Log creado
-[INFO] 02:14:41:469 Carpincho/(6560:6560): Esperando respuesta de servidor
-[INFO] 02:14:41:470 Carpincho/(6560:6560): 
+[INFO] 20:25:42:661 Carpincho/(6556:6556): Log creado
+[INFO] 20:25:42:661 Carpincho/(6556:6556): Esperando respuesta de servidor
+[INFO] 20:25:42:662 Carpincho/(6556:6556): 
 NUEVO CARPINCHO
 
-[INFO] 02:14:41:510 Carpincho/(6560:6560): Carpincho creado correctamente con el pid: 1
-[INFO] 02:14:41:511 Carpincho/(6560:6560): MEM_ALLOC de 20
-[INFO] 02:14:41:719 Carpincho/(6560:6560): Se realizó el MEM_ALLOC correctamente. La dirección lógica es 9
-[INFO] 02:14:41:719 Carpincho/(6560:6560): MEM_WRITE el mensaje No, ¡hola humedal!
- en 9
-[INFO] 02:14:41:720 Carpincho/(6560:6560): Se realizó el MEM_WRITE correctamente
-[INFO] 02:14:41:720 Carpincho/(6560:6560): SEM_INIT
-[INFO] 02:14:41:720 Carpincho/(6560:6560): Conectado con memoria. No se puede inicializar semáforo.
-[INFO] 02:14:41:720 Carpincho/(6560:6560): envio sem init al kernel.
-[INFO] 02:14:41:720 Carpincho/(6560:6560): recibio algo del kernel por sem init 0 .
-[INFO] 02:14:41:720 Carpincho/(6560:6560): SEM_WAIT al semáforo SEM_HELLO de carpincho 1
-[INFO] 02:14:45:566 Carpincho/(6579:6579): Log creado
-[INFO] 02:14:45:573 Carpincho/(6579:6579): Esperando respuesta de servidor
-[INFO] 02:14:45:574 Carpincho/(6579:6579): 
+[INFO] 20:25:42:704 Carpincho/(6556:6556): Carpincho creado correctamente con el pid: 1
+[INFO] 20:25:42:704 Carpincho/(6556:6556): SEM_INIT
+[INFO] 20:25:42:704 Carpincho/(6556:6556): Conectado con memoria. No se puede inicializar semáforo.
+[INFO] 20:25:42:705 Carpincho/(6556:6556): envio sem init al kernel.
+[INFO] 20:25:42:705 Carpincho/(6556:6556): recibio algo del kernel por sem init 0 .
+[INFO] 20:25:42:705 Carpincho/(6556:6556): SEM_INIT
+[INFO] 20:25:42:705 Carpincho/(6556:6556): Conectado con memoria. No se puede inicializar semáforo.
+[INFO] 20:25:42:705 Carpincho/(6556:6556): envio sem init al kernel.
+[INFO] 20:25:42:705 Carpincho/(6556:6556): recibio algo del kernel por sem init 0 .
+[INFO] 20:25:42:705 Carpincho/(6556:6556): SEM_INIT
+[INFO] 20:25:42:705 Carpincho/(6556:6556): Conectado con memoria. No se puede inicializar semáforo.
+[INFO] 20:25:42:705 Carpincho/(6556:6556): envio sem init al kernel.
+[INFO] 20:25:42:705 Carpincho/(6556:6556): recibio algo del kernel por sem init 0 .
+[INFO] 20:25:42:705 Carpincho/(6556:6556): SEM_INIT
+[INFO] 20:25:42:705 Carpincho/(6556:6556): Conectado con memoria. No se puede inicializar semáforo.
+[INFO] 20:25:42:705 Carpincho/(6556:6556): envio sem init al kernel.
+[INFO] 20:25:42:705 Carpincho/(6556:6556): recibio algo del kernel por sem init 0 .
+[INFO] 20:25:42:705 Carpincho/(6556:6556): SEM_INIT
+[INFO] 20:25:42:705 Carpincho/(6556:6556): Conectado con memoria. No se puede inicializar semáforo.
+[INFO] 20:25:42:706 Carpincho/(6556:6556): envio sem init al kernel.
+[INFO] 20:25:42:706 Carpincho/(6556:6556): recibio algo del kernel por sem init 0 .
+[INFO] 20:25:42:706 Carpincho/(6556:6556): SEM_INIT
+[INFO] 20:25:42:706 Carpincho/(6556:6556): Conectado con memoria. No se puede inicializar semáforo.
+[INFO] 20:25:42:706 Carpincho/(6556:6556): envio sem init al kernel.
+[INFO] 20:25:42:706 Carpincho/(6556:6556): recibio algo del kernel por sem init 0 .
+[INFO] 20:25:42:708 Carpincho/(6556:6559): Log creado
+[INFO] 20:25:42:708 Carpincho/(6556:6559): Esperando respuesta de servidor
+[INFO] 20:25:42:719 Carpincho/(6556:6559): 
 NUEVO CARPINCHO
 
-[INFO] 02:14:45:658 Carpincho/(6579:6579): Carpincho creado correctamente con el pid: 2
-[INFO] 02:14:45:658 Carpincho/(6579:6579): MEM_ALLOC de 14
-[INFO] 02:14:45:698 Carpincho/(6579:6579): Error al realizar el MEM_ALLOC
-[INFO] 02:14:45:698 Carpincho/(6579:6579): MEM_WRITE el mensaje ¡Hola mundo!
- en -1
-[INFO] 02:15:00:419 Carpincho/(6579:6579): Se realizó el MEM_WRITE correctamente
-[INFO] 02:15:00:419 Carpincho/(6579:6579): MEM_READ desde -1 el size 14
-[INFO] 02:15:00:420 Carpincho/(6560:6560): Se realizó el WAIT correctamente
-[INFO] 02:15:00:420 Carpincho/(6560:6560): MEM_READ desde 9 el size 20
-[INFO] 02:15:39:098 Carpincho/(6788:6788): Log creado
-[INFO] 02:15:39:098 Carpincho/(6788:6788): Esperando respuesta de servidor
-[INFO] 02:15:39:098 Carpincho/(6788:6788): 
+[INFO] 20:25:43:707 Carpincho/(6556:6564): Log creado
+[INFO] 20:25:43:709 Carpincho/(6556:6564): Esperando respuesta de servidor
+[INFO] 20:25:43:748 Carpincho/(6556:6564): 
 NUEVO CARPINCHO
 
-[INFO] 02:15:39:206 Carpincho/(6788:6788): Carpincho creado correctamente con el pid: 1
-[INFO] 02:15:39:206 Carpincho/(6788:6788): MEM_ALLOC de 20
-[INFO] 02:15:39:427 Carpincho/(6788:6788): Se realizó el MEM_ALLOC correctamente. La dirección lógica es 9
-[INFO] 02:15:39:427 Carpincho/(6788:6788): MEM_WRITE el mensaje No, ¡hola humedal!
- en 9
-[INFO] 02:15:39:428 Carpincho/(6788:6788): Se realizó el MEM_WRITE correctamente
-[INFO] 02:15:39:428 Carpincho/(6788:6788): SEM_INIT
-[INFO] 02:15:39:428 Carpincho/(6788:6788): Conectado con memoria. No se puede inicializar semáforo.
-[INFO] 02:15:39:428 Carpincho/(6788:6788): envio sem init al kernel.
-[INFO] 02:15:39:429 Carpincho/(6788:6788): recibio algo del kernel por sem init 0 .
-[INFO] 02:15:39:429 Carpincho/(6788:6788): SEM_WAIT al semáforo SEM_HELLO de carpincho 1
-[INFO] 02:15:41:093 Carpincho/(6800:6800): Log creado
-[INFO] 02:15:41:093 Carpincho/(6800:6800): Esperando respuesta de servidor
-[INFO] 02:15:41:094 Carpincho/(6800:6800): 
+[INFO] 20:25:44:708 Carpincho/(6556:6569): Log creado
+[INFO] 20:25:44:708 Carpincho/(6556:6569): Esperando respuesta de servidor
+[INFO] 20:25:44:714 Carpincho/(6556:6569): 
 NUEVO CARPINCHO
 
-[INFO] 02:16:03:246 Carpincho/(6800:6800): Carpincho creado correctamente con el pid: 2
-[INFO] 02:16:03:246 Carpincho/(6800:6800): MEM_ALLOC de 14
-[INFO] 02:16:03:286 Carpincho/(6800:6800): Error al realizar el MEM_ALLOC
-[INFO] 02:16:03:286 Carpincho/(6800:6800): MEM_WRITE el mensaje ¡Hola mundo!
- en -1
-[INFO] 02:17:14:557 Carpincho/(6800:6800): Se realizó el MEM_WRITE correctamente
-[INFO] 02:17:14:557 Carpincho/(6800:6800): MEM_READ desde -1 el size 14
-[INFO] 02:17:14:557 Carpincho/(6788:6788): Se realizó el WAIT correctamente
-[INFO] 02:17:14:557 Carpincho/(6788:6788): MEM_READ desde 9 el size 20
-[INFO] 02:22:10:336 Carpincho/(9114:9114): Log creado
-[INFO] 02:22:10:336 Carpincho/(9114:9114): Esperando respuesta de servidor
-[INFO] 02:22:10:336 Carpincho/(9114:9114): 
-NUEVO CARPINCHO
-
-[INFO] 02:22:10:374 Carpincho/(9114:9114): Carpincho creado correctamente con el pid: 1
-[INFO] 02:22:10:374 Carpincho/(9114:9114): MEM_ALLOC de 20
-[INFO] 02:22:21:158 Carpincho/(9158:9158): Log creado
-[INFO] 02:22:21:159 Carpincho/(9158:9158): Esperando respuesta de servidor
-[INFO] 02:22:21:159 Carpincho/(9158:9158): 
-NUEVO CARPINCHO
-
-[INFO] 02:22:46:290 Carpincho/(9114:9114): Se realizó el MEM_ALLOC correctamente. La dirección lógica es 9
-[INFO] 02:22:46:290 Carpincho/(9114:9114): MEM_WRITE el mensaje No, ¡hola humedal!
- en 9
-[INFO] 02:22:46:331 Carpincho/(9114:9114): Se realizó el MEM_WRITE correctamente
-[INFO] 02:22:46:331 Carpincho/(9114:9114): SEM_INIT
-[INFO] 02:22:46:331 Carpincho/(9114:9114): Conectado con memoria. No se puede inicializar semáforo.
-[INFO] 02:22:46:331 Carpincho/(9114:9114): envio sem init al kernel.
-[INFO] 02:22:46:331 Carpincho/(9114:9114): recibio algo del kernel por sem init 0 .
-[INFO] 02:22:46:331 Carpincho/(9114:9114): SEM_WAIT al semáforo SEM_HELLO de carpincho 1
-[INFO] 02:22:46:370 Carpincho/(9158:9158): Carpincho creado correctamente con el pid: 2
-[INFO] 02:22:46:371 Carpincho/(9158:9158): MEM_ALLOC de 14
-[INFO] 02:26:45:164 Carpincho/(9158:9158): Se realizó el MEM_ALLOC correctamente. La dirección lógica es 8
-[INFO] 02:26:45:164 Carpincho/(9158:9158): MEM_WRITE el mensaje ¡Hola mundo!
- en 8
-[INFO] 02:26:45:165 Carpincho/(9114:9114): Se realizó el WAIT correctamente
-[INFO] 02:26:45:165 Carpincho/(9114:9114): MEM_READ desde 9 el size 20
-[INFO] 02:26:45:166 Carpincho/(9158:9158): Se realizó el MEM_WRITE correctamente
-[INFO] 02:26:45:166 Carpincho/(9158:9158): MEM_READ desde 8 el size 14
-[INFO] 02:28:06:740 Carpincho/(10069:10069): Log creado
-[INFO] 02:28:06:740 Carpincho/(10069:10069): Esperando respuesta de servidor
-[INFO] 02:28:06:740 Carpincho/(10069:10069): 
-NUEVO CARPINCHO
-
-[INFO] 02:28:06:782 Carpincho/(10069:10069): Carpincho creado correctamente con el pid: 1
-[INFO] 02:28:06:782 Carpincho/(10069:10069): MEM_ALLOC de 20
-[INFO] 02:28:08:423 Carpincho/(10077:10077): Log creado
-[INFO] 02:28:08:424 Carpincho/(10077:10077): Esperando respuesta de servidor
-[INFO] 02:28:08:425 Carpincho/(10077:10077): 
-NUEVO CARPINCHO
-
-[INFO] 02:34:20:959 Carpincho/(10069:10069): Se realizó el MEM_ALLOC correctamente. La dirección lógica es 8
-[INFO] 02:34:20:959 Carpincho/(10069:10069): MEM_WRITE el mensaje No, ¡hola humedal!
- en 8
-[INFO] 02:34:20:959 Carpincho/(10077:10077): Error al crear el carpimcho
-[INFO] 02:34:20:959 Carpincho/(10077:10077): MEM_ALLOC de 14
-[INFO] 02:34:20:959 Carpincho/(10077:10077): Error al realizar el MEM_ALLOC
-[INFO] 02:34:20:959 Carpincho/(10077:10077): MEM_WRITE el mensaje ¡Hola mundo!
- en -1
-[INFO] 02:34:20:959 Carpincho/(10077:10077): Se realizó el MEM_WRITE correctamente
-[INFO] 02:34:20:959 Carpincho/(10077:10077): MEM_READ desde -1 el size 14
-[INFO] 02:34:20:959 Carpincho/(10069:10069): Se realizó el MEM_WRITE correctamente
-[INFO] 02:34:20:959 Carpincho/(10069:10069): SEM_INIT
-[INFO] 02:34:20:959 Carpincho/(10069:10069): Conectado con memoria. No se puede inicializar semáforo.
-[INFO] 02:34:20:959 Carpincho/(10069:10069): envio sem init al kernel.
-[INFO] 02:34:20:959 Carpincho/(10069:10069): recibio algo del kernel por sem init -1076266680 .
-[INFO] 02:34:20:959 Carpincho/(10069:10069): SEM_WAIT al semáforo SEM_HELLO de carpincho 1
-[INFO] 02:34:20:959 Carpincho/(10069:10069): Se realizó el WAIT correctamente
-[INFO] 02:34:20:959 Carpincho/(10069:10069): MEM_READ desde 8 el size 20
-[INFO] 02:34:37:591 Carpincho/(11146:11146): Log creado
-[INFO] 02:34:37:591 Carpincho/(11146:11146): Esperando respuesta de servidor
-[INFO] 02:34:37:592 Carpincho/(11146:11146): 
-NUEVO CARPINCHO
-
-[INFO] 02:34:37:638 Carpincho/(11146:11146): Carpincho creado correctamente con el pid: 1
-[INFO] 02:34:37:638 Carpincho/(11146:11146): MEM_ALLOC de 20
-[INFO] 02:34:37:760 Carpincho/(11146:11146): Se realizó el MEM_ALLOC correctamente. La dirección lógica es 9
-[INFO] 02:34:37:760 Carpincho/(11146:11146): MEM_WRITE el mensaje No, ¡hola humedal!
- en 9
-[INFO] 02:34:37:761 Carpincho/(11146:11146): Se realizó el MEM_WRITE correctamente
-[INFO] 02:34:37:761 Carpincho/(11146:11146): SEM_INIT
-[INFO] 02:34:37:761 Carpincho/(11146:11146): Conectado con memoria. No se puede inicializar semáforo.
-[INFO] 02:34:37:761 Carpincho/(11146:11146): envio sem init al kernel.
-[INFO] 02:34:37:761 Carpincho/(11146:11146): recibio algo del kernel por sem init 0 .
-[INFO] 02:34:37:761 Carpincho/(11146:11146): SEM_WAIT al semáforo SEM_HELLO de carpincho 1
-[INFO] 02:34:40:070 Carpincho/(11159:11159): Log creado
-[INFO] 02:34:40:077 Carpincho/(11159:11159): Esperando respuesta de servidor
-[INFO] 02:34:40:079 Carpincho/(11159:11159): 
-NUEVO CARPINCHO
-
-[INFO] 02:34:40:187 Carpincho/(11159:11159): Carpincho creado correctamente con el pid: 2
-[INFO] 02:34:40:187 Carpincho/(11159:11159): MEM_ALLOC de 14
-[INFO] 02:34:40:227 Carpincho/(11159:11159): Error al realizar el MEM_ALLOC
-[INFO] 02:34:40:227 Carpincho/(11159:11159): MEM_WRITE el mensaje ¡Hola mundo!
- en -1
-[INFO] 02:34:40:814 Carpincho/(11159:11159): Se realizó el MEM_WRITE correctamente
-[INFO] 02:34:40:814 Carpincho/(11159:11159): MEM_READ desde -1 el size 14
-[INFO] 02:34:40:814 Carpincho/(11146:11146): Se realizó el WAIT correctamente
-[INFO] 02:34:40:814 Carpincho/(11146:11146): MEM_READ desde 9 el size 20
-[INFO] 02:36:01:486 Carpincho/(11782:11782): Log creado
-[INFO] 02:36:01:486 Carpincho/(11782:11782): Esperando respuesta de servidor
-[INFO] 02:36:01:487 Carpincho/(11782:11782): 
-NUEVO CARPINCHO
-
-[INFO] 02:36:01:534 Carpincho/(11782:11782): Carpincho creado correctamente con el pid: 1
-[INFO] 02:36:01:534 Carpincho/(11782:11782): MEM_ALLOC de 20
-[INFO] 02:36:01:657 Carpincho/(11782:11782): Se realizó el MEM_ALLOC correctamente. La dirección lógica es 9
-[INFO] 02:36:01:657 Carpincho/(11782:11782): MEM_WRITE el mensaje No, ¡hola humedal!
- en 9
-[INFO] 02:36:01:658 Carpincho/(11782:11782): Se realizó el MEM_WRITE correctamente
-[INFO] 02:36:01:658 Carpincho/(11782:11782): SEM_INIT
-[INFO] 02:36:01:658 Carpincho/(11782:11782): Conectado con memoria. No se puede inicializar semáforo.
-[INFO] 02:36:01:658 Carpincho/(11782:11782): envio sem init al kernel.
-[INFO] 02:36:01:658 Carpincho/(11782:11782): recibio algo del kernel por sem init 0 .
-[INFO] 02:36:01:658 Carpincho/(11782:11782): SEM_WAIT al semáforo SEM_HELLO de carpincho 1
-[INFO] 02:36:03:600 Carpincho/(11791:11791): Log creado
-[INFO] 02:36:03:600 Carpincho/(11791:11791): Esperando respuesta de servidor
-[INFO] 02:36:03:601 Carpincho/(11791:11791): 
-NUEVO CARPINCHO
-
-[INFO] 02:36:03:723 Carpincho/(11791:11791): Carpincho creado correctamente con el pid: 2
-[INFO] 02:36:03:723 Carpincho/(11791:11791): MEM_ALLOC de 14
-[INFO] 02:36:03:763 Carpincho/(11791:11791): Error al realizar el MEM_ALLOC
-[INFO] 02:36:03:763 Carpincho/(11791:11791): MEM_WRITE el mensaje ¡Hola mundo!
- en -1
-[INFO] 02:36:04:335 Carpincho/(11791:11791): Se realizó el MEM_WRITE correctamente
-[INFO] 02:36:04:335 Carpincho/(11791:11791): MEM_READ desde -1 el size 14
-[INFO] 02:36:04:336 Carpincho/(11782:11782): Se realizó el WAIT correctamente
-[INFO] 02:36:04:336 Carpincho/(11782:11782): MEM_READ desde 9 el size 20
-[INFO] 02:36:49:887 Carpincho/(12375:12375): Log creado
-[INFO] 02:36:49:887 Carpincho/(12375:12375): Esperando respuesta de servidor
-[INFO] 02:36:49:888 Carpincho/(12375:12375): 
-NUEVO CARPINCHO
-
-[INFO] 02:36:49:934 Carpincho/(12375:12375): Carpincho creado correctamente con el pid: 1
-[INFO] 02:36:49:934 Carpincho/(12375:12375): MEM_ALLOC de 20
-[INFO] 02:36:50:056 Carpincho/(12375:12375): Se realizó el MEM_ALLOC correctamente. La dirección lógica es 9
-[INFO] 02:36:50:056 Carpincho/(12375:12375): MEM_WRITE el mensaje No, ¡hola humedal!
- en 9
-[INFO] 02:36:50:056 Carpincho/(12375:12375): Se realizó el MEM_WRITE correctamente
-[INFO] 02:36:50:056 Carpincho/(12375:12375): SEM_INIT
-[INFO] 02:36:50:056 Carpincho/(12375:12375): Conectado con memoria. No se puede inicializar semáforo.
-[INFO] 02:36:50:057 Carpincho/(12375:12375): envio sem init al kernel.
-[INFO] 02:36:50:057 Carpincho/(12375:12375): recibio algo del kernel por sem init 0 .
-[INFO] 02:36:50:057 Carpincho/(12375:12375): SEM_WAIT al semáforo SEM_HELLO de carpincho 1
-[INFO] 02:36:55:092 Carpincho/(12398:12398): Log creado
-[INFO] 02:36:55:093 Carpincho/(12398:12398): Esperando respuesta de servidor
-[INFO] 02:36:55:094 Carpincho/(12398:12398): 
-NUEVO CARPINCHO
-
-[INFO] 02:36:55:182 Carpincho/(12398:12398): Carpincho creado correctamente con el pid: 2
-[INFO] 02:36:55:182 Carpincho/(12398:12398): MEM_ALLOC de 14
-[INFO] 02:36:55:222 Carpincho/(12398:12398): Error al realizar el MEM_ALLOC
-[INFO] 02:36:55:222 Carpincho/(12398:12398): MEM_WRITE el mensaje ¡Hola mundo!
- en -1
-[INFO] 02:36:55:805 Carpincho/(12398:12398): Se realizó el MEM_WRITE correctamente
-[INFO] 02:36:55:805 Carpincho/(12398:12398): MEM_READ desde -1 el size 14
-[INFO] 02:36:55:806 Carpincho/(12375:12375): Se realizó el WAIT correctamente
-[INFO] 02:36:55:806 Carpincho/(12375:12375): MEM_READ desde 9 el size 20
-[INFO] 02:41:19:828 Carpincho/(13388:13388): Log creado
-[INFO] 02:41:19:828 Carpincho/(13388:13388): Esperando respuesta de servidor
-[INFO] 02:41:19:828 Carpincho/(13388:13388): 
-NUEVO CARPINCHO
-
-[INFO] 02:41:19:874 Carpincho/(13388:13388): Carpincho creado correctamente con el pid: 1
-[INFO] 02:41:19:874 Carpincho/(13388:13388): MEM_ALLOC de 20
-[INFO] 02:41:20:198 Carpincho/(13388:13388): Se realizó el MEM_ALLOC correctamente. La dirección lógica es 9
-[INFO] 02:41:20:198 Carpincho/(13388:13388): MEM_WRITE el mensaje No, ¡hola humedal!
- en 9
-[INFO] 02:41:20:200 Carpincho/(13388:13388): Se realizó el MEM_WRITE correctamente
-[INFO] 02:41:20:200 Carpincho/(13388:13388): SEM_INIT
-[INFO] 02:41:20:200 Carpincho/(13388:13388): Conectado con memoria. No se puede inicializar semáforo.
-[INFO] 02:41:20:200 Carpincho/(13388:13388): envio sem init al kernel.
-[INFO] 02:41:20:200 Carpincho/(13388:13388): recibio algo del kernel por sem init 0 .
-[INFO] 02:41:20:200 Carpincho/(13388:13388): SEM_WAIT al semáforo SEM_HELLO de carpincho 1
-[INFO] 02:41:23:543 Carpincho/(13403:13403): Log creado
-[INFO] 02:41:23:544 Carpincho/(13403:13403): Esperando respuesta de servidor
-[INFO] 02:41:23:545 Carpincho/(13403:13403): 
-NUEVO CARPINCHO
-
-[INFO] 02:41:23:634 Carpincho/(13403:13403): Carpincho creado correctamente con el pid: 2
-[INFO] 02:41:23:634 Carpincho/(13403:13403): MEM_ALLOC de 14
-[INFO] 02:41:24:096 Carpincho/(13403:13403): Se realizó el MEM_ALLOC correctamente. La dirección lógica es 8
-[INFO] 02:41:24:096 Carpincho/(13403:13403): MEM_WRITE el mensaje ¡Hola mundo!
- en 8
-[INFO] 02:41:24:097 Carpincho/(13388:13388): Se realizó el WAIT correctamente
-[INFO] 02:41:24:097 Carpincho/(13388:13388): MEM_READ desde 9 el size 20
-[INFO] 02:41:24:098 Carpincho/(13403:13403): Se realizó el MEM_WRITE correctamente
-[INFO] 02:41:24:099 Carpincho/(13403:13403): MEM_READ desde 8 el size 14
-[INFO] 02:42:23:704 Carpincho/(13990:13990): Log creado
-[INFO] 02:42:23:704 Carpincho/(13990:13990): Esperando respuesta de servidor
-[INFO] 02:42:23:705 Carpincho/(13990:13990): 
-NUEVO CARPINCHO
-
-[INFO] 02:42:23:750 Carpincho/(13990:13990): Carpincho creado correctamente con el pid: 1
-[INFO] 02:42:23:751 Carpincho/(13990:13990): MEM_ALLOC de 20
-[INFO] 02:42:23:875 Carpincho/(13990:13990): Se realizó el MEM_ALLOC correctamente. La dirección lógica es 9
-[INFO] 02:42:23:875 Carpincho/(13990:13990): MEM_WRITE el mensaje No, ¡hola humedal!
- en 9
-[INFO] 02:42:23:876 Carpincho/(13990:13990): Se realizó el MEM_WRITE correctamente
-[INFO] 02:42:23:876 Carpincho/(13990:13990): SEM_INIT
-[INFO] 02:42:23:876 Carpincho/(13990:13990): Conectado con memoria. No se puede inicializar semáforo.
-[INFO] 02:42:23:877 Carpincho/(13990:13990): envio sem init al kernel.
-[INFO] 02:42:23:877 Carpincho/(13990:13990): recibio algo del kernel por sem init 0 .
-[INFO] 02:42:23:877 Carpincho/(13990:13990): SEM_WAIT al semáforo SEM_HELLO de carpincho 1
-[INFO] 02:42:25:780 Carpincho/(13999:13999): Log creado
-[INFO] 02:42:25:781 Carpincho/(13999:13999): Esperando respuesta de servidor
-[INFO] 02:42:25:782 Carpincho/(13999:13999): 
-NUEVO CARPINCHO
-
-[INFO] 02:42:25:942 Carpincho/(13999:13999): Carpincho creado correctamente con el pid: 2
-[INFO] 02:42:25:942 Carpincho/(13999:13999): MEM_ALLOC de 14
-[INFO] 02:42:25:983 Carpincho/(13999:13999): Error al realizar el MEM_ALLOC
-[INFO] 02:42:25:983 Carpincho/(13999:13999): MEM_WRITE el mensaje ¡Hola mundo!
- en -1
-[INFO] 02:42:26:626 Carpincho/(13999:13999): Se realizó el MEM_WRITE correctamente
-[INFO] 02:42:26:626 Carpincho/(13999:13999): MEM_READ desde -1 el size 14
-[INFO] 02:42:26:627 Carpincho/(13990:13990): Se realizó el WAIT correctamente
-[INFO] 02:42:26:627 Carpincho/(13990:13990): MEM_READ desde 9 el size 20
-[INFO] 02:43:35:635 Carpincho/(14591:14591): Log creado
-[INFO] 02:43:35:636 Carpincho/(14591:14591): Esperando respuesta de servidor
-[INFO] 02:43:35:637 Carpincho/(14591:14591): 
-NUEVO CARPINCHO
-
-[INFO] 02:43:35:694 Carpincho/(14591:14591): Carpincho creado correctamente con el pid: 1
-[INFO] 02:43:35:694 Carpincho/(14591:14591): MEM_ALLOC de 20
-[INFO] 02:43:35:816 Carpincho/(14591:14591): Se realizó el MEM_ALLOC correctamente. La dirección lógica es 9
-[INFO] 02:43:35:816 Carpincho/(14591:14591): MEM_WRITE el mensaje No, ¡hola humedal!
- en 9
-[INFO] 02:43:35:817 Carpincho/(14591:14591): Se realizó el MEM_WRITE correctamente
-[INFO] 02:43:35:817 Carpincho/(14591:14591): SEM_INIT
-[INFO] 02:43:35:817 Carpincho/(14591:14591): Conectado con memoria. No se puede inicializar semáforo.
-[INFO] 02:43:35:818 Carpincho/(14591:14591): envio sem init al kernel.
-[INFO] 02:43:35:818 Carpincho/(14591:14591): recibio algo del kernel por sem init 0 .
-[INFO] 02:43:35:818 Carpincho/(14591:14591): SEM_WAIT al semáforo SEM_HELLO de carpincho 1
-[INFO] 02:43:41:895 Carpincho/(14609:14609): Log creado
-[INFO] 02:43:41:895 Carpincho/(14609:14609): Esperando respuesta de servidor
-[INFO] 02:43:41:896 Carpincho/(14609:14609): 
-NUEVO CARPINCHO
-
-[INFO] 02:43:41:982 Carpincho/(14609:14609): Carpincho creado correctamente con el pid: 2
-[INFO] 02:43:41:983 Carpincho/(14609:14609): MEM_ALLOC de 14
-[INFO] 02:43:42:023 Carpincho/(14609:14609): Error al realizar el MEM_ALLOC
-[INFO] 02:43:42:023 Carpincho/(14609:14609): MEM_WRITE el mensaje ¡Hola mundo!
- en -1
-[INFO] 02:43:42:573 Carpincho/(14609:14609): Se realizó el MEM_WRITE correctamente
-[INFO] 02:43:42:573 Carpincho/(14609:14609): MEM_READ desde -1 el size 14
-[INFO] 02:43:42:574 Carpincho/(14591:14591): Se realizó el WAIT correctamente
-[INFO] 02:43:42:574 Carpincho/(14591:14591): MEM_READ desde 9 el size 20
-[INFO] 02:44:24:457 Carpincho/(14783:14783): Log creado
-[INFO] 02:44:24:457 Carpincho/(14783:14783): Esperando respuesta de servidor
-[INFO] 02:44:24:457 Carpincho/(14783:14783): 
-NUEVO CARPINCHO
-
-[INFO] 02:44:24:498 Carpincho/(14783:14783): Carpincho creado correctamente con el pid: 1
-[INFO] 02:44:24:498 Carpincho/(14783:14783): MEM_ALLOC de 20
-[INFO] 02:44:26:288 Carpincho/(14794:14794): Log creado
-[INFO] 02:44:26:288 Carpincho/(14794:14794): Esperando respuesta de servidor
-[INFO] 02:44:26:289 Carpincho/(14794:14794): 
-NUEVO CARPINCHO
-
-[INFO] 02:50:39:651 Carpincho/(14783:14783): Se realizó el MEM_ALLOC correctamente. La dirección lógica es 9
-[INFO] 02:50:39:651 Carpincho/(14783:14783): MEM_WRITE el mensaje No, ¡hola humedal!
- en 9
-[INFO] 02:50:51:516 Carpincho/(14783:14783): Se realizó el MEM_WRITE correctamente
-[INFO] 02:50:51:516 Carpincho/(14783:14783): SEM_INIT
-[INFO] 02:50:51:516 Carpincho/(14783:14783): Conectado con memoria. No se puede inicializar semáforo.
-[INFO] 02:50:51:516 Carpincho/(14783:14783): envio sem init al kernel.
-[INFO] 02:50:51:516 Carpincho/(14783:14783): recibio algo del kernel por sem init 0 .
-[INFO] 02:50:51:516 Carpincho/(14783:14783): SEM_WAIT al semáforo SEM_HELLO de carpincho 1
-[INFO] 02:50:51:554 Carpincho/(14794:14794): Carpincho creado correctamente con el pid: 2
-[INFO] 02:50:51:554 Carpincho/(14794:14794): MEM_ALLOC de 14
-[INFO] 02:52:10:136 Carpincho/(14794:14794): Se realizó el MEM_ALLOC correctamente. La dirección lógica es 8
-[INFO] 02:52:10:136 Carpincho/(14794:14794): MEM_WRITE el mensaje ¡Hola mundo!
- en 8
-[INFO] 02:52:10:136 Carpincho/(14783:14783): Se realizó el WAIT correctamente
-[INFO] 02:52:10:136 Carpincho/(14783:14783): MEM_READ desde 9 el size 20
-[INFO] 02:52:10:138 Carpincho/(14794:14794): Se realizó el MEM_WRITE correctamente
-[INFO] 02:52:10:138 Carpincho/(14794:14794): MEM_READ desde 8 el size 14
-[INFO] 02:52:43:883 Carpincho/(15659:15659): Log creado
-[INFO] 02:52:43:883 Carpincho/(15659:15659): Esperando respuesta de servidor
-[INFO] 02:52:43:883 Carpincho/(15659:15659): 
-NUEVO CARPINCHO
-
-[INFO] 02:52:43:946 Carpincho/(15659:15659): Carpincho creado correctamente con el pid: 1
-[INFO] 02:52:43:946 Carpincho/(15659:15659): MEM_ALLOC de 20
-[INFO] 02:52:44:067 Carpincho/(15659:15659): Se realizó el MEM_ALLOC correctamente. La dirección lógica es 9
-[INFO] 02:52:44:067 Carpincho/(15659:15659): MEM_WRITE el mensaje No, ¡hola humedal!
- en 9
-[INFO] 02:52:45:437 Carpincho/(15669:15669): Log creado
-[INFO] 02:52:45:438 Carpincho/(15669:15669): Esperando respuesta de servidor
-[INFO] 02:52:45:440 Carpincho/(15669:15669): 
-NUEVO CARPINCHO
-
-[INFO] 02:54:12:373 Carpincho/(15659:15659): Se realizó el MEM_WRITE correctamente
-[INFO] 02:54:12:373 Carpincho/(15659:15659): SEM_INIT
-[INFO] 02:54:12:373 Carpincho/(15659:15659): Conectado con memoria. No se puede inicializar semáforo.
-[INFO] 02:54:12:373 Carpincho/(15659:15659): envio sem init al kernel.
-[INFO] 02:54:12:373 Carpincho/(15659:15659): recibio algo del kernel por sem init 0 .
-[INFO] 02:54:12:373 Carpincho/(15659:15659): SEM_WAIT al semáforo SEM_HELLO de carpincho 1
-[INFO] 02:54:23:190 Carpincho/(15669:15669): Carpincho creado correctamente con el pid: 2
-[INFO] 02:54:23:190 Carpincho/(15669:15669): MEM_ALLOC de 14
-[INFO] 02:54:23:606 Carpincho/(15669:15669): Error al realizar el MEM_ALLOC
-[INFO] 02:54:23:606 Carpincho/(15669:15669): MEM_WRITE el mensaje ¡Hola mundo!
- en -1
-[INFO] 02:55:05:532 Carpincho/(15669:15669): Se realizó el MEM_WRITE correctamente
-[INFO] 02:55:05:532 Carpincho/(15669:15669): MEM_READ desde -1 el size 14
-[INFO] 02:55:05:532 Carpincho/(15659:15659): Se realizó el WAIT correctamente
-[INFO] 02:55:05:532 Carpincho/(15659:15659): MEM_READ desde 9 el size 20
-[INFO] 02:57:45:657 Carpincho/(16618:16618): Log creado
-[INFO] 02:57:45:658 Carpincho/(16618:16618): Esperando respuesta de servidor
-[INFO] 02:57:45:659 Carpincho/(16618:16618): 
-NUEVO CARPINCHO
-
-[INFO] 02:57:45:703 Carpincho/(16618:16618): Carpincho creado correctamente con el pid: 1
-[INFO] 02:57:45:703 Carpincho/(16618:16618): MEM_ALLOC de 20
-[INFO] 02:57:45:825 Carpincho/(16618:16618): Se realizó el MEM_ALLOC correctamente. La dirección lógica es 9
-[INFO] 02:57:45:825 Carpincho/(16618:16618): MEM_WRITE el mensaje No, ¡hola humedal!
- en 9
-[INFO] 02:57:45:826 Carpincho/(16618:16618): Se realizó el MEM_WRITE correctamente
-[INFO] 02:57:45:826 Carpincho/(16618:16618): SEM_INIT
-[INFO] 02:57:45:826 Carpincho/(16618:16618): Conectado con memoria. No se puede inicializar semáforo.
-[INFO] 02:57:45:826 Carpincho/(16618:16618): envio sem init al kernel.
-[INFO] 02:57:45:826 Carpincho/(16618:16618): recibio algo del kernel por sem init 0 .
-[INFO] 02:57:45:826 Carpincho/(16618:16618): SEM_WAIT al semáforo SEM_HELLO de carpincho 1
-[INFO] 02:57:52:704 Carpincho/(16630:16630): Log creado
-[INFO] 02:57:52:705 Carpincho/(16630:16630): Esperando respuesta de servidor
-[INFO] 02:57:52:705 Carpincho/(16630:16630): 
-NUEVO CARPINCHO
-
-[INFO] 02:57:52:794 Carpincho/(16630:16630): Carpincho creado correctamente con el pid: 2
-[INFO] 02:57:52:794 Carpincho/(16630:16630): MEM_ALLOC de 14
-[INFO] 02:57:52:916 Carpincho/(16630:16630): Se realizó el MEM_ALLOC correctamente. La dirección lógica es 9
-[INFO] 02:57:52:916 Carpincho/(16630:16630): MEM_WRITE el mensaje ¡Hola mundo!
- en 9
-[INFO] 02:57:52:917 Carpincho/(16630:16630): Se realizó el MEM_WRITE correctamente
-[INFO] 02:57:52:917 Carpincho/(16630:16630): MEM_READ desde 9 el size 14
-[INFO] 02:57:53:034 Carpincho/(16630:16630): Se realizó el MEM_READ correctamente. El contenido es: ¡Hola mundo!
-
-[INFO] 02:57:53:034 Carpincho/(16630:16630): SEM_POST al semáforo SEM_HELLO del carpincho 4
-[INFO] 02:57:53:034 Carpincho/(16630:16630): Se realizó el POST correctamente
-[INFO] 02:57:53:034 Carpincho/(16630:16630): MATE_CLOSE
-[INFO] 02:57:53:034 Carpincho/(16630:16630): MATE_CLOSE: mensaje enviado a kernel
-[INFO] 02:57:53:034 Carpincho/(16630:16630): libero memoria
-[INFO] 02:57:53:034 Carpincho/(16630:16630): libero memoria
-[INFO] 02:57:53:034 Carpincho/(16630:16630): Carpincho eliminado
-[INFO] 02:57:53:036 Carpincho/(16618:16618): Se realizó el WAIT correctamente
-[INFO] 02:57:53:036 Carpincho/(16618:16618): MEM_READ desde 9 el size 20
-[INFO] 02:57:53:339 Carpincho/(16618:16618): Se realizó el MEM_READ correctamente. El contenido es: No, ¡hola humedal!
-%
-[INFO] 02:57:53:339 Carpincho/(16618:16618): MATE_CLOSE
-[INFO] 02:57:53:339 Carpincho/(16618:16618): MATE_CLOSE: mensaje enviado a kernel
-[INFO] 02:57:53:339 Carpincho/(16618:16618): libero memoria
-[INFO] 02:57:53:339 Carpincho/(16618:16618): libero memoria
-[INFO] 02:57:53:339 Carpincho/(16618:16618): Carpincho eliminado

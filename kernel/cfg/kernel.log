@@ -1,0 +1,628 @@
+[INFO] 20:15:17:901 Kernel/(5194:5194): Log creado
+[INFO] 20:15:17:905 Kernel/(5194:5194): Configuración obtenida
+[INFO] 20:15:17:905 Kernel/(5194:5194): Semáforos inicializados
+[INFO] 20:15:17:909 Kernel/(5194:5194): Lista semaforos y Lista io's creadas
+[INFO] 20:15:17:909 Kernel/(5194:5194): Colas de dispositivos IO creadas
+[INFO] 20:15:17:909 Kernel/(5194:5194): Se creó el hilo gestor de la IO laguna
+[INFO] 20:15:17:910 Kernel/(5194:5194): Inicio colas de planificación
+[INFO] 20:15:17:910 Kernel/(5194:5194): Hilo Planificador Corto Plazo creado
+[INFO] 20:15:17:910 Kernel/(5194:5194): Hilo Planificador Largo Plazo creado
+[INFO] 20:15:17:910 Kernel/(5194:5194): Hilo Detección Deadlock creado
+[INFO] 20:15:17:910 Kernel/(5194:5194): Hilo CPU creado
+[INFO] 20:16:07:917 Kernel/(5194:5198): Comienza la ejecución de la detección de Deadlock
+[INFO] 20:16:57:923 Kernel/(5194:5198): Comienza la ejecución de la detección de Deadlock
+[INFO] 20:17:43:362 Kernel/(5194:5194): Colas, listas y sus respectivos elementos destruidos
+[INFO] 20:18:18:503 Kernel/(5661:5661): Log creado
+[INFO] 20:18:18:504 Kernel/(5661:5661): Configuración obtenida
+[INFO] 20:18:18:505 Kernel/(5661:5661): Semáforos inicializados
+[INFO] 20:18:18:505 Kernel/(5661:5661): Lista semaforos y Lista io's creadas
+[INFO] 20:18:18:505 Kernel/(5661:5661): Colas de dispositivos IO creadas
+[INFO] 20:18:18:505 Kernel/(5661:5661): Se creó el hilo gestor de la IO laguna
+[INFO] 20:18:18:505 Kernel/(5661:5661): Inicio colas de planificación
+[INFO] 20:18:18:505 Kernel/(5661:5661): Hilo Planificador Corto Plazo creado
+[INFO] 20:18:18:506 Kernel/(5661:5661): Hilo Planificador Largo Plazo creado
+[INFO] 20:18:18:506 Kernel/(5661:5661): Hilo Detección Deadlock creado
+[INFO] 20:18:18:506 Kernel/(5661:5661): Hilo CPU creado
+[INFO] 20:19:08:510 Kernel/(5661:5665): Comienza la ejecución de la detección de Deadlock
+[INFO] 20:19:58:512 Kernel/(5661:5665): Comienza la ejecución de la detección de Deadlock
+[INFO] 20:19:59:575 Kernel/(5661:5661): Colas, listas y sus respectivos elementos destruidos
+[INFO] 20:23:17:020 Kernel/(6312:6312): Log creado
+[INFO] 20:23:17:020 Kernel/(6312:6312): Configuración obtenida
+[INFO] 20:23:17:020 Kernel/(6312:6312): Semáforos inicializados
+[INFO] 20:23:17:020 Kernel/(6312:6312): Lista semaforos y Lista io's creadas
+[INFO] 20:23:17:020 Kernel/(6312:6312): Colas de dispositivos IO creadas
+[INFO] 20:23:17:020 Kernel/(6312:6312): Se creó el hilo gestor de la IO laguna
+[INFO] 20:23:17:020 Kernel/(6312:6312): Inicio colas de planificación
+[INFO] 20:23:17:020 Kernel/(6312:6312): Hilo Planificador Corto Plazo creado
+[INFO] 20:23:17:020 Kernel/(6312:6312): Hilo Planificador Largo Plazo creado
+[INFO] 20:23:17:020 Kernel/(6312:6312): Hilo Detección Deadlock creado
+[INFO] 20:23:17:020 Kernel/(6312:6312): Hilo CPU creado
+[INFO] 20:24:07:023 Kernel/(6312:6316): Comienza la ejecución de la detección de Deadlock
+[INFO] 20:24:57:026 Kernel/(6312:6316): Comienza la ejecución de la detección de Deadlock
+[INFO] 20:25:42:662 Kernel/(6312:6557): Recibí el cliente 15
+[INFO] 20:25:42:662 Kernel/(6312:6557): ---------------NEW INSTANCE. Comienza creación del carpincho
+[INFO] 20:25:42:669 Kernel/(6312:6557): NEW INSTANCE: Se agregó el carpincho ID: 1 a la cola de new
+[INFO] 20:25:42:669 Kernel/(6312:6315): Llegó un carpincho al planificador de largo plazo
+[INFO] 20:25:42:669 Kernel/(6312:6315): No hay suspendidos. Se iniciará carpincho 1
+[INFO] 20:25:42:669 Kernel/(6312:6315): --------------Carpincho 1--------------
+[INFO] 20:25:42:669 Kernel/(6312:6315): Tiempo de espera: 0.000000
+[INFO] 20:25:42:669 Kernel/(6312:6315): Tiempo ejecutado: 0.000000
+[INFO] 20:25:42:669 Kernel/(6312:6315): Estimacion: 1.000000
+[INFO] 20:25:42:669 Kernel/(6312:6315): --------------Carpincho 1--------------
+[INFO] 20:25:42:669 Kernel/(6312:6315): Tiempo de espera: 0.000000
+[INFO] 20:25:42:669 Kernel/(6312:6315): Tiempo ejecutado: 0.000000
+[INFO] 20:25:42:669 Kernel/(6312:6315): Estimacion: 1.000000
+[INFO] 20:25:42:669 Kernel/(6312:6318): Carpincho 1 - Comienza a ejecutar
+[INFO] 20:25:42:705 Kernel/(6312:6557): Se recibió del carpincho 1 un SEM INIT para el semáforo SEM1 con valor 1
+ 
+[INFO] 20:25:42:705 Kernel/(6312:6557): Se recibió del carpincho 1 un SEM INIT para el semáforo SEM2 con valor 1
+ 
+[INFO] 20:25:42:705 Kernel/(6312:6557): Se recibió del carpincho 1 un SEM INIT para el semáforo SEM3 con valor 1
+ 
+[INFO] 20:25:42:705 Kernel/(6312:6557): Se recibió del carpincho 1 un SEM INIT para el semáforo SEM4 con valor 1
+ 
+[INFO] 20:25:42:706 Kernel/(6312:6557): Se recibió del carpincho 1 un SEM INIT para el semáforo SEM5 con valor 1
+ 
+[INFO] 20:25:42:706 Kernel/(6312:6557): Se recibió del carpincho 1 un SEM INIT para el semáforo SEM6 con valor 1
+ 
+[INFO] 20:25:42:719 Kernel/(6312:6560): Recibí el cliente 16
+[INFO] 20:25:42:723 Kernel/(6312:6560): ---------------NEW INSTANCE. Comienza creación del carpincho
+[INFO] 20:25:43:744 Kernel/(6312:6565): Recibí el cliente 20
+[INFO] 20:25:43:748 Kernel/(6312:6565): ---------------NEW INSTANCE. Comienza creación del carpincho
+[INFO] 20:25:44:712 Kernel/(6312:6570): Recibí el cliente 21
+[INFO] 20:25:44:717 Kernel/(6312:6570): ---------------NEW INSTANCE. Comienza creación del carpincho
+[INFO] 20:25:45:311 Kernel/(6312:6570): ---------------NEW INSTANCE. Comienza creación del carpincho
+[INFO] 20:25:45:311 Kernel/(6312:6565): Se recibió un código erróneo del cliente 20
+[INFO] 20:28:12:459 Kernel/(6857:6857): Log creado
+[INFO] 20:28:12:460 Kernel/(6857:6857): Configuración obtenida
+[INFO] 20:28:12:460 Kernel/(6857:6857): Semáforos inicializados
+[INFO] 20:28:12:460 Kernel/(6857:6857): Lista semaforos y Lista io's creadas
+[INFO] 20:28:12:461 Kernel/(6857:6857): Colas de dispositivos IO creadas
+[INFO] 20:28:12:461 Kernel/(6857:6857): Se creó el hilo gestor de la IO laguna
+[INFO] 20:28:12:461 Kernel/(6857:6857): Inicio colas de planificación
+[INFO] 20:28:12:461 Kernel/(6857:6857): Hilo Planificador Corto Plazo creado
+[INFO] 20:28:12:461 Kernel/(6857:6857): Hilo Planificador Largo Plazo creado
+[INFO] 20:28:12:461 Kernel/(6857:6857): Hilo Detección Deadlock creado
+[INFO] 20:28:12:461 Kernel/(6857:6857): Hilo CPU creado
+[INFO] 20:28:19:185 Kernel/(6857:6857): Colas, listas y sus respectivos elementos destruidos
+[INFO] 20:30:12:689 Kernel/(7301:7301): Log creado
+[INFO] 20:30:12:690 Kernel/(7301:7301): Configuración obtenida
+[INFO] 20:30:12:690 Kernel/(7301:7301): Semáforos inicializados
+[INFO] 20:30:12:691 Kernel/(7301:7301): Lista semaforos y Lista io's creadas
+[INFO] 20:30:12:691 Kernel/(7301:7301): Colas de dispositivos IO creadas
+[INFO] 20:30:12:691 Kernel/(7301:7301): Se creó el hilo gestor de la IO laguna
+[INFO] 20:30:12:691 Kernel/(7301:7301): Inicio colas de planificación
+[INFO] 20:30:12:691 Kernel/(7301:7301): Hilo Planificador Corto Plazo creado
+[INFO] 20:30:12:691 Kernel/(7301:7301): Hilo Planificador Largo Plazo creado
+[INFO] 20:30:12:691 Kernel/(7301:7301): Hilo Detección Deadlock creado
+[INFO] 20:30:12:691 Kernel/(7301:7301): Hilo CPU creado
+[INFO] 20:30:18:655 Kernel/(7301:7430): Recibí el cliente 15
+[INFO] 20:30:18:655 Kernel/(7301:7430): ---------------NEW INSTANCE. Comienza creación del carpincho
+[INFO] 20:30:18:671 Kernel/(7301:7430): NEW INSTANCE: Se agregó el carpincho ID: 1 a la cola de new
+[INFO] 20:30:18:671 Kernel/(7301:7304): Llegó un carpincho al planificador de largo plazo
+[INFO] 20:30:18:672 Kernel/(7301:7304): No hay suspendidos. Se iniciará carpincho 1
+[INFO] 20:30:18:672 Kernel/(7301:7304): --------------Carpincho 1--------------
+[INFO] 20:30:18:672 Kernel/(7301:7304): Tiempo de espera: 0.000000
+[INFO] 20:30:18:672 Kernel/(7301:7304): Tiempo ejecutado: 0.000000
+[INFO] 20:30:18:672 Kernel/(7301:7304): Estimacion: 1.000000
+[INFO] 20:30:18:672 Kernel/(7301:7304): --------------Carpincho 1--------------
+[INFO] 20:30:18:672 Kernel/(7301:7304): Tiempo de espera: 0.000000
+[INFO] 20:30:18:672 Kernel/(7301:7304): Tiempo ejecutado: 0.000000
+[INFO] 20:30:18:672 Kernel/(7301:7304): Estimacion: 1.000000
+[INFO] 20:30:18:672 Kernel/(7301:7307): Carpincho 1 - Comienza a ejecutar
+[INFO] 20:30:18:708 Kernel/(7301:7430): Se recibió del carpincho 1 un SEM INIT para el semáforo SEM1 con valor 1
+ 
+[INFO] 20:30:18:709 Kernel/(7301:7430): Se recibió del carpincho 1 un SEM INIT para el semáforo SEM2 con valor 1
+ 
+[INFO] 20:30:18:709 Kernel/(7301:7430): Se recibió del carpincho 1 un SEM INIT para el semáforo SEM3 con valor 1
+ 
+[INFO] 20:30:18:709 Kernel/(7301:7430): Se recibió del carpincho 1 un SEM INIT para el semáforo SEM4 con valor 1
+ 
+[INFO] 20:30:18:709 Kernel/(7301:7430): Se recibió del carpincho 1 un SEM INIT para el semáforo SEM5 con valor 1
+ 
+[INFO] 20:30:18:709 Kernel/(7301:7430): Se recibió del carpincho 1 un SEM INIT para el semáforo SEM6 con valor 1
+ 
+[INFO] 20:30:18:715 Kernel/(7301:7434): Recibí el cliente 16
+[INFO] 20:30:18:716 Kernel/(7301:7434): ---------------NEW INSTANCE. Comienza creación del carpincho
+[INFO] 20:30:19:718 Kernel/(7301:7438): Recibí el cliente 20
+[INFO] 20:30:19:719 Kernel/(7301:7438): ---------------NEW INSTANCE. Comienza creación del carpincho
+[INFO] 20:30:20:718 Kernel/(7301:7442): Recibí el cliente 21
+[INFO] 20:30:20:719 Kernel/(7301:7442): ---------------NEW INSTANCE. Comienza creación del carpincho
+[INFO] 20:30:21:167 Kernel/(7301:7442): ---------------NEW INSTANCE. Comienza creación del carpincho
+[INFO] 20:30:21:167 Kernel/(7301:7438): Se recibió un código erróneo del cliente 20
+[INFO] 22:16:27:473 Kernel/(4942:4942): Log creado
+[INFO] 22:16:27:474 Kernel/(4942:4942): Configuración obtenida
+[INFO] 22:16:27:474 Kernel/(4942:4942): Semáforos inicializados
+[INFO] 22:16:27:474 Kernel/(4942:4942): Lista semaforos y Lista io's creadas
+[INFO] 22:16:27:474 Kernel/(4942:4942): Colas de dispositivos IO creadas
+[INFO] 22:16:27:474 Kernel/(4942:4942): Se creó el hilo gestor de la IO laguna
+[INFO] 22:16:27:474 Kernel/(4942:4942): Inicio colas de planificación
+[INFO] 22:16:27:474 Kernel/(4942:4942): Hilo Planificador Corto Plazo creado
+[INFO] 22:16:27:474 Kernel/(4942:4942): Hilo Planificador Largo Plazo creado
+[INFO] 22:16:27:474 Kernel/(4942:4942): Hilo Detección Deadlock creado
+[INFO] 22:16:27:474 Kernel/(4942:4942): Hilo CPU creado
+[INFO] 22:16:35:862 Kernel/(4942:5226): Recibí el cliente 15
+[INFO] 22:16:35:862 Kernel/(4942:5226): ---------------NEW INSTANCE. Comienza creación del carpincho
+[INFO] 22:16:35:867 Kernel/(4942:5226): NEW INSTANCE: Se agregó el carpincho ID: 1 a la cola de new
+[INFO] 22:16:35:868 Kernel/(4942:4945): Llegó un carpincho al planificador de largo plazo
+[INFO] 22:16:35:868 Kernel/(4942:4945): No hay suspendidos. Se iniciará carpincho 1
+[INFO] 22:16:35:868 Kernel/(4942:4945): --------------Carpincho 1--------------
+[INFO] 22:16:35:868 Kernel/(4942:4945): Tiempo de espera: 0.000000
+[INFO] 22:16:35:868 Kernel/(4942:4945): Tiempo ejecutado: 0.000000
+[INFO] 22:16:35:868 Kernel/(4942:4945): Estimacion: 1.000000
+[INFO] 22:16:35:868 Kernel/(4942:4945): --------------Carpincho 1--------------
+[INFO] 22:16:35:868 Kernel/(4942:4945): Tiempo de espera: 0.000000
+[INFO] 22:16:35:868 Kernel/(4942:4945): Tiempo ejecutado: 0.000000
+[INFO] 22:16:35:868 Kernel/(4942:4945): Estimacion: 1.000000
+[INFO] 22:16:35:868 Kernel/(4942:4948): Carpincho 1 - Comienza a ejecutar
+[INFO] 22:16:35:905 Kernel/(4942:5226): Se recibió del carpincho 1 un SEM INIT para el semáforo SEM1 con valor 1
+ 
+[INFO] 22:16:35:906 Kernel/(4942:5226): Se recibió del carpincho 1 un SEM INIT para el semáforo SEM2 con valor 1
+ 
+[INFO] 22:16:35:906 Kernel/(4942:5226): Se recibió del carpincho 1 un SEM INIT para el semáforo SEM3 con valor 1
+ 
+[INFO] 22:16:35:906 Kernel/(4942:5226): Se recibió del carpincho 1 un SEM INIT para el semáforo SEM4 con valor 1
+ 
+[INFO] 22:16:35:906 Kernel/(4942:5226): Se recibió del carpincho 1 un SEM INIT para el semáforo SEM5 con valor 1
+ 
+[INFO] 22:16:35:906 Kernel/(4942:5226): Se recibió del carpincho 1 un SEM INIT para el semáforo SEM6 con valor 1
+ 
+[INFO] 22:16:35:923 Kernel/(4942:5230): Recibí el cliente 16
+[INFO] 22:16:35:923 Kernel/(4942:5230): ---------------NEW INSTANCE. Comienza creación del carpincho
+[INFO] 22:16:36:910 Kernel/(4942:5235): Recibí el cliente 20
+[INFO] 22:16:36:910 Kernel/(4942:5235): ---------------NEW INSTANCE. Comienza creación del carpincho
+[INFO] 22:16:37:910 Kernel/(4942:5245): Recibí el cliente 21
+[INFO] 22:16:37:910 Kernel/(4942:5245): ---------------NEW INSTANCE. Comienza creación del carpincho
+[INFO] 22:16:38:296 Kernel/(4942:5245): ---------------NEW INSTANCE. Comienza creación del carpincho
+[INFO] 22:16:38:296 Kernel/(4942:5235): Se recibió un código erróneo del cliente 20
+[INFO] 22:29:08:296 Kernel/(6725:6725): Log creado
+[INFO] 22:29:08:296 Kernel/(6725:6725): Configuración obtenida
+[INFO] 22:29:08:296 Kernel/(6725:6725): Semáforos inicializados
+[INFO] 22:29:08:296 Kernel/(6725:6725): Lista semaforos y Lista io's creadas
+[INFO] 22:29:08:296 Kernel/(6725:6725): Colas de dispositivos IO creadas
+[INFO] 22:29:08:296 Kernel/(6725:6725): Se creó el hilo gestor de la IO laguna
+[INFO] 22:29:08:296 Kernel/(6725:6725): Inicio colas de planificación
+[INFO] 22:29:08:296 Kernel/(6725:6725): Hilo Planificador Corto Plazo creado
+[INFO] 22:29:08:297 Kernel/(6725:6725): Hilo Planificador Largo Plazo creado
+[INFO] 22:29:08:297 Kernel/(6725:6725): Hilo Detección Deadlock creado
+[INFO] 22:29:08:297 Kernel/(6725:6725): Hilo CPU creado
+[INFO] 22:29:09:972 Kernel/(6725:6725): Colas, listas y sus respectivos elementos destruidos
+[INFO] 22:31:48:558 Kernel/(7175:7175): Log creado
+[INFO] 22:31:48:561 Kernel/(7175:7175): Configuración obtenida
+[INFO] 22:31:48:561 Kernel/(7175:7175): Semáforos inicializados
+[INFO] 22:31:48:561 Kernel/(7175:7175): Lista semaforos y Lista io's creadas
+[INFO] 22:31:48:561 Kernel/(7175:7175): Colas de dispositivos IO creadas
+[INFO] 22:31:48:561 Kernel/(7175:7175): Se creó el hilo gestor de la IO laguna
+[INFO] 22:31:48:561 Kernel/(7175:7175): Inicio colas de planificación
+[INFO] 22:31:48:561 Kernel/(7175:7175): Hilo Planificador Corto Plazo creado
+[INFO] 22:31:48:561 Kernel/(7175:7175): Hilo Planificador Largo Plazo creado
+[INFO] 22:31:48:562 Kernel/(7175:7175): Hilo Detección Deadlock creado
+[INFO] 22:31:48:562 Kernel/(7175:7175): Hilo CPU creado
+[INFO] 22:31:51:532 Kernel/(7175:7253): Recibí el cliente 15
+[INFO] 22:31:51:532 Kernel/(7175:7253): ---------------NEW INSTANCE. Comienza creación del carpincho
+[INFO] 22:31:51:538 Kernel/(7175:7253): NEW INSTANCE: Se agregó el carpincho ID: 1 a la cola de new
+[INFO] 22:31:51:538 Kernel/(7175:7178): Llegó un carpincho al planificador de largo plazo
+[INFO] 22:31:51:538 Kernel/(7175:7178): No hay suspendidos. Se iniciará carpincho 1
+[INFO] 22:31:51:538 Kernel/(7175:7178): --------------Carpincho 1--------------
+[INFO] 22:31:51:538 Kernel/(7175:7178): Tiempo de espera: 0.000000
+[INFO] 22:31:51:538 Kernel/(7175:7178): Tiempo ejecutado: 0.000000
+[INFO] 22:31:51:538 Kernel/(7175:7178): Estimacion: 1.000000
+[INFO] 22:31:51:538 Kernel/(7175:7178): --------------Carpincho 1--------------
+[INFO] 22:31:51:538 Kernel/(7175:7178): Tiempo de espera: 0.000000
+[INFO] 22:31:51:538 Kernel/(7175:7178): Tiempo ejecutado: 0.000000
+[INFO] 22:31:51:538 Kernel/(7175:7178): Estimacion: 1.000000
+[INFO] 22:31:51:539 Kernel/(7175:7181): Carpincho 1 - Comienza a ejecutar
+[INFO] 22:31:51:577 Kernel/(7175:7253): Se recibió del carpincho 1 un SEM INIT para el semáforo SEM1 con valor 1
+ 
+[INFO] 22:31:51:578 Kernel/(7175:7253): Se recibió del carpincho 1 un SEM INIT para el semáforo SEM2 con valor 1
+ 
+[INFO] 22:31:51:578 Kernel/(7175:7253): Se recibió del carpincho 1 un SEM INIT para el semáforo SEM3 con valor 1
+ 
+[INFO] 22:31:51:578 Kernel/(7175:7253): Se recibió del carpincho 1 un SEM INIT para el semáforo SEM4 con valor 1
+ 
+[INFO] 22:31:51:581 Kernel/(7175:7253): Se recibió del carpincho 1 un SEM INIT para el semáforo SEM5 con valor 1
+ 
+[INFO] 22:31:51:581 Kernel/(7175:7253): Se recibió del carpincho 1 un SEM INIT para el semáforo SEM6 con valor 1
+ 
+[INFO] 22:31:51:592 Kernel/(7175:7257): Recibí el cliente 16
+[INFO] 22:31:51:592 Kernel/(7175:7257): ---------------NEW INSTANCE. Comienza creación del carpincho
+[INFO] 22:31:52:584 Kernel/(7175:7261): Recibí el cliente 20
+[INFO] 22:31:52:584 Kernel/(7175:7261): ---------------NEW INSTANCE. Comienza creación del carpincho
+[INFO] 22:31:53:585 Kernel/(7175:7265): Recibí el cliente 21
+[INFO] 22:31:53:585 Kernel/(7175:7265): ---------------NEW INSTANCE. Comienza creación del carpincho
+[INFO] 22:31:53:952 Kernel/(7175:7265): ---------------NEW INSTANCE. Comienza creación del carpincho
+[INFO] 22:31:53:952 Kernel/(7175:7261): Se recibió un código erróneo del cliente 20
+[INFO] 22:33:54:441 Kernel/(7693:7693): Log creado
+[INFO] 22:33:54:443 Kernel/(7693:7693): Configuración obtenida
+[INFO] 22:33:54:443 Kernel/(7693:7693): Semáforos inicializados
+[INFO] 22:33:54:444 Kernel/(7693:7693): Colas de dispositivos IO creadas
+[INFO] 22:33:54:444 Kernel/(7693:7693): Se creó el hilo gestor de la IO laguna
+[INFO] 22:33:54:444 Kernel/(7693:7693): Inicio colas de planificación
+[INFO] 22:33:54:444 Kernel/(7693:7693): Hilo Planificador Corto Plazo creado
+[INFO] 22:33:54:444 Kernel/(7693:7693): Hilo Planificador Largo Plazo creado
+[INFO] 22:33:54:444 Kernel/(7693:7693): Hilo Detección Deadlock creado
+[INFO] 22:33:54:444 Kernel/(7693:7693): Hilo CPU creado
+[INFO] 22:33:57:860 Kernel/(7693:7761): Recibí el cliente 15
+[INFO] 22:33:57:860 Kernel/(7693:7761): ---------------NEW INSTANCE. Comienza creación del carpincho
+[INFO] 22:33:57:861 Kernel/(7693:7761): NEW INSTANCE: Se agregó el carpincho ID: 1 a la cola de new
+[INFO] 22:33:57:861 Kernel/(7693:7696): Llegó un carpincho al planificador de largo plazo
+[INFO] 22:33:57:861 Kernel/(7693:7696): No hay suspendidos. Se iniciará carpincho 1
+[INFO] 22:33:57:861 Kernel/(7693:7696): --------------Carpincho 1--------------
+[INFO] 22:33:57:861 Kernel/(7693:7696): Tiempo de espera: 0.000000
+[INFO] 22:33:57:861 Kernel/(7693:7696): Tiempo ejecutado: 0.000000
+[INFO] 22:33:57:861 Kernel/(7693:7696): Estimacion: 1.000000
+[INFO] 22:33:57:861 Kernel/(7693:7696): --------------Carpincho 1--------------
+[INFO] 22:33:57:861 Kernel/(7693:7696): Tiempo de espera: 0.000000
+[INFO] 22:33:57:861 Kernel/(7693:7696): Tiempo ejecutado: 0.000000
+[INFO] 22:33:57:861 Kernel/(7693:7696): Estimacion: 1.000000
+[INFO] 22:33:57:861 Kernel/(7693:7699): Carpincho 1 - Comienza a ejecutar
+[INFO] 22:33:57:898 Kernel/(7693:7761): Se recibió del carpincho 1 un SEM INIT para el semáforo SEM1 con valor 1
+ 
+[INFO] 22:33:57:898 Kernel/(7693:7761): Se recibió del carpincho 1 un SEM INIT para el semáforo SEM2 con valor 1
+ 
+[INFO] 22:33:57:899 Kernel/(7693:7761): Se recibió del carpincho 1 un SEM INIT para el semáforo SEM3 con valor 1
+ 
+[INFO] 22:33:57:899 Kernel/(7693:7761): Se recibió del carpincho 1 un SEM INIT para el semáforo SEM4 con valor 1
+ 
+[INFO] 22:33:57:899 Kernel/(7693:7761): Se recibió del carpincho 1 un SEM INIT para el semáforo SEM5 con valor 1
+ 
+[INFO] 22:33:57:899 Kernel/(7693:7761): Se recibió del carpincho 1 un SEM INIT para el semáforo SEM6 con valor 1
+ 
+[INFO] 22:33:57:902 Kernel/(7693:7764): Recibí el cliente 16
+[INFO] 22:33:57:904 Kernel/(7693:7764): ---------------NEW INSTANCE. Comienza creación del carpincho
+[INFO] 22:33:57:906 Kernel/(7693:7764): NEW INSTANCE: Se agregó el carpincho ID: 2 a la cola de new
+[INFO] 22:33:57:906 Kernel/(7693:7696): Llegó un carpincho al planificador de largo plazo
+[INFO] 22:33:57:906 Kernel/(7693:7696): No hay suspendidos. Se iniciará carpincho 2
+[INFO] 22:33:57:906 Kernel/(7693:7696): --------------Carpincho 2--------------
+[INFO] 22:33:57:906 Kernel/(7693:7696): Tiempo de espera: 0.000000
+[INFO] 22:33:57:906 Kernel/(7693:7696): Tiempo ejecutado: 0.000000
+[INFO] 22:33:57:907 Kernel/(7693:7696): Estimacion: 1.000000
+[INFO] 22:33:57:907 Kernel/(7693:7696): --------------Carpincho 2--------------
+[INFO] 22:33:57:907 Kernel/(7693:7696): Tiempo de espera: 0.000000
+[INFO] 22:33:57:907 Kernel/(7693:7696): Tiempo ejecutado: 0.000000
+[INFO] 22:33:57:907 Kernel/(7693:7696): Estimacion: 1.000000
+[INFO] 22:33:58:901 Kernel/(7693:7774): Recibí el cliente 20
+[INFO] 22:33:58:901 Kernel/(7693:7774): ---------------NEW INSTANCE. Comienza creación del carpincho
+[INFO] 22:33:58:902 Kernel/(7693:7774): NEW INSTANCE: Se agregó el carpincho ID: 3 a la cola de new
+[INFO] 22:33:59:902 Kernel/(7693:7778): Recibí el cliente 21
+[INFO] 22:33:59:902 Kernel/(7693:7778): ---------------NEW INSTANCE. Comienza creación del carpincho
+[INFO] 22:33:59:908 Kernel/(7693:7778): NEW INSTANCE: Se agregó el carpincho ID: 4 a la cola de new
+[INFO] 22:34:00:902 Kernel/(7693:7788): Recibí el cliente 22
+[INFO] 22:34:00:902 Kernel/(7693:7788): ---------------NEW INSTANCE. Comienza creación del carpincho
+[INFO] 22:34:00:902 Kernel/(7693:7788): NEW INSTANCE: Se agregó el carpincho ID: 5 a la cola de new
+[INFO] 22:34:01:909 Kernel/(7693:7792): Recibí el cliente 23
+[INFO] 22:34:01:909 Kernel/(7693:7792): ---------------NEW INSTANCE. Comienza creación del carpincho
+[INFO] 22:34:01:909 Kernel/(7693:7792): NEW INSTANCE: Se agregó el carpincho ID: 6 a la cola de new
+[INFO] 22:34:02:903 Kernel/(7693:7797): Recibí el cliente 25
+[INFO] 22:34:02:903 Kernel/(7693:7797): ---------------NEW INSTANCE. Comienza creación del carpincho
+[INFO] 22:34:02:909 Kernel/(7693:7797): NEW INSTANCE: Se agregó el carpincho ID: 7 a la cola de new
+[INFO] 22:34:03:902 Kernel/(7693:7761): MATE_CLOSE: Se recibió del carpincho 1 un MATE CLOSE
+[INFO] 22:34:03:902 Kernel/(7693:7696): Llegó un carpincho al planificador de largo plazo
+[INFO] 22:34:03:902 Kernel/(7693:7696): No hay suspendidos. Se iniciará carpincho 3
+[INFO] 22:34:03:902 Kernel/(7693:7696): --------------Carpincho 3--------------
+[INFO] 22:34:03:902 Kernel/(7693:7696): Tiempo de espera: 0.000000
+[INFO] 22:34:03:902 Kernel/(7693:7696): Tiempo ejecutado: 0.000000
+[INFO] 22:34:03:902 Kernel/(7693:7696): Estimacion: 1.000000
+[INFO] 22:34:03:903 Kernel/(7693:7696): --------------Carpincho 3--------------
+[INFO] 22:34:03:903 Kernel/(7693:7696): Tiempo de espera: 0.000000
+[INFO] 22:34:03:903 Kernel/(7693:7696): Tiempo ejecutado: 0.000000
+[INFO] 22:34:03:903 Kernel/(7693:7696): Estimacion: 1.000000
+[INFO] 22:34:03:903 Kernel/(7693:7696): --------------Carpincho 2--------------
+[INFO] 22:34:03:903 Kernel/(7693:7696): Tiempo de espera: 0.000000
+[INFO] 22:34:03:903 Kernel/(7693:7696): Tiempo ejecutado: 0.000000
+[INFO] 22:34:03:903 Kernel/(7693:7696): Estimacion: 1.000000
+[INFO] 22:34:03:903 Kernel/(7693:7699): Carpincho 1 - Eliminado
+[INFO] 22:34:03:903 Kernel/(7693:7699): Carpincho 2 - Comienza a ejecutar
+[INFO] 22:34:09:904 Kernel/(7693:7764): SEM POST EXITOSO a semaforo SEM1 VALOR DEL SEMAFORO ============= 1
+[INFO] 22:34:09:905 Kernel/(7693:7764): SEM POST EXITOSO a semaforo SEM2 VALOR DEL SEMAFORO ============= 1
+[INFO] 22:34:09:905 Kernel/(7693:7764): MATE_CLOSE: Se recibió del carpincho 2 un MATE CLOSE
+[INFO] 22:34:09:905 Kernel/(7693:7696): Llegó un carpincho al planificador de largo plazo
+[INFO] 22:34:09:905 Kernel/(7693:7696): No hay suspendidos. Se iniciará carpincho 4
+[INFO] 22:34:09:905 Kernel/(7693:7696): --------------Carpincho 4--------------
+[INFO] 22:34:09:905 Kernel/(7693:7696): Tiempo de espera: 0.000000
+[INFO] 22:34:09:905 Kernel/(7693:7696): Tiempo ejecutado: 0.000000
+[INFO] 22:34:09:905 Kernel/(7693:7696): Estimacion: 1.000000
+[INFO] 22:34:09:905 Kernel/(7693:7696): --------------Carpincho 4--------------
+[INFO] 22:34:09:905 Kernel/(7693:7696): Tiempo de espera: 0.000000
+[INFO] 22:34:09:905 Kernel/(7693:7696): Tiempo ejecutado: 0.000000
+[INFO] 22:34:09:905 Kernel/(7693:7696): Estimacion: 1.000000
+[INFO] 22:34:09:905 Kernel/(7693:7696): --------------Carpincho 3--------------
+[INFO] 22:34:09:905 Kernel/(7693:7696): Tiempo de espera: 0.000000
+[INFO] 22:34:09:905 Kernel/(7693:7696): Tiempo ejecutado: 0.000000
+[INFO] 22:34:09:905 Kernel/(7693:7696): Estimacion: 1.000000
+[INFO] 22:34:09:905 Kernel/(7693:7699): Carpincho 2 - Eliminado
+[INFO] 22:34:09:905 Kernel/(7693:7699): Carpincho 3 - Comienza a ejecutar
+[INFO] 22:34:15:907 Kernel/(7693:7774): SEM POST EXITOSO a semaforo SEM2 VALOR DEL SEMAFORO ============= 1
+[INFO] 22:34:15:907 Kernel/(7693:7774): SEM POST EXITOSO a semaforo SEM3 VALOR DEL SEMAFORO ============= 1
+[INFO] 22:34:15:908 Kernel/(7693:7774): MATE_CLOSE: Se recibió del carpincho 3 un MATE CLOSE
+[INFO] 22:34:15:908 Kernel/(7693:7696): Llegó un carpincho al planificador de largo plazo
+[INFO] 22:34:15:908 Kernel/(7693:7696): No hay suspendidos. Se iniciará carpincho 5
+[INFO] 22:34:15:908 Kernel/(7693:7696): --------------Carpincho 5--------------
+[INFO] 22:34:15:908 Kernel/(7693:7696): Tiempo de espera: 0.000000
+[INFO] 22:34:15:908 Kernel/(7693:7696): Tiempo ejecutado: 0.000000
+[INFO] 22:34:15:908 Kernel/(7693:7696): Estimacion: 1.000000
+[INFO] 22:34:15:908 Kernel/(7693:7696): --------------Carpincho 5--------------
+[INFO] 22:34:15:908 Kernel/(7693:7696): Tiempo de espera: 0.000000
+[INFO] 22:34:15:908 Kernel/(7693:7696): Tiempo ejecutado: 0.000000
+[INFO] 22:34:15:908 Kernel/(7693:7696): Estimacion: 1.000000
+[INFO] 22:34:15:908 Kernel/(7693:7696): --------------Carpincho 4--------------
+[INFO] 22:34:15:908 Kernel/(7693:7696): Tiempo de espera: 0.000000
+[INFO] 22:34:15:908 Kernel/(7693:7696): Tiempo ejecutado: 0.000000
+[INFO] 22:34:15:908 Kernel/(7693:7696): Estimacion: 1.000000
+[INFO] 22:34:15:908 Kernel/(7693:7699): Carpincho 3 - Eliminado
+[INFO] 22:34:15:908 Kernel/(7693:7699): Carpincho 4 - Comienza a ejecutar
+[INFO] 22:34:21:910 Kernel/(7693:7778): SEM POST EXITOSO a semaforo SEM3 VALOR DEL SEMAFORO ============= 1
+[INFO] 22:34:21:910 Kernel/(7693:7778): SEM POST EXITOSO a semaforo SEM4 VALOR DEL SEMAFORO ============= 1
+[INFO] 22:34:21:911 Kernel/(7693:7778): MATE_CLOSE: Se recibió del carpincho 4 un MATE CLOSE
+[INFO] 22:34:21:911 Kernel/(7693:7696): Llegó un carpincho al planificador de largo plazo
+[INFO] 22:34:21:911 Kernel/(7693:7696): No hay suspendidos. Se iniciará carpincho 6
+[INFO] 22:34:21:911 Kernel/(7693:7696): --------------Carpincho 6--------------
+[INFO] 22:34:21:911 Kernel/(7693:7696): Tiempo de espera: 0.000000
+[INFO] 22:34:21:911 Kernel/(7693:7696): Tiempo ejecutado: 0.000000
+[INFO] 22:34:21:911 Kernel/(7693:7696): Estimacion: 1.000000
+[INFO] 22:34:21:911 Kernel/(7693:7696): --------------Carpincho 6--------------
+[INFO] 22:34:21:911 Kernel/(7693:7696): Tiempo de espera: 0.000000
+[INFO] 22:34:21:911 Kernel/(7693:7696): Tiempo ejecutado: 0.000000
+[INFO] 22:34:21:911 Kernel/(7693:7696): Estimacion: 1.000000
+[INFO] 22:34:21:911 Kernel/(7693:7696): --------------Carpincho 5--------------
+[INFO] 22:34:21:911 Kernel/(7693:7696): Tiempo de espera: 0.000000
+[INFO] 22:34:21:911 Kernel/(7693:7696): Tiempo ejecutado: 0.000000
+[INFO] 22:34:21:911 Kernel/(7693:7696): Estimacion: 1.000000
+[INFO] 22:34:21:911 Kernel/(7693:7699): Carpincho 4 - Eliminado
+[INFO] 22:34:21:911 Kernel/(7693:7699): Carpincho 5 - Comienza a ejecutar
+[INFO] 22:34:27:912 Kernel/(7693:7788): SEM POST EXITOSO a semaforo SEM1 VALOR DEL SEMAFORO ============= 1
+[INFO] 22:34:27:913 Kernel/(7693:7788): SEM POST EXITOSO a semaforo SEM4 VALOR DEL SEMAFORO ============= 1
+[INFO] 22:34:27:913 Kernel/(7693:7788): MATE_CLOSE: Se recibió del carpincho 5 un MATE CLOSE
+[INFO] 22:34:27:913 Kernel/(7693:7696): Llegó un carpincho al planificador de largo plazo
+[INFO] 22:34:27:913 Kernel/(7693:7696): No hay suspendidos. Se iniciará carpincho 7
+[INFO] 22:34:27:913 Kernel/(7693:7696): --------------Carpincho 7--------------
+[INFO] 22:34:27:913 Kernel/(7693:7696): Tiempo de espera: 0.000000
+[INFO] 22:34:27:913 Kernel/(7693:7696): Tiempo ejecutado: 0.000000
+[INFO] 22:34:27:913 Kernel/(7693:7696): Estimacion: 1.000000
+[INFO] 22:34:27:913 Kernel/(7693:7696): --------------Carpincho 7--------------
+[INFO] 22:34:27:913 Kernel/(7693:7696): Tiempo de espera: 0.000000
+[INFO] 22:34:27:913 Kernel/(7693:7696): Tiempo ejecutado: 0.000000
+[INFO] 22:34:27:913 Kernel/(7693:7696): Estimacion: 1.000000
+[INFO] 22:34:27:913 Kernel/(7693:7696): --------------Carpincho 6--------------
+[INFO] 22:34:27:913 Kernel/(7693:7696): Tiempo de espera: 0.000000
+[INFO] 22:34:27:913 Kernel/(7693:7696): Tiempo ejecutado: 0.000000
+[INFO] 22:34:27:913 Kernel/(7693:7696): Estimacion: 1.000000
+[INFO] 22:34:27:914 Kernel/(7693:7699): Carpincho 5 - Eliminado
+[INFO] 22:34:27:914 Kernel/(7693:7699): Carpincho 6 - Comienza a ejecutar
+[INFO] 22:34:33:915 Kernel/(7693:7792): SEM POST EXITOSO a semaforo SEM5 VALOR DEL SEMAFORO ============= 1
+[INFO] 22:34:33:916 Kernel/(7693:7792): SEM POST EXITOSO a semaforo SEM6 VALOR DEL SEMAFORO ============= 1
+[INFO] 22:34:33:917 Kernel/(7693:7792): MATE_CLOSE: Se recibió del carpincho 6 un MATE CLOSE
+[INFO] 22:34:33:917 Kernel/(7693:7699): Carpincho 6 - Eliminado
+[INFO] 22:34:33:917 Kernel/(7693:7699): Carpincho 7 - Comienza a ejecutar
+[INFO] 22:34:39:923 Kernel/(7693:7797): SEM POST EXITOSO a semaforo SEM1 VALOR DEL SEMAFORO ============= 1
+[INFO] 22:34:42:924 Kernel/(7693:7797): SEM POST EXITOSO a semaforo SEM5 VALOR DEL SEMAFORO ============= 1
+[INFO] 22:34:42:924 Kernel/(7693:7797): SEM POST EXITOSO a semaforo SEM6 VALOR DEL SEMAFORO ============= 1
+[INFO] 22:34:42:925 Kernel/(7693:7797): MATE_CLOSE: Se recibió del carpincho 7 un MATE CLOSE
+[INFO] 22:34:42:925 Kernel/(7693:7699): Carpincho 7 - Eliminado
+[INFO] 22:34:42:935 Kernel/(7693:7938): Recibí el cliente 26
+[INFO] 22:34:42:935 Kernel/(7693:7938): ---------------NEW INSTANCE. Comienza creación del carpincho
+[INFO] 22:34:42:935 Kernel/(7693:7938): NEW INSTANCE: Se agregó el carpincho ID: 8 a la cola de new
+[INFO] 22:34:42:936 Kernel/(7693:7696): Llegó un carpincho al planificador de largo plazo
+[INFO] 22:34:42:936 Kernel/(7693:7696): No hay suspendidos. Se iniciará carpincho 8
+[INFO] 22:34:42:936 Kernel/(7693:7696): --------------Carpincho 8--------------
+[INFO] 22:34:42:936 Kernel/(7693:7696): Tiempo de espera: 0.000000
+[INFO] 22:34:42:936 Kernel/(7693:7696): Tiempo ejecutado: 0.000000
+[INFO] 22:34:42:936 Kernel/(7693:7696): Estimacion: 1.000000
+[INFO] 22:34:42:936 Kernel/(7693:7696): --------------Carpincho 8--------------
+[INFO] 22:34:42:936 Kernel/(7693:7696): Tiempo de espera: 0.000000
+[INFO] 22:34:42:936 Kernel/(7693:7696): Tiempo ejecutado: 0.000000
+[INFO] 22:34:42:936 Kernel/(7693:7696): Estimacion: 1.000000
+[INFO] 22:34:42:936 Kernel/(7693:7699): Carpincho 8 - Comienza a ejecutar
+[INFO] 22:34:42:973 Kernel/(7693:7938): Se recibió del carpincho 8 un SEM DESTROY para SEM1
+[INFO] 22:34:42:974 Kernel/(7693:7938): SEM DESTROY EXITOSO
+[INFO] 22:34:42:974 Kernel/(7693:7938): Se recibió del carpincho 8 un SEM DESTROY para SEM2
+[INFO] 22:34:42:974 Kernel/(7693:7938): SEM DESTROY EXITOSO
+[INFO] 22:34:42:974 Kernel/(7693:7938): Se recibió del carpincho 8 un SEM DESTROY para SEM3
+[INFO] 22:34:42:974 Kernel/(7693:7938): SEM DESTROY EXITOSO
+[INFO] 22:34:42:974 Kernel/(7693:7938): Se recibió del carpincho 8 un SEM DESTROY para SEM4
+[INFO] 22:34:42:974 Kernel/(7693:7938): SEM DESTROY EXITOSO
+[INFO] 22:34:42:974 Kernel/(7693:7938): Se recibió del carpincho 8 un SEM DESTROY para SEM5
+[INFO] 22:34:42:974 Kernel/(7693:7938): SEM DESTROY EXITOSO
+[INFO] 22:34:42:974 Kernel/(7693:7938): Se recibió del carpincho 8 un SEM DESTROY para SEM6
+[INFO] 22:34:42:974 Kernel/(7693:7938): SEM DESTROY EXITOSO
+[INFO] 22:34:42:974 Kernel/(7693:7938): MATE_CLOSE: Se recibió del carpincho 8 un MATE CLOSE
+[INFO] 22:34:42:974 Kernel/(7693:7699): Carpincho 8 - Eliminado
+[INFO] 22:34:44:448 Kernel/(7693:7697): Comienza la ejecución de la detección de Deadlock
+[INFO] 22:35:20:969 Kernel/(7693:7693): Colas, listas y sus respectivos elementos destruidos
+[INFO] 22:35:54:590 Kernel/(8150:8150): Log creado
+[INFO] 22:35:54:593 Kernel/(8150:8150): Configuración obtenida
+[INFO] 22:35:54:594 Kernel/(8150:8150): Semáforos inicializados
+[INFO] 22:35:54:594 Kernel/(8150:8150): Colas de dispositivos IO creadas
+[INFO] 22:35:54:594 Kernel/(8150:8150): Se creó el hilo gestor de la IO laguna
+[INFO] 22:35:54:594 Kernel/(8150:8150): Inicio colas de planificación
+[INFO] 22:35:54:594 Kernel/(8150:8150): Hilo Planificador Corto Plazo creado
+[INFO] 22:35:54:594 Kernel/(8150:8150): Hilo Planificador Largo Plazo creado
+[INFO] 22:35:54:594 Kernel/(8150:8150): Hilo Detección Deadlock creado
+[INFO] 22:35:54:594 Kernel/(8150:8150): Hilo CPU creado
+[INFO] 22:35:56:911 Kernel/(8150:8227): Recibí el cliente 15
+[INFO] 22:35:56:911 Kernel/(8150:8227): ---------------NEW INSTANCE. Comienza creación del carpincho
+[INFO] 22:35:56:911 Kernel/(8150:8227): NEW INSTANCE: Se agregó el carpincho ID: 1 a la cola de new
+[INFO] 22:35:56:911 Kernel/(8150:8153): Llegó un carpincho al planificador de largo plazo
+[INFO] 22:35:56:911 Kernel/(8150:8153): No hay suspendidos. Se iniciará carpincho 1
+[INFO] 22:35:56:911 Kernel/(8150:8153): --------------Carpincho 1--------------
+[INFO] 22:35:56:911 Kernel/(8150:8153): Tiempo de espera: 0.000000
+[INFO] 22:35:56:911 Kernel/(8150:8153): Tiempo ejecutado: 0.000000
+[INFO] 22:35:56:911 Kernel/(8150:8153): Estimacion: 1.000000
+[INFO] 22:35:56:911 Kernel/(8150:8153): --------------Carpincho 1--------------
+[INFO] 22:35:56:911 Kernel/(8150:8153): Tiempo de espera: 0.000000
+[INFO] 22:35:56:911 Kernel/(8150:8153): Tiempo ejecutado: 0.000000
+[INFO] 22:35:56:911 Kernel/(8150:8153): Estimacion: 1.000000
+[INFO] 22:35:56:911 Kernel/(8150:8156): Carpincho 1 - Comienza a ejecutar
+[INFO] 22:35:56:950 Kernel/(8150:8227): Se recibió del carpincho 1 un SEM INIT para el semáforo SEM1 con valor 1
+ 
+[INFO] 22:35:56:951 Kernel/(8150:8227): Se recibió del carpincho 1 un SEM INIT para el semáforo SEM2 con valor 1
+ 
+[INFO] 22:35:56:951 Kernel/(8150:8227): Se recibió del carpincho 1 un SEM INIT para el semáforo SEM3 con valor 1
+ 
+[INFO] 22:35:56:951 Kernel/(8150:8227): Se recibió del carpincho 1 un SEM INIT para el semáforo SEM4 con valor 1
+ 
+[INFO] 22:35:56:951 Kernel/(8150:8227): Se recibió del carpincho 1 un SEM INIT para el semáforo SEM5 con valor 1
+ 
+[INFO] 22:35:56:951 Kernel/(8150:8227): Se recibió del carpincho 1 un SEM INIT para el semáforo SEM6 con valor 1
+ 
+[INFO] 22:35:56:957 Kernel/(8150:8231): Recibí el cliente 16
+[INFO] 22:35:56:958 Kernel/(8150:8231): ---------------NEW INSTANCE. Comienza creación del carpincho
+[INFO] 22:35:56:959 Kernel/(8150:8231): NEW INSTANCE: Se agregó el carpincho ID: 2 a la cola de new
+[INFO] 22:35:56:959 Kernel/(8150:8153): Llegó un carpincho al planificador de largo plazo
+[INFO] 22:35:56:959 Kernel/(8150:8153): No hay suspendidos. Se iniciará carpincho 2
+[INFO] 22:35:56:959 Kernel/(8150:8153): --------------Carpincho 2--------------
+[INFO] 22:35:56:959 Kernel/(8150:8153): Tiempo de espera: 0.000000
+[INFO] 22:35:56:959 Kernel/(8150:8153): Tiempo ejecutado: 0.000000
+[INFO] 22:35:56:959 Kernel/(8150:8153): Estimacion: 1.000000
+[INFO] 22:35:56:959 Kernel/(8150:8153): --------------Carpincho 2--------------
+[INFO] 22:35:56:959 Kernel/(8150:8153): Tiempo de espera: 0.000000
+[INFO] 22:35:56:959 Kernel/(8150:8153): Tiempo ejecutado: 0.000000
+[INFO] 22:35:56:959 Kernel/(8150:8153): Estimacion: 1.000000
+[INFO] 22:35:57:954 Kernel/(8150:8235): Recibí el cliente 20
+[INFO] 22:35:57:954 Kernel/(8150:8235): ---------------NEW INSTANCE. Comienza creación del carpincho
+[INFO] 22:35:57:954 Kernel/(8150:8235): NEW INSTANCE: Se agregó el carpincho ID: 3 a la cola de new
+[INFO] 22:35:58:959 Kernel/(8150:8244): Recibí el cliente 21
+[INFO] 22:35:58:959 Kernel/(8150:8244): ---------------NEW INSTANCE. Comienza creación del carpincho
+[INFO] 22:35:58:960 Kernel/(8150:8244): NEW INSTANCE: Se agregó el carpincho ID: 4 a la cola de new
+[INFO] 22:35:59:958 Kernel/(8150:8248): Recibí el cliente 22
+[INFO] 22:35:59:959 Kernel/(8150:8248): ---------------NEW INSTANCE. Comienza creación del carpincho
+[INFO] 22:35:59:959 Kernel/(8150:8248): NEW INSTANCE: Se agregó el carpincho ID: 5 a la cola de new
+[INFO] 22:36:00:972 Kernel/(8150:8262): Recibí el cliente 23
+[INFO] 22:36:00:973 Kernel/(8150:8262): ---------------NEW INSTANCE. Comienza creación del carpincho
+[INFO] 22:36:00:973 Kernel/(8150:8262): NEW INSTANCE: Se agregó el carpincho ID: 6 a la cola de new
+[INFO] 22:36:01:969 Kernel/(8150:8270): Recibí el cliente 25
+[INFO] 22:36:01:970 Kernel/(8150:8270): ---------------NEW INSTANCE. Comienza creación del carpincho
+[INFO] 22:36:01:970 Kernel/(8150:8270): NEW INSTANCE: Se agregó el carpincho ID: 7 a la cola de new
+[INFO] 22:36:02:957 Kernel/(8150:8227): MATE_CLOSE: Se recibió del carpincho 1 un MATE CLOSE
+[INFO] 22:36:02:958 Kernel/(8150:8153): Llegó un carpincho al planificador de largo plazo
+[INFO] 22:36:02:958 Kernel/(8150:8153): No hay suspendidos. Se iniciará carpincho 3
+[INFO] 22:36:02:958 Kernel/(8150:8153): --------------Carpincho 3--------------
+[INFO] 22:36:02:958 Kernel/(8150:8153): Tiempo de espera: 0.000000
+[INFO] 22:36:02:958 Kernel/(8150:8153): Tiempo ejecutado: 0.000000
+[INFO] 22:36:02:958 Kernel/(8150:8153): Estimacion: 1.000000
+[INFO] 22:36:02:958 Kernel/(8150:8153): --------------Carpincho 3--------------
+[INFO] 22:36:02:958 Kernel/(8150:8153): Tiempo de espera: 0.000000
+[INFO] 22:36:02:958 Kernel/(8150:8153): Tiempo ejecutado: 0.000000
+[INFO] 22:36:02:958 Kernel/(8150:8153): Estimacion: 1.000000
+[INFO] 22:36:02:958 Kernel/(8150:8153): --------------Carpincho 2--------------
+[INFO] 22:36:02:958 Kernel/(8150:8153): Tiempo de espera: 0.000000
+[INFO] 22:36:02:958 Kernel/(8150:8153): Tiempo ejecutado: 0.000000
+[INFO] 22:36:02:958 Kernel/(8150:8153): Estimacion: 1.000000
+[INFO] 22:36:02:958 Kernel/(8150:8156): Carpincho 1 - Eliminado
+[INFO] 22:36:02:958 Kernel/(8150:8156): Carpincho 2 - Comienza a ejecutar
+[INFO] 22:36:08:959 Kernel/(8150:8231): SEM POST EXITOSO a semaforo SEM1 VALOR DEL SEMAFORO ============= 1
+[INFO] 22:36:08:960 Kernel/(8150:8231): SEM POST EXITOSO a semaforo SEM2 VALOR DEL SEMAFORO ============= 1
+[INFO] 22:36:08:961 Kernel/(8150:8231): MATE_CLOSE: Se recibió del carpincho 2 un MATE CLOSE
+[INFO] 22:36:08:961 Kernel/(8150:8153): Llegó un carpincho al planificador de largo plazo
+[INFO] 22:36:08:961 Kernel/(8150:8153): No hay suspendidos. Se iniciará carpincho 4
+[INFO] 22:36:08:961 Kernel/(8150:8153): --------------Carpincho 4--------------
+[INFO] 22:36:08:961 Kernel/(8150:8153): Tiempo de espera: 0.000000
+[INFO] 22:36:08:961 Kernel/(8150:8153): Tiempo ejecutado: 0.000000
+[INFO] 22:36:08:961 Kernel/(8150:8153): Estimacion: 1.000000
+[INFO] 22:36:08:961 Kernel/(8150:8153): --------------Carpincho 4--------------
+[INFO] 22:36:08:961 Kernel/(8150:8153): Tiempo de espera: 0.000000
+[INFO] 22:36:08:961 Kernel/(8150:8153): Tiempo ejecutado: 0.000000
+[INFO] 22:36:08:961 Kernel/(8150:8153): Estimacion: 1.000000
+[INFO] 22:36:08:961 Kernel/(8150:8153): --------------Carpincho 3--------------
+[INFO] 22:36:08:961 Kernel/(8150:8153): Tiempo de espera: 0.000000
+[INFO] 22:36:08:961 Kernel/(8150:8153): Tiempo ejecutado: 0.000000
+[INFO] 22:36:08:961 Kernel/(8150:8153): Estimacion: 1.000000
+[INFO] 22:36:08:961 Kernel/(8150:8156): Carpincho 2 - Eliminado
+[INFO] 22:36:08:961 Kernel/(8150:8156): Carpincho 3 - Comienza a ejecutar
+[INFO] 22:36:14:964 Kernel/(8150:8235): SEM POST EXITOSO a semaforo SEM2 VALOR DEL SEMAFORO ============= 1
+[INFO] 22:36:14:970 Kernel/(8150:8235): SEM POST EXITOSO a semaforo SEM3 VALOR DEL SEMAFORO ============= 1
+[INFO] 22:36:14:979 Kernel/(8150:8235): MATE_CLOSE: Se recibió del carpincho 3 un MATE CLOSE
+[INFO] 22:36:14:979 Kernel/(8150:8153): Llegó un carpincho al planificador de largo plazo
+[INFO] 22:36:14:979 Kernel/(8150:8153): No hay suspendidos. Se iniciará carpincho 5
+[INFO] 22:36:14:979 Kernel/(8150:8153): --------------Carpincho 5--------------
+[INFO] 22:36:14:979 Kernel/(8150:8153): Tiempo de espera: 0.000000
+[INFO] 22:36:14:979 Kernel/(8150:8153): Tiempo ejecutado: 0.000000
+[INFO] 22:36:14:979 Kernel/(8150:8153): Estimacion: 1.000000
+[INFO] 22:36:14:979 Kernel/(8150:8153): --------------Carpincho 5--------------
+[INFO] 22:36:14:979 Kernel/(8150:8153): Tiempo de espera: 0.000000
+[INFO] 22:36:14:979 Kernel/(8150:8153): Tiempo ejecutado: 0.000000
+[INFO] 22:36:14:979 Kernel/(8150:8153): Estimacion: 1.000000
+[INFO] 22:36:14:979 Kernel/(8150:8153): --------------Carpincho 4--------------
+[INFO] 22:36:14:979 Kernel/(8150:8153): Tiempo de espera: 0.000000
+[INFO] 22:36:14:979 Kernel/(8150:8153): Tiempo ejecutado: 0.000000
+[INFO] 22:36:14:979 Kernel/(8150:8153): Estimacion: 1.000000
+[INFO] 22:36:14:979 Kernel/(8150:8156): Carpincho 3 - Eliminado
+[INFO] 22:36:14:979 Kernel/(8150:8156): Carpincho 4 - Comienza a ejecutar
+[INFO] 22:36:20:982 Kernel/(8150:8244): SEM POST EXITOSO a semaforo SEM3 VALOR DEL SEMAFORO ============= 1
+[INFO] 22:36:20:983 Kernel/(8150:8244): SEM POST EXITOSO a semaforo SEM4 VALOR DEL SEMAFORO ============= 1
+[INFO] 22:36:20:984 Kernel/(8150:8244): MATE_CLOSE: Se recibió del carpincho 4 un MATE CLOSE
+[INFO] 22:36:20:984 Kernel/(8150:8153): Llegó un carpincho al planificador de largo plazo
+[INFO] 22:36:20:984 Kernel/(8150:8153): No hay suspendidos. Se iniciará carpincho 6
+[INFO] 22:36:20:984 Kernel/(8150:8153): --------------Carpincho 6--------------
+[INFO] 22:36:20:984 Kernel/(8150:8153): Tiempo de espera: 0.000000
+[INFO] 22:36:20:984 Kernel/(8150:8153): Tiempo ejecutado: 0.000000
+[INFO] 22:36:20:984 Kernel/(8150:8153): Estimacion: 1.000000
+[INFO] 22:36:20:984 Kernel/(8150:8153): --------------Carpincho 6--------------
+[INFO] 22:36:20:984 Kernel/(8150:8153): Tiempo de espera: 0.000000
+[INFO] 22:36:20:984 Kernel/(8150:8153): Tiempo ejecutado: 0.000000
+[INFO] 22:36:20:984 Kernel/(8150:8153): Estimacion: 1.000000
+[INFO] 22:36:20:984 Kernel/(8150:8153): --------------Carpincho 5--------------
+[INFO] 22:36:20:984 Kernel/(8150:8153): Tiempo de espera: 0.000000
+[INFO] 22:36:20:984 Kernel/(8150:8153): Tiempo ejecutado: 0.000000
+[INFO] 22:36:20:984 Kernel/(8150:8153): Estimacion: 1.000000
+[INFO] 22:36:20:984 Kernel/(8150:8156): Carpincho 4 - Eliminado
+[INFO] 22:36:20:984 Kernel/(8150:8156): Carpincho 5 - Comienza a ejecutar
+[INFO] 22:36:26:986 Kernel/(8150:8248): SEM POST EXITOSO a semaforo SEM1 VALOR DEL SEMAFORO ============= 1
+[INFO] 22:36:26:986 Kernel/(8150:8248): SEM POST EXITOSO a semaforo SEM4 VALOR DEL SEMAFORO ============= 1
+[INFO] 22:36:26:987 Kernel/(8150:8248): MATE_CLOSE: Se recibió del carpincho 5 un MATE CLOSE
+[INFO] 22:36:26:987 Kernel/(8150:8153): Llegó un carpincho al planificador de largo plazo
+[INFO] 22:36:26:987 Kernel/(8150:8153): No hay suspendidos. Se iniciará carpincho 7
+[INFO] 22:36:26:987 Kernel/(8150:8153): --------------Carpincho 7--------------
+[INFO] 22:36:26:987 Kernel/(8150:8153): Tiempo de espera: 0.000000
+[INFO] 22:36:26:987 Kernel/(8150:8153): Tiempo ejecutado: 0.000000
+[INFO] 22:36:26:987 Kernel/(8150:8153): Estimacion: 1.000000
+[INFO] 22:36:26:987 Kernel/(8150:8153): --------------Carpincho 7--------------
+[INFO] 22:36:26:987 Kernel/(8150:8153): Tiempo de espera: 0.000000
+[INFO] 22:36:26:987 Kernel/(8150:8153): Tiempo ejecutado: 0.000000
+[INFO] 22:36:26:987 Kernel/(8150:8153): Estimacion: 1.000000
+[INFO] 22:36:26:987 Kernel/(8150:8153): --------------Carpincho 6--------------
+[INFO] 22:36:26:987 Kernel/(8150:8153): Tiempo de espera: 0.000000
+[INFO] 22:36:26:987 Kernel/(8150:8153): Tiempo ejecutado: 0.000000
+[INFO] 22:36:26:987 Kernel/(8150:8153): Estimacion: 1.000000
+[INFO] 22:36:26:987 Kernel/(8150:8156): Carpincho 5 - Eliminado
+[INFO] 22:36:26:987 Kernel/(8150:8156): Carpincho 6 - Comienza a ejecutar
+[INFO] 22:36:32:992 Kernel/(8150:8262): SEM POST EXITOSO a semaforo SEM5 VALOR DEL SEMAFORO ============= 1
+[INFO] 22:36:32:992 Kernel/(8150:8262): SEM POST EXITOSO a semaforo SEM6 VALOR DEL SEMAFORO ============= 1
+[INFO] 22:36:32:992 Kernel/(8150:8262): MATE_CLOSE: Se recibió del carpincho 6 un MATE CLOSE
+[INFO] 22:36:32:993 Kernel/(8150:8156): Carpincho 6 - Eliminado
+[INFO] 22:36:32:993 Kernel/(8150:8156): Carpincho 7 - Comienza a ejecutar
+[INFO] 22:36:38:994 Kernel/(8150:8270): SEM POST EXITOSO a semaforo SEM1 VALOR DEL SEMAFORO ============= 1
+[INFO] 22:36:41:995 Kernel/(8150:8270): SEM POST EXITOSO a semaforo SEM5 VALOR DEL SEMAFORO ============= 1
+[INFO] 22:36:41:996 Kernel/(8150:8270): SEM POST EXITOSO a semaforo SEM6 VALOR DEL SEMAFORO ============= 1
+[INFO] 22:36:41:996 Kernel/(8150:8270): MATE_CLOSE: Se recibió del carpincho 7 un MATE CLOSE
+[INFO] 22:36:41:997 Kernel/(8150:8156): Carpincho 7 - Eliminado
+[INFO] 22:36:42:008 Kernel/(8150:8410): Recibí el cliente 26
+[INFO] 22:36:42:008 Kernel/(8150:8410): ---------------NEW INSTANCE. Comienza creación del carpincho
+[INFO] 22:36:42:009 Kernel/(8150:8410): NEW INSTANCE: Se agregó el carpincho ID: 8 a la cola de new
+[INFO] 22:36:42:009 Kernel/(8150:8153): Llegó un carpincho al planificador de largo plazo
+[INFO] 22:36:42:009 Kernel/(8150:8153): No hay suspendidos. Se iniciará carpincho 8
+[INFO] 22:36:42:009 Kernel/(8150:8153): --------------Carpincho 8--------------
+[INFO] 22:36:42:009 Kernel/(8150:8153): Tiempo de espera: 0.000000
+[INFO] 22:36:42:009 Kernel/(8150:8153): Tiempo ejecutado: 0.000000
+[INFO] 22:36:42:009 Kernel/(8150:8153): Estimacion: 1.000000
+[INFO] 22:36:42:009 Kernel/(8150:8153): --------------Carpincho 8--------------
+[INFO] 22:36:42:009 Kernel/(8150:8153): Tiempo de espera: 0.000000
+[INFO] 22:36:42:009 Kernel/(8150:8153): Tiempo ejecutado: 0.000000
+[INFO] 22:36:42:009 Kernel/(8150:8153): Estimacion: 1.000000
+[INFO] 22:36:42:009 Kernel/(8150:8156): Carpincho 8 - Comienza a ejecutar
+[INFO] 22:36:42:045 Kernel/(8150:8410): Se recibió del carpincho 8 un SEM DESTROY para SEM1
+[INFO] 22:36:42:045 Kernel/(8150:8410): SEM DESTROY EXITOSO
+[INFO] 22:36:42:046 Kernel/(8150:8410): Se recibió del carpincho 8 un SEM DESTROY para SEM2
+[INFO] 22:36:42:046 Kernel/(8150:8410): SEM DESTROY EXITOSO
+[INFO] 22:36:42:046 Kernel/(8150:8410): Se recibió del carpincho 8 un SEM DESTROY para SEM3
+[INFO] 22:36:42:046 Kernel/(8150:8410): SEM DESTROY EXITOSO
+[INFO] 22:36:42:046 Kernel/(8150:8410): Se recibió del carpincho 8 un SEM DESTROY para SEM4
+[INFO] 22:36:42:046 Kernel/(8150:8410): SEM DESTROY EXITOSO
+[INFO] 22:36:42:046 Kernel/(8150:8410): Se recibió del carpincho 8 un SEM DESTROY para SEM5
+[INFO] 22:36:42:046 Kernel/(8150:8410): SEM DESTROY EXITOSO
+[INFO] 22:36:42:046 Kernel/(8150:8410): Se recibió del carpincho 8 un SEM DESTROY para SEM6
+[INFO] 22:36:42:046 Kernel/(8150:8410): SEM DESTROY EXITOSO
+[INFO] 22:36:42:046 Kernel/(8150:8410): MATE_CLOSE: Se recibió del carpincho 8 un MATE CLOSE
+[INFO] 22:36:42:046 Kernel/(8150:8156): Carpincho 8 - Eliminado
+[INFO] 22:36:44:594 Kernel/(8150:8154): Comienza la ejecución de la detección de Deadlock
+[INFO] 22:36:57:249 Kernel/(8150:8150): Colas, listas y sus respectivos elementos destruidos

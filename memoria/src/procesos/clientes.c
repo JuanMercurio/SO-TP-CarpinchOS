@@ -77,10 +77,21 @@ void ejecutar_proceso(int cliente)
                 break;
                 
             case SUSPENCION: printf("recibi un suspension de carpincho %d\n", cliente); //cambiar por comportamiento real
+                /* escribir contenido de paginas en swap y liberar los marcos para que otro porceso los use */
+                for(int i = 0 ; i < list_size(tabla->tabla_pag); i++ ){
+                    int frame = buscar_en_tabPags(tabla, i);
+                    if(frame == -1) continue;
+                    pag_t * pagina =  list_get(tabla->tabla_pag, i);
+                    if(pagina->modificado == 1) enviar_pagina_a_swap(tabla->pid, i, frame);
+                    int aux = recibir_int(swap);
+                    printf("recibo de swap por enviar pagina por suspension %d\n", aux);
+                    pagina_liberar(pagina, i , tabla->pid);
+                  }
                 break;
 
-            case VUELTA_A_READY: printf("recibi vuelta a ready de carpincho %d\n", cliente); //cambiar por comportamieto real
-                break;
+           /*  case VUELTA_A_READY: printf("recibi vuelta a ready de carpincho %d\n", cliente); //cambiar por comportamieto real
+            // vuelve a tener sus paginas disponibles para seguir su ejecucion          
+                break;*/
                 
             default:
                 conectado = false;
