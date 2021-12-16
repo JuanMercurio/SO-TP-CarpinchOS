@@ -48,6 +48,9 @@ typedef struct {
     char* contenido_pagina;
     int oper;
 } Pedido;
+typedef struct{
+    int cant;
+}Cantidad_arch_car;
 
 //VARIABLES GLOBALES
 int server;
@@ -58,6 +61,7 @@ t_list* lista_marcos;
 t_list* marcos_libres_fija;
 t_list* marcos_libres;
 t_list* lista_pedidos;
+t_list* cantidad_carpinchos_por_archivo;
 sem_t* mutex_lista_pedidos;
 sem_t*  agrego_lista_pedidos;
 int cant_ped;
