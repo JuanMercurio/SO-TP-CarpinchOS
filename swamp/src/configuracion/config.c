@@ -23,17 +23,17 @@ void obtener_config(){
     printf("IP: \n");
     configuracion.IP = config_get_string_value(config, "IP");
     printf("ARCHIVOS_SWAMP \n");
-    configuracion.ARCHIVOS_SWAP = config_get_string_value(config, "ARCHIVOS_SWAP");
+    configuracion.ARCHIVOS_SWAP = config_get_string_value(config, "ARCHIVOS_SWAMP");
     printf("ACHIVOS SWAMP\n");
-    configuracion.ARCHIVOS_SWAP_list = config_get_array_value(config,"ARCHIVOS_SWAP");
+    configuracion.ARCHIVOS_SWAP_list = config_get_array_value(config,"ARCHIVOS_SWAMP");
     printf("PUERTO \n");
     configuracion.PUERTO = config_get_string_value(config, "PUERTO");
     printf("MARCOS_MAXIMOS \n");
-    configuracion.MARCOS_MAXIMOS = config_get_int_value(config, "MARCOS_MAXIMOS");
+    configuracion.MARCOS_MAXIMOS = config_get_int_value(config, "MARCOS_POR_CARPINCHO");
     printf("RETARDO\n");
-    configuracion.RETARDO_SWAP = config_get_int_value(config, "RETARDO_SWAP");
+    configuracion.RETARDO_SWAP = config_get_int_value(config, "RETARDO_SWAMP");
     printf("TAMAÑO PAGINA\n");
     configuracion.TAMANIO_PAGINA = config_get_int_value(config, "TAMANIO_PAGINA");
     printf("TAMANIO SWAP\n");
-    configuracion.TAMANIO_SWAP = config_get_int_value(config, "TAMANIO_SWAP");
+    configuracion.TAMANIO_SWAP = config_get_int_value(config, "TAMANIO_SWAMP");
 }
