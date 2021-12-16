@@ -374,8 +374,11 @@ void receptor(void *arg)
          int size_confimation = recibir_int(carpincho->fd_memoria);
          recibido = recibir_buffer(size_confimation, carpincho->fd_memoria);
 
+         // enviar_mensaje(cliente, recibido);
          enviar_int(cliente, 0);
-         enviar_mensaje(cliente, recibido);
+         enviar_int(carpincho->fd_cliente, size_confimation);
+         enviar_buffer(cliente, recibido, size_confimation);
+
          printf("MEMREAD mensaje enviado %s\n ", recibido);
          free(recibido);
          break;
