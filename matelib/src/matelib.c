@@ -17,6 +17,7 @@ int mate_init(mate_instance *lib_ref, char *config) //AGREGAR LOG
 {
   printf("MATE INIT LLEGUE\n");
   t_config *configuracion = config_create(config);
+
   char *IP = config_get_string_value(configuracion, "IP");
   char *PUERTO = config_get_string_value(configuracion, "PUERTO");
   char *ARCHIVO_LOG = config_get_string_value(configuracion, "ARCHIVO_LOG");
@@ -29,7 +30,6 @@ int mate_init(mate_instance *lib_ref, char *config) //AGREGAR LOG
 
   mate_ref->conexion = crear_conexion(IP, PUERTO);
 
-  log_info(logger, "Esperando respuesta de servidor");
   char *respuesta = recibir_mensaje(mate_ref->conexion);
   conexion_set_server(mate_ref, respuesta, logger);
 
@@ -262,9 +262,13 @@ int mate_memread(mate_instance *lib_ref, mate_pointer origin, void *dest, int si
 
 int mate_memwrite(mate_instance *lib_ref, void *origin, mate_pointer dest, int size)
 {
+  printf("Envie el el tamanio %d\n", size);
+  mate_inner_structure* info = (mate_inner_structure *)lib_ref->group_info;
   log_info(logger, "MEM_WRITE el mensaje %s en %d", (char *)origin, dest);
 
-  enviar_mensaje_y_cod_op((char*)origin,((mate_inner_structure *)lib_ref->group_info)->conexion, MEMWRITE);
+  enviar_int(info->conexion, MEMWRITE);
+  enviar_int(info->conexion, size);
+  enviar_buffer(info->conexion, origin, size);
   enviar_int(((mate_inner_structure *)lib_ref->group_info)->conexion, dest);
   int recibido = recibir_operacion(((mate_inner_structure *)lib_ref->group_info)->conexion);
 
