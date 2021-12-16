@@ -221,4 +221,10 @@ bool proceso_tiene_frames_asignados(tab_pags* tabla);
 void pagina_liberar(pag_t *pagina, int n_pagina, int pid);
 
 void tablas_imprimir_saturno();
+
+void marco_ocupar(int marco);
+
+bool fija_es_valido_iniciar(tab_pags* tabla, int marco);
+
+bool dinamica_marco_libre(int marco);
 #endif

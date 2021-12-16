@@ -328,7 +328,6 @@ void iniciar_planificador_largo_plazo()
          log_info(logger, "Llegó un carpincho al planificador de largo plazo");
          if (!queue_is_empty(suspendido_listo))
          {
-            enviar_mensaje_y_cod_op("sali de suspension", carpincho->fd_memoria, VUELTA_A_READY); // traer de swamp las paginasssssss
             sem_wait(&mutex_cola_listo_suspendido);
             carpincho = (t_pcb *)queue_pop(suspendido_listo);
             sem_post(&mutex_cola_listo_suspendido);

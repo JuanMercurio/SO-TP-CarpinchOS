@@ -33,8 +33,8 @@ t_victima lru_dinamico(int pid, tab_pags* tabla)
                 registro->algoritmo = reg->alg;
                 registro->marco = reg->marco; 
                 registro->modificado = reg->modificado;
-                registro->presente = 1;
-                registro->tlb = 1;
+               // registro->presente = 1;
+               // registro->tlb = 1;
             }
             
             if (registro->algoritmo <= LRU_min) {
@@ -54,7 +54,7 @@ t_victima lru_dinamico(int pid, tab_pags* tabla)
 
 	pagina->presente = 0;
     pagina->modificado = 0; //esto es para que cuando busque en swap la pagina este en modo read hasta que le diga que no
-
+    pagina->tlb = 0;
 	return victima;
 }
 
@@ -71,11 +71,11 @@ t_victima lru_en_pag_table(tab_pags* tabla){
         printf("hay para analizar\n");
         if (registro->tlb == 1) {
             tlb_t* reg = tlb_obtener_registro(tabla->pid, i);
-            registro->algoritmo = reg->alg_tlb;
+            registro->algoritmo = reg->alg;
             registro->marco = reg->marco; 
             registro->modificado = reg->modificado;
-            registro->presente = 1;
-            registro->tlb = 1;
+           // registro->presente = 1;
+           // registro->tlb = 1;
         }
 
         if (registro->algoritmo < LRU_min) {
@@ -91,7 +91,8 @@ t_victima lru_en_pag_table(tab_pags* tabla){
      abort();
  }
     pagina->presente = 0;
-
+    pagina->modificado = 0;
+    pagina->tlb = 0;
     t_victima victima;    
     victima.marco      = pagina->marco;
     victima.modificado = pagina->modificado;
@@ -168,11 +169,11 @@ int clock_buscar_00(tab_pags* tabla)
 
         if (reg->tlb == 1) {
             tlb_t* registro = tlb_obtener_registro(tabla->pid, i);
-            reg->algoritmo = registro->alg_tlb;
+            reg->algoritmo = registro->alg;
             reg->marco = registro->marco; 
             reg->modificado = registro->modificado;
-            reg->presente = 1;
-            reg->tlb = 1;
+           // reg->presente = 1;
+           // reg->tlb = 1;
         }
 
         if(reg->modificado == 0 && reg->algoritmo == 0) 
@@ -225,14 +226,14 @@ int clock_buscar_01(tab_pags* tabla)
 			iteracion++;
 			continue;
 		}
-
+        tlb_t* registro;
         if (reg->tlb == 1) {
-            tlb_t* registro = tlb_obtener_registro(tabla->pid, i);
-            reg->algoritmo = registro->alg_tlb;
+            registro = tlb_obtener_registro(tabla->pid, i);
+            reg->algoritmo = registro->alg;
             reg->marco = registro->marco; 
             reg->modificado = registro->modificado;
-            reg->presente = 1;
-            reg->tlb = 1;
+           // reg->presente = 1;
+           // reg->tlb = 1;
         }
         /* codigo horrible  */
         if(reg->modificado == 1 && reg->algoritmo == 0) 
@@ -244,9 +245,10 @@ int clock_buscar_01(tab_pags* tabla)
                 
             return i;
         }
-        else
+        else{
             reg->algoritmo = 0;
-
+            if(reg->tlb == 1) registro->alg = 0;
+        }
 
         if(i+1 == tamanio) 
             i = 0;
@@ -294,9 +296,14 @@ void page_use(int pid, int marco, pag_t* p, int n_pagina, int codigo)
 {
     if (p->tlb == 1) {
         tlb_t *reg = buscar_reg_en_tlb(pid, n_pagina);
+        if(reg == NULL){
+            printf("Error con la pagina %d y el pid %d\n", n_pagina, pid);
+            printf("No esta en la tlb\n");
+            abort();
+        }
         tlb_page_use(reg);
 
-        if (strcmp(configuracion.ALGORITMO_REEMPLAZO_TLB, "LRU") == 0) reg->alg = alg_comportamiento_tlb();
+        if (strcmp(configuracion.ALGORITMO_REEMPLAZO_TLB, "LRU") == 0) reg->alg = alg_comportamiento_tlb();// que carajos??
 
         if (codigo == WRITE) {
             reg->modificado = WRITE;
@@ -387,7 +394,7 @@ int clock_buscar_00_dinamico(tab_pags** tabla, int posicion)
 			pag_t *reg = NULL;
             reg = list_get((*tabla)->tabla_pag, j);
 
-			if(reg->presente != 1 || reg->tlb == 1) continue;
+			if(reg->presente != 1 || reg->algoritmo == -1) continue;
 
             if (reg->tlb == 1) {
                 tlb_t* registro = tlb_obtener_registro((*tabla)->pid, j);
@@ -395,8 +402,8 @@ int clock_buscar_00_dinamico(tab_pags** tabla, int posicion)
                 reg->algoritmo = registro->alg;
                 reg->marco = registro->marco; 
                 reg->modificado = registro->modificado;
-                reg->presente = 1;
-                reg->tlb = 1;
+               //reg->presente = 1;
+               // reg->tlb = 1;
             }
 
 			if(reg->modificado == 0 && reg->algoritmo == 0) 
@@ -468,16 +475,16 @@ int clock_buscar_01__dinamico(tab_pags** tabla, int posicion)
 
 			pag_t *reg = list_get((*tabla)->tabla_pag, j);
 
-			if(reg->presente != 1 || reg->tlb == 1) continue;
-
+			if(reg->presente != 1 || reg->algoritmo == -1) continue;
+                tlb_t* registro;
             if (reg->tlb == 1) {
-                tlb_t* registro = tlb_obtener_registro((*tabla)->pid, j);
+                registro = tlb_obtener_registro((*tabla)->pid, j);
                 if (reg == NULL) printf("perro estas en cualquiera\n");
                 reg->algoritmo = registro->alg;
                 reg->marco = registro->marco; 
                 reg->modificado = registro->modificado;
-                reg->presente = 1;
-                reg->tlb = 1;
+               // reg->presente = 1;
+               // reg->tlb = 1;
             }
 
 			if(reg->modificado == 1 && reg->algoritmo == 0) 
@@ -501,7 +508,10 @@ int clock_buscar_01__dinamico(tab_pags** tabla, int posicion)
 
 				return j;
 			}
-		   	else reg->algoritmo = 0;
+		   	else {
+                    reg->algoritmo = 0;
+                    if(reg->tlb ==1) registro->alg = 0;
+               } 
 		}
 
 
@@ -563,6 +573,19 @@ t_victima clock_dinamico(int pid, tab_pags* tabla)
 
 	p->presente   = 0;
 	p->modificado = 0;
+    p->tlb = 0;
 
 	return victima;
+}
+
+void tlb_actualizar_entrada_vieja(int pid, int pagina)
+{
+   int tamanio = list_size(tlb);
+    for (int i=0; i < tamanio; i++) {
+
+        tlb_t *reg = list_get(tlb, i);
+        if(reg->pid == pid  && reg->pagina == pagina) {
+            reg->pid = -1;
+        }
+    }
 }

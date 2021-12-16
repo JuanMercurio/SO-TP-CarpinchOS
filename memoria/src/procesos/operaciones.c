@@ -365,7 +365,6 @@ int memfree(tab_pags* tabla, int dir_log){
 				int ultima = list_size(tabla_paginas->tabla_pag)-1;
 				pag_t *pagina = list_remove(tabla_paginas->tabla_pag, ultima);
 				pagina_liberar(pagina, ultima, tabla->pid);
-
 				printf("Elimine la pagina %d\n", ultima);
 			}
 		}
@@ -450,6 +449,9 @@ void* memoria_leer(tab_pags* tabla, dir_t dl, int tamanio){
     while(bytes_remaining > 0)
     {
         int marco = nro_marco(dl.PAGINA, tabla);
+		if(marco == -1){ printf("No se encontro el marco\n");
+		abort();
+		}
         dir_t df = { marco, dl.offset };
         int leer = min_get(bytes_remaining, page_remaining_space);
 
@@ -479,10 +481,10 @@ int memoria_escribir(tab_pags* tabla, dir_t dl, void* contenido, int tamanio){
     while(bytes_remaining > 0)
     {
         int marco = nro_marco(dl.PAGINA, tabla);
-		if (marco < 0) {
-			fprintf(stderr, "\n Error con el nro de marco obtenido \n\n");
+		if(marco == -1){ printf("No se encontro el marco\n");
+		abort();
 		}
-
+		
         dir_t df = { marco, dl.offset };
         int bytes_to_write = min_get(bytes_remaining, bytes_remaining_space);
 		printf("Voy a escribir %d bytes\n", bytes_to_write);

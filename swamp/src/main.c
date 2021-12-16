@@ -73,7 +73,7 @@ int main(int argc, char *argv[])
     {
         marcosLibes();
     }
-    pruebas();
+   // pruebas();
     int cantidad_lista_pedidos = 1;
     //cantidad_lista_pedidos
     termino = 0;

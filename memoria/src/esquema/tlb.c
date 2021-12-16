@@ -137,7 +137,7 @@ int lru_tlb()
     return fifo_tlb();
 }
 
-void tlb_page_use_fifo(tlb_t* reg){}
+void tlb_page_use_fifo(tlb_t* reg){}// what??
 
 void tlb_page_use_lru(tlb_t* reg){
     reg->alg_tlb = suma_atomica(&FIFO_TLB);

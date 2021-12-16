@@ -76,16 +76,29 @@ void ejecutar_proceso(int cliente)
                 conectado = false;
                 break;
                 
-            case SUSPENCION: printf("recibi un suspension de carpincho %d\n", cliente); //cambiar por comportamiento real
+            case SUSPENCION: printf("recibi un suspension de carpincho %d\n", tabla->pid); //cambiar por comportamiento real
                 /* escribir contenido de paginas en swap y liberar los marcos para que otro porceso los use */
+                printf("cantidad de paginas del carpincho %d: %d\n", tabla->pid,  list_size(tabla->tabla_pag));
                 for(int i = 0 ; i < list_size(tabla->tabla_pag); i++ ){
                     int frame = buscar_en_tabPags(tabla, i);
-                    if(frame == -1) continue;
+                    if(frame == -1){
+                        printf("salto por frame = -1\n");
+                         continue;
+                    }
                     pag_t * pagina =  list_get(tabla->tabla_pag, i);
-                    if(pagina->modificado == 1) enviar_pagina_a_swap(tabla->pid, i, frame);
+                    if(pagina->modificado == 1)
+                    { enviar_pagina_a_swap(tabla->pid, i, frame);
+                    printf("envio pagina a swap\n");
                     int aux = recibir_int(swap);
-                    printf("recibo de swap por enviar pagina por suspension %d\n", aux);
-                    pagina_liberar(pagina, i , tabla->pid);
+                    printf("recibo de swap por enviar pagina por suspension %d\n",aux );
+                    }else
+                    {
+                        printf("no encontro modificado\n");
+                    }
+                     printf("borra de memoria por suspension pagina %d, de marco %d, presncia %d \n",i, pagina->marco, pagina->presente);
+	                pagina_liberar_marco(pagina);
+	                
+                    pagina_liberar_tlb(tabla->pid, i);
                   }
                 break;
 
@@ -250,6 +263,7 @@ void inicio_comprobar(tab_pags* tabla, int cliente, bool* conectado){
 
 void cliente_terminar(tab_pags* tabla, int cliente)
 { 
+    printf("imprimiendo tabla de carpincho %d\n", tabla->pid);
     tablas_imprimir_saturno();
     if (tabla->p_clock != -1) clock_puntero_actualizar(tabla->pid);
     tablas_eliminar_proceso(tabla->pid);

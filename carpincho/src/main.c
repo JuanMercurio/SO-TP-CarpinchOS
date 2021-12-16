@@ -124,7 +124,7 @@ void init_sems()
 
 
 //----------------------SUSPENSION---------------------//
- /*  void* carpincho1_func(void* config){
+   void* carpincho1_func(void* config){
 
 	mate_instance instance;
 
@@ -134,12 +134,18 @@ void init_sems()
 	printf("C1 - Hace una llamada a IO\n");
 	mate_call_io(&instance, "PILETA", "Vamos a usar la pileta...");
 
+   mate_pointer mem = mate_memalloc(&instance, ALLOCAR);
+   char mens [] = "HOLA";
+   mate_memwrite(&instance, mens, mem, strlen(mens));
+   void* leido = malloc(strlen(mens)+1);
+   mate_memread(&instance, mem, leido, strlen(mens));
+   printf("leyo: %s\n", (char*)leido); 
 	printf("C1 - Hace una llamada a IO\n");
 	mate_call_io(&instance, "PILETA", "Vamos a usar la pileta...");
+    mate_memfree(&instance, mem);
 
 	printf("C1 - Hace una llamada a IO\n");
 	mate_call_io(&instance, "PILETA", "Vamos a usar la pileta...");
-
     mate_close(&instance);
 
 	return 0;
@@ -160,7 +166,7 @@ void* carpincho2_func(void* config){
 
 	printf("C2 - Hace una llamada a IO\n");
 	mate_call_io(&instance, "PILETA", "Vamos a usar la pileta...");
-
+ printf("Voy a romper todoooooo\n");
     mate_close(&instance);
 
 	return 0;
@@ -224,22 +230,23 @@ void* carpincho4_func(void* config){
 
 	pthread_create(&carpincho1, NULL, carpincho1_func, "cfg/carpincho.config");
 	sleep(1);
-	pthread_create(&carpincho2, NULL, carpincho2_func,"cfg/carpincho.config");
+ 	pthread_create(&carpincho2, NULL, carpincho2_func,"cfg/carpincho.config");
 	sleep(1);
+   
 	pthread_create(&carpincho3, NULL, carpincho3_func, "cfg/carpincho.config");
 	sleep(1);
-	pthread_create(&carpincho4, NULL, carpincho4_func, "cfg/carpincho.config");
-
-	pthread_join(carpincho4, NULL);
-	pthread_join(carpincho3, NULL);
-	pthread_join(carpincho2, NULL);
+	/*pthread_create(&carpincho4, NULL, carpincho4_func, "cfg/carpincho.config");  */
+  
+/* 	pthread_join(carpincho4, NULL);*/
+	pthread_join(carpincho3, NULL); 
+	pthread_join(carpincho2, NULL);  
 	pthread_join(carpincho1, NULL);
 
 	printf("MAIN - Retirados los carpinchos de la pelea, hora de analizar los hechos\n");
 
 	return EXIT_SUCCESS;
 }  
-  */
+  
 /*
 int main(int argc, char* argv[]) {
 
@@ -359,7 +366,7 @@ void memoria_carpincho()
    abort();
 } 
 
-//------------------------------- DEADLOCK--------------------//
+/* //------------------------------- DEADLOCK--------------------//
 
 
 void* carpincho1_func(void* config){
@@ -574,3 +581,4 @@ int main(int argc, char *argv[]) {
 	return EXIT_SUCCESS;
 }  
  
+ */

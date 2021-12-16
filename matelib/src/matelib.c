@@ -53,12 +53,10 @@ int mate_init(mate_instance *lib_ref, char *config) //AGREGAR LOG
 
 int mate_close(mate_instance *lib_ref)
 {
-  log_info(logger, "MATE_CLOSE");
+  log_info(logger, "MATE_CLOSE carpincho %d",((mate_inner_structure*)lib_ref->group_info)->pid );
   enviar_int(((mate_inner_structure*)lib_ref->group_info)->conexion, MATE_CLOSE);
   log_info(logger, "MATE_CLOSE: mensaje enviado a kernel");
   free(lib_ref->group_info);
-  log_info(logger, "libero memoria");
-  log_info(logger, "libero memoria");
   log_info(logger, "Carpincho eliminado");
     return 0;
  }
@@ -165,7 +163,7 @@ int mate_sem_destroy(mate_instance *lib_ref, mate_sem_name sem)
 
 int mate_call_io(mate_instance *lib_ref, mate_io_resource io, void *msg)
 {
-  log_info(logger, "CALL_IO a %s", io);
+  log_info(logger, "CALL_IO a %s carpincho %d", io , ((mate_inner_structure*)lib_ref->group_info)->pid);
   log_info(logger, msg);
 
   if (conectado_a_memoria(lib_ref))
@@ -219,7 +217,7 @@ int mate_memfree(mate_instance *lib_ref, mate_pointer addr)
   log_info(logger, "MEM_FREE a la dirección %d", addr);
   enviar_cod_op_e_int(((mate_inner_structure *)lib_ref->group_info)->conexion, MEMFREE, addr);
   int respuesta = recibir_int(((mate_inner_structure *)lib_ref->group_info)->conexion);
-  printf("Esperando respuesta\n");
+  printf("Esperando respuesta memfree\n");
   if (respuesta == -5)
   {
     log_info(logger, "Error al realizar el MEM_FREE");

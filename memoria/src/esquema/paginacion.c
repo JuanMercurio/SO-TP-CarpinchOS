@@ -155,14 +155,20 @@ int buscar_en_swap(tab_pags *tabla, int pagina)
     printf("SWAP - PID: %d - PAG: %d - Recibi esto: %s\n", tabla->pid, pagina, (char*)contenido);
 
     int marco = marco_libre();
-    if ( marco != -1) {
+    bool test_fija = fija_es_valido_iniciar(tabla, marco); 
+    bool test_dinamica = dinamica_marco_libre(marco); 
+
+    if ( test_dinamica || test_fija) {
+        marco_ocupar(marco);
         insertar_pagina(contenido, marco);
+        if (configuracion.CANTIDAD_ENTRADAS_TLB > 0 ) tlb_insert_page(tabla->pid, pagina, marco, READ);
         actualizar_nueva_pagina(pagina, marco, tabla);
         return marco;
+
     } else { 
-    t_victima victima = algoritmo_mmu(tabla->pid, tabla);
-    reemplazar_pagina(victima, contenido, pagina, tabla);
-    return victima.marco;
+        t_victima victima = algoritmo_mmu(tabla->pid, tabla);
+        reemplazar_pagina(victima, contenido, pagina, tabla);
+        return victima.marco;
     }
 
 }
@@ -205,7 +211,7 @@ void tlb_limpiar_registro(int pid, int pagina)
 void actualizar_nueva_pagina(int pagina, int marco, tab_pags *tabla)
 {
     pag_t *reg = list_get(tabla->tabla_pag, pagina);
-    reg->presente = 1;
+    if(marco != -1)reg->presente = 1;
     if (configuracion.CANTIDAD_ENTRADAS_TLB != 0) reg->tlb = 1;
     reg->marco = marco;
     reg->algoritmo = alg_comportamiento();
@@ -519,7 +525,7 @@ void enviar_pagina_a_swap(int pid, int pagina, int marco)
 
     memcpy(contenido, ram.memoria + marco * configuracion.TAMANIO_PAGINAS, configuracion.TAMANIO_PAGINAS);
     enviar_buffer(swap, contenido, configuracion.TAMANIO_PAGINAS);
-
+    tlb_actualizar_entrada_vieja(pid, pagina);
     // Este codigo comentado es para mandar las cosas de una por ahora no lo usamoso
     // t_paquete *paquete = crear_paquete(ESCRIBIR_PAGINA);
     // void *contenido = malloc(configuracion.TAMANIO_PAGINAS);
@@ -571,9 +577,12 @@ void memoria_marco_liberar(int marco)
 	*marco_a_liberar = 0;
 }
 
-void pagina_liberar_marco(pag_t *pagina)
+void 
+pagina_liberar_marco(pag_t *pagina)
 {
-	if (pagina->presente == 1) memoria_marco_liberar(pagina->marco);
+	if (pagina->presente == 1){ memoria_marco_liberar(pagina->marco);
+    pagina->presente = 0;} //modificado por suspension
+
 }
 
 void pagina_liberar_tlb(int pid, int pagina)
@@ -583,12 +592,21 @@ void pagina_liberar_tlb(int pid, int pagina)
 	for (int i=0; i < tlb_size; i++) {
 		tlb_t *reg = list_get(tlb, i);
 
-		if (reg->pid == pid && reg->pagina == pagina) reg->pid = -1;
+		if (reg->pid == pid && reg->pagina == pagina){ reg->pid = -1;
+        tab_pags *tablita ;
+        for(int i = 0; i < list_size(tablas.lista); i++){
+        tablita = list_get(tablas.lista, i);
+        if(tablita->pid == pid) break;                   
+        }
+        pag_t * pag = list_get(tablita->tabla_pag, pagina);
+        pag->tlb = 0;
+        return;
+        }// modificado por suspension
 	}
 }
 
 void pagina_liberar(pag_t *pagina, int n_pagina, int pid)
-{
+{  
 	pagina_liberar_marco(pagina);
 	pagina_liberar_tlb(pid, n_pagina);
 	free(pagina);
@@ -622,3 +640,15 @@ void marco_ocupar(int marco)
     int *m = list_get(marcos, marco);
     *m = 1;
 }
+
+
+bool fija_es_valido_iniciar(tab_pags* tabla, int marco)
+{
+    return (marco != -1) && (proceso_puede_iniciar(tabla) && (strcmp(configuracion.TIPO_ASIGNACION, "FIJA") == 0));
+}
+
+
+bool dinamica_marco_libre(int marco)
+{ 
+    return  ( marco != -1 && (strcmp(configuracion.TIPO_ASIGNACION, "DINAMICA") == 0) ) ;
+ }
