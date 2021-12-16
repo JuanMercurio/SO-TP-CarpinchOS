@@ -1,0 +1,43 @@
+==30948== Memcheck, a memory error detector
+==30948== Copyright (C) 2002-2015, and GNU GPL'd, by Julian Seward et al.
+==30948== Using Valgrind-3.11.0 and LibVEX; rerun with -h for copyright info
+==30948== Command: bin/swamp
+==30948== Parent PID: 30947
+==30948== 
+==30948== 
+==30948== HEAP SUMMARY:
+==30948==     in use at exit: 488 bytes in 35 blocks
+==30948==   total heap usage: 311 allocs, 276 frees, 12,990 bytes allocated
+==30948== 
+==30948== 4 bytes in 1 blocks are definitely lost in loss record 1 of 15
+==30948==    at 0x402C17C: malloc (in /usr/lib/valgrind/vgpreload_memcheck-x86-linux.so)
+==30948==    by 0x804A36E: crearArchivos (main.c:578)
+==30948==    by 0x80493A2: main (main.c:65)
+==30948== 
+==30948== 8 bytes in 1 blocks are definitely lost in loss record 4 of 15
+==30948==    at 0x402C17C: malloc (in /usr/lib/valgrind/vgpreload_memcheck-x86-linux.so)
+==30948==    by 0x804ADB9: marcosLibes (main.c:934)
+==30948==    by 0x80493B9: main (main.c:72)
+==30948== 
+==30948== 12 bytes in 1 blocks are definitely lost in loss record 5 of 15
+==30948==    at 0x402C17C: malloc (in /usr/lib/valgrind/vgpreload_memcheck-x86-linux.so)
+==30948==    by 0x804B1A3: solicitudPagina (main.c:1055)
+==30948==    by 0x8049708: main (main.c:193)
+==30948== 
+==30948== 24 bytes in 3 blocks are definitely lost in loss record 11 of 15
+==30948==    at 0x402C17C: malloc (in /usr/lib/valgrind/vgpreload_memcheck-x86-linux.so)
+==30948==    by 0x408A3FE: list_create (in /usr/lib/libcommons.so)
+==30948==    by 0x804A7CA: CrearCarpincho (main.c:766)
+==30948==    by 0x8049653: main (main.c:165)
+==30948== 
+==30948== LEAK SUMMARY:
+==30948==    definitely lost: 48 bytes in 6 blocks
+==30948==    indirectly lost: 0 bytes in 0 blocks
+==30948==      possibly lost: 0 bytes in 0 blocks
+==30948==    still reachable: 440 bytes in 29 blocks
+==30948==         suppressed: 0 bytes in 0 blocks
+==30948== Reachable blocks (those to which a pointer was found) are not shown.
+==30948== To see them, rerun with: --leak-check=full --show-leak-kinds=all
+==30948== 
+==30948== For counts of detected and suppressed errors, rerun with: -v
+==30948== ERROR SUMMARY: 4 errors from 4 contexts (suppressed: 0 from 0)
