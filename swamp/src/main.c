@@ -34,11 +34,11 @@ int main(int argc, char *argv[])
     free(tipo_asignacion);
     printf("%d\n", asignacionFija);
     lista_carpinchos = list_create();
-    lista_marcos = list_create();
+   // lista_marcos = list_create();
     cantidad_carpinchos_por_archivo = list_create();
     //marcos_libres_fija = list_create();
     marcos_libres = list_create();
-    lista_pedidos = list_create();
+   // lista_pedidos = list_create();
     mutex_lista_pedidos = malloc(sizeof(sem_t));
     agrego_lista_pedidos = malloc(sizeof(sem_t));
     sem_init(mutex_lista_pedidos, 0, 1);
@@ -46,7 +46,7 @@ int main(int argc, char *argv[])
     cant_ped = 0;
 
     //solo corre si corremos el binario asi: binario test
-    tests(argc, argv[1]);
+    //tests(argc, argv[1]);
 
     /* Este modulo funciona sin hilos. Los clientes esperan a ser atendidos en cola  */
 
@@ -63,8 +63,7 @@ int main(int argc, char *argv[])
     /*pthread_t tid;
     pthread_create(&tid, NULL, agregarPedidosMemoria, fd_memoria);*/
 
-    crearArchivos();
-    //char* file = mmap( )
+    crearArchivos();//char* file = mmap( )
     if (asignacionFija)
     {
         marcosLIbresFija();
@@ -73,7 +72,6 @@ int main(int argc, char *argv[])
     {
         marcosLibes();
     }
-   // pruebas();
     int cantidad_lista_pedidos = 1;
     //cantidad_lista_pedidos
     termino = 0;
@@ -406,20 +404,20 @@ int solicitud_muchas_paginas(int pid, int cantidad_paginas, t_list *paginas)
 void destroy_and_free(int fd_memoria)
 {
     printf("Entro a destruir y libearar.\n");
-    printf("Queda en pedidos %d\n", list_size(lista_pedidos));
-    if (list_size(lista_pedidos) > 0)
+  //  printf("Queda en pedidos %d\n", list_size(lista_pedidos));
+/*     if (list_size(lista_pedidos) > 0)
     {
-        Pedido *ped = (Pedido *)list_remove(lista_pedidos, 0);
+        Pedido *ped = (Pedido *)list_remove(lista_pedidos, 0); // falta eliminar  lo que remueve
+        free(ped->contenido_pagina);
+        free(ped->nombre_pedido);
+        free(ped);
         printf("Pedido no realizado: pid %d oper: %d \n", ped->pid, ped->oper);
-    }
+    } */
 
     list_destroy_and_destroy_elements(lista_carpinchos, borrar_Carpincho);
-    list_destroy(lista_marcos);
-
-    //marcos_libres_fija = list_create();
     list_destroy_and_destroy_elements(marcos_libres, borrar_marcos_libres);
-    //list_destroy(marcos_libres);
-    list_destroy(lista_pedidos);
+    list_destroy(cantidad_carpinchos_por_archivo);
+   // list_destroy(lista_pedidos);
     sem_destroy(mutex_lista_pedidos);
     sem_destroy(agrego_lista_pedidos);
     close(fd_memoria);
@@ -552,7 +550,6 @@ void pruebas()
 // GENERAL
 void crearArchivos()
 {
-
     int i = 0;
     while (configuracion.ARCHIVOS_SWAP_list[i])
     {
@@ -1145,6 +1142,7 @@ int crearCarpinchoFijaDOS(int pidd)
     }
     else
     {
+        free(car);
         return -1;
         printf("CARPINCHO YA EXISTENTE o no hay paginas\n");
     }
@@ -1629,7 +1627,7 @@ void recibir_asignacion(int cliente)
 
 void agregarPedidosMemoria(int cliente)
 {
-    while (1)
+    while (!terminar)
     {
         memoria_operacion(cliente);
 
@@ -1652,7 +1650,8 @@ void agregarPedidosMemoria(int cliente)
 void memoria_operacion(int cliente)
 {
 
-    int codop = recibir_operacion(cliente);
+    int codop = 0;
+    codop = recibir_operacion(cliente);
     //printf("codigo de operacdion %d\n", codop);
     //int tamanio = recibir_int(cliente);
     Pedido *ped = malloc(sizeof(Pedido));

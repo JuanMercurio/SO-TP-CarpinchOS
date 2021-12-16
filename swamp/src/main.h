@@ -41,7 +41,7 @@ typedef struct {
     int base;
     int numero_archivo;
 } un_marco_libre;
-typedef struct {
+typedef struct Pedido {
     char* nombre_pedido;
     int pid;
     int pagina;
@@ -56,6 +56,7 @@ typedef struct{
 int server;
 bool asignacionFija;
 bool termino;
+bool terminar = false;
 t_list* lista_carpinchos;
 t_list* lista_marcos;
 t_list* marcos_libres_fija;

@@ -97,7 +97,6 @@ void ejecutar_proceso(int cliente)
                     }
                      printf("borra de memoria por suspension pagina %d, de marco %d, presncia %d \n",i, pagina->marco, pagina->presente);
 	                pagina_liberar_marco(pagina);
-	                
                     pagina_liberar_tlb(tabla->pid, i);
                   }
                 break;

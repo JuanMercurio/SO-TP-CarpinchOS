@@ -390,16 +390,13 @@ void receptor(void *arg)
          recibido = recibir_mensaje(cliente);
          aux_int = recibir_int(cliente);
          printf("me llego del carpincho %s\n", recibido);
-
          enviar_mensaje_y_cod_op(recibido, carpincho->fd_memoria, MEMWRITE);
          enviar_int(carpincho->fd_memoria, aux_int);
          log_info(logger, "Se recibió del carpincho %d un MEM write desde la posición %d con el mensjaje %s", carpincho->pid, aux_int, recibido);
-
-         printf("-----------------------------esperando respuesta ememoria\n");
+         printf("-----------------------------esperando respuesta memoria\n");
          aux_int = recibir_int(carpincho->fd_memoria);
          printf("aux int %d\n", aux_int);
          enviar_int(cliente, aux_int);
-
          free(recibido);
          break;
 
