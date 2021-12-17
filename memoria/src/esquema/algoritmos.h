@@ -36,6 +36,7 @@ t_victima clock_dinamico(int pid, tab_pags* tabla);
 t_victima lru_dinamico(int pid, tab_pags* tabla);
 t_victima lru_fijo(int pid, tab_pags* tabla);
 t_victima lru_en_pag_table(tab_pags* tabla);
+t_victima cd(int pid, tab_pags* tabla);
 
 int alg_comportamiento_lru();
 int alg_comportamiento_clock_modificado();

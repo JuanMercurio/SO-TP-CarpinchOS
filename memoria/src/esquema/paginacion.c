@@ -22,7 +22,6 @@ bool primero = true;
 
 void iniciar_paginacion()
 {
-
     init_ram();
     init_bitmap_frames();
     init_estructuras();
@@ -50,8 +49,10 @@ void init_bitmap_frames()
 
     for (int i = 0; i < n_frames; i++)
     {
-        int *marco = malloc(sizeof(int));
-        *marco = VACIO;
+        marco_t *marco = malloc(sizeof(marco_t));
+        marco->pid = -1;
+        marco->pagina = -1;
+        
         list_add(marcos, marco);
     }
 }
@@ -183,7 +184,7 @@ int buscar_en_swap(tab_pags *tabla, int pagina)
     bool test_dinamica = dinamica_marco_libre(marco); 
 
     if ( test_dinamica || test_fija) {
-        marco_ocupar(marco);
+        marco_ocupar(marco, tabla->pid, pagina);
         insertar_pagina(contenido, marco);
         if (configuracion.CANTIDAD_ENTRADAS_TLB > 0 ) tlb_insert_page(tabla->pid, pagina, marco, READ);
         actualizar_nueva_pagina(pagina, marco, tabla);
@@ -202,9 +203,18 @@ int buscar_en_swap(tab_pags *tabla, int pagina)
 
 }
 
+void marcos_actualizar_nuevo_estado(int pid, int pagina, int marco){
+    
+    marco_t* marcos_reg = list_get(marcos, marco);
+    log_info(logger_clock, "Cambio el marco de PID: %d - PAG: %d --> PID: %d - PAG %d", marcos_reg->pid, marcos_reg->pagina, pid , pagina );
+    marcos_reg->pid = pid;
+    marcos_reg->pagina = pagina;
+}
+
 void reemplazar_pagina(t_victima victima, void *buffer, int pagina, tab_pags *tabla)
 {
     if(victima.tlb == 1) tlb_limpiar_registro(victima.pid, victima.pagina);
+    marcos_actualizar_nuevo_estado(tabla->pid, pagina, victima.marco);
     // y si buffer es NULL?
 
     if (victima.modificado == 1) {
@@ -314,8 +324,8 @@ int crear_pagina(t_list *paginas)
     pagina->presente = 0;
     pagina->marco = NOT_ASIGNED;
     pagina->modificado = 0;
-    pagina->algoritmo = NOT_ASIGNED;
     pagina->tlb = 0;
+    pagina->algoritmo = NOT_ASIGNED;
     return list_add(paginas, pagina);
 }
 
@@ -324,8 +334,8 @@ int marco_libre()
     int n_frames = configuracion.TAMANIO / configuracion.TAMANIO_PAGINAS;
     for (int i = 0; i < n_frames; i++)
     {
-        int *marco = list_get(marcos, i);
-        if (*marco == VACIO)
+        marco_t *marco = list_get(marcos, i);
+        if (marco->pid == -1)
             {
                 return i;
             }
@@ -348,7 +358,7 @@ int pagina_iniciar(tab_pags *tabla)
 
     if (strcmp(configuracion.TIPO_ASIGNACION, "FIJA") == 0) {
         if (marco != -1 && proceso_puede_iniciar(tabla)) { 
-            marco_ocupar(marco);
+            marco_ocupar(marco, tabla->pid, pagina);
             memoria_asignar_pagina_vacia(tabla, pagina, marco);
             return 0;
         } 
@@ -368,6 +378,7 @@ int pagina_iniciar(tab_pags *tabla)
     if (marco == -1)
     {
         t_victima victima = algoritmo_mmu(tabla->pid, tabla);
+        log_info(logger_clock,"Reemplazo PID: %d - PAG: %d --> PID: %d - PAG: %d | MARCO: %d", victima.pid, victima.pagina, tabla->pid, pagina, victima.marco);
         reemplazar_pagina(victima, NULL, pagina, tabla);
     }
 
@@ -375,7 +386,7 @@ int pagina_iniciar(tab_pags *tabla)
     {
         // int* victima = list_get(marcos, marco);
         // *victima = 1;
-        marco_ocupar(marco);
+        marco_ocupar(marco, tabla->pid, pagina);
         memoria_asignar_pagina_vacia(tabla, pagina, marco);
     }
 
@@ -602,8 +613,8 @@ bool proceso_tiene_frames_asignados(tab_pags* tabla)
 
 void memoria_marco_liberar(int marco)
 {
-	int *marco_a_liberar = list_get(marcos, marco);
-	*marco_a_liberar = 0;
+	marco_t *marco_a_liberar = list_get(marcos, marco);
+	marco_a_liberar->pid = -1;
 }
 
 void 
@@ -685,10 +696,12 @@ void tablas_loggear_saturno()
 
 
 
-void marco_ocupar(int marco)
+void marco_ocupar(int marco, int pid, int pagina)
 {
-    int *m = list_get(marcos, marco);
-    *m = 1;
+    marco_t *m = list_get(marcos, marco);
+    m->pid = pid;
+    m->pagina = pagina;
+    log_info(logger_clock, "Ocupe marco libre: MARCO = %d - PID = %d - PAG =  %d", marco, pid, pagina);
 }
 
 

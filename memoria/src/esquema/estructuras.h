@@ -6,7 +6,7 @@
 
 /* Lista de tablas de paginas y su mutex */
 typedef struct memoria_t {
-    void* memoria;
+    char* memoria;
     pthread_mutex_t mutex;
 }memoria_t;
 
@@ -50,6 +50,12 @@ typedef struct dir_t{
    int segmento;
    int offset;
 }dir_t;
+
+
+typedef struct marco_t {
+    int pid;
+    int pagina;
+}marco_t;
 
 typedef struct t_victima{
     int pid;

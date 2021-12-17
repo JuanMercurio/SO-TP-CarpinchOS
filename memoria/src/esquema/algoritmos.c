@@ -10,6 +10,7 @@ int LRU_C = 0;
 int LRU_TLB = 0;
 int FIFO_TLB = 0;
 
+int clock_puntero = 0;
 t_clock p_clock;
 
 
@@ -266,36 +267,6 @@ int clock_buscar_01(tab_pags* tabla)
     return -1;
 }
 
-t_victima clock_fijo(int pid, tab_pags* tabla)
-{
-    if(tabla->p_clock == -1) tabla->p_clock = 0;
-    
-    int pagina = -1;
-    while(pagina == -1)
-    {
-        printf("A buscar 00 \n");
-        pagina = clock_buscar_00(tabla);
-        if(pagina != -1) break;
-        printf("A buscar 01 \n");
-        pagina = clock_buscar_01(tabla);
-    }
-
-    pag_t* reg = NULL;
-    reg = list_get(tabla->tabla_pag, pagina);
-
-    t_victima victima;    
-    victima.marco      = reg->marco;
-    victima.modificado = reg->modificado;
-    victima.pagina     = pagina;
-    victima.pid        = tabla->pid;
-    victima.tlb        = reg->tlb;
-
-    reg->presente = 0;
-    reg->modificado = 0;
-    reg->tlb = 0;
-    return victima;
-}
-
 
 
 void page_use(int pid, int marco, pag_t* p, int n_pagina, int codigo)
@@ -366,240 +337,6 @@ int alg_comportamiento_tlb_lru()
     return suma_atomica(&LRU_C);
 }
 
-int clock_buscar_00_dinamico(tab_pags** tabla, int posicion)
-{
-    log_info(logger_memoria, "CLOCK: 00");
-	int cantidad_procesos = list_size(tablas.lista);
-	int pos;
-	int pos_inicial;
-	int pid_inicial;
-	int primera_vez = true;
-	int i;
-    *tabla = NULL;
-
-	for (i=0; i < cantidad_procesos; i++)
-	{
-		*tabla = list_get(tablas.lista, posicion);
-		int tamanio = list_size((*tabla)->tabla_pag);
-
-		if (primera_vez) {
-			pos_inicial = (*tabla)->p_clock;
-			pid_inicial = (*tabla)->pid;
-			primera_vez = false;
-		}
-
-		if ((*tabla)->p_clock != -1) 
-			pos = (*tabla)->p_clock;
-		else
-			pos = 0;
-
-		for (int j=pos; j < list_size((*tabla)->tabla_pag); j++) {
-
-			pag_t *reg = NULL;
-            reg = list_get((*tabla)->tabla_pag, j);
-
-            if(reg->presente != 1) continue; else {log_info(logger_memoria, "la pagina %d esta presente en el marco %d", j, reg->marco);}
-            
-
-			if (pos == pos_inicial && (*tabla)->pid == pid_inicial && i > 0) { 
-				(*tabla)->p_clock = j; 
-				return -1;
-			}	
-
-
-			if(reg->presente != 1 || reg->algoritmo == -1) continue;
-
-            if (reg->tlb == 1) {
-                tlb_t* registro_tlb = tlb_obtener_registro((*tabla)->pid, j);
-                if (reg == NULL) printf("perro estas en cualquiera\n");
-                reg->algoritmo = registro_tlb->alg;
-                reg->marco = registro_tlb->marco; 
-                reg->modificado = registro_tlb->modificado;
-               //reg->presente = 1;
-               // reg->tlb = 1;
-            }
-
-			if(reg->modificado == 0 && reg->algoritmo == 0) 
-			{
-
-				if(j+1 == tamanio)
-				{
-					(*tabla)->p_clock = -1;
-					if (i+1 == cantidad_procesos) 
-					{
-						tab_pags* tabla_puntero = list_get(tablas.lista, 0);
-						tabla_puntero->p_clock = 0;
-					} else {
-						tab_pags* tabla_puntero= list_get(tablas.lista, i+1);
-						tabla_puntero->p_clock = 0;
-					}
-
-				}
-				else
-					(*tabla)->p_clock = i+1;
-
-                log_info(logger_memoria, "RETORNO %d", j);
-				return j;
-			} 
-		}
-
-
-		if(posicion+1 == cantidad_procesos) 
-			posicion = 0;
-		else
-			posicion++;
-
-		(*tabla)->p_clock = -1;
-	}
-
-	return -1;
-}
-
-int clock_buscar_01__dinamico(tab_pags** tabla, int posicion)
-{
-    log_info(logger_memoria, "CLOCK: 01");
-	int cantidad_procesos = list_size(tablas.lista);
-	int pos;
-	int pos_inicial;
-	int pid_inicial;
-	int primera_vez = true;
-	int i;
-
-	for (i=0; i < cantidad_procesos; i++)
-	{
-		*tabla = list_get(tablas.lista, posicion);
-        log_info(logger_memoria, "CLOCK: analizo la tabla %d", posicion);
-		int tamanio = list_size((*tabla)->tabla_pag);
-		
-		if (primera_vez) {
-			pos_inicial = (*tabla)->p_clock;
-			pid_inicial = (*tabla)->pid;
-			primera_vez = false;
-		}
-
-		if ((*tabla)->p_clock != -1) 
-			pos = (*tabla)->p_clock;
-		else
-			pos = 0;
-
-		for (int j=pos; j < list_size((*tabla)->tabla_pag); j++) {
-
-			pag_t *reg = list_get((*tabla)->tabla_pag, j);
-            //if(reg->presente != 1) continue; else {log_info(logger_memoria, "la pagina %d esta presente en el marco %d", j, reg->marco);}
-
-			if (pos == pos_inicial && (*tabla)->pid == pid_inicial && i > 0) { 
-				(*tabla)->p_clock = j; 
-				return -1;
-			}	
-
-
-			if(reg->presente != 1 || reg->algoritmo == -1) continue;
-            
-            tlb_t* registro_tlb;
-            if (reg->tlb == 1) {
-                registro_tlb = tlb_obtener_registro((*tabla)->pid, j);
-                if (reg == NULL) printf("perro estas en cualquiera\n");
-                reg->algoritmo = registro_tlb->alg;
-                reg->marco = registro_tlb->marco; 
-                reg->modificado = registro_tlb->modificado;
-               // reg->presente = 1;
-               // reg->tlb = 1;
-            }
-
-			if(reg->modificado == 1 && reg->algoritmo == 0) 
-			{
-                log_info(logger_memoria, "La pagina %d en el marco %d tiene M=1 y A=0", j, reg->marco);
-
-				if(j+1 == tamanio)
-				{
-					(*tabla)->p_clock = -1;
-					if (i+1 == cantidad_procesos) 
-					{
-						(*tabla) = list_get(tablas.lista, 0);
-						(*tabla)->p_clock = 0;
-					} else {
-						(*tabla) = list_get(tablas.lista, i+1);
-						(*tabla)->p_clock = 0;
-					}
-
-				}
-				else
-					(*tabla)->p_clock = i+1;
-
-				return j;
-			}
-		   	else {
-                    reg->algoritmo = 0;
-                    if(reg->tlb ==1) registro_tlb->alg = 0;
-               } 
-		}
-
-
-		if(posicion+1 == cantidad_procesos) 
-			posicion = 0;
-		else
-			posicion++;
-
-		(*tabla)->p_clock = -1;
-	}
-
-	return -1;
-}
-
-t_victima clock_dinamico(int pid, tab_pags* tabla)
-{
-	int posicion = clock_buscar_puntero();
-	int cantidad_procesos = list_size(tablas.lista);
-	tab_pags* t = NULL;
-	int pagina = -1;
-
-	while(pagina == -1)
-	{
-
-		printf("Buscando 00\n");
-		pagina = clock_buscar_00_dinamico(&t, posicion);
-		if (pagina != -1) 
-		{
-			printf("Encontre 00\n");
-			break;
-		}
-
-		printf("Buscando 01\n");
-		pagina = clock_buscar_01__dinamico(&t, posicion);
-		if (pagina != -1) 
-		{
-			printf("Encontre 01\n");
-            log_info(logger_memoria, "Encontre 01");
-			break;
-		}
-
-		if(posicion+1 == cantidad_procesos) 
-			posicion = 0;
-		else
-			posicion++;
-
-		//t->p_clock = -1;
-	}
-
-    printf("la elegida es la pagina %d\n", pagina);
-    printf("El carpincho tiee %d paginas\n", list_size(t->tabla_pag));
-	pag_t* p = list_get(t->tabla_pag, pagina);
-
-	t_victima victima;
-
-	victima.marco      =  p->marco;
-	victima.modificado =  p->modificado;
-	victima.pagina     =  pagina;
-	victima.pid        =  t->pid;
-    victima.tlb         = p->tlb;
-
-	p->presente   = 0;
-	p->modificado = 0;
-    p->tlb = 0;
-
-	return victima;
-}
-
 void tlb_actualizar_entrada_vieja(int pid, int pagina)
 {
    int tamanio = list_size(tlb);
@@ -610,4 +347,253 @@ void tlb_actualizar_entrada_vieja(int pid, int pagina)
             reg->pid = -1;
         }
     }
+}
+
+pag_t * pagina_obtener(int pid, int pagina)
+{
+    tab_pags *tabla = buscar_page_table(pid);
+    pag_t *pag = list_get(tabla->tabla_pag, pagina);
+
+    return pag;
+}
+
+
+tlb_t* pagina_obtener_datos_de_tlb(int pid, int pagina, pag_t *pag)
+{
+    if (configuracion.CANTIDAD_ENTRADAS_TLB == 0) return NULL;
+    if (pag->tlb == 0) return NULL;
+
+    tlb_t *tlb_reg = tlb_obtener_registro(pid, pagina);
+
+    pag->algoritmo = tlb_reg->alg;
+    pag->modificado = tlb_reg->modificado;
+    pag->marco = tlb_reg->marco;
+
+    return tlb_reg;
+}
+
+void clock_puntero_actualizar_fija(int *posicion, int marcos_asignados)
+{
+    if (*posicion + 1 == marcos_asignados) {
+        *posicion = 0;
+    } else {
+        *posicion = *posicion + 1;
+    }
+}
+int marcos_asginados_a_proceso(tab_pags* tabla)
+{
+   int cant = 0;
+   int tamanio = list_size(tabla->tabla_pag);
+
+   for (int i = 0; i < tamanio; i++) {
+       pag_t *pag = list_get(tabla->tabla_pag, i);
+       if (pag->presente == 1) cant++;
+   }
+
+   return cant;
+}
+int pagina_siguiente_en_memoria_por_pid(tab_pags *tabla)
+{
+    marco_t *marco_final = NULL;
+
+    while ( marco_final == NULL) {
+        marco_t* marco = list_get(marcos, tabla->p_clock);
+        if( marco->pid == tabla->pid) marco_final = marco;
+
+        if(tabla->p_clock + 1 == list_size(marcos)){
+            tabla->p_clock = 0;
+        } else {
+            tabla->p_clock = tabla->p_clock + 1;
+        }
+
+    }
+
+    return marco_final->pagina;
+}
+pag_t *buscar_00_cf(tab_pags* tabla, int* pagina)
+{
+
+    int posicion = tabla->p_clock;
+    int iteracion = 0;
+    int marcos_asignados = marcos_asginados_a_proceso(tabla);
+
+    pag_t* pagina_victima = NULL;
+
+    while ( iteracion < marcos_asignados && pagina_victima == NULL) { 
+
+        int c_pagina = pagina_siguiente_en_memoria_por_pid(tabla);
+        pag_t *pag = pagina_obtener(tabla->pid, c_pagina);
+        
+        pagina_obtener_datos_de_tlb(tabla->pid, c_pagina, pag);
+
+        if (pag->algoritmo == 0 && pag->modificado == 0) {
+            pagina_victima = pag;
+            *pagina = c_pagina;
+        }
+
+        // clock_puntero_actualizar_fija(&posicion, marcos_asignados);
+        iteracion++;
+    }
+
+    return pagina_victima;
+}
+
+pag_t *buscar_01_cf(tab_pags* tabla, int* pagina)
+{
+
+    int posicion = tabla->p_clock;
+    int iteracion = 0;
+    int marcos_asignados = marcos_asginados_a_proceso(tabla);
+
+    pag_t* pagina_victima = NULL;
+
+    while ( iteracion < marcos_asignados && pagina_victima == NULL) { 
+
+        int c_pagina = pagina_siguiente_en_memoria_por_pid(tabla);
+        pag_t *pag = pagina_obtener(tabla->pid, c_pagina);
+
+        tlb_t *tlb_reg = pagina_obtener_datos_de_tlb(tabla->pid, c_pagina, pag);
+
+        if (pag->algoritmo == 0 && pag->modificado == 1) {
+            pagina_victima = pag;
+            *pagina = c_pagina;
+        } else {
+            pag->algoritmo = 0;
+            if (pag->tlb == 1) tlb_reg->alg = 0;
+        }
+
+        // clock_puntero_actualizar_fija(&posicion, marcos_asignados);
+        iteracion++;
+    }
+
+    return pagina_victima;
+}
+
+t_victima clock_fijo(int pid, tab_pags* tabla)
+{
+    int victima_pagina;
+    pag_t *pagina = NULL;
+
+    while (pagina == NULL) {
+        
+        pagina = buscar_00_cf(tabla, &victima_pagina);
+        if( pagina != NULL) break;
+        
+        pagina = buscar_01_cf(tabla, &victima_pagina);
+    }
+
+    t_victima victima;
+    victima.pid        = tabla->pid;
+    victima.pagina     = victima_pagina;
+    victima.marco      = pagina->marco;
+    victima.modificado = pagina->modificado;
+    victima.tlb        = pagina->tlb;
+
+    log_info(logger_clock, "El elegido por clock fue: PID = %d - PAG = %d", victima.pid, victima.pagina);
+
+    pagina->presente = 0;
+    pagina->modificado = 0;
+    pagina->tlb = 0;
+
+    return victima;
+}
+
+void clock_puntero_actualizar_2(int *posicion)
+{ 
+        if (*posicion+1 == list_size(marcos)) {
+            *posicion = 0;
+        } else {
+            *posicion = *posicion + 1;
+        }
+}
+pag_t *buscar_00(int* pid, int *pagina)
+{
+    int posicion = clock_puntero;
+    int iteracion = 0;
+
+    pag_t* pagina_victima = NULL;
+
+    while ( iteracion < list_size(marcos) && pagina_victima == NULL) { 
+
+        marco_t *marco = list_get(marcos, posicion);
+        pag_t *pag = pagina_obtener(marco->pid, marco->pagina);
+        
+        pagina_obtener_datos_de_tlb(marco->pid, marco->pagina, pag);
+
+        if (pag->algoritmo == 0 && pag->modificado == 0) {
+            pagina_victima = pag;
+            *pid = marco->pid; 
+            *pagina = marco->pagina;
+        }
+
+        clock_puntero_actualizar_2(&posicion);
+        iteracion++;
+    }
+
+    clock_puntero = posicion;
+
+    return pagina_victima;
+}
+
+pag_t *buscar_01(int* pid, int *pagina)
+{
+    int posicion = clock_puntero;
+    int iteracion = 0;
+
+    pag_t* pagina_victima = NULL;
+
+    while ( iteracion < list_size(marcos) && pagina_victima == NULL) { 
+
+        marco_t *marco = list_get(marcos, posicion);
+        pag_t *pag = pagina_obtener(marco->pid, marco->pagina);
+        
+        tlb_t *tlb_reg = pagina_obtener_datos_de_tlb(marco->pid, marco->pagina, pag);
+
+        if (pag->algoritmo == 0 && pag->modificado == 1) {
+            pagina_victima = pag;
+            *pid = marco->pid; 
+            *pagina = marco->pagina;
+        } else {
+            pag->algoritmo = 0;
+            if (pag->tlb == 1) tlb_reg->alg = 0;
+        }
+
+        clock_puntero_actualizar_2(&posicion);
+        iteracion++;
+    }
+
+    clock_puntero = posicion;
+
+    return pagina_victima;
+}
+
+
+t_victima cd(int pid, tab_pags* tabla)
+{
+    int victima_pid;
+    int victima_pagina;
+    pag_t *pagina = NULL;
+
+    while (pagina == NULL) {
+        
+        pagina = buscar_00(&victima_pid, &victima_pagina);
+        if( pagina != NULL) break;
+        
+        pagina = buscar_01(&victima_pid, &victima_pagina);
+    }
+
+    t_victima victima;
+    victima.pid        = victima_pid;
+    victima.pagina     = victima_pagina;
+    victima.marco      = pagina->marco;
+    victima.modificado = pagina->modificado;
+    victima.tlb        = pagina->tlb;
+
+    log_info(logger_clock, "El elegido por clock fue: PID = %d - PAG = %d", victima.pid, victima.pagina);
+
+    pagina->presente = 0;
+    pagina->modificado = 0;
+    pagina->tlb = 0;
+
+    return victima;
 }

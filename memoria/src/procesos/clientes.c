@@ -23,7 +23,7 @@ void atender_proceso(void* arg){
 
     handshake(cliente, "MEMORIA");
     ejecutar_proceso(cliente);
-
+    printf("Termino un carpincho\n");
 }
 
 void ejecutar_proceso(int cliente)
@@ -317,10 +317,16 @@ tab_pags* tabla_init()
 { 
     tab_pags *tabla = malloc(sizeof(tab_pags));
     tabla->pid = NOT_ASIGNED;
-    tabla->p_clock = NOT_ASIGNED;
     tabla->TLB_HITS = 0;
     tabla->TLB_MISSES = 0;
     tabla->tabla_pag = NULL;
+
+    if (strcmp(configuracion.TIPO_ASIGNACION, "FIJA") == 0) {
+        tabla->p_clock = 0;
+    } else {
+        tabla->p_clock = NOT_ASIGNED;
+    }
+
     return tabla;
 }
 
@@ -377,8 +383,8 @@ void eliminar_proceso_i(int i){
         if(reg->presente == 1)
         {
             printf("El coso a eliminar es: %d", reg->marco);
-            int* marco = list_get(marcos, reg->marco);
-            *marco = 0;
+            marco_t* marco = list_get(marcos, reg->marco);
+            marco->pid = 0;
         }
         free(reg);
     }

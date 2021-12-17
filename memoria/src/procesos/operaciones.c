@@ -416,9 +416,12 @@ int memfree(tab_pags* tabla, int dir_log){
 				pagina_liberar(pagina, ultima, tabla->pid);
 				printf("Elimine la pagina %d\n", ultima);
 			}
-		}
+		}else
+		printf("NOhayque liberar paginas\n");
 		tablas_imprimir_saturno();
 		printf("MemFree FIN - El proceso tiene %d paginas\n", list_size(tabla->tabla_pag));
+	}else{
+		printf("NOhayque liberar paginas\n");
 	}
 
 	return 1;
@@ -540,7 +543,8 @@ int memoria_escribir(tab_pags* tabla, dir_t dl, void* contenido, int tamanio){
     int written = 0;
     int bytes_remaining = tamanio;
     int bytes_remaining_space = configuracion.TAMANIO_PAGINAS - dl.offset;
-
+	printf("-----------------------------bytes reamin %d\n",bytes_remaining);
+	printf("-----------------------------bytes reamin space %d\n",bytes_remaining_space);
     while(bytes_remaining > 0)
     {
         int marco = nro_marco(dl.PAGINA, tabla, WRITE);
@@ -615,20 +619,22 @@ int read_get_readable_bytes(dir_t dl, int count){
 
 
 void* memoria_leer_por_dirlog(tab_pags* tabla, int dl, int tamanio){
-	// dir_t dir;
-	// dir.PAGINA = dl/configuracion.TAMANIO_PAGINAS;
-	// dir.offset = dl%configuracion.TAMANIO_PAGINAS;
-	int bin_dl = decimal_a_binario(dl);
-	dir_t dir = traducir_dir_log(bin_dl);
+	 dir_t dir;
+	 dir.PAGINA = dl/configuracion.TAMANIO_PAGINAS;
+	 dir.offset = dl%configuracion.TAMANIO_PAGINAS;
+	//int bin_dl = decimal_a_binario(dl);
+	//dir_t dir = traducir_dir_log(bin_dl);
 	return memoria_leer(tabla, dir, tamanio);
 }
 
 int memoria_escribir_por_dirlog(tab_pags* tabla, int dl, void* contenido, int tamanio){
-	// dir_t dir;
-	// dir.PAGINA = dl/configuracion.TAMANIO_PAGINAS;
-	// dir.offset = dl%configuracion.TAMANIO_PAGINAS;
-	int bin = decimal_a_binario(dl);
-	dir_t dir = traducir_dir_log(bin);
+	 dir_t dir;
+	 dir.PAGINA = dl/configuracion.TAMANIO_PAGINAS;
+	 dir.offset = dl%configuracion.TAMANIO_PAGINAS;
+	printf("-----------------------------tamaño %d\n", tamanio);
+	//int bin = decimal_a_binario(dl);
+	//dir_t dir = traducir_dir_log(bin);
+	printf("-----------------------------dirrrrr offset %d\n",dir.offset);
 	return memoria_escribir(tabla, dir, contenido, tamanio);
 }
 

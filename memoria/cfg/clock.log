@@ -1,0 +1,260 @@
+[INFO] 19:13:44:692 CLOCK/(20516:20807): Ocupe marco libre: MARCO = 0 - PID = 1 - PAG =  0
+[INFO] 19:13:44:732 CLOCK/(20516:20807): Ocupe marco libre: MARCO = 1 - PID = 1 - PAG =  1
+[INFO] 19:13:44:865 CLOCK/(20516:20809): Ocupe marco libre: MARCO = 2 - PID = 2 - PAG =  0
+[INFO] 19:13:44:905 CLOCK/(20516:20809): Ocupe marco libre: MARCO = 3 - PID = 2 - PAG =  1
+[INFO] 19:13:45:065 CLOCK/(20516:20811): Ocupe marco libre: MARCO = 4 - PID = 3 - PAG =  0
+[INFO] 19:13:45:104 CLOCK/(20516:20811): Ocupe marco libre: MARCO = 5 - PID = 3 - PAG =  1
+[INFO] 19:13:45:147 CLOCK/(20516:20807): Ocupe marco libre: MARCO = 6 - PID = 1 - PAG =  2
+[INFO] 19:13:45:189 CLOCK/(20516:20809): Ocupe marco libre: MARCO = 7 - PID = 2 - PAG =  2
+[INFO] 19:13:45:236 CLOCK/(20516:20811): Ocupe marco libre: MARCO = 8 - PID = 3 - PAG =  2
+[INFO] 19:16:52:344 CLOCK/(20977:21273): Ocupe marco libre: MARCO = 0 - PID = 1 - PAG =  0
+[INFO] 19:16:52:390 CLOCK/(20977:21273): Ocupe marco libre: MARCO = 1 - PID = 1 - PAG =  1
+[INFO] 19:16:52:543 CLOCK/(20977:21275): Ocupe marco libre: MARCO = 2 - PID = 2 - PAG =  0
+[INFO] 19:16:52:588 CLOCK/(20977:21275): Ocupe marco libre: MARCO = 3 - PID = 2 - PAG =  1
+[INFO] 19:16:52:745 CLOCK/(20977:21277): Ocupe marco libre: MARCO = 4 - PID = 3 - PAG =  0
+[INFO] 19:16:52:791 CLOCK/(20977:21277): Ocupe marco libre: MARCO = 5 - PID = 3 - PAG =  1
+[INFO] 19:16:52:832 CLOCK/(20977:21273): Ocupe marco libre: MARCO = 6 - PID = 1 - PAG =  2
+[INFO] 19:16:52:872 CLOCK/(20977:21275): Ocupe marco libre: MARCO = 7 - PID = 2 - PAG =  2
+[INFO] 19:16:52:914 CLOCK/(20977:21277): Ocupe marco libre: MARCO = 8 - PID = 3 - PAG =  2
+[INFO] 19:18:03:537 CLOCK/(21363:21688): Ocupe marco libre: MARCO = 0 - PID = 1 - PAG =  0
+[INFO] 19:18:03:577 CLOCK/(21363:21688): Ocupe marco libre: MARCO = 1 - PID = 1 - PAG =  1
+[INFO] 19:18:03:708 CLOCK/(21363:21690): Ocupe marco libre: MARCO = 2 - PID = 2 - PAG =  0
+[INFO] 19:18:03:749 CLOCK/(21363:21690): Ocupe marco libre: MARCO = 3 - PID = 2 - PAG =  1
+[INFO] 19:18:03:877 CLOCK/(21363:21692): Ocupe marco libre: MARCO = 4 - PID = 3 - PAG =  0
+[INFO] 19:18:03:917 CLOCK/(21363:21692): Ocupe marco libre: MARCO = 5 - PID = 3 - PAG =  1
+[INFO] 19:18:03:957 CLOCK/(21363:21688): Ocupe marco libre: MARCO = 6 - PID = 1 - PAG =  2
+[INFO] 19:18:03:997 CLOCK/(21363:21690): Ocupe marco libre: MARCO = 7 - PID = 2 - PAG =  2
+[INFO] 19:18:04:045 CLOCK/(21363:21692): Ocupe marco libre: MARCO = 8 - PID = 3 - PAG =  2
+[INFO] 19:20:43:823 CLOCK/(3412:3735): Ocupe marco libre: MARCO = 0 - PID = 1 - PAG =  0
+[INFO] 19:20:43:865 CLOCK/(3412:3735): Ocupe marco libre: MARCO = 1 - PID = 1 - PAG =  1
+[INFO] 19:20:43:992 CLOCK/(3412:3748): Ocupe marco libre: MARCO = 2 - PID = 2 - PAG =  0
+[INFO] 19:20:44:033 CLOCK/(3412:3748): Ocupe marco libre: MARCO = 3 - PID = 2 - PAG =  1
+[INFO] 19:20:44:165 CLOCK/(3412:3764): Ocupe marco libre: MARCO = 4 - PID = 3 - PAG =  0
+[INFO] 19:20:44:205 CLOCK/(3412:3764): Ocupe marco libre: MARCO = 5 - PID = 3 - PAG =  1
+[INFO] 19:20:44:246 CLOCK/(3412:3735): Ocupe marco libre: MARCO = 6 - PID = 1 - PAG =  2
+[INFO] 19:20:44:286 CLOCK/(3412:3748): Ocupe marco libre: MARCO = 7 - PID = 2 - PAG =  2
+[INFO] 19:20:44:326 CLOCK/(3412:3764): Ocupe marco libre: MARCO = 8 - PID = 3 - PAG =  2
+[INFO] 19:21:09:021 CLOCK/(3412:3735): El elegido por clock fue: PID = 1 - PAG = 0
+[INFO] 19:21:10:052 CLOCK/(3412:3735): Cambio el marco de PID: 1 - PAG: 0 --> PID: 1 - PAG 3
+[INFO] 19:22:14:368 CLOCK/(3885:4261): Ocupe marco libre: MARCO = 0 - PID = 1 - PAG =  0
+[INFO] 19:22:14:409 CLOCK/(3885:4261): Ocupe marco libre: MARCO = 1 - PID = 1 - PAG =  1
+[INFO] 19:22:14:540 CLOCK/(3885:4266): Ocupe marco libre: MARCO = 2 - PID = 2 - PAG =  0
+[INFO] 19:22:14:580 CLOCK/(3885:4266): Ocupe marco libre: MARCO = 3 - PID = 2 - PAG =  1
+[INFO] 19:22:14:709 CLOCK/(3885:4268): Ocupe marco libre: MARCO = 4 - PID = 3 - PAG =  0
+[INFO] 19:22:14:749 CLOCK/(3885:4268): Ocupe marco libre: MARCO = 5 - PID = 3 - PAG =  1
+[INFO] 19:22:14:790 CLOCK/(3885:4261): Ocupe marco libre: MARCO = 6 - PID = 1 - PAG =  2
+[INFO] 19:22:14:829 CLOCK/(3885:4266): Ocupe marco libre: MARCO = 7 - PID = 2 - PAG =  2
+[INFO] 19:22:14:869 CLOCK/(3885:4268): Ocupe marco libre: MARCO = 8 - PID = 3 - PAG =  2
+[INFO] 19:25:12:978 CLOCK/(6058:6221): Ocupe marco libre: MARCO = 0 - PID = 1 - PAG =  0
+[INFO] 19:25:13:017 CLOCK/(6058:6221): Ocupe marco libre: MARCO = 1 - PID = 1 - PAG =  1
+[INFO] 19:25:13:148 CLOCK/(6058:6226): Ocupe marco libre: MARCO = 2 - PID = 2 - PAG =  0
+[INFO] 19:25:13:189 CLOCK/(6058:6226): Ocupe marco libre: MARCO = 3 - PID = 2 - PAG =  1
+[INFO] 19:25:13:328 CLOCK/(6058:6228): Ocupe marco libre: MARCO = 4 - PID = 3 - PAG =  0
+[INFO] 19:25:13:369 CLOCK/(6058:6228): Ocupe marco libre: MARCO = 5 - PID = 3 - PAG =  1
+[INFO] 19:25:13:409 CLOCK/(6058:6221): Ocupe marco libre: MARCO = 6 - PID = 1 - PAG =  2
+[INFO] 19:25:13:451 CLOCK/(6058:6226): Ocupe marco libre: MARCO = 7 - PID = 2 - PAG =  2
+[INFO] 19:25:13:489 CLOCK/(6058:6228): Ocupe marco libre: MARCO = 8 - PID = 3 - PAG =  2
+[INFO] 19:26:13:209 CLOCK/(6058:6221): El elegido por clock fue: PID = 1 - PAG = 0
+[INFO] 19:26:13:209 CLOCK/(6058:6221): Cambio el marco de PID: 1 - PAG: 0 --> PID: 1 - PAG 3
+[INFO] 19:30:07:108 CLOCK/(7284:7448): Ocupe marco libre: MARCO = 0 - PID = 1 - PAG =  0
+[INFO] 19:30:07:152 CLOCK/(7284:7448): Ocupe marco libre: MARCO = 1 - PID = 1 - PAG =  1
+[INFO] 19:30:07:284 CLOCK/(7284:7453): Ocupe marco libre: MARCO = 2 - PID = 2 - PAG =  0
+[INFO] 19:30:07:329 CLOCK/(7284:7453): Ocupe marco libre: MARCO = 3 - PID = 2 - PAG =  1
+[INFO] 19:30:07:449 CLOCK/(7284:7455): Ocupe marco libre: MARCO = 4 - PID = 3 - PAG =  0
+[INFO] 19:30:07:488 CLOCK/(7284:7455): Ocupe marco libre: MARCO = 5 - PID = 3 - PAG =  1
+[INFO] 19:30:07:528 CLOCK/(7284:7448): Ocupe marco libre: MARCO = 6 - PID = 1 - PAG =  2
+[INFO] 19:30:07:568 CLOCK/(7284:7453): Ocupe marco libre: MARCO = 7 - PID = 2 - PAG =  2
+[INFO] 19:30:07:616 CLOCK/(7284:7455): Ocupe marco libre: MARCO = 8 - PID = 3 - PAG =  2
+[INFO] 19:30:07:661 CLOCK/(7284:7448): El elegido por clock fue: PID = 1 - PAG = 0
+[INFO] 19:30:07:661 CLOCK/(7284:7448): Cambio el marco de PID: 1 - PAG: 0 --> PID: 1 - PAG 3
+[INFO] 19:30:07:741 CLOCK/(7284:7453): El elegido por clock fue: PID = 2 - PAG = 0
+[INFO] 19:30:07:741 CLOCK/(7284:7453): Cambio el marco de PID: 2 - PAG: 0 --> PID: 2 - PAG 3
+[INFO] 19:30:07:826 CLOCK/(7284:7455): El elegido por clock fue: PID = 3 - PAG = 0
+[INFO] 19:30:07:826 CLOCK/(7284:7455): Cambio el marco de PID: 3 - PAG: 0 --> PID: 3 - PAG 3
+[INFO] 19:30:07:944 CLOCK/(7284:7448): El elegido por clock fue: PID = 1 - PAG = 1
+[INFO] 19:30:07:945 CLOCK/(7284:7448): Cambio el marco de PID: 1 - PAG: 1 --> PID: 1 - PAG 0
+[INFO] 19:30:08:065 CLOCK/(7284:7448): El elegido por clock fue: PID = 1 - PAG = 2
+[INFO] 19:30:08:065 CLOCK/(7284:7448): Cambio el marco de PID: 1 - PAG: 2 --> PID: 1 - PAG 1
+[INFO] 19:30:08:184 CLOCK/(7284:7448): El elegido por clock fue: PID = 1 - PAG = 0
+[INFO] 19:30:08:184 CLOCK/(7284:7448): Cambio el marco de PID: 1 - PAG: 0 --> PID: 1 - PAG 2
+[INFO] 19:30:08:225 CLOCK/(7284:7448): El elegido por clock fue: PID = 1 - PAG = 1
+[INFO] 19:30:08:225 CLOCK/(7284:7448): Cambio el marco de PID: 1 - PAG: 1 --> PID: 1 - PAG 4
+[INFO] 19:30:08:305 CLOCK/(7284:7448): El elegido por clock fue: PID = 1 - PAG = 2
+[INFO] 19:30:08:305 CLOCK/(7284:7448): Cambio el marco de PID: 1 - PAG: 2 --> PID: 1 - PAG 0
+[INFO] 19:30:08:384 CLOCK/(7284:7448): El elegido por clock fue: PID = 1 - PAG = 4
+[INFO] 19:30:08:384 CLOCK/(7284:7448): Cambio el marco de PID: 1 - PAG: 4 --> PID: 1 - PAG 1
+[INFO] 19:30:08:504 CLOCK/(7284:7448): El elegido por clock fue: PID = 1 - PAG = 3
+[INFO] 19:30:08:504 CLOCK/(7284:7448): Cambio el marco de PID: 1 - PAG: 3 --> PID: 1 - PAG 2
+[INFO] 19:30:08:624 CLOCK/(7284:7448): El elegido por clock fue: PID = 1 - PAG = 0
+[INFO] 19:30:08:624 CLOCK/(7284:7448): Cambio el marco de PID: 1 - PAG: 0 --> PID: 1 - PAG 3
+[INFO] 19:30:08:704 CLOCK/(7284:7448): El elegido por clock fue: PID = 1 - PAG = 1
+[INFO] 19:30:08:704 CLOCK/(7284:7448): Cambio el marco de PID: 1 - PAG: 1 --> PID: 1 - PAG 4
+[INFO] 19:30:08:745 CLOCK/(7284:7448): El elegido por clock fue: PID = 1 - PAG = 2
+[INFO] 19:30:08:745 CLOCK/(7284:7448): Cambio el marco de PID: 1 - PAG: 2 --> PID: 1 - PAG 5
+[INFO] 19:30:08:824 CLOCK/(7284:7448): El elegido por clock fue: PID = 1 - PAG = 3
+[INFO] 19:30:08:824 CLOCK/(7284:7448): Cambio el marco de PID: 1 - PAG: 3 --> PID: 1 - PAG 0
+[INFO] 19:30:08:905 CLOCK/(7284:7448): El elegido por clock fue: PID = 1 - PAG = 4
+[INFO] 19:30:08:905 CLOCK/(7284:7448): Cambio el marco de PID: 1 - PAG: 4 --> PID: 1 - PAG 1
+[INFO] 19:30:09:027 CLOCK/(7284:7448): El elegido por clock fue: PID = 1 - PAG = 5
+[INFO] 19:30:09:027 CLOCK/(7284:7448): Cambio el marco de PID: 1 - PAG: 5 --> PID: 1 - PAG 2
+[INFO] 19:30:09:144 CLOCK/(7284:7448): El elegido por clock fue: PID = 1 - PAG = 0
+[INFO] 19:30:09:144 CLOCK/(7284:7448): Cambio el marco de PID: 1 - PAG: 0 --> PID: 1 - PAG 3
+[INFO] 19:30:09:224 CLOCK/(7284:7448): El elegido por clock fue: PID = 1 - PAG = 1
+[INFO] 19:30:09:224 CLOCK/(7284:7448): Cambio el marco de PID: 1 - PAG: 1 --> PID: 1 - PAG 4
+[INFO] 19:30:09:304 CLOCK/(7284:7448): El elegido por clock fue: PID = 1 - PAG = 2
+[INFO] 19:30:09:304 CLOCK/(7284:7448): Cambio el marco de PID: 1 - PAG: 2 --> PID: 1 - PAG 5
+[INFO] 19:30:09:345 CLOCK/(7284:7448): El elegido por clock fue: PID = 1 - PAG = 3
+[INFO] 19:30:09:345 CLOCK/(7284:7448): Cambio el marco de PID: 1 - PAG: 3 --> PID: 1 - PAG 6
+[INFO] 19:30:09:425 CLOCK/(7284:7448): El elegido por clock fue: PID = 1 - PAG = 4
+[INFO] 19:30:09:425 CLOCK/(7284:7448): Cambio el marco de PID: 1 - PAG: 4 --> PID: 1 - PAG 0
+[INFO] 19:30:09:504 CLOCK/(7284:7448): El elegido por clock fue: PID = 1 - PAG = 5
+[INFO] 19:30:09:504 CLOCK/(7284:7448): Cambio el marco de PID: 1 - PAG: 5 --> PID: 1 - PAG 1
+[INFO] 19:30:09:624 CLOCK/(7284:7448): El elegido por clock fue: PID = 1 - PAG = 0
+[INFO] 19:30:09:624 CLOCK/(7284:7448): Cambio el marco de PID: 1 - PAG: 0 --> PID: 1 - PAG 2
+[INFO] 19:30:09:704 CLOCK/(7284:7448): El elegido por clock fue: PID = 1 - PAG = 1
+[INFO] 19:30:09:704 CLOCK/(7284:7448): Cambio el marco de PID: 1 - PAG: 1 --> PID: 1 - PAG 3
+[INFO] 19:30:09:784 CLOCK/(7284:7448): El elegido por clock fue: PID = 1 - PAG = 6
+[INFO] 19:30:09:784 CLOCK/(7284:7448): Cambio el marco de PID: 1 - PAG: 6 --> PID: 1 - PAG 4
+[INFO] 19:30:09:904 CLOCK/(7284:7448): El elegido por clock fue: PID = 1 - PAG = 2
+[INFO] 19:30:09:904 CLOCK/(7284:7448): Cambio el marco de PID: 1 - PAG: 2 --> PID: 1 - PAG 5
+[INFO] 19:30:09:984 CLOCK/(7284:7448): El elegido por clock fue: PID = 1 - PAG = 3
+[INFO] 19:30:09:984 CLOCK/(7284:7448): Cambio el marco de PID: 1 - PAG: 3 --> PID: 1 - PAG 6
+[INFO] 19:30:10:027 CLOCK/(7284:7448): El elegido por clock fue: PID = 1 - PAG = 4
+[INFO] 19:30:10:027 CLOCK/(7284:7448): Cambio el marco de PID: 1 - PAG: 4 --> PID: 1 - PAG 7
+[INFO] 19:30:10:108 CLOCK/(7284:7448): El elegido por clock fue: PID = 1 - PAG = 5
+[INFO] 19:30:10:108 CLOCK/(7284:7448): Cambio el marco de PID: 1 - PAG: 5 --> PID: 1 - PAG 0
+[INFO] 19:30:10:189 CLOCK/(7284:7448): El elegido por clock fue: PID = 1 - PAG = 6
+[INFO] 19:30:10:189 CLOCK/(7284:7448): Cambio el marco de PID: 1 - PAG: 6 --> PID: 1 - PAG 1
+[INFO] 19:30:10:309 CLOCK/(7284:7453): El elegido por clock fue: PID = 2 - PAG = 1
+[INFO] 19:30:10:309 CLOCK/(7284:7453): Cambio el marco de PID: 2 - PAG: 1 --> PID: 2 - PAG 0
+[INFO] 19:30:10:429 CLOCK/(7284:7453): El elegido por clock fue: PID = 2 - PAG = 2
+[INFO] 19:30:10:429 CLOCK/(7284:7453): Cambio el marco de PID: 2 - PAG: 2 --> PID: 2 - PAG 1
+[INFO] 19:30:10:593 CLOCK/(7284:7455): El elegido por clock fue: PID = 3 - PAG = 1
+[INFO] 19:30:10:593 CLOCK/(7284:7455): Cambio el marco de PID: 3 - PAG: 1 --> PID: 3 - PAG 0
+[INFO] 19:30:10:713 CLOCK/(7284:7455): El elegido por clock fue: PID = 3 - PAG = 2
+[INFO] 19:30:10:713 CLOCK/(7284:7455): Cambio el marco de PID: 3 - PAG: 2 --> PID: 3 - PAG 1
+[INFO] 19:30:10:872 CLOCK/(7284:7448): El elegido por clock fue: PID = 1 - PAG = 7
+[INFO] 19:30:10:872 CLOCK/(7284:7448): Cambio el marco de PID: 1 - PAG: 7 --> PID: 1 - PAG 2
+[INFO] 19:30:10:992 CLOCK/(7284:7448): El elegido por clock fue: PID = 1 - PAG = 0
+[INFO] 19:30:10:992 CLOCK/(7284:7448): Cambio el marco de PID: 1 - PAG: 0 --> PID: 1 - PAG 3
+[INFO] 19:30:11:072 CLOCK/(7284:7448): El elegido por clock fue: PID = 1 - PAG = 1
+[INFO] 19:30:11:072 CLOCK/(7284:7448): Cambio el marco de PID: 1 - PAG: 1 --> PID: 1 - PAG 4
+[INFO] 19:30:11:152 CLOCK/(7284:7448): El elegido por clock fue: PID = 1 - PAG = 2
+[INFO] 19:30:11:152 CLOCK/(7284:7448): Cambio el marco de PID: 1 - PAG: 2 --> PID: 1 - PAG 0
+[INFO] 19:30:11:232 CLOCK/(7284:7448): El elegido por clock fue: PID = 1 - PAG = 3
+[INFO] 19:30:11:232 CLOCK/(7284:7448): Cambio el marco de PID: 1 - PAG: 3 --> PID: 1 - PAG 1
+[INFO] 19:30:11:312 CLOCK/(7284:7448): El elegido por clock fue: PID = 1 - PAG = 4
+[INFO] 19:30:11:312 CLOCK/(7284:7448): Cambio el marco de PID: 1 - PAG: 4 --> PID: 1 - PAG 2
+[INFO] 19:30:11:393 CLOCK/(7284:7448): El elegido por clock fue: PID = 1 - PAG = 0
+[INFO] 19:30:11:393 CLOCK/(7284:7448): Cambio el marco de PID: 1 - PAG: 0 --> PID: 1 - PAG 3
+[INFO] 19:30:11:473 CLOCK/(7284:7448): El elegido por clock fue: PID = 1 - PAG = 1
+[INFO] 19:30:11:473 CLOCK/(7284:7448): Cambio el marco de PID: 1 - PAG: 1 --> PID: 1 - PAG 4
+[INFO] 19:30:11:553 CLOCK/(7284:7448): El elegido por clock fue: PID = 1 - PAG = 2
+[INFO] 19:30:11:553 CLOCK/(7284:7448): Cambio el marco de PID: 1 - PAG: 2 --> PID: 1 - PAG 5
+[INFO] 19:30:11:633 CLOCK/(7284:7448): El elegido por clock fue: PID = 1 - PAG = 3
+[INFO] 19:30:11:633 CLOCK/(7284:7448): Cambio el marco de PID: 1 - PAG: 3 --> PID: 1 - PAG 6
+[INFO] 19:30:11:712 CLOCK/(7284:7448): El elegido por clock fue: PID = 1 - PAG = 4
+[INFO] 19:30:11:712 CLOCK/(7284:7448): Cambio el marco de PID: 1 - PAG: 4 --> PID: 1 - PAG 7
+[INFO] 19:30:11:753 CLOCK/(7284:7448): El elegido por clock fue: PID = 1 - PAG = 5
+[INFO] 19:30:11:753 CLOCK/(7284:7448): Cambio el marco de PID: 1 - PAG: 5 --> PID: 1 - PAG 8
+[INFO] 19:31:10:632 CLOCK/(7790:8087): Ocupe marco libre: MARCO = 0 - PID = 1 - PAG =  0
+[INFO] 19:31:10:672 CLOCK/(7790:8087): Ocupe marco libre: MARCO = 1 - PID = 1 - PAG =  1
+[INFO] 19:31:10:802 CLOCK/(7790:8092): Ocupe marco libre: MARCO = 2 - PID = 2 - PAG =  0
+[INFO] 19:31:10:840 CLOCK/(7790:8092): Ocupe marco libre: MARCO = 3 - PID = 2 - PAG =  1
+[INFO] 19:31:10:969 CLOCK/(7790:8094): Ocupe marco libre: MARCO = 4 - PID = 3 - PAG =  0
+[INFO] 19:31:11:008 CLOCK/(7790:8094): Ocupe marco libre: MARCO = 5 - PID = 3 - PAG =  1
+[INFO] 19:31:11:049 CLOCK/(7790:8087): Ocupe marco libre: MARCO = 6 - PID = 1 - PAG =  2
+[INFO] 19:31:11:094 CLOCK/(7790:8092): Ocupe marco libre: MARCO = 7 - PID = 2 - PAG =  2
+[INFO] 19:31:11:133 CLOCK/(7790:8094): Ocupe marco libre: MARCO = 8 - PID = 3 - PAG =  2
+[INFO] 19:31:11:176 CLOCK/(7790:8087): El elegido por clock fue: PID = 1 - PAG = 0
+[INFO] 19:31:11:176 CLOCK/(7790:8087): Cambio el marco de PID: 1 - PAG: 0 --> PID: 1 - PAG 3
+[INFO] 19:31:11:256 CLOCK/(7790:8092): El elegido por clock fue: PID = 2 - PAG = 0
+[INFO] 19:31:11:256 CLOCK/(7790:8092): Cambio el marco de PID: 2 - PAG: 0 --> PID: 2 - PAG 3
+[INFO] 19:31:11:338 CLOCK/(7790:8094): El elegido por clock fue: PID = 3 - PAG = 0
+[INFO] 19:31:11:338 CLOCK/(7790:8094): Cambio el marco de PID: 3 - PAG: 0 --> PID: 3 - PAG 3
+[INFO] 19:31:11:456 CLOCK/(7790:8087): El elegido por clock fue: PID = 1 - PAG = 1
+[INFO] 19:31:11:456 CLOCK/(7790:8087): Cambio el marco de PID: 1 - PAG: 1 --> PID: 1 - PAG 0
+[INFO] 19:31:11:577 CLOCK/(7790:8087): El elegido por clock fue: PID = 1 - PAG = 2
+[INFO] 19:31:11:577 CLOCK/(7790:8087): Cambio el marco de PID: 1 - PAG: 2 --> PID: 1 - PAG 1
+[INFO] 19:31:11:697 CLOCK/(7790:8087): El elegido por clock fue: PID = 1 - PAG = 0
+[INFO] 19:31:11:697 CLOCK/(7790:8087): Cambio el marco de PID: 1 - PAG: 0 --> PID: 1 - PAG 2
+[INFO] 19:31:11:741 CLOCK/(7790:8087): El elegido por clock fue: PID = 1 - PAG = 1
+[INFO] 19:31:11:741 CLOCK/(7790:8087): Cambio el marco de PID: 1 - PAG: 1 --> PID: 1 - PAG 4
+[INFO] 19:31:11:821 CLOCK/(7790:8087): El elegido por clock fue: PID = 1 - PAG = 2
+[INFO] 19:31:11:821 CLOCK/(7790:8087): Cambio el marco de PID: 1 - PAG: 2 --> PID: 1 - PAG 0
+[INFO] 19:31:11:900 CLOCK/(7790:8087): El elegido por clock fue: PID = 1 - PAG = 4
+[INFO] 19:31:11:900 CLOCK/(7790:8087): Cambio el marco de PID: 1 - PAG: 4 --> PID: 1 - PAG 1
+[INFO] 19:31:12:020 CLOCK/(7790:8087): El elegido por clock fue: PID = 1 - PAG = 3
+[INFO] 19:31:12:020 CLOCK/(7790:8087): Cambio el marco de PID: 1 - PAG: 3 --> PID: 1 - PAG 2
+[INFO] 19:31:12:140 CLOCK/(7790:8087): El elegido por clock fue: PID = 1 - PAG = 0
+[INFO] 19:31:12:140 CLOCK/(7790:8087): Cambio el marco de PID: 1 - PAG: 0 --> PID: 1 - PAG 3
+[INFO] 19:31:12:220 CLOCK/(7790:8087): El elegido por clock fue: PID = 1 - PAG = 1
+[INFO] 19:31:12:220 CLOCK/(7790:8087): Cambio el marco de PID: 1 - PAG: 1 --> PID: 1 - PAG 4
+[INFO] 19:31:12:260 CLOCK/(7790:8087): El elegido por clock fue: PID = 1 - PAG = 2
+[INFO] 19:31:12:260 CLOCK/(7790:8087): Cambio el marco de PID: 1 - PAG: 2 --> PID: 1 - PAG 5
+[INFO] 19:31:12:340 CLOCK/(7790:8087): El elegido por clock fue: PID = 1 - PAG = 3
+[INFO] 19:31:12:340 CLOCK/(7790:8087): Cambio el marco de PID: 1 - PAG: 3 --> PID: 1 - PAG 0
+[INFO] 19:31:12:421 CLOCK/(7790:8087): El elegido por clock fue: PID = 1 - PAG = 4
+[INFO] 19:31:12:421 CLOCK/(7790:8087): Cambio el marco de PID: 1 - PAG: 4 --> PID: 1 - PAG 1
+[INFO] 19:31:12:540 CLOCK/(7790:8087): El elegido por clock fue: PID = 1 - PAG = 5
+[INFO] 19:31:12:540 CLOCK/(7790:8087): Cambio el marco de PID: 1 - PAG: 5 --> PID: 1 - PAG 2
+[INFO] 19:31:12:660 CLOCK/(7790:8087): El elegido por clock fue: PID = 1 - PAG = 0
+[INFO] 19:31:12:660 CLOCK/(7790:8087): Cambio el marco de PID: 1 - PAG: 0 --> PID: 1 - PAG 3
+[INFO] 19:31:12:740 CLOCK/(7790:8087): El elegido por clock fue: PID = 1 - PAG = 1
+[INFO] 19:31:12:740 CLOCK/(7790:8087): Cambio el marco de PID: 1 - PAG: 1 --> PID: 1 - PAG 4
+[INFO] 19:31:12:820 CLOCK/(7790:8087): El elegido por clock fue: PID = 1 - PAG = 2
+[INFO] 19:31:12:820 CLOCK/(7790:8087): Cambio el marco de PID: 1 - PAG: 2 --> PID: 1 - PAG 5
+[INFO] 19:31:12:861 CLOCK/(7790:8087): El elegido por clock fue: PID = 1 - PAG = 3
+[INFO] 19:31:12:861 CLOCK/(7790:8087): Cambio el marco de PID: 1 - PAG: 3 --> PID: 1 - PAG 6
+[INFO] 19:31:12:941 CLOCK/(7790:8087): El elegido por clock fue: PID = 1 - PAG = 4
+[INFO] 19:31:12:941 CLOCK/(7790:8087): Cambio el marco de PID: 1 - PAG: 4 --> PID: 1 - PAG 0
+[INFO] 19:31:13:022 CLOCK/(7790:8087): El elegido por clock fue: PID = 1 - PAG = 5
+[INFO] 19:31:13:022 CLOCK/(7790:8087): Cambio el marco de PID: 1 - PAG: 5 --> PID: 1 - PAG 1
+[INFO] 19:31:13:141 CLOCK/(7790:8087): El elegido por clock fue: PID = 1 - PAG = 0
+[INFO] 19:31:13:141 CLOCK/(7790:8087): Cambio el marco de PID: 1 - PAG: 0 --> PID: 1 - PAG 2
+[INFO] 19:31:13:221 CLOCK/(7790:8087): El elegido por clock fue: PID = 1 - PAG = 1
+[INFO] 19:31:13:221 CLOCK/(7790:8087): Cambio el marco de PID: 1 - PAG: 1 --> PID: 1 - PAG 3
+[INFO] 19:31:13:300 CLOCK/(7790:8087): El elegido por clock fue: PID = 1 - PAG = 6
+[INFO] 19:31:13:300 CLOCK/(7790:8087): Cambio el marco de PID: 1 - PAG: 6 --> PID: 1 - PAG 4
+[INFO] 19:31:13:420 CLOCK/(7790:8087): El elegido por clock fue: PID = 1 - PAG = 2
+[INFO] 19:31:13:420 CLOCK/(7790:8087): Cambio el marco de PID: 1 - PAG: 2 --> PID: 1 - PAG 5
+[INFO] 19:31:13:504 CLOCK/(7790:8087): El elegido por clock fue: PID = 1 - PAG = 3
+[INFO] 19:31:13:504 CLOCK/(7790:8087): Cambio el marco de PID: 1 - PAG: 3 --> PID: 1 - PAG 6
+[INFO] 19:31:13:544 CLOCK/(7790:8087): El elegido por clock fue: PID = 1 - PAG = 4
+[INFO] 19:31:13:544 CLOCK/(7790:8087): Cambio el marco de PID: 1 - PAG: 4 --> PID: 1 - PAG 7
+[INFO] 19:31:13:624 CLOCK/(7790:8087): El elegido por clock fue: PID = 1 - PAG = 5
+[INFO] 19:31:13:624 CLOCK/(7790:8087): Cambio el marco de PID: 1 - PAG: 5 --> PID: 1 - PAG 0
+[INFO] 19:31:13:704 CLOCK/(7790:8087): El elegido por clock fue: PID = 1 - PAG = 6
+[INFO] 19:31:13:704 CLOCK/(7790:8087): Cambio el marco de PID: 1 - PAG: 6 --> PID: 1 - PAG 1
+[INFO] 19:31:13:824 CLOCK/(7790:8092): El elegido por clock fue: PID = 2 - PAG = 1
+[INFO] 19:31:13:824 CLOCK/(7790:8092): Cambio el marco de PID: 2 - PAG: 1 --> PID: 2 - PAG 0
+[INFO] 19:31:13:944 CLOCK/(7790:8092): El elegido por clock fue: PID = 2 - PAG = 2
+[INFO] 19:31:13:944 CLOCK/(7790:8092): Cambio el marco de PID: 2 - PAG: 2 --> PID: 2 - PAG 1
+[INFO] 19:31:14:104 CLOCK/(7790:8094): El elegido por clock fue: PID = 3 - PAG = 1
+[INFO] 19:31:14:104 CLOCK/(7790:8094): Cambio el marco de PID: 3 - PAG: 1 --> PID: 3 - PAG 0
+[INFO] 19:31:14:228 CLOCK/(7790:8094): El elegido por clock fue: PID = 3 - PAG = 2
+[INFO] 19:31:14:228 CLOCK/(7790:8094): Cambio el marco de PID: 3 - PAG: 2 --> PID: 3 - PAG 1
+[INFO] 19:31:14:388 CLOCK/(7790:8087): El elegido por clock fue: PID = 1 - PAG = 7
+[INFO] 19:31:14:388 CLOCK/(7790:8087): Cambio el marco de PID: 1 - PAG: 7 --> PID: 1 - PAG 2
+[INFO] 19:31:14:508 CLOCK/(7790:8087): El elegido por clock fue: PID = 1 - PAG = 0
+[INFO] 19:31:14:508 CLOCK/(7790:8087): Cambio el marco de PID: 1 - PAG: 0 --> PID: 1 - PAG 3
+[INFO] 19:31:14:588 CLOCK/(7790:8087): El elegido por clock fue: PID = 1 - PAG = 1
+[INFO] 19:31:14:589 CLOCK/(7790:8087): Cambio el marco de PID: 1 - PAG: 1 --> PID: 1 - PAG 4
+[INFO] 19:31:14:668 CLOCK/(7790:8087): El elegido por clock fue: PID = 1 - PAG = 2
+[INFO] 19:31:14:668 CLOCK/(7790:8087): Cambio el marco de PID: 1 - PAG: 2 --> PID: 1 - PAG 0
+[INFO] 19:31:14:749 CLOCK/(7790:8087): El elegido por clock fue: PID = 1 - PAG = 3
+[INFO] 19:31:14:749 CLOCK/(7790:8087): Cambio el marco de PID: 1 - PAG: 3 --> PID: 1 - PAG 1
+[INFO] 19:31:14:829 CLOCK/(7790:8087): El elegido por clock fue: PID = 1 - PAG = 4
+[INFO] 19:31:14:829 CLOCK/(7790:8087): Cambio el marco de PID: 1 - PAG: 4 --> PID: 1 - PAG 2
+[INFO] 19:31:14:909 CLOCK/(7790:8087): El elegido por clock fue: PID = 1 - PAG = 0
+[INFO] 19:31:14:909 CLOCK/(7790:8087): Cambio el marco de PID: 1 - PAG: 0 --> PID: 1 - PAG 3
+[INFO] 19:31:14:989 CLOCK/(7790:8087): El elegido por clock fue: PID = 1 - PAG = 1
+[INFO] 19:31:14:989 CLOCK/(7790:8087): Cambio el marco de PID: 1 - PAG: 1 --> PID: 1 - PAG 4
+[INFO] 19:31:15:069 CLOCK/(7790:8087): El elegido por clock fue: PID = 1 - PAG = 2
+[INFO] 19:31:15:069 CLOCK/(7790:8087): Cambio el marco de PID: 1 - PAG: 2 --> PID: 1 - PAG 5
+[INFO] 19:31:15:148 CLOCK/(7790:8087): El elegido por clock fue: PID = 1 - PAG = 3
+[INFO] 19:31:15:148 CLOCK/(7790:8087): Cambio el marco de PID: 1 - PAG: 3 --> PID: 1 - PAG 6
+[INFO] 19:31:15:228 CLOCK/(7790:8087): El elegido por clock fue: PID = 1 - PAG = 4
+[INFO] 19:31:15:228 CLOCK/(7790:8087): Cambio el marco de PID: 1 - PAG: 4 --> PID: 1 - PAG 7
+[INFO] 19:31:15:268 CLOCK/(7790:8087): El elegido por clock fue: PID = 1 - PAG = 5
+[INFO] 19:31:15:268 CLOCK/(7790:8087): Cambio el marco de PID: 1 - PAG: 5 --> PID: 1 - PAG 8
