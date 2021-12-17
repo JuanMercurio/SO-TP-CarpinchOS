@@ -197,7 +197,9 @@ void receptor(void *arg)
         // verificador = 66;
             carpincho->fd_memoria = crear_conexion(configuracion.IP_MEMORIA, configuracion.PUERTO_MEMORIA);
             enviar_cod_op_e_int(carpincho->fd_memoria, NEW_INSTANCE_KERNEL, carpincho->pid);
+            
             recibido = recibir_mensaje(carpincho->fd_memoria); //handshake
+            free(recibido);
             aux_int = recibir_int(carpincho->fd_memoria);
             printf("recibio de memoria un %d\n", aux_int);
             if (aux_int == 0)
@@ -224,7 +226,8 @@ void receptor(void *arg)
          log_info(logger, "Se recibió del carpincho %d un SEM INIT para el semáforo %s con valor %d\n ", carpincho->pid, semaforo->nombre_semaforo, semaforo->valor);
          int resultado = sem_kernel_init(semaforo->nombre_semaforo, semaforo->valor); // usa lo que necesit
          enviar_int(cliente, resultado);                                              // responde peticion con ok
-         //free(semaforo->buffer->stream);                                             // bora lo que alloco
+         //free(semaforo->buffer->stream);  
+         free(semaforo->nombre_semaforo);                                       // bora lo que alloco
          free(semaforo);
 
          break;

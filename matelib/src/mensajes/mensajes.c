@@ -243,6 +243,7 @@ void enviar_cod_op_e_int(int conexion, int cod_op, int valor){
 	void* a_enviar = serializar_paquete_mem(paquete, bytes);
 	send(conexion, a_enviar, bytes, 0);
 	free(a_enviar);
+	free(paquete);
 }
 void enviar_mem_read(int conexion, int cod_op, int origin, int size){// probar que llegue el char dest
 	t_paquete_mem_read *paquete = malloc(sizeof(t_paquete_mem_read));
