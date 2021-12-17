@@ -122,6 +122,7 @@ int memalloc(tab_pags* tabla, int tamanio){
                     if(pedir_paginas_a_swap(tabla_paginas, paginas_a_agregar) == -1){
                         printf("- Memalloc->While: no recibi las paginas. retorno -1.");
 						log_info(logger_memoria, "-- FIN MEMALLOC --\n");
+						free(ptr_potencial_segmento);
                         return -1;
                     }
 
@@ -152,12 +153,16 @@ int memalloc(tab_pags* tabla, int tamanio){
 					next = memoria_leer_por_dirlog(tabla_paginas, new.nextAlloc, SIZE_METADATA);
 					next->prevAlloc = ptr_potencial_segmento->nextAlloc;
 					memoria_escribir_por_dirlog(tabla_paginas, new.nextAlloc, next, SIZE_METADATA);
+
+					free(next);
+
 				} else puts("- Memalloc->While: no existe metadata next");
 
 				memoria_escribir_por_dirlog(tabla_paginas, ptr_potencial_segmento->nextAlloc, &new, SIZE_METADATA);
 
 				log_info(logger_memoria, "-- FIN MEMALLOC --\n");
 				printf("- Memalloc->While: RETORNO DIR_LOG DE GUARDADO: %i. METADATA ARRANCA EN %i.\n", inicio_actual+SIZE_METADATA, inicio_actual);
+				free(ptr_potencial_segmento);
 				return inicio_actual + SIZE_METADATA;
 			}
 		} else puts("Segmento no esta libre.");
@@ -401,8 +406,8 @@ int memfree(tab_pags* tabla, int dir_log){
 				log_info(logger_memoria, "Actualizo puntero next.");
 				memoria_escribir_por_dirlog(tabla, ptr_segmento->nextAlloc, ptr_next, SIZE_METADATA);
 			}
-			free(ptr_derecha);
 		} else puts("- Memfree->Derecha: el puntero a derecha esta ocupado.");
+		free(ptr_derecha);
 	} else puts("- Memfree->Derecha: no existe puntero a derecha.");
 
 
@@ -423,8 +428,8 @@ int memfree(tab_pags* tabla, int dir_log){
 				log_info(logger_memoria, "Actualizo puntero prev.");
 				memoria_escribir_por_dirlog(tabla, ptr_segmento->prevAlloc, ptr_prev, SIZE_METADATA);
 			}
-			free(ptr_izquierda);
 		} else puts("- Memfree->Izquierda: el puntero a izquierda esta ocupado.");
+		free(ptr_izquierda);
 	} else puts("- Memfree->Izquierda: no existe puntero a izquierda.");
 
 	log_info(logger_memoria, "Cargo el puntero.");
@@ -613,7 +618,12 @@ bool alloc_valido(dir_t dl, tab_pags* t, int tamanio){
     dir_t heap_location = heap_get_location(dl, t);
     HeapMetadata* data = (HeapMetadata*) memoria_leer(t, heap_location, sizeof(HeapMetadata));
 
-    return data->isFree == false && heap_lectura_valida(data, dl, tamanio);
+	bool libre = data->isFree;
+	bool lectura_valida = heap_lectura_valida(data, dl, tamanio);
+
+	free(data);
+
+    return libre && lectura_valida;
 }
 
 bool heap_lectura_valida(HeapMetadata* data, dir_t dl, int tamanio){
