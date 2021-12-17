@@ -151,6 +151,7 @@ int memalloc(tab_pags* tabla, int tamanio){
 
 					next = memoria_leer_por_dirlog(tabla_paginas, new.nextAlloc, SIZE_METADATA);
 					next->prevAlloc = ptr_potencial_segmento->nextAlloc;
+					memoria_escribir_por_dirlog(tabla_paginas, new.nextAlloc, next, SIZE_METADATA);
 				} else puts("- Memalloc->While: no existe metadata next");
 
 				memoria_escribir_por_dirlog(tabla_paginas, ptr_potencial_segmento->nextAlloc, &new, SIZE_METADATA);
@@ -199,6 +200,7 @@ int memalloc(tab_pags* tabla, int tamanio){
 					espacio_en_alloc = numero_magico - SIZE_METADATA - inicio_actual;
 					if(tamanio-espacio_en_alloc % configuracion.TAMANIO_PAGINAS == 0){ 
 						ptr_potencial_segmento->isFree=false;
+						memoria_escribir_por_dirlog(tabla_paginas, inicio_actual, ptr_potencial_segmento, SIZE_METADATA);
 						free(ptr_potencial_segmento);
 						log_info(logger_memoria, "-- FIN MEMALLOC --\n");
 						return inicio_actual+SIZE_METADATA;
