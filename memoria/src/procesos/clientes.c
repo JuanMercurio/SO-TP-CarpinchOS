@@ -80,13 +80,14 @@ void ejecutar_proceso(int cliente)
                 /* escribir contenido de paginas en swap y liberar los marcos para que otro porceso los use */
                 printf("cantidad de paginas del carpincho %d: %d\n", tabla->pid,  list_size(tabla->tabla_pag));
                 for(int i = 0 ; i < list_size(tabla->tabla_pag); i++ ){
-                    int frame = buscar_en_tabPags(tabla, i);
-                    if(frame == -1){
-                        printf("salto por frame = -1\n");
-                         continue;
-                    }
-                    pag_t * pagina =  list_get(tabla->tabla_pag, i);
+                    // int frame = buscar_en_tabPags(tabla, i);
+                    // pag_t * pagina =  list_get(tabla->tabla_pag, i);
+                    pag_t  *pagina= buscar_en_tabPags(tabla, i);
 
+                    if(pagina->marco == -1){
+                        printf("salto por frame = -1\n");
+                        continue;
+                    }
 
                     if (pagina->tlb == 1) {
                         tlb_t* reg = tlb_obtener_registro(tabla->pid, i);
@@ -102,7 +103,7 @@ void ejecutar_proceso(int cliente)
 
                     if(pagina->modificado == 1)
                     { 
-                        enviar_pagina_a_swap(tabla->pid, i, frame);
+                        enviar_pagina_a_swap(tabla->pid, i, pagina->marco);
                         printf("envio pagina a swap\n");
                         int aux = recibir_int(swap);
                         printf("recibo de swap por enviar pagina por suspension %d\n",aux );

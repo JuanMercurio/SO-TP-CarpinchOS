@@ -107,7 +107,7 @@ int paginas_presentes(tab_pags *t)
     return presente;
 }
 
-int nro_marco(int pagina, tab_pags *tabla)
+int nro_marco(int pagina, tab_pags *tabla, int codigo)
 {
     if (!pagina_valida(tabla, pagina))
         return PAGINA_INVALIDA;
@@ -115,22 +115,46 @@ int nro_marco(int pagina, tab_pags *tabla)
     int marco;
 
     // Busco en TLB
-    marco = buscar_en_tlb(tabla, pagina);
+    tlb_t* reg = buscar_reg_en_tlb(tabla->pid, pagina);
+    marco = reg == NULL ? TLB_MISS : reg->marco;
     if (marco != TLB_MISS) {
         printf("Entontre en la tlb\n");
+        tlb_page_use(reg);
+
+        if (strcmp(configuracion.ALGORITMO_REEMPLAZO_TLB, "LRU") == 0) reg->alg = alg_comportamiento_tlb();// que carajos??
+
+        if (codigo == WRITE) {
+            reg->modificado = WRITE;
+        }
+
+        log_info(logger_alg, "ALG - PID: %d - PAG: %d", tabla->pid, pagina);
+        reg->alg = alg_comportamiento();
+
+        log_info(logger_memoria, "Pagina encontrada en TLB");
+
         return marco; 
     }
 
     // Busco en tabla de paginas
-    marco = buscar_en_tabPags(tabla, pagina);
-    if (marco != MEMP_MISS) {
-        printf("Encontre en tabla de paginas\n");
+    pag_t* p = buscar_en_tabPags(tabla, pagina);
+
+    if (p != NULL) {
+        marco = p->marco;
+        tlb_insert_page(tabla->pid, pagina, marco, codigo);
+
+        if (configuracion.CANTIDAD_ENTRADAS_TLB > 0) p->tlb = 1;
+        if (codigo == WRITE) p->modificado = WRITE;
+        p->presente   = 1;
+        p->algoritmo  = alg_comportamiento();
+        log_info(logger_alg, "ALG - PID: %d - PAG: %d", tabla->pid, pagina);
+        log_info(logger_memoria, "Pagina encontrada en memoria.");
         return marco; 
     }
 
     marco = buscar_en_swap(tabla, pagina);
     if (marco != -1) {
         printf("Encontre en swap\n");
+
         return marco;
     }
 
@@ -149,7 +173,7 @@ int buscar_en_swap(tab_pags *tabla, int pagina)
         log_info(logger_memoria, "SWAP - PID: %d - PAG: %d - NO FUE ENCONTRADA EN SWAP", tabla->pid, pagina);
         return -1;
     }
-    log_info(logger_memoria, "SWAP - Recibi - PID: %d - PAG: %d", tabla->pid, pagina);
+    log_info(logger_memoria, "Traer de SWAP - PID: %d | PAG: %d", tabla->pid, pagina);
     void* contenido = recibir_buffer(configuracion.TAMANIO_PAGINAS, swap);
 
     printf("SWAP - PID: %d - PAG: %d - Recibi esto: %s\n", tabla->pid, pagina, (char*)contenido);
@@ -163,11 +187,16 @@ int buscar_en_swap(tab_pags *tabla, int pagina)
         insertar_pagina(contenido, marco);
         if (configuracion.CANTIDAD_ENTRADAS_TLB > 0 ) tlb_insert_page(tabla->pid, pagina, marco, READ);
         actualizar_nueva_pagina(pagina, marco, tabla);
+        log_info(logger_alg, "ALG - PID: %d - PAG: %d", tabla->pid, pagina);
+        log_info(logger_memoria, "banana");
         return marco;
-
     } else { 
+        log_info(logger_memoria, "patata");
         t_victima victima = algoritmo_mmu(tabla->pid, tabla);
+        log_info(logger_memoria, "VICTIMA: PID %d | PAG %d | MARCO %d", victima.pid, victima.pagina, victima.marco);
         reemplazar_pagina(victima, contenido, pagina, tabla);
+        log_info(logger_memoria, "Reemplace Pagina");
+        log_info(logger_alg, "ALG - PID: %d - PAG: %d", tabla->pid, pagina);
         return victima.marco;
     }
 
@@ -180,7 +209,7 @@ void reemplazar_pagina(t_victima victima, void *buffer, int pagina, tab_pags *ta
 
     if (victima.modificado == 1) {
         enviar_pagina_a_swap(victima.pid, victima.pagina, victima.marco);
-        log_info(logger_memoria, "SWAP - Envie  - PID: %d - PAG: %d", victima.pid, victima.pagina);
+        log_info(logger_memoria, "Bajar a SWAP - PID: %d | PAG: %d", victima.pid, victima.pagina);
         recibir_int(swap);
     }
 
@@ -265,7 +294,7 @@ bool pagina_valida(tab_pags *tabla, int pagina)
     return n_paginas > pagina;
 }
 
-int buscar_en_tabPags(tab_pags *tabla, int pagina)
+pag_t* buscar_en_tabPags(tab_pags *tabla, int pagina)
 {
 
     pag_t *reg = list_get(tabla->tabla_pag, pagina);
@@ -273,10 +302,10 @@ int buscar_en_tabPags(tab_pags *tabla, int pagina)
     if (reg->presente == 1)
     {
         // actualizar_tlb(tabla->pid, reg->marco, pagina);
-        return reg->marco;
+        return reg;
     }
 
-    return MEMP_MISS;
+    return NULL;
 }
 
 int crear_pagina(t_list *paginas)
@@ -633,6 +662,27 @@ void tablas_imprimir_saturno()
 }
 
 
+void tablas_loggear_saturno()
+{
+    int size = list_size(tablas.lista);
+
+    for (int i = 0; i < size; i++) {
+
+        tab_pags*tabla = list_get(tablas.lista, i);
+        int pags = list_size(tabla->tabla_pag);
+        log_info(logger_memoria, " -- TABLA - %d --", tabla->pid);
+
+        for (int j=0; j < pags; j++) {
+
+            pag_t* pag = list_get(tabla->tabla_pag, j);
+            log_info(logger_memoria, "PAG %d - P: %d - M: %d - F: %d - ALG: %d", j, pag->presente, pag->modificado, pag->marco, pag->algoritmo);
+        }
+    }
+    log_info(logger_memoria, "");
+
+}
+
+
 
 
 void marco_ocupar(int marco)
@@ -650,5 +700,6 @@ bool fija_es_valido_iniciar(tab_pags* tabla, int marco)
 
 bool dinamica_marco_libre(int marco)
 { 
-    return  ( marco != -1 && (strcmp(configuracion.TIPO_ASIGNACION, "DINAMICA") == 0) ) ;
+                        //&& marco != 0????
+    return  ( marco != -1  && (strcmp(configuracion.TIPO_ASIGNACION, "DINAMICA") == 0) ) ;
  }

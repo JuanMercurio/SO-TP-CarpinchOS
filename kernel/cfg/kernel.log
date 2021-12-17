@@ -481,3 +481,2375 @@
 [INFO] 23:51:51:098 Kernel/(20083:20090): Carpincho 1 - Eliminado
 [INFO] 23:52:27:535 Kernel/(20083:20087): Comienza la ejecución de la detección de Deadlock
 [INFO] 23:52:32:900 Kernel/(20083:20083): Colas, listas y sus respectivos elementos destruidos
+[INFO] 00:01:12:854 Kernel/(6360:6360): Log creado
+[INFO] 00:01:12:861 Kernel/(6360:6360): Configuración obtenida
+[INFO] 00:01:12:861 Kernel/(6360:6360): Semáforos inicializados
+[INFO] 00:01:12:861 Kernel/(6360:6360): Colas de dispositivos IO creadas
+[INFO] 00:01:12:864 Kernel/(6360:6360): Se creó el hilo gestor de la IO laguna
+[INFO] 00:01:12:864 Kernel/(6360:6360): Inicio colas de planificación
+[INFO] 00:01:12:864 Kernel/(6360:6360): Hilo Planificador Corto Plazo creado
+[INFO] 00:01:12:864 Kernel/(6360:6360): Hilo Planificador Largo Plazo creado
+[INFO] 00:01:12:864 Kernel/(6360:6360): Hilo Detección Deadlock creado
+[INFO] 00:01:12:864 Kernel/(6360:6360): Hilo CPU creado
+[INFO] 00:01:25:952 Kernel/(6360:6826): Recibí el cliente 15
+[INFO] 00:01:25:952 Kernel/(6360:6826): ---------------NEW INSTANCE. Comienza creación del carpincho
+[INFO] 00:01:25:959 Kernel/(6360:6826): NEW INSTANCE: Se agregó el carpincho ID: 1 a la cola de new
+[INFO] 00:01:25:959 Kernel/(6360:6364): Llegó un carpincho al planificador de largo plazo
+[INFO] 00:01:25:959 Kernel/(6360:6364): No hay suspendidos. Se iniciará carpincho 1
+[INFO] 00:01:25:959 Kernel/(6360:6364): --------------Carpincho 1--------------
+[INFO] 00:01:25:959 Kernel/(6360:6364): Tiempo de espera: 0.000000
+[INFO] 00:01:25:959 Kernel/(6360:6364): Tiempo ejecutado: 0.000000
+[INFO] 00:01:25:959 Kernel/(6360:6364): Estimacion: 1.000000
+[INFO] 00:01:25:959 Kernel/(6360:6364): --------------Carpincho 1--------------
+[INFO] 00:01:25:959 Kernel/(6360:6364): Tiempo de espera: 0.000000
+[INFO] 00:01:25:959 Kernel/(6360:6364): Tiempo ejecutado: 0.000000
+[INFO] 00:01:25:959 Kernel/(6360:6364): Estimacion: 1.000000
+[INFO] 00:01:25:959 Kernel/(6360:6367): Carpincho 1 - Comienza a ejecutar
+[INFO] 00:01:25:997 Kernel/(6360:6826): Se recibió del carpincho 1 un MEM ALLOC con el tamañi 20
+[INFO] 00:01:26:079 Kernel/(6360:6826): Se recibió del carpincho 1 un MEM write desde la posición 9 con el mensjaje No, ¡hola humedal!
+A
+[INFO] 00:01:26:081 Kernel/(6360:6826): Se recibió del carpincho 1 un SEM INIT para el semáforo SEM_HELLO con valor 0
+ 
+[INFO] 00:01:26:082 Kernel/(6360:6826): El carpincho 1 está bloqueado por el semáforo SEM_HELLO
+[INFO] 00:01:26:082 Kernel/(6360:6826): Se recibió del carpincho 1 un SEM WAIT para SEM_HELLO y se bloqueara
+[INFO] 00:01:26:082 Kernel/(6360:6367): No se deben suspender carpinchos. Carpinchos bloqueados: 0
+[INFO] 00:01:26:082 Kernel/(6360:6367): Carpinchos bloqueados: 1
+[INFO] 00:01:27:362 Kernel/(6360:6838): Recibí el cliente 16
+[INFO] 00:01:27:362 Kernel/(6360:6838): ---------------NEW INSTANCE. Comienza creación del carpincho
+[INFO] 00:01:27:413 Kernel/(6360:6838): NEW INSTANCE: Se agregó el carpincho ID: 2 a la cola de new
+[INFO] 00:01:27:413 Kernel/(6360:6364): Llegó un carpincho al planificador de largo plazo
+[INFO] 00:01:27:413 Kernel/(6360:6364): No hay suspendidos. Se iniciará carpincho 2
+[INFO] 00:01:27:413 Kernel/(6360:6364): --------------Carpincho 2--------------
+[INFO] 00:01:27:413 Kernel/(6360:6364): Tiempo de espera: 0.000000
+[INFO] 00:01:27:413 Kernel/(6360:6364): Tiempo ejecutado: 0.000000
+[INFO] 00:01:27:413 Kernel/(6360:6364): Estimacion: 1.000000
+[INFO] 00:01:27:413 Kernel/(6360:6364): --------------Carpincho 2--------------
+[INFO] 00:01:27:413 Kernel/(6360:6364): Tiempo de espera: 0.000000
+[INFO] 00:01:27:413 Kernel/(6360:6364): Tiempo ejecutado: 0.000000
+[INFO] 00:01:27:413 Kernel/(6360:6364): Estimacion: 1.000000
+[INFO] 00:01:27:413 Kernel/(6360:6368): Carpincho 2 - Comienza a ejecutar
+[INFO] 00:01:27:453 Kernel/(6360:6838): Se recibió del carpincho 2 un MEM ALLOC con el tamañi 14
+[INFO] 00:01:27:535 Kernel/(6360:6838): Se recibió del carpincho 2 un MEM write desde la posición 9 con el mensjaje ¡Hola mundo!
+ MEM AA
+[INFO] 00:01:27:577 Kernel/(6360:6838): Se recibió del carpincho 2 un MEM READ desde la posición 9 con tamañio 14
+[INFO] 00:01:27:657 Kernel/(6360:6838): Bloqueado a listo Carpincho 1
+[INFO] 00:01:27:657 Kernel/(6360:6838): --------------Carpincho 1--------------
+[INFO] 00:01:27:657 Kernel/(6360:6838): Tiempo de espera: 0.000077
+[INFO] 00:01:27:657 Kernel/(6360:6838): Tiempo ejecutado: 0.122443
+[INFO] 00:01:27:657 Kernel/(6360:6838): Estimacion: 1.000000
+[INFO] 00:01:27:657 Kernel/(6360:6838): --------------Carpincho 1--------------
+[INFO] 00:01:27:657 Kernel/(6360:6838): Tiempo de espera: 0.000077
+[INFO] 00:01:27:657 Kernel/(6360:6838): Tiempo ejecutado: 0.122443
+[INFO] 00:01:27:657 Kernel/(6360:6838): Estimacion: 1.000000
+[INFO] 00:01:27:657 Kernel/(6360:6838): SEM POST EXITOSO a semaforo SEM_HELLO VALOR DEL SEMAFORO ============= 0
+[INFO] 00:01:27:657 Kernel/(6360:6367): Carpincho 1 - Comienza a ejecutar
+[INFO] 00:01:27:658 Kernel/(6360:6838): MATE_CLOSE: Se recibió del carpincho 2 un MATE CLOSE
+[INFO] 00:01:27:659 Kernel/(6360:6368): Carpincho 2 - Eliminado
+[INFO] 00:01:27:697 Kernel/(6360:6826): Se recibió del carpincho 1 un MEM READ desde la posición 9 con tamañio 20
+[INFO] 00:01:27:781 Kernel/(6360:6826): MATE_CLOSE: Se recibió del carpincho 1 un MATE CLOSE
+[INFO] 00:01:27:782 Kernel/(6360:6367): Carpincho 1 - Eliminado
+[INFO] 00:22:30:470 Kernel/(10061:10061): Log creado
+[INFO] 00:22:30:471 Kernel/(10061:10061): Configuración obtenida
+[INFO] 00:22:30:471 Kernel/(10061:10061): Semáforos inicializados
+[INFO] 00:22:30:471 Kernel/(10061:10061): Colas de dispositivos IO creadas
+[INFO] 00:22:30:471 Kernel/(10061:10061): Se creó el hilo gestor de la IO laguna
+[INFO] 00:22:30:471 Kernel/(10061:10061): Inicio colas de planificación
+[INFO] 00:22:30:471 Kernel/(10061:10061): Hilo Planificador Corto Plazo creado
+[INFO] 00:22:30:471 Kernel/(10061:10061): Hilo Planificador Largo Plazo creado
+[INFO] 00:22:30:471 Kernel/(10061:10061): Hilo Detección Deadlock creado
+[INFO] 00:22:30:471 Kernel/(10061:10061): Hilo CPU creado
+[INFO] 00:22:35:347 Kernel/(10061:10210): Recibí el cliente 15
+[INFO] 00:22:35:347 Kernel/(10061:10210): ---------------NEW INSTANCE. Comienza creación del carpincho
+[INFO] 00:22:35:353 Kernel/(10061:10210): NEW INSTANCE: Se agregó el carpincho ID: 1 a la cola de new
+[INFO] 00:22:35:353 Kernel/(10061:10064): Llegó un carpincho al planificador de largo plazo
+[INFO] 00:22:35:353 Kernel/(10061:10064): No hay suspendidos. Se iniciará carpincho 1
+[INFO] 00:22:35:353 Kernel/(10061:10064): --------------Carpincho 1--------------
+[INFO] 00:22:35:353 Kernel/(10061:10064): Tiempo de espera: 0.000000
+[INFO] 00:22:35:353 Kernel/(10061:10064): Tiempo ejecutado: 0.000000
+[INFO] 00:22:35:353 Kernel/(10061:10064): Estimacion: 1.000000
+[INFO] 00:22:35:353 Kernel/(10061:10064): --------------Carpincho 1--------------
+[INFO] 00:22:35:353 Kernel/(10061:10064): Tiempo de espera: 0.000000
+[INFO] 00:22:35:353 Kernel/(10061:10064): Tiempo ejecutado: 0.000000
+[INFO] 00:22:35:353 Kernel/(10061:10064): Estimacion: 1.000000
+[INFO] 00:22:35:353 Kernel/(10061:10068): Carpincho 1 - Comienza a ejecutar
+[INFO] 00:22:35:392 Kernel/(10061:10210): Se recibió del carpincho 1 un MEM ALLOC con el tamañi 20
+[INFO] 00:22:35:473 Kernel/(10061:10210): Se recibió del carpincho 1 un MEM write desde la posición 9 con el mensjaje No, ¡hola humedal!
+A
+[INFO] 00:22:35:473 Kernel/(10061:10210): Se recibió del carpincho 1 un SEM INIT para el semáforo SEM_HELLO con valor 0
+ 
+[INFO] 00:22:35:474 Kernel/(10061:10210): El carpincho 1 está bloqueado por el semáforo SEM_HELLO
+[INFO] 00:22:35:474 Kernel/(10061:10210): Se recibió del carpincho 1 un SEM WAIT para SEM_HELLO y se bloqueara
+[INFO] 00:22:35:474 Kernel/(10061:10068): No se deben suspender carpinchos. Carpinchos bloqueados: 0
+[INFO] 00:22:35:474 Kernel/(10061:10068): Carpinchos bloqueados: 1
+[INFO] 00:22:36:800 Kernel/(10061:10222): Recibí el cliente 16
+[INFO] 00:22:36:800 Kernel/(10061:10222): ---------------NEW INSTANCE. Comienza creación del carpincho
+[INFO] 00:22:36:853 Kernel/(10061:10222): NEW INSTANCE: Se agregó el carpincho ID: 2 a la cola de new
+[INFO] 00:22:36:853 Kernel/(10061:10064): Llegó un carpincho al planificador de largo plazo
+[INFO] 00:22:36:853 Kernel/(10061:10064): No hay suspendidos. Se iniciará carpincho 2
+[INFO] 00:22:36:853 Kernel/(10061:10064): --------------Carpincho 2--------------
+[INFO] 00:22:36:853 Kernel/(10061:10064): Tiempo de espera: 0.000000
+[INFO] 00:22:36:853 Kernel/(10061:10064): Tiempo ejecutado: 0.000000
+[INFO] 00:22:36:853 Kernel/(10061:10064): Estimacion: 1.000000
+[INFO] 00:22:36:853 Kernel/(10061:10064): --------------Carpincho 2--------------
+[INFO] 00:22:36:853 Kernel/(10061:10064): Tiempo de espera: 0.000000
+[INFO] 00:22:36:853 Kernel/(10061:10064): Tiempo ejecutado: 0.000000
+[INFO] 00:22:36:853 Kernel/(10061:10064): Estimacion: 1.000000
+[INFO] 00:22:36:853 Kernel/(10061:10067): Carpincho 2 - Comienza a ejecutar
+[INFO] 00:22:36:893 Kernel/(10061:10222): Se recibió del carpincho 2 un MEM ALLOC con el tamañi 14
+[INFO] 00:22:36:974 Kernel/(10061:10222): Se recibió del carpincho 2 un MEM write desde la posición 9 con el mensjaje ¡Hola mundo!
+ MEM AA
+[INFO] 00:22:37:013 Kernel/(10061:10222): Se recibió del carpincho 2 un MEM READ desde la posición 9 con tamañio 14
+[INFO] 00:22:37:093 Kernel/(10061:10222): Bloqueado a listo Carpincho 1
+[INFO] 00:22:37:093 Kernel/(10061:10222): --------------Carpincho 1--------------
+[INFO] 00:22:37:093 Kernel/(10061:10222): Tiempo de espera: 0.000079
+[INFO] 00:22:37:093 Kernel/(10061:10222): Tiempo ejecutado: 0.120849
+[INFO] 00:22:37:093 Kernel/(10061:10222): Estimacion: 1.000000
+[INFO] 00:22:37:093 Kernel/(10061:10222): --------------Carpincho 1--------------
+[INFO] 00:22:37:093 Kernel/(10061:10222): Tiempo de espera: 0.000079
+[INFO] 00:22:37:093 Kernel/(10061:10222): Tiempo ejecutado: 0.120849
+[INFO] 00:22:37:093 Kernel/(10061:10222): Estimacion: 1.000000
+[INFO] 00:22:37:093 Kernel/(10061:10222): SEM POST EXITOSO a semaforo SEM_HELLO VALOR DEL SEMAFORO ============= 0
+[INFO] 00:22:37:093 Kernel/(10061:10068): Carpincho 1 - Comienza a ejecutar
+[INFO] 00:22:37:094 Kernel/(10061:10222): MATE_CLOSE: Se recibió del carpincho 2 un MATE CLOSE
+[INFO] 00:22:37:095 Kernel/(10061:10067): Carpincho 2 - Eliminado
+[INFO] 00:22:37:132 Kernel/(10061:10210): Se recibió del carpincho 1 un MEM READ desde la posición 9 con tamañio 20
+[INFO] 00:22:37:212 Kernel/(10061:10210): MATE_CLOSE: Se recibió del carpincho 1 un MATE CLOSE
+[INFO] 00:22:37:213 Kernel/(10061:10068): Carpincho 1 - Eliminado
+[INFO] 00:25:09:721 Kernel/(10656:10656): Log creado
+[INFO] 00:25:09:721 Kernel/(10656:10656): Configuración obtenida
+[INFO] 00:25:09:721 Kernel/(10656:10656): Semáforos inicializados
+[INFO] 00:25:09:721 Kernel/(10656:10656): Colas de dispositivos IO creadas
+[INFO] 00:25:09:721 Kernel/(10656:10656): Se creó el hilo gestor de la IO laguna
+[INFO] 00:25:09:721 Kernel/(10656:10656): Inicio colas de planificación
+[INFO] 00:25:09:721 Kernel/(10656:10656): Hilo Planificador Corto Plazo creado
+[INFO] 00:25:09:721 Kernel/(10656:10656): Hilo Planificador Largo Plazo creado
+[INFO] 00:25:09:721 Kernel/(10656:10656): Hilo Detección Deadlock creado
+[INFO] 00:25:09:721 Kernel/(10656:10656): Hilo CPU creado
+[INFO] 00:25:59:725 Kernel/(10656:10660): Comienza la ejecución de la detección de Deadlock
+[INFO] 00:26:49:725 Kernel/(10656:10660): Comienza la ejecución de la detección de Deadlock
+[INFO] 00:27:06:073 Kernel/(10656:11605): Recibí el cliente 15
+[INFO] 00:27:06:074 Kernel/(10656:11605): ---------------NEW INSTANCE. Comienza creación del carpincho
+[INFO] 00:27:06:085 Kernel/(10656:11605): NEW INSTANCE: Se agregó el carpincho ID: 1 a la cola de new
+[INFO] 00:27:06:085 Kernel/(10656:10659): Llegó un carpincho al planificador de largo plazo
+[INFO] 00:27:06:085 Kernel/(10656:10659): No hay suspendidos. Se iniciará carpincho 1
+[INFO] 00:27:06:085 Kernel/(10656:10659): --------------Carpincho 1--------------
+[INFO] 00:27:06:085 Kernel/(10656:10659): Tiempo de espera: 0.000000
+[INFO] 00:27:06:085 Kernel/(10656:10659): Tiempo ejecutado: 0.000000
+[INFO] 00:27:06:085 Kernel/(10656:10659): Estimacion: 1.000000
+[INFO] 00:27:06:085 Kernel/(10656:10659): --------------Carpincho 1--------------
+[INFO] 00:27:06:085 Kernel/(10656:10659): Tiempo de espera: 0.000000
+[INFO] 00:27:06:085 Kernel/(10656:10659): Tiempo ejecutado: 0.000000
+[INFO] 00:27:06:085 Kernel/(10656:10659): Estimacion: 1.000000
+[INFO] 00:27:06:085 Kernel/(10656:10663): Carpincho 1 - Comienza a ejecutar
+[INFO] 00:27:06:125 Kernel/(10656:11605): Se recibió del carpincho 1 un MEM ALLOC con el tamañi 23
+[INFO] 00:27:06:170 Kernel/(10656:11611): Recibí el cliente 16
+[INFO] 00:27:06:170 Kernel/(10656:11611): ---------------NEW INSTANCE. Comienza creación del carpincho
+[INFO] 00:27:06:213 Kernel/(10656:11611): NEW INSTANCE: Se agregó el carpincho ID: 2 a la cola de new
+[INFO] 00:27:06:213 Kernel/(10656:10659): Llegó un carpincho al planificador de largo plazo
+[INFO] 00:27:06:213 Kernel/(10656:10659): No hay suspendidos. Se iniciará carpincho 2
+[INFO] 00:27:06:213 Kernel/(10656:10659): --------------Carpincho 2--------------
+[INFO] 00:27:06:213 Kernel/(10656:10659): Tiempo de espera: 0.000000
+[INFO] 00:27:06:213 Kernel/(10656:10659): Tiempo ejecutado: 0.000000
+[INFO] 00:27:06:213 Kernel/(10656:10659): Estimacion: 1.000000
+[INFO] 00:27:06:213 Kernel/(10656:10659): --------------Carpincho 2--------------
+[INFO] 00:27:06:213 Kernel/(10656:10659): Tiempo de espera: 0.000000
+[INFO] 00:27:06:213 Kernel/(10656:10659): Tiempo ejecutado: 0.000000
+[INFO] 00:27:06:213 Kernel/(10656:10659): Estimacion: 1.000000
+[INFO] 00:27:06:213 Kernel/(10656:10664): Carpincho 2 - Comienza a ejecutar
+[INFO] 00:27:06:253 Kernel/(10656:11611): Se recibió del carpincho 2 un MEM ALLOC con el tamañi 23
+[INFO] 00:27:06:296 Kernel/(10656:11616): Recibí el cliente 21
+[INFO] 00:27:06:297 Kernel/(10656:11616): ---------------NEW INSTANCE. Comienza creación del carpincho
+[INFO] 00:27:06:341 Kernel/(10656:11616): NEW INSTANCE: Se agregó el carpincho ID: 3 a la cola de new
+[INFO] 00:27:06:341 Kernel/(10656:10659): Llegó un carpincho al planificador de largo plazo
+[INFO] 00:27:06:341 Kernel/(10656:10659): No hay suspendidos. Se iniciará carpincho 3
+[INFO] 00:27:06:341 Kernel/(10656:10659): --------------Carpincho 3--------------
+[INFO] 00:27:06:341 Kernel/(10656:10659): Tiempo de espera: 0.000000
+[INFO] 00:27:06:341 Kernel/(10656:10659): Tiempo ejecutado: 0.000000
+[INFO] 00:27:06:341 Kernel/(10656:10659): Estimacion: 1.000000
+[INFO] 00:27:06:341 Kernel/(10656:10659): --------------Carpincho 3--------------
+[INFO] 00:27:06:341 Kernel/(10656:10659): Tiempo de espera: 0.000000
+[INFO] 00:27:06:341 Kernel/(10656:10659): Tiempo ejecutado: 0.000000
+[INFO] 00:27:06:341 Kernel/(10656:10659): Estimacion: 1.000000
+[INFO] 00:27:06:341 Kernel/(10656:10665): Carpincho 3 - Comienza a ejecutar
+[INFO] 00:27:06:381 Kernel/(10656:11616): Se recibió del carpincho 3 un MEM ALLOC con el tamañi 23
+[INFO] 00:27:06:423 Kernel/(10656:11605): Se recibió del carpincho 1 un MEM ALLOC con el tamañi 23
+[INFO] 00:27:06:461 Kernel/(10656:11611): Se recibió del carpincho 2 un MEM ALLOC con el tamañi 23
+[INFO] 00:27:06:505 Kernel/(10656:11616): Se recibió del carpincho 3 un MEM ALLOC con el tamañi 23
+[INFO] 00:27:06:549 Kernel/(10656:11605): Se recibió del carpincho 1 un MEM ALLOC con el tamañi 23
+[INFO] 00:27:06:593 Kernel/(10656:11611): Se recibió del carpincho 2 un MEM ALLOC con el tamañi 23
+[INFO] 00:27:06:636 Kernel/(10656:11616): Se recibió del carpincho 3 un MEM ALLOC con el tamañi 23
+[INFO] 00:27:06:673 Kernel/(10656:11605): Se recibió del carpincho 1 un MEM ALLOC con el tamañi 23
+[INFO] 00:27:06:713 Kernel/(10656:11605): Se recibió del carpincho 1 un MEM ALLOC con el tamañi 23
+[INFO] 00:27:06:753 Kernel/(10656:11605): Se recibió del carpincho 1 un MEM ALLOC con el tamañi 23
+[INFO] 00:27:06:793 Kernel/(10656:11605): Se recibió del carpincho 1 un MEM ALLOC con el tamañi 23
+[INFO] 00:27:07:018 Kernel/(10656:11605): Se recibió del carpincho 1 un MEM write desde la posición 9 con el mensjaje Hola
+[INFO] 00:27:07:058 Kernel/(10656:11605): Se recibió del carpincho 1 un MEM write desde la posición 41 con el mensjaje Chau
+[INFO] 00:27:07:097 Kernel/(10656:11611): Se recibió del carpincho 2 un MEM READ desde la posición 9 con tamañio 5
+[INFO] 00:27:07:137 Kernel/(10656:11611): Se recibió del carpincho 2 un MEM READ desde la posición 41 con tamañio 5
+[INFO] 00:27:07:216 Kernel/(10656:11616): Se recibió del carpincho 3 un MEM READ desde la posición 9 con tamañio 5
+[INFO] 00:27:07:256 Kernel/(10656:11616): Se recibió del carpincho 3 un MEM READ desde la posición 41 con tamañio 5
+[INFO] 00:27:07:337 Kernel/(10656:11605): Se recibió del carpincho 1 un MEM write desde la posición 41 con el mensjaje Carpincho
+[INFO] 00:27:07:378 Kernel/(10656:11605): Se recibió del carpincho 1 un MEM write desde la posición 41 con el mensjaje Capibara
+[INFO] 00:27:07:419 Kernel/(10656:11605): Se recibió del carpincho 1 un MEM write desde la posición 41 con el mensjaje Hydrochaeris
+[INFO] 00:27:07:457 Kernel/(10656:11605): Se recibió del carpincho 1 un MEM ALLOC con el tamañi 21
+[INFO] 00:27:08:372 Kernel/(10656:11616): MATE_CLOSE: Se recibió del carpincho 3 un MATE CLOSE
+[INFO] 00:27:08:372 Kernel/(10656:11611): MATE_CLOSE: Se recibió del carpincho 2 un MATE CLOSE
+[INFO] 00:27:08:372 Kernel/(10656:11605): MATE_CLOSE: Se recibió del carpincho 1 un MATE CLOSE
+[INFO] 00:27:08:373 Kernel/(10656:10664): Carpincho 2 - Eliminado
+[INFO] 00:27:08:373 Kernel/(10656:10663): Carpincho 1 - Eliminado
+[INFO] 00:27:08:373 Kernel/(10656:10665): Carpincho 3 - Eliminado
+[INFO] 00:27:39:725 Kernel/(10656:10660): Comienza la ejecución de la detección de Deadlock
+[INFO] 00:27:52:101 Kernel/(11986:11986): Log creado
+[INFO] 00:27:52:101 Kernel/(11986:11986): Configuración obtenida
+[INFO] 00:27:52:101 Kernel/(11986:11986): Semáforos inicializados
+[INFO] 00:27:52:101 Kernel/(11986:11986): Colas de dispositivos IO creadas
+[INFO] 00:27:52:101 Kernel/(11986:11986): Se creó el hilo gestor de la IO laguna
+[INFO] 00:27:52:102 Kernel/(11986:11986): Inicio colas de planificación
+[INFO] 00:27:52:102 Kernel/(11986:11986): Hilo Planificador Corto Plazo creado
+[INFO] 00:27:52:102 Kernel/(11986:11986): Hilo Planificador Largo Plazo creado
+[INFO] 00:27:52:102 Kernel/(11986:11986): Hilo Detección Deadlock creado
+[INFO] 00:27:52:102 Kernel/(11986:11986): Hilo CPU creado
+[INFO] 00:27:56:260 Kernel/(11986:12145): Recibí el cliente 15
+[INFO] 00:27:56:260 Kernel/(11986:12145): ---------------NEW INSTANCE. Comienza creación del carpincho
+[INFO] 00:27:56:265 Kernel/(11986:12145): NEW INSTANCE: Se agregó el carpincho ID: 1 a la cola de new
+[INFO] 00:27:56:265 Kernel/(11986:11989): Llegó un carpincho al planificador de largo plazo
+[INFO] 00:27:56:265 Kernel/(11986:11989): No hay suspendidos. Se iniciará carpincho 1
+[INFO] 00:27:56:265 Kernel/(11986:11989): --------------Carpincho 1--------------
+[INFO] 00:27:56:265 Kernel/(11986:11989): Tiempo de espera: 0.000000
+[INFO] 00:27:56:265 Kernel/(11986:11989): Tiempo ejecutado: 0.000000
+[INFO] 00:27:56:265 Kernel/(11986:11989): Estimacion: 1.000000
+[INFO] 00:27:56:265 Kernel/(11986:11989): --------------Carpincho 1--------------
+[INFO] 00:27:56:266 Kernel/(11986:11989): Tiempo de espera: 0.000000
+[INFO] 00:27:56:266 Kernel/(11986:11989): Tiempo ejecutado: 0.000000
+[INFO] 00:27:56:266 Kernel/(11986:11989): Estimacion: 1.000000
+[INFO] 00:27:56:266 Kernel/(11986:11993): Carpincho 1 - Comienza a ejecutar
+[INFO] 00:27:56:304 Kernel/(11986:12145): Se recibió del carpincho 1 un MEM ALLOC con el tamañi 23
+[INFO] 00:27:56:349 Kernel/(11986:12150): Recibí el cliente 16
+[INFO] 00:27:56:349 Kernel/(11986:12150): ---------------NEW INSTANCE. Comienza creación del carpincho
+[INFO] 00:27:56:396 Kernel/(11986:12150): NEW INSTANCE: Se agregó el carpincho ID: 2 a la cola de new
+[INFO] 00:27:56:397 Kernel/(11986:11989): Llegó un carpincho al planificador de largo plazo
+[INFO] 00:27:56:397 Kernel/(11986:11989): No hay suspendidos. Se iniciará carpincho 2
+[INFO] 00:27:56:397 Kernel/(11986:11989): --------------Carpincho 2--------------
+[INFO] 00:27:56:397 Kernel/(11986:11989): Tiempo de espera: 0.000000
+[INFO] 00:27:56:397 Kernel/(11986:11989): Tiempo ejecutado: 0.000000
+[INFO] 00:27:56:397 Kernel/(11986:11989): Estimacion: 1.000000
+[INFO] 00:27:56:397 Kernel/(11986:11989): --------------Carpincho 2--------------
+[INFO] 00:27:56:397 Kernel/(11986:11989): Tiempo de espera: 0.000000
+[INFO] 00:27:56:397 Kernel/(11986:11989): Tiempo ejecutado: 0.000000
+[INFO] 00:27:56:397 Kernel/(11986:11989): Estimacion: 1.000000
+[INFO] 00:27:56:397 Kernel/(11986:11994): Carpincho 2 - Comienza a ejecutar
+[INFO] 00:27:56:437 Kernel/(11986:12150): Se recibió del carpincho 2 un MEM ALLOC con el tamañi 23
+[INFO] 00:27:56:481 Kernel/(11986:12155): Recibí el cliente 21
+[INFO] 00:27:56:482 Kernel/(11986:12155): ---------------NEW INSTANCE. Comienza creación del carpincho
+[INFO] 00:27:56:525 Kernel/(11986:12155): NEW INSTANCE: Se agregó el carpincho ID: 3 a la cola de new
+[INFO] 00:27:56:525 Kernel/(11986:11989): Llegó un carpincho al planificador de largo plazo
+[INFO] 00:27:56:525 Kernel/(11986:11989): No hay suspendidos. Se iniciará carpincho 3
+[INFO] 00:27:56:525 Kernel/(11986:11989): --------------Carpincho 3--------------
+[INFO] 00:27:56:525 Kernel/(11986:11989): Tiempo de espera: 0.000000
+[INFO] 00:27:56:525 Kernel/(11986:11989): Tiempo ejecutado: 0.000000
+[INFO] 00:27:56:525 Kernel/(11986:11989): Estimacion: 1.000000
+[INFO] 00:27:56:525 Kernel/(11986:11989): --------------Carpincho 3--------------
+[INFO] 00:27:56:525 Kernel/(11986:11989): Tiempo de espera: 0.000000
+[INFO] 00:27:56:525 Kernel/(11986:11989): Tiempo ejecutado: 0.000000
+[INFO] 00:27:56:525 Kernel/(11986:11989): Estimacion: 1.000000
+[INFO] 00:27:56:525 Kernel/(11986:11995): Carpincho 3 - Comienza a ejecutar
+[INFO] 00:27:56:565 Kernel/(11986:12155): Se recibió del carpincho 3 un MEM ALLOC con el tamañi 23
+[INFO] 00:27:56:606 Kernel/(11986:12145): Se recibió del carpincho 1 un MEM ALLOC con el tamañi 23
+[INFO] 00:27:56:647 Kernel/(11986:12150): Se recibió del carpincho 2 un MEM ALLOC con el tamañi 23
+[INFO] 00:27:56:684 Kernel/(11986:12155): Se recibió del carpincho 3 un MEM ALLOC con el tamañi 23
+[INFO] 00:27:56:728 Kernel/(11986:12145): Se recibió del carpincho 1 un MEM ALLOC con el tamañi 23
+[INFO] 00:27:56:765 Kernel/(11986:12150): Se recibió del carpincho 2 un MEM ALLOC con el tamañi 23
+[INFO] 00:27:56:808 Kernel/(11986:12155): Se recibió del carpincho 3 un MEM ALLOC con el tamañi 23
+[INFO] 00:27:56:849 Kernel/(11986:12145): Se recibió del carpincho 1 un MEM ALLOC con el tamañi 23
+[INFO] 00:27:56:889 Kernel/(11986:12145): Se recibió del carpincho 1 un MEM ALLOC con el tamañi 23
+[INFO] 00:27:56:929 Kernel/(11986:12145): Se recibió del carpincho 1 un MEM ALLOC con el tamañi 23
+[INFO] 00:27:56:970 Kernel/(11986:12145): Se recibió del carpincho 1 un MEM ALLOC con el tamañi 23
+[INFO] 00:27:57:009 Kernel/(11986:12145): Se recibió del carpincho 1 un MEM write desde la posición 9 con el mensjaje Hola
+[INFO] 00:27:57:052 Kernel/(11986:12145): Se recibió del carpincho 1 un MEM write desde la posición 41 con el mensjaje Chau
+[INFO] 00:27:57:096 Kernel/(11986:12150): Se recibió del carpincho 2 un MEM READ desde la posición 9 con tamañio 5
+[INFO] 00:27:57:133 Kernel/(11986:12150): Se recibió del carpincho 2 un MEM READ desde la posición 41 con tamañio 5
+[INFO] 00:27:57:212 Kernel/(11986:12155): Se recibió del carpincho 3 un MEM READ desde la posición 9 con tamañio 5
+[INFO] 00:27:57:252 Kernel/(11986:12155): Se recibió del carpincho 3 un MEM READ desde la posición 41 con tamañio 5
+[INFO] 00:27:57:332 Kernel/(11986:12145): Se recibió del carpincho 1 un MEM write desde la posición 41 con el mensjaje Carpincho
+[INFO] 00:27:57:372 Kernel/(11986:12145): Se recibió del carpincho 1 un MEM write desde la posición 41 con el mensjaje Capibara
+[INFO] 00:27:57:413 Kernel/(11986:12145): Se recibió del carpincho 1 un MEM write desde la posición 41 con el mensjaje Hydrochaeris
+[INFO] 00:27:57:454 Kernel/(11986:12145): Se recibió del carpincho 1 un MEM ALLOC con el tamañi 21
+[INFO] 00:27:57:577 Kernel/(11986:12155): MATE_CLOSE: Se recibió del carpincho 3 un MATE CLOSE
+[INFO] 00:27:57:577 Kernel/(11986:12150): MATE_CLOSE: Se recibió del carpincho 2 un MATE CLOSE
+[INFO] 00:27:57:578 Kernel/(11986:12145): MATE_CLOSE: Se recibió del carpincho 1 un MATE CLOSE
+[INFO] 00:27:57:578 Kernel/(11986:11994): Carpincho 2 - Eliminado
+[INFO] 00:27:57:579 Kernel/(11986:11993): Carpincho 1 - Eliminado
+[INFO] 00:27:57:579 Kernel/(11986:11995): Carpincho 3 - Eliminado
+[INFO] 00:28:53:497 Kernel/(12532:12532): Log creado
+[INFO] 00:28:53:497 Kernel/(12532:12532): Configuración obtenida
+[INFO] 00:28:53:497 Kernel/(12532:12532): Semáforos inicializados
+[INFO] 00:28:53:497 Kernel/(12532:12532): Colas de dispositivos IO creadas
+[INFO] 00:28:53:498 Kernel/(12532:12532): Se creó el hilo gestor de la IO laguna
+[INFO] 00:28:53:498 Kernel/(12532:12532): Inicio colas de planificación
+[INFO] 00:28:53:498 Kernel/(12532:12532): Hilo Planificador Corto Plazo creado
+[INFO] 00:28:53:498 Kernel/(12532:12532): Hilo Planificador Largo Plazo creado
+[INFO] 00:28:53:498 Kernel/(12532:12532): Hilo Detección Deadlock creado
+[INFO] 00:28:53:498 Kernel/(12532:12532): Hilo CPU creado
+[INFO] 00:29:06:000 Kernel/(12532:12706): Recibí el cliente 15
+[INFO] 00:29:06:000 Kernel/(12532:12706): ---------------NEW INSTANCE. Comienza creación del carpincho
+[INFO] 00:29:06:007 Kernel/(12532:12706): NEW INSTANCE: Se agregó el carpincho ID: 1 a la cola de new
+[INFO] 00:29:06:007 Kernel/(12532:12535): Llegó un carpincho al planificador de largo plazo
+[INFO] 00:29:06:007 Kernel/(12532:12535): No hay suspendidos. Se iniciará carpincho 1
+[INFO] 00:29:06:007 Kernel/(12532:12535): --------------Carpincho 1--------------
+[INFO] 00:29:06:007 Kernel/(12532:12535): Tiempo de espera: 0.000000
+[INFO] 00:29:06:007 Kernel/(12532:12535): Tiempo ejecutado: 0.000000
+[INFO] 00:29:06:007 Kernel/(12532:12535): Estimacion: 1.000000
+[INFO] 00:29:06:007 Kernel/(12532:12535): --------------Carpincho 1--------------
+[INFO] 00:29:06:007 Kernel/(12532:12535): Tiempo de espera: 0.000000
+[INFO] 00:29:06:007 Kernel/(12532:12535): Tiempo ejecutado: 0.000000
+[INFO] 00:29:06:007 Kernel/(12532:12535): Estimacion: 1.000000
+[INFO] 00:29:06:007 Kernel/(12532:12540): Carpincho 1 - Comienza a ejecutar
+[INFO] 00:29:06:044 Kernel/(12532:12706): Se recibió del carpincho 1 un MEM ALLOC con el tamañi 23
+[INFO] 00:29:06:090 Kernel/(12532:12711): Recibí el cliente 16
+[INFO] 00:29:06:090 Kernel/(12532:12711): ---------------NEW INSTANCE. Comienza creación del carpincho
+[INFO] 00:29:06:137 Kernel/(12532:12711): NEW INSTANCE: Se agregó el carpincho ID: 2 a la cola de new
+[INFO] 00:29:06:137 Kernel/(12532:12535): Llegó un carpincho al planificador de largo plazo
+[INFO] 00:29:06:137 Kernel/(12532:12535): No hay suspendidos. Se iniciará carpincho 2
+[INFO] 00:29:06:137 Kernel/(12532:12535): --------------Carpincho 2--------------
+[INFO] 00:29:06:137 Kernel/(12532:12535): Tiempo de espera: 0.000000
+[INFO] 00:29:06:137 Kernel/(12532:12535): Tiempo ejecutado: 0.000000
+[INFO] 00:29:06:137 Kernel/(12532:12535): Estimacion: 1.000000
+[INFO] 00:29:06:137 Kernel/(12532:12535): --------------Carpincho 2--------------
+[INFO] 00:29:06:137 Kernel/(12532:12535): Tiempo de espera: 0.000000
+[INFO] 00:29:06:137 Kernel/(12532:12535): Tiempo ejecutado: 0.000000
+[INFO] 00:29:06:137 Kernel/(12532:12535): Estimacion: 1.000000
+[INFO] 00:29:06:137 Kernel/(12532:12541): Carpincho 2 - Comienza a ejecutar
+[INFO] 00:29:06:176 Kernel/(12532:12711): Se recibió del carpincho 2 un MEM ALLOC con el tamañi 23
+[INFO] 00:29:06:222 Kernel/(12532:12713): Recibí el cliente 21
+[INFO] 00:29:06:222 Kernel/(12532:12713): ---------------NEW INSTANCE. Comienza creación del carpincho
+[INFO] 00:29:06:264 Kernel/(12532:12713): NEW INSTANCE: Se agregó el carpincho ID: 3 a la cola de new
+[INFO] 00:29:06:264 Kernel/(12532:12535): Llegó un carpincho al planificador de largo plazo
+[INFO] 00:29:06:264 Kernel/(12532:12535): No hay suspendidos. Se iniciará carpincho 3
+[INFO] 00:29:06:264 Kernel/(12532:12535): --------------Carpincho 3--------------
+[INFO] 00:29:06:264 Kernel/(12532:12535): Tiempo de espera: 0.000000
+[INFO] 00:29:06:264 Kernel/(12532:12535): Tiempo ejecutado: 0.000000
+[INFO] 00:29:06:264 Kernel/(12532:12535): Estimacion: 1.000000
+[INFO] 00:29:06:264 Kernel/(12532:12535): --------------Carpincho 3--------------
+[INFO] 00:29:06:264 Kernel/(12532:12535): Tiempo de espera: 0.000000
+[INFO] 00:29:06:264 Kernel/(12532:12535): Tiempo ejecutado: 0.000000
+[INFO] 00:29:06:264 Kernel/(12532:12535): Estimacion: 1.000000
+[INFO] 00:29:06:264 Kernel/(12532:12542): Carpincho 3 - Comienza a ejecutar
+[INFO] 00:29:06:304 Kernel/(12532:12713): Se recibió del carpincho 3 un MEM ALLOC con el tamañi 23
+[INFO] 00:29:06:349 Kernel/(12532:12706): Se recibió del carpincho 1 un MEM ALLOC con el tamañi 23
+[INFO] 00:29:06:429 Kernel/(12532:12711): Se recibió del carpincho 2 un MEM ALLOC con el tamañi 23
+[INFO] 00:29:06:509 Kernel/(12532:12713): Se recibió del carpincho 3 un MEM ALLOC con el tamañi 23
+[INFO] 00:29:06:589 Kernel/(12532:12706): Se recibió del carpincho 1 un MEM ALLOC con el tamañi 23
+[INFO] 00:29:06:828 Kernel/(12532:12711): Se recibió del carpincho 2 un MEM ALLOC con el tamañi 23
+[INFO] 00:29:07:069 Kernel/(12532:12713): Se recibió del carpincho 3 un MEM ALLOC con el tamañi 23
+[INFO] 00:29:07:308 Kernel/(12532:12706): Se recibió del carpincho 1 un MEM ALLOC con el tamañi 10
+[INFO] 00:29:07:509 Kernel/(12532:12711): Se recibió del carpincho 2 un MEM ALLOC con el tamañi 10
+[INFO] 00:29:07:709 Kernel/(12532:12713): Se recibió del carpincho 3 un MEM ALLOC con el tamañi 10
+[INFO] 00:29:07:909 Kernel/(12532:12706): Se recibió del carpincho 1 un MEM write desde la posición 41 con el mensjaje Hola
+[INFO] 00:29:07:949 Kernel/(12532:12706): Se recibió del carpincho 1 un MEM write desde la posición 41 con el mensjaje Hola
+[INFO] 00:29:07:989 Kernel/(12532:12706): Se recibió del carpincho 1 un MEM write desde la posición 41 con el mensjaje Hola
+[INFO] 00:29:08:029 Kernel/(12532:12706): Se recibió del carpincho 1 un MEM write desde la posición 9 con el mensjaje Hola
+[INFO] 00:29:08:153 Kernel/(12532:12711): Se recibió del carpincho 2 un MEM write desde la posición 9 con el mensjaje Hola
+[INFO] 00:29:08:274 Kernel/(12532:12713): Se recibió del carpincho 3 un MEM write desde la posición 9 con el mensjaje Hola
+[INFO] 00:29:08:397 Kernel/(12532:12706): Se recibió del carpincho 1 un MEM ALLOC con el tamañi 23
+[INFO] 00:29:08:517 Kernel/(12532:12706): Se recibió del carpincho 1 un MEM ALLOC con el tamañi 23
+[INFO] 00:29:08:721 Kernel/(12532:12706): Se recibió del carpincho 1 un MEM ALLOC con el tamañi 23
+[INFO] 00:29:08:925 Kernel/(12532:12706): Se recibió del carpincho 1 un MEM ALLOC con el tamañi 23
+[INFO] 00:29:09:126 Kernel/(12532:12711): MATE_CLOSE: Se recibió del carpincho 2 un MATE CLOSE
+[INFO] 00:29:09:126 Kernel/(12532:12713): MATE_CLOSE: Se recibió del carpincho 3 un MATE CLOSE
+[INFO] 00:29:09:127 Kernel/(12532:12706): MATE_CLOSE: Se recibió del carpincho 1 un MATE CLOSE
+[INFO] 00:29:09:127 Kernel/(12532:12542): Carpincho 3 - Eliminado
+[INFO] 00:29:09:127 Kernel/(12532:12540): Carpincho 1 - Eliminado
+[INFO] 00:29:09:127 Kernel/(12532:12541): Carpincho 2 - Eliminado
+[INFO] 00:29:46:409 Kernel/(13095:13095): Log creado
+[INFO] 00:29:46:409 Kernel/(13095:13095): Configuración obtenida
+[INFO] 00:29:46:409 Kernel/(13095:13095): Semáforos inicializados
+[INFO] 00:29:46:409 Kernel/(13095:13095): Colas de dispositivos IO creadas
+[INFO] 00:29:46:409 Kernel/(13095:13095): Se creó el hilo gestor de la IO laguna
+[INFO] 00:29:46:409 Kernel/(13095:13095): Inicio colas de planificación
+[INFO] 00:29:46:409 Kernel/(13095:13095): Hilo Planificador Corto Plazo creado
+[INFO] 00:29:46:409 Kernel/(13095:13095): Hilo Planificador Largo Plazo creado
+[INFO] 00:29:46:409 Kernel/(13095:13095): Hilo Detección Deadlock creado
+[INFO] 00:29:46:409 Kernel/(13095:13095): Hilo CPU creado
+[INFO] 00:29:48:600 Kernel/(13095:13214): Recibí el cliente 15
+[INFO] 00:29:48:600 Kernel/(13095:13214): ---------------NEW INSTANCE. Comienza creación del carpincho
+[INFO] 00:29:48:607 Kernel/(13095:13214): NEW INSTANCE: Se agregó el carpincho ID: 1 a la cola de new
+[INFO] 00:29:48:607 Kernel/(13095:13100): Llegó un carpincho al planificador de largo plazo
+[INFO] 00:29:48:607 Kernel/(13095:13100): No hay suspendidos. Se iniciará carpincho 1
+[INFO] 00:29:48:607 Kernel/(13095:13100): --------------Carpincho 1--------------
+[INFO] 00:29:48:607 Kernel/(13095:13100): Tiempo de espera: 0.000000
+[INFO] 00:29:48:607 Kernel/(13095:13100): Tiempo ejecutado: 0.000000
+[INFO] 00:29:48:607 Kernel/(13095:13100): Estimacion: 1.000000
+[INFO] 00:29:48:607 Kernel/(13095:13100): --------------Carpincho 1--------------
+[INFO] 00:29:48:607 Kernel/(13095:13100): Tiempo de espera: 0.000000
+[INFO] 00:29:48:607 Kernel/(13095:13100): Tiempo ejecutado: 0.000000
+[INFO] 00:29:48:607 Kernel/(13095:13100): Estimacion: 1.000000
+[INFO] 00:29:48:607 Kernel/(13095:13104): Carpincho 1 - Comienza a ejecutar
+[INFO] 00:29:48:644 Kernel/(13095:13214): Se recibió del carpincho 1 un MEM ALLOC con el tamañi 23
+[INFO] 00:29:48:689 Kernel/(13095:13219): Recibí el cliente 16
+[INFO] 00:29:48:689 Kernel/(13095:13219): ---------------NEW INSTANCE. Comienza creación del carpincho
+[INFO] 00:29:48:736 Kernel/(13095:13219): NEW INSTANCE: Se agregó el carpincho ID: 2 a la cola de new
+[INFO] 00:29:48:736 Kernel/(13095:13100): Llegó un carpincho al planificador de largo plazo
+[INFO] 00:29:48:736 Kernel/(13095:13100): No hay suspendidos. Se iniciará carpincho 2
+[INFO] 00:29:48:736 Kernel/(13095:13100): --------------Carpincho 2--------------
+[INFO] 00:29:48:736 Kernel/(13095:13100): Tiempo de espera: 0.000000
+[INFO] 00:29:48:736 Kernel/(13095:13100): Tiempo ejecutado: 0.000000
+[INFO] 00:29:48:736 Kernel/(13095:13100): Estimacion: 1.000000
+[INFO] 00:29:48:737 Kernel/(13095:13100): --------------Carpincho 2--------------
+[INFO] 00:29:48:737 Kernel/(13095:13100): Tiempo de espera: 0.000000
+[INFO] 00:29:48:737 Kernel/(13095:13100): Tiempo ejecutado: 0.000000
+[INFO] 00:29:48:737 Kernel/(13095:13100): Estimacion: 1.000000
+[INFO] 00:29:48:737 Kernel/(13095:13108): Carpincho 2 - Comienza a ejecutar
+[INFO] 00:29:48:776 Kernel/(13095:13219): Se recibió del carpincho 2 un MEM ALLOC con el tamañi 23
+[INFO] 00:29:48:820 Kernel/(13095:13221): Recibí el cliente 21
+[INFO] 00:29:48:821 Kernel/(13095:13221): ---------------NEW INSTANCE. Comienza creación del carpincho
+[INFO] 00:29:48:860 Kernel/(13095:13221): NEW INSTANCE: Se agregó el carpincho ID: 3 a la cola de new
+[INFO] 00:29:48:860 Kernel/(13095:13100): Llegó un carpincho al planificador de largo plazo
+[INFO] 00:29:48:860 Kernel/(13095:13100): No hay suspendidos. Se iniciará carpincho 3
+[INFO] 00:29:48:860 Kernel/(13095:13100): --------------Carpincho 3--------------
+[INFO] 00:29:48:860 Kernel/(13095:13100): Tiempo de espera: 0.000000
+[INFO] 00:29:48:860 Kernel/(13095:13100): Tiempo ejecutado: 0.000000
+[INFO] 00:29:48:860 Kernel/(13095:13100): Estimacion: 1.000000
+[INFO] 00:29:48:860 Kernel/(13095:13100): --------------Carpincho 3--------------
+[INFO] 00:29:48:860 Kernel/(13095:13100): Tiempo de espera: 0.000000
+[INFO] 00:29:48:860 Kernel/(13095:13100): Tiempo ejecutado: 0.000000
+[INFO] 00:29:48:861 Kernel/(13095:13100): Estimacion: 1.000000
+[INFO] 00:29:48:861 Kernel/(13095:13105): Carpincho 3 - Comienza a ejecutar
+[INFO] 00:29:48:900 Kernel/(13095:13221): Se recibió del carpincho 3 un MEM ALLOC con el tamañi 23
+[INFO] 00:29:48:944 Kernel/(13095:13214): Se recibió del carpincho 1 un MEM ALLOC con el tamañi 23
+[INFO] 00:29:48:985 Kernel/(13095:13219): Se recibió del carpincho 2 un MEM ALLOC con el tamañi 23
+[INFO] 00:29:49:029 Kernel/(13095:13221): Se recibió del carpincho 3 un MEM ALLOC con el tamañi 23
+[INFO] 00:29:49:076 Kernel/(13095:13214): Se recibió del carpincho 1 un MEM ALLOC con el tamañi 23
+[INFO] 00:29:49:113 Kernel/(13095:13219): Se recibió del carpincho 2 un MEM ALLOC con el tamañi 23
+[INFO] 00:29:49:153 Kernel/(13095:13221): Se recibió del carpincho 3 un MEM ALLOC con el tamañi 23
+[INFO] 00:29:49:193 Kernel/(13095:13214): Se recibió del carpincho 1 un MEM ALLOC con el tamañi 10
+[INFO] 00:29:49:233 Kernel/(13095:13219): Se recibió del carpincho 2 un MEM ALLOC con el tamañi 10
+[INFO] 00:29:49:273 Kernel/(13095:13221): Se recibió del carpincho 3 un MEM ALLOC con el tamañi 10
+[INFO] 00:29:49:315 Kernel/(13095:13214): Se recibió del carpincho 1 un MEM write desde la posición 41 con el mensjaje Hola
+[INFO] 00:29:49:353 Kernel/(13095:13214): Se recibió del carpincho 1 un MEM write desde la posición 41 con el mensjaje Hola
+[INFO] 00:29:49:394 Kernel/(13095:13214): Se recibió del carpincho 1 un MEM write desde la posición 41 con el mensjaje Hola
+[INFO] 00:29:49:433 Kernel/(13095:13214): Se recibió del carpincho 1 un MEM write desde la posición 9 con el mensjaje Hola
+[INFO] 00:29:49:476 Kernel/(13095:13219): Se recibió del carpincho 2 un MEM write desde la posición 9 con el mensjaje Hola
+[INFO] 00:29:49:476 Kernel/(13095:13221): Se recibió del carpincho 3 un MEM write desde la posición 9 con el mensjaje Hola
+[INFO] 00:29:49:476 Kernel/(13095:13214): Se recibió del carpincho 1 un MEM ALLOC con el tamañi 23
+[INFO] 00:29:49:517 Kernel/(13095:13214): Se recibió del carpincho 1 un MEM ALLOC con el tamañi 23
+[INFO] 00:29:49:557 Kernel/(13095:13214): Se recibió del carpincho 1 un MEM ALLOC con el tamañi 23
+[INFO] 00:29:49:601 Kernel/(13095:13214): Se recibió del carpincho 1 un MEM ALLOC con el tamañi 23
+[INFO] 00:29:49:645 Kernel/(13095:13219): MATE_CLOSE: Se recibió del carpincho 2 un MATE CLOSE
+[INFO] 00:29:49:645 Kernel/(13095:13221): MATE_CLOSE: Se recibió del carpincho 3 un MATE CLOSE
+[INFO] 00:29:49:646 Kernel/(13095:13214): MATE_CLOSE: Se recibió del carpincho 1 un MATE CLOSE
+[INFO] 00:29:49:646 Kernel/(13095:13105): Carpincho 3 - Eliminado
+[INFO] 00:29:49:646 Kernel/(13095:13104): Carpincho 1 - Eliminado
+[INFO] 00:29:49:646 Kernel/(13095:13108): Carpincho 2 - Eliminado
+[INFO] 00:30:36:415 Kernel/(13095:13101): Comienza la ejecución de la detección de Deadlock
+[INFO] 00:31:26:415 Kernel/(13095:13101): Comienza la ejecución de la detección de Deadlock
+[INFO] 00:32:16:417 Kernel/(13095:13101): Comienza la ejecución de la detección de Deadlock
+[INFO] 00:33:06:417 Kernel/(13095:13101): Comienza la ejecución de la detección de Deadlock
+[INFO] 00:40:27:568 Kernel/(14270:14270): Log creado
+[INFO] 00:40:27:568 Kernel/(14270:14270): Configuración obtenida
+[INFO] 00:40:27:569 Kernel/(14270:14270): Semáforos inicializados
+[INFO] 00:40:27:569 Kernel/(14270:14270): Colas de dispositivos IO creadas
+[INFO] 00:40:27:569 Kernel/(14270:14270): Se creó el hilo gestor de la IO laguna
+[INFO] 00:40:27:569 Kernel/(14270:14270): Inicio colas de planificación
+[INFO] 00:40:27:569 Kernel/(14270:14270): Hilo Planificador Corto Plazo creado
+[INFO] 00:40:27:569 Kernel/(14270:14270): Hilo Planificador Largo Plazo creado
+[INFO] 00:40:27:569 Kernel/(14270:14270): Hilo Detección Deadlock creado
+[INFO] 00:40:27:569 Kernel/(14270:14270): Hilo CPU creado
+[INFO] 00:41:17:571 Kernel/(14270:14274): Comienza la ejecución de la detección de Deadlock
+[INFO] 00:41:22:407 Kernel/(14270:14527): Recibí el cliente 15
+[INFO] 00:41:22:407 Kernel/(14270:14527): ---------------NEW INSTANCE. Comienza creación del carpincho
+[INFO] 00:41:22:415 Kernel/(14270:14527): NEW INSTANCE: Se agregó el carpincho ID: 1 a la cola de new
+[INFO] 00:41:22:415 Kernel/(14270:14273): Llegó un carpincho al planificador de largo plazo
+[INFO] 00:41:22:415 Kernel/(14270:14273): No hay suspendidos. Se iniciará carpincho 1
+[INFO] 00:41:22:415 Kernel/(14270:14273): --------------Carpincho 1--------------
+[INFO] 00:41:22:415 Kernel/(14270:14273): Tiempo de espera: 0.000000
+[INFO] 00:41:22:415 Kernel/(14270:14273): Tiempo ejecutado: 0.000000
+[INFO] 00:41:22:415 Kernel/(14270:14273): Estimacion: 1.000000
+[INFO] 00:41:22:415 Kernel/(14270:14273): --------------Carpincho 1--------------
+[INFO] 00:41:22:415 Kernel/(14270:14273): Tiempo de espera: 0.000000
+[INFO] 00:41:22:415 Kernel/(14270:14273): Tiempo ejecutado: 0.000000
+[INFO] 00:41:22:415 Kernel/(14270:14273): Estimacion: 1.000000
+[INFO] 00:41:22:415 Kernel/(14270:14278): Carpincho 1 - Comienza a ejecutar
+[INFO] 00:41:22:453 Kernel/(14270:14527): Se recibió del carpincho 1 un MEM ALLOC con el tamañi 23
+[INFO] 00:42:07:572 Kernel/(14270:14274): Comienza la ejecución de la detección de Deadlock
+[INFO] 00:42:57:573 Kernel/(14270:14274): Comienza la ejecución de la detección de Deadlock
+[INFO] 00:43:47:573 Kernel/(14270:14274): Comienza la ejecución de la detección de Deadlock
+[INFO] 00:44:37:573 Kernel/(14270:14274): Comienza la ejecución de la detección de Deadlock
+[INFO] 00:44:43:043 Kernel/(14270:14829): Recibí el cliente 16
+[INFO] 00:44:43:043 Kernel/(14270:14829): ---------------NEW INSTANCE. Comienza creación del carpincho
+[INFO] 00:44:45:996 Kernel/(14270:14829): NEW INSTANCE: Se agregó el carpincho ID: 2 a la cola de new
+[INFO] 00:44:45:996 Kernel/(14270:14273): Llegó un carpincho al planificador de largo plazo
+[INFO] 00:44:45:996 Kernel/(14270:14273): No hay suspendidos. Se iniciará carpincho 2
+[INFO] 00:44:45:996 Kernel/(14270:14273): --------------Carpincho 2--------------
+[INFO] 00:44:45:996 Kernel/(14270:14273): Tiempo de espera: 0.000000
+[INFO] 00:44:45:996 Kernel/(14270:14273): Tiempo ejecutado: 0.000000
+[INFO] 00:44:45:996 Kernel/(14270:14273): Estimacion: 1.000000
+[INFO] 00:44:45:996 Kernel/(14270:14273): --------------Carpincho 2--------------
+[INFO] 00:44:45:996 Kernel/(14270:14273): Tiempo de espera: 0.000000
+[INFO] 00:44:45:996 Kernel/(14270:14273): Tiempo ejecutado: 0.000000
+[INFO] 00:44:45:996 Kernel/(14270:14273): Estimacion: 1.000000
+[INFO] 00:44:45:996 Kernel/(14270:14279): Carpincho 2 - Comienza a ejecutar
+[INFO] 00:44:46:033 Kernel/(14270:14829): Se recibió del carpincho 2 un MEM ALLOC con el tamañi 23
+[INFO] 00:45:27:574 Kernel/(14270:14274): Comienza la ejecución de la detección de Deadlock
+[INFO] 00:45:45:919 Kernel/(14270:14917): Recibí el cliente 21
+[INFO] 00:45:45:919 Kernel/(14270:14917): ---------------NEW INSTANCE. Comienza creación del carpincho
+[INFO] 00:45:45:969 Kernel/(14270:14917): NEW INSTANCE: Se agregó el carpincho ID: 3 a la cola de new
+[INFO] 00:45:45:969 Kernel/(14270:14273): Llegó un carpincho al planificador de largo plazo
+[INFO] 00:45:45:969 Kernel/(14270:14273): No hay suspendidos. Se iniciará carpincho 3
+[INFO] 00:45:45:969 Kernel/(14270:14273): --------------Carpincho 3--------------
+[INFO] 00:45:45:969 Kernel/(14270:14273): Tiempo de espera: 0.000000
+[INFO] 00:45:45:969 Kernel/(14270:14273): Tiempo ejecutado: 0.000000
+[INFO] 00:45:45:969 Kernel/(14270:14273): Estimacion: 1.000000
+[INFO] 00:45:45:969 Kernel/(14270:14273): --------------Carpincho 3--------------
+[INFO] 00:45:45:969 Kernel/(14270:14273): Tiempo de espera: 0.000000
+[INFO] 00:45:45:969 Kernel/(14270:14273): Tiempo ejecutado: 0.000000
+[INFO] 00:45:45:969 Kernel/(14270:14273): Estimacion: 1.000000
+[INFO] 00:45:45:969 Kernel/(14270:14280): Carpincho 3 - Comienza a ejecutar
+[INFO] 00:45:46:009 Kernel/(14270:14917): Se recibió del carpincho 3 un MEM ALLOC con el tamañi 23
+[INFO] 00:45:53:360 Kernel/(14270:14527): Se recibió del carpincho 1 un MEM ALLOC con el tamañi 23
+[INFO] 00:45:54:773 Kernel/(14270:14829): Se recibió del carpincho 2 un MEM ALLOC con el tamañi 23
+[INFO] 00:45:55:321 Kernel/(14270:14917): Se recibió del carpincho 3 un MEM ALLOC con el tamañi 23
+[INFO] 00:46:17:575 Kernel/(14270:14274): Comienza la ejecución de la detección de Deadlock
+[INFO] 00:47:07:576 Kernel/(14270:14274): Comienza la ejecución de la detección de Deadlock
+[INFO] 00:47:11:857 Kernel/(14270:14527): Se recibió del carpincho 1 un MEM ALLOC con el tamañi 23
+[INFO] 00:47:11:857 Kernel/(14270:14829): Se recibió del carpincho 2 un MEM ALLOC con el tamañi 23
+[INFO] 00:47:11:857 Kernel/(14270:14917): Se recibió del carpincho 3 un MEM ALLOC con el tamañi 23
+[INFO] 00:47:11:857 Kernel/(14270:14527): Se recibió del carpincho 1 un MEM ALLOC con el tamañi 10
+[INFO] 00:47:29:379 Kernel/(15237:15237): Log creado
+[INFO] 00:47:29:387 Kernel/(15237:15237): Configuración obtenida
+[INFO] 00:47:29:387 Kernel/(15237:15237): Semáforos inicializados
+[INFO] 00:47:29:387 Kernel/(15237:15237): Colas de dispositivos IO creadas
+[INFO] 00:47:29:387 Kernel/(15237:15237): Se creó el hilo gestor de la IO laguna
+[INFO] 00:47:29:387 Kernel/(15237:15237): Inicio colas de planificación
+[INFO] 00:47:29:387 Kernel/(15237:15237): Hilo Planificador Corto Plazo creado
+[INFO] 00:47:29:387 Kernel/(15237:15237): Hilo Planificador Largo Plazo creado
+[INFO] 00:47:29:387 Kernel/(15237:15237): Hilo Detección Deadlock creado
+[INFO] 00:47:29:387 Kernel/(15237:15237): Hilo CPU creado
+[INFO] 00:47:33:553 Kernel/(15237:15392): Recibí el cliente 15
+[INFO] 00:47:33:553 Kernel/(15237:15392): ---------------NEW INSTANCE. Comienza creación del carpincho
+[INFO] 00:47:33:571 Kernel/(15237:15392): NEW INSTANCE: Se agregó el carpincho ID: 1 a la cola de new
+[INFO] 00:47:33:571 Kernel/(15237:15241): Llegó un carpincho al planificador de largo plazo
+[INFO] 00:47:33:571 Kernel/(15237:15241): No hay suspendidos. Se iniciará carpincho 1
+[INFO] 00:47:33:571 Kernel/(15237:15241): --------------Carpincho 1--------------
+[INFO] 00:47:33:571 Kernel/(15237:15241): Tiempo de espera: 0.000000
+[INFO] 00:47:33:571 Kernel/(15237:15241): Tiempo ejecutado: 0.000000
+[INFO] 00:47:33:571 Kernel/(15237:15241): Estimacion: 1.000000
+[INFO] 00:47:33:571 Kernel/(15237:15241): --------------Carpincho 1--------------
+[INFO] 00:47:33:571 Kernel/(15237:15241): Tiempo de espera: 0.000000
+[INFO] 00:47:33:571 Kernel/(15237:15241): Tiempo ejecutado: 0.000000
+[INFO] 00:47:33:571 Kernel/(15237:15241): Estimacion: 1.000000
+[INFO] 00:47:33:571 Kernel/(15237:15244): Carpincho 1 - Comienza a ejecutar
+[INFO] 00:47:33:609 Kernel/(15237:15392): Se recibió del carpincho 1 un MEM ALLOC con el tamañi 23
+[INFO] 00:47:42:131 Kernel/(15237:15408): Recibí el cliente 16
+[INFO] 00:47:42:131 Kernel/(15237:15408): ---------------NEW INSTANCE. Comienza creación del carpincho
+[INFO] 00:47:42:177 Kernel/(15237:15408): NEW INSTANCE: Se agregó el carpincho ID: 2 a la cola de new
+[INFO] 00:47:42:177 Kernel/(15237:15241): Llegó un carpincho al planificador de largo plazo
+[INFO] 00:47:42:177 Kernel/(15237:15241): No hay suspendidos. Se iniciará carpincho 2
+[INFO] 00:47:42:177 Kernel/(15237:15241): --------------Carpincho 2--------------
+[INFO] 00:47:42:177 Kernel/(15237:15241): Tiempo de espera: 0.000000
+[INFO] 00:47:42:177 Kernel/(15237:15241): Tiempo ejecutado: 0.000000
+[INFO] 00:47:42:177 Kernel/(15237:15241): Estimacion: 1.000000
+[INFO] 00:47:42:177 Kernel/(15237:15241): --------------Carpincho 2--------------
+[INFO] 00:47:42:177 Kernel/(15237:15241): Tiempo de espera: 0.000000
+[INFO] 00:47:42:177 Kernel/(15237:15241): Tiempo ejecutado: 0.000000
+[INFO] 00:47:42:177 Kernel/(15237:15241): Estimacion: 1.000000
+[INFO] 00:47:42:177 Kernel/(15237:15245): Carpincho 2 - Comienza a ejecutar
+[INFO] 00:47:42:217 Kernel/(15237:15408): Se recibió del carpincho 2 un MEM ALLOC con el tamañi 23
+[INFO] 00:47:43:294 Kernel/(15237:15419): Recibí el cliente 21
+[INFO] 00:47:43:294 Kernel/(15237:15419): ---------------NEW INSTANCE. Comienza creación del carpincho
+[INFO] 00:47:43:341 Kernel/(15237:15419): NEW INSTANCE: Se agregó el carpincho ID: 3 a la cola de new
+[INFO] 00:47:43:341 Kernel/(15237:15241): Llegó un carpincho al planificador de largo plazo
+[INFO] 00:47:43:341 Kernel/(15237:15241): No hay suspendidos. Se iniciará carpincho 3
+[INFO] 00:47:43:341 Kernel/(15237:15241): --------------Carpincho 3--------------
+[INFO] 00:47:43:341 Kernel/(15237:15241): Tiempo de espera: 0.000000
+[INFO] 00:47:43:341 Kernel/(15237:15241): Tiempo ejecutado: 0.000000
+[INFO] 00:47:43:341 Kernel/(15237:15241): Estimacion: 1.000000
+[INFO] 00:47:43:341 Kernel/(15237:15241): --------------Carpincho 3--------------
+[INFO] 00:47:43:341 Kernel/(15237:15241): Tiempo de espera: 0.000000
+[INFO] 00:47:43:341 Kernel/(15237:15241): Tiempo ejecutado: 0.000000
+[INFO] 00:47:43:341 Kernel/(15237:15241): Estimacion: 1.000000
+[INFO] 00:47:43:341 Kernel/(15237:15246): Carpincho 3 - Comienza a ejecutar
+[INFO] 00:47:43:385 Kernel/(15237:15419): Se recibió del carpincho 3 un MEM ALLOC con el tamañi 23
+[INFO] 00:48:19:398 Kernel/(15237:15242): Comienza la ejecución de la detección de Deadlock
+[INFO] 00:49:09:398 Kernel/(15237:15242): Comienza la ejecución de la detección de Deadlock
+[INFO] 00:49:59:399 Kernel/(15237:15242): Comienza la ejecución de la detección de Deadlock
+[INFO] 00:50:49:400 Kernel/(15237:15242): Comienza la ejecución de la detección de Deadlock
+[INFO] 00:51:39:400 Kernel/(15237:15242): Comienza la ejecución de la detección de Deadlock
+[INFO] 00:52:29:402 Kernel/(15237:15242): Comienza la ejecución de la detección de Deadlock
+[INFO] 00:52:51:657 Kernel/(15237:15392): Se recibió del carpincho 1 un MEM ALLOC con el tamañi 23
+[INFO] 00:53:19:402 Kernel/(15237:15242): Comienza la ejecución de la detección de Deadlock
+[INFO] 00:54:09:403 Kernel/(15237:15242): Comienza la ejecución de la detección de Deadlock
+[INFO] 00:54:09:610 Kernel/(15237:15408): Se recibió del carpincho 2 un MEM ALLOC con el tamañi 23
+[INFO] 00:54:09:610 Kernel/(15237:15419): Se recibió del carpincho 3 un MEM ALLOC con el tamañi 23
+[INFO] 00:54:09:610 Kernel/(15237:15392): Se recibió del carpincho 1 un MEM ALLOC con el tamañi 23
+[INFO] 00:54:54:150 Kernel/(16155:16155): Log creado
+[INFO] 00:54:54:150 Kernel/(16155:16155): Configuración obtenida
+[INFO] 00:54:54:151 Kernel/(16155:16155): Semáforos inicializados
+[INFO] 00:54:54:151 Kernel/(16155:16155): Colas de dispositivos IO creadas
+[INFO] 00:54:54:151 Kernel/(16155:16155): Se creó el hilo gestor de la IO laguna
+[INFO] 00:54:54:151 Kernel/(16155:16155): Inicio colas de planificación
+[INFO] 00:54:54:151 Kernel/(16155:16155): Hilo Planificador Corto Plazo creado
+[INFO] 00:54:54:151 Kernel/(16155:16155): Hilo Planificador Largo Plazo creado
+[INFO] 00:54:54:151 Kernel/(16155:16155): Hilo Detección Deadlock creado
+[INFO] 00:54:54:151 Kernel/(16155:16155): Hilo CPU creado
+[INFO] 00:55:03:379 Kernel/(16155:16459): Recibí el cliente 15
+[INFO] 00:55:03:379 Kernel/(16155:16459): ---------------NEW INSTANCE. Comienza creación del carpincho
+[INFO] 00:55:03:396 Kernel/(16155:16459): NEW INSTANCE: Se agregó el carpincho ID: 1 a la cola de new
+[INFO] 00:55:03:397 Kernel/(16155:16158): Llegó un carpincho al planificador de largo plazo
+[INFO] 00:55:03:397 Kernel/(16155:16158): No hay suspendidos. Se iniciará carpincho 1
+[INFO] 00:55:03:397 Kernel/(16155:16158): --------------Carpincho 1--------------
+[INFO] 00:55:03:397 Kernel/(16155:16158): Tiempo de espera: 0.000000
+[INFO] 00:55:03:397 Kernel/(16155:16158): Tiempo ejecutado: 0.000000
+[INFO] 00:55:03:397 Kernel/(16155:16158): Estimacion: 1.000000
+[INFO] 00:55:03:397 Kernel/(16155:16158): --------------Carpincho 1--------------
+[INFO] 00:55:03:397 Kernel/(16155:16158): Tiempo de espera: 0.000000
+[INFO] 00:55:03:397 Kernel/(16155:16158): Tiempo ejecutado: 0.000000
+[INFO] 00:55:03:397 Kernel/(16155:16158): Estimacion: 1.000000
+[INFO] 00:55:03:397 Kernel/(16155:16161): Carpincho 1 - Comienza a ejecutar
+[INFO] 00:55:03:437 Kernel/(16155:16459): Se recibió del carpincho 1 un MEM ALLOC con el tamañi 23
+[INFO] 00:55:07:739 Kernel/(16155:16472): Recibí el cliente 16
+[INFO] 00:55:07:739 Kernel/(16155:16472): ---------------NEW INSTANCE. Comienza creación del carpincho
+[INFO] 00:55:07:793 Kernel/(16155:16472): NEW INSTANCE: Se agregó el carpincho ID: 2 a la cola de new
+[INFO] 00:55:07:793 Kernel/(16155:16158): Llegó un carpincho al planificador de largo plazo
+[INFO] 00:55:07:793 Kernel/(16155:16158): No hay suspendidos. Se iniciará carpincho 2
+[INFO] 00:55:07:793 Kernel/(16155:16158): --------------Carpincho 2--------------
+[INFO] 00:55:07:793 Kernel/(16155:16158): Tiempo de espera: 0.000000
+[INFO] 00:55:07:793 Kernel/(16155:16158): Tiempo ejecutado: 0.000000
+[INFO] 00:55:07:793 Kernel/(16155:16158): Estimacion: 1.000000
+[INFO] 00:55:07:793 Kernel/(16155:16158): --------------Carpincho 2--------------
+[INFO] 00:55:07:793 Kernel/(16155:16158): Tiempo de espera: 0.000000
+[INFO] 00:55:07:793 Kernel/(16155:16158): Tiempo ejecutado: 0.000000
+[INFO] 00:55:07:793 Kernel/(16155:16158): Estimacion: 1.000000
+[INFO] 00:55:07:793 Kernel/(16155:16165): Carpincho 2 - Comienza a ejecutar
+[INFO] 00:55:07:832 Kernel/(16155:16472): Se recibió del carpincho 2 un MEM ALLOC con el tamañi 23
+[INFO] 00:55:08:838 Kernel/(16155:16481): Recibí el cliente 21
+[INFO] 00:55:08:838 Kernel/(16155:16481): ---------------NEW INSTANCE. Comienza creación del carpincho
+[INFO] 00:55:08:877 Kernel/(16155:16481): NEW INSTANCE: Se agregó el carpincho ID: 3 a la cola de new
+[INFO] 00:55:08:877 Kernel/(16155:16158): Llegó un carpincho al planificador de largo plazo
+[INFO] 00:55:08:877 Kernel/(16155:16158): No hay suspendidos. Se iniciará carpincho 3
+[INFO] 00:55:08:877 Kernel/(16155:16158): --------------Carpincho 3--------------
+[INFO] 00:55:08:877 Kernel/(16155:16158): Tiempo de espera: 0.000000
+[INFO] 00:55:08:877 Kernel/(16155:16158): Tiempo ejecutado: 0.000000
+[INFO] 00:55:08:877 Kernel/(16155:16158): Estimacion: 1.000000
+[INFO] 00:55:08:877 Kernel/(16155:16158): --------------Carpincho 3--------------
+[INFO] 00:55:08:877 Kernel/(16155:16158): Tiempo de espera: 0.000000
+[INFO] 00:55:08:877 Kernel/(16155:16158): Tiempo ejecutado: 0.000000
+[INFO] 00:55:08:877 Kernel/(16155:16158): Estimacion: 1.000000
+[INFO] 00:55:08:877 Kernel/(16155:16164): Carpincho 3 - Comienza a ejecutar
+[INFO] 00:55:08:921 Kernel/(16155:16481): Se recibió del carpincho 3 un MEM ALLOC con el tamañi 23
+[INFO] 00:55:09:589 Kernel/(16155:16459): Se recibió del carpincho 1 un MEM ALLOC con el tamañi 23
+[INFO] 00:55:10:704 Kernel/(16155:16472): Se recibió del carpincho 2 un MEM ALLOC con el tamañi 23
+[INFO] 00:55:11:449 Kernel/(16155:16481): Se recibió del carpincho 3 un MEM ALLOC con el tamañi 23
+[INFO] 00:55:12:369 Kernel/(16155:16459): Se recibió del carpincho 1 un MEM ALLOC con el tamañi 23
+[INFO] 00:55:13:540 Kernel/(16155:16472): Se recibió del carpincho 2 un MEM ALLOC con el tamañi 23
+[INFO] 00:55:14:625 Kernel/(16155:16481): Se recibió del carpincho 3 un MEM ALLOC con el tamañi 23
+[INFO] 00:55:15:588 Kernel/(16155:16459): Se recibió del carpincho 1 un MEM ALLOC con el tamañi 10
+[INFO] 00:55:16:508 Kernel/(16155:16472): Se recibió del carpincho 2 un MEM ALLOC con el tamañi 10
+[INFO] 00:55:17:377 Kernel/(16155:16481): Se recibió del carpincho 3 un MEM ALLOC con el tamañi 10
+[INFO] 00:55:44:153 Kernel/(16155:16159): Comienza la ejecución de la detección de Deadlock
+[INFO] 00:56:23:169 Kernel/(16155:16459): Se recibió del carpincho 1 un MEM write desde la posición 41 con el mensjaje Hola
+[INFO] 00:56:34:153 Kernel/(16155:16159): Comienza la ejecución de la detección de Deadlock
+[INFO] 00:56:35:978 Kernel/(16155:16459): Se recibió del carpincho 1 un MEM write desde la posición 41 con el mensjaje Hola
+[INFO] 00:56:48:322 Kernel/(16155:16459): Se recibió del carpincho 1 un MEM write desde la posición 41 con el mensjaje Hola
+[INFO] 00:56:52:961 Kernel/(16155:16459): Se recibió del carpincho 1 un MEM write desde la posición 9 con el mensjaje Hola
+[INFO] 00:57:24:155 Kernel/(16155:16159): Comienza la ejecución de la detección de Deadlock
+[INFO] 00:57:41:302 Kernel/(16155:16472): Se recibió del carpincho 2 un MEM write desde la posición 9 con el mensjaje Hola
+[INFO] 00:57:57:442 Kernel/(16155:16481): Se recibió del carpincho 3 un MEM write desde la posición 9 con el mensjaje Hola
+[INFO] 00:58:11:177 Kernel/(16155:16459): Se recibió del carpincho 1 un MEM ALLOC con el tamañi 23
+[INFO] 00:58:14:156 Kernel/(16155:16159): Comienza la ejecución de la detección de Deadlock
+[INFO] 00:59:04:157 Kernel/(16155:16159): Comienza la ejecución de la detección de Deadlock
+[INFO] 00:59:24:340 Kernel/(16155:16459): Se recibió del carpincho 1 un MEM ALLOC con el tamañi 23
+[INFO] 00:59:36:704 Kernel/(16155:16459): Se recibió del carpincho 1 un MEM ALLOC con el tamañi 23
+[INFO] 00:59:42:005 Kernel/(16155:16459): Se recibió del carpincho 1 un MEM ALLOC con el tamañi 23
+[INFO] 00:59:54:158 Kernel/(16155:16159): Comienza la ejecución de la detección de Deadlock
+[INFO] 01:00:32:576 Kernel/(16155:16472): MATE_CLOSE: Se recibió del carpincho 2 un MATE CLOSE
+[INFO] 01:00:32:577 Kernel/(16155:16481): MATE_CLOSE: Se recibió del carpincho 3 un MATE CLOSE
+[INFO] 01:00:32:577 Kernel/(16155:16165): Carpincho 2 - Eliminado
+[INFO] 01:00:32:578 Kernel/(16155:16164): Carpincho 3 - Eliminado
+[INFO] 01:00:32:578 Kernel/(16155:16459): MATE_CLOSE: Se recibió del carpincho 1 un MATE CLOSE
+[INFO] 01:00:32:578 Kernel/(16155:16161): Carpincho 1 - Eliminado
+[INFO] 01:00:44:159 Kernel/(16155:16159): Comienza la ejecución de la detección de Deadlock
+[INFO] 01:01:34:160 Kernel/(16155:16159): Comienza la ejecución de la detección de Deadlock
+[INFO] 01:02:24:160 Kernel/(16155:16159): Comienza la ejecución de la detección de Deadlock
+[INFO] 01:03:12:426 Kernel/(17307:17307): Log creado
+[INFO] 01:03:12:438 Kernel/(17307:17307): Configuración obtenida
+[INFO] 01:03:12:438 Kernel/(17307:17307): Semáforos inicializados
+[INFO] 01:03:12:438 Kernel/(17307:17307): Colas de dispositivos IO creadas
+[INFO] 01:03:12:439 Kernel/(17307:17307): Se creó el hilo gestor de la IO laguna
+[INFO] 01:03:12:439 Kernel/(17307:17307): Inicio colas de planificación
+[INFO] 01:03:12:439 Kernel/(17307:17307): Hilo Planificador Corto Plazo creado
+[INFO] 01:03:12:439 Kernel/(17307:17307): Hilo Planificador Largo Plazo creado
+[INFO] 01:03:12:439 Kernel/(17307:17307): Hilo Detección Deadlock creado
+[INFO] 01:03:12:439 Kernel/(17307:17307): Hilo CPU creado
+[INFO] 01:04:02:442 Kernel/(17307:17311): Comienza la ejecución de la detección de Deadlock
+[INFO] 01:04:19:824 Kernel/(17307:17733): Recibí el cliente 15
+[INFO] 01:04:19:824 Kernel/(17307:17733): ---------------NEW INSTANCE. Comienza creación del carpincho
+[INFO] 01:04:19:831 Kernel/(17307:17733): NEW INSTANCE: Se agregó el carpincho ID: 1 a la cola de new
+[INFO] 01:04:19:831 Kernel/(17307:17310): Llegó un carpincho al planificador de largo plazo
+[INFO] 01:04:19:831 Kernel/(17307:17310): No hay suspendidos. Se iniciará carpincho 1
+[INFO] 01:04:19:831 Kernel/(17307:17310): --------------Carpincho 1--------------
+[INFO] 01:04:19:831 Kernel/(17307:17310): Tiempo de espera: 0.000000
+[INFO] 01:04:19:831 Kernel/(17307:17310): Tiempo ejecutado: 0.000000
+[INFO] 01:04:19:831 Kernel/(17307:17310): Estimacion: 1.000000
+[INFO] 01:04:19:831 Kernel/(17307:17310): --------------Carpincho 1--------------
+[INFO] 01:04:19:831 Kernel/(17307:17310): Tiempo de espera: 0.000000
+[INFO] 01:04:19:831 Kernel/(17307:17310): Tiempo ejecutado: 0.000000
+[INFO] 01:04:19:831 Kernel/(17307:17310): Estimacion: 1.000000
+[INFO] 01:04:19:831 Kernel/(17307:17313): Carpincho 1 - Comienza a ejecutar
+[INFO] 01:04:19:869 Kernel/(17307:17733): Se recibió del carpincho 1 un MEM ALLOC con el tamañi 23
+[INFO] 01:04:19:915 Kernel/(17307:17735): Recibí el cliente 16
+[INFO] 01:04:19:915 Kernel/(17307:17735): ---------------NEW INSTANCE. Comienza creación del carpincho
+[INFO] 01:04:19:973 Kernel/(17307:17735): NEW INSTANCE: Se agregó el carpincho ID: 2 a la cola de new
+[INFO] 01:04:19:973 Kernel/(17307:17310): Llegó un carpincho al planificador de largo plazo
+[INFO] 01:04:19:973 Kernel/(17307:17310): No hay suspendidos. Se iniciará carpincho 2
+[INFO] 01:04:19:973 Kernel/(17307:17310): --------------Carpincho 2--------------
+[INFO] 01:04:19:973 Kernel/(17307:17310): Tiempo de espera: 0.000000
+[INFO] 01:04:19:973 Kernel/(17307:17310): Tiempo ejecutado: 0.000000
+[INFO] 01:04:19:973 Kernel/(17307:17310): Estimacion: 1.000000
+[INFO] 01:04:19:973 Kernel/(17307:17310): --------------Carpincho 2--------------
+[INFO] 01:04:19:973 Kernel/(17307:17310): Tiempo de espera: 0.000000
+[INFO] 01:04:19:973 Kernel/(17307:17310): Tiempo ejecutado: 0.000000
+[INFO] 01:04:19:973 Kernel/(17307:17310): Estimacion: 1.000000
+[INFO] 01:04:19:973 Kernel/(17307:17314): Carpincho 2 - Comienza a ejecutar
+[INFO] 01:04:20:013 Kernel/(17307:17735): Se recibió del carpincho 2 un MEM ALLOC con el tamañi 23
+[INFO] 01:04:20:058 Kernel/(17307:17737): Recibí el cliente 21
+[INFO] 01:04:20:058 Kernel/(17307:17737): ---------------NEW INSTANCE. Comienza creación del carpincho
+[INFO] 01:04:20:105 Kernel/(17307:17737): NEW INSTANCE: Se agregó el carpincho ID: 3 a la cola de new
+[INFO] 01:04:20:105 Kernel/(17307:17310): Llegó un carpincho al planificador de largo plazo
+[INFO] 01:04:20:105 Kernel/(17307:17310): No hay suspendidos. Se iniciará carpincho 3
+[INFO] 01:04:20:105 Kernel/(17307:17310): --------------Carpincho 3--------------
+[INFO] 01:04:20:105 Kernel/(17307:17310): Tiempo de espera: 0.000000
+[INFO] 01:04:20:105 Kernel/(17307:17310): Tiempo ejecutado: 0.000000
+[INFO] 01:04:20:105 Kernel/(17307:17310): Estimacion: 1.000000
+[INFO] 01:04:20:105 Kernel/(17307:17310): --------------Carpincho 3--------------
+[INFO] 01:04:20:105 Kernel/(17307:17310): Tiempo de espera: 0.000000
+[INFO] 01:04:20:105 Kernel/(17307:17310): Tiempo ejecutado: 0.000000
+[INFO] 01:04:20:105 Kernel/(17307:17310): Estimacion: 1.000000
+[INFO] 01:04:20:105 Kernel/(17307:17317): Carpincho 3 - Comienza a ejecutar
+[INFO] 01:04:20:144 Kernel/(17307:17737): Se recibió del carpincho 3 un MEM ALLOC con el tamañi 23
+[INFO] 01:04:20:190 Kernel/(17307:17733): Se recibió del carpincho 1 un MEM ALLOC con el tamañi 23
+[INFO] 01:04:20:235 Kernel/(17307:17735): Se recibió del carpincho 2 un MEM ALLOC con el tamañi 23
+[INFO] 01:04:20:273 Kernel/(17307:17737): Se recibió del carpincho 3 un MEM ALLOC con el tamañi 23
+[INFO] 01:04:20:317 Kernel/(17307:17733): Se recibió del carpincho 1 un MEM ALLOC con el tamañi 23
+[INFO] 01:04:20:361 Kernel/(17307:17735): Se recibió del carpincho 2 un MEM ALLOC con el tamañi 23
+[INFO] 01:04:20:409 Kernel/(17307:17737): Se recibió del carpincho 3 un MEM ALLOC con el tamañi 23
+[INFO] 01:04:20:449 Kernel/(17307:17733): Se recibió del carpincho 1 un MEM ALLOC con el tamañi 10
+[INFO] 01:04:20:489 Kernel/(17307:17735): Se recibió del carpincho 2 un MEM ALLOC con el tamañi 10
+[INFO] 01:04:20:529 Kernel/(17307:17737): Se recibió del carpincho 3 un MEM ALLOC con el tamañi 10
+[INFO] 01:04:20:573 Kernel/(17307:17733): Se recibió del carpincho 1 un MEM write desde la posición 41 con el mensjaje Hola
+[INFO] 01:04:20:616 Kernel/(17307:17733): Se recibió del carpincho 1 un MEM write desde la posición 41 con el mensjaje Hola
+[INFO] 01:04:20:653 Kernel/(17307:17733): Se recibió del carpincho 1 un MEM write desde la posición 41 con el mensjaje Hola
+[INFO] 01:04:20:693 Kernel/(17307:17733): Se recibió del carpincho 1 un MEM write desde la posición 9 con el mensjaje Hola
+[INFO] 01:04:20:733 Kernel/(17307:17735): Se recibió del carpincho 2 un MEM write desde la posición 9 con el mensjaje Hola
+[INFO] 01:04:20:733 Kernel/(17307:17737): Se recibió del carpincho 3 un MEM write desde la posición 9 con el mensjaje Hola
+[INFO] 01:04:20:733 Kernel/(17307:17733): Se recibió del carpincho 1 un MEM ALLOC con el tamañi 23
+[INFO] 01:04:20:772 Kernel/(17307:17733): Se recibió del carpincho 1 un MEM ALLOC con el tamañi 23
+[INFO] 01:04:20:813 Kernel/(17307:17733): Se recibió del carpincho 1 un MEM ALLOC con el tamañi 23
+[INFO] 01:04:20:853 Kernel/(17307:17733): Se recibió del carpincho 1 un MEM ALLOC con el tamañi 23
+[INFO] 01:04:20:894 Kernel/(17307:17733): MATE_CLOSE: Se recibió del carpincho 1 un MATE CLOSE
+[INFO] 01:04:20:894 Kernel/(17307:17735): MATE_CLOSE: Se recibió del carpincho 2 un MATE CLOSE
+[INFO] 01:04:20:894 Kernel/(17307:17737): MATE_CLOSE: Se recibió del carpincho 3 un MATE CLOSE
+[INFO] 01:04:20:896 Kernel/(17307:17314): Carpincho 2 - Eliminado
+[INFO] 01:04:20:896 Kernel/(17307:17317): Carpincho 3 - Eliminado
+[INFO] 01:04:20:896 Kernel/(17307:17313): Carpincho 1 - Eliminado
+[INFO] 01:13:04:969 Kernel/(19071:19071): Log creado
+[INFO] 01:13:04:970 Kernel/(19071:19071): Configuración obtenida
+[INFO] 01:13:04:970 Kernel/(19071:19071): Semáforos inicializados
+[INFO] 01:13:04:970 Kernel/(19071:19071): Colas de dispositivos IO creadas
+[INFO] 01:13:04:970 Kernel/(19071:19071): Se creó el hilo gestor de la IO laguna
+[INFO] 01:13:04:972 Kernel/(19071:19071): Inicio colas de planificación
+[INFO] 01:13:04:976 Kernel/(19071:19071): Hilo Planificador Corto Plazo creado
+[INFO] 01:13:04:976 Kernel/(19071:19071): Hilo Planificador Largo Plazo creado
+[INFO] 01:13:04:976 Kernel/(19071:19071): Hilo Detección Deadlock creado
+[INFO] 01:13:04:976 Kernel/(19071:19071): Hilo CPU creado
+[INFO] 01:13:08:635 Kernel/(19071:19207): Recibí el cliente 15
+[INFO] 01:13:08:636 Kernel/(19071:19207): ---------------NEW INSTANCE. Comienza creación del carpincho
+[INFO] 01:13:08:641 Kernel/(19071:19207): NEW INSTANCE: Se agregó el carpincho ID: 1 a la cola de new
+[INFO] 01:13:08:641 Kernel/(19071:19075): Llegó un carpincho al planificador de largo plazo
+[INFO] 01:13:08:641 Kernel/(19071:19075): No hay suspendidos. Se iniciará carpincho 1
+[INFO] 01:13:08:641 Kernel/(19071:19075): --------------Carpincho 1--------------
+[INFO] 01:13:08:641 Kernel/(19071:19075): Tiempo de espera: 0.000000
+[INFO] 01:13:08:641 Kernel/(19071:19075): Tiempo ejecutado: 0.000000
+[INFO] 01:13:08:641 Kernel/(19071:19075): Estimacion: 1.000000
+[INFO] 01:13:08:641 Kernel/(19071:19075): --------------Carpincho 1--------------
+[INFO] 01:13:08:641 Kernel/(19071:19075): Tiempo de espera: 0.000000
+[INFO] 01:13:08:641 Kernel/(19071:19075): Tiempo ejecutado: 0.000000
+[INFO] 01:13:08:641 Kernel/(19071:19075): Estimacion: 1.000000
+[INFO] 01:13:08:641 Kernel/(19071:19078): Carpincho 1 - Comienza a ejecutar
+[INFO] 01:13:08:680 Kernel/(19071:19207): Se recibió del carpincho 1 un MEM ALLOC con el tamañi 23
+[INFO] 01:13:09:078 Kernel/(19071:19213): Recibí el cliente 16
+[INFO] 01:13:09:079 Kernel/(19071:19213): ---------------NEW INSTANCE. Comienza creación del carpincho
+[INFO] 01:13:35:985 Kernel/(19529:19529): Log creado
+[INFO] 01:13:35:986 Kernel/(19529:19529): Configuración obtenida
+[INFO] 01:13:35:986 Kernel/(19529:19529): Semáforos inicializados
+[INFO] 01:13:35:986 Kernel/(19529:19529): Colas de dispositivos IO creadas
+[INFO] 01:13:35:986 Kernel/(19529:19529): Se creó el hilo gestor de la IO laguna
+[INFO] 01:13:35:986 Kernel/(19529:19529): Inicio colas de planificación
+[INFO] 01:13:35:986 Kernel/(19529:19529): Hilo Planificador Corto Plazo creado
+[INFO] 01:13:35:986 Kernel/(19529:19529): Hilo Planificador Largo Plazo creado
+[INFO] 01:13:35:986 Kernel/(19529:19529): Hilo Detección Deadlock creado
+[INFO] 01:13:35:986 Kernel/(19529:19529): Hilo CPU creado
+[INFO] 01:13:40:180 Kernel/(19529:19681): Recibí el cliente 15
+[INFO] 01:13:40:180 Kernel/(19529:19681): ---------------NEW INSTANCE. Comienza creación del carpincho
+[INFO] 01:13:40:188 Kernel/(19529:19681): NEW INSTANCE: Se agregó el carpincho ID: 1 a la cola de new
+[INFO] 01:13:40:188 Kernel/(19529:19532): Llegó un carpincho al planificador de largo plazo
+[INFO] 01:13:40:188 Kernel/(19529:19532): No hay suspendidos. Se iniciará carpincho 1
+[INFO] 01:13:40:188 Kernel/(19529:19532): --------------Carpincho 1--------------
+[INFO] 01:13:40:188 Kernel/(19529:19532): Tiempo de espera: 0.000000
+[INFO] 01:13:40:188 Kernel/(19529:19532): Tiempo ejecutado: 0.000000
+[INFO] 01:13:40:188 Kernel/(19529:19532): Estimacion: 1.000000
+[INFO] 01:13:40:188 Kernel/(19529:19532): --------------Carpincho 1--------------
+[INFO] 01:13:40:188 Kernel/(19529:19532): Tiempo de espera: 0.000000
+[INFO] 01:13:40:188 Kernel/(19529:19532): Tiempo ejecutado: 0.000000
+[INFO] 01:13:40:188 Kernel/(19529:19532): Estimacion: 1.000000
+[INFO] 01:13:40:188 Kernel/(19529:19535): Carpincho 1 - Comienza a ejecutar
+[INFO] 01:13:40:225 Kernel/(19529:19681): Se recibió del carpincho 1 un MEM ALLOC con el tamañi 23
+[INFO] 01:13:40:653 Kernel/(19529:19684): Recibí el cliente 16
+[INFO] 01:13:40:654 Kernel/(19529:19684): ---------------NEW INSTANCE. Comienza creación del carpincho
+[INFO] 01:13:55:639 Kernel/(19932:19932): Log creado
+[INFO] 01:13:55:639 Kernel/(19932:19932): Configuración obtenida
+[INFO] 01:13:55:639 Kernel/(19932:19932): Semáforos inicializados
+[INFO] 01:13:55:639 Kernel/(19932:19932): Colas de dispositivos IO creadas
+[INFO] 01:13:55:639 Kernel/(19932:19932): Se creó el hilo gestor de la IO laguna
+[INFO] 01:13:55:639 Kernel/(19932:19932): Inicio colas de planificación
+[INFO] 01:13:55:639 Kernel/(19932:19932): Hilo Planificador Corto Plazo creado
+[INFO] 01:13:55:639 Kernel/(19932:19932): Hilo Planificador Largo Plazo creado
+[INFO] 01:13:55:639 Kernel/(19932:19932): Hilo Detección Deadlock creado
+[INFO] 01:13:55:639 Kernel/(19932:19932): Hilo CPU creado
+[INFO] 01:14:00:045 Kernel/(19932:20092): Recibí el cliente 15
+[INFO] 01:14:00:045 Kernel/(19932:20092): ---------------NEW INSTANCE. Comienza creación del carpincho
+[INFO] 01:14:00:143 Kernel/(19932:20092): NEW INSTANCE: Se agregó el carpincho ID: 1 a la cola de new
+[INFO] 01:14:00:143 Kernel/(19932:19935): Llegó un carpincho al planificador de largo plazo
+[INFO] 01:14:00:143 Kernel/(19932:19935): No hay suspendidos. Se iniciará carpincho 1
+[INFO] 01:14:00:143 Kernel/(19932:19935): --------------Carpincho 1--------------
+[INFO] 01:14:00:143 Kernel/(19932:19935): Tiempo de espera: 0.000000
+[INFO] 01:14:00:143 Kernel/(19932:19935): Tiempo ejecutado: 0.000000
+[INFO] 01:14:00:143 Kernel/(19932:19935): Estimacion: 1.000000
+[INFO] 01:14:00:143 Kernel/(19932:19935): --------------Carpincho 1--------------
+[INFO] 01:14:00:143 Kernel/(19932:19935): Tiempo de espera: 0.000000
+[INFO] 01:14:00:143 Kernel/(19932:19935): Tiempo ejecutado: 0.000000
+[INFO] 01:14:00:143 Kernel/(19932:19935): Estimacion: 1.000000
+[INFO] 01:14:00:143 Kernel/(19932:19938): Carpincho 1 - Comienza a ejecutar
+[INFO] 01:14:00:180 Kernel/(19932:20092): Se recibió del carpincho 1 un MEM ALLOC con el tamañi 23
+[INFO] 01:14:00:836 Kernel/(19932:20094): Recibí el cliente 16
+[INFO] 01:14:00:836 Kernel/(19932:20094): ---------------NEW INSTANCE. Comienza creación del carpincho
+[INFO] 01:14:02:438 Kernel/(19932:20094): Se recibió un código erróneo del cliente 16
+[INFO] 01:14:58:740 Kernel/(20498:20498): Log creado
+[INFO] 01:14:58:740 Kernel/(20498:20498): Configuración obtenida
+[INFO] 01:14:58:740 Kernel/(20498:20498): Semáforos inicializados
+[INFO] 01:14:58:740 Kernel/(20498:20498): Colas de dispositivos IO creadas
+[INFO] 01:14:58:741 Kernel/(20498:20498): Se creó el hilo gestor de la IO laguna
+[INFO] 01:14:58:741 Kernel/(20498:20498): Inicio colas de planificación
+[INFO] 01:14:58:741 Kernel/(20498:20498): Hilo Planificador Corto Plazo creado
+[INFO] 01:14:58:741 Kernel/(20498:20498): Hilo Planificador Largo Plazo creado
+[INFO] 01:14:58:741 Kernel/(20498:20498): Hilo Detección Deadlock creado
+[INFO] 01:14:58:741 Kernel/(20498:20498): Hilo CPU creado
+[INFO] 01:15:00:775 Kernel/(20498:20647): Recibí el cliente 15
+[INFO] 01:15:00:775 Kernel/(20498:20647): ---------------NEW INSTANCE. Comienza creación del carpincho
+[INFO] 01:15:00:788 Kernel/(20498:20647): NEW INSTANCE: Se agregó el carpincho ID: 1 a la cola de new
+[INFO] 01:15:00:788 Kernel/(20498:20501): Llegó un carpincho al planificador de largo plazo
+[INFO] 01:15:00:788 Kernel/(20498:20501): No hay suspendidos. Se iniciará carpincho 1
+[INFO] 01:15:00:788 Kernel/(20498:20501): --------------Carpincho 1--------------
+[INFO] 01:15:00:788 Kernel/(20498:20501): Tiempo de espera: 0.000000
+[INFO] 01:15:00:788 Kernel/(20498:20501): Tiempo ejecutado: 0.000000
+[INFO] 01:15:00:788 Kernel/(20498:20501): Estimacion: 1.000000
+[INFO] 01:15:00:788 Kernel/(20498:20501): --------------Carpincho 1--------------
+[INFO] 01:15:00:788 Kernel/(20498:20501): Tiempo de espera: 0.000000
+[INFO] 01:15:00:788 Kernel/(20498:20501): Tiempo ejecutado: 0.000000
+[INFO] 01:15:00:788 Kernel/(20498:20501): Estimacion: 1.000000
+[INFO] 01:15:00:788 Kernel/(20498:20505): Carpincho 1 - Comienza a ejecutar
+[INFO] 01:15:00:828 Kernel/(20498:20647): Se recibió del carpincho 1 un MEM ALLOC con el tamañi 23
+[INFO] 01:15:01:304 Kernel/(20498:20650): Recibí el cliente 16
+[INFO] 01:15:01:304 Kernel/(20498:20650): ---------------NEW INSTANCE. Comienza creación del carpincho
+[INFO] 01:15:14:669 Kernel/(20896:20896): Log creado
+[INFO] 01:15:14:672 Kernel/(20896:20896): Configuración obtenida
+[INFO] 01:15:14:672 Kernel/(20896:20896): Semáforos inicializados
+[INFO] 01:15:14:672 Kernel/(20896:20896): Colas de dispositivos IO creadas
+[INFO] 01:15:14:672 Kernel/(20896:20896): Se creó el hilo gestor de la IO laguna
+[INFO] 01:15:14:672 Kernel/(20896:20896): Inicio colas de planificación
+[INFO] 01:15:14:672 Kernel/(20896:20896): Hilo Planificador Corto Plazo creado
+[INFO] 01:15:14:672 Kernel/(20896:20896): Hilo Planificador Largo Plazo creado
+[INFO] 01:15:14:672 Kernel/(20896:20896): Hilo Detección Deadlock creado
+[INFO] 01:15:14:672 Kernel/(20896:20896): Hilo CPU creado
+[INFO] 01:15:18:168 Kernel/(20896:21042): Recibí el cliente 15
+[INFO] 01:15:18:168 Kernel/(20896:21042): ---------------NEW INSTANCE. Comienza creación del carpincho
+[INFO] 01:15:18:255 Kernel/(20896:21042): NEW INSTANCE: Se agregó el carpincho ID: 1 a la cola de new
+[INFO] 01:15:18:255 Kernel/(20896:20899): Llegó un carpincho al planificador de largo plazo
+[INFO] 01:15:18:255 Kernel/(20896:20899): No hay suspendidos. Se iniciará carpincho 1
+[INFO] 01:15:18:255 Kernel/(20896:20899): --------------Carpincho 1--------------
+[INFO] 01:15:18:255 Kernel/(20896:20899): Tiempo de espera: 0.000000
+[INFO] 01:15:18:255 Kernel/(20896:20899): Tiempo ejecutado: 0.000000
+[INFO] 01:15:18:255 Kernel/(20896:20899): Estimacion: 1.000000
+[INFO] 01:15:18:255 Kernel/(20896:20899): --------------Carpincho 1--------------
+[INFO] 01:15:18:255 Kernel/(20896:20899): Tiempo de espera: 0.000000
+[INFO] 01:15:18:255 Kernel/(20896:20899): Tiempo ejecutado: 0.000000
+[INFO] 01:15:18:255 Kernel/(20896:20899): Estimacion: 1.000000
+[INFO] 01:15:18:255 Kernel/(20896:20903): Carpincho 1 - Comienza a ejecutar
+[INFO] 01:15:18:293 Kernel/(20896:21042): Se recibió del carpincho 1 un MEM ALLOC con el tamañi 23
+[INFO] 01:15:18:815 Kernel/(20896:21047): Recibí el cliente 16
+[INFO] 01:15:18:816 Kernel/(20896:21047): ---------------NEW INSTANCE. Comienza creación del carpincho
+[INFO] 01:15:20:240 Kernel/(20896:21047): Se recibió un código erróneo del cliente 16
+[INFO] 01:17:03:018 Kernel/(21688:21688): Log creado
+[INFO] 01:17:03:018 Kernel/(21688:21688): Configuración obtenida
+[INFO] 01:17:03:018 Kernel/(21688:21688): Semáforos inicializados
+[INFO] 01:17:03:018 Kernel/(21688:21688): Colas de dispositivos IO creadas
+[INFO] 01:17:03:018 Kernel/(21688:21688): Se creó el hilo gestor de la IO laguna
+[INFO] 01:17:03:018 Kernel/(21688:21688): Inicio colas de planificación
+[INFO] 01:17:03:019 Kernel/(21688:21688): Hilo Planificador Corto Plazo creado
+[INFO] 01:17:03:019 Kernel/(21688:21688): Hilo Planificador Largo Plazo creado
+[INFO] 01:17:03:019 Kernel/(21688:21688): Hilo Detección Deadlock creado
+[INFO] 01:17:03:019 Kernel/(21688:21688): Hilo CPU creado
+[INFO] 01:17:04:192 Kernel/(21688:21706): Recibí el cliente 15
+[INFO] 01:17:04:192 Kernel/(21688:21706): ---------------NEW INSTANCE. Comienza creación del carpincho
+[INFO] 01:17:04:199 Kernel/(21688:21706): NEW INSTANCE: Se agregó el carpincho ID: 1 a la cola de new
+[INFO] 01:17:04:199 Kernel/(21688:21691): Llegó un carpincho al planificador de largo plazo
+[INFO] 01:17:04:199 Kernel/(21688:21691): No hay suspendidos. Se iniciará carpincho 1
+[INFO] 01:17:04:199 Kernel/(21688:21691): --------------Carpincho 1--------------
+[INFO] 01:17:04:199 Kernel/(21688:21691): Tiempo de espera: 0.000000
+[INFO] 01:17:04:199 Kernel/(21688:21691): Tiempo ejecutado: 0.000000
+[INFO] 01:17:04:199 Kernel/(21688:21691): Estimacion: 1.000000
+[INFO] 01:17:04:199 Kernel/(21688:21691): --------------Carpincho 1--------------
+[INFO] 01:17:04:199 Kernel/(21688:21691): Tiempo de espera: 0.000000
+[INFO] 01:17:04:199 Kernel/(21688:21691): Tiempo ejecutado: 0.000000
+[INFO] 01:17:04:199 Kernel/(21688:21691): Estimacion: 1.000000
+[INFO] 01:17:04:199 Kernel/(21688:21694): Carpincho 1 - Comienza a ejecutar
+[INFO] 01:17:04:236 Kernel/(21688:21706): Se recibió del carpincho 1 un MEM ALLOC con el tamañi 23
+[INFO] 01:17:04:680 Kernel/(21688:21712): Recibí el cliente 16
+[INFO] 01:17:04:680 Kernel/(21688:21712): ---------------NEW INSTANCE. Comienza creación del carpincho
+[INFO] 01:17:39:626 Kernel/(22126:22126): Log creado
+[INFO] 01:17:39:627 Kernel/(22126:22126): Configuración obtenida
+[INFO] 01:17:39:627 Kernel/(22126:22126): Semáforos inicializados
+[INFO] 01:17:39:627 Kernel/(22126:22126): Colas de dispositivos IO creadas
+[INFO] 01:17:39:627 Kernel/(22126:22126): Se creó el hilo gestor de la IO laguna
+[INFO] 01:17:39:627 Kernel/(22126:22126): Inicio colas de planificación
+[INFO] 01:17:39:627 Kernel/(22126:22126): Hilo Planificador Corto Plazo creado
+[INFO] 01:17:39:627 Kernel/(22126:22126): Hilo Planificador Largo Plazo creado
+[INFO] 01:17:39:627 Kernel/(22126:22126): Hilo Detección Deadlock creado
+[INFO] 01:17:39:627 Kernel/(22126:22126): Hilo CPU creado
+[INFO] 01:17:43:194 Kernel/(22126:22275): Recibí el cliente 15
+[INFO] 01:17:43:195 Kernel/(22126:22275): ---------------NEW INSTANCE. Comienza creación del carpincho
+[INFO] 01:17:43:199 Kernel/(22126:22275): NEW INSTANCE: Se agregó el carpincho ID: 1 a la cola de new
+[INFO] 01:17:43:199 Kernel/(22126:22129): Llegó un carpincho al planificador de largo plazo
+[INFO] 01:17:43:199 Kernel/(22126:22129): No hay suspendidos. Se iniciará carpincho 1
+[INFO] 01:17:43:199 Kernel/(22126:22129): --------------Carpincho 1--------------
+[INFO] 01:17:43:199 Kernel/(22126:22129): Tiempo de espera: 0.000000
+[INFO] 01:17:43:199 Kernel/(22126:22129): Tiempo ejecutado: 0.000000
+[INFO] 01:17:43:199 Kernel/(22126:22129): Estimacion: 1.000000
+[INFO] 01:17:43:199 Kernel/(22126:22129): --------------Carpincho 1--------------
+[INFO] 01:17:43:199 Kernel/(22126:22129): Tiempo de espera: 0.000000
+[INFO] 01:17:43:199 Kernel/(22126:22129): Tiempo ejecutado: 0.000000
+[INFO] 01:17:43:199 Kernel/(22126:22129): Estimacion: 1.000000
+[INFO] 01:17:43:199 Kernel/(22126:22134): Carpincho 1 - Comienza a ejecutar
+[INFO] 01:17:43:236 Kernel/(22126:22275): Se recibió del carpincho 1 un MEM ALLOC con el tamañi 23
+[INFO] 01:17:43:280 Kernel/(22126:22277): Recibí el cliente 16
+[INFO] 01:17:43:280 Kernel/(22126:22277): ---------------NEW INSTANCE. Comienza creación del carpincho
+[INFO] 01:17:43:324 Kernel/(22126:22277): NEW INSTANCE: Se agregó el carpincho ID: 2 a la cola de new
+[INFO] 01:17:43:324 Kernel/(22126:22129): Llegó un carpincho al planificador de largo plazo
+[INFO] 01:17:43:324 Kernel/(22126:22129): No hay suspendidos. Se iniciará carpincho 2
+[INFO] 01:17:43:324 Kernel/(22126:22129): --------------Carpincho 2--------------
+[INFO] 01:17:43:324 Kernel/(22126:22129): Tiempo de espera: 0.000000
+[INFO] 01:17:43:324 Kernel/(22126:22129): Tiempo ejecutado: 0.000000
+[INFO] 01:17:43:325 Kernel/(22126:22129): Estimacion: 1.000000
+[INFO] 01:17:43:325 Kernel/(22126:22129): --------------Carpincho 2--------------
+[INFO] 01:17:43:325 Kernel/(22126:22129): Tiempo de espera: 0.000000
+[INFO] 01:17:43:325 Kernel/(22126:22129): Tiempo ejecutado: 0.000000
+[INFO] 01:17:43:325 Kernel/(22126:22129): Estimacion: 1.000000
+[INFO] 01:17:43:325 Kernel/(22126:22135): Carpincho 2 - Comienza a ejecutar
+[INFO] 01:17:43:364 Kernel/(22126:22277): Se recibió del carpincho 2 un MEM ALLOC con el tamañi 23
+[INFO] 01:17:43:410 Kernel/(22126:22279): Recibí el cliente 21
+[INFO] 01:17:43:410 Kernel/(22126:22279): ---------------NEW INSTANCE. Comienza creación del carpincho
+[INFO] 01:17:43:457 Kernel/(22126:22279): NEW INSTANCE: Se agregó el carpincho ID: 3 a la cola de new
+[INFO] 01:17:43:457 Kernel/(22126:22129): Llegó un carpincho al planificador de largo plazo
+[INFO] 01:17:43:457 Kernel/(22126:22129): No hay suspendidos. Se iniciará carpincho 3
+[INFO] 01:17:43:457 Kernel/(22126:22129): --------------Carpincho 3--------------
+[INFO] 01:17:43:457 Kernel/(22126:22129): Tiempo de espera: 0.000000
+[INFO] 01:17:43:457 Kernel/(22126:22129): Tiempo ejecutado: 0.000000
+[INFO] 01:17:43:457 Kernel/(22126:22129): Estimacion: 1.000000
+[INFO] 01:17:43:457 Kernel/(22126:22129): --------------Carpincho 3--------------
+[INFO] 01:17:43:457 Kernel/(22126:22129): Tiempo de espera: 0.000000
+[INFO] 01:17:43:457 Kernel/(22126:22129): Tiempo ejecutado: 0.000000
+[INFO] 01:17:43:457 Kernel/(22126:22129): Estimacion: 1.000000
+[INFO] 01:17:43:457 Kernel/(22126:22136): Carpincho 3 - Comienza a ejecutar
+[INFO] 01:17:43:497 Kernel/(22126:22279): Se recibió del carpincho 3 un MEM ALLOC con el tamañi 23
+[INFO] 01:17:43:538 Kernel/(22126:22275): Se recibió del carpincho 1 un MEM ALLOC con el tamañi 23
+[INFO] 01:17:43:576 Kernel/(22126:22277): Se recibió del carpincho 2 un MEM ALLOC con el tamañi 23
+[INFO] 01:17:43:620 Kernel/(22126:22279): Se recibió del carpincho 3 un MEM ALLOC con el tamañi 23
+[INFO] 01:17:43:661 Kernel/(22126:22275): Se recibió del carpincho 1 un MEM ALLOC con el tamañi 23
+[INFO] 01:17:43:700 Kernel/(22126:22277): Se recibió del carpincho 2 un MEM ALLOC con el tamañi 23
+[INFO] 01:17:43:741 Kernel/(22126:22279): Se recibió del carpincho 3 un MEM ALLOC con el tamañi 23
+[INFO] 01:17:43:781 Kernel/(22126:22275): Se recibió del carpincho 1 un MEM ALLOC con el tamañi 10
+[INFO] 01:17:43:821 Kernel/(22126:22277): Se recibió del carpincho 2 un MEM ALLOC con el tamañi 10
+[INFO] 01:17:43:861 Kernel/(22126:22279): Se recibió del carpincho 3 un MEM ALLOC con el tamañi 10
+[INFO] 01:17:43:901 Kernel/(22126:22275): Se recibió del carpincho 1 un MEM write desde la posición 41 con el mensjaje Hola
+[INFO] 01:17:43:940 Kernel/(22126:22275): Se recibió del carpincho 1 un MEM write desde la posición 41 con el mensjaje Hola
+[INFO] 01:17:43:981 Kernel/(22126:22275): Se recibió del carpincho 1 un MEM write desde la posición 41 con el mensjaje Hola
+[INFO] 01:17:44:021 Kernel/(22126:22275): Se recibió del carpincho 1 un MEM write desde la posición 9 con el mensjaje Hola
+[INFO] 01:17:44:063 Kernel/(22126:22277): Se recibió del carpincho 2 un MEM write desde la posición 9 con el mensjaje Hola
+[INFO] 01:17:44:064 Kernel/(22126:22279): Se recibió del carpincho 3 un MEM write desde la posición 9 con el mensjaje Hola
+[INFO] 01:17:44:064 Kernel/(22126:22275): Se recibió del carpincho 1 un MEM ALLOC con el tamañi 23
+[INFO] 01:17:44:106 Kernel/(22126:22275): Se recibió del carpincho 1 un MEM ALLOC con el tamañi 23
+[INFO] 01:17:44:145 Kernel/(22126:22275): Se recibió del carpincho 1 un MEM ALLOC con el tamañi 23
+[INFO] 01:17:44:189 Kernel/(22126:22275): Se recibió del carpincho 1 un MEM ALLOC con el tamañi 23
+[INFO] 01:17:44:229 Kernel/(22126:22277): MATE_CLOSE: Se recibió del carpincho 2 un MATE CLOSE
+[INFO] 01:17:44:229 Kernel/(22126:22279): MATE_CLOSE: Se recibió del carpincho 3 un MATE CLOSE
+[INFO] 01:17:44:230 Kernel/(22126:22275): MATE_CLOSE: Se recibió del carpincho 1 un MATE CLOSE
+[INFO] 01:17:44:230 Kernel/(22126:22136): Carpincho 3 - Eliminado
+[INFO] 01:17:44:230 Kernel/(22126:22134): Carpincho 1 - Eliminado
+[INFO] 01:17:44:230 Kernel/(22126:22135): Carpincho 2 - Eliminado
+[INFO] 01:23:56:803 Kernel/(23250:23250): Log creado
+[INFO] 01:23:56:804 Kernel/(23250:23250): Configuración obtenida
+[INFO] 01:23:56:804 Kernel/(23250:23250): Semáforos inicializados
+[INFO] 01:23:56:804 Kernel/(23250:23250): Colas de dispositivos IO creadas
+[INFO] 01:23:56:805 Kernel/(23250:23250): Se creó el hilo gestor de la IO laguna
+[INFO] 01:23:56:805 Kernel/(23250:23250): Inicio colas de planificación
+[INFO] 01:23:56:805 Kernel/(23250:23250): Hilo Planificador Corto Plazo creado
+[INFO] 01:23:56:805 Kernel/(23250:23250): Hilo Planificador Largo Plazo creado
+[INFO] 01:23:56:805 Kernel/(23250:23250): Hilo Detección Deadlock creado
+[INFO] 01:23:56:805 Kernel/(23250:23250): Hilo CPU creado
+[INFO] 01:23:59:191 Kernel/(23250:23268): Recibí el cliente 15
+[INFO] 01:23:59:191 Kernel/(23250:23268): ---------------NEW INSTANCE. Comienza creación del carpincho
+[INFO] 01:23:59:198 Kernel/(23250:23268): NEW INSTANCE: Se agregó el carpincho ID: 1 a la cola de new
+[INFO] 01:23:59:198 Kernel/(23250:23253): Llegó un carpincho al planificador de largo plazo
+[INFO] 01:23:59:198 Kernel/(23250:23253): No hay suspendidos. Se iniciará carpincho 1
+[INFO] 01:23:59:198 Kernel/(23250:23253): --------------Carpincho 1--------------
+[INFO] 01:23:59:198 Kernel/(23250:23253): Tiempo de espera: 0.000000
+[INFO] 01:23:59:198 Kernel/(23250:23253): Tiempo ejecutado: 0.000000
+[INFO] 01:23:59:198 Kernel/(23250:23253): Estimacion: 1.000000
+[INFO] 01:23:59:198 Kernel/(23250:23253): --------------Carpincho 1--------------
+[INFO] 01:23:59:198 Kernel/(23250:23253): Tiempo de espera: 0.000000
+[INFO] 01:23:59:198 Kernel/(23250:23253): Tiempo ejecutado: 0.000000
+[INFO] 01:23:59:198 Kernel/(23250:23253): Estimacion: 1.000000
+[INFO] 01:23:59:198 Kernel/(23250:23257): Carpincho 1 - Comienza a ejecutar
+[INFO] 01:23:59:237 Kernel/(23250:23268): Se recibió del carpincho 1 un MEM ALLOC con el tamañi 23
+[INFO] 01:23:59:321 Kernel/(23250:23270): Recibí el cliente 16
+[INFO] 01:23:59:321 Kernel/(23250:23270): ---------------NEW INSTANCE. Comienza creación del carpincho
+[INFO] 01:23:59:370 Kernel/(23250:23270): NEW INSTANCE: Se agregó el carpincho ID: 2 a la cola de new
+[INFO] 01:23:59:370 Kernel/(23250:23253): Llegó un carpincho al planificador de largo plazo
+[INFO] 01:23:59:370 Kernel/(23250:23253): No hay suspendidos. Se iniciará carpincho 2
+[INFO] 01:23:59:370 Kernel/(23250:23253): --------------Carpincho 2--------------
+[INFO] 01:23:59:370 Kernel/(23250:23253): Tiempo de espera: 0.000000
+[INFO] 01:23:59:370 Kernel/(23250:23253): Tiempo ejecutado: 0.000000
+[INFO] 01:23:59:370 Kernel/(23250:23253): Estimacion: 1.000000
+[INFO] 01:23:59:370 Kernel/(23250:23253): --------------Carpincho 2--------------
+[INFO] 01:23:59:370 Kernel/(23250:23253): Tiempo de espera: 0.000000
+[INFO] 01:23:59:370 Kernel/(23250:23253): Tiempo ejecutado: 0.000000
+[INFO] 01:23:59:370 Kernel/(23250:23253): Estimacion: 1.000000
+[INFO] 01:23:59:370 Kernel/(23250:23258): Carpincho 2 - Comienza a ejecutar
+[INFO] 01:23:59:409 Kernel/(23250:23270): Se recibió del carpincho 2 un MEM ALLOC con el tamañi 23
+[INFO] 01:23:59:491 Kernel/(23250:23272): Recibí el cliente 21
+[INFO] 01:23:59:491 Kernel/(23250:23272): ---------------NEW INSTANCE. Comienza creación del carpincho
+[INFO] 01:23:59:533 Kernel/(23250:23272): NEW INSTANCE: Se agregó el carpincho ID: 3 a la cola de new
+[INFO] 01:23:59:533 Kernel/(23250:23253): Llegó un carpincho al planificador de largo plazo
+[INFO] 01:23:59:533 Kernel/(23250:23253): No hay suspendidos. Se iniciará carpincho 3
+[INFO] 01:23:59:533 Kernel/(23250:23253): --------------Carpincho 3--------------
+[INFO] 01:23:59:533 Kernel/(23250:23253): Tiempo de espera: 0.000000
+[INFO] 01:23:59:533 Kernel/(23250:23253): Tiempo ejecutado: 0.000000
+[INFO] 01:23:59:533 Kernel/(23250:23253): Estimacion: 1.000000
+[INFO] 01:23:59:533 Kernel/(23250:23253): --------------Carpincho 3--------------
+[INFO] 01:23:59:533 Kernel/(23250:23253): Tiempo de espera: 0.000000
+[INFO] 01:23:59:533 Kernel/(23250:23253): Tiempo ejecutado: 0.000000
+[INFO] 01:23:59:533 Kernel/(23250:23253): Estimacion: 1.000000
+[INFO] 01:23:59:533 Kernel/(23250:23259): Carpincho 3 - Comienza a ejecutar
+[INFO] 01:23:59:573 Kernel/(23250:23272): Se recibió del carpincho 3 un MEM ALLOC con el tamañi 23
+[INFO] 01:23:59:653 Kernel/(23250:23268): Se recibió del carpincho 1 un MEM ALLOC con el tamañi 23
+[INFO] 01:23:59:695 Kernel/(23250:23270): Se recibió del carpincho 2 un MEM ALLOC con el tamañi 23
+[INFO] 01:23:59:733 Kernel/(23250:23272): Se recibió del carpincho 3 un MEM ALLOC con el tamañi 23
+[INFO] 01:23:59:775 Kernel/(23250:23268): Se recibió del carpincho 1 un MEM ALLOC con el tamañi 23
+[INFO] 01:23:59:817 Kernel/(23250:23270): Se recibió del carpincho 2 un MEM ALLOC con el tamañi 23
+[INFO] 01:23:59:857 Kernel/(23250:23272): Se recibió del carpincho 3 un MEM ALLOC con el tamañi 23
+[INFO] 01:23:59:896 Kernel/(23250:23268): Se recibió del carpincho 1 un MEM ALLOC con el tamañi 10
+[INFO] 01:23:59:897 Kernel/(23250:23270): Se recibió del carpincho 2 un MEM ALLOC con el tamañi 10
+[INFO] 01:23:59:898 Kernel/(23250:23272): Se recibió del carpincho 3 un MEM ALLOC con el tamañi 10
+[INFO] 01:23:59:936 Kernel/(23250:23268): Se recibió del carpincho 1 un MEM write desde la posición 9 con el mensjaje Hola
+[INFO] 01:23:59:976 Kernel/(23250:23268): Se recibió del carpincho 1 un MEM write desde la posición 9 con el mensjaje Hola
+[INFO] 01:24:00:019 Kernel/(23250:23268): Se recibió del carpincho 1 un MEM write desde la posición 9 con el mensjaje Hola
+[INFO] 01:24:00:058 Kernel/(23250:23268): Se recibió del carpincho 1 un MEM write desde la posición 9 con el mensjaje Hola
+[INFO] 01:24:00:141 Kernel/(23250:23270): Se recibió del carpincho 2 un MEM write desde la posición 9 con el mensjaje Hola
+[INFO] 01:24:00:220 Kernel/(23250:23272): Se recibió del carpincho 3 un MEM write desde la posición 9 con el mensjaje Hola
+[INFO] 01:24:00:260 Kernel/(23250:23268): Se recibió del carpincho 1 un MEM ALLOC con el tamañi 23
+[INFO] 01:24:00:301 Kernel/(23250:23268): Se recibió del carpincho 1 un MEM ALLOC con el tamañi 23
+[INFO] 01:24:00:348 Kernel/(23250:23268): Se recibió del carpincho 1 un MEM ALLOC con el tamañi 23
+[INFO] 01:24:00:389 Kernel/(23250:23268): Se recibió del carpincho 1 un MEM ALLOC con el tamañi 23
+[INFO] 01:24:00:429 Kernel/(23250:23270): MATE_CLOSE: Se recibió del carpincho 2 un MATE CLOSE
+[INFO] 01:24:00:429 Kernel/(23250:23272): MATE_CLOSE: Se recibió del carpincho 3 un MATE CLOSE
+[INFO] 01:24:00:430 Kernel/(23250:23268): MATE_CLOSE: Se recibió del carpincho 1 un MATE CLOSE
+[INFO] 01:24:00:430 Kernel/(23250:23259): Carpincho 3 - Eliminado
+[INFO] 01:24:00:430 Kernel/(23250:23257): Carpincho 1 - Eliminado
+[INFO] 01:24:00:430 Kernel/(23250:23258): Carpincho 2 - Eliminado
+[INFO] 01:27:18:821 Kernel/(23877:23877): Log creado
+[INFO] 01:27:18:821 Kernel/(23877:23877): Configuración obtenida
+[INFO] 01:27:18:821 Kernel/(23877:23877): Semáforos inicializados
+[INFO] 01:27:18:821 Kernel/(23877:23877): Colas de dispositivos IO creadas
+[INFO] 01:27:18:821 Kernel/(23877:23877): Se creó el hilo gestor de la IO laguna
+[INFO] 01:27:18:821 Kernel/(23877:23877): Inicio colas de planificación
+[INFO] 01:27:18:821 Kernel/(23877:23877): Hilo Planificador Corto Plazo creado
+[INFO] 01:27:18:821 Kernel/(23877:23877): Hilo Planificador Largo Plazo creado
+[INFO] 01:27:18:821 Kernel/(23877:23877): Hilo Detección Deadlock creado
+[INFO] 01:27:18:821 Kernel/(23877:23877): Hilo CPU creado
+[INFO] 01:27:21:230 Kernel/(23877:24017): Recibí el cliente 15
+[INFO] 01:27:21:230 Kernel/(23877:24017): ---------------NEW INSTANCE. Comienza creación del carpincho
+[INFO] 01:27:21:236 Kernel/(23877:24017): NEW INSTANCE: Se agregó el carpincho ID: 1 a la cola de new
+[INFO] 01:27:21:236 Kernel/(23877:23880): Llegó un carpincho al planificador de largo plazo
+[INFO] 01:27:21:236 Kernel/(23877:23880): No hay suspendidos. Se iniciará carpincho 1
+[INFO] 01:27:21:236 Kernel/(23877:23880): --------------Carpincho 1--------------
+[INFO] 01:27:21:237 Kernel/(23877:23880): Tiempo de espera: 0.000000
+[INFO] 01:27:21:237 Kernel/(23877:23880): Tiempo ejecutado: 0.000000
+[INFO] 01:27:21:237 Kernel/(23877:23880): Estimacion: 1.000000
+[INFO] 01:27:21:237 Kernel/(23877:23880): --------------Carpincho 1--------------
+[INFO] 01:27:21:237 Kernel/(23877:23880): Tiempo de espera: 0.000000
+[INFO] 01:27:21:237 Kernel/(23877:23880): Tiempo ejecutado: 0.000000
+[INFO] 01:27:21:237 Kernel/(23877:23880): Estimacion: 1.000000
+[INFO] 01:27:21:237 Kernel/(23877:23884): Carpincho 1 - Comienza a ejecutar
+[INFO] 01:27:21:276 Kernel/(23877:24017): Se recibió del carpincho 1 un MEM ALLOC con el tamañi 23
+[INFO] 01:27:21:726 Kernel/(23877:24020): Recibí el cliente 16
+[INFO] 01:27:21:726 Kernel/(23877:24020): ---------------NEW INSTANCE. Comienza creación del carpincho
+[INFO] 01:28:58:128 Kernel/(24451:24451): Log creado
+[INFO] 01:28:58:129 Kernel/(24451:24451): Configuración obtenida
+[INFO] 01:28:58:130 Kernel/(24451:24451): Semáforos inicializados
+[INFO] 01:28:58:130 Kernel/(24451:24451): Colas de dispositivos IO creadas
+[INFO] 01:28:58:130 Kernel/(24451:24451): Se creó el hilo gestor de la IO laguna
+[INFO] 01:28:58:130 Kernel/(24451:24451): Inicio colas de planificación
+[INFO] 01:28:58:130 Kernel/(24451:24451): Hilo Planificador Corto Plazo creado
+[INFO] 01:28:58:130 Kernel/(24451:24451): Hilo Planificador Largo Plazo creado
+[INFO] 01:28:58:130 Kernel/(24451:24451): Hilo Detección Deadlock creado
+[INFO] 01:28:58:130 Kernel/(24451:24451): Hilo CPU creado
+[INFO] 01:29:48:135 Kernel/(24937:24937): Log creado
+[INFO] 01:29:48:135 Kernel/(24937:24937): Configuración obtenida
+[INFO] 01:29:48:136 Kernel/(24937:24937): Semáforos inicializados
+[INFO] 01:29:48:136 Kernel/(24937:24937): Colas de dispositivos IO creadas
+[INFO] 01:29:48:136 Kernel/(24937:24937): Se creó el hilo gestor de la IO laguna
+[INFO] 01:29:48:136 Kernel/(24937:24937): Inicio colas de planificación
+[INFO] 01:29:48:136 Kernel/(24937:24937): Hilo Planificador Corto Plazo creado
+[INFO] 01:29:48:136 Kernel/(24937:24937): Hilo Planificador Largo Plazo creado
+[INFO] 01:29:48:136 Kernel/(24937:24937): Hilo Detección Deadlock creado
+[INFO] 01:29:48:136 Kernel/(24937:24937): Hilo CPU creado
+[INFO] 01:29:50:903 Kernel/(24937:25086): Recibí el cliente 15
+[INFO] 01:29:50:903 Kernel/(24937:25086): ---------------NEW INSTANCE. Comienza creación del carpincho
+[INFO] 01:29:50:909 Kernel/(24937:25086): NEW INSTANCE: Se agregó el carpincho ID: 1 a la cola de new
+[INFO] 01:29:50:909 Kernel/(24937:24940): Llegó un carpincho al planificador de largo plazo
+[INFO] 01:29:50:909 Kernel/(24937:24940): No hay suspendidos. Se iniciará carpincho 1
+[INFO] 01:29:50:909 Kernel/(24937:24940): --------------Carpincho 1--------------
+[INFO] 01:29:50:909 Kernel/(24937:24940): Tiempo de espera: 0.000000
+[INFO] 01:29:50:909 Kernel/(24937:24940): Tiempo ejecutado: 0.000000
+[INFO] 01:29:50:909 Kernel/(24937:24940): Estimacion: 1.000000
+[INFO] 01:29:50:909 Kernel/(24937:24940): --------------Carpincho 1--------------
+[INFO] 01:29:50:909 Kernel/(24937:24940): Tiempo de espera: 0.000000
+[INFO] 01:29:50:909 Kernel/(24937:24940): Tiempo ejecutado: 0.000000
+[INFO] 01:29:50:909 Kernel/(24937:24940): Estimacion: 1.000000
+[INFO] 01:29:50:909 Kernel/(24937:24945): Carpincho 1 - Comienza a ejecutar
+[INFO] 01:29:50:948 Kernel/(24937:25086): Se recibió del carpincho 1 un MEM ALLOC con el tamañi 23
+[INFO] 01:29:51:360 Kernel/(24937:25092): Recibí el cliente 16
+[INFO] 01:29:51:360 Kernel/(24937:25092): ---------------NEW INSTANCE. Comienza creación del carpincho
+[INFO] 01:30:10:588 Kernel/(25346:25346): Log creado
+[INFO] 01:30:10:592 Kernel/(25346:25346): Configuración obtenida
+[INFO] 01:30:10:592 Kernel/(25346:25346): Semáforos inicializados
+[INFO] 01:30:10:592 Kernel/(25346:25346): Colas de dispositivos IO creadas
+[INFO] 01:30:10:592 Kernel/(25346:25346): Se creó el hilo gestor de la IO laguna
+[INFO] 01:30:10:592 Kernel/(25346:25346): Inicio colas de planificación
+[INFO] 01:30:10:592 Kernel/(25346:25346): Hilo Planificador Corto Plazo creado
+[INFO] 01:30:10:592 Kernel/(25346:25346): Hilo Planificador Largo Plazo creado
+[INFO] 01:30:10:592 Kernel/(25346:25346): Hilo Detección Deadlock creado
+[INFO] 01:30:10:592 Kernel/(25346:25346): Hilo CPU creado
+[INFO] 01:30:14:389 Kernel/(25346:25502): Recibí el cliente 15
+[INFO] 01:30:14:389 Kernel/(25346:25502): ---------------NEW INSTANCE. Comienza creación del carpincho
+[INFO] 01:30:14:469 Kernel/(25346:25502): NEW INSTANCE: Se agregó el carpincho ID: 1 a la cola de new
+[INFO] 01:30:14:469 Kernel/(25346:25349): Llegó un carpincho al planificador de largo plazo
+[INFO] 01:30:14:470 Kernel/(25346:25349): No hay suspendidos. Se iniciará carpincho 1
+[INFO] 01:30:14:470 Kernel/(25346:25349): --------------Carpincho 1--------------
+[INFO] 01:30:14:470 Kernel/(25346:25349): Tiempo de espera: 0.000000
+[INFO] 01:30:14:470 Kernel/(25346:25349): Tiempo ejecutado: 0.000000
+[INFO] 01:30:14:470 Kernel/(25346:25349): Estimacion: 1.000000
+[INFO] 01:30:14:470 Kernel/(25346:25349): --------------Carpincho 1--------------
+[INFO] 01:30:14:470 Kernel/(25346:25349): Tiempo de espera: 0.000000
+[INFO] 01:30:14:470 Kernel/(25346:25349): Tiempo ejecutado: 0.000000
+[INFO] 01:30:14:470 Kernel/(25346:25349): Estimacion: 1.000000
+[INFO] 01:30:14:470 Kernel/(25346:25354): Carpincho 1 - Comienza a ejecutar
+[INFO] 01:30:14:508 Kernel/(25346:25502): Se recibió del carpincho 1 un MEM ALLOC con el tamañi 23
+[INFO] 01:30:14:956 Kernel/(25346:25504): Recibí el cliente 16
+[INFO] 01:30:14:958 Kernel/(25346:25504): ---------------NEW INSTANCE. Comienza creación del carpincho
+[INFO] 01:30:16:325 Kernel/(25346:25504): Se recibió un código erróneo del cliente 16
+[INFO] 01:39:36:215 Kernel/(26602:26602): Log creado
+[INFO] 01:39:36:215 Kernel/(26602:26602): Configuración obtenida
+[INFO] 01:39:36:215 Kernel/(26602:26602): Semáforos inicializados
+[INFO] 01:39:36:215 Kernel/(26602:26602): Colas de dispositivos IO creadas
+[INFO] 01:39:36:216 Kernel/(26602:26602): Se creó el hilo gestor de la IO laguna
+[INFO] 01:39:36:216 Kernel/(26602:26602): Inicio colas de planificación
+[INFO] 01:39:36:216 Kernel/(26602:26602): Hilo Planificador Corto Plazo creado
+[INFO] 01:39:36:216 Kernel/(26602:26602): Hilo Planificador Largo Plazo creado
+[INFO] 01:39:36:216 Kernel/(26602:26602): Hilo Detección Deadlock creado
+[INFO] 01:39:36:216 Kernel/(26602:26602): Hilo CPU creado
+[INFO] 01:39:39:533 Kernel/(26602:26751): Recibí el cliente 15
+[INFO] 01:39:39:533 Kernel/(26602:26751): ---------------NEW INSTANCE. Comienza creación del carpincho
+[INFO] 01:39:39:541 Kernel/(26602:26751): NEW INSTANCE: Se agregó el carpincho ID: 1 a la cola de new
+[INFO] 01:39:39:541 Kernel/(26602:26605): Llegó un carpincho al planificador de largo plazo
+[INFO] 01:39:39:541 Kernel/(26602:26605): No hay suspendidos. Se iniciará carpincho 1
+[INFO] 01:39:39:541 Kernel/(26602:26605): --------------Carpincho 1--------------
+[INFO] 01:39:39:541 Kernel/(26602:26605): Tiempo de espera: 0.000000
+[INFO] 01:39:39:541 Kernel/(26602:26605): Tiempo ejecutado: 0.000000
+[INFO] 01:39:39:541 Kernel/(26602:26605): Estimacion: 1.000000
+[INFO] 01:39:39:541 Kernel/(26602:26605): --------------Carpincho 1--------------
+[INFO] 01:39:39:541 Kernel/(26602:26605): Tiempo de espera: 0.000000
+[INFO] 01:39:39:541 Kernel/(26602:26605): Tiempo ejecutado: 0.000000
+[INFO] 01:39:39:541 Kernel/(26602:26605): Estimacion: 1.000000
+[INFO] 01:39:39:541 Kernel/(26602:26608): Carpincho 1 - Comienza a ejecutar
+[INFO] 01:39:39:581 Kernel/(26602:26751): Se recibió del carpincho 1 un MEM ALLOC con el tamañi 23
+[INFO] 01:39:39:625 Kernel/(26602:26753): Recibí el cliente 16
+[INFO] 01:39:39:626 Kernel/(26602:26753): ---------------NEW INSTANCE. Comienza creación del carpincho
+[INFO] 01:39:39:673 Kernel/(26602:26753): NEW INSTANCE: Se agregó el carpincho ID: 2 a la cola de new
+[INFO] 01:39:39:673 Kernel/(26602:26605): Llegó un carpincho al planificador de largo plazo
+[INFO] 01:39:39:673 Kernel/(26602:26605): No hay suspendidos. Se iniciará carpincho 2
+[INFO] 01:39:39:673 Kernel/(26602:26605): --------------Carpincho 2--------------
+[INFO] 01:39:39:673 Kernel/(26602:26605): Tiempo de espera: 0.000000
+[INFO] 01:39:39:673 Kernel/(26602:26605): Tiempo ejecutado: 0.000000
+[INFO] 01:39:39:673 Kernel/(26602:26605): Estimacion: 1.000000
+[INFO] 01:39:39:673 Kernel/(26602:26605): --------------Carpincho 2--------------
+[INFO] 01:39:39:673 Kernel/(26602:26605): Tiempo de espera: 0.000000
+[INFO] 01:39:39:673 Kernel/(26602:26605): Tiempo ejecutado: 0.000000
+[INFO] 01:39:39:673 Kernel/(26602:26605): Estimacion: 1.000000
+[INFO] 01:39:39:673 Kernel/(26602:26611): Carpincho 2 - Comienza a ejecutar
+[INFO] 01:39:39:713 Kernel/(26602:26753): Se recibió del carpincho 2 un MEM ALLOC con el tamañi 23
+[INFO] 01:39:39:759 Kernel/(26602:26755): Recibí el cliente 21
+[INFO] 01:39:39:759 Kernel/(26602:26755): ---------------NEW INSTANCE. Comienza creación del carpincho
+[INFO] 01:39:39:809 Kernel/(26602:26755): NEW INSTANCE: Se agregó el carpincho ID: 3 a la cola de new
+[INFO] 01:39:39:809 Kernel/(26602:26605): Llegó un carpincho al planificador de largo plazo
+[INFO] 01:39:39:809 Kernel/(26602:26605): No hay suspendidos. Se iniciará carpincho 3
+[INFO] 01:39:39:809 Kernel/(26602:26605): --------------Carpincho 3--------------
+[INFO] 01:39:39:809 Kernel/(26602:26605): Tiempo de espera: 0.000000
+[INFO] 01:39:39:809 Kernel/(26602:26605): Tiempo ejecutado: 0.000000
+[INFO] 01:39:39:809 Kernel/(26602:26605): Estimacion: 1.000000
+[INFO] 01:39:39:809 Kernel/(26602:26605): --------------Carpincho 3--------------
+[INFO] 01:39:39:809 Kernel/(26602:26605): Tiempo de espera: 0.000000
+[INFO] 01:39:39:809 Kernel/(26602:26605): Tiempo ejecutado: 0.000000
+[INFO] 01:39:39:809 Kernel/(26602:26605): Estimacion: 1.000000
+[INFO] 01:39:39:809 Kernel/(26602:26612): Carpincho 3 - Comienza a ejecutar
+[INFO] 01:39:39:848 Kernel/(26602:26755): Se recibió del carpincho 3 un MEM ALLOC con el tamañi 23
+[INFO] 01:39:39:892 Kernel/(26602:26751): Se recibió del carpincho 1 un MEM ALLOC con el tamañi 23
+[INFO] 01:39:39:935 Kernel/(26602:26753): Se recibió del carpincho 2 un MEM ALLOC con el tamañi 23
+[INFO] 01:39:39:978 Kernel/(26602:26755): Se recibió del carpincho 3 un MEM ALLOC con el tamañi 23
+[INFO] 01:39:40:021 Kernel/(26602:26751): Se recibió del carpincho 1 un MEM ALLOC con el tamañi 23
+[INFO] 01:39:40:067 Kernel/(26602:26753): Se recibió del carpincho 2 un MEM ALLOC con el tamañi 23
+[INFO] 01:39:40:105 Kernel/(26602:26755): Se recibió del carpincho 3 un MEM ALLOC con el tamañi 23
+[INFO] 01:39:40:149 Kernel/(26602:26751): Se recibió del carpincho 1 un MEM ALLOC con el tamañi 10
+[INFO] 01:39:40:189 Kernel/(26602:26753): Se recibió del carpincho 2 un MEM ALLOC con el tamañi 10
+[INFO] 01:39:40:229 Kernel/(26602:26755): Se recibió del carpincho 3 un MEM ALLOC con el tamañi 10
+[INFO] 01:39:40:269 Kernel/(26602:26751): Se recibió del carpincho 1 un MEM write desde la posición 41 con el mensjaje Hola
+[INFO] 01:39:40:310 Kernel/(26602:26751): Se recibió del carpincho 1 un MEM write desde la posición 41 con el mensjaje Hola
+[INFO] 01:39:40:350 Kernel/(26602:26751): Se recibió del carpincho 1 un MEM write desde la posición 41 con el mensjaje Hola
+[INFO] 01:39:40:390 Kernel/(26602:26751): Se recibió del carpincho 1 un MEM write desde la posición 9 con el mensjaje Hola
+[INFO] 01:39:40:429 Kernel/(26602:26753): Se recibió del carpincho 2 un MEM write desde la posición 9 con el mensjaje Hola
+[INFO] 01:39:40:429 Kernel/(26602:26755): Se recibió del carpincho 3 un MEM write desde la posición 9 con el mensjaje Hola
+[INFO] 01:39:40:429 Kernel/(26602:26751): Se recibió del carpincho 1 un MEM ALLOC con el tamañi 23
+[INFO] 01:39:40:469 Kernel/(26602:26751): Se recibió del carpincho 1 un MEM ALLOC con el tamañi 23
+[INFO] 01:39:40:509 Kernel/(26602:26751): Se recibió del carpincho 1 un MEM ALLOC con el tamañi 23
+[INFO] 01:39:40:549 Kernel/(26602:26751): Se recibió del carpincho 1 un MEM ALLOC con el tamañi 23
+[INFO] 01:39:40:589 Kernel/(26602:26753): MATE_CLOSE: Se recibió del carpincho 2 un MATE CLOSE
+[INFO] 01:39:40:589 Kernel/(26602:26755): MATE_CLOSE: Se recibió del carpincho 3 un MATE CLOSE
+[INFO] 01:39:40:590 Kernel/(26602:26751): MATE_CLOSE: Se recibió del carpincho 1 un MATE CLOSE
+[INFO] 01:39:40:590 Kernel/(26602:26612): Carpincho 3 - Eliminado
+[INFO] 01:39:40:591 Kernel/(26602:26608): Carpincho 1 - Eliminado
+[INFO] 01:39:40:591 Kernel/(26602:26611): Carpincho 2 - Eliminado
+[INFO] 01:40:26:218 Kernel/(26602:26606): Comienza la ejecución de la detección de Deadlock
+[INFO] 01:40:53:799 Kernel/(27171:27171): Log creado
+[INFO] 01:40:53:800 Kernel/(27171:27171): Configuración obtenida
+[INFO] 01:40:53:800 Kernel/(27171:27171): Semáforos inicializados
+[INFO] 01:40:53:800 Kernel/(27171:27171): Colas de dispositivos IO creadas
+[INFO] 01:40:53:800 Kernel/(27171:27171): Se creó el hilo gestor de la IO laguna
+[INFO] 01:40:53:800 Kernel/(27171:27171): Inicio colas de planificación
+[INFO] 01:40:53:800 Kernel/(27171:27171): Hilo Planificador Corto Plazo creado
+[INFO] 01:40:53:800 Kernel/(27171:27171): Hilo Planificador Largo Plazo creado
+[INFO] 01:40:53:800 Kernel/(27171:27171): Hilo Detección Deadlock creado
+[INFO] 01:40:53:800 Kernel/(27171:27171): Hilo CPU creado
+[INFO] 01:40:56:347 Kernel/(27171:27308): Recibí el cliente 15
+[INFO] 01:40:56:348 Kernel/(27171:27308): ---------------NEW INSTANCE. Comienza creación del carpincho
+[INFO] 01:40:56:354 Kernel/(27171:27308): NEW INSTANCE: Se agregó el carpincho ID: 1 a la cola de new
+[INFO] 01:40:56:355 Kernel/(27171:27174): Llegó un carpincho al planificador de largo plazo
+[INFO] 01:40:56:355 Kernel/(27171:27174): No hay suspendidos. Se iniciará carpincho 1
+[INFO] 01:40:56:355 Kernel/(27171:27174): --------------Carpincho 1--------------
+[INFO] 01:40:56:355 Kernel/(27171:27174): Tiempo de espera: 0.000000
+[INFO] 01:40:56:355 Kernel/(27171:27174): Tiempo ejecutado: 0.000000
+[INFO] 01:40:56:355 Kernel/(27171:27174): Estimacion: 1.000000
+[INFO] 01:40:56:355 Kernel/(27171:27174): --------------Carpincho 1--------------
+[INFO] 01:40:56:355 Kernel/(27171:27174): Tiempo de espera: 0.000000
+[INFO] 01:40:56:355 Kernel/(27171:27174): Tiempo ejecutado: 0.000000
+[INFO] 01:40:56:355 Kernel/(27171:27174): Estimacion: 1.000000
+[INFO] 01:40:56:355 Kernel/(27171:27177): Carpincho 1 - Comienza a ejecutar
+[INFO] 01:40:56:397 Kernel/(27171:27308): Se recibió del carpincho 1 un MEM ALLOC con el tamañi 23
+[INFO] 01:40:56:441 Kernel/(27171:27310): Recibí el cliente 16
+[INFO] 01:40:56:442 Kernel/(27171:27310): ---------------NEW INSTANCE. Comienza creación del carpincho
+[INFO] 01:40:56:488 Kernel/(27171:27310): NEW INSTANCE: Se agregó el carpincho ID: 2 a la cola de new
+[INFO] 01:40:56:488 Kernel/(27171:27174): Llegó un carpincho al planificador de largo plazo
+[INFO] 01:40:56:488 Kernel/(27171:27174): No hay suspendidos. Se iniciará carpincho 2
+[INFO] 01:40:56:488 Kernel/(27171:27174): --------------Carpincho 2--------------
+[INFO] 01:40:56:488 Kernel/(27171:27174): Tiempo de espera: 0.000000
+[INFO] 01:40:56:488 Kernel/(27171:27174): Tiempo ejecutado: 0.000000
+[INFO] 01:40:56:488 Kernel/(27171:27174): Estimacion: 1.000000
+[INFO] 01:40:56:488 Kernel/(27171:27174): --------------Carpincho 2--------------
+[INFO] 01:40:56:488 Kernel/(27171:27174): Tiempo de espera: 0.000000
+[INFO] 01:40:56:488 Kernel/(27171:27174): Tiempo ejecutado: 0.000000
+[INFO] 01:40:56:488 Kernel/(27171:27174): Estimacion: 1.000000
+[INFO] 01:40:56:488 Kernel/(27171:27180): Carpincho 2 - Comienza a ejecutar
+[INFO] 01:40:56:528 Kernel/(27171:27310): Se recibió del carpincho 2 un MEM ALLOC con el tamañi 23
+[INFO] 01:40:56:572 Kernel/(27171:27312): Recibí el cliente 21
+[INFO] 01:40:56:573 Kernel/(27171:27312): ---------------NEW INSTANCE. Comienza creación del carpincho
+[INFO] 01:40:56:621 Kernel/(27171:27312): NEW INSTANCE: Se agregó el carpincho ID: 3 a la cola de new
+[INFO] 01:40:56:621 Kernel/(27171:27174): Llegó un carpincho al planificador de largo plazo
+[INFO] 01:40:56:621 Kernel/(27171:27174): No hay suspendidos. Se iniciará carpincho 3
+[INFO] 01:40:56:621 Kernel/(27171:27174): --------------Carpincho 3--------------
+[INFO] 01:40:56:621 Kernel/(27171:27174): Tiempo de espera: 0.000000
+[INFO] 01:40:56:621 Kernel/(27171:27174): Tiempo ejecutado: 0.000000
+[INFO] 01:40:56:621 Kernel/(27171:27174): Estimacion: 1.000000
+[INFO] 01:40:56:621 Kernel/(27171:27174): --------------Carpincho 3--------------
+[INFO] 01:40:56:621 Kernel/(27171:27174): Tiempo de espera: 0.000000
+[INFO] 01:40:56:621 Kernel/(27171:27174): Tiempo ejecutado: 0.000000
+[INFO] 01:40:56:621 Kernel/(27171:27174): Estimacion: 1.000000
+[INFO] 01:40:56:621 Kernel/(27171:27181): Carpincho 3 - Comienza a ejecutar
+[INFO] 01:40:56:661 Kernel/(27171:27312): Se recibió del carpincho 3 un MEM ALLOC con el tamañi 23
+[INFO] 01:40:56:702 Kernel/(27171:27308): Se recibió del carpincho 1 un MEM ALLOC con el tamañi 23
+[INFO] 01:40:56:742 Kernel/(27171:27310): Se recibió del carpincho 2 un MEM ALLOC con el tamañi 23
+[INFO] 01:40:56:789 Kernel/(27171:27312): Se recibió del carpincho 3 un MEM ALLOC con el tamañi 23
+[INFO] 01:40:56:830 Kernel/(27171:27308): Se recibió del carpincho 1 un MEM ALLOC con el tamañi 23
+[INFO] 01:40:56:872 Kernel/(27171:27310): Se recibió del carpincho 2 un MEM ALLOC con el tamañi 23
+[INFO] 01:40:56:925 Kernel/(27171:27312): Se recibió del carpincho 3 un MEM ALLOC con el tamañi 23
+[INFO] 01:40:56:965 Kernel/(27171:27308): Se recibió del carpincho 1 un MEM ALLOC con el tamañi 10
+[INFO] 01:40:57:009 Kernel/(27171:27310): Se recibió del carpincho 2 un MEM ALLOC con el tamañi 10
+[INFO] 01:40:57:051 Kernel/(27171:27312): Se recibió del carpincho 3 un MEM ALLOC con el tamañi 10
+[INFO] 01:40:57:089 Kernel/(27171:27308): Se recibió del carpincho 1 un MEM write desde la posición 41 con el mensjaje Hola
+[INFO] 01:40:57:137 Kernel/(27171:27308): Se recibió del carpincho 1 un MEM write desde la posición 41 con el mensjaje Hola
+[INFO] 01:40:57:177 Kernel/(27171:27308): Se recibió del carpincho 1 un MEM write desde la posición 41 con el mensjaje Hola
+[INFO] 01:40:57:217 Kernel/(27171:27308): Se recibió del carpincho 1 un MEM write desde la posición 9 con el mensjaje Hola
+[INFO] 01:40:57:258 Kernel/(27171:27310): Se recibió del carpincho 2 un MEM write desde la posición 9 con el mensjaje Hola
+[INFO] 01:40:57:258 Kernel/(27171:27312): Se recibió del carpincho 3 un MEM write desde la posición 9 con el mensjaje Hola
+[INFO] 01:40:57:258 Kernel/(27171:27308): Se recibió del carpincho 1 un MEM ALLOC con el tamañi 23
+[INFO] 01:40:57:302 Kernel/(27171:27308): Se recibió del carpincho 1 un MEM ALLOC con el tamañi 23
+[INFO] 01:40:57:341 Kernel/(27171:27308): Se recibió del carpincho 1 un MEM ALLOC con el tamañi 23
+[INFO] 01:40:57:385 Kernel/(27171:27308): Se recibió del carpincho 1 un MEM ALLOC con el tamañi 23
+[INFO] 01:40:57:433 Kernel/(27171:27310): MATE_CLOSE: Se recibió del carpincho 2 un MATE CLOSE
+[INFO] 01:40:57:433 Kernel/(27171:27312): MATE_CLOSE: Se recibió del carpincho 3 un MATE CLOSE
+[INFO] 01:40:57:436 Kernel/(27171:27308): MATE_CLOSE: Se recibió del carpincho 1 un MATE CLOSE
+[INFO] 01:40:57:436 Kernel/(27171:27181): Carpincho 3 - Eliminado
+[INFO] 01:40:57:436 Kernel/(27171:27180): Carpincho 2 - Eliminado
+[INFO] 01:40:57:436 Kernel/(27171:27177): Carpincho 1 - Eliminado
+[INFO] 01:42:25:798 Kernel/(27577:27577): Log creado
+[INFO] 01:42:25:798 Kernel/(27577:27577): Configuración obtenida
+[INFO] 01:42:25:798 Kernel/(27577:27577): Semáforos inicializados
+[INFO] 01:42:25:799 Kernel/(27577:27577): Colas de dispositivos IO creadas
+[INFO] 01:42:25:799 Kernel/(27577:27577): Se creó el hilo gestor de la IO laguna
+[INFO] 01:42:25:799 Kernel/(27577:27577): Inicio colas de planificación
+[INFO] 01:42:25:799 Kernel/(27577:27577): Hilo Planificador Corto Plazo creado
+[INFO] 01:42:25:799 Kernel/(27577:27577): Hilo Planificador Largo Plazo creado
+[INFO] 01:42:25:799 Kernel/(27577:27577): Hilo Detección Deadlock creado
+[INFO] 01:42:25:799 Kernel/(27577:27577): Hilo CPU creado
+[INFO] 01:46:34:028 Kernel/(28177:28177): Log creado
+[INFO] 01:46:34:029 Kernel/(28177:28177): Configuración obtenida
+[INFO] 01:46:34:029 Kernel/(28177:28177): Semáforos inicializados
+[INFO] 01:46:34:029 Kernel/(28177:28177): Colas de dispositivos IO creadas
+[INFO] 01:46:34:029 Kernel/(28177:28177): Se creó el hilo gestor de la IO laguna
+[INFO] 01:46:34:029 Kernel/(28177:28177): Inicio colas de planificación
+[INFO] 01:46:34:029 Kernel/(28177:28177): Hilo Planificador Corto Plazo creado
+[INFO] 01:46:34:029 Kernel/(28177:28177): Hilo Planificador Largo Plazo creado
+[INFO] 01:46:34:029 Kernel/(28177:28177): Hilo Detección Deadlock creado
+[INFO] 01:46:34:029 Kernel/(28177:28177): Hilo CPU creado
+[INFO] 01:46:38:433 Kernel/(28177:28466): Recibí el cliente 15
+[INFO] 01:46:38:433 Kernel/(28177:28466): ---------------NEW INSTANCE. Comienza creación del carpincho
+[INFO] 01:46:38:440 Kernel/(28177:28466): NEW INSTANCE: Se agregó el carpincho ID: 1 a la cola de new
+[INFO] 01:46:38:441 Kernel/(28177:28180): Llegó un carpincho al planificador de largo plazo
+[INFO] 01:46:38:441 Kernel/(28177:28180): No hay suspendidos. Se iniciará carpincho 1
+[INFO] 01:46:38:441 Kernel/(28177:28180): --------------Carpincho 1--------------
+[INFO] 01:46:38:441 Kernel/(28177:28180): Tiempo de espera: 0.000000
+[INFO] 01:46:38:441 Kernel/(28177:28180): Tiempo ejecutado: 0.000000
+[INFO] 01:46:38:441 Kernel/(28177:28180): Estimacion: 1.000000
+[INFO] 01:46:38:441 Kernel/(28177:28180): --------------Carpincho 1--------------
+[INFO] 01:46:38:441 Kernel/(28177:28180): Tiempo de espera: 0.000000
+[INFO] 01:46:38:441 Kernel/(28177:28180): Tiempo ejecutado: 0.000000
+[INFO] 01:46:38:441 Kernel/(28177:28180): Estimacion: 1.000000
+[INFO] 01:46:38:441 Kernel/(28177:28185): Carpincho 1 - Comienza a ejecutar
+[INFO] 01:46:38:477 Kernel/(28177:28466): Se recibió del carpincho 1 un MEM ALLOC con el tamañi 23
+[INFO] 01:46:38:517 Kernel/(28177:28466): Se recibió del carpincho 1 un MEM ALLOC con el tamañi 10
+[INFO] 01:46:38:557 Kernel/(28177:28466): Se recibió del carpincho 1 un MEM ALLOC con el tamañi 23
+[INFO] 01:46:38:598 Kernel/(28177:28466): MATE_CLOSE: Se recibió del carpincho 1 un MATE CLOSE
+[INFO] 01:46:38:598 Kernel/(28177:28185): Carpincho 1 - Eliminado
+[INFO] 01:50:08:577 Kernel/(29068:29068): Log creado
+[INFO] 01:50:08:579 Kernel/(29068:29068): Configuración obtenida
+[INFO] 01:50:08:579 Kernel/(29068:29068): Semáforos inicializados
+[INFO] 01:50:08:579 Kernel/(29068:29068): Colas de dispositivos IO creadas
+[INFO] 01:50:08:579 Kernel/(29068:29068): Se creó el hilo gestor de la IO laguna
+[INFO] 01:50:08:579 Kernel/(29068:29068): Inicio colas de planificación
+[INFO] 01:50:08:579 Kernel/(29068:29068): Hilo Planificador Corto Plazo creado
+[INFO] 01:50:08:579 Kernel/(29068:29068): Hilo Planificador Largo Plazo creado
+[INFO] 01:50:08:579 Kernel/(29068:29068): Hilo Detección Deadlock creado
+[INFO] 01:50:08:579 Kernel/(29068:29068): Hilo CPU creado
+[INFO] 01:50:13:086 Kernel/(29068:29211): Recibí el cliente 15
+[INFO] 01:50:13:086 Kernel/(29068:29211): ---------------NEW INSTANCE. Comienza creación del carpincho
+[INFO] 01:50:13:091 Kernel/(29068:29211): NEW INSTANCE: Se agregó el carpincho ID: 1 a la cola de new
+[INFO] 01:50:13:091 Kernel/(29068:29071): Llegó un carpincho al planificador de largo plazo
+[INFO] 01:50:13:099 Kernel/(29068:29071): No hay suspendidos. Se iniciará carpincho 1
+[INFO] 01:50:13:099 Kernel/(29068:29071): --------------Carpincho 1--------------
+[INFO] 01:50:13:099 Kernel/(29068:29071): Tiempo de espera: 0.000000
+[INFO] 01:50:13:099 Kernel/(29068:29071): Tiempo ejecutado: 0.000000
+[INFO] 01:50:13:099 Kernel/(29068:29071): Estimacion: 1.000000
+[INFO] 01:50:13:099 Kernel/(29068:29071): --------------Carpincho 1--------------
+[INFO] 01:50:13:099 Kernel/(29068:29071): Tiempo de espera: 0.000000
+[INFO] 01:50:13:099 Kernel/(29068:29071): Tiempo ejecutado: 0.000000
+[INFO] 01:50:13:099 Kernel/(29068:29071): Estimacion: 1.000000
+[INFO] 01:50:13:099 Kernel/(29068:29075): Carpincho 1 - Comienza a ejecutar
+[INFO] 01:50:13:129 Kernel/(29068:29211): Se recibió del carpincho 1 un MEM ALLOC con el tamañi 23
+[INFO] 01:50:13:208 Kernel/(29068:29211): Se recibió del carpincho 1 un MEM ALLOC con el tamañi 10
+[INFO] 01:50:13:249 Kernel/(29068:29211): Se recibió del carpincho 1 un MEM ALLOC con el tamañi 23
+[INFO] 01:50:13:290 Kernel/(29068:29211): MATE_CLOSE: Se recibió del carpincho 1 un MATE CLOSE
+[INFO] 01:50:13:290 Kernel/(29068:29075): Carpincho 1 - Eliminado
+[INFO] 01:50:28:290 Kernel/(29368:29368): Log creado
+[INFO] 01:50:28:291 Kernel/(29368:29368): Configuración obtenida
+[INFO] 01:50:28:291 Kernel/(29368:29368): Semáforos inicializados
+[INFO] 01:50:28:291 Kernel/(29368:29368): Colas de dispositivos IO creadas
+[INFO] 01:50:28:291 Kernel/(29368:29368): Se creó el hilo gestor de la IO laguna
+[INFO] 01:50:28:291 Kernel/(29368:29368): Inicio colas de planificación
+[INFO] 01:50:28:292 Kernel/(29368:29368): Hilo Planificador Corto Plazo creado
+[INFO] 01:50:28:292 Kernel/(29368:29368): Hilo Planificador Largo Plazo creado
+[INFO] 01:50:28:292 Kernel/(29368:29368): Hilo Detección Deadlock creado
+[INFO] 01:50:28:292 Kernel/(29368:29368): Hilo CPU creado
+[INFO] 01:50:52:467 Kernel/(29368:29696): Recibí el cliente 15
+[INFO] 01:50:52:467 Kernel/(29368:29696): ---------------NEW INSTANCE. Comienza creación del carpincho
+[INFO] 01:50:52:469 Kernel/(29368:29696): NEW INSTANCE: Se agregó el carpincho ID: 1 a la cola de new
+[INFO] 01:50:52:469 Kernel/(29368:29371): Llegó un carpincho al planificador de largo plazo
+[INFO] 01:50:52:469 Kernel/(29368:29371): No hay suspendidos. Se iniciará carpincho 1
+[INFO] 01:50:52:469 Kernel/(29368:29371): --------------Carpincho 1--------------
+[INFO] 01:50:52:469 Kernel/(29368:29371): Tiempo de espera: 0.000000
+[INFO] 01:50:52:469 Kernel/(29368:29371): Tiempo ejecutado: 0.000000
+[INFO] 01:50:52:469 Kernel/(29368:29371): Estimacion: 1.000000
+[INFO] 01:50:52:470 Kernel/(29368:29371): --------------Carpincho 1--------------
+[INFO] 01:50:52:470 Kernel/(29368:29371): Tiempo de espera: 0.000000
+[INFO] 01:50:52:470 Kernel/(29368:29371): Tiempo ejecutado: 0.000000
+[INFO] 01:50:52:470 Kernel/(29368:29371): Estimacion: 1.000000
+[INFO] 01:50:52:470 Kernel/(29368:29374): Carpincho 1 - Comienza a ejecutar
+[INFO] 01:50:52:509 Kernel/(29368:29696): Se recibió del carpincho 1 un MEM ALLOC con el tamañi 23
+[INFO] 01:51:18:298 Kernel/(29368:29372): Comienza la ejecución de la detección de Deadlock
+[INFO] 01:52:08:298 Kernel/(29368:29372): Comienza la ejecución de la detección de Deadlock
+[INFO] 01:52:09:312 Kernel/(29368:29696): Se recibió del carpincho 1 un MEM ALLOC con el tamañi 10
+[INFO] 01:52:09:312 Kernel/(29368:29696): Se recibió del carpincho 1 un MEM ALLOC con el tamañi 23
+[INFO] 01:53:04:580 Kernel/(30207:30207): Log creado
+[INFO] 01:53:04:581 Kernel/(30207:30207): Configuración obtenida
+[INFO] 01:53:04:581 Kernel/(30207:30207): Semáforos inicializados
+[INFO] 01:53:04:581 Kernel/(30207:30207): Colas de dispositivos IO creadas
+[INFO] 01:53:04:581 Kernel/(30207:30207): Se creó el hilo gestor de la IO laguna
+[INFO] 01:53:04:581 Kernel/(30207:30207): Inicio colas de planificación
+[INFO] 01:53:04:581 Kernel/(30207:30207): Hilo Planificador Corto Plazo creado
+[INFO] 01:53:04:581 Kernel/(30207:30207): Hilo Planificador Largo Plazo creado
+[INFO] 01:53:04:581 Kernel/(30207:30207): Hilo Detección Deadlock creado
+[INFO] 01:53:04:581 Kernel/(30207:30207): Hilo CPU creado
+[INFO] 01:53:08:689 Kernel/(30207:30354): Recibí el cliente 15
+[INFO] 01:53:08:689 Kernel/(30207:30354): ---------------NEW INSTANCE. Comienza creación del carpincho
+[INFO] 01:53:08:711 Kernel/(30207:30354): NEW INSTANCE: Se agregó el carpincho ID: 1 a la cola de new
+[INFO] 01:53:08:711 Kernel/(30207:30210): Llegó un carpincho al planificador de largo plazo
+[INFO] 01:53:08:711 Kernel/(30207:30210): No hay suspendidos. Se iniciará carpincho 1
+[INFO] 01:53:08:711 Kernel/(30207:30210): --------------Carpincho 1--------------
+[INFO] 01:53:08:711 Kernel/(30207:30210): Tiempo de espera: 0.000000
+[INFO] 01:53:08:711 Kernel/(30207:30210): Tiempo ejecutado: 0.000000
+[INFO] 01:53:08:711 Kernel/(30207:30210): Estimacion: 1.000000
+[INFO] 01:53:08:711 Kernel/(30207:30210): --------------Carpincho 1--------------
+[INFO] 01:53:08:711 Kernel/(30207:30210): Tiempo de espera: 0.000000
+[INFO] 01:53:08:711 Kernel/(30207:30210): Tiempo ejecutado: 0.000000
+[INFO] 01:53:08:711 Kernel/(30207:30210): Estimacion: 1.000000
+[INFO] 01:53:08:711 Kernel/(30207:30215): Carpincho 1 - Comienza a ejecutar
+[INFO] 01:53:08:748 Kernel/(30207:30354): Se recibió del carpincho 1 un MEM ALLOC con el tamañi 23
+[INFO] 01:53:08:829 Kernel/(30207:30354): Se recibió del carpincho 1 un MEM ALLOC con el tamañi 10
+[INFO] 01:53:08:869 Kernel/(30207:30354): Se recibió del carpincho 1 un MEM ALLOC con el tamañi 23
+[INFO] 01:53:08:911 Kernel/(30207:30354): MATE_CLOSE: Se recibió del carpincho 1 un MATE CLOSE
+[INFO] 01:53:08:911 Kernel/(30207:30215): Carpincho 1 - Eliminado
+[INFO] 01:53:14:158 Kernel/(30502:30502): Log creado
+[INFO] 01:53:14:159 Kernel/(30502:30502): Configuración obtenida
+[INFO] 01:53:14:159 Kernel/(30502:30502): Semáforos inicializados
+[INFO] 01:53:14:159 Kernel/(30502:30502): Colas de dispositivos IO creadas
+[INFO] 01:53:14:159 Kernel/(30502:30502): Se creó el hilo gestor de la IO laguna
+[INFO] 01:53:14:159 Kernel/(30502:30502): Inicio colas de planificación
+[INFO] 01:53:14:159 Kernel/(30502:30502): Hilo Planificador Corto Plazo creado
+[INFO] 01:53:14:159 Kernel/(30502:30502): Hilo Planificador Largo Plazo creado
+[INFO] 01:53:14:159 Kernel/(30502:30502): Hilo Detección Deadlock creado
+[INFO] 01:53:14:159 Kernel/(30502:30502): Hilo CPU creado
+[INFO] 01:53:35:527 Kernel/(30502:30691): Recibí el cliente 15
+[INFO] 01:53:35:527 Kernel/(30502:30691): ---------------NEW INSTANCE. Comienza creación del carpincho
+[INFO] 01:53:35:537 Kernel/(30502:30691): NEW INSTANCE: Se agregó el carpincho ID: 1 a la cola de new
+[INFO] 01:53:35:537 Kernel/(30502:30505): Llegó un carpincho al planificador de largo plazo
+[INFO] 01:53:35:537 Kernel/(30502:30505): No hay suspendidos. Se iniciará carpincho 1
+[INFO] 01:53:35:537 Kernel/(30502:30505): --------------Carpincho 1--------------
+[INFO] 01:53:35:537 Kernel/(30502:30505): Tiempo de espera: 0.000000
+[INFO] 01:53:35:537 Kernel/(30502:30505): Tiempo ejecutado: 0.000000
+[INFO] 01:53:35:537 Kernel/(30502:30505): Estimacion: 1.000000
+[INFO] 01:53:35:537 Kernel/(30502:30505): --------------Carpincho 1--------------
+[INFO] 01:53:35:537 Kernel/(30502:30505): Tiempo de espera: 0.000000
+[INFO] 01:53:35:537 Kernel/(30502:30505): Tiempo ejecutado: 0.000000
+[INFO] 01:53:35:537 Kernel/(30502:30505): Estimacion: 1.000000
+[INFO] 01:53:35:537 Kernel/(30502:30510): Carpincho 1 - Comienza a ejecutar
+[INFO] 01:53:35:577 Kernel/(30502:30691): Se recibió del carpincho 1 un MEM ALLOC con el tamañi 23
+[INFO] 01:54:03:655 Kernel/(30502:30691): Se recibió del carpincho 1 un MEM ALLOC con el tamañi 10
+[INFO] 01:54:04:161 Kernel/(30502:30506): Comienza la ejecución de la detección de Deadlock
+[INFO] 01:54:16:460 Kernel/(30502:30691): Se recibió del carpincho 1 un MEM ALLOC con el tamañi 23
+[INFO] 01:54:18:908 Kernel/(30502:30691): MATE_CLOSE: Se recibió del carpincho 1 un MATE CLOSE
+[INFO] 01:54:24:438 Kernel/(30893:30893): Log creado
+[INFO] 01:54:24:439 Kernel/(30893:30893): Configuración obtenida
+[INFO] 01:54:24:439 Kernel/(30893:30893): Semáforos inicializados
+[INFO] 01:54:24:439 Kernel/(30893:30893): Colas de dispositivos IO creadas
+[INFO] 01:54:24:439 Kernel/(30893:30893): Se creó el hilo gestor de la IO laguna
+[INFO] 01:54:24:439 Kernel/(30893:30893): Inicio colas de planificación
+[INFO] 01:54:24:439 Kernel/(30893:30893): Hilo Planificador Corto Plazo creado
+[INFO] 01:54:24:439 Kernel/(30893:30893): Hilo Planificador Largo Plazo creado
+[INFO] 01:54:24:439 Kernel/(30893:30893): Hilo Detección Deadlock creado
+[INFO] 01:54:24:439 Kernel/(30893:30893): Hilo CPU creado
+[INFO] 01:54:33:202 Kernel/(30893:31060): Recibí el cliente 15
+[INFO] 01:54:33:202 Kernel/(30893:31060): ---------------NEW INSTANCE. Comienza creación del carpincho
+[INFO] 01:54:33:209 Kernel/(30893:31060): NEW INSTANCE: Se agregó el carpincho ID: 1 a la cola de new
+[INFO] 01:54:33:209 Kernel/(30893:30896): Llegó un carpincho al planificador de largo plazo
+[INFO] 01:54:33:209 Kernel/(30893:30896): No hay suspendidos. Se iniciará carpincho 1
+[INFO] 01:54:33:209 Kernel/(30893:30896): --------------Carpincho 1--------------
+[INFO] 01:54:33:209 Kernel/(30893:30896): Tiempo de espera: 0.000000
+[INFO] 01:54:33:209 Kernel/(30893:30896): Tiempo ejecutado: 0.000000
+[INFO] 01:54:33:209 Kernel/(30893:30896): Estimacion: 1.000000
+[INFO] 01:54:33:209 Kernel/(30893:30896): --------------Carpincho 1--------------
+[INFO] 01:54:33:209 Kernel/(30893:30896): Tiempo de espera: 0.000000
+[INFO] 01:54:33:209 Kernel/(30893:30896): Tiempo ejecutado: 0.000000
+[INFO] 01:54:33:209 Kernel/(30893:30896): Estimacion: 1.000000
+[INFO] 01:54:33:209 Kernel/(30893:30901): Carpincho 1 - Comienza a ejecutar
+[INFO] 01:54:33:249 Kernel/(30893:31060): Se recibió del carpincho 1 un MEM ALLOC con el tamañi 23
+[INFO] 01:54:40:461 Kernel/(30893:31060): Se recibió del carpincho 1 un MEM ALLOC con el tamañi 10
+[INFO] 01:55:14:442 Kernel/(30893:30897): Comienza la ejecución de la detección de Deadlock
+[INFO] 01:57:24:742 Kernel/(32000:32000): Log creado
+[INFO] 01:57:24:743 Kernel/(32000:32000): Configuración obtenida
+[INFO] 01:57:24:743 Kernel/(32000:32000): Semáforos inicializados
+[INFO] 01:57:24:743 Kernel/(32000:32000): Colas de dispositivos IO creadas
+[INFO] 01:57:24:743 Kernel/(32000:32000): Se creó el hilo gestor de la IO laguna
+[INFO] 01:57:24:743 Kernel/(32000:32000): Inicio colas de planificación
+[INFO] 01:57:24:743 Kernel/(32000:32000): Hilo Planificador Corto Plazo creado
+[INFO] 01:57:24:743 Kernel/(32000:32000): Hilo Planificador Largo Plazo creado
+[INFO] 01:57:24:743 Kernel/(32000:32000): Hilo Detección Deadlock creado
+[INFO] 01:57:24:743 Kernel/(32000:32000): Hilo CPU creado
+[INFO] 01:57:37:351 Kernel/(32000:32313): Recibí el cliente 15
+[INFO] 01:57:37:351 Kernel/(32000:32313): ---------------NEW INSTANCE. Comienza creación del carpincho
+[INFO] 01:57:37:360 Kernel/(32000:32313): NEW INSTANCE: Se agregó el carpincho ID: 1 a la cola de new
+[INFO] 01:57:37:360 Kernel/(32000:32003): Llegó un carpincho al planificador de largo plazo
+[INFO] 01:57:37:360 Kernel/(32000:32003): No hay suspendidos. Se iniciará carpincho 1
+[INFO] 01:57:37:360 Kernel/(32000:32003): --------------Carpincho 1--------------
+[INFO] 01:57:37:360 Kernel/(32000:32003): Tiempo de espera: 0.000000
+[INFO] 01:57:37:360 Kernel/(32000:32003): Tiempo ejecutado: 0.000000
+[INFO] 01:57:37:360 Kernel/(32000:32003): Estimacion: 1.000000
+[INFO] 01:57:37:360 Kernel/(32000:32003): --------------Carpincho 1--------------
+[INFO] 01:57:37:360 Kernel/(32000:32003): Tiempo de espera: 0.000000
+[INFO] 01:57:37:360 Kernel/(32000:32003): Tiempo ejecutado: 0.000000
+[INFO] 01:57:37:360 Kernel/(32000:32003): Estimacion: 1.000000
+[INFO] 01:57:37:360 Kernel/(32000:32008): Carpincho 1 - Comienza a ejecutar
+[INFO] 01:57:37:399 Kernel/(32000:32313): Se recibió del carpincho 1 un MEM ALLOC con el tamañi 23
+[INFO] 01:57:37:477 Kernel/(32000:32313): Se recibió del carpincho 1 un MEM ALLOC con el tamañi 10
+[INFO] 01:57:37:478 Kernel/(32000:32313): Se recibió del carpincho 1 un MEM ALLOC con el tamañi 23
+[INFO] 01:57:37:518 Kernel/(32000:32313): MATE_CLOSE: Se recibió del carpincho 1 un MATE CLOSE
+[INFO] 01:57:37:518 Kernel/(32000:32008): Carpincho 1 - Eliminado
+[INFO] 01:58:29:802 Kernel/(32551:32551): Log creado
+[INFO] 01:58:29:805 Kernel/(32551:32551): Configuración obtenida
+[INFO] 01:58:29:805 Kernel/(32551:32551): Semáforos inicializados
+[INFO] 01:58:29:805 Kernel/(32551:32551): Colas de dispositivos IO creadas
+[INFO] 01:58:29:805 Kernel/(32551:32551): Se creó el hilo gestor de la IO laguna
+[INFO] 01:58:29:805 Kernel/(32551:32551): Inicio colas de planificación
+[INFO] 01:58:29:805 Kernel/(32551:32551): Hilo Planificador Corto Plazo creado
+[INFO] 01:58:29:805 Kernel/(32551:32551): Hilo Planificador Largo Plazo creado
+[INFO] 01:58:29:805 Kernel/(32551:32551): Hilo Detección Deadlock creado
+[INFO] 01:58:29:805 Kernel/(32551:32551): Hilo CPU creado
+[INFO] 01:58:33:940 Kernel/(32551:364): Recibí el cliente 15
+[INFO] 01:58:33:940 Kernel/(32551:364): ---------------NEW INSTANCE. Comienza creación del carpincho
+[INFO] 01:58:33:945 Kernel/(32551:364): NEW INSTANCE: Se agregó el carpincho ID: 1 a la cola de new
+[INFO] 01:58:33:945 Kernel/(32551:32554): Llegó un carpincho al planificador de largo plazo
+[INFO] 01:58:33:945 Kernel/(32551:32554): No hay suspendidos. Se iniciará carpincho 1
+[INFO] 01:58:33:945 Kernel/(32551:32554): --------------Carpincho 1--------------
+[INFO] 01:58:33:945 Kernel/(32551:32554): Tiempo de espera: 0.000000
+[INFO] 01:58:33:945 Kernel/(32551:32554): Tiempo ejecutado: 0.000000
+[INFO] 01:58:33:945 Kernel/(32551:32554): Estimacion: 1.000000
+[INFO] 01:58:33:945 Kernel/(32551:32554): --------------Carpincho 1--------------
+[INFO] 01:58:33:945 Kernel/(32551:32554): Tiempo de espera: 0.000000
+[INFO] 01:58:33:945 Kernel/(32551:32554): Tiempo ejecutado: 0.000000
+[INFO] 01:58:33:945 Kernel/(32551:32554): Estimacion: 1.000000
+[INFO] 01:58:33:945 Kernel/(32551:32558): Carpincho 1 - Comienza a ejecutar
+[INFO] 01:58:33:985 Kernel/(32551:364): Se recibió del carpincho 1 un MEM ALLOC con el tamañi 23
+[INFO] 01:58:34:068 Kernel/(32551:364): Se recibió del carpincho 1 un MEM ALLOC con el tamañi 10
+[INFO] 01:58:34:068 Kernel/(32551:364): Se recibió del carpincho 1 un MEM ALLOC con el tamañi 23
+[INFO] 01:58:34:114 Kernel/(32551:364): MATE_CLOSE: Se recibió del carpincho 1 un MATE CLOSE
+[INFO] 01:58:34:114 Kernel/(32551:32558): Carpincho 1 - Eliminado
+[INFO] 01:58:45:083 Kernel/(538:538): Log creado
+[INFO] 01:58:45:084 Kernel/(538:538): Configuración obtenida
+[INFO] 01:58:45:084 Kernel/(538:538): Semáforos inicializados
+[INFO] 01:58:45:084 Kernel/(538:538): Colas de dispositivos IO creadas
+[INFO] 01:58:45:084 Kernel/(538:538): Se creó el hilo gestor de la IO laguna
+[INFO] 01:58:45:084 Kernel/(538:538): Inicio colas de planificación
+[INFO] 01:58:45:084 Kernel/(538:538): Hilo Planificador Corto Plazo creado
+[INFO] 01:58:45:084 Kernel/(538:538): Hilo Planificador Largo Plazo creado
+[INFO] 01:58:45:084 Kernel/(538:538): Hilo Detección Deadlock creado
+[INFO] 01:58:45:084 Kernel/(538:538): Hilo CPU creado
+[INFO] 01:58:57:671 Kernel/(538:844): Recibí el cliente 15
+[INFO] 01:58:57:671 Kernel/(538:844): ---------------NEW INSTANCE. Comienza creación del carpincho
+[INFO] 01:58:57:682 Kernel/(538:844): NEW INSTANCE: Se agregó el carpincho ID: 1 a la cola de new
+[INFO] 01:58:57:682 Kernel/(538:541): Llegó un carpincho al planificador de largo plazo
+[INFO] 01:58:57:682 Kernel/(538:541): No hay suspendidos. Se iniciará carpincho 1
+[INFO] 01:58:57:682 Kernel/(538:541): --------------Carpincho 1--------------
+[INFO] 01:58:57:682 Kernel/(538:541): Tiempo de espera: 0.000000
+[INFO] 01:58:57:682 Kernel/(538:541): Tiempo ejecutado: 0.000000
+[INFO] 01:58:57:682 Kernel/(538:541): Estimacion: 1.000000
+[INFO] 01:58:57:682 Kernel/(538:541): --------------Carpincho 1--------------
+[INFO] 01:58:57:682 Kernel/(538:541): Tiempo de espera: 0.000000
+[INFO] 01:58:57:682 Kernel/(538:541): Tiempo ejecutado: 0.000000
+[INFO] 01:58:57:682 Kernel/(538:541): Estimacion: 1.000000
+[INFO] 01:58:57:683 Kernel/(538:546): Carpincho 1 - Comienza a ejecutar
+[INFO] 01:58:57:720 Kernel/(538:844): Se recibió del carpincho 1 un MEM ALLOC con el tamañi 23
+[INFO] 01:58:57:801 Kernel/(538:844): Se recibió del carpincho 1 un MEM ALLOC con el tamañi 23
+[INFO] 01:59:25:341 Kernel/(1044:1044): Log creado
+[INFO] 01:59:25:341 Kernel/(1044:1044): Configuración obtenida
+[INFO] 01:59:25:341 Kernel/(1044:1044): Semáforos inicializados
+[INFO] 01:59:25:341 Kernel/(1044:1044): Colas de dispositivos IO creadas
+[INFO] 01:59:25:341 Kernel/(1044:1044): Se creó el hilo gestor de la IO laguna
+[INFO] 01:59:25:341 Kernel/(1044:1044): Inicio colas de planificación
+[INFO] 01:59:25:341 Kernel/(1044:1044): Hilo Planificador Corto Plazo creado
+[INFO] 01:59:25:341 Kernel/(1044:1044): Hilo Planificador Largo Plazo creado
+[INFO] 01:59:25:341 Kernel/(1044:1044): Hilo Detección Deadlock creado
+[INFO] 01:59:25:341 Kernel/(1044:1044): Hilo CPU creado
+[INFO] 01:59:40:696 Kernel/(1044:1397): Recibí el cliente 15
+[INFO] 01:59:40:697 Kernel/(1044:1397): ---------------NEW INSTANCE. Comienza creación del carpincho
+[INFO] 01:59:40:705 Kernel/(1044:1397): NEW INSTANCE: Se agregó el carpincho ID: 1 a la cola de new
+[INFO] 01:59:40:705 Kernel/(1044:1048): Llegó un carpincho al planificador de largo plazo
+[INFO] 01:59:40:705 Kernel/(1044:1048): No hay suspendidos. Se iniciará carpincho 1
+[INFO] 01:59:40:705 Kernel/(1044:1048): --------------Carpincho 1--------------
+[INFO] 01:59:40:705 Kernel/(1044:1048): Tiempo de espera: 0.000000
+[INFO] 01:59:40:705 Kernel/(1044:1048): Tiempo ejecutado: 0.000000
+[INFO] 01:59:40:705 Kernel/(1044:1048): Estimacion: 1.000000
+[INFO] 01:59:40:705 Kernel/(1044:1048): --------------Carpincho 1--------------
+[INFO] 01:59:40:705 Kernel/(1044:1048): Tiempo de espera: 0.000000
+[INFO] 01:59:40:705 Kernel/(1044:1048): Tiempo ejecutado: 0.000000
+[INFO] 01:59:40:705 Kernel/(1044:1048): Estimacion: 1.000000
+[INFO] 01:59:40:705 Kernel/(1044:1052): Carpincho 1 - Comienza a ejecutar
+[INFO] 01:59:40:745 Kernel/(1044:1397): Se recibió del carpincho 1 un MEM ALLOC con el tamañi 23
+[INFO] 01:59:40:826 Kernel/(1044:1397): Se recibió del carpincho 1 un MEM ALLOC con el tamañi 23
+[INFO] 01:59:40:832 Kernel/(1044:1399): Recibí el cliente 16
+[INFO] 01:59:40:832 Kernel/(1044:1399): ---------------NEW INSTANCE. Comienza creación del carpincho
+[INFO] 01:59:40:905 Kernel/(1044:1399): NEW INSTANCE: Se agregó el carpincho ID: 2 a la cola de new
+[INFO] 01:59:40:905 Kernel/(1044:1048): Llegó un carpincho al planificador de largo plazo
+[INFO] 01:59:40:905 Kernel/(1044:1048): No hay suspendidos. Se iniciará carpincho 2
+[INFO] 01:59:40:905 Kernel/(1044:1048): --------------Carpincho 2--------------
+[INFO] 01:59:40:905 Kernel/(1044:1048): Tiempo de espera: 0.000000
+[INFO] 01:59:40:905 Kernel/(1044:1048): Tiempo ejecutado: 0.000000
+[INFO] 01:59:40:905 Kernel/(1044:1048): Estimacion: 1.000000
+[INFO] 01:59:40:905 Kernel/(1044:1048): --------------Carpincho 2--------------
+[INFO] 01:59:40:905 Kernel/(1044:1048): Tiempo de espera: 0.000000
+[INFO] 01:59:40:905 Kernel/(1044:1048): Tiempo ejecutado: 0.000000
+[INFO] 01:59:40:905 Kernel/(1044:1048): Estimacion: 1.000000
+[INFO] 01:59:40:905 Kernel/(1044:1057): Carpincho 2 - Comienza a ejecutar
+[INFO] 01:59:40:945 Kernel/(1044:1399): Se recibió del carpincho 2 un MEM ALLOC con el tamañi 23
+[INFO] 01:59:41:025 Kernel/(1044:1399): Se recibió del carpincho 2 un MEM ALLOC con el tamañi 23
+[INFO] 01:59:41:029 Kernel/(1044:1401): Recibí el cliente 21
+[INFO] 01:59:41:030 Kernel/(1044:1401): ---------------NEW INSTANCE. Comienza creación del carpincho
+[INFO] 01:59:41:104 Kernel/(1044:1401): NEW INSTANCE: Se agregó el carpincho ID: 3 a la cola de new
+[INFO] 01:59:41:104 Kernel/(1044:1048): Llegó un carpincho al planificador de largo plazo
+[INFO] 01:59:41:104 Kernel/(1044:1048): No hay suspendidos. Se iniciará carpincho 3
+[INFO] 01:59:41:104 Kernel/(1044:1048): --------------Carpincho 3--------------
+[INFO] 01:59:41:104 Kernel/(1044:1048): Tiempo de espera: 0.000000
+[INFO] 01:59:41:104 Kernel/(1044:1048): Tiempo ejecutado: 0.000000
+[INFO] 01:59:41:104 Kernel/(1044:1048): Estimacion: 1.000000
+[INFO] 01:59:41:104 Kernel/(1044:1048): --------------Carpincho 3--------------
+[INFO] 01:59:41:104 Kernel/(1044:1048): Tiempo de espera: 0.000000
+[INFO] 01:59:41:104 Kernel/(1044:1048): Tiempo ejecutado: 0.000000
+[INFO] 01:59:41:104 Kernel/(1044:1048): Estimacion: 1.000000
+[INFO] 01:59:41:105 Kernel/(1044:1053): Carpincho 3 - Comienza a ejecutar
+[INFO] 01:59:41:144 Kernel/(1044:1401): Se recibió del carpincho 3 un MEM ALLOC con el tamañi 23
+[INFO] 01:59:41:225 Kernel/(1044:1397): Se recibió del carpincho 1 un MEM ALLOC con el tamañi 23
+[INFO] 01:59:41:225 Kernel/(1044:1401): Se recibió del carpincho 3 un MEM ALLOC con el tamañi 23
+[INFO] 01:59:41:265 Kernel/(1044:1399): Se recibió del carpincho 2 un MEM ALLOC con el tamañi 23
+[INFO] 01:59:41:305 Kernel/(1044:1397): Se recibió del carpincho 1 un MEM ALLOC con el tamañi 10
+[INFO] 01:59:41:345 Kernel/(1044:1401): Se recibió del carpincho 3 un MEM ALLOC con el tamañi 23
+[INFO] 01:59:41:350 Kernel/(1044:1399): Se recibió del carpincho 2 un MEM ALLOC con el tamañi 10
+[INFO] 01:59:41:393 Kernel/(1044:1397): Se recibió del carpincho 1 un MEM write desde la posición 105 con el mensjaje Hola
+[INFO] 01:59:41:394 Kernel/(1044:1401): Se recibió del carpincho 3 un MEM ALLOC con el tamañi 10
+[INFO] 01:59:41:435 Kernel/(1044:1397): Se recibió del carpincho 1 un MEM write desde la posición 73 con el mensjaje Hola
+[INFO] 01:59:41:477 Kernel/(1044:1397): Se recibió del carpincho 1 un MEM write desde la posición 41 con el mensjaje Hola
+[INFO] 01:59:41:517 Kernel/(1044:1397): Se recibió del carpincho 1 un MEM write desde la posición 9 con el mensjaje Hola
+[INFO] 01:59:41:561 Kernel/(1044:1397): Se recibió del carpincho 1 un MEM ALLOC con el tamañi 23
+[INFO] 01:59:41:561 Kernel/(1044:1399): Se recibió del carpincho 2 un MEM write desde la posición 9 con el mensjaje Hola
+[INFO] 01:59:41:604 Kernel/(1044:1401): Se recibió del carpincho 3 un MEM write desde la posición 9 con el mensjaje Hola
+[INFO] 01:59:41:645 Kernel/(1044:1397): Se recibió del carpincho 1 un MEM ALLOC con el tamañi 23
+[INFO] 01:59:41:725 Kernel/(1044:1397): Se recibió del carpincho 1 un MEM ALLOC con el tamañi 23
+[INFO] 01:59:41:806 Kernel/(1044:1397): Se recibió del carpincho 1 un MEM ALLOC con el tamañi 23
+[INFO] 01:59:41:886 Kernel/(1044:1399): MATE_CLOSE: Se recibió del carpincho 2 un MATE CLOSE
+[INFO] 01:59:41:886 Kernel/(1044:1401): MATE_CLOSE: Se recibió del carpincho 3 un MATE CLOSE
+[INFO] 01:59:41:887 Kernel/(1044:1397): MATE_CLOSE: Se recibió del carpincho 1 un MATE CLOSE
+[INFO] 01:59:41:888 Kernel/(1044:1053): Carpincho 3 - Eliminado
+[INFO] 01:59:41:888 Kernel/(1044:1052): Carpincho 1 - Eliminado
+[INFO] 01:59:41:888 Kernel/(1044:1057): Carpincho 2 - Eliminado
+[INFO] 02:00:15:350 Kernel/(1044:1049): Comienza la ejecución de la detección de Deadlock
+[INFO] 02:02:34:465 Kernel/(1801:1801): Log creado
+[INFO] 02:02:34:466 Kernel/(1801:1801): Configuración obtenida
+[INFO] 02:02:34:466 Kernel/(1801:1801): Semáforos inicializados
+[INFO] 02:02:34:466 Kernel/(1801:1801): Colas de dispositivos IO creadas
+[INFO] 02:02:34:466 Kernel/(1801:1801): Se creó el hilo gestor de la IO laguna
+[INFO] 02:02:34:466 Kernel/(1801:1801): Inicio colas de planificación
+[INFO] 02:02:34:466 Kernel/(1801:1801): Hilo Planificador Corto Plazo creado
+[INFO] 02:02:34:466 Kernel/(1801:1801): Hilo Planificador Largo Plazo creado
+[INFO] 02:02:34:466 Kernel/(1801:1801): Hilo Detección Deadlock creado
+[INFO] 02:02:34:466 Kernel/(1801:1801): Hilo CPU creado
+[INFO] 02:02:48:357 Kernel/(1801:2130): Recibí el cliente 15
+[INFO] 02:02:48:357 Kernel/(1801:2130): ---------------NEW INSTANCE. Comienza creación del carpincho
+[INFO] 02:02:48:365 Kernel/(1801:2130): NEW INSTANCE: Se agregó el carpincho ID: 1 a la cola de new
+[INFO] 02:02:48:365 Kernel/(1801:1804): Llegó un carpincho al planificador de largo plazo
+[INFO] 02:02:48:365 Kernel/(1801:1804): No hay suspendidos. Se iniciará carpincho 1
+[INFO] 02:02:48:365 Kernel/(1801:1804): --------------Carpincho 1--------------
+[INFO] 02:02:48:365 Kernel/(1801:1804): Tiempo de espera: 0.000000
+[INFO] 02:02:48:365 Kernel/(1801:1804): Tiempo ejecutado: 0.000000
+[INFO] 02:02:48:365 Kernel/(1801:1804): Estimacion: 1.000000
+[INFO] 02:02:48:365 Kernel/(1801:1804): --------------Carpincho 1--------------
+[INFO] 02:02:48:365 Kernel/(1801:1804): Tiempo de espera: 0.000000
+[INFO] 02:02:48:365 Kernel/(1801:1804): Tiempo ejecutado: 0.000000
+[INFO] 02:02:48:365 Kernel/(1801:1804): Estimacion: 1.000000
+[INFO] 02:02:48:365 Kernel/(1801:1807): Carpincho 1 - Comienza a ejecutar
+[INFO] 02:02:48:405 Kernel/(1801:2130): Se recibió del carpincho 1 un MEM ALLOC con el tamañi 23
+[INFO] 02:03:24:468 Kernel/(1801:1805): Comienza la ejecución de la detección de Deadlock
+[INFO] 02:04:14:469 Kernel/(1801:1805): Comienza la ejecución de la detección de Deadlock
+[INFO] 02:05:04:470 Kernel/(1801:1805): Comienza la ejecución de la detección de Deadlock
+[INFO] 02:05:22:722 Kernel/(1801:2130): Se recibió del carpincho 1 un MEM ALLOC con el tamañi 23
+[INFO] 02:05:22:729 Kernel/(1801:2342): Recibí el cliente 16
+[INFO] 02:05:22:729 Kernel/(1801:2342): ---------------NEW INSTANCE. Comienza creación del carpincho
+[INFO] 02:05:54:470 Kernel/(1801:1805): Comienza la ejecución de la detección de Deadlock
+[INFO] 02:06:32:097 Kernel/(2919:2919): Log creado
+[INFO] 02:06:32:098 Kernel/(2919:2919): Configuración obtenida
+[INFO] 02:06:32:098 Kernel/(2919:2919): Semáforos inicializados
+[INFO] 02:06:32:098 Kernel/(2919:2919): Colas de dispositivos IO creadas
+[INFO] 02:06:32:098 Kernel/(2919:2919): Se creó el hilo gestor de la IO laguna
+[INFO] 02:06:32:098 Kernel/(2919:2919): Inicio colas de planificación
+[INFO] 02:06:32:098 Kernel/(2919:2919): Hilo Planificador Corto Plazo creado
+[INFO] 02:06:32:098 Kernel/(2919:2919): Hilo Planificador Largo Plazo creado
+[INFO] 02:06:32:098 Kernel/(2919:2919): Hilo Detección Deadlock creado
+[INFO] 02:06:32:098 Kernel/(2919:2919): Hilo CPU creado
+[INFO] 02:06:36:599 Kernel/(2919:2954): Recibí el cliente 15
+[INFO] 02:06:36:599 Kernel/(2919:2954): ---------------NEW INSTANCE. Comienza creación del carpincho
+[INFO] 02:06:36:605 Kernel/(2919:2954): NEW INSTANCE: Se agregó el carpincho ID: 1 a la cola de new
+[INFO] 02:06:36:605 Kernel/(2919:2922): Llegó un carpincho al planificador de largo plazo
+[INFO] 02:06:36:605 Kernel/(2919:2922): No hay suspendidos. Se iniciará carpincho 1
+[INFO] 02:06:36:605 Kernel/(2919:2922): --------------Carpincho 1--------------
+[INFO] 02:06:36:605 Kernel/(2919:2922): Tiempo de espera: 0.000000
+[INFO] 02:06:36:605 Kernel/(2919:2922): Tiempo ejecutado: 0.000000
+[INFO] 02:06:36:605 Kernel/(2919:2922): Estimacion: 1.000000
+[INFO] 02:06:36:605 Kernel/(2919:2922): --------------Carpincho 1--------------
+[INFO] 02:06:36:605 Kernel/(2919:2922): Tiempo de espera: 0.000000
+[INFO] 02:06:36:605 Kernel/(2919:2922): Tiempo ejecutado: 0.000000
+[INFO] 02:06:36:605 Kernel/(2919:2922): Estimacion: 1.000000
+[INFO] 02:06:36:605 Kernel/(2919:2925): Carpincho 1 - Comienza a ejecutar
+[INFO] 02:06:36:645 Kernel/(2919:2954): Se recibió del carpincho 1 un MEM ALLOC con el tamañi 23
+[INFO] 02:06:36:727 Kernel/(2919:2954): Se recibió del carpincho 1 un MEM ALLOC con el tamañi 23
+[INFO] 02:06:36:730 Kernel/(2919:2956): Recibí el cliente 16
+[INFO] 02:06:36:730 Kernel/(2919:2956): ---------------NEW INSTANCE. Comienza creación del carpincho
+[INFO] 02:06:36:809 Kernel/(2919:2956): NEW INSTANCE: Se agregó el carpincho ID: 2 a la cola de new
+[INFO] 02:06:36:809 Kernel/(2919:2922): Llegó un carpincho al planificador de largo plazo
+[INFO] 02:06:36:809 Kernel/(2919:2922): No hay suspendidos. Se iniciará carpincho 2
+[INFO] 02:06:36:809 Kernel/(2919:2922): --------------Carpincho 2--------------
+[INFO] 02:06:36:809 Kernel/(2919:2922): Tiempo de espera: 0.000000
+[INFO] 02:06:36:809 Kernel/(2919:2922): Tiempo ejecutado: 0.000000
+[INFO] 02:06:36:809 Kernel/(2919:2922): Estimacion: 1.000000
+[INFO] 02:06:36:809 Kernel/(2919:2922): --------------Carpincho 2--------------
+[INFO] 02:06:36:809 Kernel/(2919:2922): Tiempo de espera: 0.000000
+[INFO] 02:06:36:809 Kernel/(2919:2922): Tiempo ejecutado: 0.000000
+[INFO] 02:06:36:809 Kernel/(2919:2922): Estimacion: 1.000000
+[INFO] 02:06:36:809 Kernel/(2919:2935): Carpincho 2 - Comienza a ejecutar
+[INFO] 02:06:36:849 Kernel/(2919:2956): Se recibió del carpincho 2 un MEM ALLOC con el tamañi 23
+[INFO] 02:06:36:930 Kernel/(2919:2956): Se recibió del carpincho 2 un MEM ALLOC con el tamañi 23
+[INFO] 02:06:36:933 Kernel/(2919:2958): Recibí el cliente 21
+[INFO] 02:06:36:933 Kernel/(2919:2958): ---------------NEW INSTANCE. Comienza creación del carpincho
+[INFO] 02:06:37:010 Kernel/(2919:2958): NEW INSTANCE: Se agregó el carpincho ID: 3 a la cola de new
+[INFO] 02:06:37:011 Kernel/(2919:2922): Llegó un carpincho al planificador de largo plazo
+[INFO] 02:06:37:011 Kernel/(2919:2922): No hay suspendidos. Se iniciará carpincho 3
+[INFO] 02:06:37:011 Kernel/(2919:2922): --------------Carpincho 3--------------
+[INFO] 02:06:37:011 Kernel/(2919:2922): Tiempo de espera: 0.000000
+[INFO] 02:06:37:011 Kernel/(2919:2922): Tiempo ejecutado: 0.000000
+[INFO] 02:06:37:011 Kernel/(2919:2922): Estimacion: 1.000000
+[INFO] 02:06:37:011 Kernel/(2919:2922): --------------Carpincho 3--------------
+[INFO] 02:06:37:011 Kernel/(2919:2922): Tiempo de espera: 0.000000
+[INFO] 02:06:37:011 Kernel/(2919:2922): Tiempo ejecutado: 0.000000
+[INFO] 02:06:37:011 Kernel/(2919:2922): Estimacion: 1.000000
+[INFO] 02:06:37:011 Kernel/(2919:2930): Carpincho 3 - Comienza a ejecutar
+[INFO] 02:06:37:049 Kernel/(2919:2958): Se recibió del carpincho 3 un MEM ALLOC con el tamañi 23
+[INFO] 02:06:37:129 Kernel/(2919:2954): Se recibió del carpincho 1 un MEM ALLOC con el tamañi 23
+[INFO] 02:06:37:129 Kernel/(2919:2958): Se recibió del carpincho 3 un MEM ALLOC con el tamañi 23
+[INFO] 02:06:37:173 Kernel/(2919:2956): Se recibió del carpincho 2 un MEM ALLOC con el tamañi 23
+[INFO] 02:06:37:217 Kernel/(2919:2954): Se recibió del carpincho 1 un MEM ALLOC con el tamañi 10
+[INFO] 02:06:37:258 Kernel/(2919:2958): Se recibió del carpincho 3 un MEM ALLOC con el tamañi 23
+[INFO] 02:06:37:259 Kernel/(2919:2956): Se recibió del carpincho 2 un MEM ALLOC con el tamañi 10
+[INFO] 02:06:37:301 Kernel/(2919:2954): Se recibió del carpincho 1 un MEM write desde la posición 105 con el mensjaje Hola
+[INFO] 02:06:37:303 Kernel/(2919:2958): Se recibió del carpincho 3 un MEM ALLOC con el tamañi 10
+[INFO] 02:06:37:345 Kernel/(2919:2954): Se recibió del carpincho 1 un MEM write desde la posición 73 con el mensjaje Hola
+[INFO] 02:06:37:386 Kernel/(2919:2954): Se recibió del carpincho 1 un MEM write desde la posición 41 con el mensjaje Hola
+[INFO] 02:06:37:425 Kernel/(2919:2954): Se recibió del carpincho 1 un MEM write desde la posición 9 con el mensjaje Hola
+[INFO] 02:06:37:468 Kernel/(2919:2954): Se recibió del carpincho 1 un MEM ALLOC con el tamañi 23
+[INFO] 02:06:37:468 Kernel/(2919:2956): Se recibió del carpincho 2 un MEM write desde la posición 9 con el mensjaje Hola
+[INFO] 02:06:37:505 Kernel/(2919:2958): Se recibió del carpincho 3 un MEM write desde la posición 9 con el mensjaje Hola
+[INFO] 02:06:37:549 Kernel/(2919:2954): Se recibió del carpincho 1 un MEM ALLOC con el tamañi 23
+[INFO] 02:06:37:629 Kernel/(2919:2954): Se recibió del carpincho 1 un MEM ALLOC con el tamañi 23
+[INFO] 02:06:37:713 Kernel/(2919:2954): Se recibió del carpincho 1 un MEM ALLOC con el tamañi 23
+[INFO] 02:06:37:793 Kernel/(2919:2956): MATE_CLOSE: Se recibió del carpincho 2 un MATE CLOSE
+[INFO] 02:06:37:793 Kernel/(2919:2958): MATE_CLOSE: Se recibió del carpincho 3 un MATE CLOSE
+[INFO] 02:06:37:794 Kernel/(2919:2954): MATE_CLOSE: Se recibió del carpincho 1 un MATE CLOSE
+[INFO] 02:06:37:796 Kernel/(2919:2930): Carpincho 3 - Eliminado
+[INFO] 02:06:37:797 Kernel/(2919:2925): Carpincho 1 - Eliminado
+[INFO] 02:06:37:797 Kernel/(2919:2935): Carpincho 2 - Eliminado
+[INFO] 02:07:22:101 Kernel/(2919:2923): Comienza la ejecución de la detección de Deadlock
+[INFO] 02:11:45:831 Kernel/(3755:3755): Log creado
+[INFO] 02:11:45:832 Kernel/(3755:3755): Configuración obtenida
+[INFO] 02:11:45:832 Kernel/(3755:3755): Semáforos inicializados
+[INFO] 02:11:45:832 Kernel/(3755:3755): Colas de dispositivos IO creadas
+[INFO] 02:11:45:832 Kernel/(3755:3755): Se creó el hilo gestor de la IO laguna
+[INFO] 02:11:45:839 Kernel/(3755:3755): Inicio colas de planificación
+[INFO] 02:11:45:839 Kernel/(3755:3755): Hilo Planificador Corto Plazo creado
+[INFO] 02:11:45:839 Kernel/(3755:3755): Hilo Planificador Largo Plazo creado
+[INFO] 02:11:45:839 Kernel/(3755:3755): Hilo Detección Deadlock creado
+[INFO] 02:11:45:839 Kernel/(3755:3755): Hilo CPU creado
+[INFO] 02:11:56:518 Kernel/(3755:4045): Recibí el cliente 15
+[INFO] 02:11:56:518 Kernel/(3755:4045): ---------------NEW INSTANCE. Comienza creación del carpincho
+[INFO] 02:11:56:524 Kernel/(3755:4045): NEW INSTANCE: Se agregó el carpincho ID: 1 a la cola de new
+[INFO] 02:11:56:524 Kernel/(3755:3758): Llegó un carpincho al planificador de largo plazo
+[INFO] 02:11:56:524 Kernel/(3755:3758): No hay suspendidos. Se iniciará carpincho 1
+[INFO] 02:11:56:524 Kernel/(3755:3758): --------------Carpincho 1--------------
+[INFO] 02:11:56:524 Kernel/(3755:3758): Tiempo de espera: 0.000000
+[INFO] 02:11:56:524 Kernel/(3755:3758): Tiempo ejecutado: 0.000000
+[INFO] 02:11:56:524 Kernel/(3755:3758): Estimacion: 1.000000
+[INFO] 02:11:56:524 Kernel/(3755:3758): --------------Carpincho 1--------------
+[INFO] 02:11:56:524 Kernel/(3755:3758): Tiempo de espera: 0.000000
+[INFO] 02:11:56:524 Kernel/(3755:3758): Tiempo ejecutado: 0.000000
+[INFO] 02:11:56:524 Kernel/(3755:3758): Estimacion: 1.000000
+[INFO] 02:11:56:524 Kernel/(3755:3762): Carpincho 1 - Comienza a ejecutar
+[INFO] 02:11:56:561 Kernel/(3755:4045): Se recibió del carpincho 1 un MEM ALLOC con el tamañi 23
+[INFO] 02:11:56:642 Kernel/(3755:4045): Se recibió del carpincho 1 un MEM ALLOC con el tamañi 23
+[INFO] 02:11:56:645 Kernel/(3755:4047): Recibí el cliente 16
+[INFO] 02:11:56:645 Kernel/(3755:4047): ---------------NEW INSTANCE. Comienza creación del carpincho
+[INFO] 02:11:56:724 Kernel/(3755:4047): NEW INSTANCE: Se agregó el carpincho ID: 2 a la cola de new
+[INFO] 02:11:56:724 Kernel/(3755:3758): Llegó un carpincho al planificador de largo plazo
+[INFO] 02:11:56:724 Kernel/(3755:3758): No hay suspendidos. Se iniciará carpincho 2
+[INFO] 02:11:56:724 Kernel/(3755:3758): --------------Carpincho 2--------------
+[INFO] 02:11:56:724 Kernel/(3755:3758): Tiempo de espera: 0.000000
+[INFO] 02:11:56:724 Kernel/(3755:3758): Tiempo ejecutado: 0.000000
+[INFO] 02:11:56:724 Kernel/(3755:3758): Estimacion: 1.000000
+[INFO] 02:11:56:724 Kernel/(3755:3758): --------------Carpincho 2--------------
+[INFO] 02:11:56:724 Kernel/(3755:3758): Tiempo de espera: 0.000000
+[INFO] 02:11:56:724 Kernel/(3755:3758): Tiempo ejecutado: 0.000000
+[INFO] 02:11:56:724 Kernel/(3755:3758): Estimacion: 1.000000
+[INFO] 02:11:56:724 Kernel/(3755:3763): Carpincho 2 - Comienza a ejecutar
+[INFO] 02:11:56:761 Kernel/(3755:4047): Se recibió del carpincho 2 un MEM ALLOC con el tamañi 23
+[INFO] 02:11:56:841 Kernel/(3755:4047): Se recibió del carpincho 2 un MEM ALLOC con el tamañi 23
+[INFO] 02:11:56:845 Kernel/(3755:4049): Recibí el cliente 21
+[INFO] 02:11:56:845 Kernel/(3755:4049): ---------------NEW INSTANCE. Comienza creación del carpincho
+[INFO] 02:11:56:924 Kernel/(3755:4049): NEW INSTANCE: Se agregó el carpincho ID: 3 a la cola de new
+[INFO] 02:11:56:924 Kernel/(3755:3758): Llegó un carpincho al planificador de largo plazo
+[INFO] 02:11:56:924 Kernel/(3755:3758): No hay suspendidos. Se iniciará carpincho 3
+[INFO] 02:11:56:924 Kernel/(3755:3758): --------------Carpincho 3--------------
+[INFO] 02:11:56:924 Kernel/(3755:3758): Tiempo de espera: 0.000000
+[INFO] 02:11:56:924 Kernel/(3755:3758): Tiempo ejecutado: 0.000000
+[INFO] 02:11:56:924 Kernel/(3755:3758): Estimacion: 1.000000
+[INFO] 02:11:56:924 Kernel/(3755:3758): --------------Carpincho 3--------------
+[INFO] 02:11:56:924 Kernel/(3755:3758): Tiempo de espera: 0.000000
+[INFO] 02:11:56:924 Kernel/(3755:3758): Tiempo ejecutado: 0.000000
+[INFO] 02:11:56:924 Kernel/(3755:3758): Estimacion: 1.000000
+[INFO] 02:11:56:924 Kernel/(3755:3764): Carpincho 3 - Comienza a ejecutar
+[INFO] 02:11:56:961 Kernel/(3755:4049): Se recibió del carpincho 3 un MEM ALLOC con el tamañi 23
+[INFO] 02:11:57:041 Kernel/(3755:4045): Se recibió del carpincho 1 un MEM ALLOC con el tamañi 23
+[INFO] 02:11:57:041 Kernel/(3755:4049): Se recibió del carpincho 3 un MEM ALLOC con el tamañi 23
+[INFO] 02:11:57:083 Kernel/(3755:4047): Se recibió del carpincho 2 un MEM ALLOC con el tamañi 23
+[INFO] 02:11:57:122 Kernel/(3755:4045): Se recibió del carpincho 1 un MEM ALLOC con el tamañi 10
+[INFO] 02:11:57:170 Kernel/(3755:4049): Se recibió del carpincho 3 un MEM ALLOC con el tamañi 23
+[INFO] 02:11:57:171 Kernel/(3755:4047): Se recibió del carpincho 2 un MEM ALLOC con el tamañi 10
+[INFO] 02:11:57:209 Kernel/(3755:4045): Se recibió del carpincho 1 un MEM write desde la posición 105 con el mensjaje Hola
+[INFO] 02:11:57:210 Kernel/(3755:4049): Se recibió del carpincho 3 un MEM ALLOC con el tamañi 10
+[INFO] 02:11:57:248 Kernel/(3755:4045): Se recibió del carpincho 1 un MEM write desde la posición 73 con el mensjaje Hola
+[INFO] 02:11:57:289 Kernel/(3755:4045): Se recibió del carpincho 1 un MEM write desde la posición 41 con el mensjaje Hola
+[INFO] 02:11:57:330 Kernel/(3755:4045): Se recibió del carpincho 1 un MEM write desde la posición 9 con el mensjaje Hola
+[INFO] 02:11:57:369 Kernel/(3755:4047): Se recibió del carpincho 2 un MEM write desde la posición 9 con el mensjaje Hola
+[INFO] 02:11:57:369 Kernel/(3755:4045): Se recibió del carpincho 1 un MEM ALLOC con el tamañi 23
+[INFO] 02:11:57:411 Kernel/(3755:4049): Se recibió del carpincho 3 un MEM write desde la posición 9 con el mensjaje Hola
+[INFO] 02:11:57:465 Kernel/(3755:4045): Se recibió del carpincho 1 un MEM ALLOC con el tamañi 23
+[INFO] 02:11:57:545 Kernel/(3755:4045): Se recibió del carpincho 1 un MEM ALLOC con el tamañi 23
+[INFO] 02:11:57:625 Kernel/(3755:4045): Se recibió del carpincho 1 un MEM ALLOC con el tamañi 23
+[INFO] 02:11:57:706 Kernel/(3755:4047): MATE_CLOSE: Se recibió del carpincho 2 un MATE CLOSE
+[INFO] 02:11:57:706 Kernel/(3755:4049): MATE_CLOSE: Se recibió del carpincho 3 un MATE CLOSE
+[INFO] 02:11:57:713 Kernel/(3755:4045): MATE_CLOSE: Se recibió del carpincho 1 un MATE CLOSE
+[INFO] 02:11:57:714 Kernel/(3755:3764): Carpincho 3 - Eliminado
+[INFO] 02:11:57:714 Kernel/(3755:3762): Carpincho 1 - Eliminado
+[INFO] 02:11:57:714 Kernel/(3755:3763): Carpincho 2 - Eliminado
+[INFO] 02:14:35:580 Kernel/(4705:4705): Log creado
+[INFO] 02:14:35:580 Kernel/(4705:4705): Configuración obtenida
+[INFO] 02:14:35:581 Kernel/(4705:4705): Semáforos inicializados
+[INFO] 02:14:35:581 Kernel/(4705:4705): Colas de dispositivos IO creadas
+[INFO] 02:14:35:581 Kernel/(4705:4705): Se creó el hilo gestor de la IO laguna
+[INFO] 02:14:35:581 Kernel/(4705:4705): Inicio colas de planificación
+[INFO] 02:14:35:581 Kernel/(4705:4705): Hilo Planificador Corto Plazo creado
+[INFO] 02:14:35:581 Kernel/(4705:4705): Hilo Planificador Largo Plazo creado
+[INFO] 02:14:35:581 Kernel/(4705:4705): Hilo Detección Deadlock creado
+[INFO] 02:14:35:581 Kernel/(4705:4705): Hilo CPU creado
+[INFO] 02:15:09:787 Kernel/(5034:5034): Log creado
+[INFO] 02:15:09:794 Kernel/(5034:5034): Configuración obtenida
+[INFO] 02:15:09:794 Kernel/(5034:5034): Semáforos inicializados
+[INFO] 02:15:09:794 Kernel/(5034:5034): Colas de dispositivos IO creadas
+[INFO] 02:15:09:794 Kernel/(5034:5034): Se creó el hilo gestor de la IO laguna
+[INFO] 02:15:09:795 Kernel/(5034:5034): Inicio colas de planificación
+[INFO] 02:15:09:795 Kernel/(5034:5034): Hilo Planificador Corto Plazo creado
+[INFO] 02:15:09:795 Kernel/(5034:5034): Hilo Planificador Largo Plazo creado
+[INFO] 02:15:09:795 Kernel/(5034:5034): Hilo Detección Deadlock creado
+[INFO] 02:15:09:795 Kernel/(5034:5034): Hilo CPU creado
+[INFO] 02:15:24:653 Kernel/(5034:5348): Recibí el cliente 15
+[INFO] 02:15:24:653 Kernel/(5034:5348): ---------------NEW INSTANCE. Comienza creación del carpincho
+[INFO] 02:15:24:660 Kernel/(5034:5348): NEW INSTANCE: Se agregó el carpincho ID: 1 a la cola de new
+[INFO] 02:15:24:660 Kernel/(5034:5037): Llegó un carpincho al planificador de largo plazo
+[INFO] 02:15:24:660 Kernel/(5034:5037): No hay suspendidos. Se iniciará carpincho 1
+[INFO] 02:15:24:660 Kernel/(5034:5037): --------------Carpincho 1--------------
+[INFO] 02:15:24:660 Kernel/(5034:5037): Tiempo de espera: 0.000000
+[INFO] 02:15:24:660 Kernel/(5034:5037): Tiempo ejecutado: 0.000000
+[INFO] 02:15:24:660 Kernel/(5034:5037): Estimacion: 1.000000
+[INFO] 02:15:24:660 Kernel/(5034:5037): --------------Carpincho 1--------------
+[INFO] 02:15:24:660 Kernel/(5034:5037): Tiempo de espera: 0.000000
+[INFO] 02:15:24:661 Kernel/(5034:5037): Tiempo ejecutado: 0.000000
+[INFO] 02:15:24:661 Kernel/(5034:5037): Estimacion: 1.000000
+[INFO] 02:15:24:661 Kernel/(5034:5042): Carpincho 1 - Comienza a ejecutar
+[INFO] 02:15:24:697 Kernel/(5034:5348): Se recibió del carpincho 1 un MEM ALLOC con el tamañi 23
+[INFO] 02:15:24:780 Kernel/(5034:5350): Recibí el cliente 16
+[INFO] 02:15:24:781 Kernel/(5034:5350): ---------------NEW INSTANCE. Comienza creación del carpincho
+[INFO] 02:15:24:825 Kernel/(5034:5350): NEW INSTANCE: Se agregó el carpincho ID: 2 a la cola de new
+[INFO] 02:15:24:825 Kernel/(5034:5037): Llegó un carpincho al planificador de largo plazo
+[INFO] 02:15:24:825 Kernel/(5034:5037): No hay suspendidos. Se iniciará carpincho 2
+[INFO] 02:15:24:825 Kernel/(5034:5037): --------------Carpincho 2--------------
+[INFO] 02:15:24:825 Kernel/(5034:5037): Tiempo de espera: 0.000000
+[INFO] 02:15:24:825 Kernel/(5034:5037): Tiempo ejecutado: 0.000000
+[INFO] 02:15:24:825 Kernel/(5034:5037): Estimacion: 1.000000
+[INFO] 02:15:24:825 Kernel/(5034:5037): --------------Carpincho 2--------------
+[INFO] 02:15:24:825 Kernel/(5034:5037): Tiempo de espera: 0.000000
+[INFO] 02:15:24:825 Kernel/(5034:5037): Tiempo ejecutado: 0.000000
+[INFO] 02:15:24:825 Kernel/(5034:5037): Estimacion: 1.000000
+[INFO] 02:15:24:825 Kernel/(5034:5043): Carpincho 2 - Comienza a ejecutar
+[INFO] 02:15:24:865 Kernel/(5034:5350): Se recibió del carpincho 2 un MEM ALLOC con el tamañi 23
+[INFO] 02:15:24:957 Kernel/(5034:5352): Recibí el cliente 21
+[INFO] 02:15:24:960 Kernel/(5034:5352): ---------------NEW INSTANCE. Comienza creación del carpincho
+[INFO] 02:15:25:001 Kernel/(5034:5352): NEW INSTANCE: Se agregó el carpincho ID: 3 a la cola de new
+[INFO] 02:15:25:001 Kernel/(5034:5037): Llegó un carpincho al planificador de largo plazo
+[INFO] 02:15:25:001 Kernel/(5034:5037): No hay suspendidos. Se iniciará carpincho 3
+[INFO] 02:15:25:001 Kernel/(5034:5037): --------------Carpincho 3--------------
+[INFO] 02:15:25:001 Kernel/(5034:5037): Tiempo de espera: 0.000000
+[INFO] 02:15:25:001 Kernel/(5034:5037): Tiempo ejecutado: 0.000000
+[INFO] 02:15:25:001 Kernel/(5034:5037): Estimacion: 1.000000
+[INFO] 02:15:25:001 Kernel/(5034:5037): --------------Carpincho 3--------------
+[INFO] 02:15:25:001 Kernel/(5034:5037): Tiempo de espera: 0.000000
+[INFO] 02:15:25:001 Kernel/(5034:5037): Tiempo ejecutado: 0.000000
+[INFO] 02:15:25:001 Kernel/(5034:5037): Estimacion: 1.000000
+[INFO] 02:15:25:001 Kernel/(5034:5044): Carpincho 3 - Comienza a ejecutar
+[INFO] 02:15:25:041 Kernel/(5034:5352): Se recibió del carpincho 3 un MEM ALLOC con el tamañi 23
+[INFO] 02:15:39:022 Kernel/(5034:5352): Se recibió un código erróneo del cliente 21
+[INFO] 02:15:39:022 Kernel/(5034:5352): Carpincho 3 - Eliminado
+[INFO] 02:15:39:023 Kernel/(5034:5350): Se recibió un código erróneo del cliente 16
+[INFO] 02:15:39:023 Kernel/(5034:5350): Carpincho 2 - Eliminado
+[INFO] 02:15:39:023 Kernel/(5034:5348): Se recibió un código erróneo del cliente 15
+[INFO] 02:15:39:023 Kernel/(5034:5348): Carpincho 1 - Eliminado
+[INFO] 02:15:49:141 Kernel/(5801:5801): Log creado
+[INFO] 02:15:49:141 Kernel/(5801:5801): Configuración obtenida
+[INFO] 02:15:49:141 Kernel/(5801:5801): Semáforos inicializados
+[INFO] 02:15:49:141 Kernel/(5801:5801): Colas de dispositivos IO creadas
+[INFO] 02:15:49:141 Kernel/(5801:5801): Se creó el hilo gestor de la IO laguna
+[INFO] 02:15:49:141 Kernel/(5801:5801): Inicio colas de planificación
+[INFO] 02:15:49:141 Kernel/(5801:5801): Hilo Planificador Corto Plazo creado
+[INFO] 02:15:49:141 Kernel/(5801:5801): Hilo Planificador Largo Plazo creado
+[INFO] 02:15:49:141 Kernel/(5801:5801): Hilo Detección Deadlock creado
+[INFO] 02:15:49:141 Kernel/(5801:5801): Hilo CPU creado
+[INFO] 02:16:00:269 Kernel/(5801:5846): Recibí el cliente 15
+[INFO] 02:16:00:269 Kernel/(5801:5846): ---------------NEW INSTANCE. Comienza creación del carpincho
+[INFO] 02:16:00:275 Kernel/(5801:5846): NEW INSTANCE: Se agregó el carpincho ID: 1 a la cola de new
+[INFO] 02:16:00:275 Kernel/(5801:5804): Llegó un carpincho al planificador de largo plazo
+[INFO] 02:16:00:275 Kernel/(5801:5804): No hay suspendidos. Se iniciará carpincho 1
+[INFO] 02:16:00:275 Kernel/(5801:5804): --------------Carpincho 1--------------
+[INFO] 02:16:00:275 Kernel/(5801:5804): Tiempo de espera: 0.000000
+[INFO] 02:16:00:275 Kernel/(5801:5804): Tiempo ejecutado: 0.000000
+[INFO] 02:16:00:275 Kernel/(5801:5804): Estimacion: 1.000000
+[INFO] 02:16:00:275 Kernel/(5801:5804): --------------Carpincho 1--------------
+[INFO] 02:16:00:275 Kernel/(5801:5804): Tiempo de espera: 0.000000
+[INFO] 02:16:00:275 Kernel/(5801:5804): Tiempo ejecutado: 0.000000
+[INFO] 02:16:00:275 Kernel/(5801:5804): Estimacion: 1.000000
+[INFO] 02:16:00:275 Kernel/(5801:5807): Carpincho 1 - Comienza a ejecutar
+[INFO] 02:16:00:313 Kernel/(5801:5846): Se recibió del carpincho 1 un MEM ALLOC con el tamañi 23
+[INFO] 02:16:00:397 Kernel/(5801:5848): Recibí el cliente 16
+[INFO] 02:16:00:397 Kernel/(5801:5848): ---------------NEW INSTANCE. Comienza creación del carpincho
+[INFO] 02:16:00:441 Kernel/(5801:5848): NEW INSTANCE: Se agregó el carpincho ID: 2 a la cola de new
+[INFO] 02:16:00:441 Kernel/(5801:5804): Llegó un carpincho al planificador de largo plazo
+[INFO] 02:16:00:441 Kernel/(5801:5804): No hay suspendidos. Se iniciará carpincho 2
+[INFO] 02:16:00:441 Kernel/(5801:5804): --------------Carpincho 2--------------
+[INFO] 02:16:00:441 Kernel/(5801:5804): Tiempo de espera: 0.000000
+[INFO] 02:16:00:441 Kernel/(5801:5804): Tiempo ejecutado: 0.000000
+[INFO] 02:16:00:441 Kernel/(5801:5804): Estimacion: 1.000000
+[INFO] 02:16:00:441 Kernel/(5801:5804): --------------Carpincho 2--------------
+[INFO] 02:16:00:441 Kernel/(5801:5804): Tiempo de espera: 0.000000
+[INFO] 02:16:00:441 Kernel/(5801:5804): Tiempo ejecutado: 0.000000
+[INFO] 02:16:00:441 Kernel/(5801:5804): Estimacion: 1.000000
+[INFO] 02:16:00:441 Kernel/(5801:5808): Carpincho 2 - Comienza a ejecutar
+[INFO] 02:16:00:481 Kernel/(5801:5848): Se recibió del carpincho 2 un MEM ALLOC con el tamañi 23
+[INFO] 02:16:00:563 Kernel/(5801:5850): Recibí el cliente 21
+[INFO] 02:16:00:564 Kernel/(5801:5850): ---------------NEW INSTANCE. Comienza creación del carpincho
+[INFO] 02:16:00:609 Kernel/(5801:5850): NEW INSTANCE: Se agregó el carpincho ID: 3 a la cola de new
+[INFO] 02:16:00:609 Kernel/(5801:5804): Llegó un carpincho al planificador de largo plazo
+[INFO] 02:16:00:609 Kernel/(5801:5804): No hay suspendidos. Se iniciará carpincho 3
+[INFO] 02:16:00:609 Kernel/(5801:5804): --------------Carpincho 3--------------
+[INFO] 02:16:00:609 Kernel/(5801:5804): Tiempo de espera: 0.000000
+[INFO] 02:16:00:609 Kernel/(5801:5804): Tiempo ejecutado: 0.000000
+[INFO] 02:16:00:609 Kernel/(5801:5804): Estimacion: 1.000000
+[INFO] 02:16:00:609 Kernel/(5801:5804): --------------Carpincho 3--------------
+[INFO] 02:16:00:609 Kernel/(5801:5804): Tiempo de espera: 0.000000
+[INFO] 02:16:00:609 Kernel/(5801:5804): Tiempo ejecutado: 0.000000
+[INFO] 02:16:00:609 Kernel/(5801:5804): Estimacion: 1.000000
+[INFO] 02:16:00:609 Kernel/(5801:5809): Carpincho 3 - Comienza a ejecutar
+[INFO] 02:16:00:649 Kernel/(5801:5850): Se recibió del carpincho 3 un MEM ALLOC con el tamañi 23
+[INFO] 02:16:00:729 Kernel/(5801:5846): Se recibió del carpincho 1 un MEM ALLOC con el tamañi 23
+[INFO] 02:16:00:771 Kernel/(5801:5848): Se recibió del carpincho 2 un MEM ALLOC con el tamañi 23
+[INFO] 02:16:00:817 Kernel/(5801:5850): Se recibió del carpincho 3 un MEM ALLOC con el tamañi 23
+[INFO] 02:16:00:857 Kernel/(5801:5846): Se recibió del carpincho 1 un MEM ALLOC con el tamañi 23
+[INFO] 02:16:00:908 Kernel/(5801:5848): Se recibió del carpincho 2 un MEM ALLOC con el tamañi 23
+[INFO] 02:16:00:953 Kernel/(5801:5850): Se recibió del carpincho 3 un MEM ALLOC con el tamañi 23
+[INFO] 02:16:01:003 Kernel/(5801:5846): Se recibió del carpincho 1 un MEM ALLOC con el tamañi 10
+[INFO] 02:16:01:005 Kernel/(5801:5848): Se recibió del carpincho 2 un MEM ALLOC con el tamañi 10
+[INFO] 02:16:01:008 Kernel/(5801:5850): Se recibió del carpincho 3 un MEM ALLOC con el tamañi 10
+[INFO] 02:16:01:060 Kernel/(5801:5846): Se recibió del carpincho 1 un MEM write desde la posición 105 con el mensjaje Hola
+[INFO] 02:16:01:104 Kernel/(5801:5846): Se recibió del carpincho 1 un MEM write desde la posición 73 con el mensjaje Hola
+[INFO] 02:16:01:145 Kernel/(5801:5846): Se recibió del carpincho 1 un MEM write desde la posición 41 con el mensjaje Hola
+[INFO] 02:16:01:192 Kernel/(5801:5846): Se recibió del carpincho 1 un MEM write desde la posición 9 con el mensjaje Hola
+[INFO] 02:16:01:277 Kernel/(5801:5848): Se recibió del carpincho 2 un MEM write desde la posición 9 con el mensjaje Hola
+[INFO] 02:16:01:356 Kernel/(5801:5850): Se recibió del carpincho 3 un MEM write desde la posición 9 con el mensjaje Hola
+[INFO] 02:16:01:397 Kernel/(5801:5846): Se recibió del carpincho 1 un MEM ALLOC con el tamañi 23
+[INFO] 02:16:01:477 Kernel/(5801:5846): Se recibió del carpincho 1 un MEM ALLOC con el tamañi 23
+[INFO] 02:16:01:561 Kernel/(5801:5846): Se recibió del carpincho 1 un MEM ALLOC con el tamañi 23
+[INFO] 02:16:01:641 Kernel/(5801:5846): Se recibió del carpincho 1 un MEM ALLOC con el tamañi 23
+[INFO] 02:16:01:726 Kernel/(5801:5848): MATE_CLOSE: Se recibió del carpincho 2 un MATE CLOSE
+[INFO] 02:16:01:726 Kernel/(5801:5850): MATE_CLOSE: Se recibió del carpincho 3 un MATE CLOSE
+[INFO] 02:16:01:727 Kernel/(5801:5846): MATE_CLOSE: Se recibió del carpincho 1 un MATE CLOSE
+[INFO] 02:16:01:727 Kernel/(5801:5809): Carpincho 3 - Eliminado
+[INFO] 02:16:01:728 Kernel/(5801:5807): Carpincho 1 - Eliminado
+[INFO] 02:16:01:728 Kernel/(5801:5808): Carpincho 2 - Eliminado
+[INFO] 02:16:39:142 Kernel/(5801:5805): Comienza la ejecución de la detección de Deadlock
+[INFO] 02:17:29:143 Kernel/(5801:5805): Comienza la ejecución de la detección de Deadlock
+[INFO] 02:18:36:059 Kernel/(6254:6254): Log creado
+[INFO] 02:18:36:068 Kernel/(6254:6254): Configuración obtenida
+[INFO] 02:18:36:068 Kernel/(6254:6254): Semáforos inicializados
+[INFO] 02:18:36:068 Kernel/(6254:6254): Colas de dispositivos IO creadas
+[INFO] 02:18:36:068 Kernel/(6254:6254): Se creó el hilo gestor de la IO laguna
+[INFO] 02:18:36:068 Kernel/(6254:6254): Inicio colas de planificación
+[INFO] 02:18:36:068 Kernel/(6254:6254): Hilo Planificador Corto Plazo creado
+[INFO] 02:18:36:068 Kernel/(6254:6254): Hilo Planificador Largo Plazo creado
+[INFO] 02:18:36:069 Kernel/(6254:6254): Hilo Detección Deadlock creado
+[INFO] 02:18:36:069 Kernel/(6254:6254): Hilo CPU creado
+[INFO] 02:18:39:688 Kernel/(6254:6536): Recibí el cliente 15
+[INFO] 02:18:39:688 Kernel/(6254:6536): ---------------NEW INSTANCE. Comienza creación del carpincho
+[INFO] 02:18:39:695 Kernel/(6254:6536): NEW INSTANCE: Se agregó el carpincho ID: 1 a la cola de new
+[INFO] 02:18:39:695 Kernel/(6254:6257): Llegó un carpincho al planificador de largo plazo
+[INFO] 02:18:39:695 Kernel/(6254:6257): No hay suspendidos. Se iniciará carpincho 1
+[INFO] 02:18:39:695 Kernel/(6254:6257): --------------Carpincho 1--------------
+[INFO] 02:18:39:695 Kernel/(6254:6257): Tiempo de espera: 0.000000
+[INFO] 02:18:39:695 Kernel/(6254:6257): Tiempo ejecutado: 0.000000
+[INFO] 02:18:39:695 Kernel/(6254:6257): Estimacion: 1.000000
+[INFO] 02:18:39:695 Kernel/(6254:6257): --------------Carpincho 1--------------
+[INFO] 02:18:39:695 Kernel/(6254:6257): Tiempo de espera: 0.000000
+[INFO] 02:18:39:695 Kernel/(6254:6257): Tiempo ejecutado: 0.000000
+[INFO] 02:18:39:695 Kernel/(6254:6257): Estimacion: 1.000000
+[INFO] 02:18:39:695 Kernel/(6254:6260): Carpincho 1 - Comienza a ejecutar
+[INFO] 02:18:39:732 Kernel/(6254:6536): Se recibió del carpincho 1 un MEM ALLOC con el tamañi 23
+[INFO] 02:18:39:816 Kernel/(6254:6538): Recibí el cliente 16
+[INFO] 02:18:39:816 Kernel/(6254:6538): ---------------NEW INSTANCE. Comienza creación del carpincho
+[INFO] 02:18:39:860 Kernel/(6254:6538): NEW INSTANCE: Se agregó el carpincho ID: 2 a la cola de new
+[INFO] 02:18:39:860 Kernel/(6254:6257): Llegó un carpincho al planificador de largo plazo
+[INFO] 02:18:39:860 Kernel/(6254:6257): No hay suspendidos. Se iniciará carpincho 2
+[INFO] 02:18:39:860 Kernel/(6254:6257): --------------Carpincho 2--------------
+[INFO] 02:18:39:860 Kernel/(6254:6257): Tiempo de espera: 0.000000
+[INFO] 02:18:39:860 Kernel/(6254:6257): Tiempo ejecutado: 0.000000
+[INFO] 02:18:39:860 Kernel/(6254:6257): Estimacion: 1.000000
+[INFO] 02:18:39:860 Kernel/(6254:6257): --------------Carpincho 2--------------
+[INFO] 02:18:39:860 Kernel/(6254:6257): Tiempo de espera: 0.000000
+[INFO] 02:18:39:860 Kernel/(6254:6257): Tiempo ejecutado: 0.000000
+[INFO] 02:18:39:860 Kernel/(6254:6257): Estimacion: 1.000000
+[INFO] 02:18:39:860 Kernel/(6254:6261): Carpincho 2 - Comienza a ejecutar
+[INFO] 02:18:39:900 Kernel/(6254:6538): Se recibió del carpincho 2 un MEM ALLOC con el tamañi 23
+[INFO] 02:18:39:982 Kernel/(6254:6540): Recibí el cliente 21
+[INFO] 02:18:39:982 Kernel/(6254:6540): ---------------NEW INSTANCE. Comienza creación del carpincho
+[INFO] 02:18:40:024 Kernel/(6254:6540): NEW INSTANCE: Se agregó el carpincho ID: 3 a la cola de new
+[INFO] 02:18:40:024 Kernel/(6254:6257): Llegó un carpincho al planificador de largo plazo
+[INFO] 02:18:40:024 Kernel/(6254:6257): No hay suspendidos. Se iniciará carpincho 3
+[INFO] 02:18:40:024 Kernel/(6254:6257): --------------Carpincho 3--------------
+[INFO] 02:18:40:024 Kernel/(6254:6257): Tiempo de espera: 0.000000
+[INFO] 02:18:40:024 Kernel/(6254:6257): Tiempo ejecutado: 0.000000
+[INFO] 02:18:40:024 Kernel/(6254:6257): Estimacion: 1.000000
+[INFO] 02:18:40:024 Kernel/(6254:6257): --------------Carpincho 3--------------
+[INFO] 02:18:40:024 Kernel/(6254:6257): Tiempo de espera: 0.000000
+[INFO] 02:18:40:025 Kernel/(6254:6257): Tiempo ejecutado: 0.000000
+[INFO] 02:18:40:025 Kernel/(6254:6257): Estimacion: 1.000000
+[INFO] 02:18:40:025 Kernel/(6254:6262): Carpincho 3 - Comienza a ejecutar
+[INFO] 02:18:40:064 Kernel/(6254:6540): Se recibió del carpincho 3 un MEM ALLOC con el tamañi 23
+[INFO] 02:18:40:145 Kernel/(6254:6536): Se recibió del carpincho 1 un MEM ALLOC con el tamañi 23
+[INFO] 02:18:40:187 Kernel/(6254:6538): Se recibió del carpincho 2 un MEM ALLOC con el tamañi 23
+[INFO] 02:18:40:228 Kernel/(6254:6540): Se recibió del carpincho 3 un MEM ALLOC con el tamañi 23
+[INFO] 02:18:40:272 Kernel/(6254:6536): Se recibió del carpincho 1 un MEM ALLOC con el tamañi 23
+[INFO] 02:18:40:317 Kernel/(6254:6538): Se recibió del carpincho 2 un MEM ALLOC con el tamañi 23
+[INFO] 02:18:40:361 Kernel/(6254:6540): Se recibió del carpincho 3 un MEM ALLOC con el tamañi 23
+[INFO] 02:18:40:409 Kernel/(6254:6536): Se recibió del carpincho 1 un MEM ALLOC con el tamañi 10
+[INFO] 02:18:40:410 Kernel/(6254:6538): Se recibió del carpincho 2 un MEM ALLOC con el tamañi 10
+[INFO] 02:18:40:411 Kernel/(6254:6540): Se recibió del carpincho 3 un MEM ALLOC con el tamañi 10
+[INFO] 02:18:40:449 Kernel/(6254:6536): Se recibió del carpincho 1 un MEM write desde la posición 105 con el mensjaje Hola
+[INFO] 02:18:40:489 Kernel/(6254:6536): Se recibió del carpincho 1 un MEM write desde la posición 73 con el mensjaje Hola
+[INFO] 02:18:40:529 Kernel/(6254:6536): Se recibió del carpincho 1 un MEM write desde la posición 41 con el mensjaje Hola
+[INFO] 02:18:40:569 Kernel/(6254:6536): Se recibió del carpincho 1 un MEM write desde la posición 9 con el mensjaje Hola
+[INFO] 02:18:40:648 Kernel/(6254:6538): Se recibió del carpincho 2 un MEM write desde la posición 9 con el mensjaje Hola
+[INFO] 02:18:40:730 Kernel/(6254:6540): Se recibió del carpincho 3 un MEM write desde la posición 9 con el mensjaje Hola
+[INFO] 02:18:40:773 Kernel/(6254:6536): Se recibió del carpincho 1 un MEM ALLOC con el tamañi 23
+[INFO] 02:18:40:865 Kernel/(6254:6536): Se recibió del carpincho 1 un MEM ALLOC con el tamañi 23
+[INFO] 02:18:40:946 Kernel/(6254:6536): Se recibió del carpincho 1 un MEM ALLOC con el tamañi 23
+[INFO] 02:18:41:025 Kernel/(6254:6536): Se recibió del carpincho 1 un MEM ALLOC con el tamañi 23
+[INFO] 02:18:41:105 Kernel/(6254:6538): MATE_CLOSE: Se recibió del carpincho 2 un MATE CLOSE
+[INFO] 02:18:41:105 Kernel/(6254:6540): MATE_CLOSE: Se recibió del carpincho 3 un MATE CLOSE
+[INFO] 02:18:41:106 Kernel/(6254:6536): MATE_CLOSE: Se recibió del carpincho 1 un MATE CLOSE
+[INFO] 02:18:41:107 Kernel/(6254:6262): Carpincho 3 - Eliminado
+[INFO] 02:18:41:107 Kernel/(6254:6260): Carpincho 1 - Eliminado
+[INFO] 02:18:41:107 Kernel/(6254:6261): Carpincho 2 - Eliminado
+[INFO] 02:19:38:356 Kernel/(6771:6771): Log creado
+[INFO] 02:19:38:361 Kernel/(6771:6771): Configuración obtenida
+[INFO] 02:19:38:362 Kernel/(6771:6771): Semáforos inicializados
+[INFO] 02:19:38:362 Kernel/(6771:6771): Colas de dispositivos IO creadas
+[INFO] 02:19:38:362 Kernel/(6771:6771): Se creó el hilo gestor de la IO laguna
+[INFO] 02:19:38:362 Kernel/(6771:6771): Inicio colas de planificación
+[INFO] 02:19:38:362 Kernel/(6771:6771): Hilo Planificador Corto Plazo creado
+[INFO] 02:19:38:362 Kernel/(6771:6771): Hilo Planificador Largo Plazo creado
+[INFO] 02:19:38:362 Kernel/(6771:6771): Hilo Detección Deadlock creado
+[INFO] 02:19:38:362 Kernel/(6771:6771): Hilo CPU creado
+[INFO] 02:19:43:141 Kernel/(6771:7053): Recibí el cliente 15
+[INFO] 02:19:43:141 Kernel/(6771:7053): ---------------NEW INSTANCE. Comienza creación del carpincho
+[INFO] 02:19:43:148 Kernel/(6771:7053): NEW INSTANCE: Se agregó el carpincho ID: 1 a la cola de new
+[INFO] 02:19:43:148 Kernel/(6771:6774): Llegó un carpincho al planificador de largo plazo
+[INFO] 02:19:43:148 Kernel/(6771:6774): No hay suspendidos. Se iniciará carpincho 1
+[INFO] 02:19:43:148 Kernel/(6771:6774): --------------Carpincho 1--------------
+[INFO] 02:19:43:148 Kernel/(6771:6774): Tiempo de espera: 0.000000
+[INFO] 02:19:43:148 Kernel/(6771:6774): Tiempo ejecutado: 0.000000
+[INFO] 02:19:43:148 Kernel/(6771:6774): Estimacion: 1.000000
+[INFO] 02:19:43:148 Kernel/(6771:6774): --------------Carpincho 1--------------
+[INFO] 02:19:43:148 Kernel/(6771:6774): Tiempo de espera: 0.000000
+[INFO] 02:19:43:148 Kernel/(6771:6774): Tiempo ejecutado: 0.000000
+[INFO] 02:19:43:148 Kernel/(6771:6774): Estimacion: 1.000000
+[INFO] 02:19:43:148 Kernel/(6771:6779): Carpincho 1 - Comienza a ejecutar
+[INFO] 02:19:43:186 Kernel/(6771:7053): Se recibió del carpincho 1 un MEM ALLOC con el tamañi 23
+[INFO] 02:19:43:268 Kernel/(6771:7055): Recibí el cliente 16
+[INFO] 02:19:43:268 Kernel/(6771:7055): ---------------NEW INSTANCE. Comienza creación del carpincho
+[INFO] 02:19:43:309 Kernel/(6771:7055): NEW INSTANCE: Se agregó el carpincho ID: 2 a la cola de new
+[INFO] 02:19:43:309 Kernel/(6771:6774): Llegó un carpincho al planificador de largo plazo
+[INFO] 02:19:43:309 Kernel/(6771:6774): No hay suspendidos. Se iniciará carpincho 2
+[INFO] 02:19:43:309 Kernel/(6771:6774): --------------Carpincho 2--------------
+[INFO] 02:19:43:309 Kernel/(6771:6774): Tiempo de espera: 0.000000
+[INFO] 02:19:43:309 Kernel/(6771:6774): Tiempo ejecutado: 0.000000
+[INFO] 02:19:43:309 Kernel/(6771:6774): Estimacion: 1.000000
+[INFO] 02:19:43:309 Kernel/(6771:6774): --------------Carpincho 2--------------
+[INFO] 02:19:43:309 Kernel/(6771:6774): Tiempo de espera: 0.000000
+[INFO] 02:19:43:309 Kernel/(6771:6774): Tiempo ejecutado: 0.000000
+[INFO] 02:19:43:309 Kernel/(6771:6774): Estimacion: 1.000000
+[INFO] 02:19:43:309 Kernel/(6771:6780): Carpincho 2 - Comienza a ejecutar
+[INFO] 02:19:43:348 Kernel/(6771:7055): Se recibió del carpincho 2 un MEM ALLOC con el tamañi 23
+[INFO] 02:19:43:447 Kernel/(6771:7057): Recibí el cliente 21
+[INFO] 02:19:43:453 Kernel/(6771:7057): ---------------NEW INSTANCE. Comienza creación del carpincho
+[INFO] 02:19:43:497 Kernel/(6771:7057): NEW INSTANCE: Se agregó el carpincho ID: 3 a la cola de new
+[INFO] 02:19:43:497 Kernel/(6771:6774): Llegó un carpincho al planificador de largo plazo
+[INFO] 02:19:43:497 Kernel/(6771:6774): No hay suspendidos. Se iniciará carpincho 3
+[INFO] 02:19:43:497 Kernel/(6771:6774): --------------Carpincho 3--------------
+[INFO] 02:19:43:497 Kernel/(6771:6774): Tiempo de espera: 0.000000
+[INFO] 02:19:43:497 Kernel/(6771:6774): Tiempo ejecutado: 0.000000
+[INFO] 02:19:43:497 Kernel/(6771:6774): Estimacion: 1.000000
+[INFO] 02:19:43:497 Kernel/(6771:6774): --------------Carpincho 3--------------
+[INFO] 02:19:43:497 Kernel/(6771:6774): Tiempo de espera: 0.000000
+[INFO] 02:19:43:497 Kernel/(6771:6774): Tiempo ejecutado: 0.000000
+[INFO] 02:19:43:497 Kernel/(6771:6774): Estimacion: 1.000000
+[INFO] 02:19:43:497 Kernel/(6771:6781): Carpincho 3 - Comienza a ejecutar
+[INFO] 02:19:43:537 Kernel/(6771:7057): Se recibió del carpincho 3 un MEM ALLOC con el tamañi 23
+[INFO] 02:19:43:617 Kernel/(6771:7053): Se recibió del carpincho 1 un MEM ALLOC con el tamañi 23
+[INFO] 02:19:43:658 Kernel/(6771:7055): Se recibió del carpincho 2 un MEM ALLOC con el tamañi 23
+[INFO] 02:19:43:697 Kernel/(6771:7057): Se recibió del carpincho 3 un MEM ALLOC con el tamañi 23
+[INFO] 02:19:43:741 Kernel/(6771:7053): Se recibió del carpincho 1 un MEM ALLOC con el tamañi 23
+[INFO] 02:19:43:785 Kernel/(6771:7055): Se recibió del carpincho 2 un MEM ALLOC con el tamañi 23
+[INFO] 02:19:43:825 Kernel/(6771:7057): Se recibió del carpincho 3 un MEM ALLOC con el tamañi 23
+[INFO] 02:19:43:865 Kernel/(6771:7053): Se recibió del carpincho 1 un MEM ALLOC con el tamañi 10
+[INFO] 02:19:43:867 Kernel/(6771:7055): Se recibió del carpincho 2 un MEM ALLOC con el tamañi 10
+[INFO] 02:19:43:868 Kernel/(6771:7057): Se recibió del carpincho 3 un MEM ALLOC con el tamañi 10
+[INFO] 02:19:43:908 Kernel/(6771:7053): Se recibió del carpincho 1 un MEM write desde la posición 105 con el mensjaje Hola
+[INFO] 02:19:43:948 Kernel/(6771:7053): Se recibió del carpincho 1 un MEM write desde la posición 73 con el mensjaje Hola
+[INFO] 02:19:43:989 Kernel/(6771:7053): Se recibió del carpincho 1 un MEM write desde la posición 41 con el mensjaje Hola
+[INFO] 02:19:44:029 Kernel/(6771:7053): Se recibió del carpincho 1 un MEM write desde la posición 9 con el mensjaje Hola
+[INFO] 02:19:44:110 Kernel/(6771:7055): Se recibió del carpincho 2 un MEM write desde la posición 9 con el mensjaje Hola
+[INFO] 02:19:44:188 Kernel/(6771:7057): Se recibió del carpincho 3 un MEM write desde la posición 9 con el mensjaje Hola
+[INFO] 02:19:44:228 Kernel/(6771:7053): Se recibió del carpincho 1 un MEM ALLOC con el tamañi 23
+[INFO] 02:19:44:614 Kernel/(6771:7053): Se recibió del carpincho 1 un MEM ALLOC con el tamañi 23
+[INFO] 02:19:44:962 Kernel/(6771:7053): Se recibió del carpincho 1 un MEM ALLOC con el tamañi 23
+[INFO] 02:19:45:313 Kernel/(6771:7053): Se recibió del carpincho 1 un MEM ALLOC con el tamañi 23
+[INFO] 02:19:45:655 Kernel/(6771:7055): MATE_CLOSE: Se recibió del carpincho 2 un MATE CLOSE
+[INFO] 02:19:45:655 Kernel/(6771:7057): MATE_CLOSE: Se recibió del carpincho 3 un MATE CLOSE
+[INFO] 02:19:45:656 Kernel/(6771:7053): MATE_CLOSE: Se recibió del carpincho 1 un MATE CLOSE
+[INFO] 02:19:45:657 Kernel/(6771:6781): Carpincho 3 - Eliminado
+[INFO] 02:19:45:657 Kernel/(6771:6779): Carpincho 1 - Eliminado
+[INFO] 02:19:45:657 Kernel/(6771:6780): Carpincho 2 - Eliminado
+[INFO] 02:20:32:377 Kernel/(7417:7417): Log creado
+[INFO] 02:20:32:392 Kernel/(7417:7417): Configuración obtenida
+[INFO] 02:20:32:393 Kernel/(7417:7417): Semáforos inicializados
+[INFO] 02:20:32:393 Kernel/(7417:7417): Colas de dispositivos IO creadas
+[INFO] 02:20:32:393 Kernel/(7417:7417): Se creó el hilo gestor de la IO laguna
+[INFO] 02:20:32:393 Kernel/(7417:7417): Inicio colas de planificación
+[INFO] 02:20:32:393 Kernel/(7417:7417): Hilo Planificador Corto Plazo creado
+[INFO] 02:20:32:393 Kernel/(7417:7417): Hilo Planificador Largo Plazo creado
+[INFO] 02:20:32:393 Kernel/(7417:7417): Hilo Detección Deadlock creado
+[INFO] 02:20:32:393 Kernel/(7417:7417): Hilo CPU creado
+[INFO] 02:20:45:853 Kernel/(7417:7584): Recibí el cliente 15
+[INFO] 02:20:45:853 Kernel/(7417:7584): ---------------NEW INSTANCE. Comienza creación del carpincho
+[INFO] 02:20:45:862 Kernel/(7417:7584): NEW INSTANCE: Se agregó el carpincho ID: 1 a la cola de new
+[INFO] 02:20:45:862 Kernel/(7417:7421): Llegó un carpincho al planificador de largo plazo
+[INFO] 02:20:45:862 Kernel/(7417:7421): No hay suspendidos. Se iniciará carpincho 1
+[INFO] 02:20:45:862 Kernel/(7417:7421): --------------Carpincho 1--------------
+[INFO] 02:20:45:862 Kernel/(7417:7421): Tiempo de espera: 0.000000
+[INFO] 02:20:45:862 Kernel/(7417:7421): Tiempo ejecutado: 0.000000
+[INFO] 02:20:45:862 Kernel/(7417:7421): Estimacion: 1.000000
+[INFO] 02:20:45:862 Kernel/(7417:7421): --------------Carpincho 1--------------
+[INFO] 02:20:45:862 Kernel/(7417:7421): Tiempo de espera: 0.000000
+[INFO] 02:20:45:862 Kernel/(7417:7421): Tiempo ejecutado: 0.000000
+[INFO] 02:20:45:862 Kernel/(7417:7421): Estimacion: 1.000000
+[INFO] 02:20:45:862 Kernel/(7417:7425): Carpincho 1 - Comienza a ejecutar
+[INFO] 02:20:45:900 Kernel/(7417:7584): Se recibió del carpincho 1 un MEM ALLOC con el tamañi 23
+[INFO] 02:20:45:985 Kernel/(7417:7586): Recibí el cliente 16
+[INFO] 02:20:45:985 Kernel/(7417:7586): ---------------NEW INSTANCE. Comienza creación del carpincho
+[INFO] 02:20:46:037 Kernel/(7417:7586): NEW INSTANCE: Se agregó el carpincho ID: 2 a la cola de new
+[INFO] 02:20:46:037 Kernel/(7417:7421): Llegó un carpincho al planificador de largo plazo
+[INFO] 02:20:46:037 Kernel/(7417:7421): No hay suspendidos. Se iniciará carpincho 2
+[INFO] 02:20:46:037 Kernel/(7417:7421): --------------Carpincho 2--------------
+[INFO] 02:20:46:037 Kernel/(7417:7421): Tiempo de espera: 0.000000
+[INFO] 02:20:46:037 Kernel/(7417:7421): Tiempo ejecutado: 0.000000
+[INFO] 02:20:46:037 Kernel/(7417:7421): Estimacion: 1.000000
+[INFO] 02:20:46:037 Kernel/(7417:7421): --------------Carpincho 2--------------
+[INFO] 02:20:46:037 Kernel/(7417:7421): Tiempo de espera: 0.000000
+[INFO] 02:20:46:037 Kernel/(7417:7421): Tiempo ejecutado: 0.000000
+[INFO] 02:20:46:037 Kernel/(7417:7421): Estimacion: 1.000000
+[INFO] 02:20:46:037 Kernel/(7417:7426): Carpincho 2 - Comienza a ejecutar
+[INFO] 02:20:46:076 Kernel/(7417:7586): Se recibió del carpincho 2 un MEM ALLOC con el tamañi 23
+[INFO] 02:20:46:160 Kernel/(7417:7588): Recibí el cliente 21
+[INFO] 02:20:46:160 Kernel/(7417:7588): ---------------NEW INSTANCE. Comienza creación del carpincho
+[INFO] 02:20:46:205 Kernel/(7417:7588): NEW INSTANCE: Se agregó el carpincho ID: 3 a la cola de new
+[INFO] 02:20:46:205 Kernel/(7417:7421): Llegó un carpincho al planificador de largo plazo
+[INFO] 02:20:46:205 Kernel/(7417:7421): No hay suspendidos. Se iniciará carpincho 3
+[INFO] 02:20:46:205 Kernel/(7417:7421): --------------Carpincho 3--------------
+[INFO] 02:20:46:205 Kernel/(7417:7421): Tiempo de espera: 0.000000
+[INFO] 02:20:46:205 Kernel/(7417:7421): Tiempo ejecutado: 0.000000
+[INFO] 02:20:46:205 Kernel/(7417:7421): Estimacion: 1.000000
+[INFO] 02:20:46:205 Kernel/(7417:7421): --------------Carpincho 3--------------
+[INFO] 02:20:46:205 Kernel/(7417:7421): Tiempo de espera: 0.000000
+[INFO] 02:20:46:205 Kernel/(7417:7421): Tiempo ejecutado: 0.000000
+[INFO] 02:20:46:205 Kernel/(7417:7421): Estimacion: 1.000000
+[INFO] 02:20:46:205 Kernel/(7417:7427): Carpincho 3 - Comienza a ejecutar
+[INFO] 02:20:46:245 Kernel/(7417:7588): Se recibió del carpincho 3 un MEM ALLOC con el tamañi 23
+[INFO] 02:20:46:325 Kernel/(7417:7584): Se recibió del carpincho 1 un MEM ALLOC con el tamañi 23
+[INFO] 02:20:46:369 Kernel/(7417:7586): Se recibió del carpincho 2 un MEM ALLOC con el tamañi 23
+[INFO] 02:20:46:409 Kernel/(7417:7588): Se recibió del carpincho 3 un MEM ALLOC con el tamañi 23
+[INFO] 02:20:46:453 Kernel/(7417:7584): Se recibió del carpincho 1 un MEM ALLOC con el tamañi 23
+[INFO] 02:20:46:497 Kernel/(7417:7586): Se recibió del carpincho 2 un MEM ALLOC con el tamañi 23
+[INFO] 02:20:46:545 Kernel/(7417:7588): Se recibió del carpincho 3 un MEM ALLOC con el tamañi 23
+[INFO] 02:20:46:588 Kernel/(7417:7584): Se recibió del carpincho 1 un MEM ALLOC con el tamañi 23
+[INFO] 02:20:46:673 Kernel/(7417:7584): Se recibió del carpincho 1 un MEM ALLOC con el tamañi 23
+[INFO] 02:20:46:754 Kernel/(7417:7584): Se recibió del carpincho 1 un MEM ALLOC con el tamañi 23
+[INFO] 02:20:46:833 Kernel/(7417:7584): Se recibió del carpincho 1 un MEM ALLOC con el tamañi 23
+[INFO] 02:20:46:913 Kernel/(7417:7584): Se recibió del carpincho 1 un MEM write desde la posición 9 con el mensjaje Hola
+[INFO] 02:20:46:954 Kernel/(7417:7584): Se recibió del carpincho 1 un MEM write desde la posición 41 con el mensjaje Chau
+[INFO] 02:20:46:993 Kernel/(7417:7586): Se recibió del carpincho 2 un MEM READ desde la posición 9 con tamañio 5
+[INFO] 02:20:47:073 Kernel/(7417:7586): Se recibió del carpincho 2 un MEM READ desde la posición 41 con tamañio 5
+[INFO] 02:20:47:273 Kernel/(7417:7588): Se recibió del carpincho 3 un MEM READ desde la posición 9 con tamañio 5
+[INFO] 02:20:47:353 Kernel/(7417:7588): Se recibió del carpincho 3 un MEM READ desde la posición 41 con tamañio 5
+[INFO] 02:20:47:513 Kernel/(7417:7584): Se recibió del carpincho 1 un MEM write desde la posición 73 con el mensjaje Carpincho
+[INFO] 02:20:47:553 Kernel/(7417:7584): Se recibió del carpincho 1 un MEM write desde la posición 105 con el mensjaje Capibara
+[INFO] 02:20:47:594 Kernel/(7417:7584): Se recibió del carpincho 1 un MEM write desde la posición 137 con el mensjaje Hydrochaeris
+[INFO] 02:20:47:635 Kernel/(7417:7584): Se recibió del carpincho 1 un MEM ALLOC con el tamañi 21
+[INFO] 02:21:02:570 Kernel/(7417:7588): MATE_CLOSE: Se recibió del carpincho 3 un MATE CLOSE
+[INFO] 02:21:02:570 Kernel/(7417:7586): MATE_CLOSE: Se recibió del carpincho 2 un MATE CLOSE
+[INFO] 02:21:02:571 Kernel/(7417:7584): MATE_CLOSE: Se recibió del carpincho 1 un MATE CLOSE
+[INFO] 02:21:02:571 Kernel/(7417:7426): Carpincho 2 - Eliminado
+[INFO] 02:21:02:573 Kernel/(7417:7425): Carpincho 1 - Eliminado
+[INFO] 02:21:02:573 Kernel/(7417:7427): Carpincho 3 - Eliminado
+[INFO] 02:22:05:837 Kernel/(8004:8004): Log creado
+[INFO] 02:22:05:849 Kernel/(8004:8004): Configuración obtenida
+[INFO] 02:22:05:851 Kernel/(8004:8004): Semáforos inicializados
+[INFO] 02:22:05:851 Kernel/(8004:8004): Colas de dispositivos IO creadas
+[INFO] 02:22:05:851 Kernel/(8004:8004): Se creó el hilo gestor de la IO laguna
+[INFO] 02:22:05:851 Kernel/(8004:8004): Inicio colas de planificación
+[INFO] 02:22:05:851 Kernel/(8004:8004): Hilo Planificador Corto Plazo creado
+[INFO] 02:22:05:851 Kernel/(8004:8004): Hilo Planificador Largo Plazo creado
+[INFO] 02:22:05:851 Kernel/(8004:8004): Hilo Detección Deadlock creado
+[INFO] 02:22:05:851 Kernel/(8004:8004): Hilo CPU creado
+[INFO] 02:22:54:301 Kernel/(8498:8498): Log creado
+[INFO] 02:22:54:301 Kernel/(8498:8498): Configuración obtenida
+[INFO] 02:22:54:301 Kernel/(8498:8498): Semáforos inicializados
+[INFO] 02:22:54:301 Kernel/(8498:8498): Colas de dispositivos IO creadas
+[INFO] 02:22:54:301 Kernel/(8498:8498): Se creó el hilo gestor de la IO laguna
+[INFO] 02:22:54:301 Kernel/(8498:8498): Inicio colas de planificación
+[INFO] 02:22:54:301 Kernel/(8498:8498): Hilo Planificador Corto Plazo creado
+[INFO] 02:22:54:301 Kernel/(8498:8498): Hilo Planificador Largo Plazo creado
+[INFO] 02:22:54:301 Kernel/(8498:8498): Hilo Detección Deadlock creado
+[INFO] 02:22:54:301 Kernel/(8498:8498): Hilo CPU creado
+[INFO] 02:22:56:879 Kernel/(8498:8640): Recibí el cliente 15
+[INFO] 02:22:56:879 Kernel/(8498:8640): ---------------NEW INSTANCE. Comienza creación del carpincho
+[INFO] 02:22:56:890 Kernel/(8498:8640): NEW INSTANCE: Se agregó el carpincho ID: 1 a la cola de new
+[INFO] 02:22:56:890 Kernel/(8498:8501): Llegó un carpincho al planificador de largo plazo
+[INFO] 02:22:56:890 Kernel/(8498:8501): No hay suspendidos. Se iniciará carpincho 1
+[INFO] 02:22:56:890 Kernel/(8498:8501): --------------Carpincho 1--------------
+[INFO] 02:22:56:890 Kernel/(8498:8501): Tiempo de espera: 0.000000
+[INFO] 02:22:56:890 Kernel/(8498:8501): Tiempo ejecutado: 0.000000
+[INFO] 02:22:56:890 Kernel/(8498:8501): Estimacion: 1.000000
+[INFO] 02:22:56:890 Kernel/(8498:8501): --------------Carpincho 1--------------
+[INFO] 02:22:56:890 Kernel/(8498:8501): Tiempo de espera: 0.000000
+[INFO] 02:22:56:890 Kernel/(8498:8501): Tiempo ejecutado: 0.000000
+[INFO] 02:22:56:890 Kernel/(8498:8501): Estimacion: 1.000000
+[INFO] 02:22:56:890 Kernel/(8498:8505): Carpincho 1 - Comienza a ejecutar
+[INFO] 02:22:56:930 Kernel/(8498:8640): Se recibió del carpincho 1 un MEM ALLOC con el tamañi 23
+[INFO] 02:22:57:012 Kernel/(8498:8642): Recibí el cliente 16
+[INFO] 02:22:57:012 Kernel/(8498:8642): ---------------NEW INSTANCE. Comienza creación del carpincho
+[INFO] 02:22:57:057 Kernel/(8498:8642): NEW INSTANCE: Se agregó el carpincho ID: 2 a la cola de new
+[INFO] 02:22:57:057 Kernel/(8498:8501): Llegó un carpincho al planificador de largo plazo
+[INFO] 02:22:57:057 Kernel/(8498:8501): No hay suspendidos. Se iniciará carpincho 2
+[INFO] 02:22:57:057 Kernel/(8498:8501): --------------Carpincho 2--------------
+[INFO] 02:22:57:057 Kernel/(8498:8501): Tiempo de espera: 0.000000
+[INFO] 02:22:57:057 Kernel/(8498:8501): Tiempo ejecutado: 0.000000
+[INFO] 02:22:57:057 Kernel/(8498:8501): Estimacion: 1.000000
+[INFO] 02:22:57:057 Kernel/(8498:8501): --------------Carpincho 2--------------
+[INFO] 02:22:57:057 Kernel/(8498:8501): Tiempo de espera: 0.000000
+[INFO] 02:22:57:057 Kernel/(8498:8501): Tiempo ejecutado: 0.000000
+[INFO] 02:22:57:057 Kernel/(8498:8501): Estimacion: 1.000000
+[INFO] 02:22:57:057 Kernel/(8498:8506): Carpincho 2 - Comienza a ejecutar
+[INFO] 02:22:57:100 Kernel/(8498:8642): Se recibió del carpincho 2 un MEM ALLOC con el tamañi 23
+[INFO] 02:22:57:188 Kernel/(8498:8644): Recibí el cliente 21
+[INFO] 02:22:57:188 Kernel/(8498:8644): ---------------NEW INSTANCE. Comienza creación del carpincho
+[INFO] 02:22:57:233 Kernel/(8498:8644): NEW INSTANCE: Se agregó el carpincho ID: 3 a la cola de new
+[INFO] 02:22:57:233 Kernel/(8498:8501): Llegó un carpincho al planificador de largo plazo
+[INFO] 02:22:57:233 Kernel/(8498:8501): No hay suspendidos. Se iniciará carpincho 3
+[INFO] 02:22:57:233 Kernel/(8498:8501): --------------Carpincho 3--------------
+[INFO] 02:22:57:233 Kernel/(8498:8501): Tiempo de espera: 0.000000
+[INFO] 02:22:57:233 Kernel/(8498:8501): Tiempo ejecutado: 0.000000
+[INFO] 02:22:57:233 Kernel/(8498:8501): Estimacion: 1.000000
+[INFO] 02:22:57:233 Kernel/(8498:8501): --------------Carpincho 3--------------
+[INFO] 02:22:57:233 Kernel/(8498:8501): Tiempo de espera: 0.000000
+[INFO] 02:22:57:233 Kernel/(8498:8501): Tiempo ejecutado: 0.000000
+[INFO] 02:22:57:233 Kernel/(8498:8501): Estimacion: 1.000000
+[INFO] 02:22:57:233 Kernel/(8498:8507): Carpincho 3 - Comienza a ejecutar
+[INFO] 02:22:57:273 Kernel/(8498:8644): Se recibió del carpincho 3 un MEM ALLOC con el tamañi 23
+[INFO] 02:22:57:353 Kernel/(8498:8640): Se recibió del carpincho 1 un MEM ALLOC con el tamañi 23
+[INFO] 02:22:57:398 Kernel/(8498:8642): Se recibió del carpincho 2 un MEM ALLOC con el tamañi 23
+[INFO] 02:22:57:440 Kernel/(8498:8644): Se recibió del carpincho 3 un MEM ALLOC con el tamañi 23
+[INFO] 02:22:57:481 Kernel/(8498:8640): Se recibió del carpincho 1 un MEM ALLOC con el tamañi 23
+[INFO] 02:22:57:529 Kernel/(8498:8642): Se recibió del carpincho 2 un MEM ALLOC con el tamañi 23
+[INFO] 02:22:57:569 Kernel/(8498:8644): Se recibió del carpincho 3 un MEM ALLOC con el tamañi 23
+[INFO] 02:22:57:609 Kernel/(8498:8640): Se recibió del carpincho 1 un MEM ALLOC con el tamañi 10
+[INFO] 02:22:57:610 Kernel/(8498:8642): Se recibió del carpincho 2 un MEM ALLOC con el tamañi 10
+[INFO] 02:22:57:611 Kernel/(8498:8644): Se recibió del carpincho 3 un MEM ALLOC con el tamañi 10
+[INFO] 02:22:57:649 Kernel/(8498:8640): Se recibió del carpincho 1 un MEM write desde la posición 105 con el mensjaje Hola
+[INFO] 02:22:57:689 Kernel/(8498:8640): Se recibió del carpincho 1 un MEM write desde la posición 73 con el mensjaje Hola
+[INFO] 02:22:57:730 Kernel/(8498:8640): Se recibió del carpincho 1 un MEM write desde la posición 41 con el mensjaje Hola
+[INFO] 02:22:57:771 Kernel/(8498:8640): Se recibió del carpincho 1 un MEM write desde la posición 9 con el mensjaje Hola
+[INFO] 02:22:57:848 Kernel/(8498:8642): Se recibió del carpincho 2 un MEM write desde la posición 9 con el mensjaje Hola
+[INFO] 02:22:57:928 Kernel/(8498:8644): Se recibió del carpincho 3 un MEM write desde la posición 9 con el mensjaje Hola
+[INFO] 02:22:57:968 Kernel/(8498:8640): Se recibió del carpincho 1 un MEM ALLOC con el tamañi 23
+[INFO] 02:22:58:049 Kernel/(8498:8640): Se recibió del carpincho 1 un MEM ALLOC con el tamañi 23
+[INFO] 02:22:58:129 Kernel/(8498:8640): Se recibió del carpincho 1 un MEM ALLOC con el tamañi 23
+[INFO] 02:22:58:209 Kernel/(8498:8640): Se recibió del carpincho 1 un MEM ALLOC con el tamañi 23
+[INFO] 02:22:58:289 Kernel/(8498:8642): MATE_CLOSE: Se recibió del carpincho 2 un MATE CLOSE
+[INFO] 02:22:58:289 Kernel/(8498:8644): MATE_CLOSE: Se recibió del carpincho 3 un MATE CLOSE
+[INFO] 02:22:58:290 Kernel/(8498:8640): MATE_CLOSE: Se recibió del carpincho 1 un MATE CLOSE
+[INFO] 02:22:58:290 Kernel/(8498:8507): Carpincho 3 - Eliminado
+[INFO] 02:22:58:290 Kernel/(8498:8505): Carpincho 1 - Eliminado
+[INFO] 02:22:58:290 Kernel/(8498:8506): Carpincho 2 - Eliminado
+[INFO] 02:23:44:302 Kernel/(8498:8502): Comienza la ejecución de la detección de Deadlock
