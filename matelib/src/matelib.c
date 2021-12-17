@@ -164,8 +164,8 @@ int mate_sem_destroy(mate_instance *lib_ref, mate_sem_name sem)
 int mate_call_io(mate_instance *lib_ref, mate_io_resource io, void *msg)
 {
   log_info(logger, "CALL_IO a %s carpincho %d", io , ((mate_inner_structure*)lib_ref->group_info)->pid);
-  log_info(logger, msg);
-
+  log_info(logger,"---:-%s", msg);
+  
   if (conectado_a_memoria(lib_ref))
   {
     log_info(logger, "Conectado con memoria. No se puede hacer CALL_IO.");
@@ -207,7 +207,7 @@ mate_pointer mate_memalloc(mate_instance *lib_ref, int size)
   }
   else
   {
-    log_info(logger, "Se realizó el MEM_ALLOC correctamente. La dirección lógica es %d", respuesta);
+    log_info(logger, "Se realizó el MEM_ALLOC correctamente. La dirección lógica es %d. Carpincho %d", respuesta,((mate_inner_structure *)lib_ref->group_info)->pid);
     return respuesta;
   }
 }

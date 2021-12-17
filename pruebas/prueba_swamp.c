@@ -60,6 +60,7 @@ void *carpincho_acaparador(void * config) {
   mate_memalloc(&mate_ref, 20000);
 
   while(1) {
+    log_info(logger,"ENTRE A WHILE(1) SOY EL ACAPARADOR");
     mate_memread(&mate_ref, key, thread_name, 10);
     log_message("thread name: %s", thread_name);
   }
@@ -87,6 +88,8 @@ void *carpincho(void *config)
   int vuelta = 0;
   while (vuelta < 1000)
   {
+    log_info(logger,"ITERACION----------------%d carpincho %s\n",vuelta, thread_name);
+    log_info(logger,"------------------------------------------------------------------");
     sem_wait(info->producer_sem);
     mate_memread(&mate_ref, key, thread_name, 10);
     mate_memread(&mate_ref, value, &current_value, sizeof(uint32_t));
