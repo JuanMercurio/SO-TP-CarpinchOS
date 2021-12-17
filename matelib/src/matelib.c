@@ -220,11 +220,13 @@ int mate_memfree(mate_instance *lib_ref, mate_pointer addr)
   printf("Esperando respuesta memfree\n");
   if (respuesta == -5)
   {
+    printf("Error al realizar el MEM_FREE\n");
     log_info(logger, "Error al realizar el MEM_FREE");
     return MATE_FREE_FAULT;
   }
   else
   {
+    printf("Se realizó el MEM_FREE correctamente\n");
     log_info(logger, "Se realizó el MEM_FREE correctamente");
     return respuesta;
   }
