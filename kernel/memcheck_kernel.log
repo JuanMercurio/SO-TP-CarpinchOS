@@ -1,0 +1,310 @@
+==24203== Memcheck, a memory error detector
+==24203== Copyright (C) 2002-2015, and GNU GPL'd, by Julian Seward et al.
+==24203== Using Valgrind-3.11.0 and LibVEX; rerun with -h for copyright info
+==24203== Command: bin/kernel
+==24203== Parent PID: 24202
+==24203== 
+==24203== Syscall param rt_sigaction(act->sa_mask) points to uninitialised byte(s)
+==24203==    at 0x40684E9: __libc_sigaction (sigaction.c:76)
+==24203==    by 0x40685CB: sigaction (sigaction.c:40)
+==24203==    by 0x804A131: signal_init (main.c:17)
+==24203==    by 0x804A1C3: main (main.c:31)
+==24203==  Address 0xbe98e024 is on thread 1's stack
+==24203==  in frame #0, created by __libc_sigaction (sigaction.c:50)
+==24203== 
+==24203== Syscall param rt_sigaction(act->sa_mask) points to uninitialised byte(s)
+==24203==    at 0x40684E9: __libc_sigaction (sigaction.c:76)
+==24203==    by 0x40685CB: sigaction (sigaction.c:40)
+==24203==    by 0x804A18C: signal_usr1 (main.c:24)
+==24203==    by 0x804A1D5: main (main.c:32)
+==24203==  Address 0xbe98e024 is on thread 1's stack
+==24203==  in frame #0, created by __libc_sigaction (sigaction.c:50)
+==24203== 
+==24203== 
+==24203== Process terminating with default action of signal 1 (SIGHUP)
+==24203==    at 0x4067264: accept (accept.c:35)
+==24203==    by 0x4053EED: aceptar_cliente (conexiones.c:127)
+==24203==    by 0x804B4D4: administrar_clientes_kernel (main.c:551)
+==24203==    by 0x804A230: main (main.c:43)
+==24203== 
+==24203== Process terminating with default action of signal 15 (SIGTERM)
+==24203==    at 0x4067264: accept (accept.c:35)
+==24203==    by 0x4053EED: aceptar_cliente (conexiones.c:127)
+==24203==    by 0x804B4D4: administrar_clientes_kernel (main.c:551)
+==24203==    by 0x804A230: main (main.c:43)
+==24203== 
+==24203== HEAP SUMMARY:
+==24203==     in use at exit: 2,376 bytes in 73 blocks
+==24203==   total heap usage: 304 allocs, 231 frees, 21,454 bytes allocated
+==24203== 
+==24203== 4 bytes in 1 blocks are still reachable in loss record 1 of 33
+==24203==    at 0x402C17C: malloc (in /usr/lib/valgrind/vgpreload_memcheck-x86-linux.so)
+==24203==    by 0x408A226: queue_create (in /usr/lib/libcommons.so)
+==24203==    by 0x804B32D: iniciar_colas (main.c:504)
+==24203==    by 0x804B178: inicializar_planificacion (main.c:454)
+==24203==    by 0x804A206: main (main.c:41)
+==24203== 
+==24203== 4 bytes in 1 blocks are still reachable in loss record 2 of 33
+==24203==    at 0x402C17C: malloc (in /usr/lib/valgrind/vgpreload_memcheck-x86-linux.so)
+==24203==    by 0x408A226: queue_create (in /usr/lib/libcommons.so)
+==24203==    by 0x804B337: iniciar_colas (main.c:506)
+==24203==    by 0x804B178: inicializar_planificacion (main.c:454)
+==24203==    by 0x804A206: main (main.c:41)
+==24203== 
+==24203== 4 bytes in 1 blocks are still reachable in loss record 3 of 33
+==24203==    at 0x402C17C: malloc (in /usr/lib/valgrind/vgpreload_memcheck-x86-linux.so)
+==24203==    by 0x408A226: queue_create (in /usr/lib/libcommons.so)
+==24203==    by 0x804B341: iniciar_colas (main.c:507)
+==24203==    by 0x804B178: inicializar_planificacion (main.c:454)
+==24203==    by 0x804A206: main (main.c:41)
+==24203== 
+==24203== 4 bytes in 1 blocks are still reachable in loss record 4 of 33
+==24203==    at 0x402C17C: malloc (in /usr/lib/valgrind/vgpreload_memcheck-x86-linux.so)
+==24203==    by 0x804B4C0: administrar_clientes_kernel (main.c:550)
+==24203==    by 0x804A230: main (main.c:43)
+==24203== 
+==24203== 7 bytes in 1 blocks are still reachable in loss record 5 of 33
+==24203==    at 0x402C17C: malloc (in /usr/lib/valgrind/vgpreload_memcheck-x86-linux.so)
+==24203==    by 0x41072C5: strdup (strdup.c:42)
+==24203==    by 0x40894A7: string_duplicate (in /usr/lib/libcommons.so)
+==24203==    by 0x4089049: log_create (in /usr/lib/libcommons.so)
+==24203==    by 0x804A0CC: iniciar_logger (config.c:21)
+==24203==    by 0x804A1DD: main (main.c:33)
+==24203== 
+==24203== 8 bytes in 1 blocks are still reachable in loss record 6 of 33
+==24203==    at 0x402C17C: malloc (in /usr/lib/valgrind/vgpreload_memcheck-x86-linux.so)
+==24203==    by 0x408C2B1: config_create (in /usr/lib/libcommons.so)
+==24203==    by 0x8049F38: obtener_config (config.c:4)
+==24203==    by 0x804A1F2: main (main.c:35)
+==24203== 
+==24203== 8 bytes in 1 blocks are still reachable in loss record 7 of 33
+==24203==    at 0x402C17C: malloc (in /usr/lib/valgrind/vgpreload_memcheck-x86-linux.so)
+==24203==    by 0x408A3FE: list_create (in /usr/lib/libcommons.so)
+==24203==    by 0x804B449: inicializar_listas_sem_io (main.c:534)
+==24203==    by 0x804A1FC: main (main.c:38)
+==24203== 
+==24203== 8 bytes in 1 blocks are still reachable in loss record 8 of 33
+==24203==    at 0x402C17C: malloc (in /usr/lib/valgrind/vgpreload_memcheck-x86-linux.so)
+==24203==    by 0x408A3FE: list_create (in /usr/lib/libcommons.so)
+==24203==    by 0x804B453: inicializar_listas_sem_io (main.c:535)
+==24203==    by 0x804A1FC: main (main.c:38)
+==24203== 
+==24203== 8 bytes in 1 blocks are still reachable in loss record 9 of 33
+==24203==    at 0x402C17C: malloc (in /usr/lib/valgrind/vgpreload_memcheck-x86-linux.so)
+==24203==    by 0x408A3FE: list_create (in /usr/lib/libcommons.so)
+==24203==    by 0x408A231: queue_create (in /usr/lib/libcommons.so)
+==24203==    by 0x804B32D: iniciar_colas (main.c:504)
+==24203==    by 0x804B178: inicializar_planificacion (main.c:454)
+==24203==    by 0x804A206: main (main.c:41)
+==24203== 
+==24203== 8 bytes in 1 blocks are still reachable in loss record 10 of 33
+==24203==    at 0x402C17C: malloc (in /usr/lib/valgrind/vgpreload_memcheck-x86-linux.so)
+==24203==    by 0x408A3FE: list_create (in /usr/lib/libcommons.so)
+==24203==    by 0x408A231: queue_create (in /usr/lib/libcommons.so)
+==24203==    by 0x804B337: iniciar_colas (main.c:506)
+==24203==    by 0x804B178: inicializar_planificacion (main.c:454)
+==24203==    by 0x804A206: main (main.c:41)
+==24203== 
+==24203== 8 bytes in 1 blocks are still reachable in loss record 11 of 33
+==24203==    at 0x402C17C: malloc (in /usr/lib/valgrind/vgpreload_memcheck-x86-linux.so)
+==24203==    by 0x408A3FE: list_create (in /usr/lib/libcommons.so)
+==24203==    by 0x408A231: queue_create (in /usr/lib/libcommons.so)
+==24203==    by 0x804B341: iniciar_colas (main.c:507)
+==24203==    by 0x804B178: inicializar_planificacion (main.c:454)
+==24203==    by 0x804A206: main (main.c:41)
+==24203== 
+==24203== 8 bytes in 1 blocks are still reachable in loss record 12 of 33
+==24203==    at 0x402C17C: malloc (in /usr/lib/valgrind/vgpreload_memcheck-x86-linux.so)
+==24203==    by 0x408A3FE: list_create (in /usr/lib/libcommons.so)
+==24203==    by 0x804B34B: iniciar_colas (main.c:509)
+==24203==    by 0x804B178: inicializar_planificacion (main.c:454)
+==24203==    by 0x804A206: main (main.c:41)
+==24203== 
+==24203== 8 bytes in 2 blocks are still reachable in loss record 13 of 33
+==24203==    at 0x402C17C: malloc (in /usr/lib/valgrind/vgpreload_memcheck-x86-linux.so)
+==24203==    by 0x408A226: queue_create (in /usr/lib/libcommons.so)
+==24203==    by 0x8049C92: init_dispositivos_io (io_semaforos.c:216)
+==24203==    by 0x804A201: main (main.c:39)
+==24203== 
+==24203== 10 bytes in 2 blocks are still reachable in loss record 14 of 33
+==24203==    at 0x402E2CC: realloc (in /usr/lib/valgrind/vgpreload_memcheck-x86-linux.so)
+==24203==    by 0x408986B: string_trim_right (in /usr/lib/libcommons.so)
+==24203==    by 0x4089761: string_trim (in /usr/lib/libcommons.so)
+==24203==    by 0x4089B43: string_get_string_as_array (in /usr/lib/libcommons.so)
+==24203==    by 0x408C4DE: config_get_array_value (in /usr/lib/libcommons.so)
+==24203==    by 0x8049FF5: obtener_config (config.c:11)
+==24203==    by 0x804A1F2: main (main.c:35)
+==24203== 
+==24203== 12 bytes in 1 blocks are still reachable in loss record 15 of 33
+==24203==    at 0x402E2CC: realloc (in /usr/lib/valgrind/vgpreload_memcheck-x86-linux.so)
+==24203==    by 0x408A1D2: _string_array_push (in /usr/lib/libcommons.so)
+==24203==    by 0x408A185: _string_split (in /usr/lib/libcommons.so)
+==24203==    by 0x40899FA: string_split (in /usr/lib/libcommons.so)
+==24203==    by 0x4089B1C: string_get_string_as_array (in /usr/lib/libcommons.so)
+==24203==    by 0x408C4DE: config_get_array_value (in /usr/lib/libcommons.so)
+==24203==    by 0x8049FDA: obtener_config (config.c:10)
+==24203==    by 0x804A1F2: main (main.c:35)
+==24203== 
+==24203== 12 bytes in 1 blocks are still reachable in loss record 16 of 33
+==24203==    at 0x402E2CC: realloc (in /usr/lib/valgrind/vgpreload_memcheck-x86-linux.so)
+==24203==    by 0x408A1D2: _string_array_push (in /usr/lib/libcommons.so)
+==24203==    by 0x408A185: _string_split (in /usr/lib/libcommons.so)
+==24203==    by 0x40899FA: string_split (in /usr/lib/libcommons.so)
+==24203==    by 0x4089B1C: string_get_string_as_array (in /usr/lib/libcommons.so)
+==24203==    by 0x408C4DE: config_get_array_value (in /usr/lib/libcommons.so)
+==24203==    by 0x8049FF5: obtener_config (config.c:11)
+==24203==    by 0x804A1F2: main (main.c:35)
+==24203== 
+==24203== 15 bytes in 2 blocks are still reachable in loss record 17 of 33
+==24203==    at 0x402E2CC: realloc (in /usr/lib/valgrind/vgpreload_memcheck-x86-linux.so)
+==24203==    by 0x408986B: string_trim_right (in /usr/lib/libcommons.so)
+==24203==    by 0x4089761: string_trim (in /usr/lib/libcommons.so)
+==24203==    by 0x4089B43: string_get_string_as_array (in /usr/lib/libcommons.so)
+==24203==    by 0x408C4DE: config_get_array_value (in /usr/lib/libcommons.so)
+==24203==    by 0x8049FDA: obtener_config (config.c:10)
+==24203==    by 0x804A1F2: main (main.c:35)
+==24203== 
+==24203== 16 bytes in 1 blocks are still reachable in loss record 18 of 33
+==24203==    at 0x402C17C: malloc (in /usr/lib/valgrind/vgpreload_memcheck-x86-linux.so)
+==24203==    by 0x408B900: dictionary_create (in /usr/lib/libcommons.so)
+==24203==    by 0x408C2D4: config_create (in /usr/lib/libcommons.so)
+==24203==    by 0x8049F38: obtener_config (config.c:4)
+==24203==    by 0x804A1F2: main (main.c:35)
+==24203== 
+==24203== 16 bytes in 2 blocks are still reachable in loss record 19 of 33
+==24203==    at 0x402C17C: malloc (in /usr/lib/valgrind/vgpreload_memcheck-x86-linux.so)
+==24203==    by 0x408A3FE: list_create (in /usr/lib/libcommons.so)
+==24203==    by 0x408A231: queue_create (in /usr/lib/libcommons.so)
+==24203==    by 0x8049C92: init_dispositivos_io (io_semaforos.c:216)
+==24203==    by 0x804A201: main (main.c:39)
+==24203== 
+==24203== 16 bytes in 2 blocks are still reachable in loss record 20 of 33
+==24203==    at 0x402C17C: malloc (in /usr/lib/valgrind/vgpreload_memcheck-x86-linux.so)
+==24203==    by 0x408B67E: list_create_element (in /usr/lib/libcommons.so)
+==24203==    by 0x408A48E: list_add (in /usr/lib/libcommons.so)
+==24203==    by 0x8049CE7: init_dispositivos_io (io_semaforos.c:221)
+==24203==    by 0x804A201: main (main.c:39)
+==24203== 
+==24203== 18 bytes in 1 blocks are still reachable in loss record 21 of 33
+==24203==    at 0x402C17C: malloc (in /usr/lib/valgrind/vgpreload_memcheck-x86-linux.so)
+==24203==    by 0x41072C5: strdup (strdup.c:42)
+==24203==    by 0x408C2C5: config_create (in /usr/lib/libcommons.so)
+==24203==    by 0x8049F38: obtener_config (config.c:4)
+==24203==    by 0x804A1F2: main (main.c:35)
+==24203== 
+==24203== 20 bytes in 1 blocks are still reachable in loss record 22 of 33
+==24203==    at 0x402C17C: malloc (in /usr/lib/valgrind/vgpreload_memcheck-x86-linux.so)
+==24203==    by 0x4088FA3: log_create (in /usr/lib/libcommons.so)
+==24203==    by 0x804A0CC: iniciar_logger (config.c:21)
+==24203==    by 0x804A1DD: main (main.c:33)
+==24203== 
+==24203== 74 bytes in 11 blocks are still reachable in loss record 23 of 33
+==24203==    at 0x402C17C: malloc (in /usr/lib/valgrind/vgpreload_memcheck-x86-linux.so)
+==24203==    by 0x41072C5: strdup (strdup.c:42)
+==24203==    by 0x40894A7: string_duplicate (in /usr/lib/libcommons.so)
+==24203==    by 0x408A172: _string_split (in /usr/lib/libcommons.so)
+==24203==    by 0x4089A9E: string_n_split (in /usr/lib/libcommons.so)
+==24203==    by 0x408C1CE: add_cofiguration.2925 (in /usr/lib/libcommons.so)
+==24203==    by 0x4089C4C: string_iterate_lines (in /usr/lib/libcommons.so)
+==24203==    by 0x408C362: config_create (in /usr/lib/libcommons.so)
+==24203==    by 0x8049F38: obtener_config (config.c:4)
+==24203==    by 0x804A1F2: main (main.c:35)
+==24203== 
+==24203== 80 bytes in 1 blocks are still reachable in loss record 24 of 33
+==24203==    at 0x402E0B8: calloc (in /usr/lib/valgrind/vgpreload_memcheck-x86-linux.so)
+==24203==    by 0x408B921: dictionary_create (in /usr/lib/libcommons.so)
+==24203==    by 0x408C2D4: config_create (in /usr/lib/libcommons.so)
+==24203==    by 0x8049F38: obtener_config (config.c:4)
+==24203==    by 0x804A1F2: main (main.c:35)
+==24203== 
+==24203== 88 bytes in 2 blocks are still reachable in loss record 25 of 33
+==24203==    at 0x402C17C: malloc (in /usr/lib/valgrind/vgpreload_memcheck-x86-linux.so)
+==24203==    by 0x8049C50: init_dispositivos_io (io_semaforos.c:213)
+==24203==    by 0x804A201: main (main.c:39)
+==24203== 
+==24203== 136 bytes in 1 blocks are possibly lost in loss record 26 of 33
+==24203==    at 0x402E0B8: calloc (in /usr/lib/valgrind/vgpreload_memcheck-x86-linux.so)
+==24203==    by 0x4011726: allocate_dtv (dl-tls.c:322)
+==24203==    by 0x401214B: _dl_allocate_tls (dl-tls.c:539)
+==24203==    by 0x405ECC3: allocate_stack (allocatestack.c:588)
+==24203==    by 0x405ECC3: pthread_create@@GLIBC_2.1 (pthread_create.c:539)
+==24203==    by 0x804B1A3: inicializar_planificacion (main.c:456)
+==24203==    by 0x804A206: main (main.c:41)
+==24203== 
+==24203== 136 bytes in 1 blocks are possibly lost in loss record 27 of 33
+==24203==    at 0x402E0B8: calloc (in /usr/lib/valgrind/vgpreload_memcheck-x86-linux.so)
+==24203==    by 0x4011726: allocate_dtv (dl-tls.c:322)
+==24203==    by 0x401214B: _dl_allocate_tls (dl-tls.c:539)
+==24203==    by 0x405ECC3: allocate_stack (allocatestack.c:588)
+==24203==    by 0x405ECC3: pthread_create@@GLIBC_2.1 (pthread_create.c:539)
+==24203==    by 0x804B1ED: inicializar_planificacion (main.c:465)
+==24203==    by 0x804A206: main (main.c:41)
+==24203== 
+==24203== 136 bytes in 1 blocks are possibly lost in loss record 28 of 33
+==24203==    at 0x402E0B8: calloc (in /usr/lib/valgrind/vgpreload_memcheck-x86-linux.so)
+==24203==    by 0x4011726: allocate_dtv (dl-tls.c:322)
+==24203==    by 0x401214B: _dl_allocate_tls (dl-tls.c:539)
+==24203==    by 0x405ECC3: allocate_stack (allocatestack.c:588)
+==24203==    by 0x405ECC3: pthread_create@@GLIBC_2.1 (pthread_create.c:539)
+==24203==    by 0x804B237: inicializar_planificacion (main.c:474)
+==24203==    by 0x804A206: main (main.c:41)
+==24203== 
+==24203== 168 bytes in 11 blocks are still reachable in loss record 29 of 33
+==24203==    at 0x402C17C: malloc (in /usr/lib/valgrind/vgpreload_memcheck-x86-linux.so)
+==24203==    by 0x41072C5: strdup (strdup.c:42)
+==24203==    by 0x408BA36: dictionary_put (in /usr/lib/libcommons.so)
+==24203==    by 0x408C1F1: add_cofiguration.2925 (in /usr/lib/libcommons.so)
+==24203==    by 0x4089C4C: string_iterate_lines (in /usr/lib/libcommons.so)
+==24203==    by 0x408C362: config_create (in /usr/lib/libcommons.so)
+==24203==    by 0x8049F38: obtener_config (config.c:4)
+==24203==    by 0x804A1F2: main (main.c:35)
+==24203== 
+==24203== 176 bytes in 11 blocks are still reachable in loss record 30 of 33
+==24203==    at 0x402C17C: malloc (in /usr/lib/valgrind/vgpreload_memcheck-x86-linux.so)
+==24203==    by 0x408BF0D: dictionary_create_element (in /usr/lib/libcommons.so)
+==24203==    by 0x408BA48: dictionary_put (in /usr/lib/libcommons.so)
+==24203==    by 0x408C1F1: add_cofiguration.2925 (in /usr/lib/libcommons.so)
+==24203==    by 0x4089C4C: string_iterate_lines (in /usr/lib/libcommons.so)
+==24203==    by 0x408C362: config_create (in /usr/lib/libcommons.so)
+==24203==    by 0x8049F38: obtener_config (config.c:4)
+==24203==    by 0x804A1F2: main (main.c:35)
+==24203== 
+==24203== 272 bytes in 2 blocks are possibly lost in loss record 31 of 33
+==24203==    at 0x402E0B8: calloc (in /usr/lib/valgrind/vgpreload_memcheck-x86-linux.so)
+==24203==    by 0x4011726: allocate_dtv (dl-tls.c:322)
+==24203==    by 0x401214B: _dl_allocate_tls (dl-tls.c:539)
+==24203==    by 0x405ECC3: allocate_stack (allocatestack.c:588)
+==24203==    by 0x405ECC3: pthread_create@@GLIBC_2.1 (pthread_create.c:539)
+==24203==    by 0x8049DAD: iniciar_hilos_gestores_de_io (io_semaforos.c:240)
+==24203==    by 0x8049D30: init_dispositivos_io (io_semaforos.c:226)
+==24203==    by 0x804A201: main (main.c:39)
+==24203== 
+==24203== 344 bytes in 1 blocks are still reachable in loss record 32 of 33
+==24203==    at 0x402C17C: malloc (in /usr/lib/valgrind/vgpreload_memcheck-x86-linux.so)
+==24203==    by 0x40F0359: __fopen_internal (iofopen.c:69)
+==24203==    by 0x40F041D: fopen@@GLIBC_2.1 (iofopen.c:97)
+==24203==    by 0x4088EDA: txt_open_for_append (in /usr/lib/libcommons.so)
+==24203==    by 0x4088FE3: log_create (in /usr/lib/libcommons.so)
+==24203==    by 0x804A0CC: iniciar_logger (config.c:21)
+==24203==    by 0x804A1DD: main (main.c:33)
+==24203== 
+==24203== 544 bytes in 4 blocks are possibly lost in loss record 33 of 33
+==24203==    at 0x402E0B8: calloc (in /usr/lib/valgrind/vgpreload_memcheck-x86-linux.so)
+==24203==    by 0x4011726: allocate_dtv (dl-tls.c:322)
+==24203==    by 0x401214B: _dl_allocate_tls (dl-tls.c:539)
+==24203==    by 0x405ECC3: allocate_stack (allocatestack.c:588)
+==24203==    by 0x405ECC3: pthread_create@@GLIBC_2.1 (pthread_create.c:539)
+==24203==    by 0x804C28C: iniciar_cpu (planificacion.c:9)
+==24203==    by 0x405E294: start_thread (pthread_create.c:333)
+==24203==    by 0x41790AD: clone (clone.S:114)
+==24203== 
+==24203== LEAK SUMMARY:
+==24203==    definitely lost: 0 bytes in 0 blocks
+==24203==    indirectly lost: 0 bytes in 0 blocks
+==24203==      possibly lost: 1,224 bytes in 9 blocks
+==24203==    still reachable: 1,152 bytes in 64 blocks
+==24203==         suppressed: 0 bytes in 0 blocks
+==24203== 
+==24203== For counts of detected and suppressed errors, rerun with: -v
+==24203== Use --track-origins=yes to see where uninitialised values come from
+==24203== ERROR SUMMARY: 7 errors from 7 contexts (suppressed: 0 from 0)
