@@ -222,6 +222,8 @@ void pagina_liberar(pag_t *pagina, int n_pagina, int pid);
 
 void tablas_imprimir_saturno();
 
+void tablas_loggear_saturno();
+
 void marco_ocupar(int marco);
 
 bool fija_es_valido_iniciar(tab_pags* tabla, int marco);

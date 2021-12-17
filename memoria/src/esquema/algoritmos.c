@@ -134,6 +134,7 @@ int clock_buscar_puntero()
     {
         tab_pags* tabla = list_get(tablas.lista, i);
         if(tabla->p_clock != -1) return i;
+        log_info(logger_memoria, "EL CLOCK ESTA EN EL FRAME %d", i);
     }
 
     return -1;
@@ -172,10 +173,10 @@ int clock_buscar_00(tab_pags* tabla)
 		}
 
         if (reg->tlb == 1) {
-            tlb_t* registro = tlb_obtener_registro(tabla->pid, i);
-            reg->algoritmo = registro->alg;
-            reg->marco = registro->marco; 
-            reg->modificado = registro->modificado;
+            tlb_t* registro_tlb = tlb_obtener_registro(tabla->pid, i);
+            reg->algoritmo = registro_tlb->alg;
+            reg->marco = registro_tlb->marco; 
+            reg->modificado = registro_tlb->modificado;
            // reg->presente = 1;
            // reg->tlb = 1;
         }
@@ -230,12 +231,12 @@ int clock_buscar_01(tab_pags* tabla)
 			iteracion++;
 			continue;
 		}
-        tlb_t* registro;
+        tlb_t* registro_tlb;
         if (reg->tlb == 1) {
-            registro = tlb_obtener_registro(tabla->pid, i);
-            reg->algoritmo = registro->alg;
-            reg->marco = registro->marco; 
-            reg->modificado = registro->modificado;
+            registro_tlb = tlb_obtener_registro(tabla->pid, i);
+            reg->algoritmo = registro_tlb->alg;
+            reg->marco = registro_tlb->marco; 
+            reg->modificado = registro_tlb->modificado;
            // reg->presente = 1;
            // reg->tlb = 1;
         }
@@ -251,7 +252,7 @@ int clock_buscar_01(tab_pags* tabla)
         }
         else{
             reg->algoritmo = 0;
-            if(reg->tlb == 1) registro->alg = 0;
+            if(reg->tlb == 1) registro_tlb->alg = 0;
         }
 
         if(i+1 == tamanio) 
@@ -367,6 +368,7 @@ int alg_comportamiento_tlb_lru()
 
 int clock_buscar_00_dinamico(tab_pags** tabla, int posicion)
 {
+    log_info(logger_memoria, "CLOCK: 00");
 	int cantidad_procesos = list_size(tablas.lista);
 	int pos;
 	int pos_inicial;
@@ -393,22 +395,26 @@ int clock_buscar_00_dinamico(tab_pags** tabla, int posicion)
 
 		for (int j=pos; j < list_size((*tabla)->tabla_pag); j++) {
 
+			pag_t *reg = NULL;
+            reg = list_get((*tabla)->tabla_pag, j);
+
+            if(reg->presente != 1) continue; else {log_info(logger_memoria, "la pagina %d esta presente en el marco %d", j, reg->marco);}
+            
+
 			if (pos == pos_inicial && (*tabla)->pid == pid_inicial && i > 0) { 
 				(*tabla)->p_clock = j; 
 				return -1;
 			}	
 
-			pag_t *reg = NULL;
-            reg = list_get((*tabla)->tabla_pag, j);
 
 			if(reg->presente != 1 || reg->algoritmo == -1) continue;
 
             if (reg->tlb == 1) {
-                tlb_t* registro = tlb_obtener_registro((*tabla)->pid, j);
+                tlb_t* registro_tlb = tlb_obtener_registro((*tabla)->pid, j);
                 if (reg == NULL) printf("perro estas en cualquiera\n");
-                reg->algoritmo = registro->alg;
-                reg->marco = registro->marco; 
-                reg->modificado = registro->modificado;
+                reg->algoritmo = registro_tlb->alg;
+                reg->marco = registro_tlb->marco; 
+                reg->modificado = registro_tlb->modificado;
                //reg->presente = 1;
                // reg->tlb = 1;
             }
@@ -432,6 +438,7 @@ int clock_buscar_00_dinamico(tab_pags** tabla, int posicion)
 				else
 					(*tabla)->p_clock = i+1;
 
+                log_info(logger_memoria, "RETORNO %d", j);
 				return j;
 			} 
 		}
@@ -450,6 +457,7 @@ int clock_buscar_00_dinamico(tab_pags** tabla, int posicion)
 
 int clock_buscar_01__dinamico(tab_pags** tabla, int posicion)
 {
+    log_info(logger_memoria, "CLOCK: 01");
 	int cantidad_procesos = list_size(tablas.lista);
 	int pos;
 	int pos_inicial;
@@ -460,6 +468,7 @@ int clock_buscar_01__dinamico(tab_pags** tabla, int posicion)
 	for (i=0; i < cantidad_procesos; i++)
 	{
 		*tabla = list_get(tablas.lista, posicion);
+        log_info(logger_memoria, "CLOCK: analizo la tabla %d", posicion);
 		int tamanio = list_size((*tabla)->tabla_pag);
 		
 		if (primera_vez) {
@@ -475,27 +484,31 @@ int clock_buscar_01__dinamico(tab_pags** tabla, int posicion)
 
 		for (int j=pos; j < list_size((*tabla)->tabla_pag); j++) {
 
+			pag_t *reg = list_get((*tabla)->tabla_pag, j);
+            //if(reg->presente != 1) continue; else {log_info(logger_memoria, "la pagina %d esta presente en el marco %d", j, reg->marco);}
+
 			if (pos == pos_inicial && (*tabla)->pid == pid_inicial && i > 0) { 
 				(*tabla)->p_clock = j; 
 				return -1;
 			}	
 
-			pag_t *reg = list_get((*tabla)->tabla_pag, j);
 
 			if(reg->presente != 1 || reg->algoritmo == -1) continue;
-                tlb_t* registro;
+            
+            tlb_t* registro_tlb;
             if (reg->tlb == 1) {
-                registro = tlb_obtener_registro((*tabla)->pid, j);
+                registro_tlb = tlb_obtener_registro((*tabla)->pid, j);
                 if (reg == NULL) printf("perro estas en cualquiera\n");
-                reg->algoritmo = registro->alg;
-                reg->marco = registro->marco; 
-                reg->modificado = registro->modificado;
+                reg->algoritmo = registro_tlb->alg;
+                reg->marco = registro_tlb->marco; 
+                reg->modificado = registro_tlb->modificado;
                // reg->presente = 1;
                // reg->tlb = 1;
             }
 
 			if(reg->modificado == 1 && reg->algoritmo == 0) 
 			{
+                log_info(logger_memoria, "La pagina %d en el marco %d tiene M=1 y A=0", j, reg->marco);
 
 				if(j+1 == tamanio)
 				{
@@ -517,7 +530,7 @@ int clock_buscar_01__dinamico(tab_pags** tabla, int posicion)
 			}
 		   	else {
                     reg->algoritmo = 0;
-                    if(reg->tlb ==1) registro->alg = 0;
+                    if(reg->tlb ==1) registro_tlb->alg = 0;
                } 
 		}
 
@@ -556,6 +569,7 @@ t_victima clock_dinamico(int pid, tab_pags* tabla)
 		if (pagina != -1) 
 		{
 			printf("Encontre 01\n");
+            log_info(logger_memoria, "Encontre 01");
 			break;
 		}
 

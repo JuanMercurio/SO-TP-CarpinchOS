@@ -504,6 +504,8 @@ void* memoria_leer(tab_pags* tabla, dir_t dl, int tamanio){
     while(bytes_remaining > 0)
     {
         int marco = nro_marco(dl.PAGINA, tabla, READ);
+		log_info(logger_memoria, "ESTOY LEYENDO DESDE EL MARCO %d", marco);
+		tablas_loggear_saturno();
 
 		if (marco == -1) { 
 			printf("No se encontro el marco\n");

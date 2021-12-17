@@ -130,6 +130,8 @@ int nro_marco(int pagina, tab_pags *tabla, int codigo)
         log_info(logger_alg, "ALG - PID: %d - PAG: %d", tabla->pid, pagina);
         reg->alg = alg_comportamiento();
 
+        log_info(logger_memoria, "Pagina encontrada en TLB");
+
         return marco; 
     }
 
@@ -145,6 +147,7 @@ int nro_marco(int pagina, tab_pags *tabla, int codigo)
         p->presente   = 1;
         p->algoritmo  = alg_comportamiento();
         log_info(logger_alg, "ALG - PID: %d - PAG: %d", tabla->pid, pagina);
+        log_info(logger_memoria, "Pagina encontrada en memoria.");
         return marco; 
     }
 
@@ -185,11 +188,14 @@ int buscar_en_swap(tab_pags *tabla, int pagina)
         if (configuracion.CANTIDAD_ENTRADAS_TLB > 0 ) tlb_insert_page(tabla->pid, pagina, marco, READ);
         actualizar_nueva_pagina(pagina, marco, tabla);
         log_info(logger_alg, "ALG - PID: %d - PAG: %d", tabla->pid, pagina);
+        log_info(logger_memoria, "banana");
         return marco;
-
     } else { 
+        log_info(logger_memoria, "patata");
         t_victima victima = algoritmo_mmu(tabla->pid, tabla);
+        log_info(logger_memoria, "VICTIMA: PID %d | PAG %d | MARCO %d", victima.pid, victima.pagina, victima.marco);
         reemplazar_pagina(victima, contenido, pagina, tabla);
+        log_info(logger_memoria, "Reemplace Pagina");
         log_info(logger_alg, "ALG - PID: %d - PAG: %d", tabla->pid, pagina);
         return victima.marco;
     }
@@ -656,6 +662,27 @@ void tablas_imprimir_saturno()
 }
 
 
+void tablas_loggear_saturno()
+{
+    int size = list_size(tablas.lista);
+
+    for (int i = 0; i < size; i++) {
+
+        tab_pags*tabla = list_get(tablas.lista, i);
+        int pags = list_size(tabla->tabla_pag);
+        log_info(logger_memoria, " -- TABLA - %d --", tabla->pid);
+
+        for (int j=0; j < pags; j++) {
+
+            pag_t* pag = list_get(tabla->tabla_pag, j);
+            log_info(logger_memoria, "PAG %d - P: %d - M: %d - F: %d - ALG: %d", j, pag->presente, pag->modificado, pag->marco, pag->algoritmo);
+        }
+    }
+    log_info(logger_memoria, "");
+
+}
+
+
 
 
 void marco_ocupar(int marco)
@@ -673,5 +700,6 @@ bool fija_es_valido_iniciar(tab_pags* tabla, int marco)
 
 bool dinamica_marco_libre(int marco)
 { 
-    return  ( marco != -1 && (strcmp(configuracion.TIPO_ASIGNACION, "DINAMICA") == 0) ) ;
+                        //&& marco != 0????
+    return  ( marco != -1  && (strcmp(configuracion.TIPO_ASIGNACION, "DINAMICA") == 0) ) ;
  }
