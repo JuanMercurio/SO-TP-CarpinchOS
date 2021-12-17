@@ -23,6 +23,7 @@ int memalloc(tab_pags* tabla, int tamanio){
 
 	if(tamanio==0){
 		puts("- Memalloc: no se puede reservar espacio 0. Abortando.");
+		log_info(logger_memoria, "-- FIN MEMALLOC --\n");
 		return -2;
 	}
 
@@ -76,7 +77,7 @@ int memalloc(tab_pags* tabla, int tamanio){
 						puts("Swap me denego la pagina");
 						log_info(logger_memoria, "Swap me denego la pagina.");
 						log_info(logger_memoria, "-- FIN MEMALLOC --\n");
-						free(ptr_potencial_segmento); 
+						free(ptr_potencial_segmento);
 						return inicio_actual + SIZE_METADATA;
 					}
 
@@ -120,6 +121,7 @@ int memalloc(tab_pags* tabla, int tamanio){
 
                     if(pedir_paginas_a_swap(tabla_paginas, paginas_a_agregar) == -1){
                         printf("- Memalloc->While: no recibi las paginas. retorno -1.");
+						log_info(logger_memoria, "-- FIN MEMALLOC --\n");
                         return -1;
                     }
 
@@ -135,7 +137,7 @@ int memalloc(tab_pags* tabla, int tamanio){
 				int aux_next_alloc = ptr_potencial_segmento->nextAlloc;
 				ptr_potencial_segmento->nextAlloc = inicio_actual + SIZE_METADATA + tamanio;
 
-				memoria_escribir_por_dirlog(tabla, inicio_actual, ptr_potencial_segmento, sizeof(HeapMetadata));
+				memoria_escribir_por_dirlog(tabla, inicio_actual, ptr_potencial_segmento, SIZE_METADATA);
 
 				HeapMetadata new;
 				new.prevAlloc = inicio_actual;
@@ -153,6 +155,7 @@ int memalloc(tab_pags* tabla, int tamanio){
 
 				memoria_escribir_por_dirlog(tabla_paginas, ptr_potencial_segmento->nextAlloc, &new, SIZE_METADATA);
 
+				log_info(logger_memoria, "-- FIN MEMALLOC --\n");
 				printf("- Memalloc->While: RETORNO DIR_LOG DE GUARDADO: %i. METADATA ARRANCA EN %i.\n", inicio_actual+SIZE_METADATA, inicio_actual);
 				return inicio_actual + SIZE_METADATA;
 			}
@@ -185,6 +188,7 @@ int memalloc(tab_pags* tabla, int tamanio){
 			printf("NECESITO %d BYTES, QUE SE TRADUCEN A %d PAGINAS\n", bytes_faltantes, paginas_faltantes);
 
 			if(pedir_paginas_a_swap(tabla_paginas, paginas_faltantes) == -1){
+				log_info(logger_memoria, "-- FIN MEMALLOC --\n");
 				return -1;
 			}
 			else{
@@ -196,6 +200,7 @@ int memalloc(tab_pags* tabla, int tamanio){
 					if(tamanio-espacio_en_alloc % configuracion.TAMANIO_PAGINAS == 0){ 
 						ptr_potencial_segmento->isFree=false;
 						free(ptr_potencial_segmento);
+						log_info(logger_memoria, "-- FIN MEMALLOC --\n");
 						return inicio_actual+SIZE_METADATA;
 					}
 					puts("- Memalloc->Pedir->Free: tengo que dividir en 2.");
@@ -204,7 +209,7 @@ int memalloc(tab_pags* tabla, int tamanio){
 					ptr_potencial_segmento->isFree = false;
 					ptr_potencial_segmento->nextAlloc = inicio_actual + SIZE_METADATA + tamanio;
 
-					memoria_escribir_por_dirlog(tabla, inicio_actual, ptr_potencial_segmento, sizeof(HeapMetadata));
+					memoria_escribir_por_dirlog(tabla, inicio_actual, ptr_potencial_segmento, SIZE_METADATA);
 
 					HeapMetadata new;
 					new.prevAlloc = inicio_actual;
@@ -219,6 +224,7 @@ int memalloc(tab_pags* tabla, int tamanio){
 
 					printf("- Memalloc->Pedir->Free: RETORNO DIR_LOG DE GUARDADO: %i. METADATA ARRANCA EN %i.\n", inicio_actual+SIZE_METADATA, inicio_actual);
 					free(ptr_potencial_segmento);
+					log_info(logger_memoria, "-- FIN MEMALLOC --\n");
 					return inicio_actual + SIZE_METADATA;
 				}
 				else{
@@ -229,7 +235,7 @@ int memalloc(tab_pags* tabla, int tamanio){
 					
 					inicio_actual = num_primera_pagina_nueva*configuracion.TAMANIO_PAGINAS;
 					ptr_potencial_segmento->nextAlloc = inicio_actual;
-					memoria_escribir_por_dirlog(tabla, inicio_previo, ptr_potencial_segmento, sizeof(HeapMetadata));
+					memoria_escribir_por_dirlog(tabla, inicio_previo, ptr_potencial_segmento, SIZE_METADATA);
 
 
 					printf("- Memalloc->Pedir->NoFree: cambie el nextAlloc del segmento anterior a %i.\n", ptr_potencial_segmento->nextAlloc);
@@ -268,6 +274,7 @@ int memalloc(tab_pags* tabla, int tamanio){
 					memoria_escribir(tabla_paginas, dir_new, &new, SIZE_METADATA);
 					printf("- Memalloc->Pedir->NoFree: RETORNO DIRECCION LOGICA %i.\n", ptr_potencial_segmento->nextAlloc+SIZE_METADATA);
 					free(ptr_potencial_segmento);
+					log_info(logger_memoria, "-- FIN MEMALLOC --\n");
 					return ptr_potencial_segmento->nextAlloc+SIZE_METADATA; //retorno la direccion logica
 				}
 			}
@@ -342,13 +349,16 @@ int cant_cambios_de_pagina(int direc_actual, uint32_t next_alloc){
 }
 
 int memfree(tab_pags* tabla, int dir_log){
-
+	
+	log_info(logger_memoria, "-- MEMFREE -- PID %d | DIR %d");
     tab_pags* tabla_paginas = tabla;
 
 	printf("- Memfree: quiero liberar la direccion logica %i | PID: %d.\n", dir_log, tabla->pid) ;
 
 	if(dir_log >= configuracion.TAMANIO){
 		puts("- Memfree->ERROR: direccion logica imposible.");
+		log_info(logger_memoria, "ERROR direccion logica IMPOSIBLE.");
+		log_info(logger_memoria, "-- FIN MEMFREE --");
 		return -5;
 	}
 	puts("Memfree: busco la page table.");
@@ -357,11 +367,15 @@ int memfree(tab_pags* tabla, int dir_log){
 
 	if(ptr_segmento == NULL){
 		puts("- Memfree->ERROR: direccion logica invalida");
+		log_info(logger_memoria, "ERROR direccion logica INVALIDA.");
+		log_info(logger_memoria, "-- FIN MEMFREE --");
 		return -5; //
 	}
 	printf("- Memfree: isFree = %d\n", ptr_segmento->isFree);
 	if(ptr_segmento->isFree == 1){
 		puts("- Memfree: el segmento ya esta libre.");
+		log_info(logger_memoria, "ERROR segmento YA ESTA LIBRE.");
+		log_info(logger_memoria, "-- FIN MEMFREE --");
 		return -5;
 	}
 
@@ -373,37 +387,51 @@ int memfree(tab_pags* tabla, int dir_log){
 
 	puts("- Memfree->Derecha: reviso a derecha.");
 	if(ptr_segmento->nextAlloc != LAST_METADATA){
+		log_info(logger_memoria, "Reviso a derecha.");
 		ptr_derecha = memoria_leer_por_dirlog(tabla_paginas, ptr_segmento->nextAlloc, SIZE_METADATA);
 		if(ptr_derecha->isFree){
 			puts("- Memfree->Derecha: el puntero a derecha esta libre. Procedo a liberarlo.");
+			log_info(logger_memoria, "Libero puntero a derecha.");
 			ptr_segmento->nextAlloc = ptr_derecha->nextAlloc;
 			if (ptr_segmento->nextAlloc != LAST_METADATA) {
 				HeapMetadata *ptr_next = memoria_leer_por_dirlog(tabla, ptr_segmento->nextAlloc, SIZE_METADATA);
 				ptr_next->prevAlloc = inicio_actual_metadata;
+				log_info(logger_memoria, "Actualizo puntero next.");
+				memoria_escribir_por_dirlog(tabla, ptr_segmento->nextAlloc, ptr_next, SIZE_METADATA);
 			}
-		free(ptr_derecha);
+			free(ptr_derecha);
 		} else puts("- Memfree->Derecha: el puntero a derecha esta ocupado.");
 	} else puts("- Memfree->Derecha: no existe puntero a derecha.");
 
 
 	puts("- Memfree->Izquierda: reviso a izquierda.");
 	if(ptr_segmento->prevAlloc != FIRST_METADATA){
+		log_info(logger_memoria, "Reviso a izquierda.");
 		ptr_izquierda = memoria_leer_por_dirlog(tabla_paginas, ptr_segmento->prevAlloc, SIZE_METADATA);
 		if(ptr_izquierda->isFree){
 			puts("- Memfree->Izquierda: el puntero a izquierda esta libre. Procedo a eliminarlo.");
-			ptr_izquierda->nextAlloc = ptr_segmento->nextAlloc;
+			log_info(logger_memoria, "Libero puntero a izquierda.");
+			// ptr_izquierda->nextAlloc = ptr_segmento->nextAlloc;
 			inicio_actual_metadata = ptr_segmento->prevAlloc;
-			ptr_segmento = ptr_izquierda;
+			ptr_segmento->prevAlloc = ptr_izquierda->prevAlloc;
+			// ptr_segmento = ptr_izquierda;
 			if(ptr_segmento->prevAlloc != FIRST_METADATA){
 				HeapMetadata *ptr_prev = memoria_leer_por_dirlog(tabla, ptr_segmento->prevAlloc, SIZE_METADATA);
 				ptr_prev->nextAlloc = inicio_actual_metadata;
+				log_info(logger_memoria, "Actualizo puntero prev.");
+				memoria_escribir_por_dirlog(tabla, ptr_segmento->prevAlloc, ptr_prev, SIZE_METADATA);
 			}
-		free(ptr_izquierda);
+			free(ptr_izquierda);
 		} else puts("- Memfree->Izquierda: el puntero a izquierda esta ocupado.");
 	} else puts("- Memfree->Izquierda: no existe puntero a izquierda.");
 
+	log_info(logger_memoria, "Cargo el puntero.");
+	memoria_escribir_por_dirlog(tabla, inicio_actual_metadata, ptr_segmento, SIZE_METADATA);
+
+
 	free(ptr_segmento);
 	puts("- Memfree->Liberar: reviso si hay que liberar paginas.");
+	log_info(logger_memoria, "Reviso si hay que liberar paginas.");
 
 	if(ptr_segmento->nextAlloc == LAST_METADATA){
 		int espacio_en_alloc = list_size(tabla_paginas->tabla_pag)*configuracion.TAMANIO_PAGINAS - SIZE_METADATA - inicio_actual_metadata;
@@ -423,6 +451,9 @@ int memfree(tab_pags* tabla, int dir_log){
 	}else{
 		printf("NOhayque liberar paginas\n");
 	}
+
+	log_info(logger_memoria, "-- FIN MEMFREE --\n");
+
 
 	return 1;
 }
