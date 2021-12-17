@@ -1,1030 +1,1828 @@
-[INFO] 01:47:21:166 Carpincho/(6821:6822): Log creado
-[INFO] 01:47:21:166 Carpincho/(6821:6822): Esperando respuesta de servidor
-[INFO] 01:47:21:167 Carpincho/(6821:6822): 
+[INFO] 20:00:09:971 Carpincho/(28095:28096): Log creado
+[INFO] 20:00:09:972 Carpincho/(28095:28096): 
 NUEVO CARPINCHO
 
-[INFO] 01:47:21:217 Carpincho/(6821:6822): Carpincho creado correctamente con el pid: 1
-[INFO] 01:47:21:217 Carpincho/(6821:6822): CALL_IO a PILETA carpincho 1
-[INFO] 01:47:21:217 Carpincho/(6821:6822): Vamos a usar la pileta...
-[INFO] 01:47:21:218 Carpincho/(6821:6822): RESPUESA DE IO RECIBIDA 0 
-[INFO] 01:47:21:218 Carpincho/(6821:6822): MATE IO ESPERANDO OK DEL PROCESADOR PARA SEGUIR carpincho 1
-
-
-[INFO] 01:47:22:175 Carpincho/(6821:6825): Log creado
-[INFO] 01:47:22:178 Carpincho/(6821:6825): Esperando respuesta de servidor
-[INFO] 01:47:22:202 Carpincho/(6821:6825): 
+[INFO] 20:00:09:997 Carpincho/(28095:28098): Log creado
+[INFO] 20:00:10:000 Carpincho/(28095:28098): 
 NUEVO CARPINCHO
 
-[INFO] 01:47:22:289 Carpincho/(6821:6825): Carpincho creado correctamente con el pid: 2
-[INFO] 01:47:22:289 Carpincho/(6821:6825): CALL_IO a PILETA carpincho 2
-[INFO] 01:47:22:289 Carpincho/(6821:6825): Vamos a usar la pileta...
-[INFO] 01:47:22:290 Carpincho/(6821:6825): RESPUESA DE IO RECIBIDA 0 
-[INFO] 01:47:22:290 Carpincho/(6821:6825): MATE IO ESPERANDO OK DEL PROCESADOR PARA SEGUIR carpincho 2
-
-
-[INFO] 01:47:26:218 Carpincho/(6821:6822): 
-_____llego del procesador un OK para el caprincho 1
-
-
-[INFO] 01:47:26:218 Carpincho/(6821:6822): Se realizó el CALL IO correctamente
-[INFO] 01:47:26:218 Carpincho/(6821:6822): MEM_ALLOC de 10
-[INFO] 01:47:26:261 Carpincho/(6821:6822): Se realizó el MEM_ALLOC correctamente. La dirección lógica es 9
-[INFO] 01:47:26:261 Carpincho/(6821:6822): MEM_WRITE el mensaje HOLA en 9
-[INFO] 01:47:26:262 Carpincho/(6821:6822): Se realizó el MEM_WRITE correctamente
-[INFO] 01:47:26:262 Carpincho/(6821:6822): MEM_READ desde 9 el size 4
-[INFO] 01:47:26:381 Carpincho/(6821:6822): Se realizó el MEM_READ correctamente. El contenido es: HOLA	
-[INFO] 01:47:26:381 Carpincho/(6821:6822): CALL_IO a PILETA carpincho 1
-[INFO] 01:47:26:381 Carpincho/(6821:6822): Vamos a usar la pileta...
-[INFO] 01:47:26:382 Carpincho/(6821:6822): RESPUESA DE IO RECIBIDA 0 
-[INFO] 01:47:26:382 Carpincho/(6821:6822): MATE IO ESPERANDO OK DEL PROCESADOR PARA SEGUIR carpincho 1
-
-
-[INFO] 01:47:31:220 Carpincho/(6821:6825): 
-_____llego del procesador un OK para el caprincho 2
-
-
-[INFO] 01:47:31:220 Carpincho/(6821:6825): Se realizó el CALL IO correctamente
-[INFO] 01:47:31:220 Carpincho/(6821:6825): CALL_IO a PILETA carpincho 2
-[INFO] 01:47:31:220 Carpincho/(6821:6825): Vamos a usar la pileta...
-[INFO] 01:47:31:221 Carpincho/(6821:6825): RESPUESA DE IO RECIBIDA 0 
-[INFO] 01:47:31:221 Carpincho/(6821:6825): MATE IO ESPERANDO OK DEL PROCESADOR PARA SEGUIR carpincho 2
-
-
-[INFO] 01:47:36:221 Carpincho/(6821:6822): 
-_____llego del procesador un OK para el caprincho 1
-
-
-[INFO] 01:47:36:221 Carpincho/(6821:6822): Se realizó el CALL IO correctamente
-[INFO] 01:47:36:222 Carpincho/(6821:6822): MEM_FREE a la dirección 9
-[INFO] 01:47:36:224 Carpincho/(6821:6822): Se realizó el MEM_FREE correctamente
-[INFO] 01:47:36:224 Carpincho/(6821:6822): CALL_IO a PILETA carpincho 1
-[INFO] 01:47:36:224 Carpincho/(6821:6822): Vamos a usar la pileta...
-[INFO] 01:47:36:225 Carpincho/(6821:6822): RESPUESA DE IO RECIBIDA 0 
-[INFO] 01:47:36:225 Carpincho/(6821:6822): MATE IO ESPERANDO OK DEL PROCESADOR PARA SEGUIR carpincho 1
-
-
-[INFO] 01:47:41:222 Carpincho/(6821:6825): 
-_____llego del procesador un OK para el caprincho 2
-
-
-[INFO] 01:47:41:222 Carpincho/(6821:6825): Se realizó el CALL IO correctamente
-[INFO] 01:47:41:222 Carpincho/(6821:6825): CALL_IO a PILETA carpincho 2
-[INFO] 01:47:41:222 Carpincho/(6821:6825): Vamos a usar la pileta...
-[INFO] 01:47:41:222 Carpincho/(6821:6825): RESPUESA DE IO RECIBIDA 0 
-[INFO] 01:47:41:222 Carpincho/(6821:6825): MATE IO ESPERANDO OK DEL PROCESADOR PARA SEGUIR carpincho 2
-
-
-[INFO] 01:47:46:224 Carpincho/(6821:6822): 
-_____llego del procesador un OK para el caprincho 1
-
-
-[INFO] 01:47:46:224 Carpincho/(6821:6822): Se realizó el CALL IO correctamente
-[INFO] 01:47:46:224 Carpincho/(6821:6822): MATE_CLOSE carpincho 1
-[INFO] 01:47:46:224 Carpincho/(6821:6822): MATE_CLOSE: mensaje enviado a kernel
-[INFO] 01:47:46:224 Carpincho/(6821:6822): Carpincho eliminado
-[INFO] 01:47:51:225 Carpincho/(6821:6825): 
-_____llego del procesador un OK para el caprincho 2
-
-
-[INFO] 01:47:51:225 Carpincho/(6821:6825): Se realizó el CALL IO correctamente
-[INFO] 01:47:51:225 Carpincho/(6821:6825): MATE_CLOSE carpincho 2
-[INFO] 01:47:51:225 Carpincho/(6821:6825): MATE_CLOSE: mensaje enviado a kernel
-[INFO] 01:47:51:225 Carpincho/(6821:6825): Carpincho eliminado
-[INFO] 01:48:45:135 Carpincho/(7320:7321): Log creado
-[INFO] 01:48:45:135 Carpincho/(7320:7321): Esperando respuesta de servidor
-[INFO] 01:48:45:136 Carpincho/(7320:7321): 
+[INFO] 20:00:10:026 Carpincho/(28095:28096): Carpincho creado correctamente con el pid: 1
+[INFO] 20:00:10:026 Carpincho/(28095:28096): MEM_ALLOC de carpincho 1 de tamaño 10
+[INFO] 20:00:10:125 Carpincho/(28095:28096): Se realizó el MEM_ALLOC correctamente. La dirección lógica es 9
+[INFO] 20:00:10:125 Carpincho/(28095:28096): MEM_WRITE el mensaje CARPINCHO1 en 9
+[INFO] 20:00:10:127 Carpincho/(28095:28096): Se realizó el MEM_WRITE correctamente
+[INFO] 20:00:10:127 Carpincho/(28095:28096): MEM_ALLOC de carpincho 1 de tamaño 4
+[INFO] 20:00:10:129 Carpincho/(28095:28096): Se realizó el MEM_ALLOC correctamente. La dirección lógica es 28
+[INFO] 20:00:10:129 Carpincho/(28095:28096): MEM_WRITE el mensaje  en 28
+[INFO] 20:00:10:207 Carpincho/(28095:28096): Se realizó el MEM_WRITE correctamente
+[INFO] 20:00:10:208 Carpincho/(28095:28096): thread name: CARPINCHO1
+[INFO] 20:00:10:208 Carpincho/(28095:28096): value: 1
+[INFO] 20:00:10:208 Carpincho/(28095:28096): MEM_READ desde 9 el size 10
+[INFO] 20:00:10:326 Carpincho/(28095:28096): Se realizó el MEM_READ correctamente. El contenido es: CARPINCHO1
+[INFO] 20:00:10:326 Carpincho/(28095:28096): MEM_READ desde 28 el size 4
+[INFO] 20:00:10:406 Carpincho/(28095:28096): Se realizó el MEM_READ correctamente. El contenido es: 
+[INFO] 20:00:10:406 Carpincho/(28095:28096): thread name: CARPINCHO1
+[INFO] 20:00:10:407 Carpincho/(28095:28096): value: 1
+[INFO] 20:00:10:407 Carpincho/(28095:28096): MEM_WRITE el mensaje  en 28
+[INFO] 20:00:10:448 Carpincho/(28095:28096): Se realizó el MEM_WRITE correctamente
+[INFO] 20:04:03:545 Carpincho/(28770:28771): Log creado
+[INFO] 20:04:03:552 Carpincho/(28770:28771): 
 NUEVO CARPINCHO
 
-[INFO] 01:48:45:189 Carpincho/(7320:7321): Carpincho creado correctamente con el pid: 1
-[INFO] 01:48:45:190 Carpincho/(7320:7321): CALL_IO a PILETA carpincho 1
-[INFO] 01:48:45:190 Carpincho/(7320:7321): Vamos a usar la pileta...
-[INFO] 01:48:45:190 Carpincho/(7320:7321): RESPUESA DE IO RECIBIDA 0 
-[INFO] 01:48:45:190 Carpincho/(7320:7321): MATE IO ESPERANDO OK DEL PROCESADOR PARA SEGUIR carpincho 1
-
-
-[INFO] 01:48:46:155 Carpincho/(7320:7324): Log creado
-[INFO] 01:48:46:156 Carpincho/(7320:7324): Esperando respuesta de servidor
-[INFO] 01:48:46:158 Carpincho/(7320:7324): 
+[INFO] 20:04:03:569 Carpincho/(28770:28773): Log creado
+[INFO] 20:04:03:572 Carpincho/(28770:28773): 
 NUEVO CARPINCHO
 
-[INFO] 01:48:46:239 Carpincho/(7320:7324): Carpincho creado correctamente con el pid: 2
-[INFO] 01:48:46:240 Carpincho/(7320:7324): CALL_IO a PILETA carpincho 2
-[INFO] 01:48:46:240 Carpincho/(7320:7324): Vamos a usar la pileta...
-[INFO] 01:48:46:240 Carpincho/(7320:7324): RESPUESA DE IO RECIBIDA 0 
-[INFO] 01:48:46:240 Carpincho/(7320:7324): MATE IO ESPERANDO OK DEL PROCESADOR PARA SEGUIR carpincho 2
-
-
-[INFO] 01:48:47:215 Carpincho/(7320:7332): Log creado
-[INFO] 01:48:47:215 Carpincho/(7320:7332): Esperando respuesta de servidor
-[INFO] 01:48:47:218 Carpincho/(7320:7332): 
+[INFO] 20:04:03:607 Carpincho/(28770:28771): Carpincho creado correctamente con el pid: 1
+[INFO] 20:04:03:607 Carpincho/(28770:28771): MEM_ALLOC de carpincho 1 de tamaño 10
+[INFO] 20:04:03:698 Carpincho/(28770:28771): Se realizó el MEM_ALLOC correctamente. La dirección lógica es 9
+[INFO] 20:04:03:698 Carpincho/(28770:28771): MEM_WRITE el mensaje CARPINCHO1 en 9
+[INFO] 20:04:03:700 Carpincho/(28770:28771): Se realizó el MEM_WRITE correctamente
+[INFO] 20:04:03:700 Carpincho/(28770:28771): MEM_ALLOC de carpincho 1 de tamaño 4
+[INFO] 20:04:03:705 Carpincho/(28770:28771): Se realizó el MEM_ALLOC correctamente. La dirección lógica es 28
+[INFO] 20:04:03:705 Carpincho/(28770:28771): MEM_WRITE el mensaje  en 28
+[INFO] 20:04:03:783 Carpincho/(28770:28771): Se realizó el MEM_WRITE correctamente
+[INFO] 20:04:03:783 Carpincho/(28770:28771): thread name: CARPINCHO1
+[INFO] 20:04:03:783 Carpincho/(28770:28771): value: 1
+[INFO] 20:04:03:783 Carpincho/(28770:28771): MEM_READ desde 9 el size 10
+[INFO] 20:04:03:902 Carpincho/(28770:28771): Se realizó el MEM_READ correctamente. El contenido es: CARPINCHO1
+[INFO] 20:04:03:902 Carpincho/(28770:28771): MEM_READ desde 28 el size 4
+[INFO] 20:04:03:982 Carpincho/(28770:28771): Se realizó el MEM_READ correctamente. El contenido es: 
+[INFO] 20:04:03:982 Carpincho/(28770:28771): thread name: CARPINCHO1
+[INFO] 20:04:03:982 Carpincho/(28770:28771): value: 1
+[INFO] 20:04:03:983 Carpincho/(28770:28771): MEM_WRITE el mensaje  en 28
+[INFO] 20:04:04:023 Carpincho/(28770:28771): Se realizó el MEM_WRITE correctamente
+[INFO] 20:07:44:971 Carpincho/(29465:29467): Log creado
+[INFO] 20:07:44:971 Carpincho/(29465:29466): Log creado
+[INFO] 20:07:44:972 Carpincho/(29465:29467): 
 NUEVO CARPINCHO
 
-[INFO] 01:48:50:191 Carpincho/(7320:7321): 
-_____llego del procesador un OK para el caprincho 1
-
-
-[INFO] 01:48:50:191 Carpincho/(7320:7321): Se realizó el CALL IO correctamente
-[INFO] 01:48:50:191 Carpincho/(7320:7321): MEM_ALLOC de 10
-[INFO] 01:48:50:234 Carpincho/(7320:7321): Se realizó el MEM_ALLOC correctamente. La dirección lógica es 9
-[INFO] 01:48:50:234 Carpincho/(7320:7321): MEM_WRITE el mensaje HOLA en 9
-[INFO] 01:48:50:235 Carpincho/(7320:7321): Se realizó el MEM_WRITE correctamente
-[INFO] 01:48:50:235 Carpincho/(7320:7321): MEM_READ desde 9 el size 4
-[INFO] 01:48:50:353 Carpincho/(7320:7321): Se realizó el MEM_READ correctamente. El contenido es: HOLA	
-[INFO] 01:48:50:354 Carpincho/(7320:7321): CALL_IO a PILETA carpincho 1
-[INFO] 01:48:50:354 Carpincho/(7320:7321): Vamos a usar la pileta...
-[INFO] 01:48:50:354 Carpincho/(7320:7332): Carpincho creado correctamente con el pid: 3
-[INFO] 01:48:50:357 Carpincho/(7320:7332): CALL_IO a PILETA carpincho 3
-[INFO] 01:48:50:358 Carpincho/(7320:7332): Vamos a usar la pileta...
-[INFO] 01:48:50:358 Carpincho/(7320:7332): RESPUESA DE IO RECIBIDA 0 
-[INFO] 01:48:50:358 Carpincho/(7320:7332): MATE IO ESPERANDO OK DEL PROCESADOR PARA SEGUIR carpincho 3
-
-
-[INFO] 01:48:50:358 Carpincho/(7320:7321): RESPUESA DE IO RECIBIDA 0 
-[INFO] 01:48:50:358 Carpincho/(7320:7321): MATE IO ESPERANDO OK DEL PROCESADOR PARA SEGUIR carpincho 1
-
-
-[INFO] 01:48:55:193 Carpincho/(7320:7324): 
-_____llego del procesador un OK para el caprincho 2
-
-
-[INFO] 01:48:55:193 Carpincho/(7320:7324): Se realizó el CALL IO correctamente
-[INFO] 01:48:55:193 Carpincho/(7320:7324): CALL_IO a PILETA carpincho 2
-[INFO] 01:48:55:193 Carpincho/(7320:7324): Vamos a usar la pileta...
-[INFO] 01:48:55:194 Carpincho/(7320:7324): RESPUESA DE IO RECIBIDA 0 
-[INFO] 01:48:55:194 Carpincho/(7320:7324): MATE IO ESPERANDO OK DEL PROCESADOR PARA SEGUIR carpincho 2
-
-
-[INFO] 01:49:05:193 Carpincho/(7320:7332): 
-_____llego del procesador un OK para el caprincho 3
-
-
-[INFO] 01:49:05:193 Carpincho/(7320:7332): Se realizó el CALL IO correctamente
-[INFO] 01:49:05:193 Carpincho/(7320:7332): CALL_IO a PILETA carpincho 3
-[INFO] 01:49:05:193 Carpincho/(7320:7332): Vamos a usar la pileta...
-[INFO] 01:49:05:194 Carpincho/(7320:7332): RESPUESA DE IO RECIBIDA 0 
-[INFO] 01:49:05:194 Carpincho/(7320:7332): MATE IO ESPERANDO OK DEL PROCESADOR PARA SEGUIR carpincho 3
-
-
-[INFO] 01:49:10:194 Carpincho/(7320:7324): 
-_____llego del procesador un OK para el caprincho 2
-
-
-[INFO] 01:49:10:194 Carpincho/(7320:7324): Se realizó el CALL IO correctamente
-[INFO] 01:49:10:194 Carpincho/(7320:7324): CALL_IO a PILETA carpincho 2
-[INFO] 01:49:10:194 Carpincho/(7320:7324): Vamos a usar la pileta...
-[INFO] 01:49:10:194 Carpincho/(7320:7324): RESPUESA DE IO RECIBIDA 0 
-[INFO] 01:49:10:194 Carpincho/(7320:7324): MATE IO ESPERANDO OK DEL PROCESADOR PARA SEGUIR carpincho 2
-
-
-[INFO] 01:49:15:195 Carpincho/(7320:7332): 
-_____llego del procesador un OK para el caprincho 3
-
-
-[INFO] 01:49:15:195 Carpincho/(7320:7332): Se realizó el CALL IO correctamente
-[INFO] 01:49:15:195 Carpincho/(7320:7332): CALL_IO a PILETA carpincho 3
-[INFO] 01:49:15:195 Carpincho/(7320:7332): Vamos a usar la pileta...
-[INFO] 01:49:15:196 Carpincho/(7320:7332): RESPUESA DE IO RECIBIDA 0 
-[INFO] 01:49:15:196 Carpincho/(7320:7332): MATE IO ESPERANDO OK DEL PROCESADOR PARA SEGUIR carpincho 3
-
-
-[INFO] 01:49:20:196 Carpincho/(7320:7324): 
-_____llego del procesador un OK para el caprincho 2
-
-
-[INFO] 01:49:20:196 Carpincho/(7320:7324): Se realizó el CALL IO correctamente
-[INFO] 01:49:20:196 Carpincho/(7320:7324): MATE_CLOSE carpincho 2
-[INFO] 01:49:20:196 Carpincho/(7320:7324): MATE_CLOSE: mensaje enviado a kernel
-[INFO] 01:49:20:196 Carpincho/(7320:7324): Carpincho eliminado
-[INFO] 01:49:20:199 Carpincho/(7320:7321): 
-_____llego del procesador un OK para el caprincho 1
-
-
-[INFO] 01:49:20:199 Carpincho/(7320:7321): Se realizó el CALL IO correctamente
-[INFO] 01:49:20:199 Carpincho/(7320:7321): MEM_FREE a la dirección 9
-[INFO] 01:49:21:604 Carpincho/(7320:7321): Se realizó el MEM_FREE correctamente
-[INFO] 01:49:21:604 Carpincho/(7320:7321): CALL_IO a PILETA carpincho 1
-[INFO] 01:49:21:604 Carpincho/(7320:7321): Vamos a usar la pileta...
-[INFO] 01:49:21:607 Carpincho/(7320:7321): RESPUESA DE IO RECIBIDA 0 
-[INFO] 01:49:21:607 Carpincho/(7320:7321): MATE IO ESPERANDO OK DEL PROCESADOR PARA SEGUIR carpincho 1
-
-
-[INFO] 01:49:25:197 Carpincho/(7320:7332): 
-_____llego del procesador un OK para el caprincho 3
-
-
-[INFO] 01:49:25:197 Carpincho/(7320:7332): Se realizó el CALL IO correctamente
-[INFO] 01:49:25:197 Carpincho/(7320:7332): MATE_CLOSE carpincho 3
-[INFO] 01:49:25:197 Carpincho/(7320:7332): MATE_CLOSE: mensaje enviado a kernel
-[INFO] 01:49:25:197 Carpincho/(7320:7332): Carpincho eliminado
-[INFO] 01:49:30:198 Carpincho/(7320:7321): 
-_____llego del procesador un OK para el caprincho 1
-
-
-[INFO] 01:49:30:198 Carpincho/(7320:7321): Se realizó el CALL IO correctamente
-[INFO] 01:49:30:198 Carpincho/(7320:7321): MATE_CLOSE carpincho 1
-[INFO] 01:49:30:198 Carpincho/(7320:7321): MATE_CLOSE: mensaje enviado a kernel
-[INFO] 01:49:30:198 Carpincho/(7320:7321): Carpincho eliminado
-[INFO] 01:51:20:888 Carpincho/(7941:7942): Log creado
-[INFO] 01:51:20:888 Carpincho/(7941:7942): Esperando respuesta de servidor
-[INFO] 01:51:20:889 Carpincho/(7941:7942): 
+[INFO] 20:07:44:986 Carpincho/(29465:29466): 
 NUEVO CARPINCHO
 
-[INFO] 01:51:20:945 Carpincho/(7941:7942): Carpincho creado correctamente con el pid: 1
-[INFO] 01:51:20:946 Carpincho/(7941:7942): CALL_IO a PILETA carpincho 1
-[INFO] 01:51:20:946 Carpincho/(7941:7942): Vamos a usar la pileta...
-[INFO] 01:51:20:947 Carpincho/(7941:7942): RESPUESA DE IO RECIBIDA 0 
-[INFO] 01:51:20:947 Carpincho/(7941:7942): MATE IO ESPERANDO OK DEL PROCESADOR PARA SEGUIR carpincho 1
+[INFO] 20:07:45:027 Carpincho/(29465:29467): Carpincho creado correctamente con el pid: 1
+[INFO] 20:07:45:027 Carpincho/(29465:29467): MEM_ALLOC de carpincho 1 de tamaño 10
+[INFO] 20:07:45:074 Carpincho/(29465:29466): Carpincho creado correctamente con el pid: 2
+[INFO] 20:07:45:074 Carpincho/(29465:29466): MEM_ALLOC de carpincho 2 de tamaño 10
+[INFO] 20:07:45:117 Carpincho/(29465:29467): Se realizó el MEM_ALLOC correctamente. La dirección lógica es 9
+[INFO] 20:07:45:117 Carpincho/(29465:29467): MEM_WRITE el mensaje CARPINCHO2 en 9
+[INFO] 20:07:45:198 Carpincho/(29465:29466): Se realizó el MEM_ALLOC correctamente. La dirección lógica es 9
+[INFO] 20:07:45:198 Carpincho/(29465:29466): MEM_WRITE el mensaje CARPINCHO1 en 9
+[INFO] 20:07:45:201 Carpincho/(29465:29467): Se realizó el MEM_WRITE correctamente
+[INFO] 20:07:45:201 Carpincho/(29465:29467): MEM_ALLOC de carpincho 1 de tamaño 4
+[INFO] 20:07:45:203 Carpincho/(29465:29466): Se realizó el MEM_WRITE correctamente
+[INFO] 20:07:45:203 Carpincho/(29465:29466): MEM_ALLOC de carpincho 2 de tamaño 4
+[INFO] 20:07:45:206 Carpincho/(29465:29467): Se realizó el MEM_ALLOC correctamente. La dirección lógica es 28
+[INFO] 20:07:45:207 Carpincho/(29465:29467): MEM_WRITE el mensaje  en 28
+[INFO] 20:07:45:212 Carpincho/(29465:29466): Se realizó el MEM_ALLOC correctamente. La dirección lógica es 28
+[INFO] 20:07:45:212 Carpincho/(29465:29466): MEM_WRITE el mensaje  en 28
+[INFO] 20:07:45:287 Carpincho/(29465:29467): Se realizó el MEM_WRITE correctamente
+[INFO] 20:07:45:287 Carpincho/(29465:29467): thread name: CARPINCHO2
+[INFO] 20:07:45:287 Carpincho/(29465:29467): value: 1
+[INFO] 20:07:45:291 Carpincho/(29465:29466): Se realizó el MEM_WRITE correctamente
+[INFO] 20:07:45:291 Carpincho/(29465:29466): thread name: CARPINCHO1
+[INFO] 20:07:45:291 Carpincho/(29465:29466): value: 1
+[INFO] 20:07:45:291 Carpincho/(29465:29466): MEM_READ desde 9 el size 10
+[INFO] 20:07:45:411 Carpincho/(29465:29466): Se realizó el MEM_READ correctamente. El contenido es: CARPINCHO1
+[INFO] 20:07:45:411 Carpincho/(29465:29466): MEM_READ desde 28 el size 4
+[INFO] 20:07:45:491 Carpincho/(29465:29466): Se realizó el MEM_READ correctamente. El contenido es: 
+[INFO] 20:07:45:491 Carpincho/(29465:29466): thread name: CARPINCHO1
+[INFO] 20:07:45:491 Carpincho/(29465:29466): value: 1
+[INFO] 20:07:45:491 Carpincho/(29465:29466): MEM_WRITE el mensaje  en 28
+[INFO] 20:07:45:531 Carpincho/(29465:29466): Se realizó el MEM_WRITE correctamente
+[INFO] 20:07:45:532 Carpincho/(29465:29467): MEM_READ desde 9 el size 10
+[INFO] 20:07:45:574 Carpincho/(29465:29467): Se realizó el MEM_READ correctamente. El contenido es: CARPINCHO2
+[INFO] 20:07:45:574 Carpincho/(29465:29467): MEM_READ desde 28 el size 4
+[INFO] 20:07:45:690 Carpincho/(29465:29467): Se realizó el MEM_READ correctamente. El contenido es: 
+[INFO] 20:07:45:691 Carpincho/(29465:29467): thread name: CARPINCHO2
+[INFO] 20:07:45:691 Carpincho/(29465:29467): value: 2
+[INFO] 20:07:45:691 Carpincho/(29465:29467): MEM_WRITE el mensaje  en 28
+[INFO] 20:07:45:731 Carpincho/(29465:29467): Se realizó el MEM_WRITE correctamente
+[INFO] 20:07:45:732 Carpincho/(29465:29466): MEM_READ desde 9 el size 10
+[INFO] 20:07:45:774 Carpincho/(29465:29466): Se realizó el MEM_READ correctamente. El contenido es: CARPINCHO1
+[INFO] 20:07:45:775 Carpincho/(29465:29466): MEM_READ desde 28 el size 4
+[INFO] 20:07:45:895 Carpincho/(29465:29466): Se realizó el MEM_READ correctamente. El contenido es: 
+[INFO] 20:07:45:895 Carpincho/(29465:29466): thread name: CARPINCHO1
+[INFO] 20:07:45:895 Carpincho/(29465:29466): value: 3
+[INFO] 20:07:45:895 Carpincho/(29465:29466): MEM_WRITE el mensaje  en 28
+[INFO] 20:07:45:935 Carpincho/(29465:29466): Se realizó el MEM_WRITE correctamente
+[INFO] 20:07:45:935 Carpincho/(29465:29467): MEM_READ desde 9 el size 10
+[INFO] 20:07:45:979 Carpincho/(29465:29467): Se realizó el MEM_READ correctamente. El contenido es: CARPINCHO2
+[INFO] 20:07:45:979 Carpincho/(29465:29467): MEM_READ desde 28 el size 4
+[INFO] 20:07:46:099 Carpincho/(29465:29467): Se realizó el MEM_READ correctamente. El contenido es: 
+[INFO] 20:07:46:099 Carpincho/(29465:29467): thread name: CARPINCHO2
+[INFO] 20:07:46:099 Carpincho/(29465:29467): value: 4
+[INFO] 20:07:46:099 Carpincho/(29465:29467): MEM_WRITE el mensaje  en 28
+[INFO] 20:07:46:139 Carpincho/(29465:29467): Se realizó el MEM_WRITE correctamente
+[INFO] 20:07:46:139 Carpincho/(29465:29466): MEM_READ desde 9 el size 10
+[INFO] 20:07:46:181 Carpincho/(29465:29466): Se realizó el MEM_READ correctamente. El contenido es: CARPINCHO1
+[INFO] 20:07:46:181 Carpincho/(29465:29466): MEM_READ desde 28 el size 4
+[INFO] 20:07:46:299 Carpincho/(29465:29466): Se realizó el MEM_READ correctamente. El contenido es: 
+[INFO] 20:07:46:299 Carpincho/(29465:29466): thread name: CARPINCHO1
+[INFO] 20:07:46:299 Carpincho/(29465:29466): value: 5
+[INFO] 20:07:46:299 Carpincho/(29465:29466): MEM_WRITE el mensaje  en 28
+[INFO] 20:07:46:339 Carpincho/(29465:29466): Se realizó el MEM_WRITE correctamente
+[INFO] 20:07:46:339 Carpincho/(29465:29467): MEM_READ desde 9 el size 10
+[INFO] 20:07:46:381 Carpincho/(29465:29467): Se realizó el MEM_READ correctamente. El contenido es: CARPINCHO2
+[INFO] 20:07:46:381 Carpincho/(29465:29467): MEM_READ desde 28 el size 4
+[INFO] 20:07:46:498 Carpincho/(29465:29467): Se realizó el MEM_READ correctamente. El contenido es: 
+[INFO] 20:07:46:499 Carpincho/(29465:29467): thread name: CARPINCHO2
+[INFO] 20:07:46:499 Carpincho/(29465:29467): value: 6
+[INFO] 20:07:46:499 Carpincho/(29465:29467): MEM_WRITE el mensaje  en 28
+[INFO] 20:07:46:539 Carpincho/(29465:29467): Se realizó el MEM_WRITE correctamente
+[INFO] 20:07:46:539 Carpincho/(29465:29466): MEM_READ desde 9 el size 10
+[INFO] 20:07:46:581 Carpincho/(29465:29466): Se realizó el MEM_READ correctamente. El contenido es: CARPINCHO1
+[INFO] 20:07:46:581 Carpincho/(29465:29466): MEM_READ desde 28 el size 4
+[INFO] 20:07:46:698 Carpincho/(29465:29466): Se realizó el MEM_READ correctamente. El contenido es: 
+[INFO] 20:07:46:698 Carpincho/(29465:29466): thread name: CARPINCHO1
+[INFO] 20:07:46:698 Carpincho/(29465:29466): value: 7
+[INFO] 20:07:46:698 Carpincho/(29465:29466): MEM_WRITE el mensaje  en 28
+[INFO] 20:07:46:740 Carpincho/(29465:29466): Se realizó el MEM_WRITE correctamente
+[INFO] 20:07:46:740 Carpincho/(29465:29467): MEM_READ desde 9 el size 10
+[INFO] 20:07:46:787 Carpincho/(29465:29467): Se realizó el MEM_READ correctamente. El contenido es: CARPINCHO2
+[INFO] 20:07:46:787 Carpincho/(29465:29467): MEM_READ desde 28 el size 4
+[INFO] 20:07:46:908 Carpincho/(29465:29467): Se realizó el MEM_READ correctamente. El contenido es: 
+[INFO] 20:07:46:908 Carpincho/(29465:29467): thread name: CARPINCHO2
+[INFO] 20:07:46:908 Carpincho/(29465:29467): value: 8
+[INFO] 20:07:46:909 Carpincho/(29465:29467): MEM_WRITE el mensaje  en 28
+[INFO] 20:07:46:947 Carpincho/(29465:29467): Se realizó el MEM_WRITE correctamente
+[INFO] 20:07:46:947 Carpincho/(29465:29466): MEM_READ desde 9 el size 10
+[INFO] 20:07:46:989 Carpincho/(29465:29466): Se realizó el MEM_READ correctamente. El contenido es: CARPINCHO1
+[INFO] 20:07:46:989 Carpincho/(29465:29466): MEM_READ desde 28 el size 4
+[INFO] 20:07:47:106 Carpincho/(29465:29466): Se realizó el MEM_READ correctamente. El contenido es: 
+[INFO] 20:07:47:106 Carpincho/(29465:29466): thread name: CARPINCHO1
+[INFO] 20:07:47:106 Carpincho/(29465:29466): value: 9
+[INFO] 20:07:47:107 Carpincho/(29465:29466): MEM_WRITE el mensaje 	 en 28
+[INFO] 20:07:47:148 Carpincho/(29465:29466): Se realizó el MEM_WRITE correctamente
+[INFO] 20:07:47:148 Carpincho/(29465:29467): MEM_READ desde 9 el size 10
+[INFO] 20:07:47:189 Carpincho/(29465:29467): Se realizó el MEM_READ correctamente. El contenido es: CARPINCHO2
+[INFO] 20:07:47:189 Carpincho/(29465:29467): MEM_READ desde 28 el size 4
+[INFO] 20:07:47:306 Carpincho/(29465:29467): Se realizó el MEM_READ correctamente. El contenido es: 
+[INFO] 20:07:47:306 Carpincho/(29465:29467): thread name: CARPINCHO2
+[INFO] 20:07:47:306 Carpincho/(29465:29467): value: 10
+[INFO] 20:07:47:307 Carpincho/(29465:29467): MEM_WRITE el mensaje 
+ en 28
+[INFO] 20:07:47:347 Carpincho/(29465:29467): Se realizó el MEM_WRITE correctamente
+[INFO] 20:07:47:347 Carpincho/(29465:29466): MEM_READ desde 9 el size 10
+[INFO] 20:07:47:392 Carpincho/(29465:29466): Se realizó el MEM_READ correctamente. El contenido es: CARPINCHO1
+[INFO] 20:07:47:392 Carpincho/(29465:29466): MEM_READ desde 28 el size 4
+[INFO] 20:07:47:512 Carpincho/(29465:29466): Se realizó el MEM_READ correctamente. El contenido es: 	
+[INFO] 20:07:47:512 Carpincho/(29465:29466): thread name: CARPINCHO1
+[INFO] 20:07:47:512 Carpincho/(29465:29466): value: 11
+[INFO] 20:07:47:512 Carpincho/(29465:29466): MEM_WRITE el mensaje  en 28
+[INFO] 20:07:47:551 Carpincho/(29465:29466): Se realizó el MEM_WRITE correctamente
+[INFO] 20:07:47:552 Carpincho/(29465:29467): MEM_READ desde 9 el size 10
+[INFO] 20:07:47:595 Carpincho/(29465:29467): Se realizó el MEM_READ correctamente. El contenido es: CARPINCHO2
+[INFO] 20:07:47:595 Carpincho/(29465:29467): MEM_READ desde 28 el size 4
+[INFO] 20:07:47:714 Carpincho/(29465:29467): Se realizó el MEM_READ correctamente. El contenido es: 
 
-
-[INFO] 01:51:21:889 Carpincho/(7941:7945): Log creado
-[INFO] 01:51:21:891 Carpincho/(7941:7945): Esperando respuesta de servidor
-[INFO] 01:51:21:892 Carpincho/(7941:7945): 
+[INFO] 20:07:47:714 Carpincho/(29465:29467): thread name: CARPINCHO2
+[INFO] 20:07:47:714 Carpincho/(29465:29467): value: 12
+[INFO] 20:07:47:715 Carpincho/(29465:29467): MEM_WRITE el mensaje  en 28
+[INFO] 20:07:47:755 Carpincho/(29465:29467): Se realizó el MEM_WRITE correctamente
+[INFO] 20:07:47:755 Carpincho/(29465:29466): MEM_READ desde 9 el size 10
+[INFO] 20:07:47:797 Carpincho/(29465:29466): Se realizó el MEM_READ correctamente. El contenido es: CARPINCHO1
+[INFO] 20:07:47:797 Carpincho/(29465:29466): MEM_READ desde 28 el size 4
+[INFO] 20:07:47:915 Carpincho/(29465:29466): Se realizó el MEM_READ correctamente. El contenido es: 
+[INFO] 20:07:47:915 Carpincho/(29465:29466): thread name: CARPINCHO1
+[INFO] 20:07:47:915 Carpincho/(29465:29466): value: 13
+[INFO] 20:07:47:915 Carpincho/(29465:29466): MEM_WRITE el mensaje  en 28
+[INFO] 20:07:47:955 Carpincho/(29465:29466): Se realizó el MEM_WRITE correctamente
+[INFO] 20:07:47:955 Carpincho/(29465:29467): MEM_READ desde 9 el size 10
+[INFO] 20:07:47:998 Carpincho/(29465:29467): Se realizó el MEM_READ correctamente. El contenido es: CARPINCHO2
+[INFO] 20:07:47:998 Carpincho/(29465:29467): MEM_READ desde 28 el size 4
+[INFO] 20:07:48:119 Carpincho/(29465:29467): Se realizó el MEM_READ correctamente. El contenido es: 
+[INFO] 20:07:48:120 Carpincho/(29465:29467): thread name: CARPINCHO2
+[INFO] 20:07:48:120 Carpincho/(29465:29467): value: 14
+[INFO] 20:07:48:120 Carpincho/(29465:29467): MEM_WRITE el mensaje  en 28
+[INFO] 20:07:48:159 Carpincho/(29465:29467): Se realizó el MEM_WRITE correctamente
+[INFO] 20:07:48:159 Carpincho/(29465:29466): MEM_READ desde 9 el size 10
+[INFO] 20:07:48:202 Carpincho/(29465:29466): Se realizó el MEM_READ correctamente. El contenido es: CARPINCHO1
+[INFO] 20:07:48:202 Carpincho/(29465:29466): MEM_READ desde 28 el size 4
+[INFO] 20:07:48:320 Carpincho/(29465:29466): Se realizó el MEM_READ correctamente. El contenido es: 
+[INFO] 20:07:48:320 Carpincho/(29465:29466): thread name: CARPINCHO1
+[INFO] 20:07:48:320 Carpincho/(29465:29466): value: 15
+[INFO] 20:07:48:320 Carpincho/(29465:29466): MEM_WRITE el mensaje  en 28
+[INFO] 20:07:48:359 Carpincho/(29465:29466): Se realizó el MEM_WRITE correctamente
+[INFO] 20:07:48:359 Carpincho/(29465:29467): MEM_READ desde 9 el size 10
+[INFO] 20:07:48:402 Carpincho/(29465:29467): Se realizó el MEM_READ correctamente. El contenido es: CARPINCHO2
+[INFO] 20:07:48:402 Carpincho/(29465:29467): MEM_READ desde 28 el size 4
+[INFO] 20:07:48:519 Carpincho/(29465:29467): Se realizó el MEM_READ correctamente. El contenido es: 
+[INFO] 20:07:48:519 Carpincho/(29465:29467): thread name: CARPINCHO2
+[INFO] 20:07:48:519 Carpincho/(29465:29467): value: 16
+[INFO] 20:07:48:519 Carpincho/(29465:29467): MEM_WRITE el mensaje  en 28
+[INFO] 20:07:48:561 Carpincho/(29465:29467): Se realizó el MEM_WRITE correctamente
+[INFO] 20:07:48:561 Carpincho/(29465:29466): MEM_READ desde 9 el size 10
+[INFO] 20:07:48:601 Carpincho/(29465:29466): Se realizó el MEM_READ correctamente. El contenido es: CARPINCHO1
+[INFO] 20:07:48:601 Carpincho/(29465:29466): MEM_READ desde 28 el size 4
+[INFO] 20:07:48:718 Carpincho/(29465:29466): Se realizó el MEM_READ correctamente. El contenido es: 
+[INFO] 20:07:48:719 Carpincho/(29465:29466): thread name: CARPINCHO1
+[INFO] 20:07:48:719 Carpincho/(29465:29466): value: 17
+[INFO] 20:07:48:719 Carpincho/(29465:29466): MEM_WRITE el mensaje  en 28
+[INFO] 20:07:48:759 Carpincho/(29465:29466): Se realizó el MEM_WRITE correctamente
+[INFO] 20:07:48:759 Carpincho/(29465:29467): MEM_READ desde 9 el size 10
+[INFO] 20:07:48:803 Carpincho/(29465:29467): Se realizó el MEM_READ correctamente. El contenido es: CARPINCHO2
+[INFO] 20:07:48:803 Carpincho/(29465:29467): MEM_READ desde 28 el size 4
+[INFO] 20:07:48:923 Carpincho/(29465:29467): Se realizó el MEM_READ correctamente. El contenido es: 
+[INFO] 20:07:48:923 Carpincho/(29465:29467): thread name: CARPINCHO2
+[INFO] 20:07:48:923 Carpincho/(29465:29467): value: 18
+[INFO] 20:07:48:923 Carpincho/(29465:29467): MEM_WRITE el mensaje  en 28
+[INFO] 20:07:48:964 Carpincho/(29465:29467): Se realizó el MEM_WRITE correctamente
+[INFO] 20:07:48:964 Carpincho/(29465:29466): MEM_READ desde 9 el size 10
+[INFO] 20:07:49:006 Carpincho/(29465:29466): Se realizó el MEM_READ correctamente. El contenido es: CARPINCHO1
+[INFO] 20:07:49:006 Carpincho/(29465:29466): MEM_READ desde 28 el size 4
+[INFO] 20:07:49:123 Carpincho/(29465:29466): Se realizó el MEM_READ correctamente. El contenido es: 
+[INFO] 20:07:49:123 Carpincho/(29465:29466): thread name: CARPINCHO1
+[INFO] 20:07:49:123 Carpincho/(29465:29466): value: 19
+[INFO] 20:07:49:123 Carpincho/(29465:29466): MEM_WRITE el mensaje  en 28
+[INFO] 20:07:49:163 Carpincho/(29465:29466): Se realizó el MEM_WRITE correctamente
+[INFO] 20:07:49:163 Carpincho/(29465:29467): MEM_READ desde 9 el size 10
+[INFO] 20:07:49:206 Carpincho/(29465:29467): Se realizó el MEM_READ correctamente. El contenido es: CARPINCHO2
+[INFO] 20:07:49:206 Carpincho/(29465:29467): MEM_READ desde 28 el size 4
+[INFO] 20:07:49:322 Carpincho/(29465:29467): Se realizó el MEM_READ correctamente. El contenido es: 
+[INFO] 20:07:49:322 Carpincho/(29465:29467): thread name: CARPINCHO2
+[INFO] 20:07:49:322 Carpincho/(29465:29467): value: 20
+[INFO] 20:07:49:322 Carpincho/(29465:29467): MEM_WRITE el mensaje  en 28
+[INFO] 20:07:49:363 Carpincho/(29465:29467): Se realizó el MEM_WRITE correctamente
+[INFO] 20:07:49:363 Carpincho/(29465:29466): MEM_READ desde 9 el size 10
+[INFO] 20:07:49:405 Carpincho/(29465:29466): Se realizó el MEM_READ correctamente. El contenido es: CARPINCHO1
+[INFO] 20:07:49:405 Carpincho/(29465:29466): MEM_READ desde 28 el size 4
+[INFO] 20:07:49:522 Carpincho/(29465:29466): Se realizó el MEM_READ correctamente. El contenido es: 
+[INFO] 20:07:49:523 Carpincho/(29465:29466): thread name: CARPINCHO1
+[INFO] 20:07:49:523 Carpincho/(29465:29466): value: 21
+[INFO] 20:07:49:523 Carpincho/(29465:29466): MEM_WRITE el mensaje  en 28
+[INFO] 20:07:49:564 Carpincho/(29465:29466): Se realizó el MEM_WRITE correctamente
+[INFO] 20:07:49:564 Carpincho/(29465:29467): MEM_READ desde 9 el size 10
+[INFO] 20:07:49:606 Carpincho/(29465:29467): Se realizó el MEM_READ correctamente. El contenido es: CARPINCHO2
+[INFO] 20:07:49:606 Carpincho/(29465:29467): MEM_READ desde 28 el size 4
+[INFO] 20:07:49:722 Carpincho/(29465:29467): Se realizó el MEM_READ correctamente. El contenido es: 
+[INFO] 20:07:49:722 Carpincho/(29465:29467): thread name: CARPINCHO2
+[INFO] 20:07:49:722 Carpincho/(29465:29467): value: 22
+[INFO] 20:07:49:723 Carpincho/(29465:29467): MEM_WRITE el mensaje  en 28
+[INFO] 20:07:49:763 Carpincho/(29465:29467): Se realizó el MEM_WRITE correctamente
+[INFO] 20:07:49:763 Carpincho/(29465:29466): MEM_READ desde 9 el size 10
+[INFO] 20:07:49:805 Carpincho/(29465:29466): Se realizó el MEM_READ correctamente. El contenido es: CARPINCHO1
+[INFO] 20:07:49:805 Carpincho/(29465:29466): MEM_READ desde 28 el size 4
+[INFO] 20:07:49:923 Carpincho/(29465:29466): Se realizó el MEM_READ correctamente. El contenido es: 
+[INFO] 20:07:49:923 Carpincho/(29465:29466): thread name: CARPINCHO1
+[INFO] 20:07:49:923 Carpincho/(29465:29466): value: 23
+[INFO] 20:07:49:923 Carpincho/(29465:29466): MEM_WRITE el mensaje  en 28
+[INFO] 20:07:49:964 Carpincho/(29465:29466): Se realizó el MEM_WRITE correctamente
+[INFO] 20:07:49:964 Carpincho/(29465:29467): MEM_READ desde 9 el size 10
+[INFO] 20:07:50:006 Carpincho/(29465:29467): Se realizó el MEM_READ correctamente. El contenido es: CARPINCHO2
+[INFO] 20:07:50:006 Carpincho/(29465:29467): MEM_READ desde 28 el size 4
+[INFO] 20:07:50:126 Carpincho/(29465:29467): Se realizó el MEM_READ correctamente. El contenido es: 
+[INFO] 20:07:50:126 Carpincho/(29465:29467): thread name: CARPINCHO2
+[INFO] 20:07:50:126 Carpincho/(29465:29467): value: 24
+[INFO] 20:07:50:127 Carpincho/(29465:29467): MEM_WRITE el mensaje  en 28
+[INFO] 20:07:50:167 Carpincho/(29465:29467): Se realizó el MEM_WRITE correctamente
+[INFO] 20:07:50:168 Carpincho/(29465:29466): MEM_READ desde 9 el size 10
+[INFO] 20:07:50:210 Carpincho/(29465:29466): Se realizó el MEM_READ correctamente. El contenido es: CARPINCHO1
+[INFO] 20:07:50:210 Carpincho/(29465:29466): MEM_READ desde 28 el size 4
+[INFO] 20:07:50:330 Carpincho/(29465:29466): Se realizó el MEM_READ correctamente. El contenido es: 
+[INFO] 20:07:50:330 Carpincho/(29465:29466): thread name: CARPINCHO1
+[INFO] 20:07:50:330 Carpincho/(29465:29466): value: 25
+[INFO] 20:07:50:330 Carpincho/(29465:29466): MEM_WRITE el mensaje  en 28
+[INFO] 20:07:50:371 Carpincho/(29465:29466): Se realizó el MEM_WRITE correctamente
+[INFO] 20:07:50:371 Carpincho/(29465:29467): MEM_READ desde 9 el size 10
+[INFO] 20:07:50:413 Carpincho/(29465:29467): Se realizó el MEM_READ correctamente. El contenido es: CARPINCHO2
+[INFO] 20:07:50:414 Carpincho/(29465:29467): MEM_READ desde 28 el size 4
+[INFO] 20:07:50:531 Carpincho/(29465:29467): Se realizó el MEM_READ correctamente. El contenido es: 
+[INFO] 20:07:50:531 Carpincho/(29465:29467): thread name: CARPINCHO2
+[INFO] 20:07:50:531 Carpincho/(29465:29467): value: 26
+[INFO] 20:07:50:531 Carpincho/(29465:29467): MEM_WRITE el mensaje  en 28
+[INFO] 20:07:50:571 Carpincho/(29465:29467): Se realizó el MEM_WRITE correctamente
+[INFO] 20:07:50:571 Carpincho/(29465:29466): MEM_READ desde 9 el size 10
+[INFO] 20:07:50:614 Carpincho/(29465:29466): Se realizó el MEM_READ correctamente. El contenido es: CARPINCHO1
+[INFO] 20:07:50:615 Carpincho/(29465:29466): MEM_READ desde 28 el size 4
+[INFO] 20:07:50:735 Carpincho/(29465:29466): Se realizó el MEM_READ correctamente. El contenido es: 
+[INFO] 20:07:50:735 Carpincho/(29465:29466): thread name: CARPINCHO1
+[INFO] 20:07:50:735 Carpincho/(29465:29466): value: 27
+[INFO] 20:07:50:735 Carpincho/(29465:29466): MEM_WRITE el mensaje  en 28
+[INFO] 20:07:50:776 Carpincho/(29465:29466): Se realizó el MEM_WRITE correctamente
+[INFO] 20:07:50:776 Carpincho/(29465:29467): MEM_READ desde 9 el size 10
+[INFO] 20:07:50:818 Carpincho/(29465:29467): Se realizó el MEM_READ correctamente. El contenido es: CARPINCHO2
+[INFO] 20:07:50:818 Carpincho/(29465:29467): MEM_READ desde 28 el size 4
+[INFO] 20:07:50:934 Carpincho/(29465:29467): Se realizó el MEM_READ correctamente. El contenido es: 
+[INFO] 20:07:50:934 Carpincho/(29465:29467): thread name: CARPINCHO2
+[INFO] 20:07:50:934 Carpincho/(29465:29467): value: 28
+[INFO] 20:07:50:934 Carpincho/(29465:29467): MEM_WRITE el mensaje  en 28
+[INFO] 20:07:50:976 Carpincho/(29465:29467): Se realizó el MEM_WRITE correctamente
+[INFO] 20:07:50:976 Carpincho/(29465:29466): MEM_READ desde 9 el size 10
+[INFO] 20:07:51:018 Carpincho/(29465:29466): Se realizó el MEM_READ correctamente. El contenido es: CARPINCHO1
+[INFO] 20:07:51:018 Carpincho/(29465:29466): MEM_READ desde 28 el size 4
+[INFO] 20:07:51:139 Carpincho/(29465:29466): Se realizó el MEM_READ correctamente. El contenido es: 
+[INFO] 20:07:51:139 Carpincho/(29465:29466): thread name: CARPINCHO1
+[INFO] 20:07:51:139 Carpincho/(29465:29466): value: 29
+[INFO] 20:07:51:139 Carpincho/(29465:29466): MEM_WRITE el mensaje  en 28
+[INFO] 20:07:51:179 Carpincho/(29465:29466): Se realizó el MEM_WRITE correctamente
+[INFO] 20:07:51:180 Carpincho/(29465:29467): MEM_READ desde 9 el size 10
+[INFO] 20:07:51:221 Carpincho/(29465:29467): Se realizó el MEM_READ correctamente. El contenido es: CARPINCHO2
+[INFO] 20:07:51:221 Carpincho/(29465:29467): MEM_READ desde 28 el size 4
+[INFO] 20:07:51:339 Carpincho/(29465:29467): Se realizó el MEM_READ correctamente. El contenido es: 
+[INFO] 20:07:51:339 Carpincho/(29465:29467): thread name: CARPINCHO2
+[INFO] 20:07:51:339 Carpincho/(29465:29467): value: 30
+[INFO] 20:07:51:339 Carpincho/(29465:29467): MEM_WRITE el mensaje  en 28
+[INFO] 20:07:51:379 Carpincho/(29465:29467): Se realizó el MEM_WRITE correctamente
+[INFO] 20:07:51:379 Carpincho/(29465:29466): MEM_READ desde 9 el size 10
+[INFO] 20:07:51:422 Carpincho/(29465:29466): Se realizó el MEM_READ correctamente. El contenido es: CARPINCHO1
+[INFO] 20:07:51:422 Carpincho/(29465:29466): MEM_READ desde 28 el size 4
+[INFO] 20:07:51:540 Carpincho/(29465:29466): Se realizó el MEM_READ correctamente. El contenido es: 
+[INFO] 20:07:51:540 Carpincho/(29465:29466): thread name: CARPINCHO1
+[INFO] 20:07:51:540 Carpincho/(29465:29466): value: 31
+[INFO] 20:07:51:540 Carpincho/(29465:29466): MEM_WRITE el mensaje  en 28
+[INFO] 20:07:51:580 Carpincho/(29465:29466): Se realizó el MEM_WRITE correctamente
+[INFO] 20:07:51:580 Carpincho/(29465:29467): MEM_READ desde 9 el size 10
+[INFO] 20:07:51:621 Carpincho/(29465:29467): Se realizó el MEM_READ correctamente. El contenido es: CARPINCHO2
+[INFO] 20:07:51:621 Carpincho/(29465:29467): MEM_READ desde 28 el size 4
+[INFO] 20:07:51:739 Carpincho/(29465:29467): Se realizó el MEM_READ correctamente. El contenido es: 
+[INFO] 20:07:51:739 Carpincho/(29465:29467): thread name: CARPINCHO2
+[INFO] 20:07:51:739 Carpincho/(29465:29467): value: 32
+[INFO] 20:07:51:739 Carpincho/(29465:29467): MEM_WRITE el mensaje   en 28
+[INFO] 20:07:51:779 Carpincho/(29465:29467): Se realizó el MEM_WRITE correctamente
+[INFO] 20:07:51:779 Carpincho/(29465:29466): MEM_READ desde 9 el size 10
+[INFO] 20:07:51:822 Carpincho/(29465:29466): Se realizó el MEM_READ correctamente. El contenido es: CARPINCHO1
+[INFO] 20:07:51:823 Carpincho/(29465:29466): MEM_READ desde 28 el size 4
+[INFO] 20:07:51:942 Carpincho/(29465:29466): Se realizó el MEM_READ correctamente. El contenido es: 
+[INFO] 20:07:51:943 Carpincho/(29465:29466): thread name: CARPINCHO1
+[INFO] 20:07:51:943 Carpincho/(29465:29466): value: 33
+[INFO] 20:07:51:943 Carpincho/(29465:29466): MEM_WRITE el mensaje ! en 28
+[INFO] 20:07:51:984 Carpincho/(29465:29466): Se realizó el MEM_WRITE correctamente
+[INFO] 20:07:51:984 Carpincho/(29465:29467): MEM_READ desde 9 el size 10
+[INFO] 20:07:52:026 Carpincho/(29465:29467): Se realizó el MEM_READ correctamente. El contenido es: CARPINCHO2
+[INFO] 20:07:52:026 Carpincho/(29465:29467): MEM_READ desde 28 el size 4
+[INFO] 20:07:52:143 Carpincho/(29465:29467): Se realizó el MEM_READ correctamente. El contenido es:  
+[INFO] 20:07:52:143 Carpincho/(29465:29467): thread name: CARPINCHO2
+[INFO] 20:07:52:143 Carpincho/(29465:29467): value: 34
+[INFO] 20:07:52:143 Carpincho/(29465:29467): MEM_WRITE el mensaje " en 28
+[INFO] 20:07:52:183 Carpincho/(29465:29467): Se realizó el MEM_WRITE correctamente
+[INFO] 20:07:52:184 Carpincho/(29465:29466): MEM_READ desde 9 el size 10
+[INFO] 20:07:52:228 Carpincho/(29465:29466): Se realizó el MEM_READ correctamente. El contenido es: CARPINCHO1
+[INFO] 20:07:52:228 Carpincho/(29465:29466): MEM_READ desde 28 el size 4
+[INFO] 20:07:52:348 Carpincho/(29465:29466): Se realizó el MEM_READ correctamente. El contenido es: !
+[INFO] 20:07:52:348 Carpincho/(29465:29466): thread name: CARPINCHO1
+[INFO] 20:07:52:348 Carpincho/(29465:29466): value: 35
+[INFO] 20:07:52:348 Carpincho/(29465:29466): MEM_WRITE el mensaje # en 28
+[INFO] 20:07:52:388 Carpincho/(29465:29466): Se realizó el MEM_WRITE correctamente
+[INFO] 20:07:52:388 Carpincho/(29465:29467): MEM_READ desde 9 el size 10
+[INFO] 20:07:52:430 Carpincho/(29465:29467): Se realizó el MEM_READ correctamente. El contenido es: CARPINCHO2
+[INFO] 20:07:52:430 Carpincho/(29465:29467): MEM_READ desde 28 el size 4
+[INFO] 20:07:52:552 Carpincho/(29465:29467): Se realizó el MEM_READ correctamente. El contenido es: "
+[INFO] 20:07:52:552 Carpincho/(29465:29467): thread name: CARPINCHO2
+[INFO] 20:07:52:552 Carpincho/(29465:29467): value: 36
+[INFO] 20:07:52:552 Carpincho/(29465:29467): MEM_WRITE el mensaje $ en 28
+[INFO] 20:07:52:592 Carpincho/(29465:29467): Se realizó el MEM_WRITE correctamente
+[INFO] 20:07:52:592 Carpincho/(29465:29466): MEM_READ desde 9 el size 10
+[INFO] 20:07:52:634 Carpincho/(29465:29466): Se realizó el MEM_READ correctamente. El contenido es: CARPINCHO1
+[INFO] 20:07:52:634 Carpincho/(29465:29466): MEM_READ desde 28 el size 4
+[INFO] 20:07:52:750 Carpincho/(29465:29466): Se realizó el MEM_READ correctamente. El contenido es: #
+[INFO] 20:07:52:751 Carpincho/(29465:29466): thread name: CARPINCHO1
+[INFO] 20:07:52:751 Carpincho/(29465:29466): value: 37
+[INFO] 20:07:52:751 Carpincho/(29465:29466): MEM_WRITE el mensaje % en 28
+[INFO] 20:07:52:791 Carpincho/(29465:29466): Se realizó el MEM_WRITE correctamente
+[INFO] 20:07:52:791 Carpincho/(29465:29467): MEM_READ desde 9 el size 10
+[INFO] 20:07:52:835 Carpincho/(29465:29467): Se realizó el MEM_READ correctamente. El contenido es: CARPINCHO2
+[INFO] 20:07:52:835 Carpincho/(29465:29467): MEM_READ desde 28 el size 4
+[INFO] 20:07:52:955 Carpincho/(29465:29467): Se realizó el MEM_READ correctamente. El contenido es: $
+[INFO] 20:07:52:955 Carpincho/(29465:29467): thread name: CARPINCHO2
+[INFO] 20:07:52:955 Carpincho/(29465:29467): value: 38
+[INFO] 20:07:52:955 Carpincho/(29465:29467): MEM_WRITE el mensaje & en 28
+[INFO] 20:07:52:996 Carpincho/(29465:29467): Se realizó el MEM_WRITE correctamente
+[INFO] 20:07:52:996 Carpincho/(29465:29466): MEM_READ desde 9 el size 10
+[INFO] 22:38:26:656 Carpincho/(10082:10084): Log creado
+[INFO] 22:38:26:657 Carpincho/(10082:10083): Log creado
+[INFO] 22:38:26:657 Carpincho/(10082:10084): 
 NUEVO CARPINCHO
 
-[INFO] 01:51:21:986 Carpincho/(7941:7945): Carpincho creado correctamente con el pid: 2
-[INFO] 01:51:21:987 Carpincho/(7941:7945): CALL_IO a PILETA carpincho 2
-[INFO] 01:51:21:987 Carpincho/(7941:7945): Vamos a usar la pileta...
-[INFO] 01:51:21:989 Carpincho/(7941:7945): RESPUESA DE IO RECIBIDA 0 
-[INFO] 01:51:21:989 Carpincho/(7941:7945): MATE IO ESPERANDO OK DEL PROCESADOR PARA SEGUIR carpincho 2
-
-
-[INFO] 01:51:22:902 Carpincho/(7941:7953): Log creado
-[INFO] 01:51:22:903 Carpincho/(7941:7953): Esperando respuesta de servidor
-[INFO] 01:51:22:911 Carpincho/(7941:7953): 
+[INFO] 22:38:26:670 Carpincho/(10082:10083): 
 NUEVO CARPINCHO
 
-[INFO] 01:51:25:949 Carpincho/(7941:7942): 
-_____llego del procesador un OK para el caprincho 1
+[INFO] 22:38:26:718 Carpincho/(10082:10084): Carpincho creado correctamente con el pid: 1
+[INFO] 22:38:26:718 Carpincho/(10082:10084): MEM_ALLOC de carpincho 1 de tamaño 10
+[INFO] 22:38:26:762 Carpincho/(10082:10083): Carpincho creado correctamente con el pid: 2
+[INFO] 22:38:26:762 Carpincho/(10082:10083): MEM_ALLOC de carpincho 2 de tamaño 10
+[INFO] 22:38:26:807 Carpincho/(10082:10084): Se realizó el MEM_ALLOC correctamente. La dirección lógica es 9
+[INFO] 22:38:26:808 Carpincho/(10082:10084): MEM_WRITE el mensaje CARPINCHO2 en 9
+[INFO] 22:38:26:888 Carpincho/(10082:10083): Se realizó el MEM_ALLOC correctamente. La dirección lógica es 9
+[INFO] 22:38:26:889 Carpincho/(10082:10083): MEM_WRITE el mensaje CARPINCHO1 en 9
+[INFO] 22:38:26:891 Carpincho/(10082:10084): Se realizó el MEM_WRITE correctamente
+[INFO] 22:38:26:891 Carpincho/(10082:10084): MEM_ALLOC de carpincho 1 de tamaño 4
+[INFO] 22:38:26:894 Carpincho/(10082:10083): Se realizó el MEM_WRITE correctamente
+[INFO] 22:38:26:894 Carpincho/(10082:10083): MEM_ALLOC de carpincho 2 de tamaño 4
+[INFO] 22:38:26:898 Carpincho/(10082:10084): Se realizó el MEM_ALLOC correctamente. La dirección lógica es 28
+[INFO] 22:38:26:898 Carpincho/(10082:10084): MEM_WRITE el mensaje  en 28
+[INFO] 22:38:26:902 Carpincho/(10082:10083): Se realizó el MEM_ALLOC correctamente. La dirección lógica es 28
+[INFO] 22:38:26:902 Carpincho/(10082:10083): MEM_WRITE el mensaje  en 28
+[INFO] 22:38:26:975 Carpincho/(10082:10084): Se realizó el MEM_WRITE correctamente
+[INFO] 22:38:26:975 Carpincho/(10082:10084): thread name: CARPINCHO2
+[INFO] 22:38:26:975 Carpincho/(10082:10084): value: 1
+[INFO] 22:38:26:980 Carpincho/(10082:10083): Se realizó el MEM_WRITE correctamente
+[INFO] 22:38:26:980 Carpincho/(10082:10083): thread name: CARPINCHO1
+[INFO] 22:38:26:980 Carpincho/(10082:10083): value: 1
+[INFO] 22:38:26:980 Carpincho/(10082:10083): MEM_READ desde 9 el size 10
+[INFO] 22:38:27:099 Carpincho/(10082:10083): Se realizó el MEM_READ correctamente. El contenido es: CARPINCHO1
+[INFO] 22:38:27:099 Carpincho/(10082:10083): MEM_READ desde 28 el size 4
+[INFO] 22:38:27:181 Carpincho/(10082:10083): Se realizó el MEM_READ correctamente. El contenido es: 
+[INFO] 22:38:27:181 Carpincho/(10082:10083): thread name: CARPINCHO1
+[INFO] 22:38:27:181 Carpincho/(10082:10083): value: 1
+[INFO] 22:38:27:181 Carpincho/(10082:10083): MEM_WRITE el mensaje  en 28
+[INFO] 22:38:27:220 Carpincho/(10082:10083): Se realizó el MEM_WRITE correctamente
+[INFO] 22:38:27:220 Carpincho/(10082:10084): MEM_READ desde 9 el size 10
+[INFO] 22:38:27:262 Carpincho/(10082:10084): Se realizó el MEM_READ correctamente. El contenido es: CARPINCHO2
+[INFO] 22:38:27:262 Carpincho/(10082:10084): MEM_READ desde 28 el size 4
+[INFO] 22:38:27:378 Carpincho/(10082:10084): Se realizó el MEM_READ correctamente. El contenido es: 
+[INFO] 22:38:27:378 Carpincho/(10082:10084): thread name: CARPINCHO2
+[INFO] 22:38:27:378 Carpincho/(10082:10084): value: 2
+[INFO] 22:38:27:378 Carpincho/(10082:10084): MEM_WRITE el mensaje  en 28
+[INFO] 22:38:27:420 Carpincho/(10082:10084): Se realizó el MEM_WRITE correctamente
+[INFO] 22:38:27:420 Carpincho/(10082:10083): MEM_READ desde 9 el size 10
+[INFO] 22:38:27:461 Carpincho/(10082:10083): Se realizó el MEM_READ correctamente. El contenido es: CARPINCHO1
+[INFO] 22:38:27:461 Carpincho/(10082:10083): MEM_READ desde 28 el size 4
+[INFO] 22:38:27:578 Carpincho/(10082:10083): Se realizó el MEM_READ correctamente. El contenido es: 
+[INFO] 22:38:27:578 Carpincho/(10082:10083): thread name: CARPINCHO1
+[INFO] 22:38:27:578 Carpincho/(10082:10083): value: 3
+[INFO] 22:38:27:579 Carpincho/(10082:10083): MEM_WRITE el mensaje  en 28
+[INFO] 22:38:27:619 Carpincho/(10082:10083): Se realizó el MEM_WRITE correctamente
+[INFO] 22:38:27:619 Carpincho/(10082:10084): MEM_READ desde 9 el size 10
+[INFO] 22:38:27:661 Carpincho/(10082:10084): Se realizó el MEM_READ correctamente. El contenido es: CARPINCHO2
+[INFO] 22:38:27:661 Carpincho/(10082:10084): MEM_READ desde 28 el size 4
+[INFO] 22:38:27:779 Carpincho/(10082:10084): Se realizó el MEM_READ correctamente. El contenido es: 
+[INFO] 22:38:27:779 Carpincho/(10082:10084): thread name: CARPINCHO2
+[INFO] 22:38:27:779 Carpincho/(10082:10084): value: 4
+[INFO] 22:38:27:779 Carpincho/(10082:10084): MEM_WRITE el mensaje  en 28
+[INFO] 22:38:27:820 Carpincho/(10082:10084): Se realizó el MEM_WRITE correctamente
+[INFO] 22:38:27:820 Carpincho/(10082:10083): MEM_READ desde 9 el size 10
+[INFO] 22:38:27:862 Carpincho/(10082:10083): Se realizó el MEM_READ correctamente. El contenido es: CARPINCHO1
+[INFO] 22:38:27:862 Carpincho/(10082:10083): MEM_READ desde 28 el size 4
+[INFO] 22:38:27:978 Carpincho/(10082:10083): Se realizó el MEM_READ correctamente. El contenido es: 
+[INFO] 22:38:27:978 Carpincho/(10082:10083): thread name: CARPINCHO1
+[INFO] 22:38:27:978 Carpincho/(10082:10083): value: 5
+[INFO] 22:38:27:978 Carpincho/(10082:10083): MEM_WRITE el mensaje  en 28
+[INFO] 22:38:28:019 Carpincho/(10082:10083): Se realizó el MEM_WRITE correctamente
+[INFO] 22:38:28:019 Carpincho/(10082:10084): MEM_READ desde 9 el size 10
+[INFO] 22:38:28:061 Carpincho/(10082:10084): Se realizó el MEM_READ correctamente. El contenido es: CARPINCHO2
+[INFO] 22:38:28:062 Carpincho/(10082:10084): MEM_READ desde 28 el size 4
+[INFO] 22:38:28:179 Carpincho/(10082:10084): Se realizó el MEM_READ correctamente. El contenido es: 
+[INFO] 22:38:28:179 Carpincho/(10082:10084): thread name: CARPINCHO2
+[INFO] 22:38:28:179 Carpincho/(10082:10084): value: 6
+[INFO] 22:38:28:179 Carpincho/(10082:10084): MEM_WRITE el mensaje  en 28
+[INFO] 22:38:28:219 Carpincho/(10082:10084): Se realizó el MEM_WRITE correctamente
+[INFO] 22:38:28:220 Carpincho/(10082:10083): MEM_READ desde 9 el size 10
+[INFO] 22:38:28:261 Carpincho/(10082:10083): Se realizó el MEM_READ correctamente. El contenido es: CARPINCHO1
+[INFO] 22:38:28:261 Carpincho/(10082:10083): MEM_READ desde 28 el size 4
+[INFO] 22:38:28:378 Carpincho/(10082:10083): Se realizó el MEM_READ correctamente. El contenido es: 
+[INFO] 22:38:28:378 Carpincho/(10082:10083): thread name: CARPINCHO1
+[INFO] 22:38:28:378 Carpincho/(10082:10083): value: 7
+[INFO] 22:38:28:378 Carpincho/(10082:10083): MEM_WRITE el mensaje  en 28
+[INFO] 22:38:28:419 Carpincho/(10082:10083): Se realizó el MEM_WRITE correctamente
+[INFO] 22:38:28:419 Carpincho/(10082:10084): MEM_READ desde 9 el size 10
+[INFO] 22:38:28:461 Carpincho/(10082:10084): Se realizó el MEM_READ correctamente. El contenido es: CARPINCHO2
+[INFO] 22:38:28:461 Carpincho/(10082:10084): MEM_READ desde 28 el size 4
+[INFO] 22:38:28:579 Carpincho/(10082:10084): Se realizó el MEM_READ correctamente. El contenido es: 
+[INFO] 22:38:28:579 Carpincho/(10082:10084): thread name: CARPINCHO2
+[INFO] 22:38:28:579 Carpincho/(10082:10084): value: 8
+[INFO] 22:38:28:579 Carpincho/(10082:10084): MEM_WRITE el mensaje  en 28
+[INFO] 22:38:28:620 Carpincho/(10082:10084): Se realizó el MEM_WRITE correctamente
+[INFO] 22:38:28:620 Carpincho/(10082:10083): MEM_READ desde 9 el size 10
+[INFO] 22:38:28:662 Carpincho/(10082:10083): Se realizó el MEM_READ correctamente. El contenido es: CARPINCHO1
+[INFO] 22:38:28:662 Carpincho/(10082:10083): MEM_READ desde 28 el size 4
+[INFO] 22:38:28:779 Carpincho/(10082:10083): Se realizó el MEM_READ correctamente. El contenido es: 
+[INFO] 22:38:28:779 Carpincho/(10082:10083): thread name: CARPINCHO1
+[INFO] 22:38:28:779 Carpincho/(10082:10083): value: 9
+[INFO] 22:38:28:779 Carpincho/(10082:10083): MEM_WRITE el mensaje 	 en 28
+[INFO] 22:38:28:819 Carpincho/(10082:10083): Se realizó el MEM_WRITE correctamente
+[INFO] 22:38:28:819 Carpincho/(10082:10084): MEM_READ desde 9 el size 10
+[INFO] 22:38:28:862 Carpincho/(10082:10084): Se realizó el MEM_READ correctamente. El contenido es: CARPINCHO2
+[INFO] 22:38:28:862 Carpincho/(10082:10084): MEM_READ desde 28 el size 4
+[INFO] 22:38:28:978 Carpincho/(10082:10084): Se realizó el MEM_READ correctamente. El contenido es: 
+[INFO] 22:38:28:978 Carpincho/(10082:10084): thread name: CARPINCHO2
+[INFO] 22:38:28:978 Carpincho/(10082:10084): value: 10
+[INFO] 22:38:28:978 Carpincho/(10082:10084): MEM_WRITE el mensaje 
+ en 28
+[INFO] 22:38:29:020 Carpincho/(10082:10084): Se realizó el MEM_WRITE correctamente
+[INFO] 22:38:29:020 Carpincho/(10082:10083): MEM_READ desde 9 el size 10
+[INFO] 22:38:29:061 Carpincho/(10082:10083): Se realizó el MEM_READ correctamente. El contenido es: CARPINCHO1
+[INFO] 22:38:29:061 Carpincho/(10082:10083): MEM_READ desde 28 el size 4
+[INFO] 22:38:29:178 Carpincho/(10082:10083): Se realizó el MEM_READ correctamente. El contenido es: 	
+[INFO] 22:38:29:178 Carpincho/(10082:10083): thread name: CARPINCHO1
+[INFO] 22:38:29:178 Carpincho/(10082:10083): value: 11
+[INFO] 22:38:29:179 Carpincho/(10082:10083): MEM_WRITE el mensaje  en 28
+[INFO] 22:38:29:219 Carpincho/(10082:10083): Se realizó el MEM_WRITE correctamente
+[INFO] 22:38:29:219 Carpincho/(10082:10084): MEM_READ desde 9 el size 10
+[INFO] 22:38:29:261 Carpincho/(10082:10084): Se realizó el MEM_READ correctamente. El contenido es: CARPINCHO2
+[INFO] 22:38:29:261 Carpincho/(10082:10084): MEM_READ desde 28 el size 4
+[INFO] 22:38:29:378 Carpincho/(10082:10084): Se realizó el MEM_READ correctamente. El contenido es: 
 
-
-[INFO] 01:51:25:949 Carpincho/(7941:7942): Se realizó el CALL IO correctamente
-[INFO] 01:51:25:949 Carpincho/(7941:7942): MEM_ALLOC de 10
-[INFO] 01:51:26:032 Carpincho/(7941:7942): Se realizó el MEM_ALLOC correctamente. La dirección lógica es 9
-[INFO] 01:51:26:032 Carpincho/(7941:7942): MEM_WRITE el mensaje HOLA en 9
-[INFO] 01:51:26:037 Carpincho/(7941:7942): Se realizó el MEM_WRITE correctamente
-[INFO] 01:51:26:037 Carpincho/(7941:7942): MEM_READ desde 9 el size 4
-[INFO] 01:51:26:158 Carpincho/(7941:7942): Se realizó el MEM_READ correctamente. El contenido es: HOLA	
-[INFO] 01:51:26:158 Carpincho/(7941:7942): CALL_IO a PILETA carpincho 1
-[INFO] 01:51:26:158 Carpincho/(7941:7942): Vamos a usar la pileta...
-[INFO] 01:51:26:159 Carpincho/(7941:7953): Carpincho creado correctamente con el pid: 3
-[INFO] 01:51:26:159 Carpincho/(7941:7953): CALL_IO a PILETA carpincho 3
-[INFO] 01:51:26:159 Carpincho/(7941:7953): Vamos a usar la pileta...
-[INFO] 01:51:26:160 Carpincho/(7941:7953): RESPUESA DE IO RECIBIDA 0 
-[INFO] 01:51:26:160 Carpincho/(7941:7953): MATE IO ESPERANDO OK DEL PROCESADOR PARA SEGUIR carpincho 3
-
-
-[INFO] 01:51:26:160 Carpincho/(7941:7942): RESPUESA DE IO RECIBIDA 0 
-[INFO] 01:51:26:160 Carpincho/(7941:7942): MATE IO ESPERANDO OK DEL PROCESADOR PARA SEGUIR carpincho 1
-
-
-[INFO] 01:51:30:949 Carpincho/(7941:7945): 
-_____llego del procesador un OK para el caprincho 2
-
-
-[INFO] 01:51:30:950 Carpincho/(7941:7945): Se realizó el CALL IO correctamente
-[INFO] 01:51:30:957 Carpincho/(7941:7945): CALL_IO a PILETA carpincho 2
-[INFO] 01:51:30:957 Carpincho/(7941:7945): Vamos a usar la pileta...
-[INFO] 01:51:30:958 Carpincho/(7941:7945): RESPUESA DE IO RECIBIDA 0 
-[INFO] 01:51:30:958 Carpincho/(7941:7945): MATE IO ESPERANDO OK DEL PROCESADOR PARA SEGUIR carpincho 2
-
-
-[INFO] 01:51:40:956 Carpincho/(7941:7953): 
-_____llego del procesador un OK para el caprincho 3
-
-
-[INFO] 01:51:40:956 Carpincho/(7941:7953): Se realizó el CALL IO correctamente
-[INFO] 01:51:40:957 Carpincho/(7941:7953): CALL_IO a PILETA carpincho 3
-[INFO] 01:51:40:957 Carpincho/(7941:7953): Vamos a usar la pileta...
-[INFO] 01:51:40:970 Carpincho/(7941:7953): RESPUESA DE IO RECIBIDA 0 
-[INFO] 01:51:40:970 Carpincho/(7941:7953): MATE IO ESPERANDO OK DEL PROCESADOR PARA SEGUIR carpincho 3
-
-
-[INFO] 01:51:45:979 Carpincho/(7941:7945): 
-_____llego del procesador un OK para el caprincho 2
-
-
-[INFO] 01:51:45:979 Carpincho/(7941:7945): Se realizó el CALL IO correctamente
-[INFO] 01:51:45:980 Carpincho/(7941:7945): CALL_IO a PILETA carpincho 2
-[INFO] 01:51:45:980 Carpincho/(7941:7945): Vamos a usar la pileta...
-[INFO] 01:51:45:981 Carpincho/(7941:7945): RESPUESA DE IO RECIBIDA 0 
-[INFO] 01:51:45:981 Carpincho/(7941:7945): MATE IO ESPERANDO OK DEL PROCESADOR PARA SEGUIR carpincho 2
-
-
-[INFO] 01:51:50:981 Carpincho/(7941:7953): 
-_____llego del procesador un OK para el caprincho 3
-
-
-[INFO] 01:51:50:981 Carpincho/(7941:7953): Se realizó el CALL IO correctamente
-[INFO] 01:51:50:985 Carpincho/(7941:7953): CALL_IO a PILETA carpincho 3
-[INFO] 01:51:50:985 Carpincho/(7941:7953): Vamos a usar la pileta...
-[INFO] 01:51:50:985 Carpincho/(7941:7953): RESPUESA DE IO RECIBIDA 0 
-[INFO] 01:51:50:985 Carpincho/(7941:7953): MATE IO ESPERANDO OK DEL PROCESADOR PARA SEGUIR carpincho 3
-
-
-[INFO] 01:51:55:980 Carpincho/(7941:7945): 
-_____llego del procesador un OK para el caprincho 2
-
-
-[INFO] 01:51:55:980 Carpincho/(7941:7945): Se realizó el CALL IO correctamente
-[INFO] 01:51:55:980 Carpincho/(7941:7945): MATE_CLOSE carpincho 2
-[INFO] 01:51:55:980 Carpincho/(7941:7945): MATE_CLOSE: mensaje enviado a kernel
-[INFO] 01:51:55:980 Carpincho/(7941:7945): Carpincho eliminado
-[INFO] 01:51:55:981 Carpincho/(7941:7942): 
-_____llego del procesador un OK para el caprincho 1
-
-
-[INFO] 01:51:55:981 Carpincho/(7941:7942): Se realizó el CALL IO correctamente
-[INFO] 01:51:55:981 Carpincho/(7941:7942): MEM_FREE a la dirección 9
-[INFO] 01:51:56:807 Carpincho/(7941:7942): Se realizó el MEM_FREE correctamente
-[INFO] 01:51:56:807 Carpincho/(7941:7942): CALL_IO a PILETA carpincho 1
-[INFO] 01:51:56:807 Carpincho/(7941:7942): Vamos a usar la pileta...
-[INFO] 01:51:56:808 Carpincho/(7941:7942): RESPUESA DE IO RECIBIDA 0 
-[INFO] 01:51:56:808 Carpincho/(7941:7942): MATE IO ESPERANDO OK DEL PROCESADOR PARA SEGUIR carpincho 1
-
-
-[INFO] 01:52:00:984 Carpincho/(7941:7953): 
-_____llego del procesador un OK para el caprincho 3
-
-
-[INFO] 01:52:00:985 Carpincho/(7941:7953): Se realizó el CALL IO correctamente
-[INFO] 01:52:00:985 Carpincho/(7941:7953): MATE_CLOSE carpincho 3
-[INFO] 01:52:00:985 Carpincho/(7941:7953): MATE_CLOSE: mensaje enviado a kernel
-[INFO] 01:52:00:988 Carpincho/(7941:7953): Carpincho eliminado
-[INFO] 01:52:05:991 Carpincho/(7941:7942): 
-_____llego del procesador un OK para el caprincho 1
-
-
-[INFO] 01:52:05:992 Carpincho/(7941:7942): Se realizó el CALL IO correctamente
-[INFO] 01:52:05:992 Carpincho/(7941:7942): MATE_CLOSE carpincho 1
-[INFO] 01:52:05:992 Carpincho/(7941:7942): MATE_CLOSE: mensaje enviado a kernel
-[INFO] 01:52:05:992 Carpincho/(7941:7942): Carpincho eliminado
-[INFO] 02:20:06:548 Carpincho/(10675:10676): Log creado
-[INFO] 02:20:06:548 Carpincho/(10675:10676): Esperando respuesta de servidor
-[INFO] 02:20:06:550 Carpincho/(10675:10676): 
+[INFO] 22:38:29:379 Carpincho/(10082:10084): thread name: CARPINCHO2
+[INFO] 22:38:29:379 Carpincho/(10082:10084): value: 12
+[INFO] 22:38:29:379 Carpincho/(10082:10084): MEM_WRITE el mensaje  en 28
+[INFO] 22:38:29:420 Carpincho/(10082:10084): Se realizó el MEM_WRITE correctamente
+[INFO] 22:38:29:420 Carpincho/(10082:10083): MEM_READ desde 9 el size 10
+[INFO] 22:38:29:462 Carpincho/(10082:10083): Se realizó el MEM_READ correctamente. El contenido es: CARPINCHO1
+[INFO] 22:38:29:462 Carpincho/(10082:10083): MEM_READ desde 28 el size 4
+[INFO] 22:38:29:578 Carpincho/(10082:10083): Se realizó el MEM_READ correctamente. El contenido es: 
+[INFO] 22:38:29:578 Carpincho/(10082:10083): thread name: CARPINCHO1
+[INFO] 22:38:29:578 Carpincho/(10082:10083): value: 13
+[INFO] 22:38:29:578 Carpincho/(10082:10083): MEM_WRITE el mensaje  en 28
+[INFO] 22:38:29:620 Carpincho/(10082:10083): Se realizó el MEM_WRITE correctamente
+[INFO] 22:38:29:620 Carpincho/(10082:10084): MEM_READ desde 9 el size 10
+[INFO] 22:38:29:661 Carpincho/(10082:10084): Se realizó el MEM_READ correctamente. El contenido es: CARPINCHO2
+[INFO] 22:38:29:661 Carpincho/(10082:10084): MEM_READ desde 28 el size 4
+[INFO] 22:38:29:779 Carpincho/(10082:10084): Se realizó el MEM_READ correctamente. El contenido es: 
+[INFO] 22:38:29:779 Carpincho/(10082:10084): thread name: CARPINCHO2
+[INFO] 22:38:29:779 Carpincho/(10082:10084): value: 14
+[INFO] 22:38:29:779 Carpincho/(10082:10084): MEM_WRITE el mensaje  en 28
+[INFO] 22:38:29:820 Carpincho/(10082:10084): Se realizó el MEM_WRITE correctamente
+[INFO] 22:38:29:820 Carpincho/(10082:10083): MEM_READ desde 9 el size 10
+[INFO] 22:38:29:862 Carpincho/(10082:10083): Se realizó el MEM_READ correctamente. El contenido es: CARPINCHO1
+[INFO] 22:38:29:862 Carpincho/(10082:10083): MEM_READ desde 28 el size 4
+[INFO] 22:38:29:979 Carpincho/(10082:10083): Se realizó el MEM_READ correctamente. El contenido es: 
+[INFO] 22:38:29:979 Carpincho/(10082:10083): thread name: CARPINCHO1
+[INFO] 22:38:29:979 Carpincho/(10082:10083): value: 15
+[INFO] 22:38:29:979 Carpincho/(10082:10083): MEM_WRITE el mensaje  en 28
+[INFO] 22:38:30:019 Carpincho/(10082:10083): Se realizó el MEM_WRITE correctamente
+[INFO] 22:38:30:019 Carpincho/(10082:10084): MEM_READ desde 9 el size 10
+[INFO] 22:38:30:061 Carpincho/(10082:10084): Se realizó el MEM_READ correctamente. El contenido es: CARPINCHO2
+[INFO] 22:38:30:061 Carpincho/(10082:10084): MEM_READ desde 28 el size 4
+[INFO] 22:38:30:179 Carpincho/(10082:10084): Se realizó el MEM_READ correctamente. El contenido es: 
+[INFO] 22:38:30:179 Carpincho/(10082:10084): thread name: CARPINCHO2
+[INFO] 22:38:30:179 Carpincho/(10082:10084): value: 16
+[INFO] 22:38:30:179 Carpincho/(10082:10084): MEM_WRITE el mensaje  en 28
+[INFO] 22:38:30:219 Carpincho/(10082:10084): Se realizó el MEM_WRITE correctamente
+[INFO] 22:38:30:219 Carpincho/(10082:10083): MEM_READ desde 9 el size 10
+[INFO] 22:38:30:262 Carpincho/(10082:10083): Se realizó el MEM_READ correctamente. El contenido es: CARPINCHO1
+[INFO] 22:38:30:262 Carpincho/(10082:10083): MEM_READ desde 28 el size 4
+[INFO] 22:38:30:378 Carpincho/(10082:10083): Se realizó el MEM_READ correctamente. El contenido es: 
+[INFO] 22:38:30:378 Carpincho/(10082:10083): thread name: CARPINCHO1
+[INFO] 22:38:30:378 Carpincho/(10082:10083): value: 17
+[INFO] 22:38:30:378 Carpincho/(10082:10083): MEM_WRITE el mensaje  en 28
+[INFO] 22:38:30:419 Carpincho/(10082:10083): Se realizó el MEM_WRITE correctamente
+[INFO] 22:38:30:419 Carpincho/(10082:10084): MEM_READ desde 9 el size 10
+[INFO] 22:38:30:462 Carpincho/(10082:10084): Se realizó el MEM_READ correctamente. El contenido es: CARPINCHO2
+[INFO] 22:38:30:462 Carpincho/(10082:10084): MEM_READ desde 28 el size 4
+[INFO] 22:38:30:583 Carpincho/(10082:10084): Se realizó el MEM_READ correctamente. El contenido es: 
+[INFO] 22:38:30:583 Carpincho/(10082:10084): thread name: CARPINCHO2
+[INFO] 22:38:30:583 Carpincho/(10082:10084): value: 18
+[INFO] 22:38:30:583 Carpincho/(10082:10084): MEM_WRITE el mensaje  en 28
+[INFO] 22:38:30:623 Carpincho/(10082:10084): Se realizó el MEM_WRITE correctamente
+[INFO] 22:38:30:624 Carpincho/(10082:10083): MEM_READ desde 9 el size 10
+[INFO] 22:38:30:665 Carpincho/(10082:10083): Se realizó el MEM_READ correctamente. El contenido es: CARPINCHO1
+[INFO] 22:38:30:665 Carpincho/(10082:10083): MEM_READ desde 28 el size 4
+[INFO] 22:38:30:783 Carpincho/(10082:10083): Se realizó el MEM_READ correctamente. El contenido es: 
+[INFO] 22:38:30:783 Carpincho/(10082:10083): thread name: CARPINCHO1
+[INFO] 22:38:30:783 Carpincho/(10082:10083): value: 19
+[INFO] 22:38:30:783 Carpincho/(10082:10083): MEM_WRITE el mensaje  en 28
+[INFO] 22:38:30:823 Carpincho/(10082:10083): Se realizó el MEM_WRITE correctamente
+[INFO] 22:38:30:823 Carpincho/(10082:10084): MEM_READ desde 9 el size 10
+[INFO] 22:38:30:867 Carpincho/(10082:10084): Se realizó el MEM_READ correctamente. El contenido es: CARPINCHO2
+[INFO] 22:38:30:867 Carpincho/(10082:10084): MEM_READ desde 28 el size 4
+[INFO] 22:38:30:986 Carpincho/(10082:10084): Se realizó el MEM_READ correctamente. El contenido es: 
+[INFO] 22:38:30:986 Carpincho/(10082:10084): thread name: CARPINCHO2
+[INFO] 22:38:30:986 Carpincho/(10082:10084): value: 20
+[INFO] 22:38:30:987 Carpincho/(10082:10084): MEM_WRITE el mensaje  en 28
+[INFO] 22:38:31:027 Carpincho/(10082:10084): Se realizó el MEM_WRITE correctamente
+[INFO] 22:38:31:027 Carpincho/(10082:10083): MEM_READ desde 9 el size 10
+[INFO] 22:38:31:069 Carpincho/(10082:10083): Se realizó el MEM_READ correctamente. El contenido es: CARPINCHO1
+[INFO] 22:38:31:069 Carpincho/(10082:10083): MEM_READ desde 28 el size 4
+[INFO] 22:38:31:187 Carpincho/(10082:10083): Se realizó el MEM_READ correctamente. El contenido es: 
+[INFO] 22:38:31:187 Carpincho/(10082:10083): thread name: CARPINCHO1
+[INFO] 22:38:31:187 Carpincho/(10082:10083): value: 21
+[INFO] 22:38:31:187 Carpincho/(10082:10083): MEM_WRITE el mensaje  en 28
+[INFO] 22:38:31:228 Carpincho/(10082:10083): Se realizó el MEM_WRITE correctamente
+[INFO] 22:38:31:228 Carpincho/(10082:10084): MEM_READ desde 9 el size 10
+[INFO] 22:38:31:269 Carpincho/(10082:10084): Se realizó el MEM_READ correctamente. El contenido es: CARPINCHO2
+[INFO] 22:38:31:269 Carpincho/(10082:10084): MEM_READ desde 28 el size 4
+[INFO] 22:38:31:387 Carpincho/(10082:10084): Se realizó el MEM_READ correctamente. El contenido es: 
+[INFO] 22:38:31:387 Carpincho/(10082:10084): thread name: CARPINCHO2
+[INFO] 22:38:31:387 Carpincho/(10082:10084): value: 22
+[INFO] 22:38:31:387 Carpincho/(10082:10084): MEM_WRITE el mensaje  en 28
+[INFO] 22:38:31:431 Carpincho/(10082:10084): Se realizó el MEM_WRITE correctamente
+[INFO] 22:38:31:431 Carpincho/(10082:10083): MEM_READ desde 9 el size 10
+[INFO] 22:38:31:474 Carpincho/(10082:10083): Se realizó el MEM_READ correctamente. El contenido es: CARPINCHO1
+[INFO] 22:38:31:474 Carpincho/(10082:10083): MEM_READ desde 28 el size 4
+[INFO] 22:38:31:591 Carpincho/(10082:10083): Se realizó el MEM_READ correctamente. El contenido es: 
+[INFO] 22:38:31:591 Carpincho/(10082:10083): thread name: CARPINCHO1
+[INFO] 22:38:31:591 Carpincho/(10082:10083): value: 23
+[INFO] 22:38:31:591 Carpincho/(10082:10083): MEM_WRITE el mensaje  en 28
+[INFO] 22:38:31:634 Carpincho/(10082:10083): Se realizó el MEM_WRITE correctamente
+[INFO] 22:38:31:635 Carpincho/(10082:10084): MEM_READ desde 9 el size 10
+[INFO] 22:38:31:674 Carpincho/(10082:10084): Se realizó el MEM_READ correctamente. El contenido es: CARPINCHO2
+[INFO] 22:38:31:674 Carpincho/(10082:10084): MEM_READ desde 28 el size 4
+[INFO] 22:38:31:791 Carpincho/(10082:10084): Se realizó el MEM_READ correctamente. El contenido es: 
+[INFO] 22:38:31:791 Carpincho/(10082:10084): thread name: CARPINCHO2
+[INFO] 22:38:31:791 Carpincho/(10082:10084): value: 24
+[INFO] 22:38:31:791 Carpincho/(10082:10084): MEM_WRITE el mensaje  en 28
+[INFO] 22:38:31:834 Carpincho/(10082:10084): Se realizó el MEM_WRITE correctamente
+[INFO] 22:38:31:835 Carpincho/(10082:10083): MEM_READ desde 9 el size 10
+[INFO] 22:38:31:877 Carpincho/(10082:10083): Se realizó el MEM_READ correctamente. El contenido es: CARPINCHO1
+[INFO] 22:38:31:877 Carpincho/(10082:10083): MEM_READ desde 28 el size 4
+[INFO] 22:38:31:994 Carpincho/(10082:10083): Se realizó el MEM_READ correctamente. El contenido es: 
+[INFO] 22:38:31:995 Carpincho/(10082:10083): thread name: CARPINCHO1
+[INFO] 22:38:31:995 Carpincho/(10082:10083): value: 25
+[INFO] 22:38:31:995 Carpincho/(10082:10083): MEM_WRITE el mensaje  en 28
+[INFO] 22:38:32:037 Carpincho/(10082:10083): Se realizó el MEM_WRITE correctamente
+[INFO] 22:38:32:037 Carpincho/(10082:10084): MEM_READ desde 9 el size 10
+[INFO] 22:38:32:079 Carpincho/(10082:10084): Se realizó el MEM_READ correctamente. El contenido es: CARPINCHO2
+[INFO] 22:38:32:079 Carpincho/(10082:10084): MEM_READ desde 28 el size 4
+[INFO] 22:38:32:198 Carpincho/(10082:10084): Se realizó el MEM_READ correctamente. El contenido es: 
+[INFO] 22:38:32:198 Carpincho/(10082:10084): thread name: CARPINCHO2
+[INFO] 22:38:32:198 Carpincho/(10082:10084): value: 26
+[INFO] 22:38:32:199 Carpincho/(10082:10084): MEM_WRITE el mensaje  en 28
+[INFO] 22:38:32:239 Carpincho/(10082:10084): Se realizó el MEM_WRITE correctamente
+[INFO] 22:38:32:239 Carpincho/(10082:10083): MEM_READ desde 9 el size 10
+[INFO] 22:38:32:283 Carpincho/(10082:10083): Se realizó el MEM_READ correctamente. El contenido es: CARPINCHO1
+[INFO] 22:38:32:283 Carpincho/(10082:10083): MEM_READ desde 28 el size 4
+[INFO] 22:38:32:407 Carpincho/(10082:10083): Se realizó el MEM_READ correctamente. El contenido es: 
+[INFO] 22:38:32:407 Carpincho/(10082:10083): thread name: CARPINCHO1
+[INFO] 22:38:32:407 Carpincho/(10082:10083): value: 27
+[INFO] 22:38:32:407 Carpincho/(10082:10083): MEM_WRITE el mensaje  en 28
+[INFO] 22:38:32:448 Carpincho/(10082:10083): Se realizó el MEM_WRITE correctamente
+[INFO] 22:38:32:448 Carpincho/(10082:10084): MEM_READ desde 9 el size 10
+[INFO] 22:38:32:490 Carpincho/(10082:10084): Se realizó el MEM_READ correctamente. El contenido es: CARPINCHO2
+[INFO] 22:38:32:490 Carpincho/(10082:10084): MEM_READ desde 28 el size 4
+[INFO] 22:38:32:606 Carpincho/(10082:10084): Se realizó el MEM_READ correctamente. El contenido es: 
+[INFO] 22:38:32:606 Carpincho/(10082:10084): thread name: CARPINCHO2
+[INFO] 22:38:32:606 Carpincho/(10082:10084): value: 28
+[INFO] 22:38:32:607 Carpincho/(10082:10084): MEM_WRITE el mensaje  en 28
+[INFO] 22:38:32:647 Carpincho/(10082:10084): Se realizó el MEM_WRITE correctamente
+[INFO] 22:38:32:647 Carpincho/(10082:10083): MEM_READ desde 9 el size 10
+[INFO] 22:38:32:690 Carpincho/(10082:10083): Se realizó el MEM_READ correctamente. El contenido es: CARPINCHO1
+[INFO] 22:38:32:690 Carpincho/(10082:10083): MEM_READ desde 28 el size 4
+[INFO] 22:38:32:807 Carpincho/(10082:10083): Se realizó el MEM_READ correctamente. El contenido es: 
+[INFO] 22:38:32:807 Carpincho/(10082:10083): thread name: CARPINCHO1
+[INFO] 22:38:32:807 Carpincho/(10082:10083): value: 29
+[INFO] 22:38:32:807 Carpincho/(10082:10083): MEM_WRITE el mensaje  en 28
+[INFO] 22:38:32:848 Carpincho/(10082:10083): Se realizó el MEM_WRITE correctamente
+[INFO] 22:38:32:848 Carpincho/(10082:10084): MEM_READ desde 9 el size 10
+[INFO] 22:38:32:892 Carpincho/(10082:10084): Se realizó el MEM_READ correctamente. El contenido es: CARPINCHO2
+[INFO] 22:38:32:892 Carpincho/(10082:10084): MEM_READ desde 28 el size 4
+[INFO] 22:38:33:010 Carpincho/(10082:10084): Se realizó el MEM_READ correctamente. El contenido es: 
+[INFO] 22:38:33:010 Carpincho/(10082:10084): thread name: CARPINCHO2
+[INFO] 22:38:33:010 Carpincho/(10082:10084): value: 30
+[INFO] 22:38:33:010 Carpincho/(10082:10084): MEM_WRITE el mensaje  en 28
+[INFO] 22:38:33:052 Carpincho/(10082:10084): Se realizó el MEM_WRITE correctamente
+[INFO] 22:38:33:052 Carpincho/(10082:10083): MEM_READ desde 9 el size 10
+[INFO] 22:38:33:095 Carpincho/(10082:10083): Se realizó el MEM_READ correctamente. El contenido es: CARPINCHO1
+[INFO] 22:38:33:095 Carpincho/(10082:10083): MEM_READ desde 28 el size 4
+[INFO] 22:38:33:215 Carpincho/(10082:10083): Se realizó el MEM_READ correctamente. El contenido es: 
+[INFO] 22:38:33:215 Carpincho/(10082:10083): thread name: CARPINCHO1
+[INFO] 22:38:33:215 Carpincho/(10082:10083): value: 31
+[INFO] 22:38:33:215 Carpincho/(10082:10083): MEM_WRITE el mensaje  en 28
+[INFO] 22:38:33:257 Carpincho/(10082:10083): Se realizó el MEM_WRITE correctamente
+[INFO] 22:38:33:257 Carpincho/(10082:10084): MEM_READ desde 9 el size 10
+[INFO] 22:38:33:298 Carpincho/(10082:10084): Se realizó el MEM_READ correctamente. El contenido es: CARPINCHO2
+[INFO] 22:38:33:298 Carpincho/(10082:10084): MEM_READ desde 28 el size 4
+[INFO] 22:38:33:414 Carpincho/(10082:10084): Se realizó el MEM_READ correctamente. El contenido es: 
+[INFO] 22:38:33:414 Carpincho/(10082:10084): thread name: CARPINCHO2
+[INFO] 22:38:33:414 Carpincho/(10082:10084): value: 32
+[INFO] 22:38:33:414 Carpincho/(10082:10084): MEM_WRITE el mensaje   en 28
+[INFO] 22:38:33:455 Carpincho/(10082:10084): Se realizó el MEM_WRITE correctamente
+[INFO] 22:38:33:456 Carpincho/(10082:10083): MEM_READ desde 9 el size 10
+[INFO] 22:38:33:500 Carpincho/(10082:10083): Se realizó el MEM_READ correctamente. El contenido es: CARPINCHO1
+[INFO] 22:38:33:500 Carpincho/(10082:10083): MEM_READ desde 28 el size 4
+[INFO] 22:38:33:618 Carpincho/(10082:10083): Se realizó el MEM_READ correctamente. El contenido es: 
+[INFO] 22:38:33:618 Carpincho/(10082:10083): thread name: CARPINCHO1
+[INFO] 22:38:33:618 Carpincho/(10082:10083): value: 33
+[INFO] 22:38:33:619 Carpincho/(10082:10083): MEM_WRITE el mensaje ! en 28
+[INFO] 22:38:33:659 Carpincho/(10082:10083): Se realizó el MEM_WRITE correctamente
+[INFO] 22:38:33:659 Carpincho/(10082:10084): MEM_READ desde 9 el size 10
+[INFO] 22:38:33:701 Carpincho/(10082:10084): Se realizó el MEM_READ correctamente. El contenido es: CARPINCHO2
+[INFO] 22:38:33:701 Carpincho/(10082:10084): MEM_READ desde 28 el size 4
+[INFO] 22:38:33:819 Carpincho/(10082:10084): Se realizó el MEM_READ correctamente. El contenido es:  
+[INFO] 22:38:33:819 Carpincho/(10082:10084): thread name: CARPINCHO2
+[INFO] 22:38:33:819 Carpincho/(10082:10084): value: 34
+[INFO] 22:38:33:819 Carpincho/(10082:10084): MEM_WRITE el mensaje " en 28
+[INFO] 22:38:33:860 Carpincho/(10082:10084): Se realizó el MEM_WRITE correctamente
+[INFO] 22:38:33:861 Carpincho/(10082:10083): MEM_READ desde 9 el size 10
+[INFO] 22:38:33:902 Carpincho/(10082:10083): Se realizó el MEM_READ correctamente. El contenido es: CARPINCHO1
+[INFO] 22:38:33:902 Carpincho/(10082:10083): MEM_READ desde 28 el size 4
+[INFO] 22:38:34:020 Carpincho/(10082:10083): Se realizó el MEM_READ correctamente. El contenido es: !
+[INFO] 22:38:34:020 Carpincho/(10082:10083): thread name: CARPINCHO1
+[INFO] 22:38:34:020 Carpincho/(10082:10083): value: 35
+[INFO] 22:38:34:020 Carpincho/(10082:10083): MEM_WRITE el mensaje # en 28
+[INFO] 22:38:34:060 Carpincho/(10082:10083): Se realizó el MEM_WRITE correctamente
+[INFO] 22:38:34:060 Carpincho/(10082:10084): MEM_READ desde 9 el size 10
+[INFO] 22:38:34:101 Carpincho/(10082:10084): Se realizó el MEM_READ correctamente. El contenido es: CARPINCHO2
+[INFO] 22:38:34:101 Carpincho/(10082:10084): MEM_READ desde 28 el size 4
+[INFO] 22:38:34:219 Carpincho/(10082:10084): Se realizó el MEM_READ correctamente. El contenido es: "
+[INFO] 22:38:34:219 Carpincho/(10082:10084): thread name: CARPINCHO2
+[INFO] 22:38:34:219 Carpincho/(10082:10084): value: 36
+[INFO] 22:38:34:219 Carpincho/(10082:10084): MEM_WRITE el mensaje $ en 28
+[INFO] 22:38:34:260 Carpincho/(10082:10084): Se realizó el MEM_WRITE correctamente
+[INFO] 22:38:34:260 Carpincho/(10082:10083): MEM_READ desde 9 el size 10
+[INFO] 22:38:34:302 Carpincho/(10082:10083): Se realizó el MEM_READ correctamente. El contenido es: CARPINCHO1
+[INFO] 22:38:34:302 Carpincho/(10082:10083): MEM_READ desde 28 el size 4
+[INFO] 22:38:34:418 Carpincho/(10082:10083): Se realizó el MEM_READ correctamente. El contenido es: #
+[INFO] 22:38:34:419 Carpincho/(10082:10083): thread name: CARPINCHO1
+[INFO] 22:38:34:419 Carpincho/(10082:10083): value: 37
+[INFO] 22:38:34:419 Carpincho/(10082:10083): MEM_WRITE el mensaje % en 28
+[INFO] 22:38:34:463 Carpincho/(10082:10083): Se realizó el MEM_WRITE correctamente
+[INFO] 22:38:34:463 Carpincho/(10082:10084): MEM_READ desde 9 el size 10
+[INFO] 22:38:34:505 Carpincho/(10082:10084): Se realizó el MEM_READ correctamente. El contenido es: CARPINCHO2
+[INFO] 22:38:34:505 Carpincho/(10082:10084): MEM_READ desde 28 el size 4
+[INFO] 22:38:34:623 Carpincho/(10082:10084): Se realizó el MEM_READ correctamente. El contenido es: $
+[INFO] 22:38:34:623 Carpincho/(10082:10084): thread name: CARPINCHO2
+[INFO] 22:38:34:623 Carpincho/(10082:10084): value: 38
+[INFO] 22:38:34:623 Carpincho/(10082:10084): MEM_WRITE el mensaje & en 28
+[INFO] 22:42:57:064 Carpincho/(10914:10916): Log creado
+[INFO] 22:42:57:064 Carpincho/(10914:10915): Log creado
+[INFO] 22:42:57:065 Carpincho/(10914:10916): 
 NUEVO CARPINCHO
 
-[INFO] 02:20:06:601 Carpincho/(10675:10676): Carpincho creado correctamente con el pid: 1
-[INFO] 02:20:06:601 Carpincho/(10675:10676): CALL_IO a PILETA carpincho 1
-[INFO] 02:20:06:601 Carpincho/(10675:10676): Vamos a usar la pileta...
-[INFO] 02:20:06:602 Carpincho/(10675:10676): RESPUESA DE IO RECIBIDA 0 
-[INFO] 02:20:06:602 Carpincho/(10675:10676): MATE IO ESPERANDO OK DEL PROCESADOR PARA SEGUIR carpincho 1
-
-
-[INFO] 02:20:07:551 Carpincho/(10675:10679): Log creado
-[INFO] 02:20:07:551 Carpincho/(10675:10679): Esperando respuesta de servidor
-[INFO] 02:20:07:553 Carpincho/(10675:10679): 
+[INFO] 22:42:57:078 Carpincho/(10914:10915): 
 NUEVO CARPINCHO
 
-[INFO] 02:20:07:645 Carpincho/(10675:10679): Carpincho creado correctamente con el pid: 2
-[INFO] 02:20:07:646 Carpincho/(10675:10679): CALL_IO a PILETA carpincho 2
-[INFO] 02:20:07:646 Carpincho/(10675:10679): Vamos a usar la pileta...
-[INFO] 02:20:07:646 Carpincho/(10675:10679): RESPUESA DE IO RECIBIDA 0 
-[INFO] 02:20:07:646 Carpincho/(10675:10679): MATE IO ESPERANDO OK DEL PROCESADOR PARA SEGUIR carpincho 2
+[INFO] 22:42:57:118 Carpincho/(10914:10916): Carpincho creado correctamente con el pid: 1
+[INFO] 22:42:57:118 Carpincho/(10914:10916): MEM_ALLOC de carpincho 1 de tamaño 10
+[INFO] 22:42:57:159 Carpincho/(10914:10915): Carpincho creado correctamente con el pid: 2
+[INFO] 22:42:57:159 Carpincho/(10914:10915): MEM_ALLOC de carpincho 2 de tamaño 10
+[INFO] 22:42:57:200 Carpincho/(10914:10916): Se realizó el MEM_ALLOC correctamente. La dirección lógica es 9
+[INFO] 22:42:57:200 Carpincho/(10914:10916): MEM_WRITE el mensaje CARPINCHO2 en 9
+[INFO] 22:42:57:281 Carpincho/(10914:10915): Se realizó el MEM_ALLOC correctamente. La dirección lógica es 9
+[INFO] 22:42:57:282 Carpincho/(10914:10915): MEM_WRITE el mensaje CARPINCHO1 en 9
+[INFO] 22:42:57:285 Carpincho/(10914:10916): Se realizó el MEM_WRITE correctamente
+[INFO] 22:42:57:285 Carpincho/(10914:10916): MEM_ALLOC de carpincho 1 de tamaño 4
+[INFO] 22:42:57:289 Carpincho/(10914:10915): Se realizó el MEM_WRITE correctamente
+[INFO] 22:42:57:289 Carpincho/(10914:10915): MEM_ALLOC de carpincho 2 de tamaño 4
+[INFO] 22:42:57:294 Carpincho/(10914:10916): Se realizó el MEM_ALLOC correctamente. La dirección lógica es 28
+[INFO] 22:42:57:294 Carpincho/(10914:10916): MEM_WRITE el mensaje  en 28
+[INFO] 22:42:57:299 Carpincho/(10914:10915): Se realizó el MEM_ALLOC correctamente. La dirección lógica es 28
+[INFO] 22:42:57:299 Carpincho/(10914:10915): MEM_WRITE el mensaje  en 28
+[INFO] 22:42:57:373 Carpincho/(10914:10916): Se realizó el MEM_WRITE correctamente
+[INFO] 22:42:57:373 Carpincho/(10914:10916): thread name: CARPINCHO2
+[INFO] 22:42:57:373 Carpincho/(10914:10916): value: 1
+[INFO] 22:42:57:380 Carpincho/(10914:10915): Se realizó el MEM_WRITE correctamente
+[INFO] 22:42:57:380 Carpincho/(10914:10915): thread name: CARPINCHO1
+[INFO] 22:42:57:380 Carpincho/(10914:10915): value: 1
+[INFO] 22:42:57:380 Carpincho/(10914:10915): MEM_READ desde 9 el size 10
+[INFO] 22:42:57:500 Carpincho/(10914:10915): Se realizó el MEM_READ correctamente. El contenido es: CARPINCHO1
+[INFO] 22:42:57:500 Carpincho/(10914:10915): MEM_READ desde 28 el size 4
+[INFO] 22:42:57:578 Carpincho/(10914:10915): Se realizó el MEM_READ correctamente. El contenido es: 
+[INFO] 22:42:57:579 Carpincho/(10914:10915): thread name: CARPINCHO1
+[INFO] 22:42:57:579 Carpincho/(10914:10915): value: 1
+[INFO] 22:42:57:579 Carpincho/(10914:10915): MEM_WRITE el mensaje  en 28
+[INFO] 22:42:57:619 Carpincho/(10914:10915): Se realizó el MEM_WRITE correctamente
+[INFO] 22:42:57:619 Carpincho/(10914:10916): MEM_READ desde 9 el size 10
+[INFO] 22:42:57:661 Carpincho/(10914:10916): Se realizó el MEM_READ correctamente. El contenido es: CARPINCHO2
+[INFO] 22:42:57:661 Carpincho/(10914:10916): MEM_READ desde 28 el size 4
+[INFO] 22:42:57:779 Carpincho/(10914:10916): Se realizó el MEM_READ correctamente. El contenido es: 
+[INFO] 22:42:57:779 Carpincho/(10914:10916): thread name: CARPINCHO2
+[INFO] 22:42:57:779 Carpincho/(10914:10916): value: 2
+[INFO] 22:42:57:779 Carpincho/(10914:10916): MEM_WRITE el mensaje  en 28
+[INFO] 22:42:57:820 Carpincho/(10914:10916): Se realizó el MEM_WRITE correctamente
+[INFO] 22:42:57:820 Carpincho/(10914:10915): MEM_READ desde 9 el size 10
+[INFO] 22:42:57:861 Carpincho/(10914:10915): Se realizó el MEM_READ correctamente. El contenido es: CARPINCHO1
+[INFO] 22:42:57:861 Carpincho/(10914:10915): MEM_READ desde 28 el size 4
+[INFO] 22:42:57:979 Carpincho/(10914:10915): Se realizó el MEM_READ correctamente. El contenido es: 
+[INFO] 22:42:57:979 Carpincho/(10914:10915): thread name: CARPINCHO1
+[INFO] 22:42:57:979 Carpincho/(10914:10915): value: 3
+[INFO] 22:42:57:979 Carpincho/(10914:10915): MEM_WRITE el mensaje  en 28
+[INFO] 22:42:58:019 Carpincho/(10914:10915): Se realizó el MEM_WRITE correctamente
+[INFO] 22:42:58:019 Carpincho/(10914:10916): MEM_READ desde 9 el size 10
+[INFO] 22:42:58:062 Carpincho/(10914:10916): Se realizó el MEM_READ correctamente. El contenido es: CARPINCHO2
+[INFO] 22:42:58:062 Carpincho/(10914:10916): MEM_READ desde 28 el size 4
+[INFO] 22:42:58:179 Carpincho/(10914:10916): Se realizó el MEM_READ correctamente. El contenido es: 
+[INFO] 22:42:58:179 Carpincho/(10914:10916): thread name: CARPINCHO2
+[INFO] 22:42:58:179 Carpincho/(10914:10916): value: 4
+[INFO] 22:42:58:179 Carpincho/(10914:10916): MEM_WRITE el mensaje  en 28
+[INFO] 22:42:58:220 Carpincho/(10914:10916): Se realizó el MEM_WRITE correctamente
+[INFO] 22:42:58:220 Carpincho/(10914:10915): MEM_READ desde 9 el size 10
+[INFO] 22:42:58:262 Carpincho/(10914:10915): Se realizó el MEM_READ correctamente. El contenido es: CARPINCHO1
+[INFO] 22:42:58:262 Carpincho/(10914:10915): MEM_READ desde 28 el size 4
+[INFO] 22:42:58:379 Carpincho/(10914:10915): Se realizó el MEM_READ correctamente. El contenido es: 
+[INFO] 22:42:58:379 Carpincho/(10914:10915): thread name: CARPINCHO1
+[INFO] 22:42:58:379 Carpincho/(10914:10915): value: 5
+[INFO] 22:42:58:379 Carpincho/(10914:10915): MEM_WRITE el mensaje  en 28
+[INFO] 22:42:58:419 Carpincho/(10914:10915): Se realizó el MEM_WRITE correctamente
+[INFO] 22:42:58:419 Carpincho/(10914:10916): MEM_READ desde 9 el size 10
+[INFO] 22:42:58:472 Carpincho/(10914:10916): Se realizó el MEM_READ correctamente. El contenido es: CARPINCHO2
+[INFO] 22:42:58:472 Carpincho/(10914:10916): MEM_READ desde 28 el size 4
+[INFO] 22:42:58:590 Carpincho/(10914:10916): Se realizó el MEM_READ correctamente. El contenido es: 
+[INFO] 22:42:58:590 Carpincho/(10914:10916): thread name: CARPINCHO2
+[INFO] 22:42:58:590 Carpincho/(10914:10916): value: 6
+[INFO] 22:42:58:591 Carpincho/(10914:10916): MEM_WRITE el mensaje  en 28
+[INFO] 22:42:58:632 Carpincho/(10914:10916): Se realizó el MEM_WRITE correctamente
+[INFO] 22:42:58:632 Carpincho/(10914:10915): MEM_READ desde 9 el size 10
+[INFO] 22:42:58:677 Carpincho/(10914:10915): Se realizó el MEM_READ correctamente. El contenido es: CARPINCHO1
+[INFO] 22:42:58:677 Carpincho/(10914:10915): MEM_READ desde 28 el size 4
+[INFO] 22:42:58:794 Carpincho/(10914:10915): Se realizó el MEM_READ correctamente. El contenido es: 
+[INFO] 22:42:58:794 Carpincho/(10914:10915): thread name: CARPINCHO1
+[INFO] 22:42:58:794 Carpincho/(10914:10915): value: 7
+[INFO] 22:42:58:794 Carpincho/(10914:10915): MEM_WRITE el mensaje  en 28
+[INFO] 22:42:58:835 Carpincho/(10914:10915): Se realizó el MEM_WRITE correctamente
+[INFO] 22:42:58:836 Carpincho/(10914:10916): MEM_READ desde 9 el size 10
+[INFO] 22:42:58:877 Carpincho/(10914:10916): Se realizó el MEM_READ correctamente. El contenido es: CARPINCHO2
+[INFO] 22:42:58:877 Carpincho/(10914:10916): MEM_READ desde 28 el size 4
+[INFO] 22:42:58:994 Carpincho/(10914:10916): Se realizó el MEM_READ correctamente. El contenido es: 
+[INFO] 22:42:58:994 Carpincho/(10914:10916): thread name: CARPINCHO2
+[INFO] 22:42:58:994 Carpincho/(10914:10916): value: 8
+[INFO] 22:42:58:994 Carpincho/(10914:10916): MEM_WRITE el mensaje  en 28
+[INFO] 22:42:59:035 Carpincho/(10914:10916): Se realizó el MEM_WRITE correctamente
+[INFO] 22:42:59:036 Carpincho/(10914:10915): MEM_READ desde 9 el size 10
+[INFO] 22:42:59:082 Carpincho/(10914:10915): Se realizó el MEM_READ correctamente. El contenido es: CARPINCHO1
+[INFO] 22:42:59:082 Carpincho/(10914:10915): MEM_READ desde 28 el size 4
+[INFO] 22:42:59:199 Carpincho/(10914:10915): Se realizó el MEM_READ correctamente. El contenido es: 
+[INFO] 22:42:59:199 Carpincho/(10914:10915): thread name: CARPINCHO1
+[INFO] 22:42:59:200 Carpincho/(10914:10915): value: 9
+[INFO] 22:42:59:200 Carpincho/(10914:10915): MEM_WRITE el mensaje 	 en 28
+[INFO] 22:42:59:240 Carpincho/(10914:10915): Se realizó el MEM_WRITE correctamente
+[INFO] 22:42:59:240 Carpincho/(10914:10916): MEM_READ desde 9 el size 10
+[INFO] 22:42:59:284 Carpincho/(10914:10916): Se realizó el MEM_READ correctamente. El contenido es: CARPINCHO2
+[INFO] 22:42:59:284 Carpincho/(10914:10916): MEM_READ desde 28 el size 4
+[INFO] 22:42:59:402 Carpincho/(10914:10916): Se realizó el MEM_READ correctamente. El contenido es: 
+[INFO] 22:42:59:403 Carpincho/(10914:10916): thread name: CARPINCHO2
+[INFO] 22:42:59:403 Carpincho/(10914:10916): value: 10
+[INFO] 22:42:59:405 Carpincho/(10914:10916): MEM_WRITE el mensaje 
+ en 28
+[INFO] 22:42:59:443 Carpincho/(10914:10916): Se realizó el MEM_WRITE correctamente
+[INFO] 22:42:59:443 Carpincho/(10914:10915): MEM_READ desde 9 el size 10
+[INFO] 22:42:59:485 Carpincho/(10914:10915): Se realizó el MEM_READ correctamente. El contenido es: CARPINCHO1
+[INFO] 22:42:59:485 Carpincho/(10914:10915): MEM_READ desde 28 el size 4
+[INFO] 22:42:59:604 Carpincho/(10914:10915): Se realizó el MEM_READ correctamente. El contenido es: 	
+[INFO] 22:42:59:605 Carpincho/(10914:10915): thread name: CARPINCHO1
+[INFO] 22:42:59:605 Carpincho/(10914:10915): value: 11
+[INFO] 22:42:59:605 Carpincho/(10914:10915): MEM_WRITE el mensaje  en 28
+[INFO] 22:42:59:643 Carpincho/(10914:10915): Se realizó el MEM_WRITE correctamente
+[INFO] 22:42:59:644 Carpincho/(10914:10916): MEM_READ desde 9 el size 10
+[INFO] 22:42:59:686 Carpincho/(10914:10916): Se realizó el MEM_READ correctamente. El contenido es: CARPINCHO2
+[INFO] 22:42:59:686 Carpincho/(10914:10916): MEM_READ desde 28 el size 4
+[INFO] 22:42:59:805 Carpincho/(10914:10916): Se realizó el MEM_READ correctamente. El contenido es: 
 
-
-[INFO] 02:20:08:559 Carpincho/(10675:10682): Log creado
-[INFO] 02:20:08:561 Carpincho/(10675:10682): Esperando respuesta de servidor
-[INFO] 02:20:08:565 Carpincho/(10675:10682): 
+[INFO] 22:42:59:805 Carpincho/(10914:10916): thread name: CARPINCHO2
+[INFO] 22:42:59:805 Carpincho/(10914:10916): value: 12
+[INFO] 22:42:59:805 Carpincho/(10914:10916): MEM_WRITE el mensaje  en 28
+[INFO] 22:42:59:843 Carpincho/(10914:10916): Se realizó el MEM_WRITE correctamente
+[INFO] 22:42:59:844 Carpincho/(10914:10915): MEM_READ desde 9 el size 10
+[INFO] 22:42:59:886 Carpincho/(10914:10915): Se realizó el MEM_READ correctamente. El contenido es: CARPINCHO1
+[INFO] 22:42:59:886 Carpincho/(10914:10915): MEM_READ desde 28 el size 4
+[INFO] 22:43:00:008 Carpincho/(10914:10915): Se realizó el MEM_READ correctamente. El contenido es: 
+[INFO] 22:43:00:008 Carpincho/(10914:10915): thread name: CARPINCHO1
+[INFO] 22:43:00:008 Carpincho/(10914:10915): value: 13
+[INFO] 22:43:00:008 Carpincho/(10914:10915): MEM_WRITE el mensaje  en 28
+[INFO] 22:43:00:048 Carpincho/(10914:10915): Se realizó el MEM_WRITE correctamente
+[INFO] 22:43:00:048 Carpincho/(10914:10916): MEM_READ desde 9 el size 10
+[INFO] 22:43:00:091 Carpincho/(10914:10916): Se realizó el MEM_READ correctamente. El contenido es: CARPINCHO2
+[INFO] 22:43:00:091 Carpincho/(10914:10916): MEM_READ desde 28 el size 4
+[INFO] 22:56:18:367 Carpincho/(13044:13044): Log creado
+[INFO] 22:56:18:368 Carpincho/(13044:13044): 
 NUEVO CARPINCHO
 
-[INFO] 02:20:11:604 Carpincho/(10675:10676): 
-_____llego del procesador un OK para el caprincho 1
-
-
-[INFO] 02:20:11:604 Carpincho/(10675:10676): Se realizó el CALL IO correctamente
-[INFO] 02:20:11:604 Carpincho/(10675:10676): MEM_ALLOC de 10
-[INFO] 02:20:11:644 Carpincho/(10675:10676): Se realizó el MEM_ALLOC correctamente. La dirección lógica es 9
-[INFO] 02:20:11:644 Carpincho/(10675:10676): MEM_WRITE el mensaje HOLA en 9
-[INFO] 02:20:11:645 Carpincho/(10675:10676): Se realizó el MEM_WRITE correctamente
-[INFO] 02:20:11:645 Carpincho/(10675:10676): MEM_READ desde 9 el size 4
-[INFO] 02:20:11:761 Carpincho/(10675:10676): Se realizó el MEM_READ correctamente. El contenido es: HOLA	
-[INFO] 02:20:11:762 Carpincho/(10675:10676): CALL_IO a PILETA carpincho 1
-[INFO] 02:20:11:762 Carpincho/(10675:10676): Vamos a usar la pileta...
-[INFO] 02:20:11:762 Carpincho/(10675:10682): Carpincho creado correctamente con el pid: 3
-[INFO] 02:20:11:762 Carpincho/(10675:10682): CALL_IO a PILETA carpincho 3
-[INFO] 02:20:11:762 Carpincho/(10675:10682): Vamos a usar la pileta...
-[INFO] 02:20:11:766 Carpincho/(10675:10682): RESPUESA DE IO RECIBIDA 0 
-[INFO] 02:20:11:766 Carpincho/(10675:10682): MATE IO ESPERANDO OK DEL PROCESADOR PARA SEGUIR carpincho 3
-
-
-[INFO] 02:20:11:766 Carpincho/(10675:10676): RESPUESA DE IO RECIBIDA 0 
-[INFO] 02:20:11:766 Carpincho/(10675:10676): MATE IO ESPERANDO OK DEL PROCESADOR PARA SEGUIR carpincho 1
-
-
-[INFO] 02:20:16:603 Carpincho/(10675:10679): 
-_____llego del procesador un OK para el caprincho 2
-
-
-[INFO] 02:20:16:603 Carpincho/(10675:10679): Se realizó el CALL IO correctamente
-[INFO] 02:20:16:604 Carpincho/(10675:10679): CALL_IO a PILETA carpincho 2
-[INFO] 02:20:16:604 Carpincho/(10675:10679): Vamos a usar la pileta...
-[INFO] 02:20:16:604 Carpincho/(10675:10679): RESPUESA DE IO RECIBIDA 0 
-[INFO] 02:20:16:604 Carpincho/(10675:10679): MATE IO ESPERANDO OK DEL PROCESADOR PARA SEGUIR carpincho 2
-
-
-[INFO] 02:20:26:606 Carpincho/(10675:10682): 
-_____llego del procesador un OK para el caprincho 3
-
-
-[INFO] 02:20:26:606 Carpincho/(10675:10682): Se realizó el CALL IO correctamente
-[INFO] 02:20:26:606 Carpincho/(10675:10682): CALL_IO a PILETA carpincho 3
-[INFO] 02:20:26:606 Carpincho/(10675:10682): Vamos a usar la pileta...
-[INFO] 02:20:26:607 Carpincho/(10675:10682): RESPUESA DE IO RECIBIDA 0 
-[INFO] 02:20:26:607 Carpincho/(10675:10682): MATE IO ESPERANDO OK DEL PROCESADOR PARA SEGUIR carpincho 3
-
-
-[INFO] 02:20:31:611 Carpincho/(10675:10679): 
-_____llego del procesador un OK para el caprincho 2
-
-
-[INFO] 02:20:31:612 Carpincho/(10675:10679): Se realizó el CALL IO correctamente
-[INFO] 02:20:31:613 Carpincho/(10675:10679): CALL_IO a PILETA carpincho 2
-[INFO] 02:20:31:613 Carpincho/(10675:10679): Vamos a usar la pileta...
-[INFO] 02:20:31:613 Carpincho/(10675:10679): RESPUESA DE IO RECIBIDA 0 
-[INFO] 02:20:31:614 Carpincho/(10675:10679): MATE IO ESPERANDO OK DEL PROCESADOR PARA SEGUIR carpincho 2
-
-
-[INFO] 02:20:36:608 Carpincho/(10675:10682): 
-_____llego del procesador un OK para el caprincho 3
-
-
-[INFO] 02:20:36:608 Carpincho/(10675:10682): Se realizó el CALL IO correctamente
-[INFO] 02:20:36:608 Carpincho/(10675:10682): CALL_IO a PILETA carpincho 3
-[INFO] 02:20:36:608 Carpincho/(10675:10682): Vamos a usar la pileta...
-[INFO] 02:20:36:608 Carpincho/(10675:10682): RESPUESA DE IO RECIBIDA 0 
-[INFO] 02:20:36:608 Carpincho/(10675:10682): MATE IO ESPERANDO OK DEL PROCESADOR PARA SEGUIR carpincho 3
-
-
-[INFO] 02:20:41:609 Carpincho/(10675:10679): 
-_____llego del procesador un OK para el caprincho 2
-
-
-[INFO] 02:20:41:609 Carpincho/(10675:10679): Se realizó el CALL IO correctamente
-[INFO] 02:20:41:610 Carpincho/(10675:10679): MATE_CLOSE carpincho 2
-[INFO] 02:20:41:610 Carpincho/(10675:10679): MATE_CLOSE: mensaje enviado a kernel
-[INFO] 02:20:41:610 Carpincho/(10675:10679): Carpincho eliminado
-[INFO] 02:20:41:611 Carpincho/(10675:10676): 
-_____llego del procesador un OK para el caprincho 1
-
-
-[INFO] 02:20:41:611 Carpincho/(10675:10676): Se realizó el CALL IO correctamente
-[INFO] 02:20:41:611 Carpincho/(10675:10676): MEM_FREE a la dirección 9
-[INFO] 02:20:42:847 Carpincho/(10675:10676): Se realizó el MEM_FREE correctamente
-[INFO] 02:20:42:847 Carpincho/(10675:10676): CALL_IO a PILETA carpincho 1
-[INFO] 02:20:42:847 Carpincho/(10675:10676): Vamos a usar la pileta...
-[INFO] 02:20:42:851 Carpincho/(10675:10676): RESPUESA DE IO RECIBIDA 0 
-[INFO] 02:20:42:851 Carpincho/(10675:10676): MATE IO ESPERANDO OK DEL PROCESADOR PARA SEGUIR carpincho 1
-
-
-[INFO] 02:20:46:611 Carpincho/(10675:10682): 
-_____llego del procesador un OK para el caprincho 3
-
-
-[INFO] 02:20:46:611 Carpincho/(10675:10682): Se realizó el CALL IO correctamente
-[INFO] 02:20:46:611 Carpincho/(10675:10682): MATE_CLOSE carpincho 3
-[INFO] 02:20:46:611 Carpincho/(10675:10682): MATE_CLOSE: mensaje enviado a kernel
-[INFO] 02:20:46:611 Carpincho/(10675:10682): Carpincho eliminado
-[INFO] 02:20:51:615 Carpincho/(10675:10676): 
-_____llego del procesador un OK para el caprincho 1
-
-
-[INFO] 02:20:51:615 Carpincho/(10675:10676): Se realizó el CALL IO correctamente
-[INFO] 02:20:51:615 Carpincho/(10675:10676): MATE_CLOSE carpincho 1
-[INFO] 02:20:51:615 Carpincho/(10675:10676): MATE_CLOSE: mensaje enviado a kernel
-[INFO] 02:20:51:615 Carpincho/(10675:10676): Carpincho eliminado
-[INFO] 02:23:05:436 Carpincho/(11180:11181): Log creado
-[INFO] 02:23:05:436 Carpincho/(11180:11181): Esperando respuesta de servidor
-[INFO] 02:23:05:438 Carpincho/(11180:11181): 
+[INFO] 22:56:18:419 Carpincho/(13044:13044): Carpincho creado correctamente con el pid: 1
+[INFO] 22:56:18:419 Carpincho/(13044:13044): MEM_ALLOC de carpincho 1 de tamaño 4
+[INFO] 22:56:18:501 Carpincho/(13044:13044): Se realizó el MEM_ALLOC correctamente. La dirección lógica es 9
+[INFO] 22:56:18:501 Carpincho/(13044:13044): key_2: 9
+[INFO] 22:56:18:502 Carpincho/(13044:13044): MEM_WRITE el mensaje n-2 en 9
+[INFO] 22:56:18:502 Carpincho/(13044:13044): Se realizó el MEM_WRITE correctamente
+[INFO] 22:56:18:502 Carpincho/(13044:13044): MEM_ALLOC de carpincho 1 de tamaño 4
+[INFO] 22:56:18:546 Carpincho/(13044:13044): Se realizó el MEM_ALLOC correctamente. La dirección lógica es 22
+[INFO] 22:56:18:547 Carpincho/(13044:13044): MEM_WRITE el mensaje  en 22
+[INFO] 22:56:18:547 Carpincho/(13044:13044): Se realizó el MEM_WRITE correctamente
+[INFO] 22:56:18:547 Carpincho/(13044:13044): value_2: 22
+[INFO] 22:56:18:547 Carpincho/(13044:13044): MEM_ALLOC de carpincho 1 de tamaño 4
+[INFO] 22:56:18:556 Carpincho/(13044:13044): Se realizó el MEM_ALLOC correctamente. La dirección lógica es 35
+[INFO] 22:56:18:556 Carpincho/(13044:13044): MEM_WRITE el mensaje n-1 en 35
+[INFO] 22:56:18:636 Carpincho/(13044:13044): Se realizó el MEM_WRITE correctamente
+[INFO] 22:56:18:636 Carpincho/(13044:13044): key_1: 35
+[INFO] 22:56:18:636 Carpincho/(13044:13044): MEM_ALLOC de carpincho 1 de tamaño 4
+[INFO] 22:56:18:682 Carpincho/(13044:13044): Se realizó el MEM_ALLOC correctamente. La dirección lógica es 48
+[INFO] 22:56:18:682 Carpincho/(13044:13044): MEM_WRITE el mensaje  en 48
+[INFO] 22:56:18:682 Carpincho/(13044:13044): Se realizó el MEM_WRITE correctamente
+[INFO] 22:56:18:682 Carpincho/(13044:13044): value_1: 48
+[INFO] 22:56:18:682 Carpincho/(13044:13044): MEM_READ desde 48 el size 4
+[INFO] 22:56:18:803 Carpincho/(13044:13044): Se realizó el MEM_READ correctamente. El contenido es: 
+[INFO] 22:56:18:803 Carpincho/(13044:13044): MEM_READ desde 22 el size 4
+[INFO] 22:56:18:883 Carpincho/(13044:13044): Se realizó el MEM_READ correctamente. El contenido es: 
+[INFO] 22:56:18:883 Carpincho/(13044:13044): MEM_READ desde 9 el size 4
+[INFO] 22:56:18:963 Carpincho/(13044:13044): Se realizó el MEM_READ correctamente. El contenido es: n-2
+[INFO] 22:56:18:963 Carpincho/(13044:13044): MEM_READ desde 35 el size 4
+[INFO] 22:56:19:042 Carpincho/(13044:13044): Se realizó el MEM_READ correctamente. El contenido es: n-1
+[INFO] 22:56:19:042 Carpincho/(13044:13044): valores de la sucesión:
+[INFO] 22:56:19:042 Carpincho/(13044:13044): n-2: 0
+[INFO] 22:56:19:042 Carpincho/(13044:13044): n-1: 1
+[INFO] 22:56:19:042 Carpincho/(13044:13044): n: 1
+[INFO] 22:56:19:043 Carpincho/(13044:13044): MEM_WRITE el mensaje  en 48
+[INFO] 22:56:19:083 Carpincho/(13044:13044): Se realizó el MEM_WRITE correctamente
+[INFO] 22:56:19:083 Carpincho/(13044:13044): MEM_WRITE el mensaje  en 22
+[INFO] 22:56:19:124 Carpincho/(13044:13044): Se realizó el MEM_WRITE correctamente
+[INFO] 22:56:19:124 Carpincho/(13044:13044): MEM_READ desde 48 el size 4
+[INFO] 22:56:19:242 Carpincho/(13044:13044): Se realizó el MEM_READ correctamente. El contenido es: 
+[INFO] 22:56:19:242 Carpincho/(13044:13044): MEM_READ desde 22 el size 4
+[INFO] 22:56:19:323 Carpincho/(13044:13044): Se realizó el MEM_READ correctamente. El contenido es: 
+[INFO] 22:56:19:323 Carpincho/(13044:13044): MEM_READ desde 9 el size 4
+[INFO] 22:56:19:403 Carpincho/(13044:13044): Se realizó el MEM_READ correctamente. El contenido es: n-2
+[INFO] 22:56:19:403 Carpincho/(13044:13044): MEM_READ desde 35 el size 4
+[INFO] 22:56:19:483 Carpincho/(13044:13044): Se realizó el MEM_READ correctamente. El contenido es: n-1
+[INFO] 22:56:19:483 Carpincho/(13044:13044): valores de la sucesión:
+[INFO] 22:56:19:483 Carpincho/(13044:13044): n-2: 1
+[INFO] 22:56:19:483 Carpincho/(13044:13044): n-1: 1
+[INFO] 22:56:19:483 Carpincho/(13044:13044): n: 2
+[INFO] 22:56:19:483 Carpincho/(13044:13044): MEM_WRITE el mensaje  en 48
+[INFO] 22:56:19:524 Carpincho/(13044:13044): Se realizó el MEM_WRITE correctamente
+[INFO] 22:56:19:524 Carpincho/(13044:13044): MEM_WRITE el mensaje  en 22
+[INFO] 22:56:19:563 Carpincho/(13044:13044): Se realizó el MEM_WRITE correctamente
+[INFO] 22:56:19:563 Carpincho/(13044:13044): MEM_READ desde 48 el size 4
+[INFO] 22:56:19:682 Carpincho/(13044:13044): Se realizó el MEM_READ correctamente. El contenido es: 
+[INFO] 22:56:19:682 Carpincho/(13044:13044): MEM_READ desde 22 el size 4
+[INFO] 22:56:19:763 Carpincho/(13044:13044): Se realizó el MEM_READ correctamente. El contenido es: 
+[INFO] 22:56:19:763 Carpincho/(13044:13044): MEM_READ desde 9 el size 4
+[INFO] 22:56:19:843 Carpincho/(13044:13044): Se realizó el MEM_READ correctamente. El contenido es: n-2
+[INFO] 22:56:19:843 Carpincho/(13044:13044): MEM_READ desde 35 el size 4
+[INFO] 22:56:19:924 Carpincho/(13044:13044): Se realizó el MEM_READ correctamente. El contenido es: n-1
+[INFO] 22:56:19:924 Carpincho/(13044:13044): valores de la sucesión:
+[INFO] 22:56:19:924 Carpincho/(13044:13044): n-2: 1
+[INFO] 22:56:19:924 Carpincho/(13044:13044): n-1: 2
+[INFO] 22:56:19:924 Carpincho/(13044:13044): n: 3
+[INFO] 22:56:19:924 Carpincho/(13044:13044): MEM_WRITE el mensaje  en 48
+[INFO] 22:56:19:963 Carpincho/(13044:13044): Se realizó el MEM_WRITE correctamente
+[INFO] 22:56:19:964 Carpincho/(13044:13044): MEM_WRITE el mensaje  en 22
+[INFO] 22:56:20:004 Carpincho/(13044:13044): Se realizó el MEM_WRITE correctamente
+[INFO] 22:56:20:004 Carpincho/(13044:13044): MEM_READ desde 48 el size 4
+[INFO] 22:56:20:123 Carpincho/(13044:13044): Se realizó el MEM_READ correctamente. El contenido es: 
+[INFO] 22:56:20:123 Carpincho/(13044:13044): MEM_READ desde 22 el size 4
+[INFO] 22:56:20:203 Carpincho/(13044:13044): Se realizó el MEM_READ correctamente. El contenido es: 
+[INFO] 22:56:20:203 Carpincho/(13044:13044): MEM_READ desde 9 el size 4
+[INFO] 22:56:20:282 Carpincho/(13044:13044): Se realizó el MEM_READ correctamente. El contenido es: n-2
+[INFO] 22:56:20:282 Carpincho/(13044:13044): MEM_READ desde 35 el size 4
+[INFO] 22:56:20:362 Carpincho/(13044:13044): Se realizó el MEM_READ correctamente. El contenido es: n-1
+[INFO] 22:56:20:362 Carpincho/(13044:13044): valores de la sucesión:
+[INFO] 22:56:20:362 Carpincho/(13044:13044): n-2: 2
+[INFO] 22:56:20:362 Carpincho/(13044:13044): n-1: 3
+[INFO] 22:56:20:363 Carpincho/(13044:13044): n: 5
+[INFO] 22:56:20:363 Carpincho/(13044:13044): MEM_WRITE el mensaje  en 48
+[INFO] 22:56:20:405 Carpincho/(13044:13044): Se realizó el MEM_WRITE correctamente
+[INFO] 22:56:20:405 Carpincho/(13044:13044): MEM_WRITE el mensaje  en 22
+[INFO] 22:56:20:447 Carpincho/(13044:13044): Se realizó el MEM_WRITE correctamente
+[INFO] 22:56:20:447 Carpincho/(13044:13044): MEM_READ desde 48 el size 4
+[INFO] 22:56:20:566 Carpincho/(13044:13044): Se realizó el MEM_READ correctamente. El contenido es: 
+[INFO] 22:56:20:566 Carpincho/(13044:13044): MEM_READ desde 22 el size 4
+[INFO] 22:56:20:646 Carpincho/(13044:13044): Se realizó el MEM_READ correctamente. El contenido es: 
+[INFO] 22:56:20:646 Carpincho/(13044:13044): MEM_READ desde 9 el size 4
+[INFO] 22:56:20:727 Carpincho/(13044:13044): Se realizó el MEM_READ correctamente. El contenido es: n-2
+[INFO] 22:56:20:727 Carpincho/(13044:13044): MEM_READ desde 35 el size 4
+[INFO] 22:56:20:807 Carpincho/(13044:13044): Se realizó el MEM_READ correctamente. El contenido es: n-1
+[INFO] 22:56:20:807 Carpincho/(13044:13044): valores de la sucesión:
+[INFO] 22:56:20:807 Carpincho/(13044:13044): n-2: 3
+[INFO] 22:56:20:807 Carpincho/(13044:13044): n-1: 5
+[INFO] 22:56:20:807 Carpincho/(13044:13044): n: 8
+[INFO] 22:56:20:807 Carpincho/(13044:13044): MEM_WRITE el mensaje  en 48
+[INFO] 22:56:20:848 Carpincho/(13044:13044): Se realizó el MEM_WRITE correctamente
+[INFO] 22:56:20:848 Carpincho/(13044:13044): MEM_WRITE el mensaje  en 22
+[INFO] 22:56:20:889 Carpincho/(13044:13044): Se realizó el MEM_WRITE correctamente
+[INFO] 22:56:20:889 Carpincho/(13044:13044): MEM_READ desde 48 el size 4
+[INFO] 22:56:21:007 Carpincho/(13044:13044): Se realizó el MEM_READ correctamente. El contenido es: 
+[INFO] 22:56:21:007 Carpincho/(13044:13044): MEM_READ desde 22 el size 4
+[INFO] 22:56:21:090 Carpincho/(13044:13044): Se realizó el MEM_READ correctamente. El contenido es: 
+[INFO] 22:56:21:090 Carpincho/(13044:13044): MEM_READ desde 9 el size 4
+[INFO] 22:56:21:172 Carpincho/(13044:13044): Se realizó el MEM_READ correctamente. El contenido es: n-2
+[INFO] 22:56:21:172 Carpincho/(13044:13044): MEM_READ desde 35 el size 4
+[INFO] 22:56:21:251 Carpincho/(13044:13044): Se realizó el MEM_READ correctamente. El contenido es: n-1
+[INFO] 22:56:21:251 Carpincho/(13044:13044): valores de la sucesión:
+[INFO] 22:56:21:251 Carpincho/(13044:13044): n-2: 5
+[INFO] 22:56:21:251 Carpincho/(13044:13044): n-1: 8
+[INFO] 22:56:21:251 Carpincho/(13044:13044): n: 13
+[INFO] 22:56:21:252 Carpincho/(13044:13044): MEM_WRITE el mensaje  en 48
+[INFO] 22:56:21:292 Carpincho/(13044:13044): Se realizó el MEM_WRITE correctamente
+[INFO] 22:56:21:292 Carpincho/(13044:13044): MEM_WRITE el mensaje  en 22
+[INFO] 22:56:21:332 Carpincho/(13044:13044): Se realizó el MEM_WRITE correctamente
+[INFO] 22:56:21:332 Carpincho/(13044:13044): MEM_READ desde 48 el size 4
+[INFO] 22:56:21:451 Carpincho/(13044:13044): Se realizó el MEM_READ correctamente. El contenido es: 
+[INFO] 22:56:21:451 Carpincho/(13044:13044): MEM_READ desde 22 el size 4
+[INFO] 22:56:21:530 Carpincho/(13044:13044): Se realizó el MEM_READ correctamente. El contenido es: 
+[INFO] 22:56:21:530 Carpincho/(13044:13044): MEM_READ desde 9 el size 4
+[INFO] 22:56:21:611 Carpincho/(13044:13044): Se realizó el MEM_READ correctamente. El contenido es: n-2
+[INFO] 22:56:21:611 Carpincho/(13044:13044): MEM_READ desde 35 el size 4
+[INFO] 22:56:21:690 Carpincho/(13044:13044): Se realizó el MEM_READ correctamente. El contenido es: n-1
+[INFO] 22:56:21:690 Carpincho/(13044:13044): valores de la sucesión:
+[INFO] 22:56:21:690 Carpincho/(13044:13044): n-2: 8
+[INFO] 22:56:21:690 Carpincho/(13044:13044): n-1: 13
+[INFO] 22:56:21:691 Carpincho/(13044:13044): n: 21
+[INFO] 22:56:21:691 Carpincho/(13044:13044): MEM_WRITE el mensaje  en 48
+[INFO] 22:56:21:731 Carpincho/(13044:13044): Se realizó el MEM_WRITE correctamente
+[INFO] 22:56:21:731 Carpincho/(13044:13044): MEM_WRITE el mensaje  en 22
+[INFO] 22:56:21:773 Carpincho/(13044:13044): Se realizó el MEM_WRITE correctamente
+[INFO] 22:56:21:774 Carpincho/(13044:13044): MEM_READ desde 48 el size 4
+[INFO] 22:56:21:891 Carpincho/(13044:13044): Se realizó el MEM_READ correctamente. El contenido es: 
+[INFO] 22:56:21:891 Carpincho/(13044:13044): MEM_READ desde 22 el size 4
+[INFO] 22:56:21:972 Carpincho/(13044:13044): Se realizó el MEM_READ correctamente. El contenido es: 
+[INFO] 22:56:21:972 Carpincho/(13044:13044): MEM_READ desde 9 el size 4
+[INFO] 22:56:22:051 Carpincho/(13044:13044): Se realizó el MEM_READ correctamente. El contenido es: n-2
+[INFO] 22:56:22:051 Carpincho/(13044:13044): MEM_READ desde 35 el size 4
+[INFO] 22:56:22:135 Carpincho/(13044:13044): Se realizó el MEM_READ correctamente. El contenido es: n-1
+[INFO] 22:56:22:135 Carpincho/(13044:13044): valores de la sucesión:
+[INFO] 22:56:22:135 Carpincho/(13044:13044): n-2: 13
+[INFO] 22:56:22:135 Carpincho/(13044:13044): n-1: 21
+[INFO] 22:56:22:135 Carpincho/(13044:13044): n: 34
+[INFO] 22:56:22:135 Carpincho/(13044:13044): MEM_WRITE el mensaje " en 48
+[INFO] 22:56:22:176 Carpincho/(13044:13044): Se realizó el MEM_WRITE correctamente
+[INFO] 22:56:22:176 Carpincho/(13044:13044): MEM_WRITE el mensaje  en 22
+[INFO] 22:56:22:216 Carpincho/(13044:13044): Se realizó el MEM_WRITE correctamente
+[INFO] 22:56:22:216 Carpincho/(13044:13044): MEM_READ desde 48 el size 4
+[INFO] 22:56:22:339 Carpincho/(13044:13044): Se realizó el MEM_READ correctamente. El contenido es: "
+[INFO] 22:56:22:339 Carpincho/(13044:13044): MEM_READ desde 22 el size 4
+[INFO] 22:56:22:419 Carpincho/(13044:13044): Se realizó el MEM_READ correctamente. El contenido es: 
+[INFO] 22:56:22:419 Carpincho/(13044:13044): MEM_READ desde 9 el size 4
+[INFO] 22:56:22:499 Carpincho/(13044:13044): Se realizó el MEM_READ correctamente. El contenido es: n-2
+[INFO] 22:56:22:499 Carpincho/(13044:13044): MEM_READ desde 35 el size 4
+[INFO] 22:56:22:579 Carpincho/(13044:13044): Se realizó el MEM_READ correctamente. El contenido es: n-1
+[INFO] 22:56:22:579 Carpincho/(13044:13044): valores de la sucesión:
+[INFO] 22:56:22:579 Carpincho/(13044:13044): n-2: 21
+[INFO] 22:56:22:579 Carpincho/(13044:13044): n-1: 34
+[INFO] 22:56:22:579 Carpincho/(13044:13044): n: 55
+[INFO] 22:56:22:579 Carpincho/(13044:13044): MEM_WRITE el mensaje 7 en 48
+[INFO] 22:56:22:620 Carpincho/(13044:13044): Se realizó el MEM_WRITE correctamente
+[INFO] 22:56:22:620 Carpincho/(13044:13044): MEM_WRITE el mensaje " en 22
+[INFO] 22:56:22:660 Carpincho/(13044:13044): Se realizó el MEM_WRITE correctamente
+[INFO] 22:56:22:660 Carpincho/(13044:13044): MEM_READ desde 48 el size 4
+[INFO] 22:56:22:779 Carpincho/(13044:13044): Se realizó el MEM_READ correctamente. El contenido es: 7
+[INFO] 22:56:22:779 Carpincho/(13044:13044): MEM_READ desde 22 el size 4
+[INFO] 22:56:22:859 Carpincho/(13044:13044): Se realizó el MEM_READ correctamente. El contenido es: "
+[INFO] 22:56:22:859 Carpincho/(13044:13044): MEM_READ desde 9 el size 4
+[INFO] 22:56:22:940 Carpincho/(13044:13044): Se realizó el MEM_READ correctamente. El contenido es: n-2
+[INFO] 22:56:22:940 Carpincho/(13044:13044): MEM_READ desde 35 el size 4
+[INFO] 22:56:23:019 Carpincho/(13044:13044): Se realizó el MEM_READ correctamente. El contenido es: n-1
+[INFO] 22:56:23:019 Carpincho/(13044:13044): valores de la sucesión:
+[INFO] 22:56:23:019 Carpincho/(13044:13044): n-2: 34
+[INFO] 22:56:23:019 Carpincho/(13044:13044): n-1: 55
+[INFO] 22:56:23:019 Carpincho/(13044:13044): n: 89
+[INFO] 22:56:23:019 Carpincho/(13044:13044): MEM_WRITE el mensaje Y en 48
+[INFO] 22:56:23:060 Carpincho/(13044:13044): Se realizó el MEM_WRITE correctamente
+[INFO] 22:56:23:060 Carpincho/(13044:13044): MEM_WRITE el mensaje 7 en 22
+[INFO] 22:56:23:101 Carpincho/(13044:13044): Se realizó el MEM_WRITE correctamente
+[INFO] 22:56:23:101 Carpincho/(13044:13044): MEM_READ desde 48 el size 4
+[INFO] 22:56:23:218 Carpincho/(13044:13044): Se realizó el MEM_READ correctamente. El contenido es: Y
+[INFO] 22:56:23:219 Carpincho/(13044:13044): MEM_READ desde 22 el size 4
+[INFO] 22:56:23:299 Carpincho/(13044:13044): Se realizó el MEM_READ correctamente. El contenido es: 7
+[INFO] 22:56:23:299 Carpincho/(13044:13044): MEM_READ desde 9 el size 4
+[INFO] 22:56:23:382 Carpincho/(13044:13044): Se realizó el MEM_READ correctamente. El contenido es: n-2
+[INFO] 22:56:23:382 Carpincho/(13044:13044): MEM_READ desde 35 el size 4
+[INFO] 22:56:23:466 Carpincho/(13044:13044): Se realizó el MEM_READ correctamente. El contenido es: n-1
+[INFO] 22:56:23:466 Carpincho/(13044:13044): valores de la sucesión:
+[INFO] 22:56:23:466 Carpincho/(13044:13044): n-2: 55
+[INFO] 22:56:23:466 Carpincho/(13044:13044): n-1: 89
+[INFO] 22:56:23:466 Carpincho/(13044:13044): n: 144
+[INFO] 22:56:23:466 Carpincho/(13044:13044): MEM_WRITE el mensaje � en 48
+[INFO] 22:56:23:509 Carpincho/(13044:13044): Se realizó el MEM_WRITE correctamente
+[INFO] 22:56:23:509 Carpincho/(13044:13044): MEM_WRITE el mensaje Y en 22
+[INFO] 22:56:23:548 Carpincho/(13044:13044): Se realizó el MEM_WRITE correctamente
+[INFO] 22:56:23:548 Carpincho/(13044:13044): MEM_READ desde 48 el size 4
+[INFO] 22:56:23:668 Carpincho/(13044:13044): Se realizó el MEM_READ correctamente. El contenido es: �
+[INFO] 22:56:23:668 Carpincho/(13044:13044): MEM_READ desde 22 el size 4
+[INFO] 22:56:23:746 Carpincho/(13044:13044): Se realizó el MEM_READ correctamente. El contenido es: Y
+[INFO] 22:56:23:746 Carpincho/(13044:13044): MEM_READ desde 9 el size 4
+[INFO] 22:56:23:826 Carpincho/(13044:13044): Se realizó el MEM_READ correctamente. El contenido es: n-2
+[INFO] 22:56:23:826 Carpincho/(13044:13044): MEM_READ desde 35 el size 4
+[INFO] 22:56:23:907 Carpincho/(13044:13044): Se realizó el MEM_READ correctamente. El contenido es: n-1
+[INFO] 22:56:23:907 Carpincho/(13044:13044): valores de la sucesión:
+[INFO] 22:56:23:907 Carpincho/(13044:13044): n-2: 89
+[INFO] 22:56:23:907 Carpincho/(13044:13044): n-1: 144
+[INFO] 22:56:23:907 Carpincho/(13044:13044): n: 233
+[INFO] 22:56:23:907 Carpincho/(13044:13044): MEM_WRITE el mensaje � en 48
+[INFO] 22:56:23:948 Carpincho/(13044:13044): Se realizó el MEM_WRITE correctamente
+[INFO] 22:56:23:948 Carpincho/(13044:13044): MEM_WRITE el mensaje � en 22
+[INFO] 22:56:23:991 Carpincho/(13044:13044): Se realizó el MEM_WRITE correctamente
+[INFO] 22:56:23:991 Carpincho/(13044:13044): MEM_READ desde 48 el size 4
+[INFO] 22:56:24:111 Carpincho/(13044:13044): Se realizó el MEM_READ correctamente. El contenido es: �
+[INFO] 22:56:24:111 Carpincho/(13044:13044): MEM_READ desde 22 el size 4
+[INFO] 22:56:24:190 Carpincho/(13044:13044): Se realizó el MEM_READ correctamente. El contenido es: �
+[INFO] 22:56:24:190 Carpincho/(13044:13044): MEM_READ desde 9 el size 4
+[INFO] 22:56:24:271 Carpincho/(13044:13044): Se realizó el MEM_READ correctamente. El contenido es: n-2
+[INFO] 22:56:24:271 Carpincho/(13044:13044): MEM_READ desde 35 el size 4
+[INFO] 22:56:24:350 Carpincho/(13044:13044): Se realizó el MEM_READ correctamente. El contenido es: n-1
+[INFO] 22:56:24:350 Carpincho/(13044:13044): valores de la sucesión:
+[INFO] 22:56:24:351 Carpincho/(13044:13044): n-2: 144
+[INFO] 22:56:24:351 Carpincho/(13044:13044): n-1: 233
+[INFO] 22:56:24:351 Carpincho/(13044:13044): n: 377
+[INFO] 22:56:24:351 Carpincho/(13044:13044): MEM_WRITE el mensaje y en 48
+[INFO] 22:56:24:391 Carpincho/(13044:13044): Se realizó el MEM_WRITE correctamente
+[INFO] 22:56:24:391 Carpincho/(13044:13044): MEM_WRITE el mensaje � en 22
+[INFO] 22:56:24:433 Carpincho/(13044:13044): Se realizó el MEM_WRITE correctamente
+[INFO] 22:56:24:433 Carpincho/(13044:13044): MEM_READ desde 48 el size 4
+[INFO] 22:56:24:551 Carpincho/(13044:13044): Se realizó el MEM_READ correctamente. El contenido es: y
+[INFO] 22:56:24:551 Carpincho/(13044:13044): MEM_READ desde 22 el size 4
+[INFO] 22:56:24:631 Carpincho/(13044:13044): Se realizó el MEM_READ correctamente. El contenido es: �
+[INFO] 22:56:24:631 Carpincho/(13044:13044): MEM_READ desde 9 el size 4
+[INFO] 22:56:24:710 Carpincho/(13044:13044): Se realizó el MEM_READ correctamente. El contenido es: n-2
+[INFO] 22:56:24:710 Carpincho/(13044:13044): MEM_READ desde 35 el size 4
+[INFO] 22:56:24:790 Carpincho/(13044:13044): Se realizó el MEM_READ correctamente. El contenido es: n-1
+[INFO] 22:56:24:790 Carpincho/(13044:13044): valores de la sucesión:
+[INFO] 22:56:24:790 Carpincho/(13044:13044): n-2: 233
+[INFO] 22:56:24:790 Carpincho/(13044:13044): n-1: 377
+[INFO] 22:56:24:790 Carpincho/(13044:13044): n: 610
+[INFO] 22:56:24:791 Carpincho/(13044:13044): MEM_WRITE el mensaje b en 48
+[INFO] 22:56:24:832 Carpincho/(13044:13044): Se realizó el MEM_WRITE correctamente
+[INFO] 22:56:24:832 Carpincho/(13044:13044): MEM_WRITE el mensaje y en 22
+[INFO] 22:56:24:873 Carpincho/(13044:13044): Se realizó el MEM_WRITE correctamente
+[INFO] 22:56:24:873 Carpincho/(13044:13044): MEM_READ desde 48 el size 4
+[INFO] 22:56:24:991 Carpincho/(13044:13044): Se realizó el MEM_READ correctamente. El contenido es: b
+[INFO] 22:56:24:991 Carpincho/(13044:13044): MEM_READ desde 22 el size 4
+[INFO] 22:56:25:075 Carpincho/(13044:13044): Se realizó el MEM_READ correctamente. El contenido es: y
+[INFO] 22:56:25:075 Carpincho/(13044:13044): MEM_READ desde 9 el size 4
+[INFO] 22:56:25:156 Carpincho/(13044:13044): Se realizó el MEM_READ correctamente. El contenido es: n-2
+[INFO] 22:56:25:156 Carpincho/(13044:13044): MEM_READ desde 35 el size 4
+[INFO] 22:56:25:236 Carpincho/(13044:13044): Se realizó el MEM_READ correctamente. El contenido es: n-1
+[INFO] 22:56:25:236 Carpincho/(13044:13044): valores de la sucesión:
+[INFO] 22:56:25:236 Carpincho/(13044:13044): n-2: 377
+[INFO] 22:56:25:236 Carpincho/(13044:13044): n-1: 610
+[INFO] 22:56:25:236 Carpincho/(13044:13044): n: 987
+[INFO] 22:56:25:236 Carpincho/(13044:13044): MEM_WRITE el mensaje � en 48
+[INFO] 22:56:25:283 Carpincho/(13044:13044): Se realizó el MEM_WRITE correctamente
+[INFO] 22:56:25:283 Carpincho/(13044:13044): MEM_WRITE el mensaje b en 22
+[INFO] 22:56:25:326 Carpincho/(13044:13044): Se realizó el MEM_WRITE correctamente
+[INFO] 22:56:25:326 Carpincho/(13044:13044): MEM_READ desde 48 el size 4
+[INFO] 22:56:25:443 Carpincho/(13044:13044): Se realizó el MEM_READ correctamente. El contenido es: �
+[INFO] 22:56:25:443 Carpincho/(13044:13044): MEM_READ desde 22 el size 4
+[INFO] 22:56:25:523 Carpincho/(13044:13044): Se realizó el MEM_READ correctamente. El contenido es: b
+[INFO] 22:56:25:523 Carpincho/(13044:13044): MEM_READ desde 9 el size 4
+[INFO] 22:56:25:602 Carpincho/(13044:13044): Se realizó el MEM_READ correctamente. El contenido es: n-2
+[INFO] 22:56:25:602 Carpincho/(13044:13044): MEM_READ desde 35 el size 4
+[INFO] 22:56:25:682 Carpincho/(13044:13044): Se realizó el MEM_READ correctamente. El contenido es: n-1
+[INFO] 22:56:25:682 Carpincho/(13044:13044): valores de la sucesión:
+[INFO] 22:56:25:682 Carpincho/(13044:13044): n-2: 610
+[INFO] 22:56:25:682 Carpincho/(13044:13044): n-1: 987
+[INFO] 22:56:25:682 Carpincho/(13044:13044): n: 1597
+[INFO] 22:56:25:683 Carpincho/(13044:13044): MEM_WRITE el mensaje = en 48
+[INFO] 22:56:25:724 Carpincho/(13044:13044): Se realizó el MEM_WRITE correctamente
+[INFO] 22:56:25:724 Carpincho/(13044:13044): MEM_WRITE el mensaje � en 22
+[INFO] 22:56:25:763 Carpincho/(13044:13044): Se realizó el MEM_WRITE correctamente
+[INFO] 22:56:25:763 Carpincho/(13044:13044): MEM_READ desde 48 el size 4
+[INFO] 22:56:25:883 Carpincho/(13044:13044): Se realizó el MEM_READ correctamente. El contenido es: =
+[INFO] 22:56:25:883 Carpincho/(13044:13044): MEM_READ desde 22 el size 4
+[INFO] 22:56:25:962 Carpincho/(13044:13044): Se realizó el MEM_READ correctamente. El contenido es: �
+[INFO] 22:56:25:962 Carpincho/(13044:13044): MEM_READ desde 9 el size 4
+[INFO] 22:56:26:042 Carpincho/(13044:13044): Se realizó el MEM_READ correctamente. El contenido es: n-2
+[INFO] 22:56:26:042 Carpincho/(13044:13044): MEM_READ desde 35 el size 4
+[INFO] 23:13:18:648 Carpincho/(14776:14776): Log creado
+[INFO] 23:13:18:649 Carpincho/(14776:14776): 
 NUEVO CARPINCHO
 
-[INFO] 02:23:05:489 Carpincho/(11180:11181): Carpincho creado correctamente con el pid: 1
-[INFO] 02:23:05:489 Carpincho/(11180:11181): CALL_IO a PILETA carpincho 1
-[INFO] 02:23:05:489 Carpincho/(11180:11181): Vamos a usar la pileta...
-[INFO] 02:23:05:490 Carpincho/(11180:11181): RESPUESA DE IO RECIBIDA 0 
-[INFO] 02:23:05:490 Carpincho/(11180:11181): MATE IO ESPERANDO OK DEL PROCESADOR PARA SEGUIR carpincho 1
-
-
-[INFO] 02:23:06:436 Carpincho/(11180:11184): Log creado
-[INFO] 02:23:06:437 Carpincho/(11180:11184): Esperando respuesta de servidor
-[INFO] 02:23:06:438 Carpincho/(11180:11184): 
+[INFO] 23:13:18:698 Carpincho/(14776:14776): Carpincho creado correctamente con el pid: 1
+[INFO] 23:13:18:698 Carpincho/(14776:14776): MEM_ALLOC de carpincho 1 de tamaño 4
+[INFO] 23:13:18:704 Carpincho/(14776:14776): Se realizó el MEM_ALLOC correctamente. La dirección lógica es 9
+[INFO] 23:13:18:704 Carpincho/(14776:14776): key_2: 9
+[INFO] 23:13:18:704 Carpincho/(14776:14776): MEM_WRITE el mensaje n-2 en 9
+[INFO] 23:13:18:784 Carpincho/(14776:14776): Se realizó el MEM_WRITE correctamente
+[INFO] 23:13:18:784 Carpincho/(14776:14776): MEM_ALLOC de carpincho 1 de tamaño 4
+[INFO] 23:13:18:789 Carpincho/(14776:14776): Se realizó el MEM_ALLOC correctamente. La dirección lógica es 22
+[INFO] 23:13:18:789 Carpincho/(14776:14776): MEM_WRITE el mensaje  en 22
+[INFO] 23:13:18:867 Carpincho/(14776:14776): Se realizó el MEM_WRITE correctamente
+[INFO] 23:13:18:867 Carpincho/(14776:14776): value_2: 22
+[INFO] 23:13:18:867 Carpincho/(14776:14776): MEM_ALLOC de carpincho 1 de tamaño 4
+[INFO] 23:13:18:874 Carpincho/(14776:14776): Se realizó el MEM_ALLOC correctamente. La dirección lógica es 35
+[INFO] 23:13:18:874 Carpincho/(14776:14776): MEM_WRITE el mensaje n-1 en 35
+[INFO] 23:13:18:951 Carpincho/(14776:14776): Se realizó el MEM_WRITE correctamente
+[INFO] 23:13:18:951 Carpincho/(14776:14776): key_1: 35
+[INFO] 23:13:18:951 Carpincho/(14776:14776): MEM_ALLOC de carpincho 1 de tamaño 4
+[INFO] 23:13:18:959 Carpincho/(14776:14776): Se realizó el MEM_ALLOC correctamente. La dirección lógica es 48
+[INFO] 23:13:18:959 Carpincho/(14776:14776): MEM_WRITE el mensaje  en 48
+[INFO] 23:13:19:039 Carpincho/(14776:14776): Se realizó el MEM_WRITE correctamente
+[INFO] 23:13:19:039 Carpincho/(14776:14776): value_1: 48
+[INFO] 23:13:19:039 Carpincho/(14776:14776): MEM_READ desde 48 el size 4
+[INFO] 23:13:19:159 Carpincho/(14776:14776): Se realizó el MEM_READ correctamente. El contenido es: 
+[INFO] 23:13:19:159 Carpincho/(14776:14776): MEM_READ desde 22 el size 4
+[INFO] 23:13:19:238 Carpincho/(14776:14776): Se realizó el MEM_READ correctamente. El contenido es: 
+[INFO] 23:13:19:238 Carpincho/(14776:14776): MEM_READ desde 9 el size 4
+[INFO] 23:13:19:320 Carpincho/(14776:14776): Se realizó el MEM_READ correctamente. El contenido es: n-2
+[INFO] 23:13:19:320 Carpincho/(14776:14776): MEM_READ desde 35 el size 4
+[INFO] 23:13:19:399 Carpincho/(14776:14776): Se realizó el MEM_READ correctamente. El contenido es: n-1
+[INFO] 23:13:19:399 Carpincho/(14776:14776): valores de la sucesión:
+[INFO] 23:13:19:399 Carpincho/(14776:14776): n-2: 0
+[INFO] 23:13:19:399 Carpincho/(14776:14776): n-1: 1
+[INFO] 23:13:19:399 Carpincho/(14776:14776): n: 1
+[INFO] 23:13:19:399 Carpincho/(14776:14776): MEM_WRITE el mensaje  en 48
+[INFO] 23:13:19:440 Carpincho/(14776:14776): Se realizó el MEM_WRITE correctamente
+[INFO] 23:13:19:440 Carpincho/(14776:14776): MEM_WRITE el mensaje  en 22
+[INFO] 23:13:19:480 Carpincho/(14776:14776): Se realizó el MEM_WRITE correctamente
+[INFO] 23:13:19:481 Carpincho/(14776:14776): MEM_READ desde 48 el size 4
+[INFO] 23:13:19:599 Carpincho/(14776:14776): Se realizó el MEM_READ correctamente. El contenido es: 
+[INFO] 23:13:19:599 Carpincho/(14776:14776): MEM_READ desde 22 el size 4
+[INFO] 23:13:19:679 Carpincho/(14776:14776): Se realizó el MEM_READ correctamente. El contenido es: 
+[INFO] 23:13:19:679 Carpincho/(14776:14776): MEM_READ desde 9 el size 4
+[INFO] 23:13:19:759 Carpincho/(14776:14776): Se realizó el MEM_READ correctamente. El contenido es: n-2
+[INFO] 23:13:19:759 Carpincho/(14776:14776): MEM_READ desde 35 el size 4
+[INFO] 23:13:19:839 Carpincho/(14776:14776): Se realizó el MEM_READ correctamente. El contenido es: n-1
+[INFO] 23:13:19:839 Carpincho/(14776:14776): valores de la sucesión:
+[INFO] 23:13:19:839 Carpincho/(14776:14776): n-2: 1
+[INFO] 23:13:19:839 Carpincho/(14776:14776): n-1: 1
+[INFO] 23:13:19:839 Carpincho/(14776:14776): n: 2
+[INFO] 23:13:19:839 Carpincho/(14776:14776): MEM_WRITE el mensaje  en 48
+[INFO] 23:13:19:880 Carpincho/(14776:14776): Se realizó el MEM_WRITE correctamente
+[INFO] 23:13:19:880 Carpincho/(14776:14776): MEM_WRITE el mensaje  en 22
+[INFO] 23:13:19:922 Carpincho/(14776:14776): Se realizó el MEM_WRITE correctamente
+[INFO] 23:13:19:922 Carpincho/(14776:14776): MEM_READ desde 48 el size 4
+[INFO] 23:13:20:040 Carpincho/(14776:14776): Se realizó el MEM_READ correctamente. El contenido es: 
+[INFO] 23:13:20:040 Carpincho/(14776:14776): MEM_READ desde 22 el size 4
+[INFO] 23:13:20:119 Carpincho/(14776:14776): Se realizó el MEM_READ correctamente. El contenido es: 
+[INFO] 23:13:20:119 Carpincho/(14776:14776): MEM_READ desde 9 el size 4
+[INFO] 23:13:20:198 Carpincho/(14776:14776): Se realizó el MEM_READ correctamente. El contenido es: n-2
+[INFO] 23:13:20:198 Carpincho/(14776:14776): MEM_READ desde 35 el size 4
+[INFO] 23:13:20:278 Carpincho/(14776:14776): Se realizó el MEM_READ correctamente. El contenido es: n-1
+[INFO] 23:13:20:278 Carpincho/(14776:14776): valores de la sucesión:
+[INFO] 23:13:20:278 Carpincho/(14776:14776): n-2: 1
+[INFO] 23:13:20:278 Carpincho/(14776:14776): n-1: 2
+[INFO] 23:13:20:278 Carpincho/(14776:14776): n: 3
+[INFO] 23:13:20:278 Carpincho/(14776:14776): MEM_WRITE el mensaje  en 48
+[INFO] 23:13:20:321 Carpincho/(14776:14776): Se realizó el MEM_WRITE correctamente
+[INFO] 23:13:20:322 Carpincho/(14776:14776): MEM_WRITE el mensaje  en 22
+[INFO] 23:13:20:360 Carpincho/(14776:14776): Se realizó el MEM_WRITE correctamente
+[INFO] 23:13:20:360 Carpincho/(14776:14776): MEM_READ desde 48 el size 4
+[INFO] 23:13:20:478 Carpincho/(14776:14776): Se realizó el MEM_READ correctamente. El contenido es: 
+[INFO] 23:13:20:478 Carpincho/(14776:14776): MEM_READ desde 22 el size 4
+[INFO] 23:13:20:559 Carpincho/(14776:14776): Se realizó el MEM_READ correctamente. El contenido es: 
+[INFO] 23:13:20:559 Carpincho/(14776:14776): MEM_READ desde 9 el size 4
+[INFO] 23:13:20:638 Carpincho/(14776:14776): Se realizó el MEM_READ correctamente. El contenido es: n-2
+[INFO] 23:13:20:638 Carpincho/(14776:14776): MEM_READ desde 35 el size 4
+[INFO] 23:13:20:721 Carpincho/(14776:14776): Se realizó el MEM_READ correctamente. El contenido es: n-1
+[INFO] 23:13:20:721 Carpincho/(14776:14776): valores de la sucesión:
+[INFO] 23:13:20:721 Carpincho/(14776:14776): n-2: 2
+[INFO] 23:13:20:721 Carpincho/(14776:14776): n-1: 3
+[INFO] 23:13:20:721 Carpincho/(14776:14776): n: 5
+[INFO] 23:13:20:721 Carpincho/(14776:14776): MEM_WRITE el mensaje  en 48
+[INFO] 23:13:20:761 Carpincho/(14776:14776): Se realizó el MEM_WRITE correctamente
+[INFO] 23:13:20:761 Carpincho/(14776:14776): MEM_WRITE el mensaje  en 22
+[INFO] 23:13:20:802 Carpincho/(14776:14776): Se realizó el MEM_WRITE correctamente
+[INFO] 23:13:20:802 Carpincho/(14776:14776): MEM_READ desde 48 el size 4
+[INFO] 23:13:20:923 Carpincho/(14776:14776): Se realizó el MEM_READ correctamente. El contenido es: 
+[INFO] 23:13:20:923 Carpincho/(14776:14776): MEM_READ desde 22 el size 4
+[INFO] 23:13:21:003 Carpincho/(14776:14776): Se realizó el MEM_READ correctamente. El contenido es: 
+[INFO] 23:13:21:003 Carpincho/(14776:14776): MEM_READ desde 9 el size 4
+[INFO] 23:13:21:083 Carpincho/(14776:14776): Se realizó el MEM_READ correctamente. El contenido es: n-2
+[INFO] 23:13:21:083 Carpincho/(14776:14776): MEM_READ desde 35 el size 4
+[INFO] 23:13:21:166 Carpincho/(14776:14776): Se realizó el MEM_READ correctamente. El contenido es: n-1
+[INFO] 23:13:21:166 Carpincho/(14776:14776): valores de la sucesión:
+[INFO] 23:13:21:166 Carpincho/(14776:14776): n-2: 3
+[INFO] 23:13:21:166 Carpincho/(14776:14776): n-1: 5
+[INFO] 23:13:21:166 Carpincho/(14776:14776): n: 8
+[INFO] 23:13:21:166 Carpincho/(14776:14776): MEM_WRITE el mensaje  en 48
+[INFO] 23:13:21:208 Carpincho/(14776:14776): Se realizó el MEM_WRITE correctamente
+[INFO] 23:13:21:208 Carpincho/(14776:14776): MEM_WRITE el mensaje  en 22
+[INFO] 23:13:21:248 Carpincho/(14776:14776): Se realizó el MEM_WRITE correctamente
+[INFO] 23:13:21:248 Carpincho/(14776:14776): MEM_READ desde 48 el size 4
+[INFO] 23:13:21:366 Carpincho/(14776:14776): Se realizó el MEM_READ correctamente. El contenido es: 
+[INFO] 23:13:21:366 Carpincho/(14776:14776): MEM_READ desde 22 el size 4
+[INFO] 23:13:21:446 Carpincho/(14776:14776): Se realizó el MEM_READ correctamente. El contenido es: 
+[INFO] 23:13:21:446 Carpincho/(14776:14776): MEM_READ desde 9 el size 4
+[INFO] 23:13:21:526 Carpincho/(14776:14776): Se realizó el MEM_READ correctamente. El contenido es: n-2
+[INFO] 23:13:21:527 Carpincho/(14776:14776): MEM_READ desde 35 el size 4
+[INFO] 23:13:21:607 Carpincho/(14776:14776): Se realizó el MEM_READ correctamente. El contenido es: n-1
+[INFO] 23:13:21:607 Carpincho/(14776:14776): valores de la sucesión:
+[INFO] 23:13:21:607 Carpincho/(14776:14776): n-2: 5
+[INFO] 23:13:21:607 Carpincho/(14776:14776): n-1: 8
+[INFO] 23:13:21:607 Carpincho/(14776:14776): n: 13
+[INFO] 23:13:21:607 Carpincho/(14776:14776): MEM_WRITE el mensaje  en 48
+[INFO] 23:13:21:648 Carpincho/(14776:14776): Se realizó el MEM_WRITE correctamente
+[INFO] 23:13:21:648 Carpincho/(14776:14776): MEM_WRITE el mensaje  en 22
+[INFO] 23:13:21:688 Carpincho/(14776:14776): Se realizó el MEM_WRITE correctamente
+[INFO] 23:13:21:688 Carpincho/(14776:14776): MEM_READ desde 48 el size 4
+[INFO] 23:13:21:806 Carpincho/(14776:14776): Se realizó el MEM_READ correctamente. El contenido es: 
+[INFO] 23:13:21:807 Carpincho/(14776:14776): MEM_READ desde 22 el size 4
+[INFO] 23:13:21:887 Carpincho/(14776:14776): Se realizó el MEM_READ correctamente. El contenido es: 
+[INFO] 23:13:21:887 Carpincho/(14776:14776): MEM_READ desde 9 el size 4
+[INFO] 23:13:21:966 Carpincho/(14776:14776): Se realizó el MEM_READ correctamente. El contenido es: n-2
+[INFO] 23:13:21:966 Carpincho/(14776:14776): MEM_READ desde 35 el size 4
+[INFO] 23:13:22:046 Carpincho/(14776:14776): Se realizó el MEM_READ correctamente. El contenido es: n-1
+[INFO] 23:13:22:046 Carpincho/(14776:14776): valores de la sucesión:
+[INFO] 23:13:22:046 Carpincho/(14776:14776): n-2: 8
+[INFO] 23:13:22:047 Carpincho/(14776:14776): n-1: 13
+[INFO] 23:13:22:047 Carpincho/(14776:14776): n: 21
+[INFO] 23:13:22:047 Carpincho/(14776:14776): MEM_WRITE el mensaje  en 48
+[INFO] 23:13:22:089 Carpincho/(14776:14776): Se realizó el MEM_WRITE correctamente
+[INFO] 23:13:22:089 Carpincho/(14776:14776): MEM_WRITE el mensaje  en 22
+[INFO] 23:13:22:128 Carpincho/(14776:14776): Se realizó el MEM_WRITE correctamente
+[INFO] 23:13:22:128 Carpincho/(14776:14776): MEM_READ desde 48 el size 4
+[INFO] 23:13:22:247 Carpincho/(14776:14776): Se realizó el MEM_READ correctamente. El contenido es: 
+[INFO] 23:13:22:247 Carpincho/(14776:14776): MEM_READ desde 22 el size 4
+[INFO] 23:13:22:327 Carpincho/(14776:14776): Se realizó el MEM_READ correctamente. El contenido es: 
+[INFO] 23:13:22:327 Carpincho/(14776:14776): MEM_READ desde 9 el size 4
+[INFO] 23:13:22:407 Carpincho/(14776:14776): Se realizó el MEM_READ correctamente. El contenido es: n-2
+[INFO] 23:13:22:407 Carpincho/(14776:14776): MEM_READ desde 35 el size 4
+[INFO] 23:13:22:486 Carpincho/(14776:14776): Se realizó el MEM_READ correctamente. El contenido es: n-1
+[INFO] 23:13:22:487 Carpincho/(14776:14776): valores de la sucesión:
+[INFO] 23:13:22:487 Carpincho/(14776:14776): n-2: 13
+[INFO] 23:13:22:487 Carpincho/(14776:14776): n-1: 21
+[INFO] 23:13:22:487 Carpincho/(14776:14776): n: 34
+[INFO] 23:13:22:487 Carpincho/(14776:14776): MEM_WRITE el mensaje " en 48
+[INFO] 23:13:22:528 Carpincho/(14776:14776): Se realizó el MEM_WRITE correctamente
+[INFO] 23:13:22:528 Carpincho/(14776:14776): MEM_WRITE el mensaje  en 22
+[INFO] 23:13:22:569 Carpincho/(14776:14776): Se realizó el MEM_WRITE correctamente
+[INFO] 23:13:22:569 Carpincho/(14776:14776): MEM_READ desde 48 el size 4
+[INFO] 23:13:22:686 Carpincho/(14776:14776): Se realizó el MEM_READ correctamente. El contenido es: "
+[INFO] 23:13:22:686 Carpincho/(14776:14776): MEM_READ desde 22 el size 4
+[INFO] 23:13:22:767 Carpincho/(14776:14776): Se realizó el MEM_READ correctamente. El contenido es: 
+[INFO] 23:13:22:767 Carpincho/(14776:14776): MEM_READ desde 9 el size 4
+[INFO] 23:13:22:847 Carpincho/(14776:14776): Se realizó el MEM_READ correctamente. El contenido es: n-2
+[INFO] 23:13:22:847 Carpincho/(14776:14776): MEM_READ desde 35 el size 4
+[INFO] 23:13:22:926 Carpincho/(14776:14776): Se realizó el MEM_READ correctamente. El contenido es: n-1
+[INFO] 23:13:22:926 Carpincho/(14776:14776): valores de la sucesión:
+[INFO] 23:13:22:926 Carpincho/(14776:14776): n-2: 21
+[INFO] 23:13:22:926 Carpincho/(14776:14776): n-1: 34
+[INFO] 23:13:22:926 Carpincho/(14776:14776): n: 55
+[INFO] 23:13:22:926 Carpincho/(14776:14776): MEM_WRITE el mensaje 7 en 48
+[INFO] 23:13:22:970 Carpincho/(14776:14776): Se realizó el MEM_WRITE correctamente
+[INFO] 23:13:22:970 Carpincho/(14776:14776): MEM_WRITE el mensaje " en 22
+[INFO] 23:13:23:012 Carpincho/(14776:14776): Se realizó el MEM_WRITE correctamente
+[INFO] 23:13:23:012 Carpincho/(14776:14776): MEM_READ desde 48 el size 4
+[INFO] 23:13:23:130 Carpincho/(14776:14776): Se realizó el MEM_READ correctamente. El contenido es: 7
+[INFO] 23:13:23:131 Carpincho/(14776:14776): MEM_READ desde 22 el size 4
+[INFO] 23:13:23:211 Carpincho/(14776:14776): Se realizó el MEM_READ correctamente. El contenido es: "
+[INFO] 23:13:23:211 Carpincho/(14776:14776): MEM_READ desde 9 el size 4
+[INFO] 23:13:23:291 Carpincho/(14776:14776): Se realizó el MEM_READ correctamente. El contenido es: n-2
+[INFO] 23:13:23:291 Carpincho/(14776:14776): MEM_READ desde 35 el size 4
+[INFO] 23:13:23:372 Carpincho/(14776:14776): Se realizó el MEM_READ correctamente. El contenido es: n-1
+[INFO] 23:13:23:372 Carpincho/(14776:14776): valores de la sucesión:
+[INFO] 23:13:23:372 Carpincho/(14776:14776): n-2: 34
+[INFO] 23:13:23:372 Carpincho/(14776:14776): n-1: 55
+[INFO] 23:13:23:372 Carpincho/(14776:14776): n: 89
+[INFO] 23:13:23:372 Carpincho/(14776:14776): MEM_WRITE el mensaje Y en 48
+[INFO] 23:13:23:412 Carpincho/(14776:14776): Se realizó el MEM_WRITE correctamente
+[INFO] 23:13:23:412 Carpincho/(14776:14776): MEM_WRITE el mensaje 7 en 22
+[INFO] 23:13:23:452 Carpincho/(14776:14776): Se realizó el MEM_WRITE correctamente
+[INFO] 23:13:23:453 Carpincho/(14776:14776): MEM_READ desde 48 el size 4
+[INFO] 23:13:23:571 Carpincho/(14776:14776): Se realizó el MEM_READ correctamente. El contenido es: Y
+[INFO] 23:13:23:571 Carpincho/(14776:14776): MEM_READ desde 22 el size 4
+[INFO] 23:24:59:030 Carpincho/(16110:16112): Log creado
+[INFO] 23:24:59:030 Carpincho/(16110:16111): Log creado
+[INFO] 23:24:59:049 Carpincho/(16110:16112): 
 NUEVO CARPINCHO
 
-[INFO] 02:23:06:534 Carpincho/(11180:11184): Carpincho creado correctamente con el pid: 2
-[INFO] 02:23:06:535 Carpincho/(11180:11184): CALL_IO a PILETA carpincho 2
-[INFO] 02:23:06:535 Carpincho/(11180:11184): Vamos a usar la pileta...
-[INFO] 02:23:06:536 Carpincho/(11180:11184): RESPUESA DE IO RECIBIDA 0 
-[INFO] 02:23:06:536 Carpincho/(11180:11184): MATE IO ESPERANDO OK DEL PROCESADOR PARA SEGUIR carpincho 2
-
-
-[INFO] 02:23:07:448 Carpincho/(11180:11187): Log creado
-[INFO] 02:23:07:448 Carpincho/(11180:11187): Esperando respuesta de servidor
-[INFO] 02:23:07:457 Carpincho/(11180:11187): 
+[INFO] 23:24:59:059 Carpincho/(16110:16111): 
 NUEVO CARPINCHO
 
-[INFO] 02:23:10:505 Carpincho/(11180:11181): 
-_____llego del procesador un OK para el caprincho 1
-
-
-[INFO] 02:23:10:505 Carpincho/(11180:11181): Se realizó el CALL IO correctamente
-[INFO] 02:23:10:506 Carpincho/(11180:11181): MEM_ALLOC de 10
-[INFO] 02:23:10:599 Carpincho/(11180:11181): Se realizó el MEM_ALLOC correctamente. La dirección lógica es 9
-[INFO] 02:23:10:599 Carpincho/(11180:11181): MEM_WRITE el mensaje HOLA en 9
-[INFO] 02:23:10:600 Carpincho/(11180:11181): Se realizó el MEM_WRITE correctamente
-[INFO] 02:23:10:601 Carpincho/(11180:11181): MEM_READ desde 9 el size 4
-[INFO] 02:23:10:720 Carpincho/(11180:11181): Se realizó el MEM_READ correctamente. El contenido es: HOLA	
-[INFO] 02:23:10:721 Carpincho/(11180:11181): CALL_IO a PILETA carpincho 1
-[INFO] 02:23:10:721 Carpincho/(11180:11181): Vamos a usar la pileta...
-[INFO] 02:23:10:721 Carpincho/(11180:11187): Carpincho creado correctamente con el pid: 3
-[INFO] 02:23:10:721 Carpincho/(11180:11187): CALL_IO a PILETA carpincho 3
-[INFO] 02:23:10:721 Carpincho/(11180:11187): Vamos a usar la pileta...
-[INFO] 02:23:10:722 Carpincho/(11180:11187): RESPUESA DE IO RECIBIDA 0 
-[INFO] 02:23:10:722 Carpincho/(11180:11187): MATE IO ESPERANDO OK DEL PROCESADOR PARA SEGUIR carpincho 3
-
-
-[INFO] 02:23:10:728 Carpincho/(11180:11181): RESPUESA DE IO RECIBIDA 0 
-[INFO] 02:23:10:728 Carpincho/(11180:11181): MATE IO ESPERANDO OK DEL PROCESADOR PARA SEGUIR carpincho 1
-
-
-[INFO] 02:23:15:506 Carpincho/(11180:11184): 
-_____llego del procesador un OK para el caprincho 2
-
-
-[INFO] 02:23:15:507 Carpincho/(11180:11184): Se realizó el CALL IO correctamente
-[INFO] 02:23:15:508 Carpincho/(11180:11184): CALL_IO a PILETA carpincho 2
-[INFO] 02:23:15:508 Carpincho/(11180:11184): Vamos a usar la pileta...
-[INFO] 02:23:15:509 Carpincho/(11180:11184): RESPUESA DE IO RECIBIDA 0 
-[INFO] 02:23:15:509 Carpincho/(11180:11184): MATE IO ESPERANDO OK DEL PROCESADOR PARA SEGUIR carpincho 2
-
-
-[INFO] 02:23:25:510 Carpincho/(11180:11187): 
-_____llego del procesador un OK para el caprincho 3
-
-
-[INFO] 02:23:25:511 Carpincho/(11180:11187): Se realizó el CALL IO correctamente
-[INFO] 02:23:25:511 Carpincho/(11180:11187): CALL_IO a PILETA carpincho 3
-[INFO] 02:23:25:511 Carpincho/(11180:11187): Vamos a usar la pileta...
-[INFO] 02:23:25:512 Carpincho/(11180:11187): RESPUESA DE IO RECIBIDA 0 
-[INFO] 02:23:25:512 Carpincho/(11180:11187): MATE IO ESPERANDO OK DEL PROCESADOR PARA SEGUIR carpincho 3
-
-
-[INFO] 02:23:30:511 Carpincho/(11180:11184): 
-_____llego del procesador un OK para el caprincho 2
-
-
-[INFO] 02:23:30:511 Carpincho/(11180:11184): Se realizó el CALL IO correctamente
-[INFO] 02:23:30:511 Carpincho/(11180:11184): CALL_IO a PILETA carpincho 2
-[INFO] 02:23:30:511 Carpincho/(11180:11184): Vamos a usar la pileta...
-[INFO] 02:23:30:513 Carpincho/(11180:11184): RESPUESA DE IO RECIBIDA 0 
-[INFO] 02:23:30:513 Carpincho/(11180:11184): MATE IO ESPERANDO OK DEL PROCESADOR PARA SEGUIR carpincho 2
-
-
-[INFO] 02:23:35:512 Carpincho/(11180:11187): 
-_____llego del procesador un OK para el caprincho 3
-
-
-[INFO] 02:23:35:512 Carpincho/(11180:11187): Se realizó el CALL IO correctamente
-[INFO] 02:23:35:513 Carpincho/(11180:11187): CALL_IO a PILETA carpincho 3
-[INFO] 02:23:35:513 Carpincho/(11180:11187): Vamos a usar la pileta...
-[INFO] 02:23:35:513 Carpincho/(11180:11187): RESPUESA DE IO RECIBIDA 0 
-[INFO] 02:23:35:513 Carpincho/(11180:11187): MATE IO ESPERANDO OK DEL PROCESADOR PARA SEGUIR carpincho 3
-
-
-[INFO] 02:23:40:515 Carpincho/(11180:11184): 
-_____llego del procesador un OK para el caprincho 2
-
-
-[INFO] 02:23:40:515 Carpincho/(11180:11184): Se realizó el CALL IO correctamente
-[INFO] 02:23:40:516 Carpincho/(11180:11184): MATE_CLOSE carpincho 2
-[INFO] 02:23:40:516 Carpincho/(11180:11184): MATE_CLOSE: mensaje enviado a kernel
-[INFO] 02:23:40:516 Carpincho/(11180:11184): Carpincho eliminado
-[INFO] 02:23:40:526 Carpincho/(11180:11181): 
-_____llego del procesador un OK para el caprincho 1
-
-
-[INFO] 02:23:40:526 Carpincho/(11180:11181): Se realizó el CALL IO correctamente
-[INFO] 02:23:40:526 Carpincho/(11180:11181): MEM_FREE a la dirección 9
-[INFO] 02:23:42:256 Carpincho/(11180:11181): Se realizó el MEM_FREE correctamente
-[INFO] 02:23:42:256 Carpincho/(11180:11181): CALL_IO a PILETA carpincho 1
-[INFO] 02:23:42:256 Carpincho/(11180:11181): Vamos a usar la pileta...
-[INFO] 02:23:42:261 Carpincho/(11180:11181): RESPUESA DE IO RECIBIDA 0 
-[INFO] 02:23:42:264 Carpincho/(11180:11181): MATE IO ESPERANDO OK DEL PROCESADOR PARA SEGUIR carpincho 1
-
-
-[INFO] 02:23:45:540 Carpincho/(11180:11187): 
-_____llego del procesador un OK para el caprincho 3
-
-
-[INFO] 02:23:45:540 Carpincho/(11180:11187): Se realizó el CALL IO correctamente
-[INFO] 02:23:45:540 Carpincho/(11180:11187): MATE_CLOSE carpincho 3
-[INFO] 02:23:45:540 Carpincho/(11180:11187): MATE_CLOSE: mensaje enviado a kernel
-[INFO] 02:23:45:541 Carpincho/(11180:11187): Carpincho eliminado
-[INFO] 02:23:50:560 Carpincho/(11180:11181): 
-_____llego del procesador un OK para el caprincho 1
-
-
-[INFO] 02:23:50:560 Carpincho/(11180:11181): Se realizó el CALL IO correctamente
-[INFO] 02:23:50:565 Carpincho/(11180:11181): MATE_CLOSE carpincho 1
-[INFO] 02:23:50:566 Carpincho/(11180:11181): MATE_CLOSE: mensaje enviado a kernel
-[INFO] 02:23:50:566 Carpincho/(11180:11181): Carpincho eliminado
-[INFO] 02:24:26:174 Carpincho/(11615:11616): Log creado
-[INFO] 02:24:26:174 Carpincho/(11615:11616): Esperando respuesta de servidor
-[INFO] 02:24:26:175 Carpincho/(11615:11616): 
+[INFO] 23:24:59:098 Carpincho/(16110:16112): Carpincho creado correctamente con el pid: 1
+[INFO] 23:24:59:098 Carpincho/(16110:16112): MEM_ALLOC de carpincho 1 de tamaño 10
+[INFO] 23:24:59:138 Carpincho/(16110:16111): Carpincho creado correctamente con el pid: 2
+[INFO] 23:24:59:138 Carpincho/(16110:16111): MEM_ALLOC de carpincho 2 de tamaño 10
+[INFO] 23:24:59:180 Carpincho/(16110:16112): Se realizó el MEM_ALLOC correctamente. La dirección lógica es 9
+[INFO] 23:24:59:181 Carpincho/(16110:16112): MEM_WRITE el mensaje CARPINCHO2 en 9
+[INFO] 23:24:59:260 Carpincho/(16110:16111): Se realizó el MEM_ALLOC correctamente. La dirección lógica es 9
+[INFO] 23:24:59:260 Carpincho/(16110:16111): MEM_WRITE el mensaje CARPINCHO1 en 9
+[INFO] 23:24:59:263 Carpincho/(16110:16112): Se realizó el MEM_WRITE correctamente
+[INFO] 23:24:59:263 Carpincho/(16110:16112): MEM_ALLOC de carpincho 1 de tamaño 4
+[INFO] 23:24:59:266 Carpincho/(16110:16111): Se realizó el MEM_WRITE correctamente
+[INFO] 23:24:59:266 Carpincho/(16110:16111): MEM_ALLOC de carpincho 2 de tamaño 4
+[INFO] 23:24:59:270 Carpincho/(16110:16112): Se realizó el MEM_ALLOC correctamente. La dirección lógica es 28
+[INFO] 23:24:59:270 Carpincho/(16110:16112): MEM_WRITE el mensaje  en 28
+[INFO] 23:24:59:276 Carpincho/(16110:16111): Se realizó el MEM_ALLOC correctamente. La dirección lógica es 28
+[INFO] 23:24:59:276 Carpincho/(16110:16111): MEM_WRITE el mensaje  en 28
+[INFO] 23:24:59:351 Carpincho/(16110:16112): Se realizó el MEM_WRITE correctamente
+[INFO] 23:24:59:351 Carpincho/(16110:16112): thread name: CARPINCHO2
+[INFO] 23:24:59:351 Carpincho/(16110:16112): value: 1
+[INFO] 23:24:59:355 Carpincho/(16110:16111): Se realizó el MEM_WRITE correctamente
+[INFO] 23:24:59:355 Carpincho/(16110:16111): thread name: CARPINCHO1
+[INFO] 23:24:59:355 Carpincho/(16110:16111): value: 1
+[INFO] 23:24:59:355 Carpincho/(16110:16111): MEM_READ desde 9 el size 10
+[INFO] 23:24:59:475 Carpincho/(16110:16111): Se realizó el MEM_READ correctamente. El contenido es: CARPINCHO1
+[INFO] 23:24:59:475 Carpincho/(16110:16111): MEM_READ desde 28 el size 4
+[INFO] 23:24:59:555 Carpincho/(16110:16111): Se realizó el MEM_READ correctamente. El contenido es: 
+[INFO] 23:24:59:555 Carpincho/(16110:16111): thread name: CARPINCHO1
+[INFO] 23:24:59:555 Carpincho/(16110:16111): value: 1
+[INFO] 23:24:59:555 Carpincho/(16110:16111): MEM_WRITE el mensaje  en 28
+[INFO] 23:24:59:595 Carpincho/(16110:16111): Se realizó el MEM_WRITE correctamente
+[INFO] 23:24:59:595 Carpincho/(16110:16112): MEM_READ desde 9 el size 10
+[INFO] 23:24:59:640 Carpincho/(16110:16112): Se realizó el MEM_READ correctamente. El contenido es: CARPINCHO2
+[INFO] 23:24:59:640 Carpincho/(16110:16112): MEM_READ desde 28 el size 4
+[INFO] 23:24:59:759 Carpincho/(16110:16112): Se realizó el MEM_READ correctamente. El contenido es: 
+[INFO] 23:24:59:759 Carpincho/(16110:16112): thread name: CARPINCHO2
+[INFO] 23:24:59:759 Carpincho/(16110:16112): value: 2
+[INFO] 23:24:59:759 Carpincho/(16110:16112): MEM_WRITE el mensaje  en 28
+[INFO] 23:24:59:799 Carpincho/(16110:16112): Se realizó el MEM_WRITE correctamente
+[INFO] 23:24:59:799 Carpincho/(16110:16111): MEM_READ desde 9 el size 10
+[INFO] 23:24:59:842 Carpincho/(16110:16111): Se realizó el MEM_READ correctamente. El contenido es: CARPINCHO1
+[INFO] 23:24:59:842 Carpincho/(16110:16111): MEM_READ desde 28 el size 4
+[INFO] 23:24:59:959 Carpincho/(16110:16111): Se realizó el MEM_READ correctamente. El contenido es: 
+[INFO] 23:24:59:959 Carpincho/(16110:16111): thread name: CARPINCHO1
+[INFO] 23:24:59:959 Carpincho/(16110:16111): value: 3
+[INFO] 23:24:59:959 Carpincho/(16110:16111): MEM_WRITE el mensaje  en 28
+[INFO] 23:24:59:999 Carpincho/(16110:16111): Se realizó el MEM_WRITE correctamente
+[INFO] 23:25:00:000 Carpincho/(16110:16112): MEM_READ desde 9 el size 10
+[INFO] 23:25:00:045 Carpincho/(16110:16112): Se realizó el MEM_READ correctamente. El contenido es: CARPINCHO2
+[INFO] 23:25:00:045 Carpincho/(16110:16112): MEM_READ desde 28 el size 4
+[INFO] 23:25:00:163 Carpincho/(16110:16112): Se realizó el MEM_READ correctamente. El contenido es: 
+[INFO] 23:25:00:163 Carpincho/(16110:16112): thread name: CARPINCHO2
+[INFO] 23:25:00:163 Carpincho/(16110:16112): value: 4
+[INFO] 23:25:00:163 Carpincho/(16110:16112): MEM_WRITE el mensaje  en 28
+[INFO] 23:25:00:203 Carpincho/(16110:16112): Se realizó el MEM_WRITE correctamente
+[INFO] 23:25:00:203 Carpincho/(16110:16111): MEM_READ desde 9 el size 10
+[INFO] 23:25:00:246 Carpincho/(16110:16111): Se realizó el MEM_READ correctamente. El contenido es: CARPINCHO1
+[INFO] 23:25:00:246 Carpincho/(16110:16111): MEM_READ desde 28 el size 4
+[INFO] 23:25:00:363 Carpincho/(16110:16111): Se realizó el MEM_READ correctamente. El contenido es: 
+[INFO] 23:25:00:363 Carpincho/(16110:16111): thread name: CARPINCHO1
+[INFO] 23:25:00:363 Carpincho/(16110:16111): value: 5
+[INFO] 23:25:00:363 Carpincho/(16110:16111): MEM_WRITE el mensaje  en 28
+[INFO] 23:25:00:404 Carpincho/(16110:16111): Se realizó el MEM_WRITE correctamente
+[INFO] 23:25:00:404 Carpincho/(16110:16112): MEM_READ desde 9 el size 10
+[INFO] 23:25:00:450 Carpincho/(16110:16112): Se realizó el MEM_READ correctamente. El contenido es: CARPINCHO2
+[INFO] 23:25:00:450 Carpincho/(16110:16112): MEM_READ desde 28 el size 4
+[INFO] 23:25:00:567 Carpincho/(16110:16112): Se realizó el MEM_READ correctamente. El contenido es: 
+[INFO] 23:25:00:567 Carpincho/(16110:16112): thread name: CARPINCHO2
+[INFO] 23:25:00:567 Carpincho/(16110:16112): value: 6
+[INFO] 23:25:00:567 Carpincho/(16110:16112): MEM_WRITE el mensaje  en 28
+[INFO] 23:25:00:608 Carpincho/(16110:16112): Se realizó el MEM_WRITE correctamente
+[INFO] 23:25:00:608 Carpincho/(16110:16111): MEM_READ desde 9 el size 10
+[INFO] 23:25:00:651 Carpincho/(16110:16111): Se realizó el MEM_READ correctamente. El contenido es: CARPINCHO1
+[INFO] 23:25:00:651 Carpincho/(16110:16111): MEM_READ desde 28 el size 4
+[INFO] 23:25:00:771 Carpincho/(16110:16111): Se realizó el MEM_READ correctamente. El contenido es: 
+[INFO] 23:25:00:771 Carpincho/(16110:16111): thread name: CARPINCHO1
+[INFO] 23:25:00:771 Carpincho/(16110:16111): value: 7
+[INFO] 23:25:00:772 Carpincho/(16110:16111): MEM_WRITE el mensaje  en 28
+[INFO] 23:25:00:811 Carpincho/(16110:16111): Se realizó el MEM_WRITE correctamente
+[INFO] 23:25:00:811 Carpincho/(16110:16112): MEM_READ desde 9 el size 10
+[INFO] 23:25:00:854 Carpincho/(16110:16112): Se realizó el MEM_READ correctamente. El contenido es: CARPINCHO2
+[INFO] 23:25:00:854 Carpincho/(16110:16112): MEM_READ desde 28 el size 4
+[INFO] 23:25:00:971 Carpincho/(16110:16112): Se realizó el MEM_READ correctamente. El contenido es: 
+[INFO] 23:25:00:971 Carpincho/(16110:16112): thread name: CARPINCHO2
+[INFO] 23:25:00:971 Carpincho/(16110:16112): value: 8
+[INFO] 23:25:00:971 Carpincho/(16110:16112): MEM_WRITE el mensaje  en 28
+[INFO] 23:25:01:011 Carpincho/(16110:16112): Se realizó el MEM_WRITE correctamente
+[INFO] 23:25:01:011 Carpincho/(16110:16111): MEM_READ desde 9 el size 10
+[INFO] 23:25:01:054 Carpincho/(16110:16111): Se realizó el MEM_READ correctamente. El contenido es: CARPINCHO1
+[INFO] 23:25:01:054 Carpincho/(16110:16111): MEM_READ desde 28 el size 4
+[INFO] 23:25:01:174 Carpincho/(16110:16111): Se realizó el MEM_READ correctamente. El contenido es: 
+[INFO] 23:25:01:175 Carpincho/(16110:16111): thread name: CARPINCHO1
+[INFO] 23:25:01:175 Carpincho/(16110:16111): value: 9
+[INFO] 23:25:01:175 Carpincho/(16110:16111): MEM_WRITE el mensaje 	 en 28
+[INFO] 23:25:01:215 Carpincho/(16110:16111): Se realizó el MEM_WRITE correctamente
+[INFO] 23:25:01:215 Carpincho/(16110:16111): MATE_CLOSE carpincho 2
+[INFO] 23:25:01:215 Carpincho/(16110:16111): MATE_CLOSE: mensaje enviado a kernel
+[INFO] 23:25:01:215 Carpincho/(16110:16111): Carpincho eliminado
+[INFO] 23:25:01:215 Carpincho/(16110:16112): MEM_READ desde 9 el size 10
+[INFO] 23:25:01:258 Carpincho/(16110:16112): Se realizó el MEM_READ correctamente. El contenido es: CARPINCHO2
+[INFO] 23:25:01:258 Carpincho/(16110:16112): MEM_READ desde 28 el size 4
+[INFO] 23:25:01:379 Carpincho/(16110:16112): Se realizó el MEM_READ correctamente. El contenido es: 
+[INFO] 23:25:01:379 Carpincho/(16110:16112): thread name: CARPINCHO2
+[INFO] 23:25:01:379 Carpincho/(16110:16112): value: 10
+[INFO] 23:25:01:379 Carpincho/(16110:16112): MEM_WRITE el mensaje 
+ en 28
+[INFO] 23:25:01:420 Carpincho/(16110:16112): Se realizó el MEM_WRITE correctamente
+[INFO] 23:25:01:420 Carpincho/(16110:16112): MATE_CLOSE carpincho 1
+[INFO] 23:25:01:421 Carpincho/(16110:16112): MATE_CLOSE: mensaje enviado a kernel
+[INFO] 23:25:01:421 Carpincho/(16110:16112): Carpincho eliminado
+[INFO] 23:28:34:288 Carpincho/(16798:16800): Log creado
+[INFO] 23:28:34:289 Carpincho/(16798:16799): Log creado
+[INFO] 23:28:34:289 Carpincho/(16798:16800): 
 NUEVO CARPINCHO
 
-[INFO] 02:24:26:217 Carpincho/(11615:11616): Carpincho creado correctamente con el pid: 1
-[INFO] 02:24:26:218 Carpincho/(11615:11616): CALL_IO a PILETA carpincho 1
-[INFO] 02:24:26:218 Carpincho/(11615:11616): Vamos a usar la pileta...
-[INFO] 02:24:26:218 Carpincho/(11615:11616): RESPUESA DE IO RECIBIDA 0 
-[INFO] 02:24:26:218 Carpincho/(11615:11616): MATE IO ESPERANDO OK DEL PROCESADOR PARA SEGUIR carpincho 1
-
-
-[INFO] 02:24:27:181 Carpincho/(11615:11622): Log creado
-[INFO] 02:24:27:182 Carpincho/(11615:11622): Esperando respuesta de servidor
-[INFO] 02:24:27:189 Carpincho/(11615:11622): 
+[INFO] 23:28:34:304 Carpincho/(16798:16799): 
 NUEVO CARPINCHO
 
-[INFO] 02:24:27:269 Carpincho/(11615:11622): Carpincho creado correctamente con el pid: 2
-[INFO] 02:24:27:269 Carpincho/(11615:11622): CALL_IO a PILETA carpincho 2
-[INFO] 02:24:27:269 Carpincho/(11615:11622): Vamos a usar la pileta...
-[INFO] 02:24:27:269 Carpincho/(11615:11622): RESPUESA DE IO RECIBIDA 0 
-[INFO] 02:24:27:270 Carpincho/(11615:11622): MATE IO ESPERANDO OK DEL PROCESADOR PARA SEGUIR carpincho 2
-
-
-[INFO] 02:24:28:185 Carpincho/(11615:11626): Log creado
-[INFO] 02:24:28:186 Carpincho/(11615:11626): Esperando respuesta de servidor
-[INFO] 02:24:28:192 Carpincho/(11615:11626): 
+[INFO] 23:28:34:343 Carpincho/(16798:16800): Carpincho creado correctamente con el pid: 1
+[INFO] 23:28:34:343 Carpincho/(16798:16800): MEM_ALLOC de carpincho 1 de tamaño 10
+[INFO] 23:28:34:398 Carpincho/(16798:16799): Carpincho creado correctamente con el pid: 2
+[INFO] 23:28:34:398 Carpincho/(16798:16799): MEM_ALLOC de carpincho 2 de tamaño 10
+[INFO] 23:28:34:440 Carpincho/(16798:16800): Se realizó el MEM_ALLOC correctamente. La dirección lógica es 9
+[INFO] 23:28:34:440 Carpincho/(16798:16800): MEM_WRITE el mensaje CARPINCHO2 en 9
+[INFO] 23:28:34:524 Carpincho/(16798:16799): Se realizó el MEM_ALLOC correctamente. La dirección lógica es 9
+[INFO] 23:28:34:524 Carpincho/(16798:16799): MEM_WRITE el mensaje CARPINCHO1 en 9
+[INFO] 23:28:34:528 Carpincho/(16798:16800): Se realizó el MEM_WRITE correctamente
+[INFO] 23:28:34:528 Carpincho/(16798:16800): MEM_ALLOC de carpincho 1 de tamaño 4
+[INFO] 23:28:34:531 Carpincho/(16798:16799): Se realizó el MEM_WRITE correctamente
+[INFO] 23:28:34:531 Carpincho/(16798:16799): MEM_ALLOC de carpincho 2 de tamaño 4
+[INFO] 23:28:34:535 Carpincho/(16798:16800): Se realizó el MEM_ALLOC correctamente. La dirección lógica es 28
+[INFO] 23:28:34:535 Carpincho/(16798:16800): MEM_WRITE el mensaje  en 28
+[INFO] 23:28:34:540 Carpincho/(16798:16799): Se realizó el MEM_ALLOC correctamente. La dirección lógica es 28
+[INFO] 23:28:34:540 Carpincho/(16798:16799): MEM_WRITE el mensaje  en 28
+[INFO] 23:28:34:617 Carpincho/(16798:16800): Se realizó el MEM_WRITE correctamente
+[INFO] 23:28:34:617 Carpincho/(16798:16800): thread name: CARPINCHO2
+[INFO] 23:28:34:617 Carpincho/(16798:16800): value: 1
+[INFO] 23:28:34:620 Carpincho/(16798:16799): Se realizó el MEM_WRITE correctamente
+[INFO] 23:28:34:620 Carpincho/(16798:16799): thread name: CARPINCHO1
+[INFO] 23:28:34:620 Carpincho/(16798:16799): value: 1
+[INFO] 23:28:34:620 Carpincho/(16798:16799): MEM_READ desde 9 el size 10
+[INFO] 23:28:34:738 Carpincho/(16798:16799): Se realizó el MEM_READ correctamente. El contenido es: CARPINCHO1
+[INFO] 23:28:34:738 Carpincho/(16798:16799): MEM_READ desde 28 el size 4
+[INFO] 23:28:34:819 Carpincho/(16798:16799): Se realizó el MEM_READ correctamente. El contenido es: 
+[INFO] 23:28:34:819 Carpincho/(16798:16799): thread name: CARPINCHO1
+[INFO] 23:28:34:819 Carpincho/(16798:16799): value: 1
+[INFO] 23:28:34:819 Carpincho/(16798:16799): MEM_WRITE el mensaje  en 28
+[INFO] 23:28:34:859 Carpincho/(16798:16799): Se realizó el MEM_WRITE correctamente
+[INFO] 23:28:34:860 Carpincho/(16798:16800): MEM_READ desde 9 el size 10
+[INFO] 23:28:34:901 Carpincho/(16798:16800): Se realizó el MEM_READ correctamente. El contenido es: CARPINCHO2
+[INFO] 23:28:34:902 Carpincho/(16798:16800): MEM_READ desde 28 el size 4
+[INFO] 23:28:35:019 Carpincho/(16798:16800): Se realizó el MEM_READ correctamente. El contenido es: 
+[INFO] 23:28:35:019 Carpincho/(16798:16800): thread name: CARPINCHO2
+[INFO] 23:28:35:019 Carpincho/(16798:16800): value: 2
+[INFO] 23:28:35:019 Carpincho/(16798:16800): MEM_WRITE el mensaje  en 28
+[INFO] 23:28:35:060 Carpincho/(16798:16800): Se realizó el MEM_WRITE correctamente
+[INFO] 23:28:35:060 Carpincho/(16798:16799): MEM_READ desde 9 el size 10
+[INFO] 23:28:35:102 Carpincho/(16798:16799): Se realizó el MEM_READ correctamente. El contenido es: CARPINCHO1
+[INFO] 23:28:35:102 Carpincho/(16798:16799): MEM_READ desde 28 el size 4
+[INFO] 23:28:35:219 Carpincho/(16798:16799): Se realizó el MEM_READ correctamente. El contenido es: 
+[INFO] 23:28:35:219 Carpincho/(16798:16799): thread name: CARPINCHO1
+[INFO] 23:28:35:219 Carpincho/(16798:16799): value: 3
+[INFO] 23:28:35:219 Carpincho/(16798:16799): MEM_WRITE el mensaje  en 28
+[INFO] 23:28:35:263 Carpincho/(16798:16799): Se realizó el MEM_WRITE correctamente
+[INFO] 23:28:35:263 Carpincho/(16798:16800): MEM_READ desde 9 el size 10
+[INFO] 23:28:35:308 Carpincho/(16798:16800): Se realizó el MEM_READ correctamente. El contenido es: CARPINCHO2
+[INFO] 23:28:35:308 Carpincho/(16798:16800): MEM_READ desde 28 el size 4
+[INFO] 23:28:35:427 Carpincho/(16798:16800): Se realizó el MEM_READ correctamente. El contenido es: 
+[INFO] 23:28:35:427 Carpincho/(16798:16800): thread name: CARPINCHO2
+[INFO] 23:28:35:427 Carpincho/(16798:16800): value: 4
+[INFO] 23:28:35:428 Carpincho/(16798:16800): MEM_WRITE el mensaje  en 28
+[INFO] 23:28:35:467 Carpincho/(16798:16800): Se realizó el MEM_WRITE correctamente
+[INFO] 23:28:35:467 Carpincho/(16798:16799): MEM_READ desde 9 el size 10
+[INFO] 23:28:35:512 Carpincho/(16798:16799): Se realizó el MEM_READ correctamente. El contenido es: CARPINCHO1
+[INFO] 23:28:35:512 Carpincho/(16798:16799): MEM_READ desde 28 el size 4
+[INFO] 23:28:35:630 Carpincho/(16798:16799): Se realizó el MEM_READ correctamente. El contenido es: 
+[INFO] 23:28:35:630 Carpincho/(16798:16799): thread name: CARPINCHO1
+[INFO] 23:28:35:630 Carpincho/(16798:16799): value: 5
+[INFO] 23:28:35:631 Carpincho/(16798:16799): MEM_WRITE el mensaje  en 28
+[INFO] 23:28:35:671 Carpincho/(16798:16799): Se realizó el MEM_WRITE correctamente
+[INFO] 23:28:35:672 Carpincho/(16798:16800): MEM_READ desde 9 el size 10
+[INFO] 23:28:35:715 Carpincho/(16798:16800): Se realizó el MEM_READ correctamente. El contenido es: CARPINCHO2
+[INFO] 23:28:35:715 Carpincho/(16798:16800): MEM_READ desde 28 el size 4
+[INFO] 23:28:35:834 Carpincho/(16798:16800): Se realizó el MEM_READ correctamente. El contenido es: 
+[INFO] 23:28:35:834 Carpincho/(16798:16800): thread name: CARPINCHO2
+[INFO] 23:28:35:834 Carpincho/(16798:16800): value: 6
+[INFO] 23:28:35:835 Carpincho/(16798:16800): MEM_WRITE el mensaje  en 28
+[INFO] 23:28:35:876 Carpincho/(16798:16800): Se realizó el MEM_WRITE correctamente
+[INFO] 23:28:35:876 Carpincho/(16798:16799): MEM_READ desde 9 el size 10
+[INFO] 23:28:35:918 Carpincho/(16798:16799): Se realizó el MEM_READ correctamente. El contenido es: CARPINCHO1
+[INFO] 23:28:35:918 Carpincho/(16798:16799): MEM_READ desde 28 el size 4
+[INFO] 23:28:36:034 Carpincho/(16798:16799): Se realizó el MEM_READ correctamente. El contenido es: 
+[INFO] 23:28:36:034 Carpincho/(16798:16799): thread name: CARPINCHO1
+[INFO] 23:28:36:034 Carpincho/(16798:16799): value: 7
+[INFO] 23:28:36:035 Carpincho/(16798:16799): MEM_WRITE el mensaje  en 28
+[INFO] 23:28:36:076 Carpincho/(16798:16799): Se realizó el MEM_WRITE correctamente
+[INFO] 23:28:36:076 Carpincho/(16798:16800): MEM_READ desde 9 el size 10
+[INFO] 23:28:36:120 Carpincho/(16798:16800): Se realizó el MEM_READ correctamente. El contenido es: CARPINCHO2
+[INFO] 23:28:36:120 Carpincho/(16798:16800): MEM_READ desde 28 el size 4
+[INFO] 23:28:36:238 Carpincho/(16798:16800): Se realizó el MEM_READ correctamente. El contenido es: 
+[INFO] 23:28:36:239 Carpincho/(16798:16800): thread name: CARPINCHO2
+[INFO] 23:28:36:239 Carpincho/(16798:16800): value: 8
+[INFO] 23:28:36:239 Carpincho/(16798:16800): MEM_WRITE el mensaje  en 28
+[INFO] 23:28:36:280 Carpincho/(16798:16800): Se realizó el MEM_WRITE correctamente
+[INFO] 23:28:36:280 Carpincho/(16798:16799): MEM_READ desde 9 el size 10
+[INFO] 23:28:36:323 Carpincho/(16798:16799): Se realizó el MEM_READ correctamente. El contenido es: CARPINCHO1
+[INFO] 23:28:36:323 Carpincho/(16798:16799): MEM_READ desde 28 el size 4
+[INFO] 23:28:36:443 Carpincho/(16798:16799): Se realizó el MEM_READ correctamente. El contenido es: 
+[INFO] 23:28:36:443 Carpincho/(16798:16799): thread name: CARPINCHO1
+[INFO] 23:28:36:443 Carpincho/(16798:16799): value: 9
+[INFO] 23:28:36:443 Carpincho/(16798:16799): MEM_WRITE el mensaje 	 en 28
+[INFO] 23:28:36:483 Carpincho/(16798:16799): Se realizó el MEM_WRITE correctamente
+[INFO] 23:28:36:483 Carpincho/(16798:16799): MATE_CLOSE carpincho 2
+[INFO] 23:28:36:483 Carpincho/(16798:16799): MATE_CLOSE: mensaje enviado a kernel
+[INFO] 23:28:36:483 Carpincho/(16798:16799): Carpincho eliminado
+[INFO] 23:28:36:483 Carpincho/(16798:16800): MEM_READ desde 9 el size 10
+[INFO] 23:28:36:527 Carpincho/(16798:16800): Se realizó el MEM_READ correctamente. El contenido es: CARPINCHO2
+[INFO] 23:28:36:527 Carpincho/(16798:16800): MEM_READ desde 28 el size 4
+[INFO] 23:28:36:647 Carpincho/(16798:16800): Se realizó el MEM_READ correctamente. El contenido es: 
+[INFO] 23:28:36:647 Carpincho/(16798:16800): thread name: CARPINCHO2
+[INFO] 23:28:36:647 Carpincho/(16798:16800): value: 10
+[INFO] 23:28:36:647 Carpincho/(16798:16800): MEM_WRITE el mensaje 
+ en 28
+[INFO] 23:28:36:687 Carpincho/(16798:16800): Se realizó el MEM_WRITE correctamente
+[INFO] 23:28:36:687 Carpincho/(16798:16800): MATE_CLOSE carpincho 1
+[INFO] 23:28:36:687 Carpincho/(16798:16800): MATE_CLOSE: mensaje enviado a kernel
+[INFO] 23:28:36:687 Carpincho/(16798:16800): Carpincho eliminado
+[INFO] 23:45:14:695 Carpincho/(18557:18559): Log creado
+[INFO] 23:45:14:695 Carpincho/(18557:18558): Log creado
+[INFO] 23:45:14:699 Carpincho/(18557:18559): 
 NUEVO CARPINCHO
 
-[INFO] 02:24:31:220 Carpincho/(11615:11616): 
-_____llego del procesador un OK para el caprincho 1
-
-
-[INFO] 02:24:31:220 Carpincho/(11615:11616): Se realizó el CALL IO correctamente
-[INFO] 02:24:31:220 Carpincho/(11615:11616): MEM_ALLOC de 10
-[INFO] 02:24:31:261 Carpincho/(11615:11616): Se realizó el MEM_ALLOC correctamente. La dirección lógica es 9
-[INFO] 02:24:31:261 Carpincho/(11615:11616): MEM_WRITE el mensaje HOLA en 9
-[INFO] 02:24:31:262 Carpincho/(11615:11616): Se realizó el MEM_WRITE correctamente
-[INFO] 02:24:31:262 Carpincho/(11615:11616): MEM_READ desde 9 el size 4
-[INFO] 02:24:31:382 Carpincho/(11615:11616): Se realizó el MEM_READ correctamente. El contenido es: HOLA	
-[INFO] 02:24:31:382 Carpincho/(11615:11616): CALL_IO a PILETA carpincho 1
-[INFO] 02:24:31:382 Carpincho/(11615:11616): Vamos a usar la pileta...
-[INFO] 02:24:31:382 Carpincho/(11615:11626): Carpincho creado correctamente con el pid: 3
-[INFO] 02:24:31:383 Carpincho/(11615:11626): CALL_IO a PILETA carpincho 3
-[INFO] 02:24:31:383 Carpincho/(11615:11626): Vamos a usar la pileta...
-[INFO] 02:24:31:383 Carpincho/(11615:11626): RESPUESA DE IO RECIBIDA 0 
-[INFO] 02:24:31:383 Carpincho/(11615:11626): MATE IO ESPERANDO OK DEL PROCESADOR PARA SEGUIR carpincho 3
-
-
-[INFO] 02:24:31:383 Carpincho/(11615:11616): RESPUESA DE IO RECIBIDA 0 
-[INFO] 02:24:31:383 Carpincho/(11615:11616): MATE IO ESPERANDO OK DEL PROCESADOR PARA SEGUIR carpincho 1
-
-
-[INFO] 02:24:36:222 Carpincho/(11615:11622): 
-_____llego del procesador un OK para el caprincho 2
-
-
-[INFO] 02:24:36:222 Carpincho/(11615:11622): Se realizó el CALL IO correctamente
-[INFO] 02:24:36:223 Carpincho/(11615:11622): CALL_IO a PILETA carpincho 2
-[INFO] 02:24:36:223 Carpincho/(11615:11622): Vamos a usar la pileta...
-[INFO] 02:24:36:223 Carpincho/(11615:11622): RESPUESA DE IO RECIBIDA 0 
-[INFO] 02:24:36:224 Carpincho/(11615:11622): MATE IO ESPERANDO OK DEL PROCESADOR PARA SEGUIR carpincho 2
-
-
-[INFO] 02:24:46:227 Carpincho/(11615:11626): 
-_____llego del procesador un OK para el caprincho 3
-
-
-[INFO] 02:24:46:227 Carpincho/(11615:11626): Se realizó el CALL IO correctamente
-[INFO] 02:24:46:227 Carpincho/(11615:11626): CALL_IO a PILETA carpincho 3
-[INFO] 02:24:46:227 Carpincho/(11615:11626): Vamos a usar la pileta...
-[INFO] 02:24:46:228 Carpincho/(11615:11626): RESPUESA DE IO RECIBIDA 0 
-[INFO] 02:24:46:228 Carpincho/(11615:11626): MATE IO ESPERANDO OK DEL PROCESADOR PARA SEGUIR carpincho 3
-
-
-[INFO] 02:24:51:231 Carpincho/(11615:11622): 
-_____llego del procesador un OK para el caprincho 2
-
-
-[INFO] 02:24:51:231 Carpincho/(11615:11622): Se realizó el CALL IO correctamente
-[INFO] 02:24:51:232 Carpincho/(11615:11622): CALL_IO a PILETA carpincho 2
-[INFO] 02:24:51:232 Carpincho/(11615:11622): Vamos a usar la pileta...
-[INFO] 02:24:51:234 Carpincho/(11615:11622): RESPUESA DE IO RECIBIDA 0 
-[INFO] 02:24:51:234 Carpincho/(11615:11622): MATE IO ESPERANDO OK DEL PROCESADOR PARA SEGUIR carpincho 2
-
-
-[INFO] 02:24:56:248 Carpincho/(11615:11626): 
-_____llego del procesador un OK para el caprincho 3
-
-
-[INFO] 02:24:56:248 Carpincho/(11615:11626): Se realizó el CALL IO correctamente
-[INFO] 02:24:56:255 Carpincho/(11615:11626): CALL_IO a PILETA carpincho 3
-[INFO] 02:24:56:255 Carpincho/(11615:11626): Vamos a usar la pileta...
-[INFO] 02:24:56:283 Carpincho/(11615:11626): RESPUESA DE IO RECIBIDA 0 
-[INFO] 02:24:56:283 Carpincho/(11615:11626): MATE IO ESPERANDO OK DEL PROCESADOR PARA SEGUIR carpincho 3
-
-
-[INFO] 02:25:01:296 Carpincho/(11615:11622): 
-_____llego del procesador un OK para el caprincho 2
-
-
-[INFO] 02:25:01:296 Carpincho/(11615:11622): Se realizó el CALL IO correctamente
-[INFO] 02:25:01:297 Carpincho/(11615:11622): MATE_CLOSE carpincho 2
-[INFO] 02:25:01:307 Carpincho/(11615:11616): 
-_____llego del procesador un OK para el caprincho 1
-
-
-[INFO] 02:25:01:369 Carpincho/(11615:11616): Se realizó el CALL IO correctamente
-[INFO] 02:25:01:369 Carpincho/(11615:11616): MEM_FREE a la dirección 9
-[INFO] 02:25:01:297 Carpincho/(11615:11622): MATE_CLOSE: mensaje enviado a kernel
-[INFO] 02:25:01:370 Carpincho/(11615:11622): Carpincho eliminado
-[INFO] 02:25:01:870 Carpincho/(11615:11616): Se realizó el MEM_FREE correctamente
-[INFO] 02:25:01:870 Carpincho/(11615:11616): CALL_IO a PILETA carpincho 1
-[INFO] 02:25:01:870 Carpincho/(11615:11616): Vamos a usar la pileta...
-[INFO] 02:25:01:870 Carpincho/(11615:11616): RESPUESA DE IO RECIBIDA 0 
-[INFO] 02:25:01:870 Carpincho/(11615:11616): MATE IO ESPERANDO OK DEL PROCESADOR PARA SEGUIR carpincho 1
-
-
-[INFO] 02:25:06:289 Carpincho/(11615:11626): 
-_____llego del procesador un OK para el caprincho 3
-
-
-[INFO] 02:25:06:289 Carpincho/(11615:11626): Se realizó el CALL IO correctamente
-[INFO] 02:25:06:289 Carpincho/(11615:11626): MATE_CLOSE carpincho 3
-[INFO] 02:25:06:289 Carpincho/(11615:11626): MATE_CLOSE: mensaje enviado a kernel
-[INFO] 02:25:06:289 Carpincho/(11615:11626): Carpincho eliminado
-[INFO] 02:25:11:291 Carpincho/(11615:11616): 
-_____llego del procesador un OK para el caprincho 1
-
-
-[INFO] 02:25:11:291 Carpincho/(11615:11616): Se realizó el CALL IO correctamente
-[INFO] 02:25:11:291 Carpincho/(11615:11616): MATE_CLOSE carpincho 1
-[INFO] 02:25:11:291 Carpincho/(11615:11616): MATE_CLOSE: mensaje enviado a kernel
-[INFO] 02:25:11:291 Carpincho/(11615:11616): Carpincho eliminado
-[INFO] 02:43:52:552 Carpincho/(13713:13714): Log creado
-[INFO] 02:43:52:552 Carpincho/(13713:13714): Esperando respuesta de servidor
-[INFO] 02:43:52:554 Carpincho/(13713:13714): 
+[INFO] 23:45:14:700 Carpincho/(18557:18558): 
 NUEVO CARPINCHO
 
-[INFO] 02:43:52:609 Carpincho/(13713:13714): Carpincho creado correctamente con el pid: 1
-[INFO] 02:43:52:609 Carpincho/(13713:13714): CALL_IO a PILETA carpincho 1
-[INFO] 02:43:52:609 Carpincho/(13713:13714): Vamos a usar la pileta...
-[INFO] 02:43:52:610 Carpincho/(13713:13714): RESPUESA DE IO RECIBIDA 0 
-[INFO] 02:43:52:610 Carpincho/(13713:13714): MATE IO ESPERANDO OK DEL PROCESADOR PARA SEGUIR carpincho 1
-
-
-[INFO] 02:43:53:554 Carpincho/(13713:13717): Log creado
-[INFO] 02:43:53:556 Carpincho/(13713:13717): Esperando respuesta de servidor
-[INFO] 02:43:53:565 Carpincho/(13713:13717): 
+[INFO] 23:45:14:738 Carpincho/(18557:18559): Carpincho creado correctamente con el pid: 1
+[INFO] 23:45:14:738 Carpincho/(18557:18559): MEM_ALLOC de carpincho 1 de tamaño 10
+[INFO] 23:45:14:739 Carpincho/(18557:18559): Se realizó el MEM_ALLOC correctamente. La dirección lógica es 8
+[INFO] 23:45:14:739 Carpincho/(18557:18559): MEM_WRITE el mensaje CARPINCHO2 en 8
+[INFO] 23:45:14:779 Carpincho/(18557:18559): Se realizó el MEM_WRITE correctamente
+[INFO] 23:45:14:779 Carpincho/(18557:18559): MEM_ALLOC de carpincho 1 de tamaño 4
+[INFO] 23:45:14:779 Carpincho/(18557:18559): Se realizó el MEM_ALLOC correctamente. La dirección lógica es 8
+[INFO] 23:45:14:779 Carpincho/(18557:18559): MEM_WRITE el mensaje  en 8
+[INFO] 23:45:14:819 Carpincho/(18557:18559): Se realizó el MEM_WRITE correctamente
+[INFO] 23:45:14:819 Carpincho/(18557:18559): thread name: CARPINCHO2
+[INFO] 23:45:14:819 Carpincho/(18557:18559): value: 1
+[INFO] 23:47:20:527 Carpincho/(19626:19628): Log creado
+[INFO] 23:47:20:529 Carpincho/(19626:19627): Log creado
+[INFO] 23:47:20:532 Carpincho/(19626:19628): 
 NUEVO CARPINCHO
 
-[INFO] 02:43:53:652 Carpincho/(13713:13717): Carpincho creado correctamente con el pid: 2
-[INFO] 02:43:53:653 Carpincho/(13713:13717): CALL_IO a PILETA carpincho 2
-[INFO] 02:43:53:653 Carpincho/(13713:13717): Vamos a usar la pileta...
-[INFO] 02:43:53:654 Carpincho/(13713:13717): RESPUESA DE IO RECIBIDA 0 
-[INFO] 02:43:53:654 Carpincho/(13713:13717): MATE IO ESPERANDO OK DEL PROCESADOR PARA SEGUIR carpincho 2
-
-
-[INFO] 02:43:54:556 Carpincho/(13713:13720): Log creado
-[INFO] 02:43:54:556 Carpincho/(13713:13720): Esperando respuesta de servidor
-[INFO] 02:43:54:561 Carpincho/(13713:13720): 
+[INFO] 23:47:20:535 Carpincho/(19626:19627): 
 NUEVO CARPINCHO
 
-[INFO] 02:43:57:638 Carpincho/(13713:13714): 
-_____llego del procesador un OK para el caprincho 1
-
-
-[INFO] 02:43:57:638 Carpincho/(13713:13714): Se realizó el CALL IO correctamente
-[INFO] 02:43:57:638 Carpincho/(13713:13714): MEM_ALLOC de 10
-[INFO] 02:43:57:705 Carpincho/(13713:13714): Se realizó el MEM_ALLOC correctamente. La dirección lógica es 9
-[INFO] 02:43:57:705 Carpincho/(13713:13714): MEM_WRITE el mensaje HOLA en 9
-[INFO] 02:43:57:710 Carpincho/(13713:13714): Se realizó el MEM_WRITE correctamente
-[INFO] 02:43:57:710 Carpincho/(13713:13714): MEM_READ desde 9 el size 4
-[INFO] 02:43:57:829 Carpincho/(13713:13714): Se realizó el MEM_READ correctamente. El contenido es: HOLA+
-[INFO] 02:43:57:829 Carpincho/(13713:13714): CALL_IO a PILETA carpincho 1
-[INFO] 02:43:57:829 Carpincho/(13713:13714): Vamos a usar la pileta...
-[INFO] 02:43:57:830 Carpincho/(13713:13720): Carpincho creado correctamente con el pid: 3
-[INFO] 02:43:57:830 Carpincho/(13713:13720): CALL_IO a PILETA carpincho 3
-[INFO] 02:43:57:830 Carpincho/(13713:13720): Vamos a usar la pileta...
-[INFO] 02:43:57:830 Carpincho/(13713:13720): RESPUESA DE IO RECIBIDA 0 
-[INFO] 02:43:57:830 Carpincho/(13713:13720): MATE IO ESPERANDO OK DEL PROCESADOR PARA SEGUIR carpincho 3
-
-
-[INFO] 02:43:57:830 Carpincho/(13713:13714): RESPUESA DE IO RECIBIDA 0 
-[INFO] 02:43:57:830 Carpincho/(13713:13714): MATE IO ESPERANDO OK DEL PROCESADOR PARA SEGUIR carpincho 1
-
-
-[INFO] 02:44:02:675 Carpincho/(13713:13717): 
-_____llego del procesador un OK para el caprincho 2
-
-
-[INFO] 02:44:02:675 Carpincho/(13713:13717): Se realizó el CALL IO correctamente
-[INFO] 02:44:02:675 Carpincho/(13713:13717): CALL_IO a PILETA carpincho 2
-[INFO] 02:44:02:675 Carpincho/(13713:13717): Vamos a usar la pileta...
-[INFO] 02:44:02:675 Carpincho/(13713:13717): RESPUESA DE IO RECIBIDA 0 
-[INFO] 02:44:02:676 Carpincho/(13713:13717): MATE IO ESPERANDO OK DEL PROCESADOR PARA SEGUIR carpincho 2
-
-
-[INFO] 02:44:12:676 Carpincho/(13713:13720): 
-_____llego del procesador un OK para el caprincho 3
-
-
-[INFO] 02:44:12:676 Carpincho/(13713:13720): Se realizó el CALL IO correctamente
-[INFO] 02:44:12:676 Carpincho/(13713:13720): CALL_IO a PILETA carpincho 3
-[INFO] 02:44:12:676 Carpincho/(13713:13720): Vamos a usar la pileta...
-[INFO] 02:44:12:676 Carpincho/(13713:13720): RESPUESA DE IO RECIBIDA 0 
-[INFO] 02:44:12:676 Carpincho/(13713:13720): MATE IO ESPERANDO OK DEL PROCESADOR PARA SEGUIR carpincho 3
-
-
-[INFO] 02:44:17:679 Carpincho/(13713:13717): 
-_____llego del procesador un OK para el caprincho 2
-
-
-[INFO] 02:44:17:679 Carpincho/(13713:13717): Se realizó el CALL IO correctamente
-[INFO] 02:44:17:680 Carpincho/(13713:13717): CALL_IO a PILETA carpincho 2
-[INFO] 02:44:17:680 Carpincho/(13713:13717): Vamos a usar la pileta...
-[INFO] 02:44:17:680 Carpincho/(13713:13717): RESPUESA DE IO RECIBIDA 0 
-[INFO] 02:44:17:681 Carpincho/(13713:13717): MATE IO ESPERANDO OK DEL PROCESADOR PARA SEGUIR carpincho 2
-
-
-[INFO] 02:44:22:682 Carpincho/(13713:13720): 
-_____llego del procesador un OK para el caprincho 3
-
-
-[INFO] 02:44:22:683 Carpincho/(13713:13720): Se realizó el CALL IO correctamente
-[INFO] 02:44:22:683 Carpincho/(13713:13720): CALL_IO a PILETA carpincho 3
-[INFO] 02:44:22:684 Carpincho/(13713:13720): Vamos a usar la pileta...
-[INFO] 02:44:22:685 Carpincho/(13713:13720): RESPUESA DE IO RECIBIDA 0 
-[INFO] 02:44:22:685 Carpincho/(13713:13720): MATE IO ESPERANDO OK DEL PROCESADOR PARA SEGUIR carpincho 3
-
-
-[INFO] 02:44:27:687 Carpincho/(13713:13717): 
-_____llego del procesador un OK para el caprincho 2
-
-
-[INFO] 02:44:27:687 Carpincho/(13713:13717): Se realizó el CALL IO correctamente
-[INFO] 02:44:27:688 Carpincho/(13713:13717): MATE_CLOSE carpincho 2
-[INFO] 02:44:27:688 Carpincho/(13713:13717): MATE_CLOSE: mensaje enviado a kernel
-[INFO] 02:44:27:688 Carpincho/(13713:13717): Carpincho eliminado
-[INFO] 02:44:27:691 Carpincho/(13713:13714): 
-_____llego del procesador un OK para el caprincho 1
-
-
-[INFO] 02:44:27:691 Carpincho/(13713:13714): Se realizó el CALL IO correctamente
-[INFO] 02:44:27:691 Carpincho/(13713:13714): MEM_FREE a la dirección 9
-[INFO] 02:44:28:840 Carpincho/(13713:13714): Se realizó el MEM_FREE correctamente
-[INFO] 02:44:28:840 Carpincho/(13713:13714): CALL_IO a PILETA carpincho 1
-[INFO] 02:44:28:840 Carpincho/(13713:13714): Vamos a usar la pileta...
-[INFO] 02:44:28:842 Carpincho/(13713:13714): RESPUESA DE IO RECIBIDA 0 
-[INFO] 02:44:28:842 Carpincho/(13713:13714): MATE IO ESPERANDO OK DEL PROCESADOR PARA SEGUIR carpincho 1
-
-
-[INFO] 02:44:32:700 Carpincho/(13713:13720): 
-_____llego del procesador un OK para el caprincho 3
-
-
-[INFO] 02:44:32:700 Carpincho/(13713:13720): Se realizó el CALL IO correctamente
-[INFO] 02:44:32:700 Carpincho/(13713:13720): MATE_CLOSE carpincho 3
-[INFO] 02:44:32:701 Carpincho/(13713:13720): MATE_CLOSE: mensaje enviado a kernel
-[INFO] 02:44:32:701 Carpincho/(13713:13720): Carpincho eliminado
-[INFO] 02:44:37:707 Carpincho/(13713:13714): 
-_____llego del procesador un OK para el caprincho 1
-
-
-[INFO] 02:44:37:707 Carpincho/(13713:13714): Se realizó el CALL IO correctamente
-[INFO] 02:44:37:707 Carpincho/(13713:13714): MATE_CLOSE carpincho 1
-[INFO] 02:44:37:707 Carpincho/(13713:13714): MATE_CLOSE: mensaje enviado a kernel
-[INFO] 02:44:37:707 Carpincho/(13713:13714): Carpincho eliminado
-[INFO] 02:49:50:041 Carpincho/(14453:14454): Log creado
-[INFO] 02:49:50:041 Carpincho/(14453:14454): Esperando respuesta de servidor
-[INFO] 02:49:50:042 Carpincho/(14453:14454): 
+[INFO] 23:47:20:647 Carpincho/(19626:19628): Carpincho creado correctamente con el pid: 1
+[INFO] 23:47:20:647 Carpincho/(19626:19628): MEM_ALLOC de carpincho 1 de tamaño 10
+[INFO] 23:47:20:658 Carpincho/(19626:19627): Carpincho creado correctamente con el pid: 2
+[INFO] 23:47:20:658 Carpincho/(19626:19627): MEM_ALLOC de carpincho 2 de tamaño 10
+[INFO] 23:47:20:748 Carpincho/(19626:19628): Se realizó el MEM_ALLOC correctamente. La dirección lógica es 9
+[INFO] 23:47:20:749 Carpincho/(19626:19628): MEM_WRITE el mensaje CARPINCHO2 en 9
+[INFO] 23:47:20:833 Carpincho/(19626:19627): Se realizó el MEM_ALLOC correctamente. La dirección lógica es 9
+[INFO] 23:47:20:833 Carpincho/(19626:19627): MEM_WRITE el mensaje CARPINCHO1 en 9
+[INFO] 23:47:20:837 Carpincho/(19626:19628): Se realizó el MEM_WRITE correctamente
+[INFO] 23:47:20:837 Carpincho/(19626:19628): MEM_ALLOC de carpincho 1 de tamaño 4
+[INFO] 23:47:20:840 Carpincho/(19626:19627): Se realizó el MEM_WRITE correctamente
+[INFO] 23:47:20:840 Carpincho/(19626:19627): MEM_ALLOC de carpincho 2 de tamaño 4
+[INFO] 23:47:20:845 Carpincho/(19626:19628): Se realizó el MEM_ALLOC correctamente. La dirección lógica es 28
+[INFO] 23:47:20:845 Carpincho/(19626:19628): MEM_WRITE el mensaje  en 28
+[INFO] 23:47:20:849 Carpincho/(19626:19627): Se realizó el MEM_ALLOC correctamente. La dirección lógica es 28
+[INFO] 23:47:20:850 Carpincho/(19626:19627): MEM_WRITE el mensaje  en 28
+[INFO] 23:47:20:924 Carpincho/(19626:19628): Se realizó el MEM_WRITE correctamente
+[INFO] 23:47:20:924 Carpincho/(19626:19628): thread name: CARPINCHO2
+[INFO] 23:47:20:924 Carpincho/(19626:19628): value: 1
+[INFO] 23:47:20:927 Carpincho/(19626:19627): Se realizó el MEM_WRITE correctamente
+[INFO] 23:47:20:927 Carpincho/(19626:19627): thread name: CARPINCHO1
+[INFO] 23:47:20:927 Carpincho/(19626:19627): value: 1
+[INFO] 23:47:20:927 Carpincho/(19626:19627): MEM_READ desde 9 el size 10
+[INFO] 23:47:21:047 Carpincho/(19626:19627): Se realizó el MEM_READ correctamente. El contenido es: CARPINCHO1
+[INFO] 23:47:21:047 Carpincho/(19626:19627): MEM_READ desde 28 el size 4
+[INFO] 23:47:21:128 Carpincho/(19626:19627): Se realizó el MEM_READ correctamente. El contenido es: 
+[INFO] 23:47:21:129 Carpincho/(19626:19627): thread name: CARPINCHO1
+[INFO] 23:47:21:129 Carpincho/(19626:19627): value: 1
+[INFO] 23:47:21:129 Carpincho/(19626:19627): MEM_WRITE el mensaje  en 28
+[INFO] 23:47:21:167 Carpincho/(19626:19627): Se realizó el MEM_WRITE correctamente
+[INFO] 23:47:21:167 Carpincho/(19626:19628): MEM_READ desde 9 el size 10
+[INFO] 23:47:21:209 Carpincho/(19626:19628): Se realizó el MEM_READ correctamente. El contenido es: CARPINCHO2
+[INFO] 23:47:21:209 Carpincho/(19626:19628): MEM_READ desde 28 el size 4
+[INFO] 23:47:21:326 Carpincho/(19626:19628): Se realizó el MEM_READ correctamente. El contenido es: 
+[INFO] 23:47:21:326 Carpincho/(19626:19628): thread name: CARPINCHO2
+[INFO] 23:47:21:326 Carpincho/(19626:19628): value: 2
+[INFO] 23:47:21:327 Carpincho/(19626:19628): MEM_WRITE el mensaje  en 28
+[INFO] 23:47:21:367 Carpincho/(19626:19628): Se realizó el MEM_WRITE correctamente
+[INFO] 23:47:21:367 Carpincho/(19626:19627): MEM_READ desde 9 el size 10
+[INFO] 23:47:21:410 Carpincho/(19626:19627): Se realizó el MEM_READ correctamente. El contenido es: CARPINCHO1
+[INFO] 23:47:21:410 Carpincho/(19626:19627): MEM_READ desde 28 el size 4
+[INFO] 23:47:21:527 Carpincho/(19626:19627): Se realizó el MEM_READ correctamente. El contenido es: 
+[INFO] 23:47:21:527 Carpincho/(19626:19627): thread name: CARPINCHO1
+[INFO] 23:47:21:527 Carpincho/(19626:19627): value: 3
+[INFO] 23:47:21:527 Carpincho/(19626:19627): MEM_WRITE el mensaje  en 28
+[INFO] 23:47:21:567 Carpincho/(19626:19627): Se realizó el MEM_WRITE correctamente
+[INFO] 23:47:21:567 Carpincho/(19626:19628): MEM_READ desde 9 el size 10
+[INFO] 23:47:21:610 Carpincho/(19626:19628): Se realizó el MEM_READ correctamente. El contenido es: CARPINCHO2
+[INFO] 23:47:21:610 Carpincho/(19626:19628): MEM_READ desde 28 el size 4
+[INFO] 23:47:21:726 Carpincho/(19626:19628): Se realizó el MEM_READ correctamente. El contenido es: 
+[INFO] 23:47:21:726 Carpincho/(19626:19628): thread name: CARPINCHO2
+[INFO] 23:47:21:726 Carpincho/(19626:19628): value: 4
+[INFO] 23:47:21:726 Carpincho/(19626:19628): MEM_WRITE el mensaje  en 28
+[INFO] 23:47:21:767 Carpincho/(19626:19628): Se realizó el MEM_WRITE correctamente
+[INFO] 23:47:21:768 Carpincho/(19626:19627): MEM_READ desde 9 el size 10
+[INFO] 23:47:21:810 Carpincho/(19626:19627): Se realizó el MEM_READ correctamente. El contenido es: CARPINCHO1
+[INFO] 23:47:21:810 Carpincho/(19626:19627): MEM_READ desde 28 el size 4
+[INFO] 23:47:21:927 Carpincho/(19626:19627): Se realizó el MEM_READ correctamente. El contenido es: 
+[INFO] 23:47:21:927 Carpincho/(19626:19627): thread name: CARPINCHO1
+[INFO] 23:47:21:927 Carpincho/(19626:19627): value: 5
+[INFO] 23:47:21:927 Carpincho/(19626:19627): MEM_WRITE el mensaje  en 28
+[INFO] 23:47:21:967 Carpincho/(19626:19627): Se realizó el MEM_WRITE correctamente
+[INFO] 23:47:21:967 Carpincho/(19626:19628): MEM_READ desde 9 el size 10
+[INFO] 23:47:22:011 Carpincho/(19626:19628): Se realizó el MEM_READ correctamente. El contenido es: CARPINCHO2
+[INFO] 23:47:22:011 Carpincho/(19626:19628): MEM_READ desde 28 el size 4
+[INFO] 23:47:22:130 Carpincho/(19626:19628): Se realizó el MEM_READ correctamente. El contenido es: 
+[INFO] 23:47:22:130 Carpincho/(19626:19628): thread name: CARPINCHO2
+[INFO] 23:47:22:130 Carpincho/(19626:19628): value: 6
+[INFO] 23:47:22:130 Carpincho/(19626:19628): MEM_WRITE el mensaje  en 28
+[INFO] 23:47:22:171 Carpincho/(19626:19628): Se realizó el MEM_WRITE correctamente
+[INFO] 23:47:22:171 Carpincho/(19626:19627): MEM_READ desde 9 el size 10
+[INFO] 23:47:22:213 Carpincho/(19626:19627): Se realizó el MEM_READ correctamente. El contenido es: CARPINCHO1
+[INFO] 23:47:22:213 Carpincho/(19626:19627): MEM_READ desde 28 el size 4
+[INFO] 23:47:22:331 Carpincho/(19626:19627): Se realizó el MEM_READ correctamente. El contenido es: 
+[INFO] 23:47:22:331 Carpincho/(19626:19627): thread name: CARPINCHO1
+[INFO] 23:47:22:331 Carpincho/(19626:19627): value: 7
+[INFO] 23:47:22:331 Carpincho/(19626:19627): MEM_WRITE el mensaje  en 28
+[INFO] 23:47:22:371 Carpincho/(19626:19627): Se realizó el MEM_WRITE correctamente
+[INFO] 23:47:22:371 Carpincho/(19626:19628): MEM_READ desde 9 el size 10
+[INFO] 23:47:22:414 Carpincho/(19626:19628): Se realizó el MEM_READ correctamente. El contenido es: CARPINCHO2
+[INFO] 23:47:22:414 Carpincho/(19626:19628): MEM_READ desde 28 el size 4
+[INFO] 23:47:22:535 Carpincho/(19626:19628): Se realizó el MEM_READ correctamente. El contenido es: 
+[INFO] 23:47:22:535 Carpincho/(19626:19628): thread name: CARPINCHO2
+[INFO] 23:47:22:535 Carpincho/(19626:19628): value: 8
+[INFO] 23:47:22:535 Carpincho/(19626:19628): MEM_WRITE el mensaje  en 28
+[INFO] 23:47:22:579 Carpincho/(19626:19628): Se realizó el MEM_WRITE correctamente
+[INFO] 23:47:22:579 Carpincho/(19626:19627): MEM_READ desde 9 el size 10
+[INFO] 23:47:22:623 Carpincho/(19626:19627): Se realizó el MEM_READ correctamente. El contenido es: CARPINCHO1
+[INFO] 23:47:22:623 Carpincho/(19626:19627): MEM_READ desde 28 el size 4
+[INFO] 23:47:22:742 Carpincho/(19626:19627): Se realizó el MEM_READ correctamente. El contenido es: 
+[INFO] 23:47:22:742 Carpincho/(19626:19627): thread name: CARPINCHO1
+[INFO] 23:47:22:742 Carpincho/(19626:19627): value: 9
+[INFO] 23:47:22:743 Carpincho/(19626:19627): MEM_WRITE el mensaje 	 en 28
+[INFO] 23:47:22:785 Carpincho/(19626:19627): Se realizó el MEM_WRITE correctamente
+[INFO] 23:47:22:785 Carpincho/(19626:19627): MATE_CLOSE carpincho 2
+[INFO] 23:47:22:785 Carpincho/(19626:19627): MATE_CLOSE: mensaje enviado a kernel
+[INFO] 23:47:22:785 Carpincho/(19626:19627): Carpincho eliminado
+[INFO] 23:47:22:785 Carpincho/(19626:19628): MEM_READ desde 9 el size 10
+[INFO] 23:47:22:826 Carpincho/(19626:19628): Se realizó el MEM_READ correctamente. El contenido es: CARPINCHO2
+[INFO] 23:47:22:826 Carpincho/(19626:19628): MEM_READ desde 28 el size 4
+[INFO] 23:47:22:982 Carpincho/(19626:19628): Se realizó el MEM_READ correctamente. El contenido es: 
+[INFO] 23:47:22:983 Carpincho/(19626:19628): thread name: CARPINCHO2
+[INFO] 23:47:22:983 Carpincho/(19626:19628): value: 10
+[INFO] 23:47:22:983 Carpincho/(19626:19628): MEM_WRITE el mensaje 
+ en 28
+[INFO] 23:47:23:023 Carpincho/(19626:19628): Se realizó el MEM_WRITE correctamente
+[INFO] 23:47:23:024 Carpincho/(19626:19628): MATE_CLOSE carpincho 1
+[INFO] 23:47:23:024 Carpincho/(19626:19628): MATE_CLOSE: mensaje enviado a kernel
+[INFO] 23:47:23:024 Carpincho/(19626:19628): Carpincho eliminado
+[INFO] 23:51:48:612 Carpincho/(20381:20383): Log creado
+[INFO] 23:51:48:613 Carpincho/(20381:20382): Log creado
+[INFO] 23:51:48:614 Carpincho/(20381:20383): 
 NUEVO CARPINCHO
 
-[INFO] 02:49:50:098 Carpincho/(14453:14454): Carpincho creado correctamente con el pid: 1
-[INFO] 02:49:50:098 Carpincho/(14453:14454): CALL_IO a PILETA carpincho 1
-[INFO] 02:49:50:098 Carpincho/(14453:14454): Vamos a usar la pileta...
-[INFO] 02:49:50:099 Carpincho/(14453:14454): RESPUESA DE IO RECIBIDA 0 
-[INFO] 02:49:50:099 Carpincho/(14453:14454): MATE IO ESPERANDO OK DEL PROCESADOR PARA SEGUIR carpincho 1
-
-
-[INFO] 02:49:51:050 Carpincho/(14453:14457): Log creado
-[INFO] 02:49:51:074 Carpincho/(14453:14457): Esperando respuesta de servidor
-[INFO] 02:49:51:108 Carpincho/(14453:14457): 
+[INFO] 23:51:48:620 Carpincho/(20381:20382): 
 NUEVO CARPINCHO
 
-[INFO] 02:49:51:201 Carpincho/(14453:14457): Carpincho creado correctamente con el pid: 2
-[INFO] 02:49:51:202 Carpincho/(14453:14457): CALL_IO a PILETA carpincho 2
-[INFO] 02:49:51:202 Carpincho/(14453:14457): Vamos a usar la pileta...
-[INFO] 02:49:51:202 Carpincho/(14453:14457): RESPUESA DE IO RECIBIDA 0 
-[INFO] 02:49:51:202 Carpincho/(14453:14457): MATE IO ESPERANDO OK DEL PROCESADOR PARA SEGUIR carpincho 2
-
-
-[INFO] 02:49:52:045 Carpincho/(14453:14461): Log creado
-[INFO] 02:49:52:046 Carpincho/(14453:14461): Esperando respuesta de servidor
-[INFO] 02:49:52:050 Carpincho/(14453:14461): 
-NUEVO CARPINCHO
-
-[INFO] 02:49:55:100 Carpincho/(14453:14454): 
-_____llego del procesador un OK para el caprincho 1
-
-
-[INFO] 02:49:55:100 Carpincho/(14453:14454): Se realizó el CALL IO correctamente
-[INFO] 02:49:55:100 Carpincho/(14453:14454): MEM_ALLOC de 10
-[INFO] 02:49:55:140 Carpincho/(14453:14454): Se realizó el MEM_ALLOC correctamente. La dirección lógica es 9
-[INFO] 02:49:55:140 Carpincho/(14453:14454): MEM_WRITE el mensaje HOLA en 9
-[INFO] 02:49:55:141 Carpincho/(14453:14454): Se realizó el MEM_WRITE correctamente
-[INFO] 02:49:55:141 Carpincho/(14453:14454): MEM_READ desde 9 el size 4
-[INFO] 02:49:55:261 Carpincho/(14453:14454): Se realizó el MEM_READ correctamente. El contenido es: HOLA	
-[INFO] 02:49:55:261 Carpincho/(14453:14454): CALL_IO a PILETA carpincho 1
-[INFO] 02:49:55:261 Carpincho/(14453:14454): Vamos a usar la pileta...
-[INFO] 02:49:55:262 Carpincho/(14453:14461): Carpincho creado correctamente con el pid: 3
-[INFO] 02:49:55:262 Carpincho/(14453:14461): CALL_IO a PILETA carpincho 3
-[INFO] 02:49:55:262 Carpincho/(14453:14461): Vamos a usar la pileta...
-[INFO] 02:49:55:262 Carpincho/(14453:14461): RESPUESA DE IO RECIBIDA 0 
-[INFO] 02:49:55:262 Carpincho/(14453:14461): MATE IO ESPERANDO OK DEL PROCESADOR PARA SEGUIR carpincho 3
-
-
-[INFO] 02:49:55:262 Carpincho/(14453:14454): RESPUESA DE IO RECIBIDA 0 
-[INFO] 02:49:55:262 Carpincho/(14453:14454): MATE IO ESPERANDO OK DEL PROCESADOR PARA SEGUIR carpincho 1
-
-
-[INFO] 02:50:00:101 Carpincho/(14453:14457): 
-_____llego del procesador un OK para el caprincho 2
-
-
-[INFO] 02:50:00:101 Carpincho/(14453:14457): Se realizó el CALL IO correctamente
-[INFO] 02:50:00:101 Carpincho/(14453:14457): CALL_IO a PILETA carpincho 2
-[INFO] 02:50:00:101 Carpincho/(14453:14457): Vamos a usar la pileta...
-[INFO] 02:50:00:101 Carpincho/(14453:14457): RESPUESA DE IO RECIBIDA 0 
-[INFO] 02:50:00:101 Carpincho/(14453:14457): MATE IO ESPERANDO OK DEL PROCESADOR PARA SEGUIR carpincho 2
-
-
-[INFO] 02:50:10:103 Carpincho/(14453:14461): 
-_____llego del procesador un OK para el caprincho 3
-
-
-[INFO] 02:50:10:103 Carpincho/(14453:14461): Se realizó el CALL IO correctamente
-[INFO] 02:50:10:104 Carpincho/(14453:14461): CALL_IO a PILETA carpincho 3
-[INFO] 02:50:10:104 Carpincho/(14453:14461): Vamos a usar la pileta...
-[INFO] 02:50:10:104 Carpincho/(14453:14461): RESPUESA DE IO RECIBIDA 0 
-[INFO] 02:50:10:104 Carpincho/(14453:14461): MATE IO ESPERANDO OK DEL PROCESADOR PARA SEGUIR carpincho 3
-
-
-[INFO] 02:50:15:104 Carpincho/(14453:14457): 
-_____llego del procesador un OK para el caprincho 2
-
-
-[INFO] 02:50:15:104 Carpincho/(14453:14457): Se realizó el CALL IO correctamente
-[INFO] 02:50:15:104 Carpincho/(14453:14457): CALL_IO a PILETA carpincho 2
-[INFO] 02:50:15:104 Carpincho/(14453:14457): Vamos a usar la pileta...
-[INFO] 02:50:15:104 Carpincho/(14453:14457): RESPUESA DE IO RECIBIDA 0 
-[INFO] 02:50:15:104 Carpincho/(14453:14457): MATE IO ESPERANDO OK DEL PROCESADOR PARA SEGUIR carpincho 2
-
-
-[INFO] 02:50:20:104 Carpincho/(14453:14461): 
-_____llego del procesador un OK para el caprincho 3
-
-
-[INFO] 02:50:20:104 Carpincho/(14453:14461): Se realizó el CALL IO correctamente
-[INFO] 02:50:20:104 Carpincho/(14453:14461): CALL_IO a PILETA carpincho 3
-[INFO] 02:50:20:104 Carpincho/(14453:14461): Vamos a usar la pileta...
-[INFO] 02:50:20:105 Carpincho/(14453:14461): RESPUESA DE IO RECIBIDA 0 
-[INFO] 02:50:20:105 Carpincho/(14453:14461): MATE IO ESPERANDO OK DEL PROCESADOR PARA SEGUIR carpincho 3
-
-
-[INFO] 02:50:25:105 Carpincho/(14453:14457): 
-_____llego del procesador un OK para el caprincho 2
-
-
-[INFO] 02:50:25:106 Carpincho/(14453:14457): Se realizó el CALL IO correctamente
-[INFO] 02:50:25:106 Carpincho/(14453:14457): MATE_CLOSE carpincho 2
-[INFO] 02:50:25:106 Carpincho/(14453:14457): MATE_CLOSE: mensaje enviado a kernel
-[INFO] 02:50:25:106 Carpincho/(14453:14457): Carpincho eliminado
-[INFO] 02:50:25:109 Carpincho/(14453:14454): 
-_____llego del procesador un OK para el caprincho 1
-
-
-[INFO] 02:50:25:109 Carpincho/(14453:14454): Se realizó el CALL IO correctamente
-[INFO] 02:50:25:109 Carpincho/(14453:14454): MEM_FREE a la dirección 9
-[INFO] 02:50:25:691 Carpincho/(14453:14454): Se realizó el MEM_FREE correctamente
-[INFO] 02:50:25:692 Carpincho/(14453:14454): CALL_IO a PILETA carpincho 1
-[INFO] 02:50:25:692 Carpincho/(14453:14454): Vamos a usar la pileta...
-[INFO] 02:50:25:692 Carpincho/(14453:14454): RESPUESA DE IO RECIBIDA 0 
-[INFO] 02:50:25:692 Carpincho/(14453:14454): MATE IO ESPERANDO OK DEL PROCESADOR PARA SEGUIR carpincho 1
-
-
-[INFO] 02:50:30:106 Carpincho/(14453:14461): 
-_____llego del procesador un OK para el caprincho 3
-
-
-[INFO] 02:50:30:106 Carpincho/(14453:14461): Se realizó el CALL IO correctamente
-[INFO] 02:50:30:106 Carpincho/(14453:14461): MATE_CLOSE carpincho 3
-[INFO] 02:50:30:106 Carpincho/(14453:14461): MATE_CLOSE: mensaje enviado a kernel
-[INFO] 02:50:30:106 Carpincho/(14453:14461): Carpincho eliminado
-[INFO] 02:50:35:107 Carpincho/(14453:14454): 
-_____llego del procesador un OK para el caprincho 1
-
-
-[INFO] 02:50:35:107 Carpincho/(14453:14454): Se realizó el CALL IO correctamente
-[INFO] 02:50:35:107 Carpincho/(14453:14454): MATE_CLOSE carpincho 1
-[INFO] 02:50:35:107 Carpincho/(14453:14454): MATE_CLOSE: mensaje enviado a kernel
-[INFO] 02:50:35:107 Carpincho/(14453:14454): Carpincho eliminado
+[INFO] 23:51:48:738 Carpincho/(20381:20383): Carpincho creado correctamente con el pid: 1
+[INFO] 23:51:48:738 Carpincho/(20381:20383): MEM_ALLOC de carpincho 1 de tamaño 10
+[INFO] 23:51:48:751 Carpincho/(20381:20382): Carpincho creado correctamente con el pid: 2
+[INFO] 23:51:48:751 Carpincho/(20381:20382): MEM_ALLOC de carpincho 2 de tamaño 10
+[INFO] 23:51:48:840 Carpincho/(20381:20383): Se realizó el MEM_ALLOC correctamente. La dirección lógica es 9
+[INFO] 23:51:48:840 Carpincho/(20381:20383): MEM_WRITE el mensaje CARPINCHO2 en 9
+[INFO] 23:51:48:922 Carpincho/(20381:20382): Se realizó el MEM_ALLOC correctamente. La dirección lógica es 9
+[INFO] 23:51:48:922 Carpincho/(20381:20382): MEM_WRITE el mensaje CARPINCHO1 en 9
+[INFO] 23:51:48:925 Carpincho/(20381:20383): Se realizó el MEM_WRITE correctamente
+[INFO] 23:51:48:925 Carpincho/(20381:20383): MEM_ALLOC de carpincho 1 de tamaño 4
+[INFO] 23:51:48:929 Carpincho/(20381:20382): Se realizó el MEM_WRITE correctamente
+[INFO] 23:51:48:929 Carpincho/(20381:20382): MEM_ALLOC de carpincho 2 de tamaño 4
+[INFO] 23:51:48:933 Carpincho/(20381:20383): Se realizó el MEM_ALLOC correctamente. La dirección lógica es 28
+[INFO] 23:51:48:933 Carpincho/(20381:20383): MEM_WRITE el mensaje  en 28
+[INFO] 23:51:48:938 Carpincho/(20381:20382): Se realizó el MEM_ALLOC correctamente. La dirección lógica es 28
+[INFO] 23:51:48:938 Carpincho/(20381:20382): MEM_WRITE el mensaje  en 28
+[INFO] 23:51:49:012 Carpincho/(20381:20383): Se realizó el MEM_WRITE correctamente
+[INFO] 23:51:49:012 Carpincho/(20381:20383): thread name: CARPINCHO2
+[INFO] 23:51:49:012 Carpincho/(20381:20383): value: 1
+[INFO] 23:51:49:016 Carpincho/(20381:20382): Se realizó el MEM_WRITE correctamente
+[INFO] 23:51:49:016 Carpincho/(20381:20382): thread name: CARPINCHO1
+[INFO] 23:51:49:016 Carpincho/(20381:20382): value: 1
+[INFO] 23:51:49:016 Carpincho/(20381:20382): MEM_READ desde 9 el size 10
+[INFO] 23:51:49:134 Carpincho/(20381:20382): Se realizó el MEM_READ correctamente. El contenido es: CARPINCHO1
+[INFO] 23:51:49:134 Carpincho/(20381:20382): MEM_READ desde 28 el size 4
+[INFO] 23:51:49:215 Carpincho/(20381:20382): Se realizó el MEM_READ correctamente. El contenido es: 
+[INFO] 23:51:49:215 Carpincho/(20381:20382): thread name: CARPINCHO1
+[INFO] 23:51:49:215 Carpincho/(20381:20382): value: 1
+[INFO] 23:51:49:215 Carpincho/(20381:20382): MEM_WRITE el mensaje  en 28
+[INFO] 23:51:49:256 Carpincho/(20381:20382): Se realizó el MEM_WRITE correctamente
+[INFO] 23:51:49:256 Carpincho/(20381:20383): MEM_READ desde 9 el size 10
+[INFO] 23:51:49:297 Carpincho/(20381:20383): Se realizó el MEM_READ correctamente. El contenido es: CARPINCHO2
+[INFO] 23:51:49:297 Carpincho/(20381:20383): MEM_READ desde 28 el size 4
+[INFO] 23:51:49:414 Carpincho/(20381:20383): Se realizó el MEM_READ correctamente. El contenido es: 
+[INFO] 23:51:49:414 Carpincho/(20381:20383): thread name: CARPINCHO2
+[INFO] 23:51:49:414 Carpincho/(20381:20383): value: 2
+[INFO] 23:51:49:415 Carpincho/(20381:20383): MEM_WRITE el mensaje  en 28
+[INFO] 23:51:49:455 Carpincho/(20381:20383): Se realizó el MEM_WRITE correctamente
+[INFO] 23:51:49:456 Carpincho/(20381:20382): MEM_READ desde 9 el size 10
+[INFO] 23:51:49:501 Carpincho/(20381:20382): Se realizó el MEM_READ correctamente. El contenido es: CARPINCHO1
+[INFO] 23:51:49:501 Carpincho/(20381:20382): MEM_READ desde 28 el size 4
+[INFO] 23:51:49:618 Carpincho/(20381:20382): Se realizó el MEM_READ correctamente. El contenido es: 
+[INFO] 23:51:49:618 Carpincho/(20381:20382): thread name: CARPINCHO1
+[INFO] 23:51:49:618 Carpincho/(20381:20382): value: 3
+[INFO] 23:51:49:618 Carpincho/(20381:20382): MEM_WRITE el mensaje  en 28
+[INFO] 23:51:49:659 Carpincho/(20381:20382): Se realizó el MEM_WRITE correctamente
+[INFO] 23:51:49:659 Carpincho/(20381:20383): MEM_READ desde 9 el size 10
+[INFO] 23:51:49:702 Carpincho/(20381:20383): Se realizó el MEM_READ correctamente. El contenido es: CARPINCHO2
+[INFO] 23:51:49:702 Carpincho/(20381:20383): MEM_READ desde 28 el size 4
+[INFO] 23:51:49:818 Carpincho/(20381:20383): Se realizó el MEM_READ correctamente. El contenido es: 
+[INFO] 23:51:49:818 Carpincho/(20381:20383): thread name: CARPINCHO2
+[INFO] 23:51:49:818 Carpincho/(20381:20383): value: 4
+[INFO] 23:51:49:818 Carpincho/(20381:20383): MEM_WRITE el mensaje  en 28
+[INFO] 23:51:49:862 Carpincho/(20381:20383): Se realizó el MEM_WRITE correctamente
+[INFO] 23:51:49:862 Carpincho/(20381:20382): MEM_READ desde 9 el size 10
+[INFO] 23:51:49:907 Carpincho/(20381:20382): Se realizó el MEM_READ correctamente. El contenido es: CARPINCHO1
+[INFO] 23:51:49:907 Carpincho/(20381:20382): MEM_READ desde 28 el size 4
+[INFO] 23:51:50:030 Carpincho/(20381:20382): Se realizó el MEM_READ correctamente. El contenido es: 
+[INFO] 23:51:50:030 Carpincho/(20381:20382): thread name: CARPINCHO1
+[INFO] 23:51:50:030 Carpincho/(20381:20382): value: 5
+[INFO] 23:51:50:030 Carpincho/(20381:20382): MEM_WRITE el mensaje  en 28
+[INFO] 23:51:50:072 Carpincho/(20381:20382): Se realizó el MEM_WRITE correctamente
+[INFO] 23:51:50:072 Carpincho/(20381:20383): MEM_READ desde 9 el size 10
+[INFO] 23:51:50:113 Carpincho/(20381:20383): Se realizó el MEM_READ correctamente. El contenido es: CARPINCHO2
+[INFO] 23:51:50:113 Carpincho/(20381:20383): MEM_READ desde 28 el size 4
+[INFO] 23:51:50:230 Carpincho/(20381:20383): Se realizó el MEM_READ correctamente. El contenido es: 
+[INFO] 23:51:50:230 Carpincho/(20381:20383): thread name: CARPINCHO2
+[INFO] 23:51:50:230 Carpincho/(20381:20383): value: 6
+[INFO] 23:51:50:230 Carpincho/(20381:20383): MEM_WRITE el mensaje  en 28
+[INFO] 23:51:50:271 Carpincho/(20381:20383): Se realizó el MEM_WRITE correctamente
+[INFO] 23:51:50:272 Carpincho/(20381:20382): MEM_READ desde 9 el size 10
+[INFO] 23:51:50:313 Carpincho/(20381:20382): Se realizó el MEM_READ correctamente. El contenido es: CARPINCHO1
+[INFO] 23:51:50:314 Carpincho/(20381:20382): MEM_READ desde 28 el size 4
+[INFO] 23:51:50:430 Carpincho/(20381:20382): Se realizó el MEM_READ correctamente. El contenido es: 
+[INFO] 23:51:50:430 Carpincho/(20381:20382): thread name: CARPINCHO1
+[INFO] 23:51:50:431 Carpincho/(20381:20382): value: 7
+[INFO] 23:51:50:431 Carpincho/(20381:20382): MEM_WRITE el mensaje  en 28
+[INFO] 23:51:50:471 Carpincho/(20381:20382): Se realizó el MEM_WRITE correctamente
+[INFO] 23:51:50:472 Carpincho/(20381:20383): MEM_READ desde 9 el size 10
+[INFO] 23:51:50:513 Carpincho/(20381:20383): Se realizó el MEM_READ correctamente. El contenido es: CARPINCHO2
+[INFO] 23:51:50:513 Carpincho/(20381:20383): MEM_READ desde 28 el size 4
+[INFO] 23:51:50:630 Carpincho/(20381:20383): Se realizó el MEM_READ correctamente. El contenido es: 
+[INFO] 23:51:50:630 Carpincho/(20381:20383): thread name: CARPINCHO2
+[INFO] 23:51:50:630 Carpincho/(20381:20383): value: 8
+[INFO] 23:51:50:630 Carpincho/(20381:20383): MEM_WRITE el mensaje  en 28
+[INFO] 23:51:50:672 Carpincho/(20381:20383): Se realizó el MEM_WRITE correctamente
+[INFO] 23:51:50:672 Carpincho/(20381:20382): MEM_READ desde 9 el size 10
+[INFO] 23:51:50:715 Carpincho/(20381:20382): Se realizó el MEM_READ correctamente. El contenido es: CARPINCHO1
+[INFO] 23:51:50:715 Carpincho/(20381:20382): MEM_READ desde 28 el size 4
+[INFO] 23:51:50:835 Carpincho/(20381:20382): Se realizó el MEM_READ correctamente. El contenido es: 
+[INFO] 23:51:50:835 Carpincho/(20381:20382): thread name: CARPINCHO1
+[INFO] 23:51:50:835 Carpincho/(20381:20382): value: 9
+[INFO] 23:51:50:836 Carpincho/(20381:20382): MEM_WRITE el mensaje 	 en 28
+[INFO] 23:51:50:875 Carpincho/(20381:20382): Se realizó el MEM_WRITE correctamente
+[INFO] 23:51:50:875 Carpincho/(20381:20382): MATE_CLOSE carpincho 2
+[INFO] 23:51:50:875 Carpincho/(20381:20382): MATE_CLOSE: mensaje enviado a kernel
+[INFO] 23:51:50:875 Carpincho/(20381:20382): Carpincho eliminado
+[INFO] 23:51:50:875 Carpincho/(20381:20383): MEM_READ desde 9 el size 10
+[INFO] 23:51:50:919 Carpincho/(20381:20383): Se realizó el MEM_READ correctamente. El contenido es: CARPINCHO2
+[INFO] 23:51:50:919 Carpincho/(20381:20383): MEM_READ desde 28 el size 4
+[INFO] 23:51:51:054 Carpincho/(20381:20383): Se realizó el MEM_READ correctamente. El contenido es: 
+[INFO] 23:51:51:054 Carpincho/(20381:20383): thread name: CARPINCHO2
+[INFO] 23:51:51:054 Carpincho/(20381:20383): value: 10
+[INFO] 23:51:51:055 Carpincho/(20381:20383): MEM_WRITE el mensaje 
+ en 28
+[INFO] 23:51:51:095 Carpincho/(20381:20383): Se realizó el MEM_WRITE correctamente
+[INFO] 23:51:51:095 Carpincho/(20381:20383): MATE_CLOSE carpincho 1
+[INFO] 23:51:51:096 Carpincho/(20381:20383): MATE_CLOSE: mensaje enviado a kernel
+[INFO] 23:51:51:096 Carpincho/(20381:20383): Carpincho eliminado

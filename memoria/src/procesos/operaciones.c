@@ -9,6 +9,7 @@
 #include <stdlib.h>
 #include <string.h>
 #include <utils/utils.h>
+#include "../signals/signal.h"
 
 #define SIZE_METADATA sizeof(HeapMetadata)
 
@@ -33,11 +34,16 @@ int memalloc(tab_pags* tabla, int tamanio){
 	HeapMetadata* ptr_potencial_segmento = primer_segmento(tabla_paginas);
 	printf("- Memalloc: encontre el primer segmento, que tiene como nextAlloc al %i, y que su valor de isFree es %i, es decir ", ptr_potencial_segmento->nextAlloc, ptr_potencial_segmento->isFree);
 	printf((ptr_potencial_segmento->isFree) ? "true.\n" : "false.\n");
-	int inicio_actual = 0, num_pagina_actual=0;
+	int inicio_actual = 0, num_pagina_actual=0, inicio_previo = FIRST_METADATA;
 	puts("- Memalloc: entro al while.");
 	int numero_magico; //si nextAlloc es 0, entonces esta variable vale la ultima direccion de memoria+1 (por ejemplo 128), sino vale nextAlloc
 	int espacio_en_alloc;
 	while(1){
+		if(ptr_potencial_segmento->nextAlloc == 0){
+			printf("ERROR. NEXTALLOC = 0 IMPSOBILE EN EL CARPINCHO %d", pid);
+			generar_dump();
+			abort();
+		}
 
 		//  ****BUSCO SI ENTRA****
 		printf("- Memalloc->While->CUENTA:\n");
@@ -53,6 +59,7 @@ int memalloc(tab_pags* tabla, int tamanio){
 			if(espacio_en_alloc == tamanio){
 				puts("-Memalloc->While: entra justo.");
 				ptr_potencial_segmento->isFree = false;
+				memoria_escribir_por_dirlog(tabla, inicio_actual, ptr_potencial_segmento, sizeof(HeapMetadata));
 				printf("-Memalloc->While: cambio isFree a false y devuelvo direccion de inicio %i.\n", inicio_actual+SIZE_METADATA);
 				free(ptr_potencial_segmento);
 				return inicio_actual + SIZE_METADATA;
@@ -141,10 +148,13 @@ int memalloc(tab_pags* tabla, int tamanio){
 			int paginas_faltantes = bytes_faltantes / configuracion.TAMANIO_PAGINAS;
 			if (bytes_faltantes % configuracion.TAMANIO_PAGINAS != 0) paginas_faltantes++;
 
+			printf("NECESITO %d BYTES, QUE SE TRADUCEN A %d PAGINAS\n", bytes_faltantes, paginas_faltantes);
+
 			if(pedir_paginas_a_swap(tabla_paginas, paginas_faltantes) == -1){
 				return -1;
 			}
 			else{
+				printf("-  Memalloc->Pedir->Free: RECIBI %d PAGINAS DE SWAP.\n", paginas_faltantes);
 				if(ptr_potencial_segmento->isFree) {
 					puts("- Memalloc->Pedir->Free: el ultimo alloc esta libre. Lo expando.");
 					numero_magico = (ptr_potencial_segmento->nextAlloc == LAST_METADATA ? (list_size(tabla_paginas->tabla_pag)*configuracion.TAMANIO_PAGINAS) : ptr_potencial_segmento->nextAlloc);
@@ -182,14 +192,17 @@ int memalloc(tab_pags* tabla, int tamanio){
 
 					int num_primera_pagina_nueva = num_pagina_actual+1; 
 
-					int inicio_anterior = inicio_actual;
+					
 					inicio_actual = num_primera_pagina_nueva*configuracion.TAMANIO_PAGINAS;
 					ptr_potencial_segmento->nextAlloc = inicio_actual;
+					memoria_escribir_por_dirlog(tabla, inicio_previo, ptr_potencial_segmento, sizeof(HeapMetadata));
+
+
 					printf("- Memalloc->Pedir->NoFree: cambie el nextAlloc del segmento anterior a %i.\n", ptr_potencial_segmento->nextAlloc);
 
 					HeapMetadata new;
 					new.isFree = false;
-					new.prevAlloc = inicio_anterior;
+					new.prevAlloc = inicio_previo;
 					dir_t dir_new;
 					dir_new.offset=0;
 					dir_new.PAGINA=num_primera_pagina_nueva;
@@ -231,6 +244,7 @@ int memalloc(tab_pags* tabla, int tamanio){
 
 		puts("- Memalloc->While: este segmento no es valido para alocar. Pasando al proximo segmento.");
 
+		inicio_previo = inicio_actual;
 		inicio_actual = ptr_potencial_segmento->nextAlloc;
 		printf("- Memalloc->While: el nuevo inicio sera %i.\n", inicio_actual);
 		ptr_potencial_segmento = memoria_leer_por_dirlog(tabla_paginas, ptr_potencial_segmento->nextAlloc, SIZE_METADATA);
@@ -438,7 +452,7 @@ int memwrite(tab_pags* tabla, int dir_log, void* contenido, int tamanio){
 
 void* memoria_leer(tab_pags* tabla, dir_t dl, int tamanio){
 	printf("\nLECTURA - PAG %d - OFFSET: %d\n", dl.PAGINA, dl.offset);
-
+	log_info(logger_memoria,"LECTURA - PAG %d - OFFSET: %d\n", dl.PAGINA, dl.offset);
     if(!read_verify_size(tabla, dl, tamanio)) return NULL; 
 
     int leido = 0;
@@ -450,6 +464,7 @@ void* memoria_leer(tab_pags* tabla, dir_t dl, int tamanio){
     {
         int marco = nro_marco(dl.PAGINA, tabla);
 		if(marco == -1){ printf("No se encontro el marco\n");
+		log_info(logger_memoria,"No se encontro el marco\n");
 		abort();
 		}
         dir_t df = { marco, dl.offset };
@@ -473,6 +488,7 @@ void* memoria_leer(tab_pags* tabla, dir_t dl, int tamanio){
 int memoria_escribir(tab_pags* tabla, dir_t dl, void* contenido, int tamanio){
     if(!read_verify_size(tabla, dl, tamanio)) return MATE_WRITE_FAULT;    
 	printf("ESCRITURA - PAG %d - OFFSET: %d\n", dl.PAGINA, dl.offset);
+	log_info(logger_memoria,"ESCRITURA - PAG %d - OFFSET: %d\n", dl.PAGINA, dl.offset);
 
     int written = 0;
     int bytes_remaining = tamanio;
@@ -482,13 +498,16 @@ int memoria_escribir(tab_pags* tabla, dir_t dl, void* contenido, int tamanio){
     {
         int marco = nro_marco(dl.PAGINA, tabla);
 		if(marco == -1){ printf("No se encontro el marco\n");
+			log_info(logger_memoria,"No se encontro el marco\n");
 		abort();
 		}
 		
         dir_t df = { marco, dl.offset };
         int bytes_to_write = min_get(bytes_remaining, bytes_remaining_space);
 		printf("Voy a escribir %d bytes\n", bytes_to_write);
+		log_info(logger_memoria,"Voy a escribir %d bytes\n", bytes_to_write);
 		printf("El offset es %d\n", offset_memoria(df));
+		log_info(logger_memoria,"El offset es %d\n", offset_memoria(df));
 
 
         memcpy(ram.memoria + offset_memoria(df), contenido + written, bytes_to_write);

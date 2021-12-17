@@ -1,0 +1,483 @@
+[INFO] 23:10:13:996 Kernel/(14041:14041): Log creado
+[INFO] 23:10:13:996 Kernel/(14041:14041): Configuración obtenida
+[INFO] 23:10:13:996 Kernel/(14041:14041): Semáforos inicializados
+[INFO] 23:10:13:996 Kernel/(14041:14041): Colas de dispositivos IO creadas
+[INFO] 23:10:13:996 Kernel/(14041:14041): Se creó el hilo gestor de la IO laguna
+[INFO] 23:10:13:996 Kernel/(14041:14041): Inicio colas de planificación
+[INFO] 23:10:13:996 Kernel/(14041:14041): Hilo Planificador Corto Plazo creado
+[INFO] 23:10:13:996 Kernel/(14041:14041): Hilo Planificador Largo Plazo creado
+[INFO] 23:10:13:996 Kernel/(14041:14041): Hilo Detección Deadlock creado
+[INFO] 23:10:13:996 Kernel/(14041:14041): Hilo CPU creado
+[INFO] 23:10:29:456 Kernel/(14041:14041): Colas, listas y sus respectivos elementos destruidos
+[INFO] 23:13:10:860 Kernel/(14546:14546): Log creado
+[INFO] 23:13:10:863 Kernel/(14546:14546): Configuración obtenida
+[INFO] 23:13:10:864 Kernel/(14546:14546): Semáforos inicializados
+[INFO] 23:13:10:864 Kernel/(14546:14546): Colas de dispositivos IO creadas
+[INFO] 23:13:10:864 Kernel/(14546:14546): Se creó el hilo gestor de la IO laguna
+[INFO] 23:13:10:864 Kernel/(14546:14546): Inicio colas de planificación
+[INFO] 23:13:10:864 Kernel/(14546:14546): Hilo Planificador Corto Plazo creado
+[INFO] 23:13:10:865 Kernel/(14546:14546): Hilo Planificador Largo Plazo creado
+[INFO] 23:13:10:865 Kernel/(14546:14546): Hilo Detección Deadlock creado
+[INFO] 23:13:10:865 Kernel/(14546:14546): Hilo CPU creado
+[INFO] 23:13:18:649 Kernel/(14546:14777): Recibí el cliente 15
+[INFO] 23:13:18:649 Kernel/(14546:14777): ---------------NEW INSTANCE. Comienza creación del carpincho
+[INFO] 23:13:18:659 Kernel/(14546:14777): NEW INSTANCE: Se agregó el carpincho ID: 1 a la cola de new
+[INFO] 23:13:18:659 Kernel/(14546:14549): Llegó un carpincho al planificador de largo plazo
+[INFO] 23:13:18:659 Kernel/(14546:14549): No hay suspendidos. Se iniciará carpincho 1
+[INFO] 23:13:18:659 Kernel/(14546:14549): --------------Carpincho 1--------------
+[INFO] 23:13:18:659 Kernel/(14546:14549): Tiempo de espera: 0.000000
+[INFO] 23:13:18:659 Kernel/(14546:14549): Tiempo ejecutado: 0.000000
+[INFO] 23:13:18:659 Kernel/(14546:14549): Estimacion: 1.000000
+[INFO] 23:13:18:659 Kernel/(14546:14549): --------------Carpincho 1--------------
+[INFO] 23:13:18:659 Kernel/(14546:14549): Tiempo de espera: 0.000000
+[INFO] 23:13:18:659 Kernel/(14546:14549): Tiempo ejecutado: 0.000000
+[INFO] 23:13:18:659 Kernel/(14546:14549): Estimacion: 1.000000
+[INFO] 23:13:18:659 Kernel/(14546:14552): Carpincho 1 - Comienza a ejecutar
+[INFO] 23:13:18:698 Kernel/(14546:14777): Se recibió del carpincho 1 un MEM ALLOC con el tamañi 4
+[INFO] 23:13:18:742 Kernel/(14546:14777): Se recibió del carpincho 1 un MEM write desde la posición 9 con el mensjaje n-2
+[INFO] 23:13:18:784 Kernel/(14546:14777): Se recibió del carpincho 1 un MEM ALLOC con el tamañi 4
+[INFO] 23:13:18:827 Kernel/(14546:14777): Se recibió del carpincho 1 un MEM write desde la posición 22 con el mensjaje 
+[INFO] 23:13:18:867 Kernel/(14546:14777): Se recibió del carpincho 1 un MEM ALLOC con el tamañi 4
+[INFO] 23:13:18:911 Kernel/(14546:14777): Se recibió del carpincho 1 un MEM write desde la posición 35 con el mensjaje n-1
+[INFO] 23:13:18:951 Kernel/(14546:14777): Se recibió del carpincho 1 un MEM ALLOC con el tamañi 4
+[INFO] 23:13:18:999 Kernel/(14546:14777): Se recibió del carpincho 1 un MEM write desde la posición 48 con el mensjaje 
+[INFO] 23:13:19:039 Kernel/(14546:14777): Se recibió del carpincho 1 un MEM READ desde la posición 48 con tamañio 4
+[INFO] 23:13:19:159 Kernel/(14546:14777): Se recibió del carpincho 1 un MEM READ desde la posición 22 con tamañio 4
+[INFO] 23:13:19:238 Kernel/(14546:14777): Se recibió del carpincho 1 un MEM READ desde la posición 9 con tamañio 4
+[INFO] 23:13:19:320 Kernel/(14546:14777): Se recibió del carpincho 1 un MEM READ desde la posición 35 con tamañio 4
+[INFO] 23:13:19:400 Kernel/(14546:14777): Se recibió del carpincho 1 un MEM write desde la posición 48 con el mensjaje 
+[INFO] 23:13:19:440 Kernel/(14546:14777): Se recibió del carpincho 1 un MEM write desde la posición 22 con el mensjaje 
+[INFO] 23:13:19:481 Kernel/(14546:14777): Se recibió del carpincho 1 un MEM READ desde la posición 48 con tamañio 4
+[INFO] 23:13:19:599 Kernel/(14546:14777): Se recibió del carpincho 1 un MEM READ desde la posición 22 con tamañio 4
+[INFO] 23:13:19:679 Kernel/(14546:14777): Se recibió del carpincho 1 un MEM READ desde la posición 9 con tamañio 4
+[INFO] 23:13:19:759 Kernel/(14546:14777): Se recibió del carpincho 1 un MEM READ desde la posición 35 con tamañio 4
+[INFO] 23:13:19:839 Kernel/(14546:14777): Se recibió del carpincho 1 un MEM write desde la posición 48 con el mensjaje 
+[INFO] 23:13:19:880 Kernel/(14546:14777): Se recibió del carpincho 1 un MEM write desde la posición 22 con el mensjaje 
+[INFO] 23:13:19:922 Kernel/(14546:14777): Se recibió del carpincho 1 un MEM READ desde la posición 48 con tamañio 4
+[INFO] 23:13:20:040 Kernel/(14546:14777): Se recibió del carpincho 1 un MEM READ desde la posición 22 con tamañio 4
+[INFO] 23:13:20:119 Kernel/(14546:14777): Se recibió del carpincho 1 un MEM READ desde la posición 9 con tamañio 4
+[INFO] 23:13:20:199 Kernel/(14546:14777): Se recibió del carpincho 1 un MEM READ desde la posición 35 con tamañio 4
+[INFO] 23:13:20:279 Kernel/(14546:14777): Se recibió del carpincho 1 un MEM write desde la posición 48 con el mensjaje 
+[INFO] 23:13:20:322 Kernel/(14546:14777): Se recibió del carpincho 1 un MEM write desde la posición 22 con el mensjaje 
+[INFO] 23:13:20:361 Kernel/(14546:14777): Se recibió del carpincho 1 un MEM READ desde la posición 48 con tamañio 4
+[INFO] 23:13:20:478 Kernel/(14546:14777): Se recibió del carpincho 1 un MEM READ desde la posición 22 con tamañio 4
+[INFO] 23:13:20:559 Kernel/(14546:14777): Se recibió del carpincho 1 un MEM READ desde la posición 9 con tamañio 4
+[INFO] 23:13:20:638 Kernel/(14546:14777): Se recibió del carpincho 1 un MEM READ desde la posición 35 con tamañio 4
+[INFO] 23:13:20:721 Kernel/(14546:14777): Se recibió del carpincho 1 un MEM write desde la posición 48 con el mensjaje 
+[INFO] 23:13:20:761 Kernel/(14546:14777): Se recibió del carpincho 1 un MEM write desde la posición 22 con el mensjaje 
+[INFO] 23:13:20:802 Kernel/(14546:14777): Se recibió del carpincho 1 un MEM READ desde la posición 48 con tamañio 4
+[INFO] 23:13:20:923 Kernel/(14546:14777): Se recibió del carpincho 1 un MEM READ desde la posición 22 con tamañio 4
+[INFO] 23:13:21:003 Kernel/(14546:14777): Se recibió del carpincho 1 un MEM READ desde la posición 9 con tamañio 4
+[INFO] 23:13:21:083 Kernel/(14546:14777): Se recibió del carpincho 1 un MEM READ desde la posición 35 con tamañio 4
+[INFO] 23:13:21:167 Kernel/(14546:14777): Se recibió del carpincho 1 un MEM write desde la posición 48 con el mensjaje 
+[INFO] 23:13:21:208 Kernel/(14546:14777): Se recibió del carpincho 1 un MEM write desde la posición 22 con el mensjaje 
+[INFO] 23:13:21:248 Kernel/(14546:14777): Se recibió del carpincho 1 un MEM READ desde la posición 48 con tamañio 4
+[INFO] 23:13:21:366 Kernel/(14546:14777): Se recibió del carpincho 1 un MEM READ desde la posición 22 con tamañio 4
+[INFO] 23:13:21:447 Kernel/(14546:14777): Se recibió del carpincho 1 un MEM READ desde la posición 9 con tamañio 4
+[INFO] 23:13:21:527 Kernel/(14546:14777): Se recibió del carpincho 1 un MEM READ desde la posición 35 con tamañio 4
+[INFO] 23:13:21:607 Kernel/(14546:14777): Se recibió del carpincho 1 un MEM write desde la posición 48 con el mensjaje 
+[INFO] 23:13:21:648 Kernel/(14546:14777): Se recibió del carpincho 1 un MEM write desde la posición 22 con el mensjaje 
+[INFO] 23:13:21:688 Kernel/(14546:14777): Se recibió del carpincho 1 un MEM READ desde la posición 48 con tamañio 4
+[INFO] 23:13:21:807 Kernel/(14546:14777): Se recibió del carpincho 1 un MEM READ desde la posición 22 con tamañio 4
+[INFO] 23:13:21:887 Kernel/(14546:14777): Se recibió del carpincho 1 un MEM READ desde la posición 9 con tamañio 4
+[INFO] 23:13:21:967 Kernel/(14546:14777): Se recibió del carpincho 1 un MEM READ desde la posición 35 con tamañio 4
+[INFO] 23:13:22:047 Kernel/(14546:14777): Se recibió del carpincho 1 un MEM write desde la posición 48 con el mensjaje 
+[INFO] 23:13:22:089 Kernel/(14546:14777): Se recibió del carpincho 1 un MEM write desde la posición 22 con el mensjaje 
+[INFO] 23:13:22:128 Kernel/(14546:14777): Se recibió del carpincho 1 un MEM READ desde la posición 48 con tamañio 4
+[INFO] 23:13:22:247 Kernel/(14546:14777): Se recibió del carpincho 1 un MEM READ desde la posición 22 con tamañio 4
+[INFO] 23:13:22:327 Kernel/(14546:14777): Se recibió del carpincho 1 un MEM READ desde la posición 9 con tamañio 4
+[INFO] 23:13:22:407 Kernel/(14546:14777): Se recibió del carpincho 1 un MEM READ desde la posición 35 con tamañio 4
+[INFO] 23:13:22:487 Kernel/(14546:14777): Se recibió del carpincho 1 un MEM write desde la posición 48 con el mensjaje "
+[INFO] 23:13:22:528 Kernel/(14546:14777): Se recibió del carpincho 1 un MEM write desde la posición 22 con el mensjaje 
+[INFO] 23:13:22:569 Kernel/(14546:14777): Se recibió del carpincho 1 un MEM READ desde la posición 48 con tamañio 4
+[INFO] 23:13:22:687 Kernel/(14546:14777): Se recibió del carpincho 1 un MEM READ desde la posición 22 con tamañio 4
+[INFO] 23:13:22:767 Kernel/(14546:14777): Se recibió del carpincho 1 un MEM READ desde la posición 9 con tamañio 4
+[INFO] 23:13:22:847 Kernel/(14546:14777): Se recibió del carpincho 1 un MEM READ desde la posición 35 con tamañio 4
+[INFO] 23:13:22:927 Kernel/(14546:14777): Se recibió del carpincho 1 un MEM write desde la posición 48 con el mensjaje 7
+[INFO] 23:13:22:970 Kernel/(14546:14777): Se recibió del carpincho 1 un MEM write desde la posición 22 con el mensjaje "
+[INFO] 23:13:23:012 Kernel/(14546:14777): Se recibió del carpincho 1 un MEM READ desde la posición 48 con tamañio 4
+[INFO] 23:13:23:131 Kernel/(14546:14777): Se recibió del carpincho 1 un MEM READ desde la posición 22 con tamañio 4
+[INFO] 23:13:23:211 Kernel/(14546:14777): Se recibió del carpincho 1 un MEM READ desde la posición 9 con tamañio 4
+[INFO] 23:13:23:291 Kernel/(14546:14777): Se recibió del carpincho 1 un MEM READ desde la posición 35 con tamañio 4
+[INFO] 23:13:23:372 Kernel/(14546:14777): Se recibió del carpincho 1 un MEM write desde la posición 48 con el mensjaje Y
+[INFO] 23:13:23:412 Kernel/(14546:14777): Se recibió del carpincho 1 un MEM write desde la posición 22 con el mensjaje 7
+[INFO] 23:13:23:453 Kernel/(14546:14777): Se recibió del carpincho 1 un MEM READ desde la posición 48 con tamañio 4
+[INFO] 23:13:23:571 Kernel/(14546:14777): Se recibió del carpincho 1 un MEM READ desde la posición 22 con tamañio 4
+[INFO] 23:24:46:568 Kernel/(15848:15848): Log creado
+[INFO] 23:24:46:571 Kernel/(15848:15848): Configuración obtenida
+[INFO] 23:24:46:572 Kernel/(15848:15848): Semáforos inicializados
+[INFO] 23:24:46:572 Kernel/(15848:15848): Colas de dispositivos IO creadas
+[INFO] 23:24:46:572 Kernel/(15848:15848): Se creó el hilo gestor de la IO laguna
+[INFO] 23:24:46:572 Kernel/(15848:15848): Inicio colas de planificación
+[INFO] 23:24:46:573 Kernel/(15848:15848): Hilo Planificador Corto Plazo creado
+[INFO] 23:24:46:573 Kernel/(15848:15848): Hilo Planificador Largo Plazo creado
+[INFO] 23:24:46:574 Kernel/(15848:15848): Hilo Detección Deadlock creado
+[INFO] 23:24:46:577 Kernel/(15848:15848): Hilo CPU creado
+[INFO] 23:24:59:049 Kernel/(15848:16113): Recibí el cliente 15
+[INFO] 23:24:59:050 Kernel/(15848:16113): ---------------NEW INSTANCE. Comienza creación del carpincho
+[INFO] 23:24:59:058 Kernel/(15848:16114): Recibí el cliente 16
+[INFO] 23:24:59:059 Kernel/(15848:16114): ---------------NEW INSTANCE. Comienza creación del carpincho
+[INFO] 23:24:59:060 Kernel/(15848:16113): NEW INSTANCE: Se agregó el carpincho ID: 1 a la cola de new
+[INFO] 23:24:59:060 Kernel/(15848:15851): Llegó un carpincho al planificador de largo plazo
+[INFO] 23:24:59:060 Kernel/(15848:15851): No hay suspendidos. Se iniciará carpincho 1
+[INFO] 23:24:59:060 Kernel/(15848:15851): --------------Carpincho 1--------------
+[INFO] 23:24:59:060 Kernel/(15848:15851): Tiempo de espera: 0.000000
+[INFO] 23:24:59:060 Kernel/(15848:15851): Tiempo ejecutado: 0.000000
+[INFO] 23:24:59:060 Kernel/(15848:15851): Estimacion: 1.000000
+[INFO] 23:24:59:060 Kernel/(15848:15851): --------------Carpincho 1--------------
+[INFO] 23:24:59:060 Kernel/(15848:15851): Tiempo de espera: 0.000000
+[INFO] 23:24:59:060 Kernel/(15848:15851): Tiempo ejecutado: 0.000000
+[INFO] 23:24:59:060 Kernel/(15848:15851): Estimacion: 1.000000
+[INFO] 23:24:59:060 Kernel/(15848:15855): Carpincho 1 - Comienza a ejecutar
+[INFO] 23:24:59:098 Kernel/(15848:16113): Se recibió del carpincho 1 un MEM ALLOC con el tamañi 10
+[INFO] 23:24:59:099 Kernel/(15848:16114): NEW INSTANCE: Se agregó el carpincho ID: 2 a la cola de new
+[INFO] 23:24:59:099 Kernel/(15848:15851): Llegó un carpincho al planificador de largo plazo
+[INFO] 23:24:59:099 Kernel/(15848:15851): No hay suspendidos. Se iniciará carpincho 2
+[INFO] 23:24:59:099 Kernel/(15848:15851): --------------Carpincho 2--------------
+[INFO] 23:24:59:099 Kernel/(15848:15851): Tiempo de espera: 0.000000
+[INFO] 23:24:59:099 Kernel/(15848:15851): Tiempo ejecutado: 0.000000
+[INFO] 23:24:59:099 Kernel/(15848:15851): Estimacion: 1.000000
+[INFO] 23:24:59:099 Kernel/(15848:15851): --------------Carpincho 2--------------
+[INFO] 23:24:59:099 Kernel/(15848:15851): Tiempo de espera: 0.000000
+[INFO] 23:24:59:099 Kernel/(15848:15851): Tiempo ejecutado: 0.000000
+[INFO] 23:24:59:099 Kernel/(15848:15851): Estimacion: 1.000000
+[INFO] 23:24:59:099 Kernel/(15848:15854): Carpincho 2 - Comienza a ejecutar
+[INFO] 23:24:59:138 Kernel/(15848:16114): Se recibió del carpincho 2 un MEM ALLOC con el tamañi 10
+[INFO] 23:24:59:181 Kernel/(15848:16113): Se recibió del carpincho 1 un MEM write desde la posición 9 con el mensjaje CARPINCHO2
+[INFO] 23:24:59:260 Kernel/(15848:16114): Se recibió del carpincho 2 un MEM write desde la posición 9 con el mensjaje CARPINCHO1� 
+[INFO] 23:24:59:263 Kernel/(15848:16113): Se recibió del carpincho 1 un MEM ALLOC con el tamañi 4
+[INFO] 23:24:59:266 Kernel/(15848:16114): Se recibió del carpincho 2 un MEM ALLOC con el tamañi 4
+[INFO] 23:24:59:311 Kernel/(15848:16113): Se recibió del carpincho 1 un MEM write desde la posición 28 con el mensjaje 
+[INFO] 23:24:59:314 Kernel/(15848:16114): Se recibió del carpincho 2 un MEM write desde la posición 28 con el mensjaje 
+[INFO] 23:24:59:355 Kernel/(15848:16114): Se recibió del carpincho 2 un MEM READ desde la posición 9 con tamañio 10
+[INFO] 23:24:59:475 Kernel/(15848:16114): Se recibió del carpincho 2 un MEM READ desde la posición 28 con tamañio 4
+[INFO] 23:24:59:555 Kernel/(15848:16114): Se recibió del carpincho 2 un MEM write desde la posición 28 con el mensjaje 
+[INFO] 23:24:59:595 Kernel/(15848:16113): Se recibió del carpincho 1 un MEM READ desde la posición 9 con tamañio 10
+[INFO] 23:24:59:640 Kernel/(15848:16113): Se recibió del carpincho 1 un MEM READ desde la posición 28 con tamañio 4
+[INFO] 23:24:59:759 Kernel/(15848:16113): Se recibió del carpincho 1 un MEM write desde la posición 28 con el mensjaje 
+[INFO] 23:24:59:799 Kernel/(15848:16114): Se recibió del carpincho 2 un MEM READ desde la posición 9 con tamañio 10
+[INFO] 23:24:59:842 Kernel/(15848:16114): Se recibió del carpincho 2 un MEM READ desde la posición 28 con tamañio 4
+[INFO] 23:24:59:959 Kernel/(15848:16114): Se recibió del carpincho 2 un MEM write desde la posición 28 con el mensjaje 
+[INFO] 23:25:00:000 Kernel/(15848:16113): Se recibió del carpincho 1 un MEM READ desde la posición 9 con tamañio 10
+[INFO] 23:25:00:045 Kernel/(15848:16113): Se recibió del carpincho 1 un MEM READ desde la posición 28 con tamañio 4
+[INFO] 23:25:00:163 Kernel/(15848:16113): Se recibió del carpincho 1 un MEM write desde la posición 28 con el mensjaje 
+[INFO] 23:25:00:203 Kernel/(15848:16114): Se recibió del carpincho 2 un MEM READ desde la posición 9 con tamañio 10
+[INFO] 23:25:00:246 Kernel/(15848:16114): Se recibió del carpincho 2 un MEM READ desde la posición 28 con tamañio 4
+[INFO] 23:25:00:363 Kernel/(15848:16114): Se recibió del carpincho 2 un MEM write desde la posición 28 con el mensjaje 
+[INFO] 23:25:00:404 Kernel/(15848:16113): Se recibió del carpincho 1 un MEM READ desde la posición 9 con tamañio 10
+[INFO] 23:25:00:450 Kernel/(15848:16113): Se recibió del carpincho 1 un MEM READ desde la posición 28 con tamañio 4
+[INFO] 23:25:00:567 Kernel/(15848:16113): Se recibió del carpincho 1 un MEM write desde la posición 28 con el mensjaje 
+[INFO] 23:25:00:608 Kernel/(15848:16114): Se recibió del carpincho 2 un MEM READ desde la posición 9 con tamañio 10
+[INFO] 23:25:00:651 Kernel/(15848:16114): Se recibió del carpincho 2 un MEM READ desde la posición 28 con tamañio 4
+[INFO] 23:25:00:772 Kernel/(15848:16114): Se recibió del carpincho 2 un MEM write desde la posición 28 con el mensjaje 
+[INFO] 23:25:00:811 Kernel/(15848:16113): Se recibió del carpincho 1 un MEM READ desde la posición 9 con tamañio 10
+[INFO] 23:25:00:854 Kernel/(15848:16113): Se recibió del carpincho 1 un MEM READ desde la posición 28 con tamañio 4
+[INFO] 23:25:00:971 Kernel/(15848:16113): Se recibió del carpincho 1 un MEM write desde la posición 28 con el mensjaje 
+[INFO] 23:25:01:011 Kernel/(15848:16114): Se recibió del carpincho 2 un MEM READ desde la posición 9 con tamañio 10
+[INFO] 23:25:01:055 Kernel/(15848:16114): Se recibió del carpincho 2 un MEM READ desde la posición 28 con tamañio 4
+[INFO] 23:25:01:175 Kernel/(15848:16114): Se recibió del carpincho 2 un MEM write desde la posición 28 con el mensjaje 	
+[INFO] 23:25:01:215 Kernel/(15848:16113): Se recibió del carpincho 1 un MEM READ desde la posición 9 con tamañio 10
+[INFO] 23:25:01:215 Kernel/(15848:16114): MATE_CLOSE: Se recibió del carpincho 2 un MATE CLOSE
+[INFO] 23:25:01:215 Kernel/(15848:15854): Carpincho 2 - Eliminado
+[INFO] 23:25:01:258 Kernel/(15848:16113): Se recibió del carpincho 1 un MEM READ desde la posición 28 con tamañio 4
+[INFO] 23:25:01:379 Kernel/(15848:16113): Se recibió del carpincho 1 un MEM write desde la posición 28 con el mensjaje 
+
+[INFO] 23:25:01:423 Kernel/(15848:16113): MATE_CLOSE: Se recibió del carpincho 1 un MATE CLOSE
+[INFO] 23:25:01:423 Kernel/(15848:15855): Carpincho 1 - Eliminado
+[INFO] 23:25:36:579 Kernel/(15848:15852): Comienza la ejecución de la detección de Deadlock
+[INFO] 23:26:26:579 Kernel/(15848:15852): Comienza la ejecución de la detección de Deadlock
+[INFO] 23:27:16:580 Kernel/(15848:15852): Comienza la ejecución de la detección de Deadlock
+[INFO] 23:28:06:580 Kernel/(15848:15852): Comienza la ejecución de la detección de Deadlock
+[INFO] 23:28:19:563 Kernel/(15848:15848): Colas, listas y sus respectivos elementos destruidos
+[INFO] 23:28:28:390 Kernel/(16548:16548): Log creado
+[INFO] 23:28:28:391 Kernel/(16548:16548): Configuración obtenida
+[INFO] 23:28:28:391 Kernel/(16548:16548): Semáforos inicializados
+[INFO] 23:28:28:391 Kernel/(16548:16548): Colas de dispositivos IO creadas
+[INFO] 23:28:28:391 Kernel/(16548:16548): Se creó el hilo gestor de la IO laguna
+[INFO] 23:28:28:391 Kernel/(16548:16548): Inicio colas de planificación
+[INFO] 23:28:28:391 Kernel/(16548:16548): Hilo Planificador Corto Plazo creado
+[INFO] 23:28:28:391 Kernel/(16548:16548): Hilo Planificador Largo Plazo creado
+[INFO] 23:28:28:391 Kernel/(16548:16548): Hilo Detección Deadlock creado
+[INFO] 23:28:28:391 Kernel/(16548:16548): Hilo CPU creado
+[INFO] 23:28:34:289 Kernel/(16548:16801): Recibí el cliente 15
+[INFO] 23:28:34:289 Kernel/(16548:16801): ---------------NEW INSTANCE. Comienza creación del carpincho
+[INFO] 23:28:34:301 Kernel/(16548:16802): Recibí el cliente 16
+[INFO] 23:28:34:304 Kernel/(16548:16802): ---------------NEW INSTANCE. Comienza creación del carpincho
+[INFO] 23:28:34:304 Kernel/(16548:16801): NEW INSTANCE: Se agregó el carpincho ID: 1 a la cola de new
+[INFO] 23:28:34:304 Kernel/(16548:16551): Llegó un carpincho al planificador de largo plazo
+[INFO] 23:28:34:304 Kernel/(16548:16551): No hay suspendidos. Se iniciará carpincho 1
+[INFO] 23:28:34:305 Kernel/(16548:16551): --------------Carpincho 1--------------
+[INFO] 23:28:34:305 Kernel/(16548:16551): Tiempo de espera: 0.000000
+[INFO] 23:28:34:305 Kernel/(16548:16551): Tiempo ejecutado: 0.000000
+[INFO] 23:28:34:305 Kernel/(16548:16551): Estimacion: 1.000000
+[INFO] 23:28:34:305 Kernel/(16548:16551): --------------Carpincho 1--------------
+[INFO] 23:28:34:305 Kernel/(16548:16551): Tiempo de espera: 0.000000
+[INFO] 23:28:34:305 Kernel/(16548:16551): Tiempo ejecutado: 0.000000
+[INFO] 23:28:34:305 Kernel/(16548:16551): Estimacion: 1.000000
+[INFO] 23:28:34:305 Kernel/(16548:16555): Carpincho 1 - Comienza a ejecutar
+[INFO] 23:28:34:343 Kernel/(16548:16801): Se recibió del carpincho 1 un MEM ALLOC con el tamañi 10
+[INFO] 23:28:34:359 Kernel/(16548:16802): NEW INSTANCE: Se agregó el carpincho ID: 2 a la cola de new
+[INFO] 23:28:34:359 Kernel/(16548:16551): Llegó un carpincho al planificador de largo plazo
+[INFO] 23:28:34:359 Kernel/(16548:16551): No hay suspendidos. Se iniciará carpincho 2
+[INFO] 23:28:34:359 Kernel/(16548:16551): --------------Carpincho 2--------------
+[INFO] 23:28:34:359 Kernel/(16548:16551): Tiempo de espera: 0.000000
+[INFO] 23:28:34:359 Kernel/(16548:16551): Tiempo ejecutado: 0.000000
+[INFO] 23:28:34:359 Kernel/(16548:16551): Estimacion: 1.000000
+[INFO] 23:28:34:359 Kernel/(16548:16551): --------------Carpincho 2--------------
+[INFO] 23:28:34:359 Kernel/(16548:16551): Tiempo de espera: 0.000000
+[INFO] 23:28:34:359 Kernel/(16548:16551): Tiempo ejecutado: 0.000000
+[INFO] 23:28:34:359 Kernel/(16548:16551): Estimacion: 1.000000
+[INFO] 23:28:34:359 Kernel/(16548:16554): Carpincho 2 - Comienza a ejecutar
+[INFO] 23:28:34:399 Kernel/(16548:16802): Se recibió del carpincho 2 un MEM ALLOC con el tamañi 10
+[INFO] 23:28:34:440 Kernel/(16548:16801): Se recibió del carpincho 1 un MEM write desde la posición 9 con el mensjaje CARPINCHO2
+[INFO] 23:28:34:524 Kernel/(16548:16802): Se recibió del carpincho 2 un MEM write desde la posición 9 con el mensjaje CARPINCHO1� 
+[INFO] 23:28:34:528 Kernel/(16548:16801): Se recibió del carpincho 1 un MEM ALLOC con el tamañi 4
+[INFO] 23:28:34:531 Kernel/(16548:16802): Se recibió del carpincho 2 un MEM ALLOC con el tamañi 4
+[INFO] 23:28:34:574 Kernel/(16548:16801): Se recibió del carpincho 1 un MEM write desde la posición 28 con el mensjaje 
+[INFO] 23:28:34:578 Kernel/(16548:16802): Se recibió del carpincho 2 un MEM write desde la posición 28 con el mensjaje 
+[INFO] 23:28:34:620 Kernel/(16548:16802): Se recibió del carpincho 2 un MEM READ desde la posición 9 con tamañio 10
+[INFO] 23:28:34:739 Kernel/(16548:16802): Se recibió del carpincho 2 un MEM READ desde la posición 28 con tamañio 4
+[INFO] 23:28:34:819 Kernel/(16548:16802): Se recibió del carpincho 2 un MEM write desde la posición 28 con el mensjaje 
+[INFO] 23:28:34:860 Kernel/(16548:16801): Se recibió del carpincho 1 un MEM READ desde la posición 9 con tamañio 10
+[INFO] 23:28:34:902 Kernel/(16548:16801): Se recibió del carpincho 1 un MEM READ desde la posición 28 con tamañio 4
+[INFO] 23:28:35:019 Kernel/(16548:16801): Se recibió del carpincho 1 un MEM write desde la posición 28 con el mensjaje 
+[INFO] 23:28:35:060 Kernel/(16548:16802): Se recibió del carpincho 2 un MEM READ desde la posición 9 con tamañio 10
+[INFO] 23:28:35:102 Kernel/(16548:16802): Se recibió del carpincho 2 un MEM READ desde la posición 28 con tamañio 4
+[INFO] 23:28:35:219 Kernel/(16548:16802): Se recibió del carpincho 2 un MEM write desde la posición 28 con el mensjaje 
+[INFO] 23:28:35:263 Kernel/(16548:16801): Se recibió del carpincho 1 un MEM READ desde la posición 9 con tamañio 10
+[INFO] 23:28:35:308 Kernel/(16548:16801): Se recibió del carpincho 1 un MEM READ desde la posición 28 con tamañio 4
+[INFO] 23:28:35:428 Kernel/(16548:16801): Se recibió del carpincho 1 un MEM write desde la posición 28 con el mensjaje 
+[INFO] 23:28:35:467 Kernel/(16548:16802): Se recibió del carpincho 2 un MEM READ desde la posición 9 con tamañio 10
+[INFO] 23:28:35:512 Kernel/(16548:16802): Se recibió del carpincho 2 un MEM READ desde la posición 28 con tamañio 4
+[INFO] 23:28:35:631 Kernel/(16548:16802): Se recibió del carpincho 2 un MEM write desde la posición 28 con el mensjaje 
+[INFO] 23:28:35:672 Kernel/(16548:16801): Se recibió del carpincho 1 un MEM READ desde la posición 9 con tamañio 10
+[INFO] 23:28:35:717 Kernel/(16548:16801): Se recibió del carpincho 1 un MEM READ desde la posición 28 con tamañio 4
+[INFO] 23:28:35:835 Kernel/(16548:16801): Se recibió del carpincho 1 un MEM write desde la posición 28 con el mensjaje 
+[INFO] 23:28:35:876 Kernel/(16548:16802): Se recibió del carpincho 2 un MEM READ desde la posición 9 con tamañio 10
+[INFO] 23:28:35:918 Kernel/(16548:16802): Se recibió del carpincho 2 un MEM READ desde la posición 28 con tamañio 4
+[INFO] 23:28:36:035 Kernel/(16548:16802): Se recibió del carpincho 2 un MEM write desde la posición 28 con el mensjaje 
+[INFO] 23:28:36:076 Kernel/(16548:16801): Se recibió del carpincho 1 un MEM READ desde la posición 9 con tamañio 10
+[INFO] 23:28:36:121 Kernel/(16548:16801): Se recibió del carpincho 1 un MEM READ desde la posición 28 con tamañio 4
+[INFO] 23:28:36:239 Kernel/(16548:16801): Se recibió del carpincho 1 un MEM write desde la posición 28 con el mensjaje 
+[INFO] 23:28:36:280 Kernel/(16548:16802): Se recibió del carpincho 2 un MEM READ desde la posición 9 con tamañio 10
+[INFO] 23:28:36:323 Kernel/(16548:16802): Se recibió del carpincho 2 un MEM READ desde la posición 28 con tamañio 4
+[INFO] 23:28:36:443 Kernel/(16548:16802): Se recibió del carpincho 2 un MEM write desde la posición 28 con el mensjaje 	
+[INFO] 23:28:36:483 Kernel/(16548:16801): Se recibió del carpincho 1 un MEM READ desde la posición 9 con tamañio 10
+[INFO] 23:28:36:483 Kernel/(16548:16802): MATE_CLOSE: Se recibió del carpincho 2 un MATE CLOSE
+[INFO] 23:28:36:483 Kernel/(16548:16554): Carpincho 2 - Eliminado
+[INFO] 23:28:36:528 Kernel/(16548:16801): Se recibió del carpincho 1 un MEM READ desde la posición 28 con tamañio 4
+[INFO] 23:28:36:647 Kernel/(16548:16801): Se recibió del carpincho 1 un MEM write desde la posición 28 con el mensjaje 
+
+[INFO] 23:28:36:689 Kernel/(16548:16801): MATE_CLOSE: Se recibió del carpincho 1 un MATE CLOSE
+[INFO] 23:28:36:689 Kernel/(16548:16555): Carpincho 1 - Eliminado
+[INFO] 23:29:18:393 Kernel/(16548:16552): Comienza la ejecución de la detección de Deadlock
+[INFO] 23:30:08:393 Kernel/(16548:16552): Comienza la ejecución de la detección de Deadlock
+[INFO] 23:30:36:044 Kernel/(16548:16548): Colas, listas y sus respectivos elementos destruidos
+[INFO] 23:44:57:043 Kernel/(18286:18286): Log creado
+[INFO] 23:44:57:043 Kernel/(18286:18286): Configuración obtenida
+[INFO] 23:44:57:044 Kernel/(18286:18286): Semáforos inicializados
+[INFO] 23:44:57:044 Kernel/(18286:18286): Colas de dispositivos IO creadas
+[INFO] 23:44:57:044 Kernel/(18286:18286): Se creó el hilo gestor de la IO laguna
+[INFO] 23:44:57:044 Kernel/(18286:18286): Inicio colas de planificación
+[INFO] 23:44:57:044 Kernel/(18286:18286): Hilo Planificador Corto Plazo creado
+[INFO] 23:44:57:044 Kernel/(18286:18286): Hilo Planificador Largo Plazo creado
+[INFO] 23:44:57:044 Kernel/(18286:18286): Hilo Detección Deadlock creado
+[INFO] 23:44:57:044 Kernel/(18286:18286): Hilo CPU creado
+[INFO] 23:45:14:699 Kernel/(18286:18560): Recibí el cliente 15
+[INFO] 23:45:14:699 Kernel/(18286:18560): ---------------NEW INSTANCE. Comienza creación del carpincho
+[INFO] 23:45:14:700 Kernel/(18286:18561): Recibí el cliente 16
+[INFO] 23:45:14:700 Kernel/(18286:18561): ---------------NEW INSTANCE. Comienza creación del carpincho
+[INFO] 23:45:14:701 Kernel/(18286:18560): NEW INSTANCE: Se agregó el carpincho ID: 1 a la cola de new
+[INFO] 23:45:14:702 Kernel/(18286:18289): Llegó un carpincho al planificador de largo plazo
+[INFO] 23:45:14:702 Kernel/(18286:18289): No hay suspendidos. Se iniciará carpincho 1
+[INFO] 23:45:14:702 Kernel/(18286:18289): --------------Carpincho 1--------------
+[INFO] 23:45:14:702 Kernel/(18286:18289): Tiempo de espera: 0.000000
+[INFO] 23:45:14:705 Kernel/(18286:18289): Tiempo ejecutado: 0.000000
+[INFO] 23:45:14:705 Kernel/(18286:18289): Estimacion: 1.000000
+[INFO] 23:45:14:705 Kernel/(18286:18289): --------------Carpincho 1--------------
+[INFO] 23:45:14:705 Kernel/(18286:18289): Tiempo de espera: 0.000000
+[INFO] 23:45:14:705 Kernel/(18286:18289): Tiempo ejecutado: 0.000000
+[INFO] 23:45:14:705 Kernel/(18286:18289): Estimacion: 1.000000
+[INFO] 23:45:14:705 Kernel/(18286:18293): Carpincho 1 - Comienza a ejecutar
+[INFO] 23:45:14:738 Kernel/(18286:18560): Se recibió del carpincho 1 un MEM ALLOC con el tamañi 10
+[INFO] 23:45:14:778 Kernel/(18286:18560): Se recibió del carpincho 1 un MEM write desde la posición 8 con el mensjaje CARPINCHO21 
+[INFO] 23:45:14:779 Kernel/(18286:18560): Se recibió del carpincho 1 un MEM ALLOC con el tamañi 4
+[INFO] 23:45:14:819 Kernel/(18286:18560): Se recibió del carpincho 1 un MEM write desde la posición 8 con el mensjaje 
+[INFO] 23:45:39:437 Kernel/(18286:18561): Se recibió un código erróneo del cliente 16
+[INFO] 23:45:53:769 Kernel/(19019:19019): Log creado
+[INFO] 23:45:53:773 Kernel/(19019:19019): Configuración obtenida
+[INFO] 23:45:53:773 Kernel/(19019:19019): Semáforos inicializados
+[INFO] 23:45:53:774 Kernel/(19019:19019): Colas de dispositivos IO creadas
+[INFO] 23:45:53:774 Kernel/(19019:19019): Se creó el hilo gestor de la IO laguna
+[INFO] 23:45:53:774 Kernel/(19019:19019): Inicio colas de planificación
+[INFO] 23:45:53:774 Kernel/(19019:19019): Hilo Planificador Corto Plazo creado
+[INFO] 23:45:53:774 Kernel/(19019:19019): Hilo Planificador Largo Plazo creado
+[INFO] 23:45:53:774 Kernel/(19019:19019): Hilo Detección Deadlock creado
+[INFO] 23:45:53:775 Kernel/(19019:19019): Hilo CPU creado
+[INFO] 23:46:43:779 Kernel/(19019:19023): Comienza la ejecución de la detección de Deadlock
+[INFO] 23:46:48:338 Kernel/(19019:19019): Colas, listas y sus respectivos elementos destruidos
+[INFO] 23:47:09:143 Kernel/(19452:19452): Log creado
+[INFO] 23:47:09:144 Kernel/(19452:19452): Configuración obtenida
+[INFO] 23:47:09:145 Kernel/(19452:19452): Semáforos inicializados
+[INFO] 23:47:09:145 Kernel/(19452:19452): Colas de dispositivos IO creadas
+[INFO] 23:47:09:145 Kernel/(19452:19452): Se creó el hilo gestor de la IO laguna
+[INFO] 23:47:09:145 Kernel/(19452:19452): Inicio colas de planificación
+[INFO] 23:47:09:145 Kernel/(19452:19452): Hilo Planificador Corto Plazo creado
+[INFO] 23:47:09:145 Kernel/(19452:19452): Hilo Planificador Largo Plazo creado
+[INFO] 23:47:09:145 Kernel/(19452:19452): Hilo Detección Deadlock creado
+[INFO] 23:47:09:145 Kernel/(19452:19452): Hilo CPU creado
+[INFO] 23:47:20:532 Kernel/(19452:19629): Recibí el cliente 15
+[INFO] 23:47:20:532 Kernel/(19452:19629): ---------------NEW INSTANCE. Comienza creación del carpincho
+[INFO] 23:47:20:535 Kernel/(19452:19630): Recibí el cliente 16
+[INFO] 23:47:20:537 Kernel/(19452:19630): ---------------NEW INSTANCE. Comienza creación del carpincho
+[INFO] 23:47:20:609 Kernel/(19452:19629): NEW INSTANCE: Se agregó el carpincho ID: 1 a la cola de new
+[INFO] 23:47:20:609 Kernel/(19452:19455): Llegó un carpincho al planificador de largo plazo
+[INFO] 23:47:20:609 Kernel/(19452:19455): No hay suspendidos. Se iniciará carpincho 1
+[INFO] 23:47:20:609 Kernel/(19452:19455): --------------Carpincho 1--------------
+[INFO] 23:47:20:609 Kernel/(19452:19455): Tiempo de espera: 0.000000
+[INFO] 23:47:20:609 Kernel/(19452:19455): Tiempo ejecutado: 0.000000
+[INFO] 23:47:20:609 Kernel/(19452:19455): Estimacion: 1.000000
+[INFO] 23:47:20:609 Kernel/(19452:19455): --------------Carpincho 1--------------
+[INFO] 23:47:20:609 Kernel/(19452:19455): Tiempo de espera: 0.000000
+[INFO] 23:47:20:609 Kernel/(19452:19455): Tiempo ejecutado: 0.000000
+[INFO] 23:47:20:609 Kernel/(19452:19455): Estimacion: 1.000000
+[INFO] 23:47:20:609 Kernel/(19452:19458): Carpincho 1 - Comienza a ejecutar
+[INFO] 23:47:20:619 Kernel/(19452:19630): NEW INSTANCE: Se agregó el carpincho ID: 2 a la cola de new
+[INFO] 23:47:20:619 Kernel/(19452:19455): Llegó un carpincho al planificador de largo plazo
+[INFO] 23:47:20:619 Kernel/(19452:19455): No hay suspendidos. Se iniciará carpincho 2
+[INFO] 23:47:20:619 Kernel/(19452:19455): --------------Carpincho 2--------------
+[INFO] 23:47:20:619 Kernel/(19452:19455): Tiempo de espera: 0.000000
+[INFO] 23:47:20:619 Kernel/(19452:19455): Tiempo ejecutado: 0.000000
+[INFO] 23:47:20:619 Kernel/(19452:19455): Estimacion: 1.000000
+[INFO] 23:47:20:620 Kernel/(19452:19455): --------------Carpincho 2--------------
+[INFO] 23:47:20:620 Kernel/(19452:19455): Tiempo de espera: 0.000000
+[INFO] 23:47:20:620 Kernel/(19452:19455): Tiempo ejecutado: 0.000000
+[INFO] 23:47:20:620 Kernel/(19452:19455): Estimacion: 1.000000
+[INFO] 23:47:20:620 Kernel/(19452:19459): Carpincho 2 - Comienza a ejecutar
+[INFO] 23:47:20:647 Kernel/(19452:19629): Se recibió del carpincho 1 un MEM ALLOC con el tamañi 10
+[INFO] 23:47:20:659 Kernel/(19452:19630): Se recibió del carpincho 2 un MEM ALLOC con el tamañi 10
+[INFO] 23:47:20:749 Kernel/(19452:19629): Se recibió del carpincho 1 un MEM write desde la posición 9 con el mensjaje CARPINCHO2
+[INFO] 23:47:20:833 Kernel/(19452:19630): Se recibió del carpincho 2 un MEM write desde la posición 9 con el mensjaje CARPINCHO1� 
+[INFO] 23:47:20:837 Kernel/(19452:19629): Se recibió del carpincho 1 un MEM ALLOC con el tamañi 4
+[INFO] 23:47:20:840 Kernel/(19452:19630): Se recibió del carpincho 2 un MEM ALLOC con el tamañi 4
+[INFO] 23:47:20:882 Kernel/(19452:19629): Se recibió del carpincho 1 un MEM write desde la posición 28 con el mensjaje 
+[INFO] 23:47:20:886 Kernel/(19452:19630): Se recibió del carpincho 2 un MEM write desde la posición 28 con el mensjaje 
+[INFO] 23:47:20:927 Kernel/(19452:19630): Se recibió del carpincho 2 un MEM READ desde la posición 9 con tamañio 10
+[INFO] 23:47:21:047 Kernel/(19452:19630): Se recibió del carpincho 2 un MEM READ desde la posición 28 con tamañio 4
+[INFO] 23:47:21:129 Kernel/(19452:19630): Se recibió del carpincho 2 un MEM write desde la posición 28 con el mensjaje 
+[INFO] 23:47:21:167 Kernel/(19452:19629): Se recibió del carpincho 1 un MEM READ desde la posición 9 con tamañio 10
+[INFO] 23:47:21:209 Kernel/(19452:19629): Se recibió del carpincho 1 un MEM READ desde la posición 28 con tamañio 4
+[INFO] 23:47:21:327 Kernel/(19452:19629): Se recibió del carpincho 1 un MEM write desde la posición 28 con el mensjaje 
+[INFO] 23:47:21:367 Kernel/(19452:19630): Se recibió del carpincho 2 un MEM READ desde la posición 9 con tamañio 10
+[INFO] 23:47:21:410 Kernel/(19452:19630): Se recibió del carpincho 2 un MEM READ desde la posición 28 con tamañio 4
+[INFO] 23:47:21:527 Kernel/(19452:19630): Se recibió del carpincho 2 un MEM write desde la posición 28 con el mensjaje 
+[INFO] 23:47:21:567 Kernel/(19452:19629): Se recibió del carpincho 1 un MEM READ desde la posición 9 con tamañio 10
+[INFO] 23:47:21:610 Kernel/(19452:19629): Se recibió del carpincho 1 un MEM READ desde la posición 28 con tamañio 4
+[INFO] 23:47:21:727 Kernel/(19452:19629): Se recibió del carpincho 1 un MEM write desde la posición 28 con el mensjaje 
+[INFO] 23:47:21:768 Kernel/(19452:19630): Se recibió del carpincho 2 un MEM READ desde la posición 9 con tamañio 10
+[INFO] 23:47:21:810 Kernel/(19452:19630): Se recibió del carpincho 2 un MEM READ desde la posición 28 con tamañio 4
+[INFO] 23:47:21:927 Kernel/(19452:19630): Se recibió del carpincho 2 un MEM write desde la posición 28 con el mensjaje 
+[INFO] 23:47:21:967 Kernel/(19452:19629): Se recibió del carpincho 1 un MEM READ desde la posición 9 con tamañio 10
+[INFO] 23:47:22:011 Kernel/(19452:19629): Se recibió del carpincho 1 un MEM READ desde la posición 28 con tamañio 4
+[INFO] 23:47:22:131 Kernel/(19452:19629): Se recibió del carpincho 1 un MEM write desde la posición 28 con el mensjaje 
+[INFO] 23:47:22:171 Kernel/(19452:19630): Se recibió del carpincho 2 un MEM READ desde la posición 9 con tamañio 10
+[INFO] 23:47:22:214 Kernel/(19452:19630): Se recibió del carpincho 2 un MEM READ desde la posición 28 con tamañio 4
+[INFO] 23:47:22:331 Kernel/(19452:19630): Se recibió del carpincho 2 un MEM write desde la posición 28 con el mensjaje 
+[INFO] 23:47:22:371 Kernel/(19452:19629): Se recibió del carpincho 1 un MEM READ desde la posición 9 con tamañio 10
+[INFO] 23:47:22:414 Kernel/(19452:19629): Se recibió del carpincho 1 un MEM READ desde la posición 28 con tamañio 4
+[INFO] 23:47:22:535 Kernel/(19452:19629): Se recibió del carpincho 1 un MEM write desde la posición 28 con el mensjaje 
+[INFO] 23:47:22:579 Kernel/(19452:19630): Se recibió del carpincho 2 un MEM READ desde la posición 9 con tamañio 10
+[INFO] 23:47:22:623 Kernel/(19452:19630): Se recibió del carpincho 2 un MEM READ desde la posición 28 con tamañio 4
+[INFO] 23:47:22:743 Kernel/(19452:19630): Se recibió del carpincho 2 un MEM write desde la posición 28 con el mensjaje 	
+[INFO] 23:47:22:785 Kernel/(19452:19629): Se recibió del carpincho 1 un MEM READ desde la posición 9 con tamañio 10
+[INFO] 23:47:22:786 Kernel/(19452:19630): MATE_CLOSE: Se recibió del carpincho 2 un MATE CLOSE
+[INFO] 23:47:22:786 Kernel/(19452:19459): Carpincho 2 - Eliminado
+[INFO] 23:47:22:826 Kernel/(19452:19629): Se recibió del carpincho 1 un MEM READ desde la posición 28 con tamañio 4
+[INFO] 23:47:22:983 Kernel/(19452:19629): Se recibió del carpincho 1 un MEM write desde la posición 28 con el mensjaje 
+
+[INFO] 23:47:23:025 Kernel/(19452:19629): MATE_CLOSE: Se recibió del carpincho 1 un MATE CLOSE
+[INFO] 23:47:23:026 Kernel/(19452:19458): Carpincho 1 - Eliminado
+[INFO] 23:47:33:771 Kernel/(19452:19452): Colas, listas y sus respectivos elementos destruidos
+[INFO] 23:51:37:532 Kernel/(20083:20083): Log creado
+[INFO] 23:51:37:532 Kernel/(20083:20083): Configuración obtenida
+[INFO] 23:51:37:532 Kernel/(20083:20083): Semáforos inicializados
+[INFO] 23:51:37:532 Kernel/(20083:20083): Colas de dispositivos IO creadas
+[INFO] 23:51:37:532 Kernel/(20083:20083): Se creó el hilo gestor de la IO laguna
+[INFO] 23:51:37:532 Kernel/(20083:20083): Inicio colas de planificación
+[INFO] 23:51:37:532 Kernel/(20083:20083): Hilo Planificador Corto Plazo creado
+[INFO] 23:51:37:532 Kernel/(20083:20083): Hilo Planificador Largo Plazo creado
+[INFO] 23:51:37:532 Kernel/(20083:20083): Hilo Detección Deadlock creado
+[INFO] 23:51:37:532 Kernel/(20083:20083): Hilo CPU creado
+[INFO] 23:51:48:613 Kernel/(20083:20384): Recibí el cliente 15
+[INFO] 23:51:48:614 Kernel/(20083:20384): ---------------NEW INSTANCE. Comienza creación del carpincho
+[INFO] 23:51:48:620 Kernel/(20083:20385): Recibí el cliente 16
+[INFO] 23:51:48:624 Kernel/(20083:20385): ---------------NEW INSTANCE. Comienza creación del carpincho
+[INFO] 23:51:48:699 Kernel/(20083:20384): NEW INSTANCE: Se agregó el carpincho ID: 1 a la cola de new
+[INFO] 23:51:48:699 Kernel/(20083:20086): Llegó un carpincho al planificador de largo plazo
+[INFO] 23:51:48:699 Kernel/(20083:20086): No hay suspendidos. Se iniciará carpincho 1
+[INFO] 23:51:48:699 Kernel/(20083:20086): --------------Carpincho 1--------------
+[INFO] 23:51:48:699 Kernel/(20083:20086): Tiempo de espera: 0.000000
+[INFO] 23:51:48:699 Kernel/(20083:20086): Tiempo ejecutado: 0.000000
+[INFO] 23:51:48:699 Kernel/(20083:20086): Estimacion: 1.000000
+[INFO] 23:51:48:699 Kernel/(20083:20086): --------------Carpincho 1--------------
+[INFO] 23:51:48:699 Kernel/(20083:20086): Tiempo de espera: 0.000000
+[INFO] 23:51:48:699 Kernel/(20083:20086): Tiempo ejecutado: 0.000000
+[INFO] 23:51:48:699 Kernel/(20083:20086): Estimacion: 1.000000
+[INFO] 23:51:48:699 Kernel/(20083:20090): Carpincho 1 - Comienza a ejecutar
+[INFO] 23:51:48:712 Kernel/(20083:20385): NEW INSTANCE: Se agregó el carpincho ID: 2 a la cola de new
+[INFO] 23:51:48:712 Kernel/(20083:20086): Llegó un carpincho al planificador de largo plazo
+[INFO] 23:51:48:712 Kernel/(20083:20086): No hay suspendidos. Se iniciará carpincho 2
+[INFO] 23:51:48:712 Kernel/(20083:20086): --------------Carpincho 2--------------
+[INFO] 23:51:48:712 Kernel/(20083:20086): Tiempo de espera: 0.000000
+[INFO] 23:51:48:712 Kernel/(20083:20086): Tiempo ejecutado: 0.000000
+[INFO] 23:51:48:712 Kernel/(20083:20086): Estimacion: 1.000000
+[INFO] 23:51:48:712 Kernel/(20083:20086): --------------Carpincho 2--------------
+[INFO] 23:51:48:712 Kernel/(20083:20086): Tiempo de espera: 0.000000
+[INFO] 23:51:48:712 Kernel/(20083:20086): Tiempo ejecutado: 0.000000
+[INFO] 23:51:48:712 Kernel/(20083:20086): Estimacion: 1.000000
+[INFO] 23:51:48:712 Kernel/(20083:20089): Carpincho 2 - Comienza a ejecutar
+[INFO] 23:51:48:738 Kernel/(20083:20384): Se recibió del carpincho 1 un MEM ALLOC con el tamañi 10
+[INFO] 23:51:48:752 Kernel/(20083:20385): Se recibió del carpincho 2 un MEM ALLOC con el tamañi 10
+[INFO] 23:51:48:840 Kernel/(20083:20384): Se recibió del carpincho 1 un MEM write desde la posición 9 con el mensjaje CARPINCHO2
+[INFO] 23:51:48:922 Kernel/(20083:20385): Se recibió del carpincho 2 un MEM write desde la posición 9 con el mensjaje CARPINCHO1� 
+[INFO] 23:51:48:925 Kernel/(20083:20384): Se recibió del carpincho 1 un MEM ALLOC con el tamañi 4
+[INFO] 23:51:48:929 Kernel/(20083:20385): Se recibió del carpincho 2 un MEM ALLOC con el tamañi 4
+[INFO] 23:51:48:971 Kernel/(20083:20384): Se recibió del carpincho 1 un MEM write desde la posición 28 con el mensjaje 
+[INFO] 23:51:48:974 Kernel/(20083:20385): Se recibió del carpincho 2 un MEM write desde la posición 28 con el mensjaje 
+[INFO] 23:51:49:016 Kernel/(20083:20385): Se recibió del carpincho 2 un MEM READ desde la posición 9 con tamañio 10
+[INFO] 23:51:49:134 Kernel/(20083:20385): Se recibió del carpincho 2 un MEM READ desde la posición 28 con tamañio 4
+[INFO] 23:51:49:215 Kernel/(20083:20385): Se recibió del carpincho 2 un MEM write desde la posición 28 con el mensjaje 
+[INFO] 23:51:49:256 Kernel/(20083:20384): Se recibió del carpincho 1 un MEM READ desde la posición 9 con tamañio 10
+[INFO] 23:51:49:297 Kernel/(20083:20384): Se recibió del carpincho 1 un MEM READ desde la posición 28 con tamañio 4
+[INFO] 23:51:49:415 Kernel/(20083:20384): Se recibió del carpincho 1 un MEM write desde la posición 28 con el mensjaje 
+[INFO] 23:51:49:456 Kernel/(20083:20385): Se recibió del carpincho 2 un MEM READ desde la posición 9 con tamañio 10
+[INFO] 23:51:49:501 Kernel/(20083:20385): Se recibió del carpincho 2 un MEM READ desde la posición 28 con tamañio 4
+[INFO] 23:51:49:619 Kernel/(20083:20385): Se recibió del carpincho 2 un MEM write desde la posición 28 con el mensjaje 
+[INFO] 23:51:49:659 Kernel/(20083:20384): Se recibió del carpincho 1 un MEM READ desde la posición 9 con tamañio 10
+[INFO] 23:51:49:702 Kernel/(20083:20384): Se recibió del carpincho 1 un MEM READ desde la posición 28 con tamañio 4
+[INFO] 23:51:49:819 Kernel/(20083:20384): Se recibió del carpincho 1 un MEM write desde la posición 28 con el mensjaje 
+[INFO] 23:51:49:862 Kernel/(20083:20385): Se recibió del carpincho 2 un MEM READ desde la posición 9 con tamañio 10
+[INFO] 23:51:49:907 Kernel/(20083:20385): Se recibió del carpincho 2 un MEM READ desde la posición 28 con tamañio 4
+[INFO] 23:51:50:031 Kernel/(20083:20385): Se recibió del carpincho 2 un MEM write desde la posición 28 con el mensjaje 
+[INFO] 23:51:50:072 Kernel/(20083:20384): Se recibió del carpincho 1 un MEM READ desde la posición 9 con tamañio 10
+[INFO] 23:51:50:113 Kernel/(20083:20384): Se recibió del carpincho 1 un MEM READ desde la posición 28 con tamañio 4
+[INFO] 23:51:50:231 Kernel/(20083:20384): Se recibió del carpincho 1 un MEM write desde la posición 28 con el mensjaje 
+[INFO] 23:51:50:272 Kernel/(20083:20385): Se recibió del carpincho 2 un MEM READ desde la posición 9 con tamañio 10
+[INFO] 23:51:50:314 Kernel/(20083:20385): Se recibió del carpincho 2 un MEM READ desde la posición 28 con tamañio 4
+[INFO] 23:51:50:431 Kernel/(20083:20385): Se recibió del carpincho 2 un MEM write desde la posición 28 con el mensjaje 
+[INFO] 23:51:50:472 Kernel/(20083:20384): Se recibió del carpincho 1 un MEM READ desde la posición 9 con tamañio 10
+[INFO] 23:51:50:513 Kernel/(20083:20384): Se recibió del carpincho 1 un MEM READ desde la posición 28 con tamañio 4
+[INFO] 23:51:50:631 Kernel/(20083:20384): Se recibió del carpincho 1 un MEM write desde la posición 28 con el mensjaje 
+[INFO] 23:51:50:672 Kernel/(20083:20385): Se recibió del carpincho 2 un MEM READ desde la posición 9 con tamañio 10
+[INFO] 23:51:50:715 Kernel/(20083:20385): Se recibió del carpincho 2 un MEM READ desde la posición 28 con tamañio 4
+[INFO] 23:51:50:836 Kernel/(20083:20385): Se recibió del carpincho 2 un MEM write desde la posición 28 con el mensjaje 	
+[INFO] 23:51:50:875 Kernel/(20083:20385): MATE_CLOSE: Se recibió del carpincho 2 un MATE CLOSE
+[INFO] 23:51:50:876 Kernel/(20083:20384): Se recibió del carpincho 1 un MEM READ desde la posición 9 con tamañio 10
+[INFO] 23:51:50:876 Kernel/(20083:20089): Carpincho 2 - Eliminado
+[INFO] 23:51:50:919 Kernel/(20083:20384): Se recibió del carpincho 1 un MEM READ desde la posición 28 con tamañio 4
+[INFO] 23:51:51:055 Kernel/(20083:20384): Se recibió del carpincho 1 un MEM write desde la posición 28 con el mensjaje 
+
+[INFO] 23:51:51:098 Kernel/(20083:20384): MATE_CLOSE: Se recibió del carpincho 1 un MATE CLOSE
+[INFO] 23:51:51:098 Kernel/(20083:20090): Carpincho 1 - Eliminado
+[INFO] 23:52:27:535 Kernel/(20083:20087): Comienza la ejecución de la detección de Deadlock
+[INFO] 23:52:32:900 Kernel/(20083:20083): Colas, listas y sus respectivos elementos destruidos

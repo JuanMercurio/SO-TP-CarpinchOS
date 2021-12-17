@@ -374,8 +374,11 @@ void receptor(void *arg)
          int size_confimation = recibir_int(carpincho->fd_memoria);
          recibido = recibir_buffer(size_confimation, carpincho->fd_memoria);
 
+         // enviar_mensaje(cliente, recibido);
          enviar_int(cliente, 0);
-         enviar_mensaje(cliente, recibido);
+         enviar_int(carpincho->fd_cliente, size_confimation);
+         enviar_buffer(cliente, recibido, size_confimation);
+
          printf("MEMREAD mensaje enviado %s\n ", recibido);
          free(recibido);
          break;
@@ -387,10 +390,14 @@ void receptor(void *arg)
          enviar_int(cliente, -7);
             break;
          }
-         recibido = recibir_mensaje(cliente);
+         int buffer_size = recibir_int(carpincho->fd_cliente);
+         void* recibido = recibir_buffer(buffer_size, carpincho->fd_cliente);
          aux_int = recibir_int(cliente);
          printf("me llego del carpincho %s\n", recibido);
-         enviar_mensaje_y_cod_op(recibido, carpincho->fd_memoria, MEMWRITE);
+
+         enviar_int(carpincho->fd_memoria, MEMWRITE);
+         enviar_int(carpincho->fd_memoria, buffer_size);
+         enviar_buffer(carpincho->fd_memoria, recibido, buffer_size);
          enviar_int(carpincho->fd_memoria, aux_int);
          log_info(logger, "Se recibió del carpincho %d un MEM write desde la posición %d con el mensjaje %s", carpincho->pid, aux_int, recibido);
          printf("-----------------------------esperando respuesta memoria\n");

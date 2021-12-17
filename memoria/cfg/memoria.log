@@ -1,140 +1,760 @@
-[INFO] 01:47:17:767 Memoria/(6649:6649): Tlb Inicializada
-[INFO] 01:47:19:228 Memoria/(6649:6720): Se conecto un cliente - Socket: 5
-[INFO] 01:47:21:179 Memoria/(6649:6824): Se conecto un cliente - Socket: 7
-[INFO] 01:47:21:181 Memoria/(6649:6824): Inicio un proceso - PID: 1 - Socket 7
-[INFO] 01:47:22:209 Memoria/(6649:6827): Se conecto un cliente - Socket: 8
-[INFO] 01:47:22:250 Memoria/(6649:6827): Inicio un proceso - PID: 2 - Socket 8
-[INFO] 01:47:26:258 Memoria/(6649:6824): TLB HIT - PID: 1 - Pagina: 0 - Marco: 0
-[INFO] 01:47:26:258 Memoria/(6649:6824): TLB HIT - PID: 1 - Pagina: 0 - Marco: 0
-[INFO] 01:47:26:260 Memoria/(6649:6824): TLB HIT - PID: 1 - Pagina: 0 - Marco: 0
-[INFO] 01:47:26:260 Memoria/(6649:6824): TLB HIT - PID: 1 - Pagina: 0 - Marco: 0
-[INFO] 01:47:26:261 Memoria/(6649:6824): TLB HIT - PID: 1 - Pagina: 0 - Marco: 0
-[INFO] 01:47:26:341 Memoria/(6649:6824): TLB HIT - PID: 1 - Pagina: 0 - Marco: 0
-[INFO] 01:47:36:222 Memoria/(6649:6824): TLB HIT - PID: 1 - Pagina: 0 - Marco: 0
-[INFO] 01:47:36:223 Memoria/(6649:6824): TLB HIT - PID: 1 - Pagina: 0 - Marco: 0
-[INFO] 01:47:47:081 Memoria/(6649:6824): Se desconecto un cliente - Socket: 7 - PID: 1
-[INFO] 01:47:52:182 Memoria/(6649:6827): Se desconecto un cliente - Socket: 8 - PID: 2
-[INFO] 01:48:37:101 Memoria/(7140:7140): Tlb Inicializada
-[INFO] 01:48:40:614 Memoria/(7140:7210): Se conecto un cliente - Socket: 5
-[INFO] 01:48:45:150 Memoria/(7140:7323): Se conecto un cliente - Socket: 7
-[INFO] 01:48:45:151 Memoria/(7140:7323): Inicio un proceso - PID: 1 - Socket 7
-[INFO] 01:48:46:158 Memoria/(7140:7326): Se conecto un cliente - Socket: 8
-[INFO] 01:48:46:199 Memoria/(7140:7326): Inicio un proceso - PID: 2 - Socket 8
-[INFO] 01:48:47:219 Memoria/(7140:7334): Se conecto un cliente - Socket: 9
-[INFO] 01:48:47:258 Memoria/(7140:7334): Inicio un proceso - PID: 3 - Socket 9
-[INFO] 01:48:50:229 Memoria/(7140:7323): TLB HIT - PID: 1 - Pagina: 0 - Marco: 0
-[INFO] 01:48:50:230 Memoria/(7140:7323): TLB HIT - PID: 1 - Pagina: 0 - Marco: 0
-[INFO] 01:48:50:231 Memoria/(7140:7323): TLB HIT - PID: 1 - Pagina: 0 - Marco: 0
-[INFO] 01:48:50:232 Memoria/(7140:7323): TLB HIT - PID: 1 - Pagina: 0 - Marco: 0
-[INFO] 01:48:50:234 Memoria/(7140:7323): TLB HIT - PID: 1 - Pagina: 0 - Marco: 0
-[INFO] 01:48:50:313 Memoria/(7140:7323): TLB HIT - PID: 1 - Pagina: 0 - Marco: 0
-[INFO] 01:49:20:679 Memoria/(7140:7326): Se desconecto un cliente - Socket: 8 - PID: 2
-[INFO] 01:49:20:983 Memoria/(7140:7323): TLB MISS - PID: 1 - Pagina: 0
-[INFO] 01:49:21:022 Memoria/(7140:7323): SWAP - Recibi - PID: 1 - PAG: 0
-[INFO] 01:51:16:982 Memoria/(7810:7810): Tlb Inicializada
-[INFO] 01:51:18:732 Memoria/(7810:7881): Se conecto un cliente - Socket: 5
-[INFO] 01:51:20:907 Memoria/(7810:7944): Se conecto un cliente - Socket: 7
-[INFO] 01:51:20:909 Memoria/(7810:7944): Inicio un proceso - PID: 1 - Socket 7
-[INFO] 01:51:21:905 Memoria/(7810:7947): Se conecto un cliente - Socket: 8
-[INFO] 01:51:21:946 Memoria/(7810:7947): Inicio un proceso - PID: 2 - Socket 8
-[INFO] 01:51:22:922 Memoria/(7810:7955): Se conecto un cliente - Socket: 9
-[INFO] 01:51:22:970 Memoria/(7810:7955): Inicio un proceso - PID: 3 - Socket 9
-[INFO] 01:51:26:024 Memoria/(7810:7944): TLB HIT - PID: 1 - Pagina: 0 - Marco: 0
-[INFO] 01:51:26:026 Memoria/(7810:7944): TLB HIT - PID: 1 - Pagina: 0 - Marco: 0
-[INFO] 01:51:26:028 Memoria/(7810:7944): TLB HIT - PID: 1 - Pagina: 0 - Marco: 0
-[INFO] 01:51:26:030 Memoria/(7810:7944): TLB HIT - PID: 1 - Pagina: 0 - Marco: 0
-[INFO] 01:51:26:032 Memoria/(7810:7944): TLB HIT - PID: 1 - Pagina: 0 - Marco: 0
-[INFO] 01:51:26:118 Memoria/(7810:7944): TLB HIT - PID: 1 - Pagina: 0 - Marco: 0
-[INFO] 01:51:56:805 Memoria/(7810:7947): Se desconecto un cliente - Socket: 8 - PID: 2
-[INFO] 01:51:56:805 Memoria/(7810:7944): TLB HIT - PID: 1 - Pagina: 0 - Marco: 0
-[INFO] 01:51:56:806 Memoria/(7810:7944): TLB HIT - PID: 1 - Pagina: 0 - Marco: 0
-[INFO] 01:52:01:619 Memoria/(7810:7955): Se desconecto un cliente - Socket: 9 - PID: 3
-[INFO] 01:52:06:548 Memoria/(7810:7944): Se desconecto un cliente - Socket: 7 - PID: 1
-[INFO] 02:20:01:220 Memoria/(10538:10538): Tlb Inicializada
-[INFO] 02:20:02:850 Memoria/(10538:10606): Se conecto un cliente - Socket: 5
-[INFO] 02:20:06:564 Memoria/(10538:10678): Se conecto un cliente - Socket: 7
-[INFO] 02:20:06:565 Memoria/(10538:10678): Inicio un proceso - PID: 1 - Socket 7
-[INFO] 02:20:07:565 Memoria/(10538:10681): Se conecto un cliente - Socket: 8
-[INFO] 02:20:07:606 Memoria/(10538:10681): Inicio un proceso - PID: 2 - Socket 8
-[INFO] 02:20:08:574 Memoria/(10538:10684): Se conecto un cliente - Socket: 9
-[INFO] 02:20:08:620 Memoria/(10538:10684): Inicio un proceso - PID: 3 - Socket 9
-[INFO] 02:20:11:642 Memoria/(10538:10678): TLB HIT - PID: 1 - Pagina: 0 - Marco: 0
-[INFO] 02:20:11:642 Memoria/(10538:10678): TLB HIT - PID: 1 - Pagina: 0 - Marco: 0
-[INFO] 02:20:11:643 Memoria/(10538:10678): TLB HIT - PID: 1 - Pagina: 0 - Marco: 0
-[INFO] 02:20:11:644 Memoria/(10538:10678): TLB HIT - PID: 1 - Pagina: 0 - Marco: 0
-[INFO] 02:20:11:645 Memoria/(10538:10678): TLB HIT - PID: 1 - Pagina: 0 - Marco: 0
-[INFO] 02:20:11:721 Memoria/(10538:10678): TLB HIT - PID: 1 - Pagina: 0 - Marco: 0
-[INFO] 02:20:42:152 Memoria/(10538:10681): Se desconecto un cliente - Socket: 8 - PID: 2
-[INFO] 02:20:42:352 Memoria/(10538:10678): TLB MISS - PID: 1 - Pagina: 0
-[INFO] 02:23:02:833 Memoria/(11059:11059): Tlb Inicializada
-[INFO] 02:23:03:957 Memoria/(11059:11120): Se conecto un cliente - Socket: 5
-[INFO] 02:23:05:452 Memoria/(11059:11183): Se conecto un cliente - Socket: 7
-[INFO] 02:23:05:453 Memoria/(11059:11183): Inicio un proceso - PID: 1 - Socket 7
-[INFO] 02:23:06:451 Memoria/(11059:11186): Se conecto un cliente - Socket: 8
-[INFO] 02:23:06:490 Memoria/(11059:11186): Inicio un proceso - PID: 2 - Socket 8
-[INFO] 02:23:07:467 Memoria/(11059:11189): Se conecto un cliente - Socket: 9
-[INFO] 02:23:07:511 Memoria/(11059:11189): Inicio un proceso - PID: 3 - Socket 9
-[INFO] 02:23:10:594 Memoria/(11059:11183): TLB HIT - PID: 1 - Pagina: 0 - Marco: 0
-[INFO] 02:23:10:594 Memoria/(11059:11183): TLB HIT - PID: 1 - Pagina: 0 - Marco: 0
-[INFO] 02:23:10:596 Memoria/(11059:11183): TLB HIT - PID: 1 - Pagina: 0 - Marco: 0
-[INFO] 02:23:10:597 Memoria/(11059:11183): TLB HIT - PID: 1 - Pagina: 0 - Marco: 0
-[INFO] 02:23:10:600 Memoria/(11059:11183): TLB HIT - PID: 1 - Pagina: 0 - Marco: 0
-[INFO] 02:23:10:678 Memoria/(11059:11183): TLB HIT - PID: 1 - Pagina: 0 - Marco: 0
-[INFO] 02:23:41:216 Memoria/(11059:11186): Se desconecto un cliente - Socket: 8 - PID: 2
-[INFO] 02:23:41:512 Memoria/(11059:11183): TLB MISS - PID: 1 - Pagina: 0
-[INFO] 02:24:22:598 Memoria/(11475:11475): Tlb Inicializada
-[INFO] 02:24:23:465 Memoria/(11475:11550): Se conecto un cliente - Socket: 5
-[INFO] 02:24:26:178 Memoria/(11475:11618): Se conecto un cliente - Socket: 7
-[INFO] 02:24:26:182 Memoria/(11475:11618): Inicio un proceso - PID: 1 - Socket 7
-[INFO] 02:24:27:191 Memoria/(11475:11624): Se conecto un cliente - Socket: 8
-[INFO] 02:24:27:230 Memoria/(11475:11624): Inicio un proceso - PID: 2 - Socket 8
-[INFO] 02:24:28:196 Memoria/(11475:11628): Se conecto un cliente - Socket: 9
-[INFO] 02:24:28:239 Memoria/(11475:11628): Inicio un proceso - PID: 3 - Socket 9
-[INFO] 02:24:31:258 Memoria/(11475:11618): TLB HIT - PID: 1 - Pagina: 0 - Marco: 0
-[INFO] 02:24:31:259 Memoria/(11475:11618): TLB HIT - PID: 1 - Pagina: 0 - Marco: 0
-[INFO] 02:24:31:260 Memoria/(11475:11618): TLB HIT - PID: 1 - Pagina: 0 - Marco: 0
-[INFO] 02:24:31:261 Memoria/(11475:11618): TLB HIT - PID: 1 - Pagina: 0 - Marco: 0
-[INFO] 02:24:31:262 Memoria/(11475:11618): TLB HIT - PID: 1 - Pagina: 0 - Marco: 0
-[INFO] 02:24:31:342 Memoria/(11475:11618): TLB HIT - PID: 1 - Pagina: 0 - Marco: 0
-[INFO] 02:25:01:864 Memoria/(11475:11624): Se desconecto un cliente - Socket: 8 - PID: 2
-[INFO] 02:25:01:869 Memoria/(11475:11618): TLB HIT - PID: 1 - Pagina: 0 - Marco: 0
-[INFO] 02:25:01:870 Memoria/(11475:11618): TLB HIT - PID: 1 - Pagina: 0 - Marco: 0
-[INFO] 02:25:07:544 Memoria/(11475:11628): Se desconecto un cliente - Socket: 9 - PID: 3
-[INFO] 02:25:12:143 Memoria/(11475:11618): Se desconecto un cliente - Socket: 7 - PID: 1
-[INFO] 02:43:50:303 Memoria/(13592:13592): Tlb Inicializada
-[INFO] 02:43:52:570 Memoria/(13592:13716): Se conecto un cliente - Socket: 5
-[INFO] 02:43:52:571 Memoria/(13592:13716): Inicio un proceso - PID: 1 - Socket 5
-[INFO] 02:43:53:573 Memoria/(13592:13719): Se conecto un cliente - Socket: 7
-[INFO] 02:43:53:615 Memoria/(13592:13719): Inicio un proceso - PID: 2 - Socket 7
-[INFO] 02:43:54:568 Memoria/(13592:13722): Se conecto un cliente - Socket: 8
-[INFO] 02:43:54:574 Memoria/(13592:13722): Inicio un proceso - PID: 3 - Socket 8
-[INFO] 02:43:57:642 Memoria/(13592:13716): TLB HIT - PID: 1 - Pagina: 0 - Marco: 0
-[INFO] 02:43:57:651 Memoria/(13592:13716): TLB HIT - PID: 1 - Pagina: 0 - Marco: 0
-[INFO] 02:43:57:702 Memoria/(13592:13716): TLB HIT - PID: 1 - Pagina: 0 - Marco: 0
-[INFO] 02:43:57:703 Memoria/(13592:13716): TLB HIT - PID: 1 - Pagina: 0 - Marco: 0
-[INFO] 02:43:57:706 Memoria/(13592:13716): TLB HIT - PID: 1 - Pagina: 0 - Marco: 0
-[INFO] 02:43:57:789 Memoria/(13592:13716): TLB HIT - PID: 1 - Pagina: 0 - Marco: 0
-[INFO] 02:44:28:164 Memoria/(13592:13719): Se desconecto un cliente - Socket: 7 - PID: 2
-[INFO] 02:44:28:470 Memoria/(13592:13716): TLB MISS - PID: 1 - Pagina: 0
-[INFO] 02:44:28:471 Memoria/(13592:13716): SWAP - Recibi - PID: 1 - PAG: 0
-[INFO] 02:49:45:019 Memoria/(14312:14312): Tlb Inicializada
-[INFO] 02:49:47:313 Memoria/(14312:14387): Se conecto un cliente - Socket: 5
-[INFO] 02:49:50:056 Memoria/(14312:14456): Se conecto un cliente - Socket: 7
-[INFO] 02:49:50:058 Memoria/(14312:14456): Inicio un proceso - PID: 1 - Socket 7
-[INFO] 02:49:51:120 Memoria/(14312:14459): Se conecto un cliente - Socket: 8
-[INFO] 02:49:51:162 Memoria/(14312:14459): Inicio un proceso - PID: 2 - Socket 8
-[INFO] 02:49:52:059 Memoria/(14312:14463): Se conecto un cliente - Socket: 9
-[INFO] 02:49:52:105 Memoria/(14312:14463): Inicio un proceso - PID: 3 - Socket 9
-[INFO] 02:49:55:138 Memoria/(14312:14456): TLB HIT - PID: 1 - Pagina: 0 - Marco: 0
-[INFO] 02:49:55:138 Memoria/(14312:14456): TLB HIT - PID: 1 - Pagina: 0 - Marco: 0
-[INFO] 02:49:55:139 Memoria/(14312:14456): TLB HIT - PID: 1 - Pagina: 0 - Marco: 0
-[INFO] 02:49:55:140 Memoria/(14312:14456): TLB HIT - PID: 1 - Pagina: 0 - Marco: 0
-[INFO] 02:49:55:140 Memoria/(14312:14456): TLB HIT - PID: 1 - Pagina: 0 - Marco: 0
-[INFO] 02:49:55:221 Memoria/(14312:14456): TLB HIT - PID: 1 - Pagina: 0 - Marco: 0
-[INFO] 02:50:25:453 Memoria/(14312:14459): Se desconecto un cliente - Socket: 8 - PID: 2
-[INFO] 02:50:25:650 Memoria/(14312:14456): TLB MISS - PID: 1 - Pagina: 0
-[INFO] 02:50:25:689 Memoria/(14312:14456): SWAP - Recibi - PID: 1 - PAG: 0
-[INFO] 02:50:25:690 Memoria/(14312:14456): TLB HIT - PID: 1 - Pagina: 0 - Marco: 0
-[INFO] 02:50:25:690 Memoria/(14312:14456): TLB HIT - PID: 1 - Pagina: 0 - Marco: 0
-[INFO] 02:50:30:449 Memoria/(14312:14463): Se desconecto un cliente - Socket: 9 - PID: 3
-[INFO] 02:50:35:484 Memoria/(14312:14456): Se desconecto un cliente - Socket: 7 - PID: 1
+[INFO] 23:47:06:357 Memoria/(19383:19383): Tlb Inicializada
+[INFO] 23:47:17:383 Memoria/(19383:19557): Se conecto un cliente - Socket: 15
+[INFO] 23:47:20:538 Memoria/(19383:19631): Se conecto un cliente - Socket: 16
+[INFO] 23:47:20:543 Memoria/(19383:19632): Se conecto un cliente - Socket: 20
+[INFO] 23:47:20:609 Memoria/(19383:19631): Inicio un proceso - PID: 1 - Socket 16
+[INFO] 23:47:20:619 Memoria/(19383:19632): Inicio un proceso - PID: 2 - Socket 20
+[INFO] 23:47:20:703 Memoria/(19383:19631): La victima de la tlb es 0
+
+[INFO] 23:47:20:703 Memoria/(19383:19631): La victima del reemplazo es -1 del carpincho -1
+[INFO] 23:47:20:703 Memoria/(19383:19631): Se reemplazara por 0 del carpincho 1
+[INFO] 23:47:20:703 Memoria/(19383:19631): ESCRITURA - PAG 0 - OFFSET: 0
+
+[INFO] 23:47:20:703 Memoria/(19383:19631): TLB HIT - PID: 1 - Pagina: 0 - Marco: 0
+[INFO] 23:47:20:704 Memoria/(19383:19631): Voy a escribir 9 bytes
+
+[INFO] 23:47:20:704 Memoria/(19383:19631): El offset es 0
+
+[INFO] 23:47:20:704 Memoria/(19383:19631): LECTURA - PAG 0 - OFFSET: 0
+
+[INFO] 23:47:20:704 Memoria/(19383:19631): TLB HIT - PID: 1 - Pagina: 0 - Marco: 0
+[INFO] 23:47:20:746 Memoria/(19383:19631): ESCRITURA - PAG 0 - OFFSET: 0
+
+[INFO] 23:47:20:746 Memoria/(19383:19631): TLB HIT - PID: 1 - Pagina: 0 - Marco: 0
+[INFO] 23:47:20:747 Memoria/(19383:19631): Voy a escribir 9 bytes
+
+[INFO] 23:47:20:747 Memoria/(19383:19631): El offset es 0
+
+[INFO] 23:47:20:747 Memoria/(19383:19631): La victima de la tlb es 1
+
+[INFO] 23:47:20:747 Memoria/(19383:19631): La victima del reemplazo es -1 del carpincho -1
+[INFO] 23:47:20:747 Memoria/(19383:19631): Se reemplazara por 1 del carpincho 1
+[INFO] 23:47:20:747 Memoria/(19383:19631): ESCRITURA - PAG 1 - OFFSET: 3
+
+[INFO] 23:47:20:747 Memoria/(19383:19631): TLB HIT - PID: 1 - Pagina: 1 - Marco: 1
+[INFO] 23:47:20:748 Memoria/(19383:19631): Voy a escribir 9 bytes
+
+[INFO] 23:47:20:748 Memoria/(19383:19631): El offset es 19
+
+[INFO] 23:47:20:788 Memoria/(19383:19632): La victima de la tlb es 2
+
+[INFO] 23:47:20:788 Memoria/(19383:19632): La victima del reemplazo es -1 del carpincho -1
+[INFO] 23:47:20:788 Memoria/(19383:19632): Se reemplazara por 0 del carpincho 2
+[INFO] 23:47:20:788 Memoria/(19383:19632): ESCRITURA - PAG 0 - OFFSET: 0
+
+[INFO] 23:47:20:788 Memoria/(19383:19632): TLB HIT - PID: 2 - Pagina: 0 - Marco: 2
+[INFO] 23:47:20:791 Memoria/(19383:19632): Voy a escribir 9 bytes
+
+[INFO] 23:47:20:791 Memoria/(19383:19632): El offset es 32
+
+[INFO] 23:47:20:791 Memoria/(19383:19632): LECTURA - PAG 0 - OFFSET: 0
+
+[INFO] 23:47:20:791 Memoria/(19383:19632): TLB HIT - PID: 2 - Pagina: 0 - Marco: 2
+[INFO] 23:47:20:831 Memoria/(19383:19632): ESCRITURA - PAG 0 - OFFSET: 0
+
+[INFO] 23:47:20:831 Memoria/(19383:19632): TLB HIT - PID: 2 - Pagina: 0 - Marco: 2
+[INFO] 23:47:20:832 Memoria/(19383:19632): Voy a escribir 9 bytes
+
+[INFO] 23:47:20:832 Memoria/(19383:19632): El offset es 32
+
+[INFO] 23:47:20:832 Memoria/(19383:19632): La victima de la tlb es 0
+
+[INFO] 23:47:20:832 Memoria/(19383:19632): La victima del reemplazo es 0 del carpincho 1
+[INFO] 23:47:20:832 Memoria/(19383:19632): Se reemplazara por 1 del carpincho 2
+[INFO] 23:47:20:832 Memoria/(19383:19632): ESCRITURA - PAG 1 - OFFSET: 3
+
+[INFO] 23:47:20:832 Memoria/(19383:19632): TLB HIT - PID: 2 - Pagina: 1 - Marco: 3
+[INFO] 23:47:20:833 Memoria/(19383:19632): Voy a escribir 9 bytes
+
+[INFO] 23:47:20:833 Memoria/(19383:19632): El offset es 51
+
+[INFO] 23:47:20:833 Memoria/(19383:19631): ESCRITURA - PAG 0 - OFFSET: 9
+
+[INFO] 23:47:20:833 Memoria/(19383:19631): TLB MISS - PID: 1 - Pagina: 0
+[INFO] 23:47:20:835 Memoria/(19383:19631): Voy a escribir 7 bytes
+
+[INFO] 23:47:20:835 Memoria/(19383:19631): El offset es 9
+
+[INFO] 23:47:20:835 Memoria/(19383:19631): La victima de la tlb es 1
+
+[INFO] 23:47:20:835 Memoria/(19383:19631): La victima del reemplazo es 1 del carpincho 1
+[INFO] 23:47:20:835 Memoria/(19383:19631): Se reemplazara por 0 del carpincho 1
+[INFO] 23:47:20:835 Memoria/(19383:19631): TLB MISS - PID: 1 - Pagina: 1
+[INFO] 23:47:20:836 Memoria/(19383:19631): Voy a escribir 3 bytes
+
+[INFO] 23:47:20:836 Memoria/(19383:19631): El offset es 16
+
+[INFO] 23:47:20:836 Memoria/(19383:19631): La victima de la tlb es 2
+
+[INFO] 23:47:20:836 Memoria/(19383:19631): La victima del reemplazo es 0 del carpincho 2
+[INFO] 23:47:20:836 Memoria/(19383:19631): Se reemplazara por 1 del carpincho 1
+[INFO] 23:47:20:837 Memoria/(19383:19632): ESCRITURA - PAG 0 - OFFSET: 9
+
+[INFO] 23:47:20:837 Memoria/(19383:19632): TLB MISS - PID: 2 - Pagina: 0
+[INFO] 23:47:20:838 Memoria/(19383:19632): Voy a escribir 7 bytes
+
+[INFO] 23:47:20:838 Memoria/(19383:19632): El offset es 41
+
+[INFO] 23:47:20:838 Memoria/(19383:19632): La victima de la tlb es 0
+
+[INFO] 23:47:20:838 Memoria/(19383:19632): La victima del reemplazo es 1 del carpincho 2
+[INFO] 23:47:20:838 Memoria/(19383:19632): Se reemplazara por 0 del carpincho 2
+[INFO] 23:47:20:838 Memoria/(19383:19632): TLB MISS - PID: 2 - Pagina: 1
+[INFO] 23:47:20:840 Memoria/(19383:19632): Voy a escribir 3 bytes
+
+[INFO] 23:47:20:840 Memoria/(19383:19632): El offset es 48
+
+[INFO] 23:47:20:840 Memoria/(19383:19632): La victima de la tlb es 1
+
+[INFO] 23:47:20:840 Memoria/(19383:19632): La victima del reemplazo es 0 del carpincho 1
+[INFO] 23:47:20:840 Memoria/(19383:19632): Se reemplazara por 1 del carpincho 2
+[INFO] 23:47:20:840 Memoria/(19383:19631): LECTURA - PAG 0 - OFFSET: 0
+
+[INFO] 23:47:20:840 Memoria/(19383:19631): TLB MISS - PID: 1 - Pagina: 0
+[INFO] 23:47:20:841 Memoria/(19383:19631): La victima de la tlb es 2
+
+[INFO] 23:47:20:842 Memoria/(19383:19631): La victima del reemplazo es 1 del carpincho 1
+[INFO] 23:47:20:842 Memoria/(19383:19631): Se reemplazara por 0 del carpincho 1
+[INFO] 23:47:20:842 Memoria/(19383:19631): LECTURA - PAG 1 - OFFSET: 3
+
+[INFO] 23:47:20:842 Memoria/(19383:19631): TLB MISS - PID: 1 - Pagina: 1
+[INFO] 23:47:20:843 Memoria/(19383:19631): La victima de la tlb es 0
+
+[INFO] 23:47:20:843 Memoria/(19383:19631): La victima del reemplazo es 0 del carpincho 2
+[INFO] 23:47:20:843 Memoria/(19383:19631): Se reemplazara por 1 del carpincho 1
+[INFO] 23:47:20:844 Memoria/(19383:19631): ESCRITURA - PAG 1 - OFFSET: 3
+
+[INFO] 23:47:20:844 Memoria/(19383:19631): TLB HIT - PID: 1 - Pagina: 1 - Marco: 1
+[INFO] 23:47:20:845 Memoria/(19383:19631): Voy a escribir 9 bytes
+
+[INFO] 23:47:20:845 Memoria/(19383:19631): El offset es 19
+
+[INFO] 23:47:20:845 Memoria/(19383:19632): LECTURA - PAG 0 - OFFSET: 0
+
+[INFO] 23:47:20:845 Memoria/(19383:19632): TLB MISS - PID: 2 - Pagina: 0
+[INFO] 23:47:20:847 Memoria/(19383:19632): La victima de la tlb es 1
+
+[INFO] 23:47:20:847 Memoria/(19383:19632): La victima del reemplazo es 1 del carpincho 2
+[INFO] 23:47:20:847 Memoria/(19383:19632): Se reemplazara por 0 del carpincho 2
+[INFO] 23:47:20:847 Memoria/(19383:19632): LECTURA - PAG 1 - OFFSET: 3
+
+[INFO] 23:47:20:847 Memoria/(19383:19632): TLB MISS - PID: 2 - Pagina: 1
+[INFO] 23:47:20:849 Memoria/(19383:19632): La victima de la tlb es 2
+
+[INFO] 23:47:20:849 Memoria/(19383:19632): La victima del reemplazo es 0 del carpincho 1
+[INFO] 23:47:20:849 Memoria/(19383:19632): Se reemplazara por 1 del carpincho 2
+[INFO] 23:47:20:849 Memoria/(19383:19632): ESCRITURA - PAG 1 - OFFSET: 3
+
+[INFO] 23:47:20:849 Memoria/(19383:19632): TLB HIT - PID: 2 - Pagina: 1 - Marco: 3
+[INFO] 23:47:20:849 Memoria/(19383:19632): Voy a escribir 9 bytes
+
+[INFO] 23:47:20:849 Memoria/(19383:19632): El offset es 51
+
+[INFO] 23:47:20:923 Memoria/(19383:19631): ESCRITURA - PAG 1 - OFFSET: 12
+
+[INFO] 23:47:20:923 Memoria/(19383:19631): TLB HIT - PID: 1 - Pagina: 1 - Marco: 1
+[INFO] 23:47:20:924 Memoria/(19383:19631): Voy a escribir 4 bytes
+
+[INFO] 23:47:20:924 Memoria/(19383:19631): El offset es 28
+
+[INFO] 23:47:20:926 Memoria/(19383:19632): ESCRITURA - PAG 1 - OFFSET: 12
+
+[INFO] 23:47:20:926 Memoria/(19383:19632): TLB HIT - PID: 2 - Pagina: 1 - Marco: 3
+[INFO] 23:47:20:927 Memoria/(19383:19632): Voy a escribir 4 bytes
+
+[INFO] 23:47:20:927 Memoria/(19383:19632): El offset es 60
+
+[INFO] 23:47:20:966 Memoria/(19383:19632): LECTURA - PAG 0 - OFFSET: 9
+
+[INFO] 23:47:20:966 Memoria/(19383:19632): TLB HIT - PID: 2 - Pagina: 0 - Marco: 2
+[INFO] 23:47:20:967 Memoria/(19383:19632): TLB HIT - PID: 2 - Pagina: 1 - Marco: 3
+[INFO] 23:47:21:087 Memoria/(19383:19632): LECTURA - PAG 1 - OFFSET: 12
+
+[INFO] 23:47:21:087 Memoria/(19383:19632): TLB HIT - PID: 2 - Pagina: 1 - Marco: 3
+[INFO] 23:47:21:166 Memoria/(19383:19632): ESCRITURA - PAG 1 - OFFSET: 12
+
+[INFO] 23:47:21:166 Memoria/(19383:19632): TLB HIT - PID: 2 - Pagina: 1 - Marco: 3
+[INFO] 23:47:21:167 Memoria/(19383:19632): Voy a escribir 4 bytes
+
+[INFO] 23:47:21:167 Memoria/(19383:19632): El offset es 60
+
+[INFO] 23:47:21:206 Memoria/(19383:19631): LECTURA - PAG 0 - OFFSET: 9
+
+[INFO] 23:47:21:206 Memoria/(19383:19631): TLB MISS - PID: 1 - Pagina: 0
+[INFO] 23:47:21:208 Memoria/(19383:19631): La victima de la tlb es 0
+
+[INFO] 23:47:21:208 Memoria/(19383:19631): La victima del reemplazo es 1 del carpincho 1
+[INFO] 23:47:21:208 Memoria/(19383:19631): Se reemplazara por 0 del carpincho 1
+[INFO] 23:47:21:208 Memoria/(19383:19631): TLB MISS - PID: 1 - Pagina: 1
+[INFO] 23:47:21:209 Memoria/(19383:19631): La victima de la tlb es 1
+
+[INFO] 23:47:21:209 Memoria/(19383:19631): La victima del reemplazo es 0 del carpincho 2
+[INFO] 23:47:21:209 Memoria/(19383:19631): Se reemplazara por 1 del carpincho 1
+[INFO] 23:47:21:246 Memoria/(19383:19631): LECTURA - PAG 1 - OFFSET: 12
+
+[INFO] 23:47:21:246 Memoria/(19383:19631): TLB HIT - PID: 1 - Pagina: 1 - Marco: 1
+[INFO] 23:47:21:366 Memoria/(19383:19631): ESCRITURA - PAG 1 - OFFSET: 12
+
+[INFO] 23:47:21:367 Memoria/(19383:19631): TLB HIT - PID: 1 - Pagina: 1 - Marco: 1
+[INFO] 23:47:21:367 Memoria/(19383:19631): Voy a escribir 4 bytes
+
+[INFO] 23:47:21:367 Memoria/(19383:19631): El offset es 28
+
+[INFO] 23:47:21:406 Memoria/(19383:19632): LECTURA - PAG 0 - OFFSET: 9
+
+[INFO] 23:47:21:406 Memoria/(19383:19632): TLB MISS - PID: 2 - Pagina: 0
+[INFO] 23:47:21:408 Memoria/(19383:19632): La victima de la tlb es 2
+
+[INFO] 23:47:21:408 Memoria/(19383:19632): La victima del reemplazo es 1 del carpincho 2
+[INFO] 23:47:21:408 Memoria/(19383:19632): Se reemplazara por 0 del carpincho 2
+[INFO] 23:47:21:408 Memoria/(19383:19632): TLB MISS - PID: 2 - Pagina: 1
+[INFO] 23:47:21:409 Memoria/(19383:19632): La victima de la tlb es 0
+
+[INFO] 23:47:21:409 Memoria/(19383:19632): La victima del reemplazo es 0 del carpincho 1
+[INFO] 23:47:21:409 Memoria/(19383:19632): Se reemplazara por 1 del carpincho 2
+[INFO] 23:47:21:446 Memoria/(19383:19632): LECTURA - PAG 1 - OFFSET: 12
+
+[INFO] 23:47:21:446 Memoria/(19383:19632): TLB HIT - PID: 2 - Pagina: 1 - Marco: 3
+[INFO] 23:47:21:566 Memoria/(19383:19632): ESCRITURA - PAG 1 - OFFSET: 12
+
+[INFO] 23:47:21:567 Memoria/(19383:19632): TLB HIT - PID: 2 - Pagina: 1 - Marco: 3
+[INFO] 23:47:21:567 Memoria/(19383:19632): Voy a escribir 4 bytes
+
+[INFO] 23:47:21:567 Memoria/(19383:19632): El offset es 60
+
+[INFO] 23:47:21:606 Memoria/(19383:19631): LECTURA - PAG 0 - OFFSET: 9
+
+[INFO] 23:47:21:607 Memoria/(19383:19631): TLB MISS - PID: 1 - Pagina: 0
+[INFO] 23:47:21:608 Memoria/(19383:19631): La victima de la tlb es 1
+
+[INFO] 23:47:21:608 Memoria/(19383:19631): La victima del reemplazo es 1 del carpincho 1
+[INFO] 23:47:21:608 Memoria/(19383:19631): Se reemplazara por 0 del carpincho 1
+[INFO] 23:47:21:608 Memoria/(19383:19631): TLB MISS - PID: 1 - Pagina: 1
+[INFO] 23:47:21:609 Memoria/(19383:19631): La victima de la tlb es 2
+
+[INFO] 23:47:21:609 Memoria/(19383:19631): La victima del reemplazo es 0 del carpincho 2
+[INFO] 23:47:21:609 Memoria/(19383:19631): Se reemplazara por 1 del carpincho 1
+[INFO] 23:47:21:647 Memoria/(19383:19631): LECTURA - PAG 1 - OFFSET: 12
+
+[INFO] 23:47:21:647 Memoria/(19383:19631): TLB HIT - PID: 1 - Pagina: 1 - Marco: 1
+[INFO] 23:47:21:766 Memoria/(19383:19631): ESCRITURA - PAG 1 - OFFSET: 12
+
+[INFO] 23:47:21:766 Memoria/(19383:19631): TLB HIT - PID: 1 - Pagina: 1 - Marco: 1
+[INFO] 23:47:21:767 Memoria/(19383:19631): Voy a escribir 4 bytes
+
+[INFO] 23:47:21:767 Memoria/(19383:19631): El offset es 28
+
+[INFO] 23:47:21:807 Memoria/(19383:19632): LECTURA - PAG 0 - OFFSET: 9
+
+[INFO] 23:47:21:807 Memoria/(19383:19632): TLB MISS - PID: 2 - Pagina: 0
+[INFO] 23:47:21:808 Memoria/(19383:19632): La victima de la tlb es 0
+
+[INFO] 23:47:21:808 Memoria/(19383:19632): La victima del reemplazo es 1 del carpincho 2
+[INFO] 23:47:21:808 Memoria/(19383:19632): Se reemplazara por 0 del carpincho 2
+[INFO] 23:47:21:808 Memoria/(19383:19632): TLB MISS - PID: 2 - Pagina: 1
+[INFO] 23:47:21:809 Memoria/(19383:19632): La victima de la tlb es 1
+
+[INFO] 23:47:21:809 Memoria/(19383:19632): La victima del reemplazo es 0 del carpincho 1
+[INFO] 23:47:21:809 Memoria/(19383:19632): Se reemplazara por 1 del carpincho 2
+[INFO] 23:47:21:847 Memoria/(19383:19632): LECTURA - PAG 1 - OFFSET: 12
+
+[INFO] 23:47:21:847 Memoria/(19383:19632): TLB HIT - PID: 2 - Pagina: 1 - Marco: 3
+[INFO] 23:47:21:966 Memoria/(19383:19632): ESCRITURA - PAG 1 - OFFSET: 12
+
+[INFO] 23:47:21:966 Memoria/(19383:19632): TLB HIT - PID: 2 - Pagina: 1 - Marco: 3
+[INFO] 23:47:21:967 Memoria/(19383:19632): Voy a escribir 4 bytes
+
+[INFO] 23:47:21:967 Memoria/(19383:19632): El offset es 60
+
+[INFO] 23:47:22:006 Memoria/(19383:19631): LECTURA - PAG 0 - OFFSET: 9
+
+[INFO] 23:47:22:006 Memoria/(19383:19631): TLB MISS - PID: 1 - Pagina: 0
+[INFO] 23:47:22:007 Memoria/(19383:19631): La victima de la tlb es 2
+
+[INFO] 23:47:22:007 Memoria/(19383:19631): La victima del reemplazo es 1 del carpincho 1
+[INFO] 23:47:22:007 Memoria/(19383:19631): Se reemplazara por 0 del carpincho 1
+[INFO] 23:47:22:008 Memoria/(19383:19631): TLB MISS - PID: 1 - Pagina: 1
+[INFO] 23:47:22:009 Memoria/(19383:19631): La victima de la tlb es 0
+
+[INFO] 23:47:22:009 Memoria/(19383:19631): La victima del reemplazo es 0 del carpincho 2
+[INFO] 23:47:22:009 Memoria/(19383:19631): Se reemplazara por 1 del carpincho 1
+[INFO] 23:47:22:050 Memoria/(19383:19631): LECTURA - PAG 1 - OFFSET: 12
+
+[INFO] 23:47:22:050 Memoria/(19383:19631): TLB HIT - PID: 1 - Pagina: 1 - Marco: 1
+[INFO] 23:47:22:170 Memoria/(19383:19631): ESCRITURA - PAG 1 - OFFSET: 12
+
+[INFO] 23:47:22:170 Memoria/(19383:19631): TLB HIT - PID: 1 - Pagina: 1 - Marco: 1
+[INFO] 23:47:22:171 Memoria/(19383:19631): Voy a escribir 4 bytes
+
+[INFO] 23:47:22:171 Memoria/(19383:19631): El offset es 28
+
+[INFO] 23:47:22:211 Memoria/(19383:19632): LECTURA - PAG 0 - OFFSET: 9
+
+[INFO] 23:47:22:211 Memoria/(19383:19632): TLB MISS - PID: 2 - Pagina: 0
+[INFO] 23:47:22:212 Memoria/(19383:19632): La victima de la tlb es 1
+
+[INFO] 23:47:22:212 Memoria/(19383:19632): La victima del reemplazo es 1 del carpincho 2
+[INFO] 23:47:22:212 Memoria/(19383:19632): Se reemplazara por 0 del carpincho 2
+[INFO] 23:47:22:212 Memoria/(19383:19632): TLB MISS - PID: 2 - Pagina: 1
+[INFO] 23:47:22:213 Memoria/(19383:19632): La victima de la tlb es 2
+
+[INFO] 23:47:22:213 Memoria/(19383:19632): La victima del reemplazo es 0 del carpincho 1
+[INFO] 23:47:22:213 Memoria/(19383:19632): Se reemplazara por 1 del carpincho 2
+[INFO] 23:47:22:251 Memoria/(19383:19632): LECTURA - PAG 1 - OFFSET: 12
+
+[INFO] 23:47:22:251 Memoria/(19383:19632): TLB HIT - PID: 2 - Pagina: 1 - Marco: 3
+[INFO] 23:47:22:370 Memoria/(19383:19632): ESCRITURA - PAG 1 - OFFSET: 12
+
+[INFO] 23:47:22:370 Memoria/(19383:19632): TLB HIT - PID: 2 - Pagina: 1 - Marco: 3
+[INFO] 23:47:22:371 Memoria/(19383:19632): Voy a escribir 4 bytes
+
+[INFO] 23:47:22:371 Memoria/(19383:19632): El offset es 60
+
+[INFO] 23:47:22:410 Memoria/(19383:19631): LECTURA - PAG 0 - OFFSET: 9
+
+[INFO] 23:47:22:410 Memoria/(19383:19631): TLB MISS - PID: 1 - Pagina: 0
+[INFO] 23:47:22:412 Memoria/(19383:19631): La victima de la tlb es 0
+
+[INFO] 23:47:22:412 Memoria/(19383:19631): La victima del reemplazo es 1 del carpincho 1
+[INFO] 23:47:22:412 Memoria/(19383:19631): Se reemplazara por 0 del carpincho 1
+[INFO] 23:47:22:412 Memoria/(19383:19631): TLB MISS - PID: 1 - Pagina: 1
+[INFO] 23:47:22:413 Memoria/(19383:19631): La victima de la tlb es 1
+
+[INFO] 23:47:22:414 Memoria/(19383:19631): La victima del reemplazo es 0 del carpincho 2
+[INFO] 23:47:22:414 Memoria/(19383:19631): Se reemplazara por 1 del carpincho 1
+[INFO] 23:47:22:454 Memoria/(19383:19631): LECTURA - PAG 1 - OFFSET: 12
+
+[INFO] 23:47:22:454 Memoria/(19383:19631): TLB HIT - PID: 1 - Pagina: 1 - Marco: 1
+[INFO] 23:47:22:578 Memoria/(19383:19631): ESCRITURA - PAG 1 - OFFSET: 12
+
+[INFO] 23:47:22:579 Memoria/(19383:19631): TLB HIT - PID: 1 - Pagina: 1 - Marco: 1
+[INFO] 23:47:22:579 Memoria/(19383:19631): Voy a escribir 4 bytes
+
+[INFO] 23:47:22:579 Memoria/(19383:19631): El offset es 28
+
+[INFO] 23:47:22:619 Memoria/(19383:19632): LECTURA - PAG 0 - OFFSET: 9
+
+[INFO] 23:47:22:619 Memoria/(19383:19632): TLB MISS - PID: 2 - Pagina: 0
+[INFO] 23:47:22:621 Memoria/(19383:19632): La victima de la tlb es 2
+
+[INFO] 23:47:22:621 Memoria/(19383:19632): La victima del reemplazo es 1 del carpincho 2
+[INFO] 23:47:22:621 Memoria/(19383:19632): Se reemplazara por 0 del carpincho 2
+[INFO] 23:47:22:621 Memoria/(19383:19632): TLB MISS - PID: 2 - Pagina: 1
+[INFO] 23:47:22:623 Memoria/(19383:19632): La victima de la tlb es 0
+
+[INFO] 23:47:22:623 Memoria/(19383:19632): La victima del reemplazo es 0 del carpincho 1
+[INFO] 23:47:22:623 Memoria/(19383:19632): Se reemplazara por 1 del carpincho 2
+[INFO] 23:47:22:663 Memoria/(19383:19632): LECTURA - PAG 1 - OFFSET: 12
+
+[INFO] 23:47:22:663 Memoria/(19383:19632): TLB HIT - PID: 2 - Pagina: 1 - Marco: 3
+[INFO] 23:47:22:784 Memoria/(19383:19632): ESCRITURA - PAG 1 - OFFSET: 12
+
+[INFO] 23:47:22:784 Memoria/(19383:19632): TLB HIT - PID: 2 - Pagina: 1 - Marco: 3
+[INFO] 23:47:22:785 Memoria/(19383:19632): Voy a escribir 4 bytes
+
+[INFO] 23:47:22:785 Memoria/(19383:19632): El offset es 60
+
+[INFO] 23:47:22:823 Memoria/(19383:19631): LECTURA - PAG 0 - OFFSET: 9
+
+[INFO] 23:47:22:823 Memoria/(19383:19631): TLB MISS - PID: 1 - Pagina: 0
+[INFO] 23:47:22:824 Memoria/(19383:19631): La victima de la tlb es 1
+
+[INFO] 23:47:22:824 Memoria/(19383:19631): La victima del reemplazo es 1 del carpincho 1
+[INFO] 23:47:22:824 Memoria/(19383:19631): Se reemplazara por 0 del carpincho 1
+[INFO] 23:47:22:824 Memoria/(19383:19631): TLB MISS - PID: 1 - Pagina: 1
+[INFO] 23:47:22:825 Memoria/(19383:19631): La victima de la tlb es 2
+
+[INFO] 23:47:22:825 Memoria/(19383:19631): La victima del reemplazo es 0 del carpincho 2
+[INFO] 23:47:22:825 Memoria/(19383:19631): Se reemplazara por 1 del carpincho 1
+[INFO] 23:47:22:904 Memoria/(19383:19632): Se desconecto un cliente - Socket: 20 - PID: 2
+[INFO] 23:47:22:904 Memoria/(19383:19631): LECTURA - PAG 1 - OFFSET: 12
+
+[INFO] 23:47:22:904 Memoria/(19383:19631): TLB HIT - PID: 1 - Pagina: 1 - Marco: 1
+[INFO] 23:47:23:022 Memoria/(19383:19631): ESCRITURA - PAG 1 - OFFSET: 12
+
+[INFO] 23:47:23:022 Memoria/(19383:19631): TLB HIT - PID: 1 - Pagina: 1 - Marco: 1
+[INFO] 23:47:23:023 Memoria/(19383:19631): Voy a escribir 4 bytes
+
+[INFO] 23:47:23:023 Memoria/(19383:19631): El offset es 28
+
+[INFO] 23:47:23:030 Memoria/(19383:19631): Se desconecto un cliente - Socket: 16 - PID: 1
+[INFO] 23:51:39:135 Memoria/(20150:20150): Tlb Inicializada
+[INFO] 23:51:48:169 Memoria/(20150:20321): Se conecto un cliente - Socket: 15
+[INFO] 23:51:48:624 Memoria/(20150:20386): Se conecto un cliente - Socket: 16
+[INFO] 23:51:48:629 Memoria/(20150:20387): Se conecto un cliente - Socket: 20
+[INFO] 23:51:48:699 Memoria/(20150:20386): Inicio un proceso - PID: 1 - Socket 16
+[INFO] 23:51:48:712 Memoria/(20150:20387): Inicio un proceso - PID: 2 - Socket 20
+[INFO] 23:51:48:791 Memoria/(20150:20386): La victima de la tlb es 0
+
+[INFO] 23:51:48:791 Memoria/(20150:20386): La victima del reemplazo es -1 del carpincho -1
+[INFO] 23:51:48:791 Memoria/(20150:20386): Se reemplazara por 0 del carpincho 1
+[INFO] 23:51:48:792 Memoria/(20150:20386): ESCRITURA - PAG 0 - OFFSET: 0
+
+[INFO] 23:51:48:792 Memoria/(20150:20386): TLB HIT - PID: 1 - Pagina: 0 - Marco: 0
+[INFO] 23:51:48:792 Memoria/(20150:20386): Voy a escribir 9 bytes
+
+[INFO] 23:51:48:792 Memoria/(20150:20386): El offset es 0
+
+[INFO] 23:51:48:792 Memoria/(20150:20386): LECTURA - PAG 0 - OFFSET: 0
+
+[INFO] 23:51:48:792 Memoria/(20150:20386): TLB HIT - PID: 1 - Pagina: 0 - Marco: 0
+[INFO] 23:51:48:839 Memoria/(20150:20386): ESCRITURA - PAG 0 - OFFSET: 0
+
+[INFO] 23:51:48:839 Memoria/(20150:20386): TLB HIT - PID: 1 - Pagina: 0 - Marco: 0
+[INFO] 23:51:48:839 Memoria/(20150:20386): Voy a escribir 9 bytes
+
+[INFO] 23:51:48:839 Memoria/(20150:20386): El offset es 0
+
+[INFO] 23:51:48:839 Memoria/(20150:20386): La victima de la tlb es 1
+
+[INFO] 23:51:48:839 Memoria/(20150:20386): La victima del reemplazo es -1 del carpincho -1
+[INFO] 23:51:48:839 Memoria/(20150:20386): Se reemplazara por 1 del carpincho 1
+[INFO] 23:51:48:839 Memoria/(20150:20386): ESCRITURA - PAG 1 - OFFSET: 3
+
+[INFO] 23:51:48:839 Memoria/(20150:20386): TLB HIT - PID: 1 - Pagina: 1 - Marco: 1
+[INFO] 23:51:48:840 Memoria/(20150:20386): Voy a escribir 9 bytes
+
+[INFO] 23:51:48:840 Memoria/(20150:20386): El offset es 19
+
+[INFO] 23:51:48:879 Memoria/(20150:20387): La victima de la tlb es 2
+
+[INFO] 23:51:48:879 Memoria/(20150:20387): La victima del reemplazo es -1 del carpincho -1
+[INFO] 23:51:48:879 Memoria/(20150:20387): Se reemplazara por 0 del carpincho 2
+[INFO] 23:51:48:879 Memoria/(20150:20387): ESCRITURA - PAG 0 - OFFSET: 0
+
+[INFO] 23:51:48:879 Memoria/(20150:20387): TLB HIT - PID: 2 - Pagina: 0 - Marco: 2
+[INFO] 23:51:48:879 Memoria/(20150:20387): Voy a escribir 9 bytes
+
+[INFO] 23:51:48:879 Memoria/(20150:20387): El offset es 32
+
+[INFO] 23:51:48:879 Memoria/(20150:20387): LECTURA - PAG 0 - OFFSET: 0
+
+[INFO] 23:51:48:879 Memoria/(20150:20387): TLB HIT - PID: 2 - Pagina: 0 - Marco: 2
+[INFO] 23:51:48:919 Memoria/(20150:20387): ESCRITURA - PAG 0 - OFFSET: 0
+
+[INFO] 23:51:48:919 Memoria/(20150:20387): TLB HIT - PID: 2 - Pagina: 0 - Marco: 2
+[INFO] 23:51:48:920 Memoria/(20150:20387): Voy a escribir 9 bytes
+
+[INFO] 23:51:48:921 Memoria/(20150:20387): El offset es 32
+
+[INFO] 23:51:48:921 Memoria/(20150:20387): La victima de la tlb es 0
+
+[INFO] 23:51:48:921 Memoria/(20150:20387): La victima del reemplazo es 0 del carpincho 1
+[INFO] 23:51:48:921 Memoria/(20150:20387): Se reemplazara por 1 del carpincho 2
+[INFO] 23:51:48:921 Memoria/(20150:20387): ESCRITURA - PAG 1 - OFFSET: 3
+
+[INFO] 23:51:48:921 Memoria/(20150:20387): TLB HIT - PID: 2 - Pagina: 1 - Marco: 3
+[INFO] 23:51:48:922 Memoria/(20150:20387): Voy a escribir 9 bytes
+
+[INFO] 23:51:48:922 Memoria/(20150:20387): El offset es 51
+
+[INFO] 23:51:48:922 Memoria/(20150:20386): ESCRITURA - PAG 0 - OFFSET: 9
+
+[INFO] 23:51:48:922 Memoria/(20150:20386): TLB MISS - PID: 1 - Pagina: 0
+[INFO] 23:51:48:923 Memoria/(20150:20386): Voy a escribir 7 bytes
+
+[INFO] 23:51:48:923 Memoria/(20150:20386): El offset es 9
+
+[INFO] 23:51:48:923 Memoria/(20150:20386): La victima de la tlb es 1
+
+[INFO] 23:51:48:923 Memoria/(20150:20386): La victima del reemplazo es 1 del carpincho 1
+[INFO] 23:51:48:923 Memoria/(20150:20386): Se reemplazara por 0 del carpincho 1
+[INFO] 23:51:48:923 Memoria/(20150:20386): TLB MISS - PID: 1 - Pagina: 1
+[INFO] 23:51:48:925 Memoria/(20150:20386): Voy a escribir 3 bytes
+
+[INFO] 23:51:48:925 Memoria/(20150:20386): El offset es 16
+
+[INFO] 23:51:48:925 Memoria/(20150:20386): La victima de la tlb es 2
+
+[INFO] 23:51:48:925 Memoria/(20150:20386): La victima del reemplazo es 0 del carpincho 2
+[INFO] 23:51:48:925 Memoria/(20150:20386): Se reemplazara por 1 del carpincho 1
+[INFO] 23:51:48:925 Memoria/(20150:20387): ESCRITURA - PAG 0 - OFFSET: 9
+
+[INFO] 23:51:48:925 Memoria/(20150:20387): TLB MISS - PID: 2 - Pagina: 0
+[INFO] 23:51:48:927 Memoria/(20150:20387): Voy a escribir 7 bytes
+
+[INFO] 23:51:48:927 Memoria/(20150:20387): El offset es 41
+
+[INFO] 23:51:48:927 Memoria/(20150:20387): La victima de la tlb es 0
+
+[INFO] 23:51:48:927 Memoria/(20150:20387): La victima del reemplazo es 1 del carpincho 2
+[INFO] 23:51:48:927 Memoria/(20150:20387): Se reemplazara por 0 del carpincho 2
+[INFO] 23:51:48:927 Memoria/(20150:20387): TLB MISS - PID: 2 - Pagina: 1
+[INFO] 23:51:48:929 Memoria/(20150:20387): Voy a escribir 3 bytes
+
+[INFO] 23:51:48:929 Memoria/(20150:20387): El offset es 48
+
+[INFO] 23:51:48:929 Memoria/(20150:20387): La victima de la tlb es 1
+
+[INFO] 23:51:48:929 Memoria/(20150:20387): La victima del reemplazo es 0 del carpincho 1
+[INFO] 23:51:48:929 Memoria/(20150:20387): Se reemplazara por 1 del carpincho 2
+[INFO] 23:51:48:929 Memoria/(20150:20386): LECTURA - PAG 0 - OFFSET: 0
+
+[INFO] 23:51:48:929 Memoria/(20150:20386): TLB MISS - PID: 1 - Pagina: 0
+[INFO] 23:51:48:930 Memoria/(20150:20386): La victima de la tlb es 2
+
+[INFO] 23:51:48:930 Memoria/(20150:20386): La victima del reemplazo es 1 del carpincho 1
+[INFO] 23:51:48:930 Memoria/(20150:20386): Se reemplazara por 0 del carpincho 1
+[INFO] 23:51:48:931 Memoria/(20150:20386): LECTURA - PAG 1 - OFFSET: 3
+
+[INFO] 23:51:48:931 Memoria/(20150:20386): TLB MISS - PID: 1 - Pagina: 1
+[INFO] 23:51:48:932 Memoria/(20150:20386): La victima de la tlb es 0
+
+[INFO] 23:51:48:932 Memoria/(20150:20386): La victima del reemplazo es 0 del carpincho 2
+[INFO] 23:51:48:932 Memoria/(20150:20386): Se reemplazara por 1 del carpincho 1
+[INFO] 23:51:48:932 Memoria/(20150:20386): ESCRITURA - PAG 1 - OFFSET: 3
+
+[INFO] 23:51:48:932 Memoria/(20150:20386): TLB HIT - PID: 1 - Pagina: 1 - Marco: 1
+[INFO] 23:51:48:933 Memoria/(20150:20386): Voy a escribir 9 bytes
+
+[INFO] 23:51:48:933 Memoria/(20150:20386): El offset es 19
+
+[INFO] 23:51:48:933 Memoria/(20150:20387): LECTURA - PAG 0 - OFFSET: 0
+
+[INFO] 23:51:48:933 Memoria/(20150:20387): TLB MISS - PID: 2 - Pagina: 0
+[INFO] 23:51:48:934 Memoria/(20150:20387): La victima de la tlb es 1
+
+[INFO] 23:51:48:934 Memoria/(20150:20387): La victima del reemplazo es 1 del carpincho 2
+[INFO] 23:51:48:934 Memoria/(20150:20387): Se reemplazara por 0 del carpincho 2
+[INFO] 23:51:48:935 Memoria/(20150:20387): LECTURA - PAG 1 - OFFSET: 3
+
+[INFO] 23:51:48:936 Memoria/(20150:20387): TLB MISS - PID: 2 - Pagina: 1
+[INFO] 23:51:48:937 Memoria/(20150:20387): La victima de la tlb es 2
+
+[INFO] 23:51:48:937 Memoria/(20150:20387): La victima del reemplazo es 0 del carpincho 1
+[INFO] 23:51:48:937 Memoria/(20150:20387): Se reemplazara por 1 del carpincho 2
+[INFO] 23:51:48:937 Memoria/(20150:20387): ESCRITURA - PAG 1 - OFFSET: 3
+
+[INFO] 23:51:48:937 Memoria/(20150:20387): TLB HIT - PID: 2 - Pagina: 1 - Marco: 3
+[INFO] 23:51:48:938 Memoria/(20150:20387): Voy a escribir 9 bytes
+
+[INFO] 23:51:48:938 Memoria/(20150:20387): El offset es 51
+
+[INFO] 23:51:49:011 Memoria/(20150:20386): ESCRITURA - PAG 1 - OFFSET: 12
+
+[INFO] 23:51:49:011 Memoria/(20150:20386): TLB HIT - PID: 1 - Pagina: 1 - Marco: 1
+[INFO] 23:51:49:011 Memoria/(20150:20386): Voy a escribir 4 bytes
+
+[INFO] 23:51:49:011 Memoria/(20150:20386): El offset es 28
+
+[INFO] 23:51:49:014 Memoria/(20150:20387): ESCRITURA - PAG 1 - OFFSET: 12
+
+[INFO] 23:51:49:014 Memoria/(20150:20387): TLB HIT - PID: 2 - Pagina: 1 - Marco: 3
+[INFO] 23:51:49:016 Memoria/(20150:20387): Voy a escribir 4 bytes
+
+[INFO] 23:51:49:016 Memoria/(20150:20387): El offset es 60
+
+[INFO] 23:51:49:055 Memoria/(20150:20387): LECTURA - PAG 0 - OFFSET: 9
+
+[INFO] 23:51:49:055 Memoria/(20150:20387): TLB HIT - PID: 2 - Pagina: 0 - Marco: 2
+[INFO] 23:51:49:056 Memoria/(20150:20387): TLB HIT - PID: 2 - Pagina: 1 - Marco: 3
+[INFO] 23:51:49:174 Memoria/(20150:20387): LECTURA - PAG 1 - OFFSET: 12
+
+[INFO] 23:51:49:174 Memoria/(20150:20387): TLB HIT - PID: 2 - Pagina: 1 - Marco: 3
+[INFO] 23:51:49:255 Memoria/(20150:20387): ESCRITURA - PAG 1 - OFFSET: 12
+
+[INFO] 23:51:49:255 Memoria/(20150:20387): TLB HIT - PID: 2 - Pagina: 1 - Marco: 3
+[INFO] 23:51:49:256 Memoria/(20150:20387): Voy a escribir 4 bytes
+
+[INFO] 23:51:49:256 Memoria/(20150:20387): El offset es 60
+
+[INFO] 23:51:49:294 Memoria/(20150:20386): LECTURA - PAG 0 - OFFSET: 9
+
+[INFO] 23:51:49:294 Memoria/(20150:20386): TLB MISS - PID: 1 - Pagina: 0
+[INFO] 23:51:49:296 Memoria/(20150:20386): La victima de la tlb es 0
+
+[INFO] 23:51:49:296 Memoria/(20150:20386): La victima del reemplazo es 1 del carpincho 1
+[INFO] 23:51:49:296 Memoria/(20150:20386): Se reemplazara por 0 del carpincho 1
+[INFO] 23:51:49:296 Memoria/(20150:20386): TLB MISS - PID: 1 - Pagina: 1
+[INFO] 23:51:49:297 Memoria/(20150:20386): La victima de la tlb es 1
+
+[INFO] 23:51:49:297 Memoria/(20150:20386): La victima del reemplazo es 0 del carpincho 2
+[INFO] 23:51:49:297 Memoria/(20150:20386): Se reemplazara por 1 del carpincho 1
+[INFO] 23:51:49:336 Memoria/(20150:20386): LECTURA - PAG 1 - OFFSET: 12
+
+[INFO] 23:51:49:336 Memoria/(20150:20386): TLB HIT - PID: 1 - Pagina: 1 - Marco: 1
+[INFO] 23:51:49:454 Memoria/(20150:20386): ESCRITURA - PAG 1 - OFFSET: 12
+
+[INFO] 23:51:49:455 Memoria/(20150:20386): TLB HIT - PID: 1 - Pagina: 1 - Marco: 1
+[INFO] 23:51:49:455 Memoria/(20150:20386): Voy a escribir 4 bytes
+
+[INFO] 23:51:49:455 Memoria/(20150:20386): El offset es 28
+
+[INFO] 23:51:49:498 Memoria/(20150:20387): LECTURA - PAG 0 - OFFSET: 9
+
+[INFO] 23:51:49:498 Memoria/(20150:20387): TLB MISS - PID: 2 - Pagina: 0
+[INFO] 23:51:49:499 Memoria/(20150:20387): La victima de la tlb es 2
+
+[INFO] 23:51:49:499 Memoria/(20150:20387): La victima del reemplazo es 1 del carpincho 2
+[INFO] 23:51:49:499 Memoria/(20150:20387): Se reemplazara por 0 del carpincho 2
+[INFO] 23:51:49:500 Memoria/(20150:20387): TLB MISS - PID: 2 - Pagina: 1
+[INFO] 23:51:49:501 Memoria/(20150:20387): La victima de la tlb es 0
+
+[INFO] 23:51:49:501 Memoria/(20150:20387): La victima del reemplazo es 0 del carpincho 1
+[INFO] 23:51:49:501 Memoria/(20150:20387): Se reemplazara por 1 del carpincho 2
+[INFO] 23:51:49:539 Memoria/(20150:20387): LECTURA - PAG 1 - OFFSET: 12
+
+[INFO] 23:51:49:539 Memoria/(20150:20387): TLB HIT - PID: 2 - Pagina: 1 - Marco: 3
+[INFO] 23:51:49:658 Memoria/(20150:20387): ESCRITURA - PAG 1 - OFFSET: 12
+
+[INFO] 23:51:49:658 Memoria/(20150:20387): TLB HIT - PID: 2 - Pagina: 1 - Marco: 3
+[INFO] 23:51:49:659 Memoria/(20150:20387): Voy a escribir 4 bytes
+
+[INFO] 23:51:49:659 Memoria/(20150:20387): El offset es 60
+
+[INFO] 23:51:49:698 Memoria/(20150:20386): LECTURA - PAG 0 - OFFSET: 9
+
+[INFO] 23:51:49:698 Memoria/(20150:20386): TLB MISS - PID: 1 - Pagina: 0
+[INFO] 23:51:49:700 Memoria/(20150:20386): La victima de la tlb es 1
+
+[INFO] 23:51:49:700 Memoria/(20150:20386): La victima del reemplazo es 1 del carpincho 1
+[INFO] 23:51:49:700 Memoria/(20150:20386): Se reemplazara por 0 del carpincho 1
+[INFO] 23:51:49:700 Memoria/(20150:20386): TLB MISS - PID: 1 - Pagina: 1
+[INFO] 23:51:49:701 Memoria/(20150:20386): La victima de la tlb es 2
+
+[INFO] 23:51:49:701 Memoria/(20150:20386): La victima del reemplazo es 0 del carpincho 2
+[INFO] 23:51:49:702 Memoria/(20150:20386): Se reemplazara por 1 del carpincho 1
+[INFO] 23:51:49:739 Memoria/(20150:20386): LECTURA - PAG 1 - OFFSET: 12
+
+[INFO] 23:51:49:739 Memoria/(20150:20386): TLB HIT - PID: 1 - Pagina: 1 - Marco: 1
+[INFO] 23:51:49:859 Memoria/(20150:20386): ESCRITURA - PAG 1 - OFFSET: 12
+
+[INFO] 23:51:49:859 Memoria/(20150:20386): TLB HIT - PID: 1 - Pagina: 1 - Marco: 1
+[INFO] 23:51:49:862 Memoria/(20150:20386): Voy a escribir 4 bytes
+
+[INFO] 23:51:49:862 Memoria/(20150:20386): El offset es 28
+
+[INFO] 23:51:49:902 Memoria/(20150:20387): LECTURA - PAG 0 - OFFSET: 9
+
+[INFO] 23:51:49:903 Memoria/(20150:20387): TLB MISS - PID: 2 - Pagina: 0
+[INFO] 23:51:49:904 Memoria/(20150:20387): La victima de la tlb es 0
+
+[INFO] 23:51:49:904 Memoria/(20150:20387): La victima del reemplazo es 1 del carpincho 2
+[INFO] 23:51:49:904 Memoria/(20150:20387): Se reemplazara por 0 del carpincho 2
+[INFO] 23:51:49:904 Memoria/(20150:20387): TLB MISS - PID: 2 - Pagina: 1
+[INFO] 23:51:49:907 Memoria/(20150:20387): La victima de la tlb es 1
+
+[INFO] 23:51:49:907 Memoria/(20150:20387): La victima del reemplazo es 0 del carpincho 1
+[INFO] 23:51:49:907 Memoria/(20150:20387): Se reemplazara por 1 del carpincho 2
+[INFO] 23:51:49:950 Memoria/(20150:20387): LECTURA - PAG 1 - OFFSET: 12
+
+[INFO] 23:51:49:950 Memoria/(20150:20387): TLB HIT - PID: 2 - Pagina: 1 - Marco: 3
+[INFO] 23:51:50:070 Memoria/(20150:20387): ESCRITURA - PAG 1 - OFFSET: 12
+
+[INFO] 23:51:50:071 Memoria/(20150:20387): TLB HIT - PID: 2 - Pagina: 1 - Marco: 3
+[INFO] 23:51:50:071 Memoria/(20150:20387): Voy a escribir 4 bytes
+
+[INFO] 23:51:50:071 Memoria/(20150:20387): El offset es 60
+
+[INFO] 23:51:50:110 Memoria/(20150:20386): LECTURA - PAG 0 - OFFSET: 9
+
+[INFO] 23:51:50:110 Memoria/(20150:20386): TLB MISS - PID: 1 - Pagina: 0
+[INFO] 23:51:50:111 Memoria/(20150:20386): La victima de la tlb es 2
+
+[INFO] 23:51:50:111 Memoria/(20150:20386): La victima del reemplazo es 1 del carpincho 1
+[INFO] 23:51:50:111 Memoria/(20150:20386): Se reemplazara por 0 del carpincho 1
+[INFO] 23:51:50:111 Memoria/(20150:20386): TLB MISS - PID: 1 - Pagina: 1
+[INFO] 23:51:50:113 Memoria/(20150:20386): La victima de la tlb es 0
+
+[INFO] 23:51:50:113 Memoria/(20150:20386): La victima del reemplazo es 0 del carpincho 2
+[INFO] 23:51:50:113 Memoria/(20150:20386): Se reemplazara por 1 del carpincho 1
+[INFO] 23:51:50:151 Memoria/(20150:20386): LECTURA - PAG 1 - OFFSET: 12
+
+[INFO] 23:51:50:152 Memoria/(20150:20386): TLB HIT - PID: 1 - Pagina: 1 - Marco: 1
+[INFO] 23:51:50:271 Memoria/(20150:20386): ESCRITURA - PAG 1 - OFFSET: 12
+
+[INFO] 23:51:50:271 Memoria/(20150:20386): TLB HIT - PID: 1 - Pagina: 1 - Marco: 1
+[INFO] 23:51:50:271 Memoria/(20150:20386): Voy a escribir 4 bytes
+
+[INFO] 23:51:50:271 Memoria/(20150:20386): El offset es 28
+
+[INFO] 23:51:50:311 Memoria/(20150:20387): LECTURA - PAG 0 - OFFSET: 9
+
+[INFO] 23:51:50:311 Memoria/(20150:20387): TLB MISS - PID: 2 - Pagina: 0
+[INFO] 23:51:50:312 Memoria/(20150:20387): La victima de la tlb es 1
+
+[INFO] 23:51:50:312 Memoria/(20150:20387): La victima del reemplazo es 1 del carpincho 2
+[INFO] 23:51:50:312 Memoria/(20150:20387): Se reemplazara por 0 del carpincho 2
+[INFO] 23:51:50:312 Memoria/(20150:20387): TLB MISS - PID: 2 - Pagina: 1
+[INFO] 23:51:50:313 Memoria/(20150:20387): La victima de la tlb es 2
+
+[INFO] 23:51:50:313 Memoria/(20150:20387): La victima del reemplazo es 0 del carpincho 1
+[INFO] 23:51:50:313 Memoria/(20150:20387): Se reemplazara por 1 del carpincho 2
+[INFO] 23:51:50:350 Memoria/(20150:20387): LECTURA - PAG 1 - OFFSET: 12
+
+[INFO] 23:51:50:350 Memoria/(20150:20387): TLB HIT - PID: 2 - Pagina: 1 - Marco: 3
+[INFO] 23:51:50:471 Memoria/(20150:20387): ESCRITURA - PAG 1 - OFFSET: 12
+
+[INFO] 23:51:50:471 Memoria/(20150:20387): TLB HIT - PID: 2 - Pagina: 1 - Marco: 3
+[INFO] 23:51:50:471 Memoria/(20150:20387): Voy a escribir 4 bytes
+
+[INFO] 23:51:50:471 Memoria/(20150:20387): El offset es 60
+
+[INFO] 23:51:50:510 Memoria/(20150:20386): LECTURA - PAG 0 - OFFSET: 9
+
+[INFO] 23:51:50:510 Memoria/(20150:20386): TLB MISS - PID: 1 - Pagina: 0
+[INFO] 23:51:50:512 Memoria/(20150:20386): La victima de la tlb es 0
+
+[INFO] 23:51:50:512 Memoria/(20150:20386): La victima del reemplazo es 1 del carpincho 1
+[INFO] 23:51:50:512 Memoria/(20150:20386): Se reemplazara por 0 del carpincho 1
+[INFO] 23:51:50:512 Memoria/(20150:20386): TLB MISS - PID: 1 - Pagina: 1
+[INFO] 23:51:50:513 Memoria/(20150:20386): La victima de la tlb es 1
+
+[INFO] 23:51:50:513 Memoria/(20150:20386): La victima del reemplazo es 0 del carpincho 2
+[INFO] 23:51:50:513 Memoria/(20150:20386): Se reemplazara por 1 del carpincho 1
+[INFO] 23:51:50:550 Memoria/(20150:20386): LECTURA - PAG 1 - OFFSET: 12
+
+[INFO] 23:51:50:550 Memoria/(20150:20386): TLB HIT - PID: 1 - Pagina: 1 - Marco: 1
+[INFO] 23:51:50:672 Memoria/(20150:20386): ESCRITURA - PAG 1 - OFFSET: 12
+
+[INFO] 23:51:50:672 Memoria/(20150:20386): TLB HIT - PID: 1 - Pagina: 1 - Marco: 1
+[INFO] 23:51:50:672 Memoria/(20150:20386): Voy a escribir 4 bytes
+
+[INFO] 23:51:50:672 Memoria/(20150:20386): El offset es 28
+
+[INFO] 23:51:50:711 Memoria/(20150:20387): LECTURA - PAG 0 - OFFSET: 9
+
+[INFO] 23:51:50:711 Memoria/(20150:20387): TLB MISS - PID: 2 - Pagina: 0
+[INFO] 23:51:50:712 Memoria/(20150:20387): La victima de la tlb es 2
+
+[INFO] 23:51:50:712 Memoria/(20150:20387): La victima del reemplazo es 1 del carpincho 2
+[INFO] 23:51:50:712 Memoria/(20150:20387): Se reemplazara por 0 del carpincho 2
+[INFO] 23:51:50:712 Memoria/(20150:20387): TLB MISS - PID: 2 - Pagina: 1
+[INFO] 23:51:50:714 Memoria/(20150:20387): La victima de la tlb es 0
+
+[INFO] 23:51:50:715 Memoria/(20150:20387): La victima del reemplazo es 0 del carpincho 1
+[INFO] 23:51:50:715 Memoria/(20150:20387): Se reemplazara por 1 del carpincho 2
+[INFO] 23:51:50:754 Memoria/(20150:20387): LECTURA - PAG 1 - OFFSET: 12
+
+[INFO] 23:51:50:754 Memoria/(20150:20387): TLB HIT - PID: 2 - Pagina: 1 - Marco: 3
+[INFO] 23:51:50:874 Memoria/(20150:20387): ESCRITURA - PAG 1 - OFFSET: 12
+
+[INFO] 23:51:50:874 Memoria/(20150:20387): TLB HIT - PID: 2 - Pagina: 1 - Marco: 3
+[INFO] 23:51:50:875 Memoria/(20150:20387): Voy a escribir 4 bytes
+
+[INFO] 23:51:50:875 Memoria/(20150:20387): El offset es 60
+
+[INFO] 23:51:50:915 Memoria/(20150:20386): LECTURA - PAG 0 - OFFSET: 9
+
+[INFO] 23:51:50:915 Memoria/(20150:20386): TLB MISS - PID: 1 - Pagina: 0
+[INFO] 23:51:50:916 Memoria/(20150:20386): La victima de la tlb es 1
+
+[INFO] 23:51:50:916 Memoria/(20150:20386): La victima del reemplazo es 1 del carpincho 1
+[INFO] 23:51:50:916 Memoria/(20150:20386): Se reemplazara por 0 del carpincho 1
+[INFO] 23:51:50:916 Memoria/(20150:20386): TLB MISS - PID: 1 - Pagina: 1
+[INFO] 23:51:50:918 Memoria/(20150:20386): La victima de la tlb es 2
+
+[INFO] 23:51:50:918 Memoria/(20150:20386): La victima del reemplazo es 0 del carpincho 2
+[INFO] 23:51:50:918 Memoria/(20150:20386): Se reemplazara por 1 del carpincho 1
+[INFO] 23:51:50:976 Memoria/(20150:20387): Se desconecto un cliente - Socket: 20 - PID: 2
+[INFO] 23:51:50:976 Memoria/(20150:20386): LECTURA - PAG 1 - OFFSET: 12
+
+[INFO] 23:51:50:976 Memoria/(20150:20386): TLB HIT - PID: 1 - Pagina: 1 - Marco: 1
+[INFO] 23:51:51:094 Memoria/(20150:20386): ESCRITURA - PAG 1 - OFFSET: 12
+
+[INFO] 23:51:51:094 Memoria/(20150:20386): TLB HIT - PID: 1 - Pagina: 1 - Marco: 1
+[INFO] 23:51:51:095 Memoria/(20150:20386): Voy a escribir 4 bytes
+
+[INFO] 23:51:51:095 Memoria/(20150:20386): El offset es 28
+
+[INFO] 23:51:51:137 Memoria/(20150:20386): Se desconecto un cliente - Socket: 16 - PID: 1
