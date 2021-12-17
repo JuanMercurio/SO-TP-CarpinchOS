@@ -414,9 +414,24 @@ void destroy_and_free(int fd_memoria)
         free(ped);
         printf("Pedido no realizado: pid %d oper: %d \n", ped->pid, ped->oper);
     } */
+    while(!list_is_empty(lista_carpinchos)){
+        Carpincho_Swamp* car = list_remove(lista_carpinchos, 0);
+        while(!list_is_empty(car->paginas)){
+            Marcos_x_pagina *mar_pag = list_remove(car->paginas, 0);
+            free(mar_pag);
+        }
+         list_destroy(car->paginas);
 
-    list_destroy_and_destroy_elements(lista_carpinchos, borrar_Carpincho);
-    list_destroy_and_destroy_elements(marcos_libres, borrar_marcos_libres);
+        free(car);
+    }
+    list_destroy(lista_carpinchos);
+    //list_destroy_and_destroy_elements(lista_carpinchos, borrar_Carpincho);
+    while(!list_is_empty(marcos_libres)){
+        un_marco_libre *mar_lib = list_remove(marcos_libres, 0);
+        free(mar_lib);
+    }
+    list_destroy(marcos_libres);
+    //list_destroy_and_destroy_elements(marcos_libres, borrar_marcos_libres);
     while(!list_is_empty(cantidad_carpinchos_por_archivo)){
         Cantidad_arch_car * car = list_remove(cantidad_carpinchos_por_archivo, 0);
         free(car);
@@ -959,9 +974,11 @@ int buscarMarcoLibre(int num_archivo)
         if (mar->numero_archivo == num_archivo)
         {
             //list_remove_and_destroy_element(lista_carpinchos,i,&borrar_Carpincho);
-            Carpincho_Swamp *car = list_remove(marcos_libres, i);
+            mar = list_remove(marcos_libres, i);
             max = max - 1;
-            return mar->base;
+            int aux = mar->base;
+            free(mar);
+            return aux;
             //free(car);
         }
     }
@@ -1007,10 +1024,14 @@ int borrarCarpincho(int pid)
                 un_marco_libre *mar = malloc(sizeof(un_marco_libre));
                 mar->numero_archivo = car->numeroArchivo;
                 mar->base = mar_x_pag->base;
+                free(mar_x_pag);
                 list_add(marcos_libres, mar);
             }
         }
+        list_destroy(car->paginas);
         close(file);
+
+         
 
         int max2 = list_size(lista_carpinchos);
         Carpincho_Swamp *car2; // = malloc(sizeof(Carpincho_Swamp));
@@ -1246,7 +1267,7 @@ int elegirBaseCarpincho(int num_archivo)
 
             printf("cant: %d  archivo: %d \n", ca->cant, mar->numero_archivo);
             //ca->cant++;
-
+            free(mar);
             return devolver;
         }
     }
@@ -1279,7 +1300,7 @@ int agregarPaginaFija(int pid, int pagina, char *contenido)
         Marcos_x_pagina *mar_x_pag;
         mar_x_pag = buscarMarcoXPagina(car, pagina);
         //printf("marco x pagina: %d\n",mar_x_pag->pagina);
-        if (mar_x_pag->pagina == -1)
+        if (mar_x_pag == NULL)
         {
             // printf("entro\n");
             int max = list_size(car->paginas);
@@ -1340,9 +1361,9 @@ Marcos_x_pagina *buscarMarcoXPagina(Carpincho_Swamp *car, int pagina)
             return mar_x_pag;
         }
     }
-    mar_x_pag = malloc(sizeof(Marcos_x_pagina));
-    mar_x_pag->pagina = -1;
-    return mar_x_pag;
+    //mar_x_pag = malloc(sizeof(Marcos_x_pagina));
+    //mar_x_pag->pagina = -1;
+    return NULL ;
 }
 
 int remplazoPaginaFija(int pid, int pagina, char *contenido)
@@ -1400,7 +1421,7 @@ char *buscarPaginaFija(int pid, int pagina)
 {
     Carpincho_Swamp *car = buscarCarpincho(pid);
     Marcos_x_pagina *mar_x_pag = buscarMarcoXPagina(car, pagina);
-    if (car != NULL && mar_x_pag->pagina != -1)
+    if (car != NULL && mar_x_pag != NULL)
     {
 
         int file = open(configuracion.ARCHIVOS_SWAP_list[car->numeroArchivo], O_RDWR, S_IRUSR | S_IWUSR);
@@ -1433,7 +1454,7 @@ int BorrarPaginaFija(int pid, int pagina)
 {
     Carpincho_Swamp *car = buscarCarpincho(pid);
     Marcos_x_pagina *mar_x_pag = buscarMarcoXPagina(car, pagina);
-    if (car != NULL && mar_x_pag->pagina != -1)
+    if (car != NULL && mar_x_pag != NULL)
     {
         int file = open(configuracion.ARCHIVOS_SWAP_list[car->numeroArchivo], O_RDWR, S_IRUSR | S_IWUSR);
 
@@ -1489,6 +1510,11 @@ int borrarCarpinchoFija(int pid)
         mar->base = car->base;
         list_add(marcos_libres, mar);
         printf("entro1\n");
+        while(!list_is_empty(car->paginas)){
+            Marcos_x_pagina *mar_pag = list_remove(car->paginas, 0);
+            free(mar_pag);
+        }
+         list_destroy(car->paginas);
         sacarCarpinchoDeLista(car->pid);
         free(car);
 
@@ -1542,7 +1568,7 @@ int solicitarPaginaFija(int pid, int pagina)
         Marcos_x_pagina *mar_x_pag;
         mar_x_pag = buscarMarcoXPagina(car, pagina);
         //printf("marco x pagina: %d\n",mar_x_pag->pagina);
-        if (mar_x_pag->pagina == -1)
+        if (mar_x_pag == NULL)
         {
             // printf("entro\n");
             int max = list_size(car->paginas);
