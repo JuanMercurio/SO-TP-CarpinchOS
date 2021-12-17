@@ -19,6 +19,7 @@ int memalloc(tab_pags* tabla, int tamanio){
     tab_pags* tabla_paginas = tabla;
 
 	printf("- Memalloc: quiero reservar %i para el carpincho %i.\n", tamanio, pid);
+	log_info(logger_memoria, "-- MEMALLOC -- PID %d | TAM %d", pid, tamanio);
 
 	if(tamanio==0){
 		puts("- Memalloc: no se puede reservar espacio 0. Abortando.");
@@ -27,6 +28,7 @@ int memalloc(tab_pags* tabla, int tamanio){
 
     if (tabla_paginas->tabla_pag->head == NULL) {
 		printf("Tengo que iniciar las paginas\n"); 
+		log_info(logger_memoria, "Inicio las paginas.");
 		if (heap_init(tabla) == -1) return -1; 
 	}
 
@@ -39,8 +41,12 @@ int memalloc(tab_pags* tabla, int tamanio){
 	int numero_magico; //si nextAlloc es 0, entonces esta variable vale la ultima direccion de memoria+1 (por ejemplo 128), sino vale nextAlloc
 	int espacio_en_alloc;
 	while(1){
-		if(ptr_potencial_segmento->nextAlloc == 0 || ptr_potencial_segmento == inicio_actual){
-			printf("ERROR. NEXTALLOC = 0 IMPSOBILE EN EL CARPINCHO %d", pid);
+		int prev = ptr_potencial_segmento->prevAlloc;
+		int next = ptr_potencial_segmento->nextAlloc;
+		if(((prev > next) && (next)!=LAST_METADATA && prev >= 0) || (next <= inicio_actual && next != LAST_METADATA)) {
+			printf("ERROR.\n");
+			printf("ptr_protencial_segmento: \tprev %d   |   next %d\n", prev, ptr_potencial_segmento->nextAlloc);
+			printf("inicio_actual: %d\n", inicio_actual);
 			generar_dump();
 			abort();
 		}
@@ -49,6 +55,7 @@ int memalloc(tab_pags* tabla, int tamanio){
 		printf("- Memalloc->While->CUENTA:\n");
 		numero_magico = (ptr_potencial_segmento->nextAlloc == LAST_METADATA ? (list_size(tabla_paginas->tabla_pag)*configuracion.TAMANIO_PAGINAS) : ptr_potencial_segmento->nextAlloc);
 		espacio_en_alloc = numero_magico - SIZE_METADATA - inicio_actual;
+		printf("\t\tsegmento->prevAlloc: %i.\n", ptr_potencial_segmento->prevAlloc);
 		printf("\t\tsegmento->nextAlloc: %i.\n", numero_magico);
 		printf("\t\tsize_metadata: %i.\n", SIZE_METADATA);
 		printf("\t\tinicio_actual %i.\n", inicio_actual);
@@ -56,26 +63,38 @@ int memalloc(tab_pags* tabla, int tamanio){
 		printf("\t\tTAMANIO: %i.\n", tamanio);
 
 		if(ptr_potencial_segmento->isFree){
-			if(espacio_en_alloc == tamanio ){
+			if(espacio_en_alloc == tamanio){
 				puts("-Memalloc->While: entra justo.");
+				log_info(logger_memoria, "Encontre un alloc que entra justo, direccion %d. Procedo a sobreescribirlo.", inicio_actual);
 				ptr_potencial_segmento->isFree = false;
-				memoria_escribir_por_dirlog(tabla, inicio_actual, ptr_potencial_segmento, sizeof(HeapMetadata));
+				memoria_escribir_por_dirlog(tabla, inicio_actual, ptr_potencial_segmento, SIZE_METADATA);
 				printf("-Memalloc->While: cambio isFree a false y devuelvo direccion de inicio %i.\n", inicio_actual+SIZE_METADATA);
 
-				if (ptr_potencial_segmento->nextAlloc == LAST_METADATA); { 
+				if (ptr_potencial_segmento->nextAlloc == LAST_METADATA) { 
+					log_info(logger_memoria, "Pido Paginas a Swap.");
+					if(pedir_paginas_a_swap(tabla, 1) == -1) {
+						puts("Swap me denego la pagina");
+						log_info(logger_memoria, "Swap me denego la pagina.");
+						log_info(logger_memoria, "-- FIN MEMALLOC --\n");
+						free(ptr_potencial_segmento); 
+						return inicio_actual + SIZE_METADATA;
+					}
+
 					HeapMetadata new  = {0};
 					new.nextAlloc = LAST_METADATA;
 					new.prevAlloc = inicio_actual;
 					new.isFree = 1;
 
+					printf("new: \tprev %d   |   next %d\n", new.prevAlloc, new.nextAlloc);
+
 					ptr_potencial_segmento->nextAlloc = numero_magico;
+					log_info(logger_memoria, "Actualizo el nextAlloc del segmento alocado.");
 					memoria_escribir_por_dirlog(tabla, inicio_actual, ptr_potencial_segmento, SIZE_METADATA);
-
-					pedir_paginas_a_swap(tabla, 1);
 					paginas_agregar(1, tabla);
-					memoria_escribir_por_dirlog(tabla, ptr_potencial_segmento->nextAlloc, &new, sizeof(HeapMetadata));
+					log_info(logger_memoria, "Cargo el nuevo metadata.");
+					memoria_escribir_por_dirlog(tabla, ptr_potencial_segmento->nextAlloc, &new, SIZE_METADATA);
 				}
-
+				log_info(logger_memoria, "-- FIN MEMALLOC --\n");
 				free(ptr_potencial_segmento);
 				return inicio_actual + SIZE_METADATA;
 			}
@@ -137,7 +156,7 @@ int memalloc(tab_pags* tabla, int tamanio){
 				printf("- Memalloc->While: RETORNO DIR_LOG DE GUARDADO: %i. METADATA ARRANCA EN %i.\n", inicio_actual+SIZE_METADATA, inicio_actual);
 				return inicio_actual + SIZE_METADATA;
 			}
-		}
+		} else puts("Segmento no esta libre.");
 
 
 
@@ -290,7 +309,7 @@ HeapMetadata* primer_segmento(tab_pags* tabla){
 	direccion_logica.segmento=0;
 	direccion_logica.offset=0;
 
-
+	log_info(logger_memoria, "Agarro el primer puntero y empiezo a recorrer");
 	return (HeapMetadata*) memoria_leer(tabla, direccion_logica, SIZE_METADATA);
 }
 
@@ -451,24 +470,30 @@ void TEST_report_metadatas(int pid){
 
 void* memread(tab_pags* tabla, int dir_log, int tamanio){
     // dir_t dl = traducir_dir_log(dir_log);
+	log_info(logger_memoria, "-- MEMREAD -- PID %d, DIR %d | TAM %d", tabla->pid, dir_log, tamanio);
 	dir_t dl = decimal_a_dl(dir_log);
 
     // if(!alloc_valido(dl, tabla, tamanio)) return NULL; 
-    return memoria_leer(tabla, dl, tamanio);
+	void* read = memoria_leer(tabla, dl, tamanio);
+	log_info(logger_memoria, "-- FIN MEMREAD --\n");
+    return read;
 }
 
 int memwrite(tab_pags* tabla, int dir_log, void* contenido, int tamanio){
+	log_info(logger_memoria, "-- MEMWRITE -- PID %d | DIR %d | TAM %d", tabla->pid, dir_log, tamanio);
     // dir_t dl = traducir_dir_log(dir_log);
 	dir_t dl = decimal_a_dl(dir_log);
 
     // if(!alloc_valido(dl, tabla, tamanio)) return MATE_WRITE_FAULT;
 
-    return memoria_escribir(tabla, dl, contenido, tamanio);
+	int done = memoria_escribir(tabla, dl, contenido, tamanio);
+	log_info(logger_memoria, "-- FIN MEMWRITE --\n");
+    return done;
 }
 
 void* memoria_leer(tab_pags* tabla, dir_t dl, int tamanio){
 	printf("\nLECTURA - PAG %d - OFFSET: %d\n", dl.PAGINA, dl.offset);
-	log_info(logger_memoria,"LECTURA - PAG %d - OFFSET: %d\n", dl.PAGINA, dl.offset);
+	log_info(logger_memoria, "LECTURA - PID %d | PAG %d | OFFSET %d", tabla->pid, dl.PAGINA, dl.offset);
     if(!read_verify_size(tabla, dl, tamanio)) return NULL; 
 
     int leido = 0;
@@ -500,14 +525,15 @@ void* memoria_leer(tab_pags* tabla, dir_t dl, int tamanio){
         dl.offset = 0;
         dl.PAGINA++;
     }
-
+	
+	log_info(logger_memoria, "Fin lectura");
     return buffer;
 }
 
 int memoria_escribir(tab_pags* tabla, dir_t dl, void* contenido, int tamanio){
-    if(!read_verify_size(tabla, dl, tamanio)) return MATE_WRITE_FAULT;    
-	printf("ESCRITURA - PAG %d - OFFSET: %d\n", dl.PAGINA, dl.offset);
-	log_info(logger_memoria,"ESCRITURA - PAG %d - OFFSET: %d\n", dl.PAGINA, dl.offset);
+    if(!read_verify_size(tabla, dl, tamanio)) return MATE_WRITE_FAULT;
+	printf("ESCRITURA - PID %d - PAG %d - OFFSET: %d", tabla->pid, dl.PAGINA, dl.offset);
+	log_info(logger_memoria, "ESCRITURA - PID %d | PAG %d | OFFSET %d | TAM %d", tabla->pid, dl.PAGINA, dl.offset, tamanio);
 
     int written = 0;
     int bytes_remaining = tamanio;
@@ -524,13 +550,13 @@ int memoria_escribir(tab_pags* tabla, dir_t dl, void* contenido, int tamanio){
         dir_t df = { marco, dl.offset };
         int bytes_to_write = min_get(bytes_remaining, bytes_remaining_space);
 		printf("Voy a escribir %d bytes\n", bytes_to_write);
-		log_info(logger_memoria,"Voy a escribir %d bytes\n", bytes_to_write);
+		//log_info(logger_memoria,"Voy a escribir %d bytes en la pagina %d.", bytes_to_write, dl.PAGINA);
 		printf("El offset es %d\n", offset_memoria(df));
-		log_info(logger_memoria,"El offset es %d\n", offset_memoria(df));
+		// log_info(logger_memoria,"El offset es %d", offset_memoria(df));
 
 
         memcpy(ram.memoria + offset_memoria(df), contenido + written, bytes_to_write);
-
+		
 		// pag_t* pagina = list_get(tabla->tabla_pag, dl.PAGINA);
         // page_use(tabla->pid, marco, pagina, dl.PAGINA, WRITE);
 
@@ -540,6 +566,7 @@ int memoria_escribir(tab_pags* tabla, dir_t dl, void* contenido, int tamanio){
         dl.offset = 0;
         dl.PAGINA++;
     }
+	log_info(logger_memoria, "Fin escritura.");
     return 0;
 }
 

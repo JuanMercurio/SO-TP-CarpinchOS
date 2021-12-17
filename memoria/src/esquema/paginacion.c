@@ -170,7 +170,7 @@ int buscar_en_swap(tab_pags *tabla, int pagina)
         log_info(logger_memoria, "SWAP - PID: %d - PAG: %d - NO FUE ENCONTRADA EN SWAP", tabla->pid, pagina);
         return -1;
     }
-    log_info(logger_memoria, "SWAP - Recibi - PID: %d - PAG: %d", tabla->pid, pagina);
+    log_info(logger_memoria, "Traer de SWAP - PID: %d | PAG: %d", tabla->pid, pagina);
     void* contenido = recibir_buffer(configuracion.TAMANIO_PAGINAS, swap);
 
     printf("SWAP - PID: %d - PAG: %d - Recibi esto: %s\n", tabla->pid, pagina, (char*)contenido);
@@ -203,7 +203,7 @@ void reemplazar_pagina(t_victima victima, void *buffer, int pagina, tab_pags *ta
 
     if (victima.modificado == 1) {
         enviar_pagina_a_swap(victima.pid, victima.pagina, victima.marco);
-        log_info(logger_memoria, "SWAP - Envie  - PID: %d - PAG: %d", victima.pid, victima.pagina);
+        log_info(logger_memoria, "Bajar a SWAP - PID: %d | PAG: %d", victima.pid, victima.pagina);
         recibir_int(swap);
     }
 
