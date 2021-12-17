@@ -114,7 +114,6 @@ int sem_kernel_init(char *nombre, int value)
       sem_kernel *nuevo_sem = malloc(sizeof(sem_kernel));
       nuevo_sem->id = malloc(strlen(nombre) + 1);
       strcpy(nuevo_sem->id, nombre);
-      free(nombre);
       nuevo_sem->max_val = value;
       nuevo_sem->val = value;
       nuevo_sem->bloqueados = list_create();
