@@ -107,7 +107,7 @@ int paginas_presentes(tab_pags *t)
     return presente;
 }
 
-int nro_marco(int pagina, tab_pags *tabla)
+int nro_marco(int pagina, tab_pags *tabla, int codigo)
 {
     if (!pagina_valida(tabla, pagina))
         return PAGINA_INVALIDA;
@@ -115,22 +115,43 @@ int nro_marco(int pagina, tab_pags *tabla)
     int marco;
 
     // Busco en TLB
-    marco = buscar_en_tlb(tabla, pagina);
+    tlb_t* reg = buscar_reg_en_tlb(tabla->pid, pagina);
+    marco = reg == NULL ? TLB_MISS : reg->marco;
     if (marco != TLB_MISS) {
         printf("Entontre en la tlb\n");
+        tlb_page_use(reg);
+
+        if (strcmp(configuracion.ALGORITMO_REEMPLAZO_TLB, "LRU") == 0) reg->alg = alg_comportamiento_tlb();// que carajos??
+
+        if (codigo == WRITE) {
+            reg->modificado = WRITE;
+        }
+
+        log_info(logger_alg, "ALG - PID: %d - PAG: %d", tabla->pid, pagina);
+        reg->alg = alg_comportamiento();
+
         return marco; 
     }
 
     // Busco en tabla de paginas
-    marco = buscar_en_tabPags(tabla, pagina);
-    if (marco != MEMP_MISS) {
-        printf("Encontre en tabla de paginas\n");
+    pag_t* p = buscar_en_tabPags(tabla, pagina);
+
+    if (p != NULL) {
+        marco = p->marco;
+        tlb_insert_page(tabla->pid, pagina, marco, codigo);
+
+        if (configuracion.CANTIDAD_ENTRADAS_TLB > 0) p->tlb = 1;
+        if (codigo == WRITE) p->modificado = WRITE;
+        p->presente   = 1;
+        p->algoritmo  = alg_comportamiento();
+        log_info(logger_alg, "ALG - PID: %d - PAG: %d", tabla->pid, pagina);
         return marco; 
     }
 
     marco = buscar_en_swap(tabla, pagina);
     if (marco != -1) {
         printf("Encontre en swap\n");
+
         return marco;
     }
 
@@ -163,11 +184,13 @@ int buscar_en_swap(tab_pags *tabla, int pagina)
         insertar_pagina(contenido, marco);
         if (configuracion.CANTIDAD_ENTRADAS_TLB > 0 ) tlb_insert_page(tabla->pid, pagina, marco, READ);
         actualizar_nueva_pagina(pagina, marco, tabla);
+        log_info(logger_alg, "ALG - PID: %d - PAG: %d", tabla->pid, pagina);
         return marco;
 
     } else { 
         t_victima victima = algoritmo_mmu(tabla->pid, tabla);
         reemplazar_pagina(victima, contenido, pagina, tabla);
+        log_info(logger_alg, "ALG - PID: %d - PAG: %d", tabla->pid, pagina);
         return victima.marco;
     }
 
@@ -265,7 +288,7 @@ bool pagina_valida(tab_pags *tabla, int pagina)
     return n_paginas > pagina;
 }
 
-int buscar_en_tabPags(tab_pags *tabla, int pagina)
+pag_t* buscar_en_tabPags(tab_pags *tabla, int pagina)
 {
 
     pag_t *reg = list_get(tabla->tabla_pag, pagina);
@@ -273,10 +296,10 @@ int buscar_en_tabPags(tab_pags *tabla, int pagina)
     if (reg->presente == 1)
     {
         // actualizar_tlb(tabla->pid, reg->marco, pagina);
-        return reg->marco;
+        return reg;
     }
 
-    return MEMP_MISS;
+    return NULL;
 }
 
 int crear_pagina(t_list *paginas)

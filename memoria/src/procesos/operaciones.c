@@ -39,7 +39,7 @@ int memalloc(tab_pags* tabla, int tamanio){
 	int numero_magico; //si nextAlloc es 0, entonces esta variable vale la ultima direccion de memoria+1 (por ejemplo 128), sino vale nextAlloc
 	int espacio_en_alloc;
 	while(1){
-		if(ptr_potencial_segmento->nextAlloc == 0){
+		if(ptr_potencial_segmento->nextAlloc == 0 || ptr_potencial_segmento == inicio_actual){
 			printf("ERROR. NEXTALLOC = 0 IMPSOBILE EN EL CARPINCHO %d", pid);
 			generar_dump();
 			abort();
@@ -56,11 +56,26 @@ int memalloc(tab_pags* tabla, int tamanio){
 		printf("\t\tTAMANIO: %i.\n", tamanio);
 
 		if(ptr_potencial_segmento->isFree){
-			if(espacio_en_alloc == tamanio){
+			if(espacio_en_alloc == tamanio ){
 				puts("-Memalloc->While: entra justo.");
 				ptr_potencial_segmento->isFree = false;
 				memoria_escribir_por_dirlog(tabla, inicio_actual, ptr_potencial_segmento, sizeof(HeapMetadata));
 				printf("-Memalloc->While: cambio isFree a false y devuelvo direccion de inicio %i.\n", inicio_actual+SIZE_METADATA);
+
+				if (ptr_potencial_segmento->nextAlloc == LAST_METADATA); { 
+					HeapMetadata new  = {0};
+					new.nextAlloc = LAST_METADATA;
+					new.prevAlloc = inicio_actual;
+					new.isFree = 1;
+
+					ptr_potencial_segmento->nextAlloc = numero_magico;
+					memoria_escribir_por_dirlog(tabla, inicio_actual, ptr_potencial_segmento, SIZE_METADATA);
+
+					pedir_paginas_a_swap(tabla, 1);
+					paginas_agregar(1, tabla);
+					memoria_escribir_por_dirlog(tabla, ptr_potencial_segmento->nextAlloc, &new, sizeof(HeapMetadata));
+				}
+
 				free(ptr_potencial_segmento);
 				return inicio_actual + SIZE_METADATA;
 			}
@@ -247,6 +262,7 @@ int memalloc(tab_pags* tabla, int tamanio){
 		inicio_previo = inicio_actual;
 		inicio_actual = ptr_potencial_segmento->nextAlloc;
 		printf("- Memalloc->While: el nuevo inicio sera %i.\n", inicio_actual);
+		free(ptr_potencial_segmento);
 		ptr_potencial_segmento = memoria_leer_por_dirlog(tabla_paginas, ptr_potencial_segmento->nextAlloc, SIZE_METADATA);
 		printf("- Memalloc->While: el nuevo puntero a revisar es el %p.\n", ptr_potencial_segmento);
 	}
@@ -462,18 +478,21 @@ void* memoria_leer(tab_pags* tabla, dir_t dl, int tamanio){
     void* buffer = malloc(tamanio);
     while(bytes_remaining > 0)
     {
-        int marco = nro_marco(dl.PAGINA, tabla);
-		if(marco == -1){ printf("No se encontro el marco\n");
-		log_info(logger_memoria,"No se encontro el marco\n");
-		abort();
+        int marco = nro_marco(dl.PAGINA, tabla, READ);
+
+		if (marco == -1) { 
+			printf("No se encontro el marco\n");
+			log_info(logger_memoria,"No se encontro el marco\n");
+			abort();
 		}
+
         dir_t df = { marco, dl.offset };
         int leer = min_get(bytes_remaining, page_remaining_space);
 
         memcpy(buffer + leido, ram.memoria + offset_memoria(df), leer);
 
-		pag_t* pagina = list_get(tabla->tabla_pag, dl.PAGINA);
-        page_use(tabla->pid, marco, pagina, dl.PAGINA, READ);
+		// pag_t* pagina = list_get(tabla->tabla_pag, dl.PAGINA);
+        // page_use(tabla->pid, marco, pagina, dl.PAGINA, READ);
 
         page_remaining_space = configuracion.TAMANIO_PAGINAS;
         bytes_remaining -= leer;
@@ -496,7 +515,7 @@ int memoria_escribir(tab_pags* tabla, dir_t dl, void* contenido, int tamanio){
 
     while(bytes_remaining > 0)
     {
-        int marco = nro_marco(dl.PAGINA, tabla);
+        int marco = nro_marco(dl.PAGINA, tabla, WRITE);
 		if(marco == -1){ printf("No se encontro el marco\n");
 			log_info(logger_memoria,"No se encontro el marco\n");
 		abort();
@@ -512,9 +531,8 @@ int memoria_escribir(tab_pags* tabla, dir_t dl, void* contenido, int tamanio){
 
         memcpy(ram.memoria + offset_memoria(df), contenido + written, bytes_to_write);
 
-		pag_t* pagina = list_get(tabla->tabla_pag, dl.PAGINA);
-
-        page_use(tabla->pid, marco, pagina, dl.PAGINA, WRITE);
+		// pag_t* pagina = list_get(tabla->tabla_pag, dl.PAGINA);
+        // page_use(tabla->pid, marco, pagina, dl.PAGINA, WRITE);
 
         bytes_remaining_space = configuracion.TAMANIO_PAGINAS;
         bytes_remaining -= bytes_to_write;
@@ -598,6 +616,7 @@ int heap_init(tab_pags* tabla)
 
     dir_t dl = {0, 0};
 
+	log_info(logger_alg, "ALG - PID: %d - PAG: %d", tabla->pid, 0);
 	int inicio = pagina_iniciar(tabla);
 	if (inicio == -1) return -1;
 

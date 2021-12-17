@@ -34,7 +34,7 @@ void iniciar_paginacion();
     @DESC:  retorna un numero de marco segun una pagina y la tabla del proceso.
             se encarga de buscar y hacer los reemplazos que se requieren
  */
-int nro_marco(int pagina, tab_pags* tabla);
+int nro_marco(int pagina, tab_pags* tabla, int codigo);
 
 /*
     @NAME:  init_ram
@@ -88,7 +88,7 @@ bool pagina_valida(tab_pags* tabla, int pagina);
             la pagina esta presente en memoria y retorna su numero de frame
             si no esta en memoria retorna -1
  */
-int buscar_en_tabPags(tab_pags* tabla, int pagina);
+pag_t* buscar_en_tabPags(tab_pags* tabla, int pagina);
 
 /*
     @NAME:  buscar_en_swap
@@ -225,6 +225,10 @@ void tablas_imprimir_saturno();
 void marco_ocupar(int marco);
 
 bool fija_es_valido_iniciar(tab_pags* tabla, int marco);
+
+void pagina_liberar_tlb(int pid, int pagina);
+
+void pagina_liberar_marco(pag_t *pagina);
 
 bool dinamica_marco_libre(int marco);
 #endif

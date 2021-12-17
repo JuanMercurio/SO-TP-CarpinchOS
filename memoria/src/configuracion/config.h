@@ -23,6 +23,7 @@ extern pthread_mutex_t mutex_log;
 extern t_cfg configuracion;
 extern t_config* config;
 extern t_log* logger_memoria;
+extern t_log* logger_alg;
 
 /*
    @NAME: obtener_config
