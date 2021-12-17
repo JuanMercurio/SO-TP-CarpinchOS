@@ -148,6 +148,7 @@ void* carpincho3_func(void *config) {
 		puntero = mate_memalloc(&instance, 100);
 		mate_call_io(&instance, "HUMEDAL", "No nos vamos nada, que nos saquen a patadas");
 		mate_memfree(&instance, puntero);
+		printf("--------------------------------------------------%d\n",a);
 		a++;
 	}
 
@@ -188,6 +189,7 @@ void* carpincho4_func(void *config) {
 		puntero = mate_memalloc(&instance, 100);
 		mate_call_io(&instance, "PILETA", "Vamos a usar la pileta...");
 		mate_memfree(&instance, puntero);
+		printf("--------------------------------------------------%d\n",a);
 		a++;
 	}
 

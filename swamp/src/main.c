@@ -325,6 +325,7 @@ int main(int argc, char *argv[])
             {
                 error = borrarCarpincho(pid);
             }
+            printf("ERROR a memoria por free: %d por Carpincho", error, pid);
             enviar_int(fd_memoria, error);
             break;
         case -1:
@@ -988,6 +989,7 @@ int borrarCarpincho(int pid)
 {
     //printf(" BORRAR BORRAR BORRAR BORRAR BORRAR BORRAR BORRAR BORRAR BORRAR BORRAR BORRAR BORRAR\n");
     printf("ENTRO A BORRAR\n");
+    mostrarCarpinchos();
     Carpincho_Swamp *car = buscarCarpincho(pid);
     //printf("PASO 0\n");
 
