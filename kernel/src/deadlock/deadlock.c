@@ -14,6 +14,7 @@ void deadlock()
 }
 void deteccion_deadlock()
 {   if(terminar){
+    printf( "SALE POR IF DE TERMINAR\n");
     return;
 }else{
     sem_kernel *semaforo;
@@ -79,7 +80,13 @@ void deteccion_deadlock()
             }
             printf("DESTUYENDO LISTA DE POSIBLE DEADLOCK\n");
             log_info(logger, "Destruyendo lista de posible deadlock");
+            if(list_is_empty(lista_posible_deadlock))
             list_destroy(lista_posible_deadlock);
+            else
+            {
+                list_destroy_and_destroy_elements(lista_posible_deadlock, lista_deadlock_destroyer);
+            }
+            
             printf("destruyo lista posible deadolock sin elementos\n");
         }
         else
@@ -115,43 +122,47 @@ deadlock_kernel *buscar_en_otras_listas(int pid, int index, char *semaforo_reten
     bool encontrado = false;
     while (i < list_size(lista_sem_kernel) && !encontrado)
     {
-        printf("entro a while de lista semaforos\n");
-        if (i == index)
+        printf("entro a while de lista semaforos con pid %d\n", pid);
+      /*   if (i == index)
         {
             printf(" valor de i :%d\n", i);
             i++;
             continue;
-        }
+        } */
         semaforo = (sem_kernel *)list_get(lista_sem_kernel, i);
         j = 0;
         while (j < list_size(semaforo->bloqueados) && !encontrado)
         {
+            printf("buscar_en_otras_listas ---- la cola NO está vacía --- size %d\n", list_size(semaforo->bloqueados));
             //log_info(logger,"buscar_en_otras_listas ---- la cola NO está vacía --- size %d", list_size(semaforo->bloqueados));
             carpincho_bloqueado = (t_pcb *)list_get(semaforo->bloqueados, j); //TIENE QUE SER UNA LISTA;
+            printf("LISTA DE BLOQUEADOS DE SEMAFORO %s CON ELEMENTOS %d\n ", semaforo->id, list_size(semaforo->bloqueados));
             // log_info(logger, "buscar_en_otras_listas - carpincho que recibe %d - carpincho que saca de bloqueado %d", pid, carpincho_bloqueado->pid);
-
+            printf("pid %d y carpincho_bloqueado pid %d\n", pid , carpincho_bloqueado->pid);
             if (pid == carpincho_bloqueado->pid)
             {
-                printf("encontro algo con pid %d\n ", pid);
+                printf("encontro algo con pid!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! %d\n ", pid);
                 // log_info(logger, "El carpincho %d está en posible deadlock - Semáforo retenido: %s - Semáforo por el que se bloqueó: %s", pid, semaforo_retenido, semaforo->id);
                 deadlock_kernel *carpincho_deadlock = (deadlock_kernel *)malloc(sizeof(deadlock_kernel));
                 carpincho_deadlock->pid = pid;
                 carpincho_deadlock->retenido = string_duplicate(semaforo_retenido);
                 carpincho_deadlock->esperando = string_duplicate(semaforo->id);
                 encontrado = true;
-                return carpincho_deadlock;
                 printf(" Retornando carpincho %d con retenido %s y esperando %s\n", carpincho_deadlock->pid, carpincho_deadlock->retenido, carpincho_deadlock->esperando);
+                return carpincho_deadlock;
+                
             }
             else
             {
                 printf("DEVUELVE NULL POR SEAMFORO TOMADO POR %d\n",pid);
-                return NULL;
+                //return NULL;
             }
             j++;
         }
         i++;
-    }if(!encontrado)
-        return NULL;
+    } if(!encontrado)
+    printf("-----------------DEVUELVE NULL POR NO ENCONTRADO");
+        return NULL; 
 }
 
 t_list *verificar_espera_circular(t_list *lista)
@@ -162,9 +173,8 @@ t_list *verificar_espera_circular(t_list *lista)
     while (!list_is_empty(lista) && !cerrado)
     {      
         printf("---------------------------antes de remover de posible deadlock con elementos %d\n", list_size(lista));
-        deadlock_kernel *a_evaluar = (deadlock_kernel*)list_get(lista,0);
-        printf(" saco de la lista carpincho %d con retenido %s y esperando %s\n", a_evaluar->pid, a_evaluar->retenido, a_evaluar->esperando);
-       // deadlock_kernel *a_evaluar = (deadlock_kernel*) list_remove(lista, 0);
+       // printf(" saco de la lista carpincho %d con retenido %s y esperando %s\n", a_evaluar->pid, a_evaluar->retenido, a_evaluar->esperando);
+       deadlock_kernel *a_evaluar = (deadlock_kernel*) list_remove(lista, 0);
         printf("struct deadlock removido de lista de poisble deadlock: carpincho: %d\n", a_evaluar->pid);
         if (a_evaluar->pid > 0)
         {
@@ -256,18 +266,26 @@ void finalizar_involucrados(t_list *lista_deadlock)
     deadlock_kernel *aux;
     sem_kernel *semaforo;
     int i = 0;
-    bool encontrado = false;
-    while (i < list_size(lista_deadlock) && !encontrado)
+    int posicion=0;
+   // bool encontrado = false;
+    printf("--------------------Tamaño lista con deadlock %d\n",list_size(lista_deadlock));
+    while (i < list_size(lista_deadlock) )
     {
         aux = list_get(lista_deadlock, i);
+        
         if (mayor_id < aux->pid)
         {
             mayor_id = aux->pid;
+            posicion =i;
+    
+            } i++;
+    }
+            aux = list_get(lista_deadlock, posicion);
             char *retenido_a_liberar = (char *)malloc(strlen(aux->retenido) + 1);
             char *esperando_a_sacar = (char *)malloc(strlen(aux->esperando) + 1);
             strcpy(retenido_a_liberar, aux->retenido);
             strcpy(esperando_a_sacar, aux->esperando);
-            printf("Se finaliza el carpincho PID %d", mayor_id);
+            printf("Se finaliza el carpincho PID %d\n", aux->pid);
             log_info(logger, "Se finaliza el carpincho PID %d", mayor_id);
             int pos;
             printf("busca el semaforo para desbloquear\n");
@@ -277,9 +295,6 @@ void finalizar_involucrados(t_list *lista_deadlock)
             sem_kernel_post(esperando_a_sacar);
             free(retenido_a_liberar);
             free(esperando_a_sacar);
-        }
-        i++;
-    }
 }
 
 void sacar_de_cola_bloqueados(sem_kernel *semaforo, int id)
