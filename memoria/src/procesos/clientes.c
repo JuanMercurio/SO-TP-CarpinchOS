@@ -132,6 +132,7 @@ void ejecutar_proceso(int cliente)
         sem_wait(&finalizar_conexion_swap);//falta inicilizar seamforo
         sem_destroy(&finalizar_conexion_swap);
     }
+    free(tabla);
 }
 
 /* Functions */ 
