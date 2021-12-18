@@ -6,7 +6,7 @@
 
 int main(int argc, char *argv[])
 {
-
+    logger = log_create(LOG_PATH, PROGRAM_NAME, true, 2);
     //memoria_tests(argc, argv[1]);
 
     // CONECTARSE A MEMORIA
@@ -24,8 +24,12 @@ int main(int argc, char *argv[])
 
     if (strcmp(tipo_asignacion, "FIJA") == 0)
     {
+        log_info(logger,"ASIGNACION FIJA");
         printf("entro a if de FIJA\n");
         asignacionFija = 1;
+    }
+    else{
+        log_info(logger,"ASIGNACION Dinamica");
     }
     //asignacionFija = 0;
 
@@ -61,7 +65,7 @@ int main(int argc, char *argv[])
 
     /*pthread_t tid;
     pthread_create(&tid, NULL, agregarPedidosMemoria, fd_memoria);*/
-
+    log_info(logger,"Creo los archivos. Divido y meto en la lsita de marcos_libres. (bloques)");
     crearArchivos(); //char* file = mmap( )
     if (asignacionFija)
     {
@@ -76,11 +80,14 @@ int main(int argc, char *argv[])
     termino = 0;
     while (termino == 0)
     {
+       //log_info(logger,"cantidad marcos libres %d",list_size(marcosLibes));
+        
         printf("_____________________________PROXIMA INSTRUCCION______________________\n");
         int codop = recibir_operacion(fd_memoria);
         //printf("codigo de operacdion %d\n", codop);
         //int tamanio = recibir_int(fd_memoria);
         //Pedido *ped = malloc(sizeof(Pedido));
+        log_info(logger,"Proxima INstrucion. cod. op: %d ", codop);
         int pid, pagina, tamanio2;
         bool puede;
         int error;
@@ -91,6 +98,7 @@ int main(int argc, char *argv[])
         case ESCRIBIR_PAGINA:
             pid = recibir_int(fd_memoria);
             pagina = recibir_int(fd_memoria);
+            log_info(logger,"Quiero escribir la pagina %d del pid %d", pagina, pid);
             printf("Quiero escribir la pagina %d del pid %d\n", pagina, pid);
             tamanio2 = configuracion.TAMANIO_PAGINA;
             void *buffer = recibir_buffer_t(&tamanio2, fd_memoria);
@@ -99,7 +107,7 @@ int main(int argc, char *argv[])
             printf("Contenido nextalloc %d \n", ((HeapMetadata *)buffer)->nextAlloc);
             /*realloc(buffer, configuracion.TAMANIO_PAGINA + 1);
             memcpy(buffer+configuracion.TAMANIO_PAGINA+1, '\0',1);*/
-
+            log_info(logger,"Me llego el contenido %s",buffer);
             int pido;
             if (asignacionFija)
             {
@@ -109,7 +117,7 @@ int main(int argc, char *argv[])
             {
                 pido = agregarPaginaDinamica(pid, pagina, (char *)buffer);
             }
-
+            log_info(logger,"Envia a memoria pudo:%d", pido);
             printf("Envia a memoria %d\n", pido);
             enviar_int(fd_memoria, pido);
             free(buffer);
@@ -150,9 +158,10 @@ int main(int argc, char *argv[])
             break;
 
         case INICIO:
+         
             printf("inicio\n");
             pid = recibir_int(fd_memoria);
-
+            log_info(logger,"Inicio carpincho %d",pid);
             printf("INICIO: pid: %d\n", pid);
             int inicio;
             if (asignacionFija)
@@ -165,8 +174,9 @@ int main(int argc, char *argv[])
                 inicio = CrearCarpincho(pid);
             }
             enviar_int(fd_memoria, inicio);
-
             printf("Envia a memoria %d\n", inicio);
+            log_info(logger,"Envia a memoria %d", inicio);
+            
 
             break;
 
@@ -177,7 +187,7 @@ int main(int argc, char *argv[])
             pagina = recibir_int(fd_memoria);
 
             printf("SOLICITUD_PAGINA: pid: %d\n", pid);
-
+            log_info(logger,"SOLICITUD_PAGINA: pid:%d",pid);
             if (asignacionFija)
             {
                 // ¿COMO SERIA?
@@ -195,11 +205,13 @@ int main(int argc, char *argv[])
             }
             if (puede && error == 1)
             {
+                log_info(logger,"Envia a memoria 1");
                 printf("Envia a memoria 1\n");
                 enviar_int(fd_memoria, 1);
             }
             else
             {
+                log_info(logger,"Envia a memoria -1");
                 printf("Envia a memoria -1\n");
                 enviar_int(fd_memoria, -1);
             }
@@ -212,7 +224,7 @@ int main(int argc, char *argv[])
             printf("SOLICIDUT MUCHAS PAGINAS\n");
             printf("m llego del pid %d\n", pid);
             printf("Voy a agregar %d paginas\n", cantidad_paginas);
-
+            log_info(logger,"SOLITIDUC_MUCHAS_PAGINAS: pid:%d  - cantidad paginas: %d",pid,cantidad_paginas);
             t_list *paginas = list_create();
             for (int i = 0; i < cantidad_paginas; i++)
             {
@@ -223,8 +235,10 @@ int main(int argc, char *argv[])
             error = solicitud_muchas_paginas(pid, cantidad_paginas, paginas);
             enviar_int(fd_memoria, error);
             printf("erro = %d\n", error);
+            log_info(logger,"ENVIO A MEMORIA %d", error);
             if (error == -1)
             {
+                log_info(logger,"BORRO LAS PAGINAS ASIGNADAS %d", error);
                 // TRATA DE BORRAR LAS PAGINAS ASIGNADAS.
                 for (int i = 0; i < cantidad_paginas; i++)
                 {
@@ -270,13 +284,14 @@ int main(int argc, char *argv[])
 
             break;
         case OBTENER_PAGINA:
+
             printf("OBTENER PAGINA\n");
             //tamanio_pid = recibir_int(fd_memoria);
             pid = recibir_int(fd_memoria);
             //tamanio_pagina = recibir_int(fd_memoria);
             pagina = recibir_int(fd_memoria);
             printf("Pedido de pid:%d, pagina %d \n", pid, pagina);
-
+            log_info(logger,"Pedido de pid:%d, pagina %d.", pid, pagina);
             char *cont_pag;
             if (asignacionFija)
             {
@@ -294,6 +309,7 @@ int main(int argc, char *argv[])
             printf("Envia a memoria: tam pagina: %d - contenido pagina: %s\n", configuracion.TAMANIO_PAGINA, cont_pag);
             if (strcmp(cont_pag, "|") == 0)
             {
+                log_info(logger,"NO encontro la pagina. ENvia -1 a memoria");
                 printf("Envia a memoria -1\n");
                 printf("NO ENCONTRO LA PAGINA\n");
                 enviar_int(fd_memoria, -1);
@@ -306,6 +322,7 @@ int main(int argc, char *argv[])
                 printf("Contenido isfree %d \n", ((HeapMetadata *)cont_pag)->isFree);
                 printf("Contenido prevalloc %d \n", ((HeapMetadata *)cont_pag)->prevAlloc);
                 printf("Contenido nextalloc %d \n", ((HeapMetadata *)cont_pag)->nextAlloc);
+                log_info(logger,"Encontro la pagina. La pagina es %s",cont_pag);
             }
             free(cont_pag);
 
@@ -314,7 +331,7 @@ int main(int argc, char *argv[])
         case BORRAR_CARPINCHO:
             //tamanio_pid = recibir_int(fd_memoria);
             pid = recibir_int(fd_memoria);
-
+            log_info(logger,"BORRAR_CARPINCHO: pid: %d", pid);
             printf("BORRAR_CARPINCHO: pid: %d\n", pid);
 
             if (asignacionFija)
@@ -325,11 +342,12 @@ int main(int argc, char *argv[])
             {
                 error = borrarCarpincho(pid);
             }
-            printf("ERROR a memoria por free: %d por Carpincho", error, pid);
+            //printf("ERROR a memoria por free: %d por Carpincho", error, pid);
+            log_info(logger,"Envia a memoria %d", error);
             enviar_int(fd_memoria, error);
             break;
         case -1:
-            printf("entro final \n");
+            printf("Entro final \n");
             termino = 1;
             break;
         default:
@@ -379,7 +397,7 @@ int solicitud_muchas_paginas(int pid, int cantidad_paginas, t_list *paginas)
             // PASARME EL PID.
             puede = quedaPaginasEnArchivo(pid);
             error = solicitudPagina(pid, list_get(paginas, j));
-            printf("Entre\n");
+            //printf("Entre\n");
             if (puede && error == 1)
             {
                 cant_puede_y_error++;
@@ -405,6 +423,7 @@ int solicitud_muchas_paginas(int pid, int cantidad_paginas, t_list *paginas)
 }
 void destroy_and_free(int fd_memoria)
 {
+    log_info(logger,"Comenzo a destruir y liberar");
     printf("Entro a destruir y libearar.\n");
     //  printf("Queda en pedidos %d\n", list_size(lista_pedidos));
     /*     if (list_size(lista_pedidos) > 0)
@@ -415,6 +434,7 @@ void destroy_and_free(int fd_memoria)
         free(ped);
         printf("Pedido no realizado: pid %d oper: %d \n", ped->pid, ped->oper);
     } */
+    log_info(logger,"libera lista carpincho y sus paginas");
     while(!list_is_empty(lista_carpinchos)){
         Carpincho_Swamp* car = list_remove(lista_carpinchos, 0);
         while(!list_is_empty(car->paginas)){
@@ -427,12 +447,14 @@ void destroy_and_free(int fd_memoria)
     }
     list_destroy(lista_carpinchos);
     //list_destroy_and_destroy_elements(lista_carpinchos, borrar_Carpincho);
+    log_info(logger,"libera lista marcos libres");
     while(!list_is_empty(marcos_libres)){
         un_marco_libre *mar_lib = list_remove(marcos_libres, 0);
         free(mar_lib);
     }
     list_destroy(marcos_libres);
     //list_destroy_and_destroy_elements(marcos_libres, borrar_marcos_libres);
+    log_info(logger,"libera lista marcos libres");
     while(!list_is_empty(cantidad_carpinchos_por_archivo)){
         Cantidad_arch_car * car = list_remove(cantidad_carpinchos_por_archivo, 0);
         free(car);
@@ -442,6 +464,7 @@ void destroy_and_free(int fd_memoria)
     sem_destroy(mutex_lista_pedidos);
     sem_destroy(agrego_lista_pedidos);
     close(fd_memoria);
+    log_destroy(logger);
 }
 void borrar_Carpincho(Carpincho_Swamp *car)
 {
@@ -774,11 +797,14 @@ bool quedaEspacioEnArchivoDOS()
 //DINAMICA
 int CrearCarpincho(int pidd)
 {
+     
+    log_info(logger,"Creando carpincho %d", pidd);
     printf("Creando carpincho %d\n", pidd);
     Carpincho_Swamp *car = buscarCarpincho(pidd);
     if (elegirMejorArchivoDOS(pidd) != -1 && car == NULL)
     {
         int mejorArchivo = elegirMejorArchivoDOS();
+        log_info(logger,"Archivo asignado: %d",mejorArchivo);
         Carpincho_Swamp *carpincho;
         carpincho = malloc(sizeof(Carpincho_Swamp));
         carpincho->pid = pidd;
@@ -787,11 +813,11 @@ int CrearCarpincho(int pidd)
         carpincho->cantidadPaginas = 0;
         list_add(lista_carpinchos, carpincho);
 
-        printf("cantidad carpinchos en crear carpincho \n");
+        //printf("cantidad carpinchos en crear carpincho \n");
         Cantidad_arch_car *ca = list_get(cantidad_carpinchos_por_archivo, mejorArchivo);
-        printf("ANTES cant: %d  archivo: %d \n", ca->cant, mejorArchivo);
+        //printf("ANTES cant: %d  archivo: %d \n", ca->cant, mejorArchivo);
         ca->cant++;
-        printf("AGREGUE cant: %d  archivo: %d \n\n", ca->cant, mejorArchivo);
+        //printf("AGREGUE cant: %d  archivo: %d \n\n", ca->cant, mejorArchivo);
 
         return 1;
     }
@@ -801,6 +827,8 @@ int CrearCarpincho(int pidd)
 int agregarPaginaDinamica(int pid, int pagina, char *contenido)
 {
     //TAMBIEN MODIFICA
+   
+    log_info(logger,"Agregando pagina: pid: %d pag: %d", pid, pagina);
     printf("Agregando pagina: pid: %d pag: %d\n", pid, pagina);
     printf("ENTRO contenido: %s\n", contenido);
     printf("Contenido isfree %d \n", ((HeapMetadata *)contenido)->isFree);
@@ -809,7 +837,7 @@ int agregarPaginaDinamica(int pid, int pagina, char *contenido)
     Carpincho_Swamp *car = buscarCarpincho(pid);
     if (car != NULL)
     {
-        printf("ANTES\n");
+        //printf("ANTES\n");
         mostrarPaginasCarpincho(car->paginas);
 
         //printf("base:%d\n",base);
@@ -820,7 +848,7 @@ int agregarPaginaDinamica(int pid, int pagina, char *contenido)
             mar_pag->base = base;
             mar_pag->pagina = pagina;
             list_add(car->paginas, mar_pag);
-            printf("ADESPUES\n");
+            //printf("ADESPUES\n");
             mostrarPaginasCarpincho(car->paginas);
             car->cantidadPaginas++;
         }
@@ -914,7 +942,7 @@ void mostrarPaginasCarpincho(t_list *paginas)
 {
     int max = list_size(paginas);
     Marcos_x_pagina *mar_x_pag;
-    printf("EL max es %d\n", max);
+    printf("LA CANTIDAD DE PAGINAS ES %d\n", max);
     for (int i = 0; i < max; i++)
     {
         //mar_x_pag = malloc(sizeof(Marcos_x_pagina));
@@ -1143,7 +1171,9 @@ int crearCarpinchoFijaDOS(int pidd)
     if (elegirMejorArchivoDOS(pidd) != -1 && car == NULL)
     {
         //printf("ENTRO %d\n",pidd);
+         
         int mejorArchivo = elegirMejorArchivoDOS();
+        log_info(logger,"Eligio archivo %d", mejorArchivo);
         int file = open(configuracion.ARCHIVOS_SWAP_list[mejorArchivo], O_RDWR, S_IRUSR | S_IWUSR, O_APPEND);
         Carpincho_Swamp *carpincho;
         carpincho = malloc(sizeof(Carpincho_Swamp));
@@ -1151,7 +1181,8 @@ int crearCarpinchoFijaDOS(int pidd)
         carpincho->numeroArchivo = mejorArchivo;
         // verificar que da bien la BASE
         carpincho->base = elegirBaseCarpincho(mejorArchivo);
-
+        log_info(logger,"Eligio archivo %d --- La base del carpincho %d", mejorArchivo,carpincho->base);
+         //log_info(logger,"");
         carpincho->paginas = list_create();
         for (int i = 0; i < configuracion.MARCOS_MAXIMOS; i++)
         {
@@ -1161,13 +1192,13 @@ int crearCarpinchoFijaDOS(int pidd)
             mar_pag->marco = i;
             list_add(carpincho->paginas, mar_pag);
         }
-        printf("cantidad carpinchos \n");
+        //printf("cantidad carpinchos \n");
         Cantidad_arch_car *ca = list_get(cantidad_carpinchos_por_archivo, mejorArchivo);
         //ca->cant = 0;
 
-        printf("cant: %d  archivo: %d \n", ca->cant, mejorArchivo);
+        //printf("cant: %d  archivo: %d \n", ca->cant, mejorArchivo);
         ca->cant++;
-        printf("AGREGUE cant: %d  archivo: %d \n\n", ca->cant, mejorArchivo);
+        //printf("AGREGUE cant: %d  archivo: %d \n\n", ca->cant, mejorArchivo);
         list_add(lista_carpinchos, carpincho);
         close(file);
         return 1;
@@ -1470,6 +1501,7 @@ int BorrarPaginaFija(int pid, int pagina)
         {
             file_in_memory[i] = '\0';
         }
+        mar_x_pag->pagina = -1;
         //char* pagina_devolver = string_substring(file_in_memory, car->base + pagina*configuracion.TAMANIO_PAGINA,configuracion.TAMANIO_PAGINA);
 
         /* for (int i = base + pagina*configuracion.TAMANIO_PAGINA; i < tope ;i++){
