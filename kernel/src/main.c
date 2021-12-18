@@ -47,8 +47,10 @@ int main(int argc, char *argv[])
 
    sem_init(&semaforo_sicro_fin_deadlock, 0, 0);
    sem_wait(&semaforo_sicro_fin_deadlock);
+   printf("paso wait\n");
    sem_destroy(&semaforo_sicro_fin_deadlock);
    log_destroy(logger);
+   printf("destruye logger\n");
    return 0;
 }
 
@@ -199,8 +201,8 @@ void receptor(void *arg)
          carpincho = malloc(sizeof(t_pcb)); // aca no recibe la pcb en si , recibe un paquete con datos que habra que guardar en un t_pcb luego de desserializar lo que viene
          carpincho->fd_cliente = cliente;
          carpincho->pid = crearID(&id_procesos);
-         printf("CLIENTE %d CARPINCHO %d\n", cliente, carpincho->pid);
          carpincho->pid++;
+         printf("CLIENTE %d CARPINCHO %d\n", cliente, carpincho->pid);
          carpincho->estado = 'N';
         // verificador = 66;
             carpincho->fd_memoria = crear_conexion(configuracion.IP_MEMORIA, configuracion.PUERTO_MEMORIA);
@@ -241,7 +243,9 @@ void receptor(void *arg)
          break;
       case IO:
          if (carpincho->pid < 0)
-         {enviar_int(cliente,-1);
+         {  recibido = recibir_mensaje(cliente);
+         free(recibido);
+            enviar_int(cliente,-1);
             break;
          }
          recibido = recibir_mensaje(cliente);
@@ -262,7 +266,9 @@ void receptor(void *arg)
 
       case SEM_WAIT:
          if (carpincho->pid < 0)
-         {enviar_int(cliente,-1);
+         {  recibido = recibir_mensaje(cliente);
+         free(recibido);
+            enviar_int(cliente,-1);
             break;
          }
          recibido = recibir_mensaje(cliente);
@@ -299,6 +305,8 @@ void receptor(void *arg)
       case SEM_POST:
          if (carpincho->pid < 0)
          {printf("MANDO -1 POSSSSSSSSSSSSSSSSSSST\n");
+         recibido = recibir_mensaje(cliente);
+         free(recibido);
             enviar_int(cliente,-1);
             break;
          }
@@ -317,7 +325,9 @@ void receptor(void *arg)
 
       case SEM_DESTROY:
          if (carpincho->pid < 0)
-         {enviar_int(cliente,-1);
+         {recibido = recibir_mensaje(cliente);
+         free(recibido);
+            enviar_int(cliente,-1);
             break;
          }
          recibido = recibir_mensaje(cliente);
@@ -396,7 +406,8 @@ void receptor(void *arg)
 
       case MEMWRITE:
          if (carpincho->pid < 0)
-         {recibir_mensaje(cliente);
+         {recibido = recibir_mensaje(cliente);
+         free(recibido);
          recibir_int(cliente);
          enviar_int(cliente, -7);
             break;
@@ -424,15 +435,17 @@ void receptor(void *arg)
             log_info("---------------MATE CLOSE - Receptor terminando conexion con %d. ELIMINADO POR DEADLOCK\n", cliente);
             printf("---------------MATE CLOSE - Receptor terminando conexion con %d. ELIMINADO POR DEADLOCK\n", cliente);
             conectado = false;
-            break;
-         }
+            eliminar_carpincho(carpincho);
+         }else{
          log_info(logger, "MATE_CLOSE: Se recibió del carpincho %d un MATE CLOSE", carpincho->pid);
          enviar_int(carpincho->fd_memoria, MATE_CLOSE);
          carpincho->proxima_instruccion = MATE_CLOSE;
          sem_post(&carpincho->semaforo_evento);
          conectado = false;
-         aux_int =0;
+         eliminar_carpincho(carpincho);
+        // aux_int =0;
          printf("---------------MATE CLOSE - Receptor terminando conexion con %d. Carpincho fue asado\n", cliente);
+         }
          break;
 
       default:
@@ -446,10 +459,6 @@ void receptor(void *arg)
       }
       }
    }
-  /*  if(verificador == 66)
-   free(carpincho); */
-   if(aux_int != 0)
-   eliminar_carpincho(carpincho);
    printf("MAIN KERNEL SALIO DEL WHILEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEE\n");
    close(cliente);
    sem_post(&controlador_multiprogramacion);

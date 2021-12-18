@@ -66,9 +66,7 @@ void procesador()
                log_info(logger, "---------------El carpincho %d fue suspendido", carpincho->pid);
             }
             gettimeofday(&carpincho->tiempo_fin, NULL);
-            printf("PROCESADOR:1\n");
             carpincho->tiempo.tiempo_ejecutado = obtener_tiempo(carpincho);
-            printf("PROCESADOR:1\n");
             carpinchos_bloqueados++;
             printf("PROCESADOR:1\n");
             printf("PROCESADOR: carpinchos bloqueados %d waiiiiitttttttttttttttttttttttttttttttttttttttttt\n", carpinchos_bloqueados);
