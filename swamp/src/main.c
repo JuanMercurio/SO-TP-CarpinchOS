@@ -1470,6 +1470,7 @@ int BorrarPaginaFija(int pid, int pagina)
         {
             file_in_memory[i] = '\0';
         }
+        mar_x_pag->pagina = -1;
         //char* pagina_devolver = string_substring(file_in_memory, car->base + pagina*configuracion.TAMANIO_PAGINA,configuracion.TAMANIO_PAGINA);
 
         /* for (int i = base + pagina*configuracion.TAMANIO_PAGINA; i < tope ;i++){

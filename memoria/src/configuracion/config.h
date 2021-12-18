@@ -25,6 +25,7 @@ extern t_config* config;
 extern t_log* logger_memoria;
 extern t_log* logger_alg;
 extern t_log* logger_clock;
+extern t_log* logger_tlb;
 
 /*
    @NAME: obtener_config
