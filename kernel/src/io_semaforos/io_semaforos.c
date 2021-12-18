@@ -83,7 +83,7 @@ int sem_kernel_post(char *nombre)
       sem->val++;
       if (sem->val >= 1)
          sem->tomado_por = -1;
-      printf("---------------------------------------------------tomado por %d\n", sem->tomado_por);
+      //printf("---------------------------------------------------tomado por %d\n", sem->tomado_por);
       if (!list_is_empty(sem->bloqueados))
       {
          bloqueado_a_listo(sem->bloqueados, &sem->mutex_cola);
@@ -95,7 +95,7 @@ int sem_kernel_post(char *nombre)
    }
    else
    {
-      printf("sem post : no se encontro semaforo\n");
+      //printf("sem post : no se encontro semaforo\n");
       return -1;
    }
 }
@@ -147,7 +147,7 @@ int sem_kernel_destroy(char *nombre)
       {
          bloqueado_a_listo(sem->bloqueados, &sem->mutex_cola);
       }
-      printf("aca\n");
+     // printf("aca\n");
       sem_wait(&mutex_lista_sem_kernel);
       sem = list_remove(lista_sem_kernel, pos);
       sem_destroyer(sem);
@@ -181,7 +181,7 @@ void io_destroyer(void *arg)
    sem_destroy(&a_destruir->mutex_io);
    sem_destroy(&a_destruir->cola_con_elementos);
    free(a_destruir);
-   printf("IOs destruidas\n");
+  // printf("IOs destruidas\n");
 }
 
 io_kernel *buscar_io(char *nombre)

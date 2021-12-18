@@ -31,7 +31,7 @@ int main(int argc, char *argv[])
    signal_init(SIGINT, (void*)program_killer);
    signal_usr1(SIGUSR1, (void*) matar);
    iniciar_logger();
-   printf("Iniciando kernel\n");
+   printf("|||Iniciando kernel|||\n");
    obtener_config();
    //printf("inicio2\n");
    inicializar_semaforos();
@@ -39,24 +39,24 @@ int main(int argc, char *argv[])
    init_dispositivos_io();
    //printf("inicio dispositivos io\n");
    inicializar_planificacion();
-   printf("Kernel iniciado\n");
+   printf("|||Kernel iniciado|||\n");
    administrar_clientes_kernel(configuracion.IP, configuracion.PUERTO, (void *)receptor); 
-   printf("salio de atender clientes\n");
+   //printf("salio de atender clientes\n");
   /*  terminar = true;
    terminar_programa(); */
 
    sem_init(&semaforo_sicro_fin_deadlock, 0, 0);
    sem_wait(&semaforo_sicro_fin_deadlock);
-   printf("paso wait\n");
+   //printf("paso wait\n");
    sem_destroy(&semaforo_sicro_fin_deadlock);
    log_destroy(logger);
-   printf("destruye logger\n");
+   //printf("destruye logger\n");
    return 0;
 }
 
 void terminar_programa()
 {
-   printf("Terminando kernel\n");
+   printf("|||Terminando kernel|||\n");
    while(!list_is_empty(lista_io_kernel)){
       io_kernel * destroy = list_remove(lista_io_kernel,0);
       sem_post(&destroy->cola_con_elementos);
@@ -89,7 +89,7 @@ void terminar_programa()
    printf("Kernel finalizado\n");
 }
 void matar(){
-   printf("mato el hilo acpertador??\n");
+   //printf("mato el hilo acpertador??\n");
 }
 
 void destruir_colas_y_listas()
@@ -176,7 +176,7 @@ void destruir_semaforos()
 
 void receptor(void *arg)
 {
-   printf("RECEPTOR DE CLIENTE %d\n", *(int *)arg);
+   //printf("RECEPTOR DE CLIENTE %d\n", *(int *)arg);
    log_info(logger,"Recibí el cliente %d",*(int *)arg);
    int cliente = *(int *)arg;
    free(arg);
@@ -202,7 +202,7 @@ void receptor(void *arg)
          carpincho->fd_cliente = cliente;
          carpincho->pid = crearID(&id_procesos);
          carpincho->pid++;
-         printf("CLIENTE %d CARPINCHO %d\n", cliente, carpincho->pid);
+         //printf("CLIENTE %d CARPINCHO %d\n", cliente, carpincho->pid);
          carpincho->estado = 'N';
         // verificador = 66;
             carpincho->fd_memoria = crear_conexion(configuracion.IP_MEMORIA, configuracion.PUERTO_MEMORIA);
@@ -211,7 +211,7 @@ void receptor(void *arg)
             recibido = recibir_mensaje(carpincho->fd_memoria); //handshake
             free(recibido);
             aux_int = recibir_int(carpincho->fd_memoria);
-            printf("recibio de memoria un %d\n", aux_int);
+            //("recibio de memoria un %d\n", aux_int);
             if (aux_int == 0)
             {  
          //printf("carpincho creado\n");
@@ -251,7 +251,8 @@ void receptor(void *arg)
          recibido = recibir_mensaje(cliente);
          carpincho->proxima_instruccion = IO;
          carpincho->io = buscar_io(recibido);
-         printf("RECEPTOR: io: recibido de bloquear por io a carpincho %d\n", carpincho->pid);         if (carpincho->io == NULL)
+         //printf("RECEPTOR: io: recibido de bloquear por io a carpincho %d\n", carpincho->pid);
+         if (carpincho->io == NULL)
          {
             enviar_int(cliente, -1);
          }
@@ -276,7 +277,7 @@ void receptor(void *arg)
          int pos;
          carpincho->bloqueado_en = buscar_semaforo2(recibido, &pos);
 
-         printf("RECEPTOR: --------------------------------------- recibido %s\n", recibido);
+         //printf("RECEPTOR: --------------------------------------- recibido %s\n", recibido);
          free(recibido);
          if (carpincho->bloqueado_en == NULL)
          {
@@ -288,7 +289,7 @@ void receptor(void *arg)
          {
             //printf("RECEPTOR: el semaforo encontradoe es %s\n", sem->id);
             if (sem_kernel_wait2(carpincho))
-            {         printf("RECEPTOR: ---------------------------------------paso sem wait2 \n");
+            {         //printf("RECEPTOR: ---------------------------------------paso sem wait2 \n");
 
                sem_post(&carpincho->semaforo_evento);
                enviar_int(cliente, 0);
@@ -304,15 +305,15 @@ void receptor(void *arg)
 
       case SEM_POST:
          if (carpincho->pid < 0)
-         {printf("MANDO -1 POSSSSSSSSSSSSSSSSSSST\n");
+         {//printf("MANDO -1 POSSSSSSSSSSSSSSSSSSST\n");
          recibido = recibir_mensaje(cliente);
          free(recibido);
             enviar_int(cliente,-1);
             break;
          }
          recibido = recibir_mensaje(cliente);
-        // log_info(logger, "Se recibió del carpincho %d un SEM POST para %s", carpincho->pid, recibido);
-         printf("Se recibió del carpincho %d un SEM POST para %s", carpincho->pid, recibido);
+         log_info(logger, "Se recibió del carpincho %d un SEM POST para %s", carpincho->pid, recibido);
+        // printf("Se recibió del carpincho %d un SEM POST para %s", carpincho->pid, recibido);
          //printf("MAIN:recibi un post semaforo para %s DEL CARPINCHO %d cliente %d\n", recibido, carpincho->pid, cliente);
          if (recibido == NULL)
             break;
@@ -347,10 +348,10 @@ void receptor(void *arg)
          }
          aux_int = recibir_int(cliente);
          log_info(logger, "Se recibió del carpincho %d un MEM ALLOC con el tamañi %d", carpincho->pid, aux_int);
-         printf("Se recibió del carpincho %d un MEM ALLOC con el tamañi %d\n", carpincho->pid, aux_int);
+         //printf("Se recibió del carpincho %d un MEM ALLOC con el tamañi %d\n", carpincho->pid, aux_int);
          enviar_cod_op_e_int(carpincho->fd_memoria, MEMALLOC, aux_int);
          aux_int = recibir_int(carpincho->fd_memoria);
-         printf("la direccion logica que me llego es-- %d\n\n", aux_int);
+         //printf("la direccion logica que me llego es-- %d\n\n", aux_int);
          enviar_int(cliente, aux_int);
 
          break;
@@ -363,7 +364,7 @@ void receptor(void *arg)
          }
          aux_int = recibir_int(cliente);
          log_info(logger, "Se recibió del carpincho %d un MEM FREE con el tamanio %d", carpincho->pid, aux_int);
-         printf("Se recibió del carpincho %d un MEM FREE con el tamanio %d\n", carpincho->pid, aux_int);
+         //printf("Se recibió del carpincho %d un MEM FREE con el tamanio %d\n", carpincho->pid, aux_int);
          enviar_cod_op_e_int(carpincho->fd_memoria, MEMFREE, aux_int);
          aux_int = recibir_int(carpincho->fd_memoria);
          enviar_int(cliente, aux_int);
@@ -379,7 +380,7 @@ void receptor(void *arg)
          aux_int = recibir_int(cliente);
          int size = recibir_int(cliente);
          log_info(logger, "Se recibió del carpincho %d un MEM READ desde la posición %d con tamañio %d", carpincho->pid, aux_int, size);
-         printf("Se recibió del carpincho %d un MEM READ desde la posición %d con tamañio %d\n", carpincho->pid, aux_int, size);
+         //printf("Se recibió del carpincho %d un MEM READ desde la posición %d con tamañio %d\n", carpincho->pid, aux_int, size);
 
          enviar_cod_op_e_int(carpincho->fd_memoria, MEMREAD, aux_int);
          enviar_int(carpincho->fd_memoria, size);
@@ -400,7 +401,7 @@ void receptor(void *arg)
          enviar_int(carpincho->fd_cliente, size_confimation);
          enviar_buffer(cliente, recibido, size_confimation);
 
-         printf("MEMREAD mensaje enviado %s\n ", recibido);
+         //printf("MEMREAD mensaje enviado %s\n ", recibido);
          free(recibido);
          break;
 
@@ -415,16 +416,16 @@ void receptor(void *arg)
          int buffer_size = recibir_int(carpincho->fd_cliente);
          void* recibido = recibir_buffer(buffer_size, carpincho->fd_cliente);
          aux_int = recibir_int(cliente);
-         printf("me llego del carpincho %s\n", recibido);
+         //printf("me llego del carpincho %s\n", recibido);
 
          enviar_int(carpincho->fd_memoria, MEMWRITE);
          enviar_int(carpincho->fd_memoria, buffer_size);
          enviar_buffer(carpincho->fd_memoria, recibido, buffer_size);
          enviar_int(carpincho->fd_memoria, aux_int);
          log_info(logger, "Se recibió del carpincho %d un MEM write desde la posición %d con el mensjaje %s", carpincho->pid, aux_int, recibido);
-         printf("-----------------------------esperando respuesta memoria\n");
+         //printf("-----------------------------esperando respuesta memoria\n");
          aux_int = recibir_int(carpincho->fd_memoria);
-         printf("aux int %d\n", aux_int);
+         //printf("aux int %d\n", aux_int);
          enviar_int(cliente, aux_int);
          free(recibido);
          break;
@@ -433,7 +434,7 @@ void receptor(void *arg)
          if (carpincho->pid < 0)
          {
             log_info("---------------MATE CLOSE - Receptor terminando conexion con %d. ELIMINADO POR DEADLOCK\n", cliente);
-            printf("---------------MATE CLOSE - Receptor terminando conexion con %d. ELIMINADO POR DEADLOCK\n", cliente);
+            //printf("---------------MATE CLOSE - Receptor terminando conexion con %d. ELIMINADO POR DEADLOCK\n", cliente);
             conectado = false;
             eliminar_carpincho(carpincho);
          }else{
@@ -444,7 +445,7 @@ void receptor(void *arg)
          conectado = false;
          // eliminar_carpincho(carpincho);
         // aux_int =0;
-         printf("---------------MATE CLOSE - Receptor terminando conexion con %d. Carpincho fue asado\n", cliente);
+         //printf("---------------MATE CLOSE - Receptor terminando conexion con %d. Carpincho fue asado\n", cliente);
          }
          break;
 
@@ -452,17 +453,17 @@ void receptor(void *arg)
       if (carpincho->pid < 0){
          break;
       }else{
-         printf("codigo erroneo DEL CLIENTE %d\n", cliente);
+         //printf("codigo erroneo DEL CLIENTE %d\n", cliente);
          log_info(logger,"Se recibió un código erróneo del cliente %d", cliente);
          conectado = false;
          break;
       }
       }
    }
-   printf("MAIN KERNEL SALIO DEL WHILEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEE\n");
+   //printf("MAIN KERNEL SALIO DEL WHILEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEE\n");
    close(cliente);
    sem_post(&controlador_multiprogramacion);
-   printf("RECEPTOR: saliendo------------------------------------------------------------\n");
+   //printf("RECEPTOR: saliendo------------------------------------------------------------\n");
    return;
 }
 
@@ -512,9 +513,9 @@ void inicializar_planificacion()
 void program_killer()
 {
    terminar = true;
-   printf("terminar = true\n");
+   //printf("terminar = true\n");
    kill(getpid(), SIGUSR1);
-   printf("envia SIGUSR1\n");
+   //printf("envia SIGUSR1\n");
    terminar_programa();
    printf("TERMINO SERVIDOR\n");
 }
@@ -571,13 +572,13 @@ void administrar_clientes_kernel(char* IP, char* PUERTO, void (*funcion)(void*))
       *cliente= aceptar_cliente(servidor);
       if(*cliente == -1){
          free(cliente);
-         printf("salio por cliente -1 atender!!!1\n");
+         //printf("salio por cliente -1 atender!!!1\n");
       }else{
       pthread_create(&hilo, &detached, (void*)funcion,(void*) cliente);
       }
    
 }
-printf("termino atender clientes\n");
+//printf("termino atender clientes\n");
    pthread_attr_destroy(&detached); 
 
 }
