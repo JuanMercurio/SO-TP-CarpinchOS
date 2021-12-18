@@ -66,6 +66,9 @@ t_list* cantidad_carpinchos_por_archivo;
 sem_t* mutex_lista_pedidos;
 sem_t*  agrego_lista_pedidos;
 int cant_ped;
+extern t_log* logger;
+char *LOG_PATH = "./swamp.log";
+char *PROGRAM_NAME = "SWAMP";
 
 /*
     @NAME: terminar_programa
