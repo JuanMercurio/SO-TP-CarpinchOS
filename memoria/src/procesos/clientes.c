@@ -64,7 +64,7 @@ void ejecutar_proceso(int cliente)
                 tablas_loggear_saturno();
                 break;
 
-            case NEW_INSTANCE_KERNEL:printf("llego desde KERNEL\n");
+            case NEW_INSTANCE_KERNEL:
                 new_instance_kernel_comportamiento(tabla, cliente, &conectado);
                 
                 break;
@@ -74,51 +74,50 @@ void ejecutar_proceso(int cliente)
                 break;
 
             case SWAMP:
-                printf("se conecto swamp\n");
+                log_info(logger_memoria, "Se conecto SWAMP.");
                 swap = cliente;
                 enviar_mensaje(cliente, configuracion.TIPO_ASIGNACION);
                 conectado = false;
                 break;
                 
-            case SUSPENCION: printf("recibi un suspension de carpincho %d\n", tabla->pid); //cambiar por comportamiento real
-                /* escribir contenido de paginas en swap y liberar los marcos para que otro porceso los use */
-                printf("cantidad de paginas del carpincho %d: %d\n", tabla->pid,  list_size(tabla->tabla_pag));
+            case SUSPENCION: 
+                log_info(logger_memoria, "-- SUSPENCION | PID %d -- ", tabla->pid);
                 for(int i = 0 ; i < list_size(tabla->tabla_pag); i++ ){
-                    // int frame = buscar_en_tabPags(tabla, i);
-                    // pag_t * pagina =  list_get(tabla->tabla_pag, i);
+
                     pag_t  *pagina= buscar_en_tabPags(tabla, i);
 
                     if(pagina->marco == -1){
-                        printf("salto por frame = -1\n");
+                        log_info(logger_memoria, "La pagina %d no esta en memoria.", i);
                         continue;
                     }
 
                     if (pagina->tlb == 1) {
+                        log_info(logger_memoria, "Accedo a la pagina %d mediante TLB.", i);
                         tlb_t* reg = tlb_obtener_registro(tabla->pid, i);
-                        if (reg == NULL) printf("perro estas en cualquiera\n");
 
                         pagina->algoritmo = reg->alg;
                         pagina->marco = reg->marco; 
                         pagina->modificado = reg->modificado;
-                        printf("Modifique el bit a moficado desde TLB\n");
-                        // registro->presente = 1;
-                        // registro->tlb = 1;
-                        }
-
-                    if(pagina->modificado == 1)
-                    { 
-                        enviar_pagina_a_swap(tabla->pid, i, pagina->marco);
-                        printf("envio pagina a swap\n");
-                        int aux = recibir_int(swap);
-                        printf("recibo de swap por enviar pagina por suspension %d\n",aux );
-                    }else
-                    {
-                        printf("no encontro modificado\n");
+                        log_info(logger_memoria, "Actualizo bit de modificado.");
                     }
-                     printf("borra de memoria por suspension pagina %d, de marco %d, presncia %d \n",i, pagina->marco, pagina->presente);
+
+                    if(pagina->modificado == 1) { 
+                        enviar_pagina_a_swap(tabla->pid, i, pagina->marco);
+                        log_info(logger_memoria, "La pagina %d fue modificada. La envio a SWAP.");
+                        int aux = recibir_int(swap);;
+                    }else log_info(logger_memoria, "La pagina %d no fue modificada. No la envio a SWAP.");
+                    
+                    log_info(logger_memoria, "Saco del marco %d a la pagina %d (si esta).",pagina->marco, i);
 	                pagina_liberar_marco(pagina);
-                    pagina_liberar_tlb(tabla->pid, i);
-                  }
+                    
+                    if(pagina->tlb){
+                        log_info(logger_memoria, "Saco de la TLB marco %d a la pagina %d", pagina->marco,i);
+                        pagina_liberar_tlb(tabla->pid, i);
+                    }    
+                        
+                    
+                }
+                log_info(logger_memoria, "-- FIN SUSPENCION --\n");
                 break;
 
            /*  case VUELTA_A_READY: printf("recibi vuelta a ready de carpincho %d\n", cliente); //cambiar por comportamieto real
@@ -157,7 +156,6 @@ void new_instance_comportamiento(tab_pags* tabla, int cliente, bool *conectado)
     }
 
     enviar_int(cliente, tabla->pid);
-    // enviar_int(swap, tabla->pid);
     enviar_mensaje(cliente, "OK");
     tlb_info_agregar(tabla->pid);
     iniciar_paginas(tabla);
@@ -173,7 +171,6 @@ void new_instance_kernel_comportamiento(tab_pags* tabla, int cliente, bool *cone
     if(respuesta == -1) 
     {
         enviar_int(cliente, -1);
-        //enviar_mensaje(cliente, "No es posible iniciar");
         free(tabla->tabla_pag);
         free(tabla);
         *conectado = false;
@@ -187,14 +184,12 @@ void new_instance_kernel_comportamiento(tab_pags* tabla, int cliente, bool *cone
 
 
 int swap_solicitud_iniciar(int pid){
-    //return 0;
-    printf("------------------------ENVIANDO A SWAMP Solicitud %d\n", pid);
+    log_info(logger_memoria, "------------------------ENVIANDO A SWAMP SOLICITUD INICIO %d");
     enviar_int(swap, INICIO);
-    printf("Enviar un pid %d\n", pid);
+    log_info(logger_memoria, "Enviando pid %d\n", pid);
     enviar_int(swap, pid);
-    printf("------------------------ESPERANDO....\n");
     int estado = recibir_int(swap);
-    printf("------------------------RECIBIDO DE SWAMP %d\n", estado);
+    log_info(logger_memoria, "------------------------RECIBIDO DE SWAMP %d\n", estado);
     return estado;
 }
 
@@ -236,7 +231,6 @@ void memwrite_comportamiento(tab_pags* tabla, int cliente)
     int *size = malloc(sizeof(int));
     void* buffer = recibir_buffer_t(size, cliente);
     int dl = recibir_int(cliente);
-    printf("MEMWRITE: recibio %s\n", (char*)buffer);
     int result_memwrite = memwrite(tabla, dl, buffer, *size);
     enviar_int(cliente, result_memwrite);
     free(size);
@@ -248,7 +242,6 @@ void mate_close_comportamiento(tab_pags *tabla, int cliente, bool *conectado)
     enviar_int(swap, BORRAR_CARPINCHO);
     enviar_int(swap, tabla->pid);
     int pudo = recibir_int(swap);
-    printf("Resultado swap: %d\n", pudo);
     if (pudo == -1) abort();
 
     cliente_terminar(tabla, cliente);
@@ -285,7 +278,6 @@ void inicio_comprobar(tab_pags* tabla, int cliente, bool* conectado){
 
 void cliente_terminar(tab_pags* tabla, int cliente)
 { 
-    printf("imprimiendo tabla de carpincho %d\n", tabla->pid);
     tablas_imprimir_saturno();
     if (tabla->p_clock != -1) clock_puntero_actualizar(tabla->pid);
     tablas_eliminar_proceso(tabla->pid);
@@ -389,7 +381,6 @@ void eliminar_proceso_i(int i){
         pag_t* reg = list_remove(tabla->tabla_pag, i);
         if(reg->presente == 1)
         {
-            printf("El coso a eliminar es: %d", reg->marco);
             marco_t* marco = list_get(marcos, reg->marco);
             marco->pid = 0;
         }

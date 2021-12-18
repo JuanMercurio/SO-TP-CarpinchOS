@@ -30,12 +30,10 @@ t_victima lru_dinamico(int pid, tab_pags* tabla)
 			if(registro->presente == 0 || registro->algoritmo == -1) continue;
 			if (registro->tlb == 1) {
                 tlb_t* reg = tlb_obtener_registro(t->pid, j);
-                if (reg == NULL) printf("perro estas en cualquiera\n");
+                if (reg == NULL) {}
                 registro->algoritmo = reg->alg;
                 registro->marco = reg->marco; 
                 registro->modificado = reg->modificado;
-               // registro->presente = 1;
-               // registro->tlb = 1;
             }
             
             if (registro->algoritmo <= LRU_min) {
@@ -70,13 +68,11 @@ t_victima lru_en_pag_table(tab_pags* tabla){
         pag_t* registro = list_get(tabla->tabla_pag, i);
 		if (registro->presente == 0 || registro->algoritmo == -1) continue;
 
-        printf("hay para analizar\n");
         if (registro->tlb == 1) {
             tlb_t* reg = tlb_obtener_registro(tabla->pid, i);
             registro->algoritmo = reg->alg;
             registro->marco = reg->marco; 
             registro->modificado = reg->modificado;
-           // registro->presente = 1;
             registro->tlb = 1;
         }
 
@@ -87,12 +83,8 @@ t_victima lru_en_pag_table(tab_pags* tabla){
             
         }
     }
-    if (pagina ==NULL)
-{ 
-     printf("error con lru fijo\n");
-     abort();
- }
-    //pagina->tlb;
+    if (pagina ==NULL) abort();
+
     t_victima victima;    
     victima.marco      = pagina->marco;
     victima.modificado = pagina->modificado;
@@ -156,10 +148,6 @@ int clock_buscar_00(tab_pags* tabla)
     while(iteracion != tamanio)
     {
         if(i == list_size(tabla->tabla_pag)) i = 0;
-
-        printf("Estoy adentro 0");
-        printf("El proceso tiene %d paginas \n", list_size(tabla->tabla_pag));
-        printf("El valor de i es: %d \n", i);
                     
         pag_t* reg = list_get(tabla->tabla_pag, i);
         if(reg->presente != 1 ) 
@@ -178,13 +166,10 @@ int clock_buscar_00(tab_pags* tabla)
             reg->algoritmo = registro_tlb->alg;
             reg->marco = registro_tlb->marco; 
             reg->modificado = registro_tlb->modificado;
-           // reg->presente = 1;
-           // reg->tlb = 1;
         }
 
         if(reg->modificado == 0 && reg->algoritmo == 0) 
         {
-
             if(i+1 == tamanio)
                 tabla->p_clock = 0;
             else
@@ -238,16 +223,12 @@ int clock_buscar_01(tab_pags* tabla)
             reg->algoritmo = registro_tlb->alg;
             reg->marco = registro_tlb->marco; 
             reg->modificado = registro_tlb->modificado;
-           // reg->presente = 1;
-           // reg->tlb = 1;
         }
+
         /* codigo horrible  */
-        if(reg->modificado == 1 && reg->algoritmo == 0) 
-        {
-            if(i+1 == tamanio)
-                tabla->p_clock = 0;
-            else
-                tabla->p_clock = i+1;
+        if(reg->modificado == 1 && reg->algoritmo == 0) {
+            if(i+1 == tamanio) tabla->p_clock = 0;
+            else tabla->p_clock = i+1;
                 
             return i;
         }
@@ -256,10 +237,8 @@ int clock_buscar_01(tab_pags* tabla)
             if(reg->tlb == 1) registro_tlb->alg = 0;
         }
 
-        if(i+1 == tamanio) 
-            i = 0;
-        else
-            i++;
+        if(i+1 == tamanio) i = 0;
+        else i++;
         
         iteracion++;
     }
@@ -267,15 +246,10 @@ int clock_buscar_01(tab_pags* tabla)
     return -1;
 }
 
-
-
-void page_use(int pid, int marco, pag_t* p, int n_pagina, int codigo)
-{
+void page_use(int pid, int marco, pag_t* p, int n_pagina, int codigo) {
     if (p->tlb == 1) {
         tlb_t *reg = buscar_reg_en_tlb(pid, n_pagina);
         if(reg == NULL){
-            printf("Error con la pagina %d y el pid %d\n", n_pagina, pid);
-            printf("No esta en la tlb\n");
             abort();
         }
         tlb_page_use(reg);
@@ -313,7 +287,6 @@ void tlb_insert_page(int pid, int n_pagina, int marco, int codigo)
     if (configuracion.CANTIDAD_ENTRADAS_TLB == 0) return; 
     int victima = tlb_obtener_victima();
     
-    printf("La victima de la tlb es %d\n", victima);
     tlb_t* reg = list_get(tlb, victima);
     log_info(logger_tlb,"TLB OUT: PID %d | PAG %d | MARCO %d | REG %d", reg->pid, reg->pagina, reg->marco, victima);
     log_info(logger_tlb,"TLB  IN: PID %d | PAG %d | MARCO %d | REG %d", pid, n_pagina, marco, victima); // checkear

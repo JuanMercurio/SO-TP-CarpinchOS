@@ -119,7 +119,6 @@ int nro_marco(int pagina, tab_pags *tabla, int codigo)
     tlb_t* reg = buscar_reg_en_tlb(tabla->pid, pagina);
     marco = reg == NULL ? TLB_MISS : reg->marco;
     if (marco != TLB_MISS) {
-        printf("Entontre en la tlb\n");
         tlb_page_use(reg);
 
         if (strcmp(configuracion.ALGORITMO_REEMPLAZO_TLB, "LRU") == 0) reg->alg = alg_comportamiento_tlb();// que carajos??
@@ -153,13 +152,8 @@ int nro_marco(int pagina, tab_pags *tabla, int codigo)
     }
 
     marco = buscar_en_swap(tabla, pagina);
-    if (marco != -1) {
-        printf("Encontre en swap\n");
 
-        return marco;
-    }
-
-    return -1;
+    return marco;
 }
 
 int buscar_en_swap(tab_pags *tabla, int pagina)
@@ -176,8 +170,6 @@ int buscar_en_swap(tab_pags *tabla, int pagina)
     }
     log_info(logger_memoria, "Traer de SWAP - PID: %d | PAG: %d", tabla->pid, pagina);
     void* contenido = recibir_buffer(configuracion.TAMANIO_PAGINAS, swap);
-
-    printf("SWAP - PID: %d - PAG: %d - Recibi esto: %s\n", tabla->pid, pagina, (char*)contenido);
 
     int marco = marco_libre();
     bool test_fija = fija_es_valido_iniciar(tabla, marco); 
@@ -259,9 +251,6 @@ void actualizar_nueva_pagina(int pagina, int marco, tab_pags *tabla)
 void actualizar_victima_de_tlb(tlb_t* reg)
 {
     tab_pags* tabla = buscar_page_table(reg->pid);
-    printf("La victima de la TLB es: \n");
-    printf("PID %d - PAG %d - MARCO %d\n", reg->pid, reg->pagina, reg->marco);
-    printf("Y este proceso tiene %d paginas\n", list_size(tabla->tabla_pag));
     pag_t* pagina = list_get(tabla->tabla_pag, reg->pagina);
     
     pagina->algoritmo = reg->alg;
@@ -366,11 +355,9 @@ int pagina_iniciar(tab_pags *tabla)
         } 
 
         if (proceso_tiene_frames_asignados(tabla) == true ) {
-           printf("ENTRE EN ESTA COSA \n") ;
             t_victima victima = algoritmo_mmu(tabla->pid, tabla);
             log_info(logger_memoria, "MMU OUT: PID %d | PAG %d | MARCO %d", victima.pid, victima.pagina, victima.marco);
             log_info(logger_memoria, "MMU IN: PID %d | PAG %d | MARCO %d", tabla->pid, pagina, marco);
-            printf("Vioctia: PID: %d MARCO: %d \n", victima.pid, victima.marco);
             reemplazar_pagina(victima, NULL, pagina, tabla);
             return 0;
         }
@@ -624,8 +611,7 @@ void memoria_marco_liberar(int marco)
 	marco_a_liberar->pid = -1;
 }
 
-void 
-pagina_liberar_marco(pag_t *pagina)
+void pagina_liberar_marco(pag_t *pagina)
 {
 	if (pagina->presente == 1){ memoria_marco_liberar(pagina->marco);
     pagina->presente = 0;} //modificado por suspension
