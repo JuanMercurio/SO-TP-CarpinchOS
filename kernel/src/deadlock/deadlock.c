@@ -190,7 +190,11 @@ t_list *verificar_espera_circular(t_list *lista)
     }
     else
     {
-        list_destroy(lista_aux);
+        if(list_is_empty(lista_aux)) 
+            list_destroy(lista_aux);
+        else {
+            list_destroy_and_destroy_elements(lista_aux, lista_deadlock_destroyer);
+        }
         printf("No se detectó espera circular");
         log_info(logger, "No se detectó espera circular");
         return NULL;
