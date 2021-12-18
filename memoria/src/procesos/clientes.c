@@ -46,18 +46,22 @@ void ejecutar_proceso(int cliente)
 
             case MEMALLOC:
                 memalloc_comportamiento(tabla, cliente);
+                tablas_loggear_saturno();
                 break;
 
             case MEMFREE:;
                 memfree_comportamiento(tabla, cliente);
+                tablas_loggear_saturno();
                 break;
 
             case MEMREAD:
                 memread_comportamiento(tabla, cliente);
+                tablas_loggear_saturno();
                 break;
 
             case MEMWRITE:;
                 memwrite_comportamiento(tabla, cliente);
+                tablas_loggear_saturno();
                 break;
 
             case NEW_INSTANCE_KERNEL:printf("llego desde KERNEL\n");

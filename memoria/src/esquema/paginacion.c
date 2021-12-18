@@ -358,6 +358,7 @@ int pagina_iniciar(tab_pags *tabla)
 
     if (strcmp(configuracion.TIPO_ASIGNACION, "FIJA") == 0) {
         if (marco != -1 && proceso_puede_iniciar(tabla)) { 
+            log_info(logger_memoria, "Pagina %d iniciada en marco %d, libre.", pagina, marco);
             marco_ocupar(marco, tabla->pid, pagina);
             memoria_asignar_pagina_vacia(tabla, pagina, marco);
             return 0;
@@ -367,6 +368,8 @@ int pagina_iniciar(tab_pags *tabla)
            printf("ENTRE EN ESTA COSA \n") ;
             t_victima victima = algoritmo_mmu(tabla->pid, tabla);
             printf("Vioctia: PID: %d MARCO: %d \n", victima.pid, victima.marco);
+            log_info(logger_memoria, "MMU OUT: PID %d | PAG %d | MARCO %d", victima.pid, victima.pagina, victima.marco);
+            log_info(logger_memoria, "MMU IN: PID %d | PAG %d | MARCO %d", tabla->pid, pagina, marco);
             reemplazar_pagina(victima, NULL, pagina, tabla);
             return 0;
         }
@@ -379,6 +382,8 @@ int pagina_iniciar(tab_pags *tabla)
     {
         t_victima victima = algoritmo_mmu(tabla->pid, tabla);
         log_info(logger_clock,"Reemplazo PID: %d - PAG: %d --> PID: %d - PAG: %d | MARCO: %d", victima.pid, victima.pagina, tabla->pid, pagina, victima.marco);
+        log_info(logger_memoria, "MMU OUT: PID %d | PAG %d | MARCO %d", victima.pid, victima.pagina, victima.marco);
+        log_info(logger_memoria, "MMU IN: PID %d | PAG %d | MARCO %d", tabla->pid, pagina, marco);
         reemplazar_pagina(victima, NULL, pagina, tabla);
     }
 
@@ -387,6 +392,7 @@ int pagina_iniciar(tab_pags *tabla)
         // int* victima = list_get(marcos, marco);
         // *victima = 1;
         marco_ocupar(marco, tabla->pid, pagina);
+        log_info(logger_memoria, "Pagina %d iniciada en marco %d, libre.", pagina, marco);
         memoria_asignar_pagina_vacia(tabla, pagina, marco);
     }
 
