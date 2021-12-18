@@ -54,12 +54,14 @@ release: clean
 release: all
 
 memcheck: all
+	find . -name "*.log" -type f -print0 | xargs -0 /bin/rm -f
 	valgrind  --track-origins=yes --leak-check=full --log-file="$@_$(PROJECT).log" $(BINARY) $(ARGS)
 
 helgrind: all
 	valgrind --tool=helgrind --log-file="$@_$(PROJECT).log" $(BINARY) $(ARGS)
 
 run: all
+	find . -name "*.log" -type f -print0 | xargs -0 /bin/rm -f
 	clear
 	@$(BINARY)
 
