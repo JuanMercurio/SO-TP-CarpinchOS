@@ -36,6 +36,7 @@ t_config* config;
 void obtener_config();
 
 t_log* logger;
+t_log* logger_deadlock;
 
 void iniciar_logger();
 

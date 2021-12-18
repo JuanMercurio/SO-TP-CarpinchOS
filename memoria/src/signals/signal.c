@@ -164,6 +164,7 @@ void tlb_imprimir_reg(tab_pags* reg)
 
 void tabla_actualizar(tlb_t* reg)
 {
+    if (reg->pid == -1) return;
     pag_t *pag = pagina_obtener(reg->pid, reg->pagina);
     pag->algoritmo = reg->alg;
     pag->modificado = reg->modificado;

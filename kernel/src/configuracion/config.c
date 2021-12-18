@@ -19,5 +19,6 @@ void obtener_config(){
 
 void iniciar_logger(){
     logger = log_create("cfg/kernel.log", "Kernel", 0, LOG_LEVEL_INFO);
+    logger_deadlock = log_create("cfg/deadlock.log", "Kernel-Deadlock", 0, LOG_LEVEL_INFO);
     log_info(logger,"Log creado");
 }
