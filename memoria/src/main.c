@@ -28,8 +28,11 @@ int main(int argc, char* argv[]) {
 void terminar_programa(){
    if(swap != -1)
    sem_post(&finalizar_conexion_swap);
+   eliminar_tlb_info();
    config_destroy(config);
    log_destroy(logger_memoria);
+   log_destroy(logger_tlb);
+   log_destroy(logger_clock);
 }
 
 

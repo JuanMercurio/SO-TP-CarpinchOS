@@ -52,5 +52,6 @@ void tlb_page_use_lru(tlb_t* reg);
 
 tlb_t* tlb_obtener_registro(int pid, int pagina);
 void tlb_actualizar_entrada_vieja(int pid, int pagina);
+pag_t * pagina_obtener(int pid, int pagina);
 
 #endif

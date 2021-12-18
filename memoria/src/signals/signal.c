@@ -33,6 +33,11 @@ void imprimir_TLB(){
     printf("Total TLB Misses: %d\n", TLB_MISS_COUNT);
     printf("\n");
 
+    int tamanio = list_size(tlb_information);
+    for (int i=0; i < tamanio; i++) {
+        tlb_info_t* element = list_get(tlb_information, i);
+        printf("PID: %d - TLB MISS: %d - TLB HITS: %d\n", element->pid, element->miss, element->hits);
+    }
     /* int tamanio = list_size(tablas.lista); */
     /* for(int i=0; i < tamanio; i++) */
     /* { */
@@ -101,6 +106,10 @@ void tlb_print_on_file(FILE* dump_file)
 
         char registro[100];
        sprintf(registro, "Entrada: %-4d   Estado: %-6s     PID: %-3s   Pagina: %-4s   Marco: %-4s\n", entrada, estado , pid, pagina, marco);
+       free(pagina);
+       free(marco);
+       free(pid);
+       free(estado);
        fwrite(registro, strlen(registro), 1, dump_file);
     }
 
@@ -153,9 +162,10 @@ void tlb_imprimir_reg(tab_pags* reg)
     printf( "PID: %d  |  TLB Hits: %d  |  TLB Misses: %d \n", reg->pid, reg->TLB_HITS, reg->TLB_MISSES);
 }
 
-
-
 void tabla_actualizar(tlb_t* reg)
 {
-     
+    pag_t *pag = pagina_obtener(reg->pid, reg->pagina);
+    pag->algoritmo = reg->alg;
+    pag->modificado = reg->modificado;
+    pag->tlb = 0;
 }

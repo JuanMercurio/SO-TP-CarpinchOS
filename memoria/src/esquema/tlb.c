@@ -9,6 +9,7 @@
 #define LRU_TLB  alg_tlb
 
 t_list* tlb;
+t_list * tlb_information;
 
 int alg_tlb = 0;
 int TLB_MISS_COUNT = 0;
@@ -17,6 +18,7 @@ int TLB_HIT_COUNT  = 0;
 void iniciar_tlb(){
 
     tlb = list_create();
+    tlb_information = list_create();
 
     for(int i=0; i<configuracion.CANTIDAD_ENTRADAS_TLB; i++){ 
         tlb_t* registro = malloc(sizeof(tlb_t));
@@ -39,31 +41,49 @@ int buscar_en_tlb(tab_pags* tabla, int pagina){
 
         tlb_t *reg = list_get(tlb, i);
         if(reg->pid != pid) continue;
-        if(reg->pagina == pagina) return comportamiento_TLB_HIT(tabla, reg);
+        if(reg->pagina == pagina) return comportamiento_TLB_HIT(tabla->pid, reg);
     }
 
-    return comportamiento_TLB_MISS(tabla, pagina);
+    return comportamiento_TLB_MISS(tabla->pid, pagina);
 }
 
-int comportamiento_TLB_HIT(tab_pags* tabla, tlb_t* reg){
+tlb_info_t* tlb_info_obtener(int pid)
+{
+    int i = 0;
+    tlb_info_t* elegido = NULL;
+
+    while (elegido == NULL) {
+        tlb_info_t* elemento = list_get(tlb_information, i);
+        if (elemento->pid == pid) return elemento;
+        i++;
+    }
+
+    return elegido;
+}
+
+int comportamiento_TLB_HIT(int pid, tlb_t* reg){
 
     char mensaje[100];
-    sprintf(mensaje, "TLB HIT - PID: %d - Pagina: %d - Marco: %d", tabla->pid, reg->pagina, reg->marco);
+    sprintf(mensaje, "TLB HIT - PID: %d - Pagina: %d - Marco: %d", pid, reg->pagina, reg->marco);
     loggear_mensaje(mensaje);
 
-    tabla->TLB_HITS++;
+    tlb_info_t* info_tlb = tlb_info_obtener(pid);
+    info_tlb->hits = info_tlb->hits + 1;
+
     TLB_HIT_COUNT++;
     usleep(configuracion.RETARDO_ACIERTO_TLB);
     return reg->marco;
 }
 
-int comportamiento_TLB_MISS(tab_pags* tabla, int pagina){
+int comportamiento_TLB_MISS(int pid, int pagina){
 
     char mensaje[100];
-    sprintf(mensaje, "TLB MISS - PID: %d - Pagina: %d", tabla->pid, pagina);
+    sprintf(mensaje, "TLB MISS - PID: %d - Pagina: %d", pid, pagina);
     loggear_mensaje(mensaje);
 
-    tabla->TLB_MISSES++;
+    tlb_info_t* info_tlb = tlb_info_obtener(pid);
+    info_tlb->miss = info_tlb->miss + 1;
+
     TLB_MISS_COUNT++;
     usleep(configuracion.RETARDO_FALLO_TLB);
     return TLB_MISS;
@@ -147,14 +167,38 @@ void tlb_page_use_lru(tlb_t* reg){
     reg->alg_tlb = suma_atomica(&FIFO_TLB);
 }
 
+
 tlb_t* buscar_reg_en_tlb(int pid, int n_pagina)
 {
     int tamanio = list_size(tlb);
 
     for (int i=0; i < tamanio; i++) {
         tlb_t *reg = list_get(tlb, i);
-        if (reg->pid == pid && reg->pagina == n_pagina) return reg;
+        if (reg->pid == pid && reg->pagina == n_pagina) {
+            comportamiento_TLB_HIT(pid, reg);
+            return reg;
+        }
     }
 
+    comportamiento_TLB_MISS(pid, n_pagina);
     return NULL;
+}
+
+void eliminar_tlb_info()
+{
+    int tamanio = list_size(tlb_information);
+    for (int i=0; i < tamanio; i++) {
+        tlb_info_t *element = list_remove(tlb_information, 0);
+        free(element);
+    }
+    list_destroy(tlb_information);
+}
+
+void tlb_info_agregar(int pid)
+{
+    tlb_info_t* element = malloc(sizeof(tlb_info_t));
+    element->pid = pid;
+    element->hits = 0;
+    element->miss = 0;
+    list_add(tlb_information, element);
 }

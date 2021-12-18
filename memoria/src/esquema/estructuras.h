@@ -68,5 +68,10 @@ typedef struct t_victima{
 /* Estructura Memoria */
 extern tablas_t tablas;
 
+typedef struct tlb_info_t {
+    int pid;
+    int miss;
+    int hits;
+}tlb_info_t;
 
 #endif

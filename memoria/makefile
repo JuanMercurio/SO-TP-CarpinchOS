@@ -43,6 +43,7 @@ test: all
 	$(BINARY) test
 
 clean:
+	find . -name "*.log" -type f -print0 | xargs -0 /bin/rm -f
 	rm -rf $(CFG) $(BINDIR) $(OBJDIR) 
 
 delete: 

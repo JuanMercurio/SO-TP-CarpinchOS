@@ -315,8 +315,8 @@ void tlb_insert_page(int pid, int n_pagina, int marco, int codigo)
     
     printf("La victima de la tlb es %d\n", victima);
     tlb_t* reg = list_get(tlb, victima);
-    log_info(logger_memoria,"TLB OUT: PID %d | PAG %d | MARCO %d | REG %d", reg->pid, reg->pagina, reg->marco, victima);
-    log_info(logger_memoria,"TLB IN: PID %d | PAG %d | MARCO %d | REG %d", pid, n_pagina, marco, victima); // checkear
+    log_info(logger_tlb,"TLB OUT: PID %d | PAG %d | MARCO %d | REG %d", reg->pid, reg->pagina, reg->marco, victima);
+    log_info(logger_tlb,"TLB  IN: PID %d | PAG %d | MARCO %d | REG %d", pid, n_pagina, marco, victima); // checkear
 
     if (reg->pid != -1) actualizar_victima_de_tlb(reg);
     reg->pid = pid;
@@ -413,7 +413,6 @@ int pagina_siguiente_en_memoria_por_pid(tab_pags *tabla)
 pag_t *buscar_00_cf(tab_pags* tabla, int* pagina)
 {
 
-    int posicion = tabla->p_clock;
     int iteracion = 0;
     int marcos_asignados = marcos_asginados_a_proceso(tabla);
 
@@ -441,7 +440,6 @@ pag_t *buscar_00_cf(tab_pags* tabla, int* pagina)
 pag_t *buscar_01_cf(tab_pags* tabla, int* pagina)
 {
 
-    int posicion = tabla->p_clock;
     int iteracion = 0;
     int marcos_asignados = marcos_asginados_a_proceso(tabla);
 

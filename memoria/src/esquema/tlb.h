@@ -13,10 +13,10 @@
 
 /* TLB */
 extern t_list * tlb;
+extern t_list * tlb_information;
 
 extern int TLB_MISS_COUNT;
 extern int TLB_HIT_COUNT;
-
 extern int alg_tlb;
 
 /*
@@ -38,9 +38,9 @@ int buscar_en_tlb(tab_pags* tabla, int pagina);
  */
 void actualizar_tlb(int pid, int marco, int pagina);
 
-int comportamiento_TLB_HIT(tab_pags* tabla, tlb_t* pagina);
+int comportamiento_TLB_HIT(int pid, tlb_t* pagina);
 
-int comportamiento_TLB_MISS(tab_pags* tabla, int pagina);
+int comportamiento_TLB_MISS(int pid, int pagina);
 
 void paginas_actualizar_modificado(int pid, int pagina);
 
@@ -49,5 +49,9 @@ int tlb_obtener_victima();
 int tlb_lugar_libre();
 
 tlb_t* buscar_reg_en_tlb(int pid, int n_pagina);
+
+void eliminar_tlb_info();
+
+void tlb_info_agregar(int pid);
 
 #endif
