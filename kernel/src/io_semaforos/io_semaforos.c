@@ -104,9 +104,11 @@ int sem_kernel_init(char *nombre, int value)
 {
    int *pos = malloc(sizeof(int));
    sem_kernel *comparador = buscar_semaforo2(nombre, pos);
+   free(pos);
    if (comparador != NULL)
    {
       log_info(logger, "SEMAFORO YA INICIALIZADO");
+     
       return -1;
    }
    else
@@ -124,9 +126,10 @@ int sem_kernel_init(char *nombre, int value)
       list_add(lista_sem_kernel, (void *)nuevo_sem);
       sem_post(&mutex_lista_sem_kernel);
       //log_info(logger, "SEMAFORO %s inicializado con %d",nuevo_sem->id, value);
-      free(pos);
+     
       return 0;
    }
+    
 }
 
 int sem_kernel_destroy(char *nombre)

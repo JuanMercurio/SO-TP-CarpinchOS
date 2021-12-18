@@ -10,9 +10,12 @@ void deadlock()
         sleep(configuracion.TIEMPO_DEADLOCK * 0.001);
         deteccion_deadlock();
     }
+    sem_post(&semaforo_sicro_fin_deadlock);
 }
 void deteccion_deadlock()
-{
+{   if(terminar){
+    return;
+}else{
     sem_kernel *semaforo;
     deadlock_kernel *a_enlistar = NULL;
     printf("---------------------------------------COMIENZA DETECCION DE DEADLOCK\n");
@@ -90,6 +93,7 @@ void deteccion_deadlock()
     }
     else
         list_destroy(lista_posible_deadlock);
+}
 }
 
 void lista_deadlock_destroyer(void *arg)

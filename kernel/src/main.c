@@ -44,6 +44,11 @@ int main(int argc, char *argv[])
    printf("salio de atender clientes\n");
   /*  terminar = true;
    terminar_programa(); */
+
+   sem_init(&semaforo_sicro_fin_deadlock, 0, 0);
+   sem_wait(&semaforo_sicro_fin_deadlock);
+   sem_destroy(&semaforo_sicro_fin_deadlock);
+   log_destroy(logger);
    return 0;
 }
 
@@ -57,6 +62,7 @@ void terminar_programa()
       io_destroyer((void*)destroy);
       //printf("destruyo io\n");
    }
+   list_destroy(lista_io_kernel);
    sem_post(&cola_suspendido_bloquedo_con_elementos);
    sem_post(&controlador_multiprogramacion);
    sem_post(&cola_new_con_elementos);
@@ -75,7 +81,6 @@ void terminar_programa()
    //printf("destuyendo detacheds\n");
    pthread_attr_destroy(&detached2);
    //printf("cerrando servidor...\n");
-   log_destroy(logger);
    close(servidor);
    printf("Kernel finalizado\n");
 }
@@ -146,6 +151,7 @@ void destruir_colas_y_listas()
 
 void destruir_semaforos()
 {
+    //holoosoksoajaojoa
    sem_destroy(&cola_new_con_elementos);
   // sem_destroy(&cola_ready_con_elementos);
    sem_destroy(&cola_suspendido_bloquedo_con_elementos);
