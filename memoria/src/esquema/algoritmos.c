@@ -318,6 +318,9 @@ void tlb_insert_page(int pid, int n_pagina, int marco, int codigo)
     tlb_t* reg = list_get(tlb, victima);
     log_info(logger_memoria,"La victima del reemplazo es %d del carpincho %d", reg->pagina, reg->pid);
     log_info(logger_memoria,"Se reemplazara por %d del carpincho %d", n_pagina, pid); // checkear
+    
+    log_info(logger_tlb, "Victima: PID %d | PAG %d | REG TLB %d | MARCO %d", reg->pid, reg->pagina, victima, reg->marco);
+
     if (reg->pid != -1) actualizar_victima_de_tlb(reg);
     reg->pid = pid;
     reg->pagina = n_pagina;

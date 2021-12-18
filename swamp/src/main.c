@@ -1092,6 +1092,7 @@ int solicitudPagina(int pid, int pagina)
 }
 int borrarPagina(int pid, int pagina)
 {
+    puts("Borrar Pagina");
     // ver tema si encontro la pagina...
     Carpincho_Swamp *car = buscarCarpincho(pid);
   
@@ -1120,6 +1121,8 @@ int borrarPagina(int pid, int pagina)
                 list_add(marcos_libres, mar);
                 encontro = 1;
                 i = max;
+
+                free(mar_x_pag);
             }
         }
         close(file);
@@ -1516,7 +1519,7 @@ int borrarCarpinchoFija(int pid)
             Marcos_x_pagina *mar_pag = list_remove(car->paginas, 0);
             free(mar_pag);
         }
-         list_destroy(car->paginas);
+        list_destroy(car->paginas);
         sacarCarpinchoDeLista(car->pid);
         free(car);
 

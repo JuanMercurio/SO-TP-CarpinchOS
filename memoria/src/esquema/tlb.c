@@ -1,4 +1,5 @@
 #include "tlb.h"
+#include "../configuracion/config.h"
 
 #include <stdlib.h>
 #include <stdio.h>
@@ -76,6 +77,9 @@ void actualizar_tlb(int pid, int marco, int pagina){
     tlb_t* reg = list_get(tlb, victima);
 
     if(reg->modificado == 1) paginas_actualizar_modificado(reg->pid, reg->pagina);
+
+    // log_info(logger_tlb, "Victima: PID %d | PAG %d | REG TLB %d | MARCO %d", reg->pid, reg->pagina, victima, reg->marco);
+
 
     reg->pid         =  pid;
     reg->marco       =  marco;

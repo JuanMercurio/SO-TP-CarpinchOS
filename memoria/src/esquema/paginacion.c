@@ -189,10 +189,10 @@ int buscar_en_swap(tab_pags *tabla, int pagina)
         if (configuracion.CANTIDAD_ENTRADAS_TLB > 0 ) tlb_insert_page(tabla->pid, pagina, marco, READ);
         actualizar_nueva_pagina(pagina, marco, tabla);
         log_info(logger_alg, "ALG - PID: %d - PAG: %d", tabla->pid, pagina);
-        log_info(logger_memoria, "banana");
+            // log_info(logger_tlb, "Victima: PID %d | PAG %d | REG TLB %d | MARCO %d", reg->pid, reg->pagina, victima, reg->marco);
+
         return marco;
     } else { 
-        log_info(logger_memoria, "patata");
         t_victima victima = algoritmo_mmu(tabla->pid, tabla);
         log_info(logger_memoria, "VICTIMA: PID %d | PAG %d | MARCO %d", victima.pid, victima.pagina, victima.marco);
         reemplazar_pagina(victima, contenido, pagina, tabla);
