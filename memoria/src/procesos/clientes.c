@@ -131,11 +131,11 @@ void ejecutar_proceso(int cliente)
         pthread_mutex_unlock(&ram.mutex);
     }
     if(cliente == swap){
+        free(tabla);
         sem_init(&finalizar_conexion_swap, 0, 0);
         sem_wait(&finalizar_conexion_swap);//falta inicilizar seamforo
         sem_destroy(&finalizar_conexion_swap);
-    }
-    free(tabla);
+    } else free(tabla);
 }
 
 /* Functions */ 
@@ -186,7 +186,6 @@ void new_instance_kernel_comportamiento(tab_pags* tabla, int cliente, bool *cone
 int swap_solicitud_iniciar(int pid){
     log_info(logger_memoria, "------------------------ENVIANDO A SWAMP SOLICITUD INICIO %d");
     enviar_int(swap, INICIO);
-    log_info(logger_memoria, "Enviando pid %d\n", pid);
     enviar_int(swap, pid);
     int estado = recibir_int(swap);
     log_info(logger_memoria, "------------------------RECIBIDO DE SWAMP %d\n", estado);

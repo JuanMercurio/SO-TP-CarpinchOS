@@ -126,7 +126,6 @@ int memalloc(tab_pags* tabla, int tamanio){
 					next->prevAlloc = ptr_potencial_segmento->nextAlloc;
 					log_info(logger_memoria, "Actualizo el prevAlloc del metadata next.");
 					memoria_escribir_por_dirlog(tabla_paginas, new.nextAlloc, next, SIZE_METADATA);
-
 					free(next);
 				} else log_info(logger_memoria, "No existe metadata next.");
 
@@ -423,7 +422,6 @@ int memwrite(tab_pags* tabla, int dir_log, void* contenido, int tamanio){
 }
 
 void* memoria_leer(tab_pags* tabla, dir_t dl, int tamanio){
-	printf("\nLECTURA - PAG %d - OFFSET: %d\n", dl.PAGINA, dl.offset);
 	log_info(logger_memoria, "LECTURA - PID %d | PAG %d | OFFSET %d", tabla->pid, dl.PAGINA, dl.offset);
     if(!read_verify_size(tabla, dl, tamanio)) return NULL; 
 
@@ -435,11 +433,8 @@ void* memoria_leer(tab_pags* tabla, dir_t dl, int tamanio){
     while(bytes_remaining > 0)
     {
         int marco = nro_marco(dl.PAGINA, tabla, READ);
-		log_info(logger_memoria, "ESTOY LEYENDO DESDE EL MARCO %d", marco);
-		tablas_loggear_saturno();
 
 		if (marco == -1) { 
-			printf("No se encontro el marco\n");
 			log_info(logger_memoria,"No se encontro el marco\n");
 			abort();
 		}
@@ -463,27 +458,21 @@ void* memoria_leer(tab_pags* tabla, dir_t dl, int tamanio){
 
 int memoria_escribir(tab_pags* tabla, dir_t dl, void* contenido, int tamanio){
     if(!read_verify_size(tabla, dl, tamanio)) return MATE_WRITE_FAULT;
-	printf("ESCRITURA - PID %d - PAG %d - OFFSET: %d", tabla->pid, dl.PAGINA, dl.offset);
 	log_info(logger_memoria, "ESCRITURA - PID %d | PAG %d | OFFSET %d | TAM %d", tabla->pid, dl.PAGINA, dl.offset, tamanio);
 
     int written = 0;
     int bytes_remaining = tamanio;
     int bytes_remaining_space = configuracion.TAMANIO_PAGINAS - dl.offset;
-	printf("-----------------------------bytes reamin %d\n",bytes_remaining);
-	printf("-----------------------------bytes reamin space %d\n",bytes_remaining_space);
     while(bytes_remaining > 0)
     {
         int marco = nro_marco(dl.PAGINA, tabla, WRITE);
-		if(marco == -1){ printf("No se encontro el marco\n");
+		if(marco == -1){
 			log_info(logger_memoria,"No se encontro el marco\n");
 			abort();
 		}
 		
         dir_t df = { marco, dl.offset };
         int bytes_to_write = min_get(bytes_remaining, bytes_remaining_space);
-		printf("Voy a escribir %d bytes\n", bytes_to_write);
-		printf("El offset es %d\n", offset_memoria(df));
-
 
         memcpy(ram.memoria + offset_memoria(df), contenido + written, bytes_to_write);
 		
