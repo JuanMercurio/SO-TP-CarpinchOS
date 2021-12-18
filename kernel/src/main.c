@@ -442,7 +442,7 @@ void receptor(void *arg)
          carpincho->proxima_instruccion = MATE_CLOSE;
          sem_post(&carpincho->semaforo_evento);
          conectado = false;
-         eliminar_carpincho(carpincho);
+         // eliminar_carpincho(carpincho);
         // aux_int =0;
          printf("---------------MATE CLOSE - Receptor terminando conexion con %d. Carpincho fue asado\n", cliente);
          }
