@@ -30,11 +30,11 @@ void procesador()
          carpincho->tiempo_inicio = carpincho->tiempo_fin;
          carpincho->estado = 'E';
          enviar_mensaje(carpincho->fd_cliente, "OK");
-         printf("PROCESADOR: carpincho %d envio ok \n", carpincho->pid);
+        // printf("PROCESADOR: carpincho %d envio ok \n", carpincho->pid);
          printf("\nPROCESADOR: ESPERANDO EVENTO BLOQUEANTE de carpinchooooooo %d\n\n", carpincho->pid);
          // printf("puntero a semaforo envento %d--carpincho %d\n", &carpincho->semaforo_evento, carpincho->pid);
          sem_wait(&carpincho->semaforo_evento);
-         printf("PROCESADOR: carpincho %d paso el wait \n", carpincho->pid);
+         //printf("PROCESADOR: carpincho %d paso el wait \n", carpincho->pid);
          switch (carpincho->proxima_instruccion)
          {
          case IO:
@@ -59,7 +59,7 @@ void procesador()
             break;
 
          case SEM_WAIT:
-            printf("PROCESADOR:sssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssss\n");
+            //printf("PROCESADOR:sssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssss\n");
             if (verificar_suspension())
             {
                bloquear_por_mediano_plazo(carpincho);
@@ -68,8 +68,8 @@ void procesador()
             gettimeofday(&carpincho->tiempo_fin, NULL);
             carpincho->tiempo.tiempo_ejecutado = obtener_tiempo(carpincho);
             carpinchos_bloqueados++;
-            printf("PROCESADOR:1\n");
-            printf("PROCESADOR: carpinchos bloqueados %d waiiiiitttttttttttttttttttttttttttttttttttttttttt\n", carpinchos_bloqueados);
+            //printf("PROCESADOR:1\n");
+            //printf("PROCESADOR: carpinchos bloqueados %d waiiiiitttttttttttttttttttttttttttttttttttttttttt\n", carpinchos_bloqueados);
             log_info(logger, "Carpinchos bloqueados: %d", carpinchos_bloqueados);
             break;
 
