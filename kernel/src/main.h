@@ -125,7 +125,7 @@ sem_t controlador_multiprogramacion;
 
 sem_t mutex_lista_sem_kernel;
 sem_t mutex_lista_io_kernel;
-
+sem_t semaforo_sicro_fin_deadlock;
 
 
  pthread_attr_t detached2;

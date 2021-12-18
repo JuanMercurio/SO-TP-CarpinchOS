@@ -60,6 +60,8 @@ void terminar_programa()
       sem_post(&destroy->cola_con_elementos);
       //printf("post a io %s\n", destroy->id);
       io_destroyer((void*)destroy);
+     
+     
       //printf("destruyo io\n");
    }
    list_destroy(lista_io_kernel);
