@@ -4,6 +4,8 @@
 
 t_log* logger_memoria;
 t_log* logger_alg;
+t_log* logger_clock;
+
 pthread_mutex_t mutex_log;
 
 t_config* config;
@@ -43,6 +45,7 @@ void obtener_config(){
 void iniciar_logger(){
     logger_memoria = log_create("cfg/memoria.log", "Memoria", 0, LOG_LEVEL_INFO);
     logger_alg = log_create("cfg/logger_alg.log", "USODEPAGINA", 0, LOG_LEVEL_INFO);
+    logger_clock = log_create("cfg/clock.log", "CLOCK", 0, LOG_LEVEL_INFO);
 }
 
 void loggear_mensaje(char* mensaje){

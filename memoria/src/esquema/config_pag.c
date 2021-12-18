@@ -57,7 +57,7 @@ void set_alg_principal(){
     if ( strcmp(configuracion.TIPO_ASIGNACION, "DINAMICA") == 0 && \
          strcmp(configuracion.ALGORITMO_REEMPLAZO_MMU, "CLOCK-M") == 0)     
      {
-          algoritmo_mmu = clock_dinamico; 
+          algoritmo_mmu = cd; 
           alg_comportamiento = alg_comportamiento_clock_modificado;
           return; 
      }
