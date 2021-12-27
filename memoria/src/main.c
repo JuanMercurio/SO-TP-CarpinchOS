@@ -1,5 +1,13 @@
 #include "main.h"
 
+#include "configuracion/config.h"
+#include "esquema/paginacion.h"
+#include "esquema/tlb.h"
+#include "procesos/clientes.h"
+#include "signals/signal.h"
+#include "tests/tests.h"
+#include "tests/tests_memoria_sola.h"
+
 #include <conexiones/conexiones.h>
 
 int main(int argc, char* argv[]) {
@@ -15,15 +23,18 @@ int main(int argc, char* argv[]) {
    iniciar_paginacion();
    iniciar_tlb();
 
-   server = iniciar_servidor(configuracion.IP, configuracion.PUERTO);
-   // swap_conexion_init(server);
-   clientes_administrar(server, (void*)&atender_proceso, &ejecutando);
+   memoria_correr();
 
    terminar_programa();
 
    return 0;
 }
 
+void memoria_correr()
+{
+   server = iniciar_servidor(configuracion.IP, configuracion.PUERTO);
+   clientes_administrar(server, (void*)&atender_proceso, &ejecutando);
+}
 
 void terminar_programa(){
    if(swap != -1)

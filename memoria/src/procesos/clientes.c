@@ -12,6 +12,8 @@
 #include <utils/utils.h>
 
 
+sem_t finalizar_conexion_swap;
+
 void atender_proceso(void* arg){
 
     int cliente = *(int*)arg;
@@ -104,7 +106,7 @@ void ejecutar_proceso(int cliente)
                     if(pagina->modificado == 1) { 
                         enviar_pagina_a_swap(tabla->pid, i, pagina->marco);
                         log_info(logger_memoria, "La pagina %d fue modificada. La envio a SWAP.");
-                        int aux = recibir_int(swap);;
+                        recibir_int(swap);;
                     }else log_info(logger_memoria, "La pagina %d no fue modificada. No la envio a SWAP.");
                     
                     log_info(logger_memoria, "Saco del marco %d a la pagina %d (si esta).",pagina->marco, i);

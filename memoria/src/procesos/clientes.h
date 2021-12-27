@@ -2,7 +2,9 @@
 #define _COMPORTAMIENTO_CLIENTES_
 
 #include "../esquema/paginacion.h"
+#include <semaphore.h>
 
+extern sem_t finalizar_conexion_swap;
 
 void mate_close_comportamiento(tab_pags *tabla, int cliente, bool *conectado);
 void memalloc_comportamiento(tab_pags *tabla, int socket);
