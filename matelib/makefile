@@ -32,6 +32,10 @@ DEPENDENCIES=$(foreach LIBPATH,$(LIBRARY_PATHS),$(patsubst ./%,$(LIBPATH)/%,$(sh
 
 all: $(BINARY)
 
+install: $(DIRECTORIES) $(OBJECTS)
+	$(CC) -shared -o "$(BINARY)" $(OBJECTS)
+	sudo cp -u $(BINARY) /usr/lib
+
 clean:
 	rm -rf $(BINDIR) $(OBJDIR)
 
@@ -52,10 +56,7 @@ help:
 
 # Build project
 $(BINARY): $(DIRECTORIES) $(OBJECTS)
-	# ar rcs -o "$@" $(OBJECTS)
-	$(CC) -shared -o "$@" $(OBJECTS)
-	sudo cp -u $(BINARY) /usr/lib
-
+	ar rcs -o "$@" $(OBJECTS)
 
 # Create directories for objects
 $(DIRECTORIES):

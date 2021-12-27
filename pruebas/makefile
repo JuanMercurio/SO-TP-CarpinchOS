@@ -18,6 +18,8 @@ HEADERS := -I. -I./lib
 RM := rm -rf
 CC := gcc
 
+all: compile
+
 # compile --> Crea la carpeta "build" y compila todos los carpinchos
 compile: build $(CARPINCHOS)
 
