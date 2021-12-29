@@ -312,7 +312,7 @@ int cant_cambios_de_pagina(int direc_actual, uint32_t next_alloc){
 
 int memfree(tab_pags* tabla, int dir_log){
 	
-	log_info(logger_memoria, "-- MEMFREE -- PID %d | DIR %d");
+	log_info(logger_memoria, "-- MEMFREE -- PID %d | DIR %d", tabla->pid, dir_log);
     tab_pags* tabla_paginas = tabla;
 
 	if(dir_log >= configuracion.TAMANIO){

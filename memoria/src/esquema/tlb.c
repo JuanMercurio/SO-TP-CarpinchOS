@@ -1,9 +1,11 @@
 #include "tlb.h"
-#include "../configuracion/config.h"
 
 #include <stdlib.h>
 #include <stdio.h>
 #include <unistd.h>
+#include <string.h>
+
+#include <utils/utils.h>
 
 #define FIFO_TLB alg_tlb
 #define LRU_TLB  alg_tlb

@@ -1,5 +1,7 @@
 #include "tests_memoria_sola.h"
 
+#include <stdlib.h>
+
 void memoria_test_solo(int c_args)
 {
     if(c_args != 2)return;

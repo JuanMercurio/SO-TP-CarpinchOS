@@ -2,7 +2,8 @@
 #define _SIGNALS_USUARIO_
 
 #include "../esquema/estructuras.h"
-#include "../esquema/tlb.h"
+
+#include <stdio.h>
 
 extern bool ejecutando;
 extern int server;

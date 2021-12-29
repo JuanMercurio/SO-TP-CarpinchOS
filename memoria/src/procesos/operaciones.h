@@ -2,9 +2,10 @@
 #define _OPERACIONES_MEMORIA_
 
 #include "../esquema/paginacion.h"
+#include "../esquema/config_pag.h"
+
 #include <matelib.h>
 
-#include <commons/collections/list.h>
 #include <stdint.h>
 
 #define PID_EMPTY 0 

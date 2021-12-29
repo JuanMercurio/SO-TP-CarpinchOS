@@ -1,12 +1,7 @@
 #ifndef _ESQUEMA_MEMORIA_
 #define _ESQUEMA_MEMORIA_
 
-#include <commons/collections/list.h>
-#include <utils/utils.h>
-
-#include "../configuracion/config.h"
 #include "algoritmos.h"
-#include "estructuras.h"
 
 #define TLB_MISS  -1
 #define TLB_EMPTY -1 

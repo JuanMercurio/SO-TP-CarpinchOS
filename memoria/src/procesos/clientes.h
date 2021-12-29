@@ -2,6 +2,7 @@
 #define _COMPORTAMIENTO_CLIENTES_
 
 #include "../esquema/paginacion.h"
+
 #include <semaphore.h>
 
 extern sem_t finalizar_conexion_swap;

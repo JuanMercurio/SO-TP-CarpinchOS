@@ -1,13 +1,17 @@
 #include "paginacion.h"
-#include "tlb.h"
+
 #include "../procesos/operaciones.h"
+#include "config_pag.h"
+#include "tlb.h"
 
 #include <mensajes/mensajes.h>
+#include <utils/utils.h>
+
 #include <stdlib.h>
 #include <stdio.h>
 #include <string.h>
-#include <stdint.h>
-#include <utils/utils.h>
+#include <math.h>
+
 
 #define MEMP_MISS -1
 #define PAGINA_INVALIDA -2
@@ -682,7 +686,7 @@ void tablas_loggear_saturno()
             log_info(logger_memoria, "PAG %d - P: %d - M: %d - F: %d - ALG: %d", j, pag->presente, pag->modificado, pag->marco, pag->algoritmo);
         }
     }
-    log_info(logger_memoria, "");
+    log_info(logger_memoria, " ");
 
 }
 

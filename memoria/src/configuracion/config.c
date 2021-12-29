@@ -1,7 +1,5 @@
 #include "config.h"
 
-#include <pthread.h>
-
 t_log* logger_memoria;
 t_log* logger_alg;
 t_log* logger_clock;

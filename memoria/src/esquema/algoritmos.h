@@ -5,6 +5,7 @@
 #define LRU      algoritmo
 
 #include "estructuras.h"
+#include "config_pag.h"
 #include "paginacion.h"
 
 typedef struct t_clock{

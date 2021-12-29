@@ -1,11 +1,8 @@
 #ifndef _ESQUEMA_PAGINACION_
 #define _ESQUEMA_PAGINACION_
 
-#include "config_pag.h"
+#include "estructuras.h"
 
-#include <commons/collections/list.h>
-#include <math.h>
-#include <pthread.h>
 #include <stdint.h>
 
 #define PAGINA        segmento

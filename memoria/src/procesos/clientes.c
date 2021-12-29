@@ -105,9 +105,9 @@ void ejecutar_proceso(int cliente)
 
                     if(pagina->modificado == 1) { 
                         enviar_pagina_a_swap(tabla->pid, i, pagina->marco);
-                        log_info(logger_memoria, "La pagina %d fue modificada. La envio a SWAP.");
+                        log_info(logger_memoria, "La pagina %d fue modificada. La envio a SWAP.", i);
                         recibir_int(swap);;
-                    }else log_info(logger_memoria, "La pagina %d no fue modificada. No la envio a SWAP.");
+                    }else log_info(logger_memoria, "La pagina %d no fue modificada. No la envio a SWAP.", i);
                     
                     log_info(logger_memoria, "Saco del marco %d a la pagina %d (si esta).",pagina->marco, i);
 	                pagina_liberar_marco(pagina);
@@ -186,7 +186,7 @@ void new_instance_kernel_comportamiento(tab_pags* tabla, int cliente, bool *cone
 
 
 int swap_solicitud_iniciar(int pid){
-    log_info(logger_memoria, "------------------------ENVIANDO A SWAMP SOLICITUD INICIO %d");
+    log_info(logger_memoria, "------------------------ENVIANDO A SWAMP SOLICITUD INICIO %d", pid);
     enviar_int(swap, INICIO);
     enviar_int(swap, pid);
     int estado = recibir_int(swap);
