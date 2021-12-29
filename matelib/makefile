@@ -28,12 +28,13 @@ OBJECTS=$(SOURCES:./$(SRCDIR)/%.c=$(OBJDIR)/%.o)
 # Dependencies
 DEPENDENCIES=$(foreach LIBPATH,$(LIBRARY_PATHS),$(patsubst ./%,$(LIBPATH)/%,$(shell make --no-print-directory -C $(LIBPATH) sources)))
 
+LIBRARIES = -lcommons -lpthread
 # ==============================================================================================================
 
 all: $(BINARY)
 
 install: $(DIRECTORIES) $(OBJECTS)
-	$(CC) -shared -o "$(BINARY)" $(OBJECTS)
+	$(CC) -shared -o "$(BINARY)" $(OBJECTS) $(LIBRARIES)
 	sudo cp -u $(BINARY) /usr/lib
 
 clean:
@@ -64,10 +65,10 @@ $(DIRECTORIES):
 
 # Build objects
 $(OBJDIR)/%.o: $(SRCDIR)/%.c $(SRCDIR)/%.h $(DEPENDENCIES)
-	$(CC) $(INCLUDES) $(CFLAGS) -c -fmessage-length=0 -MMD -MP -MF"$(@:%.o=%.d)" -MT"$(@:%.o=%.d)" -o "$@" "$<"
+	$(CC) $(INCLUDES) $(CFLAGS) -fPIC -c -fmessage-length=0 -MMD -MP -MF"$(@:%.o=%.d)" -MT"$(@:%.o=%.d)" -o "$@" "$<"
 
 $(OBJDIR)/%.o: $(SRCDIR)/%.c $(DEPENDENCIES)
-	$(CC) $(INCLUDES) $(CFLAGS) -c -fmessage-length=0 -MMD -MP -MF"$(@:%.o=%.d)" -MT"$(@:%.o=%.d)" -o "$@" "$<"
+	$(CC) $(INCLUDES) $(CFLAGS) -fPIC -c -fmessage-length=0 -MMD -MP -MF"$(@:%.o=%.d)" -MT"$(@:%.o=%.d)" -o "$@" "$<"
 
 # ==============================================================================================================
 
