@@ -1,23 +1,19 @@
-# tp-2021-2c-Olimpianos
+# CarpinchOS
 
-La config tiene archivos necesarios para VSCode. Aunque se puede importar cada modulo a eclipse y laburar de ahi si es mas comodo para alguien.
+El enunciado del trabajo practico se puede encontrar [aca](https://docs.google.com/document/d/1BDpr5lfzOAqmOOgcAVg6rUqvMPUfCpMSz1u1J_Vjtac/edit# "aca")
 
-# VSCode
+## Importante
 
-- Installar la extension [C/C++ Intellisense](https://marketplace.visualstudio.com/items?itemName=ms-vscode.cpptools "C/C++ Intellisense") en **VSCode**
-- Instalar ultima version de [VSCode de 32bit](https://code.visualstudio.com/updates/v1_35) 
+- El sistema funciona en las maquina virtuales de la catedra ([descargar](https://www.utnso.com.ar/recursos/maquinas-virtuales/ "descargar"))
+- Los modulos **Memoria** y **Swap** estan optimizados para que funciones fuera de las maquinas virtuales de la catedra. **Kernel** no compila afuera de estas VMs (errores con header files)
 
-Existen estas tareas para cada modulo: 
+## Como correr
 
- - Run modulo
- - Valgrind modulo
- - Helgrind modulo
- - Test modulo
+Orden en el cual ejecutar los modulos:
+1.  **Memoria**
+2. **Swap**
 
-Crear un par de keybinds para las tareas mas usadas. Tambien existe la tarea **Build all** que compila todos los modulos.
+**Kernel** puede ser ejecutado en cualquier momento..
 
-Si no estas comodo con las tareas siempre podes usar la consola para compilar y correr el modulo.`make help` en los dirs para mas info.
+Una vez que este todo corriendo podemos ejecutar los procesos que queremos probar. Ejemplos en la carpeta pruebas
 
-# Consultas 
-
-Consultar si el LD_LIBRARY_PATH de los procesos externos es fijo, o si nosotros lo ponemos segun nuestra implementacion. Y si es fija la forma en que se incluye a la libreria en los procesos externos.
