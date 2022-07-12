@@ -4,7 +4,8 @@ El enunciado del trabajo practico se puede encontrar [aca](https://docs.google.c
 
 ## Objetivos del Trabajo Práctico
 
-- Mediante la realización de este trabajo se espera que el alumno:
+Mediante la realización de este trabajo se espera que el alumno:
+
 - Adquiera conceptos prácticos del uso de las distintas herramientas de programación e interfaces (APIs) que brindan los sistemas operativos.
 - Entienda aspectos del diseño de un sistema operativo.
 - Afirme diversos conceptos teóricos de la materia mediante la implementación práctica de algunos de ellos.
@@ -14,7 +15,7 @@ El enunciado del trabajo practico se puede encontrar [aca](https://docs.google.c
 
 ## Importante
 
-- El sistema funciona en las maquina virtuales de la catedra ([descargar](https://www.utnso.com.ar/recursos/maquinas-virtuales/ "descargar"))
+- El sistema funciona en las ([maquinas virtuales](https://www.utnso.com.ar/recursos/maquinas-virtuales/)) de la catedra 
 - Los modulos **Memoria** y **Swap** estan optimizados para que funciones fuera de las maquinas virtuales de la catedra. **Kernel** no compila afuera de estas VMs (errores con header files)
 
 ## Como correr
