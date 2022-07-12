@@ -15,13 +15,13 @@ Mediante la realización de este trabajo se espera que el alumno:
 
 ## Importante
 
-- El sistema funciona en las ([maquinas virtuales](https://www.utnso.com.ar/recursos/maquinas-virtuales/)) de la catedra 
-- Los modulos **Memoria** y **Swap** estan optimizados para que funciones fuera de las maquinas virtuales de la catedra. **Kernel** no compila afuera de estas VMs (errores con header files)
+- El sistema funciona en las [maquinas virtuales](https://www.utnso.com.ar/recursos/maquinas-virtuales/) de la catedra 
+- Los modulos **Memoria** y **Swap** estan optimizados para que funcionen fuera de las maquinas virtuales de la catedra. **Kernel** puede tirar errores en otro entorno
 
 ## Como correr
 
 Orden en el cual ejecutar los modulos:
-1.  **Memoria**
+1. **Memoria**
 2. **Swap**
 
 **Kernel** puede ser ejecutado en cualquier momento..
