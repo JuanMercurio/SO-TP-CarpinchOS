@@ -6,7 +6,7 @@ Trabajo Practico - Sistemas Operativos - UTN FRBA 2021 2C
 
 El objetivo del trabajo práctico consiste en desarrollar una solución que permita la simulación de un sistema distribuido, donde los grupos tendrán que planificar procesos externos no implementados por los grupos, que ejecuten peticiones al sistema de recursos. El sistema deberá, mediante esta interacción, habilitar recursos de memoria (bajo un esquema de paginación pura), recursos de entrada-salida y semáforos.
 
-Mediante la realización de este trabajo se espera que el alumno:
+#### Mediante la realización de este trabajo se espera que el alumno:
 
 - Adquiera conceptos prácticos del uso de las distintas herramientas de programación e interfaces (APIs) que brindan los sistemas operativos.
 - Entienda aspectos del diseño de un sistema operativo.
