@@ -1,7 +1,7 @@
-<h3 align="center" > CarpinchOS </h3>
+<h2 align="center" > CarpinchOS </h3>
 <p align="center"><img src="https://user-images.githubusercontent.com/48862380/178836671-6aa5e5ee-1fa8-44a5-9800-3b3b50b1213f.png"> </p>
 
-<p align="center"> Trabajo Practico - Sistemas Operativos - UTN FRBA 2021 2C <p>
+<p align="center"> Trabajo Practico - Sistemas Operativos - UTN FRBA 2021 2C  <p>
 
 ## Objetivos del Trabajo Práctico
 
