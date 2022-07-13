@@ -1,4 +1,4 @@
-# CarpinchOS
+# <center> CarpinchOS </center>
 
 Trabajo Practico - Sistemas Operativos - UTN FRBA 2021 2C
 
