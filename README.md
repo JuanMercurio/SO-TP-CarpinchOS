@@ -17,14 +17,28 @@ El objetivo del trabajo práctico consiste en desarrollar una solución que perm
 
 El enunciado completo del trabajo practico se puede encontrar [aca](https://docs.google.com/document/d/1BDpr5lfzOAqmOOgcAVg6rUqvMPUfCpMSz1u1J_Vjtac/edit# "aca")
 
-## Importante
+
+
+## Ejecucion
+
+#### Requisitos Previos
+
 
 - El sistema funciona en las [maquinas virtuales](https://www.utnso.com.ar/recursos/maquinas-virtuales/) de la catedra 
-- Los modulos **Memoria** y **Swap** estan optimizados para que funcionen fuera de las maquinas virtuales de la catedra. **Kernel** puede tirar errores en otro entorno
+- Los modulos **Memoria** y **Swap** estan optimizados para que puedan compilar fuera de las maquinas virtuales de la catedra. **Kernel** puede tirar errores fuera de este entorno
 
-## Como correr
+Se debe clonar el repositorio en todas las maquinas que vayan a ejecutar un modulo del sistema. 
 
-Orden en el cual ejecutar los modulos:
+Luego se compilamos el projecto
+
+		make all
+
+O podemos compilar solo el modulo que necesitamos. Por ej:
+
+		make memoria
+
+
+#### Orden De Ejecucion
 1. **Memoria**
 2. **Swap**
 
@@ -32,3 +46,8 @@ Orden en el cual ejecutar los modulos:
 
 Una vez que este todo corriendo podemos ejecutar los procesos que queremos probar. Ejemplos en la carpeta pruebas
 
+#### Ejecucion de Carpinchos
+
+Una vez que el sistema este funcionando, podemos ejecutar los "procesos" que utilizan la **matelib**, alias los carpinchos.
+
+Ejemplos de estos "procesos" en  [pruebas](https://github.com/JuanMercurio/utn-so-tp/tree/main/pruebas "pruebas")
