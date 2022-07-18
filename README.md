@@ -21,7 +21,7 @@ El enunciado completo del trabajo practico se puede encontrar [aca](https://docs
 
 ## Ejecucion
 
-#### Requisitos Previos
+### Requisitos Previos
 
 
 - El sistema funciona en las [maquinas virtuales](https://www.utnso.com.ar/recursos/maquinas-virtuales/) de la catedra 
@@ -31,14 +31,14 @@ Se debe clonar el repositorio en todas las maquinas que vayan a ejecutar un modu
 
 Luego se compilamos el projecto
 
-		make all
+	make all
 
 O podemos compilar solo el modulo que necesitamos. Por ej:
 
-		make memoria
+	make memoria
 
 
-#### Orden De Ejecucion
+### Orden De Ejecucion
 1. **Memoria**
 2. **Swap**
 
@@ -46,7 +46,7 @@ O podemos compilar solo el modulo que necesitamos. Por ej:
 
 Una vez que este todo corriendo podemos ejecutar los procesos que queremos probar. Ejemplos en la carpeta pruebas
 
-#### Ejecucion de Carpinchos
+### Ejecucion de Carpinchos
 
 Una vez que el sistema este funcionando, podemos ejecutar los "procesos" que utilizan la **matelib**, alias los carpinchos.
 
