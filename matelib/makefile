@@ -7,6 +7,9 @@ LIBRARY_PATHS=
 PROJECT=$(shell basename $(shell cd "$( dirname "${BASH_SOURCE[0]}" )" >/dev/null 2>&1 && pwd))
 
 
+# Location where the library is installed
+LOCATION_LIBRARY=/usr/lib/
+
 # Main subirectories
 SRCDIR=src
 OBJDIR=obj
@@ -20,6 +23,9 @@ CC=gcc
 CFLAGS=-Wall -DDEBUG -g
 SOURCES=$(filter ./$(SRCDIR)/%,$(shell find . -iname "*.c" | tr '\n' ' '))
 INCLUDES=$(foreach LIBPATH,$(LIBRARY_PATHS),-I$(LIBPATH)/$(shell make --no-print-directory -C $(LIBPATH) idir))
+
+# Binary Name
+BINNAME=lib$(PROJECT).so
 
 # Objects
 BINARY=$(BINDIR)/lib$(PROJECT).so
@@ -35,7 +41,11 @@ all: $(BINARY)
 
 install: $(DIRECTORIES) $(OBJECTS)
 	$(CC) -shared -o "$(BINARY)" $(OBJECTS) $(LIBRARIES)
-	sudo cp -u $(BINARY) /usr/lib
+	sudo cp -u $(BINARY) $(LOCATION_LIBRARY)
+
+uninstall:
+	sudo rm $(LOCATION_LIBRARY)$(BINNAME)
+
 
 clean:
 	rm -rf $(BINDIR) $(OBJDIR)

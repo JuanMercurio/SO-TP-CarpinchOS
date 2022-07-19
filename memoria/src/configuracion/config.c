@@ -49,7 +49,7 @@ void iniciar_logger(){
 }
 
 void loggear_mensaje(char* mensaje){
-    log_info(logger_memoria, mensaje);
+    log_info(logger_memoria, "%s", mensaje);
 }
 
 

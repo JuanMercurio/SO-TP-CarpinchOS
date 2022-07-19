@@ -23,7 +23,7 @@ ${bold}DESCRIPTION${normal}
 
     ${bold}-t | --target${normal}       Changes the directory where the script is executed. By default it will be the current directory.
 
-    ${bold}-m | --make${normal}         Changes the makefile rule for building projects. By default it will be empty.
+    ${bold}-m | --make${normal}         Changes the makefile rule for building projects. By default it will be "all".
 
     ${bold}-l | --lib${normal}          Adds an external dependency to build and install.
 
@@ -62,7 +62,7 @@ case $1 in
 esac
 cd $CWD
 
-RULE=""
+RULE="all"
 case $1 in
   -m=*|--make=*)
     RULE="${1#*=}"
@@ -82,6 +82,7 @@ cd $COMMONS
 sudo make uninstall
 make all
 sudo make install
+rm -fr $COMMONS
 cd $CWD
 
 length=$(($#-1))
@@ -89,8 +90,8 @@ OPTIONS=${@:1:length}
 REPONAME="${!#}"
 
 LIBRARIES=()
-DEPENDENCIES=()
-PROJECTS=()
+DEPENDENCIES=(matelib)
+PROJECTS=(memoria, kernel, swamp)
 
 for i in $OPTIONS
 do
@@ -113,21 +114,22 @@ done
 echo -e "\n\nCloning external libraries..."
 
 
-for i in "${LIBRARIES[@]}"
-do
-  echo -e "\n\nBuilding ${i}\n\n"
-  rm -rf $i
-  git clone "https://github.com/${i}.git" $i
-  cd $i
-  make install
-  cd $CWD
-done
+# for i in "${LIBRARIES[@]}"
+# do
+#   echo -e "\n\nBuilding ${i}\n\n"
+#   rm -rf $i
+#   git clone "https://github.com/${i}.git" $i
+#   cd $i
+#   make install
+#   cd $CWD
+# done
 
-echo -e "\n\nCloning project repo...\n\n"
+#echo -e "\n\nCloning project repo...\n\n"
 
-rm -rf $REPONAME
-git clone "https://github.com/sisoputnfrba/${REPONAME}.git" $REPONAME
-cd $REPONAME
+# rm -rf $REPONAME
+# git clone "https://github.com/sisoputnfrba/${REPONAME}.git" $REPONAME
+#cd $REPONAME
+
 PROJECTROOT=$PWD
 
 echo -e "\n\nBuilding dependencies..."
