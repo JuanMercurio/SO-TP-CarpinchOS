@@ -7,7 +7,7 @@
 
 El objetivo del trabajo práctico consiste en desarrollar una solución que permita la simulación de un sistema distribuido, donde los grupos tendrán que planificar procesos externos no implementados por los grupos, que ejecuten peticiones al sistema de recursos. El sistema deberá, mediante esta interacción, habilitar recursos de memoria (bajo un esquema de paginación pura), recursos de entrada-salida y semáforos.
 
-#### Mediante la realización de este trabajo se espera que el alumno:
+### Mediante la realización de este trabajo se espera que el alumno:
 
 - Adquiera conceptos prácticos del uso de las distintas herramientas de programación e interfaces (APIs) que brindan los sistemas operativos.
 - Entienda aspectos del diseño de un sistema operativo.
@@ -24,10 +24,11 @@ El enunciado completo del trabajo practico se puede encontrar [aca](https://docs
 ### Requisitos Previos
 
 
-- El sistema funciona en las [maquinas virtuales](https://www.utnso.com.ar/recursos/maquinas-virtuales/) de la catedra 
-- Los modulos **Memoria** y **Swap** estan optimizados para que puedan compilar fuera de las maquinas virtuales de la catedra. **Kernel** puede tirar errores fuera de este entorno
+Se recomienda correr el en las [maquinas virtuales](https://www.utnso.com.ar/recursos/maquinas-virtuales/) de la catedra 
 
-Se debe clonar el repositorio en todas las maquinas que vayan a ejecutar un modulo del sistema. 
+>  **Memoria** y **Swap** estan optimizados para que puedan correr/compilar fuera de las maquinas virtuales de la catedra. **Kernel** puede tirar errores fuera de este entorno
+
+Se debe clonar el repositorio en todas las maquinas que vayan a ejecutar un modulo del sistema.  
 
 Luego se compilamos el projecto
 
@@ -37,6 +38,7 @@ O podemos compilar solo el modulo que necesitamos. Por ej:
 
 	make memoria
 
+**Nota:** Antes de ejecutar configure los **ip** y **puertos** en los archivos de configuracion asi como tambien, configure aspectos de los diferentes modulos, por ejemplo, que algoritmo de planificacion usara el **kernel**, cuanta memoria **ram** simulara el sistema, etc.
 
 ### Orden De Ejecucion
 1. **Memoria**
@@ -44,7 +46,8 @@ O podemos compilar solo el modulo que necesitamos. Por ej:
 
 **Kernel** puede ser ejecutado en cualquier momento..
 
-Una vez que este todo corriendo podemos ejecutar los procesos que queremos probar. Ejemplos en la carpeta pruebas
+
+
 
 ### Ejecucion de Carpinchos
 
