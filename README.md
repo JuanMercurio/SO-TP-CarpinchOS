@@ -27,7 +27,7 @@ Se recomienda compilar y ejecutar en las [maquinas virtuales](https://www.utnso.
 
 Se debe clonar el repositorio en todas las maquinas que vayan a ejecutar un modulo del sistema.  
 
-Luego de compilar ejecutamos _deploy.sh_
+Luego de clonar el repo ejecutamos _deploy.sh_
 
 	chmod +x deploy.sh
 	./deploy.sh
