@@ -29,8 +29,8 @@ Se debe clonar el repositorio en todas las maquinas que vayan a ejecutar un modu
 
 Luego de compilar ejecutamos _deploy.sh_
 
-		chmod +x deploy.sh
-		./deploy.sh
+	chmod +x deploy.sh
+	./deploy.sh
 
 ### Orden De Ejecucion
 1. **Memoria**
