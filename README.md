@@ -17,37 +17,26 @@ El objetivo del trabajo práctico consiste en desarrollar una solución que perm
 
 El enunciado completo del trabajo practico se puede encontrar [aca](https://docs.google.com/document/d/1BDpr5lfzOAqmOOgcAVg6rUqvMPUfCpMSz1u1J_Vjtac/edit# "aca")
 
-
-
 ## Ejecucion
 
 ### Requisitos Previos
 
-
-Se recomienda correr el en las [maquinas virtuales](https://www.utnso.com.ar/recursos/maquinas-virtuales/) de la catedra 
+Se recomienda compilar y ejecutar en las [maquinas virtuales](https://www.utnso.com.ar/recursos/maquinas-virtuales/) de la catedra 
 
 >  **Memoria** y **Swap** estan optimizados para que puedan correr/compilar fuera de las maquinas virtuales de la catedra. **Kernel** puede tirar errores fuera de este entorno
 
 Se debe clonar el repositorio en todas las maquinas que vayan a ejecutar un modulo del sistema.  
 
-Luego se compilamos el projecto
+Luego de compilar ejecutamos _deploy.sh_
 
-	make all
-
-O podemos compilar solo el modulo que necesitamos. Por ej:
-
-	make memoria
-
-**Nota:** Antes de ejecutar configure los **ip** y **puertos** en los archivos de configuracion asi como tambien, configure aspectos de los diferentes modulos, por ejemplo, que algoritmo de planificacion usara el **kernel**, cuanta memoria **ram** simulara el sistema, etc.
+		chmod +x deploy.sh
+		./deploy.sh
 
 ### Orden De Ejecucion
 1. **Memoria**
 2. **Swap**
 
-**Kernel** puede ser ejecutado en cualquier momento..
-
-
-
+**Kernel** puede ser ejecutado en cualquier momento.
 
 ### Ejecucion de Carpinchos
 
