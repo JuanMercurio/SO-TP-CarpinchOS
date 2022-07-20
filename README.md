@@ -27,7 +27,7 @@ Se recomienda compilar y ejecutar en las [maquinas virtuales](https://www.utnso.
 
 Se debe clonar el repositorio en todas las maquinas que vayan a ejecutar un modulo del sistema.  
 
-Luego de clonar el repo ejecutamos _deploy.sh_
+Luego de clonar el repo ejecutamos el script **_[deploy.sh](https://github.com/JuanMercurio/utn-so-tp/blob/main/deploy.sh "deploy.sh")_**
 
 	chmod +x deploy.sh
 	./deploy.sh
@@ -42,4 +42,4 @@ Luego de clonar el repo ejecutamos _deploy.sh_
 
 Una vez que el sistema este funcionando, podemos ejecutar los "procesos" que utilizan la **matelib**, alias los carpinchos.
 
-Ejemplos de estos "procesos" en  [pruebas](https://github.com/JuanMercurio/utn-so-tp/tree/main/pruebas "pruebas")
+Ejemplos de estos "procesos" en  **_[pruebas](https://github.com/JuanMercurio/utn-so-tp/tree/main/pruebas "pruebas")_**
